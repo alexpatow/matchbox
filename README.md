@@ -6,7 +6,28 @@ Matchbox is a framework for training tiny, task-specific models from examples an
 
 The idea is **regex++**: use small learned models where fuzzy or contextual input makes pattern matching brittle, but the output is small, rigid, and machine-readable.
 
-**Status:** This repository is at the design stage. The APIs and commands below describe the intended developer experience. No training pipeline, runtime, or benchmark results exist yet.
+**Status:** The repository foundation includes a TypeScript library, a browser-only React example, and build/test tooling. Parser APIs and training commands below remain proposals. No training pipeline, model runtime, or benchmark results exist yet.
+
+## Local development
+
+Use Bun 1.4.2 and Node 24 (`nvm use` reads `.nvmrc`).
+
+```sh
+bun install --frozen-lockfile
+bun run dev
+```
+
+Open <http://127.0.0.1:5173>. The minimal page imports the built local core package and verifies browser interaction. It does not perform model inference yet.
+
+```sh
+bun run check
+bunx playwright install chromium
+bun run test:browser
+```
+
+`bun run check` runs linting, formatting checks, TypeScript checks, package tests, and production builds. The browser test builds and serves the production example automatically. GitHub Actions runs both checks on pull requests.
+
+The workspace contains `packages/core` for the ESM library and `examples/filters` for the React/Vite example. [Repository design](docs/repository-design.md) explains the boundaries, build output, and development workflow. UI source attribution is in [Third-party notices](THIRD-PARTY-NOTICES.md).
 
 ## Why Matchbox
 
@@ -212,9 +233,7 @@ The generated dependency should hide model loading, tokenization, and backend de
 ```ts
 import filters from "./matchbox/filters";
 
-const result = await filters.parse(
-  "active Swedish customers over 50k ARR",
-);
+const result = await filters.parse("active Swedish customers over 50k ARR");
 
 if (result.status === "ok") {
   console.log(result.value);
