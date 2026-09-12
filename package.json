@@ -21,11 +21,13 @@
     "preview": "bun run --filter @matchbox-ai/filters-example preview"
   },
   "devDependencies": {
+    "@matchbox-ai/core": "workspace:*",
     "@playwright/test": "1.63.0",
     "@types/bun": "1.4.2",
     "oxfmt": "0.67.0",
     "oxlint": "1.82.0",
-    "typescript": "7.0.2"
+    "typescript": "7.0.2",
+    "zod": "4.6.3"
   },
   "engines": {
     "bun": ">=1.4.2",

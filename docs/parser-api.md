@@ -1,0 +1,86 @@
+# Parser task API
+
+`defineParser` describes a constrained parsing task. It validates inputs and expected outputs and exports training metadata. It does not train a model or infer a result from natural language.
+
+```ts
+import { defineParser, type InferOutput } from "@matchbox-ai/core";
+import { z } from "zod";
+
+const task = defineParser({
+  input: z.string().min(1).max(200),
+  output: z.strictObject({
+    country: z.enum(["SE", "DE"]),
+    minimum: z.number().nonnegative(),
+    owner: z.string().nullable().optional(),
+  }),
+  fields: {
+    minimum: { type: "money", aliases: ["ARR"] },
+  },
+});
+
+type Output = InferOutput<typeof task>;
+// { country: "SE" | "DE"; minimum: number; owner?: string | null | undefined }
+
+const input = task.validateInput("Swedish customers above 50k");
+const expected = task.validateOutput({ country: "SE", minimum: 50000 });
+if (expected.success) {
+  const value: Output = expected.data;
+  console.log(value);
+} else {
+  console.log(expected.issues); // Each issue has code, path, and message.
+}
+
+const metadata = task.toJSON();
+const serialized = JSON.stringify(task); // Uses the same metadata representation.
+```
+
+Validation returns a discriminated `ValidationResult<T>`. Invalid task definitions throw `TypeError` at definition time with a schema path. Invalid example values return issues rather than being silently normalized. There is no `parse(text)` inference method yet.
+
+## Supported schemas
+
+The input is explicitly `z.string()`, optionally with supported constraints. The output root must be a strict object, array, or union of objects/arrays.
+
+Within outputs, v0 supports:
+
+- Strict objects with declared properties, including nested objects.
+- Arrays and ordinary or discriminated unions.
+- Strings, finite numbers, booleans, null, JSON literals, and enums.
+- Nullable values and optional object properties. Put `.optional()` outermost and omit absent properties; explicit `undefined` is rejected.
+- Finite numeric bounds, safe integers, string/array lengths, and regular expressions without flags.
+
+Use `z.strictObject()` or `.strict()`. Ordinary `z.object()` strips unknown keys, while the serialized output contract disallows them. Requiring strict objects keeps validation behavior explicit.
+
+Unsupported schemas fail at definition time. This includes transforms, overwrites such as `.trim()`, coercion, defaults, catches, custom/async refinements, conditional checks, arbitrary unknown/any values, dates, bigint, records, maps, sets, tuples, intersections, lazy/recursive schemas, readonly wrappers, and string formats other than flagless regexes. Add support only when both runtime and metadata behavior are tested.
+
+Both schema and data traversal are limited to 64 nested containers. Validation accepts plain JSON data, not class instances, accessors, sparse arrays, symbol properties, or circular references. `__proto__` is reserved because Zod omits it while constructing parsed objects.
+
+## Training metadata
+
+The serialized definition contains:
+
+```ts
+{
+  formatVersion: 1,
+  kind: "parser",
+  input: { /* JSON Schema draft 2020-12 */ },
+  output: { /* JSON Schema draft 2020-12 */ },
+  fields: { minimum: { type: "money", aliases: ["ARR"] } },
+}
+```
+
+Metadata is captured at definition time. Every `toJSON()` call returns a detached copy. Treat the supplied Zod schemas as immutable after definition; use Zod's schema-building methods to create a new task when its contract changes.
+
+The format version identifies Matchbox's metadata representation, not a model or dataset version. A future loader must reject unsupported versions. This ticket provides serialization only; it does not reconstruct executable validators from JSON.
+
+Zod's global metadata registry is intentionally excluded. `.meta()` must not override structural keywords or inject values that are not JSON. Descriptions, aliases, and semantic types belong in the optional `fields` object for now. Those hints are inert, copied JSON. Matchbox does not infer a field-to-output mapping or normalize money/countries from their names.
+
+## Dependency boundary
+
+Zod 4.6.3 is an explicit, pinned core dependency and is external to the Rolldown bundle. The API uses a small isolated portion of Zod Core's schema/check definitions to reject unsupported behavior before JSON conversion. Zod upgrades must run the contract suite, including negative cases.
+
+Validation uses Zod's non-JIT path. The browser smoke check exercises definition, validation, and metadata serialization through the built package. This is the task-authoring API; its dependency size is not a claim about the future generated inference runtime.
+
+## References
+
+- [Zod JSON Schema conversion](https://zod.dev/json-schema) documents representable schemas and conversion controls.
+- [Zod Core](https://zod.dev/packages/core) documents schema and check introspection.

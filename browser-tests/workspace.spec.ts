@@ -9,6 +9,7 @@ test("the built React example consumes the local package in a browser", async ({
   await check.focus();
   await page.keyboard.press("Enter");
   await expect(page.getByRole("status")).toContainText("Check 1 passed.");
+  await expect(page.getByRole("status")).toContainText("passed task validation in this browser.");
   await check.click();
   await expect(page.getByRole("status")).toContainText("Check 2 passed.");
   expect(errors).toEqual([]);

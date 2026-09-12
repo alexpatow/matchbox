@@ -22,6 +22,9 @@
     "dev:js": "rolldown --config --watch",
     "dev:types": "tsc -p tsconfig.build.json --watch"
   },
+  "dependencies": {
+    "zod": "4.6.3"
+  },
   "devDependencies": {
     "rolldown": "1.2.8",
     "typescript": "7.0.2"

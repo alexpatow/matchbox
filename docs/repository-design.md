@@ -6,7 +6,7 @@ These decisions implement BOO-30 and the repo setup agreed with Alex on 2026-09-
 
 `packages/core` owns the portable TypeScript library. `examples/filters` owns the browser-only React/Vite app. Bun manages installation and scripts. Runtime and training can separate later when real code needs that boundary; there are no empty placeholder packages.
 
-The library exports only a bootstrap version value in this ticket. The parser API, AST, datasets, training, runtime, and React hook remain separate Linear work.
+The foundation started with a bootstrap version export. BOO-31 adds the [parser task API](parser-api.md), including validation and serializable training metadata. The AST, datasets, training, runtime, and React hook remain separate Linear work.
 
 ## Package consumption
 
@@ -26,7 +26,7 @@ GitHub Actions installs the frozen Bun lockfile, runs the same local checks, and
 
 ## Example UI
 
-A small Fluid Functionalism button checks the imported core version. The page deliberately contains no parser input or inference results yet. Registry source provenance and modifications are recorded in `THIRD-PARTY-NOTICES.md`. UI dependencies belong only to the example.
+A small Fluid Functionalism button checks the imported core version and exercises task definition, validation, and serialization in the browser. The page deliberately contains no parser input or inference results yet. Registry source provenance and modifications are recorded in `THIRD-PARTY-NOTICES.md`. UI dependencies belong only to the example.
 
 ## References
 
