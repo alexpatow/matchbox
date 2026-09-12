@@ -9,3 +9,11 @@ export type {
   ValidationIssue,
   ValidationResult,
 } from "./parser/index.js";
+export { parseDatasets } from "./dataset/index.js";
+export type {
+  DatasetConfig,
+  DatasetExample,
+  DatasetIssue,
+  DatasetResult,
+  DatasetSource,
+} from "./dataset/index.js";

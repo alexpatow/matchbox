@@ -19,3 +19,5 @@ const trainingMetadata = JSON.stringify(task);
 See the repository's [parser API guide](../../docs/parser-api.md) for the supported subset, validation results, and versioned metadata format. Task definitions do not perform inference.
 
 `bun run build` emits browser-compatible ESM and TypeScript declarations in `dist/`. Zod is an external dependency. Consumers import through the public export map and do not depend on Bun. Runtime source has no ambient Node, Bun, or DOM types.
+
+`parseDatasets` validates separate JSONL training and evaluation sources against a task. See the [dataset format guide](../../docs/dataset-format.md) for authoring rules, diagnostics, and versioning.

@@ -6,7 +6,7 @@ Matchbox is a framework for training tiny, task-specific models from examples an
 
 The idea is **regex++**: use small learned models where fuzzy or contextual input makes pattern matching brittle, but the output is small, rigid, and machine-readable.
 
-**Status:** The repository foundation includes a TypeScript library, a browser-only React example, and build/test tooling. `defineParser` now supports constrained Zod task definitions, validation, and serializable training metadata. Training commands and generated inference APIs below remain proposals. No training pipeline, model runtime, or benchmark results exist yet.
+**Status:** The repository foundation includes a TypeScript library, a browser-only React example, and build/test tooling. `defineParser` now supports constrained Zod task definitions, validation, and serializable training metadata. `parseDatasets` validates versioned JSONL train/eval sources with typed results and source/line diagnostics. See the [dataset format guide](docs/dataset-format.md). Training commands and generated inference APIs below remain proposals. No training pipeline, model runtime, or benchmark results exist yet.
 
 ## Local development
 
