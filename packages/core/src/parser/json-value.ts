@@ -52,6 +52,7 @@ function isPlainObject(value: object): boolean {
   const constructor = Object.getOwnPropertyDescriptor(prototype, "constructor")?.value;
   return (
     typeof constructor === "function" &&
-    Function.prototype.toString.call(constructor) === Function.prototype.toString.call(Object)
+    Function.prototype.toString.call(constructor) === Function.prototype.toString.call(Object) &&
+    Object.getOwnPropertyDescriptor(constructor, "prototype")?.value === prototype
   );
 }

@@ -83,3 +83,23 @@ test("rejects class instances and custom prototypes in either realm", () => {
     if (!result.success) expect(result.issues[0]?.code).toBe("invalid_json");
   }
 });
+
+test("rejects constructor-spoofed prototypes before reading inherited fields", () => {
+  for (const constructor of [Object, runInNewContext("Object")]) {
+    let invoked = false;
+    const prototype = Object.create(null, {
+      constructor: { value: constructor },
+      owner: {
+        get() {
+          invoked = true;
+          return "alice";
+        },
+      },
+    });
+    const value = Object.assign(Object.create(prototype), { country: "SE", minimum: 0 });
+    const result = makeParser().validateOutput(value);
+    expect(invoked).toBe(false);
+    expect(result.success).toBe(false);
+    if (!result.success) expect(result.issues[0]?.code).toBe("invalid_json");
+  }
+});
