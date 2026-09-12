@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { version } from "@matchbox-ai/core";
 import { Button } from "@/components/ui/button";
+import { checkPackage } from "@/lib";
 
 export function App() {
   const [checks, setChecks] = useState(0);
@@ -31,10 +32,17 @@ export function App() {
           <code>{'import { version } from "@matchbox-ai/core";'}</code>
         </pre>
         <div className="check-actions">
-          <Button onClick={() => setChecks((count) => count + 1)}>Check package import</Button>
+          <Button
+            onClick={() => {
+              checkPackage();
+              setChecks((count) => count + 1);
+            }}
+          >
+            Check package import
+          </Button>
           <output aria-live="polite">
             {checks > 0
-              ? `Check ${checks} passed. Core v${version} is available in this browser.`
+              ? `Check ${checks} passed. Core v${version} passed task validation in this browser.`
               : `Core v${version} is loaded. Run the browser check.`}
           </output>
         </div>

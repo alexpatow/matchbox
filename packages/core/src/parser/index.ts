@@ -1,5 +1,4 @@
-export { version } from "./version.js";
-export { defineParser } from "./parser/index.js";
+export { defineParser } from "./define-parser.js";
 export type {
   FieldMetadata,
   InferOutput,
@@ -8,4 +7,4 @@ export type {
   ParserMetadata,
   ValidationIssue,
   ValidationResult,
-} from "./parser/index.js";
+} from "./types.js";

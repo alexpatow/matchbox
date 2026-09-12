@@ -6,7 +6,7 @@ Matchbox is a framework for training tiny, task-specific models from examples an
 
 The idea is **regex++**: use small learned models where fuzzy or contextual input makes pattern matching brittle, but the output is small, rigid, and machine-readable.
 
-**Status:** The repository foundation includes a TypeScript library, a browser-only React example, and build/test tooling. Parser APIs and training commands below remain proposals. No training pipeline, model runtime, or benchmark results exist yet.
+**Status:** The repository foundation includes a TypeScript library, a browser-only React example, and build/test tooling. `defineParser` now supports constrained Zod task definitions, validation, and serializable training metadata. Training commands and generated inference APIs below remain proposals. No training pipeline, model runtime, or benchmark results exist yet.
 
 ## Local development
 
@@ -142,24 +142,24 @@ These interfaces are illustrative and subject to the findings of the first proof
 
 ### Define a task
 
-Start with `defineParser`, string inputs, and a constrained structured output schema. The example below deliberately supports conjunctions only; the filter vertical will also investigate nested AND/OR expressions.
+The implemented `defineParser` accepts explicit string inputs and a constrained structured output schema. See the [parser API guide](docs/parser-api.md) for the supported subset and validation methods. The example below deliberately supports conjunctions only; the filter vertical will also investigate nested AND/OR expressions.
 
 ```ts
 import { defineParser } from "@matchbox-ai/core";
 import { z } from "zod";
 
 const predicate = z.discriminatedUnion("field", [
-  z.object({
+  z.strictObject({
     field: z.literal("status"),
     operator: z.enum(["eq", "neq"]),
     value: z.enum(["active", "inactive", "churned"]),
   }),
-  z.object({
+  z.strictObject({
     field: z.literal("country"),
     operator: z.enum(["eq", "neq"]),
     value: z.enum(["SE", "DE"]),
   }),
-  z.object({
+  z.strictObject({
     field: z.literal("arr"),
     operator: z.enum(["eq", "gt", "gte", "lt", "lte"]),
     value: z.number().finite().nonnegative(),
@@ -168,7 +168,7 @@ const predicate = z.discriminatedUnion("field", [
 
 export default defineParser({
   input: z.string(),
-  output: z.object({ and: z.array(predicate).min(1) }),
+  output: z.strictObject({ and: z.array(predicate).min(1) }),
   fields: {
     status: { type: "enum" },
     country: { type: "country" },
@@ -180,7 +180,7 @@ export default defineParser({
 });
 ```
 
-Supported schema constructs and their serialization into training metadata remain design work. Field metadata helps describe the task; the output schema remains the contract. Currency conventions, relative dates, and references such as “me” must have explicit application context.
+The v0 schema subset and metadata format are documented in the [parser API guide](docs/parser-api.md). Field metadata helps describe the task; the output schema remains the contract. Currency conventions, relative dates, and references such as “me” must have explicit application context.
 
 ### Provide examples and evals
 
