@@ -1,4 +1,5 @@
 import { expect, test } from "bun:test";
+import { runInNewContext } from "node:vm";
 import { defineParser } from "@matchbox-ai/core";
 import { z } from "zod";
 import { makeParser } from "./parser-fixture";
@@ -54,4 +55,31 @@ test("rejects sparse arrays, symbol keys, and explicit undefined optional values
   expect(makeParser().validateOutput({ country: "SE", minimum: 0, owner: undefined }).success).toBe(
     false,
   );
+});
+
+test("accepts nested JSON objects and arrays from another realm", () => {
+  const value: unknown = runInNewContext(`JSON.parse('{"items":[{"value":42}]}')`);
+  expect(Object.getPrototypeOf(value)).not.toBe(Object.prototype);
+  const task = defineParser({
+    input: z.string(),
+    output: z.strictObject({ items: z.array(z.strictObject({ value: z.number() })) }),
+  });
+  expect(task.validateOutput(value)).toEqual({ success: true, data: { items: [{ value: 42 }] } });
+});
+
+test("rejects class instances and custom prototypes in either realm", () => {
+  class Output {
+    country = "SE";
+    minimum = 0;
+  }
+  for (const value of [
+    new Output(),
+    runInNewContext('new (class { country = "SE"; minimum = 0; })()'),
+    Object.assign(Object.create({}), { country: "SE", minimum: 0 }),
+    Object.assign(Object.create(Object.create(null)), { country: "SE", minimum: 0 }),
+  ]) {
+    const result = makeParser().validateOutput(value);
+    expect(result.success).toBe(false);
+    if (!result.success) expect(result.issues[0]?.code).toBe("invalid_json");
+  }
 });

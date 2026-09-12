@@ -14,11 +14,7 @@ export function jsonIssue(
   if (ancestors.has(value)) return fail("Circular values are not JSON.");
   if (ancestors.size >= 64) return fail("JSON nesting exceeds 64 levels.");
   const array = Array.isArray(value);
-  if (
-    !array &&
-    Object.getPrototypeOf(value) !== Object.prototype &&
-    Object.getPrototypeOf(value) !== null
-  ) {
+  if (!array && !isPlainObject(value)) {
     return fail("Expected a plain JSON object.");
   }
   const next = new Set(ancestors).add(value);
@@ -45,4 +41,17 @@ export function jsonIssue(
     const issue = jsonIssue(descriptor.value, [...path, array ? Number(key) : key], next);
     if (issue) return issue;
   }
+}
+
+function isPlainObject(value: object): boolean {
+  const prototype = Object.getPrototypeOf(value);
+  if (prototype === null) return true;
+  if (Object.getPrototypeOf(prototype) !== null) return false;
+  // Each realm has its own Object.prototype. Inspect its native constructor
+  // without invoking an inherited getter or accepting arbitrary custom prototypes.
+  const constructor = Object.getOwnPropertyDescriptor(prototype, "constructor")?.value;
+  return (
+    typeof constructor === "function" &&
+    Function.prototype.toString.call(constructor) === Function.prototype.toString.call(Object)
+  );
 }
