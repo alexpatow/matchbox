@@ -1,0 +1,6 @@
+[install]
+linker = "isolated"
+auto = "disable"
+
+[test]
+root = "tests"

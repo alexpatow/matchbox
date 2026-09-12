@@ -1,0 +1,35 @@
+{
+  "name": "matchbox",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ],
+  "type": "module",
+  "scripts": {
+    "dev": "bun run build:core && bun run --parallel --filter \"*\" dev",
+    "build:core": "bun run --filter @matchbox-ai/core build",
+    "build": "bun run --filter \"*\" build",
+    "lint": "oxlint --deny-warnings .",
+    "lint:fix": "oxlint --fix .",
+    "format": "oxfmt --write .",
+    "format:check": "oxfmt --check .",
+    "typecheck": "bun run build:core && tsc --noEmit && bun run --filter \"*\" typecheck",
+    "test": "bun run build:core && bun test ./tests",
+    "test:browser": "playwright test",
+    "check": "bun run lint && bun run format:check && bun run typecheck && bun run test && bun run build",
+    "preview": "bun run --filter @matchbox-ai/filters-example preview"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@types/bun": "1.4.2",
+    "oxfmt": "0.67.0",
+    "oxlint": "1.82.0",
+    "typescript": "7.0.2"
+  },
+  "engines": {
+    "bun": ">=1.4.2",
+    "node": ">=24"
+  },
+  "packageManager": "bun@1.4.2"
+}
