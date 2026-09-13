@@ -1,6 +1,6 @@
 # The first examples-to-browser flow
 
-Matchbox now has a working, deliberately constrained filter proof. It learns clause recognition from examples, compiles boolean structure deterministically, validates the result against the application's task, and runs in the browser.
+Matchbox now has a working, deliberately constrained filter proof. It learns token recognition from examples, compiles boolean structure deterministically, validates the result against the application's task, and runs in the browser.
 
 ## Run it
 
@@ -29,21 +29,23 @@ The filter example has a small conventional layout:
 ```text
 examples/filters/
   matchbox.config.ts
+  recipe.ts
   data/train.jsonl
   data/validation.jsonl
   data/evals.jsonl
   data/challenges.json
   src/filter/task.ts
   src/filter/baseline.ts
+  src/filter/decode.ts
   src/generated/filters.matchbox
   src/generated/filters.d.matchbox.ts
   src/generated/filters.ts
   src/generated/filters.matchbox.report.json
 ```
 
-The application owns its fields, value types, strict Zod schema, and deterministic table predicate. The configuration points at those files and sets validation accuracy and artifact size requirements. Training examples currently contain single predicates. Validation and evaluation can contain composed ASTs. Unsupported training output shapes fail clearly rather than silently training the wrong task.
+The application owns its fields, value types, strict Zod schema, token-supervision recipe, AST decoder, and deterministic table predicate. The configuration points at these files and sets validation accuracy and artifact size requirements. The trainer checks that supplied annotations decode to the example output before fitting. Training now includes both predicates and explicit compositions.
 
-The trainer also emits `centroid.matchbox` and `linear.matchbox` comparison artifacts for the browser benchmark. They are dynamically imported only when the benchmark is requested.
+All examples use the TensorFlow sequence trainer and one artifact format. The handwritten centroid/linear trainers and their comparison artifacts have been removed. The browser benchmark retains the deterministic rule baseline.
 
 Generated files stay out of Git and are recreated by the root build scripts. Retrain after changing datasets or the task. The dev server watches generated imports, but it does not retrain on every dataset edit. A changed task schema fails artifact initialization with a retraining message.
 
@@ -68,7 +70,7 @@ if (result.status === "ok") {
 }
 ```
 
-The artifact is versioned JSON containing int8-quantized weights, feature vocabulary, predicate templates, training-derived field tokens, task metadata, and a relative task-module path. It is not a custom programming language. The Vite load hook converts it to an ESM module which initializes the runtime against the task. The task remains a build dependency and must travel with the generated artifact. The generated `.ts` wrapper provides the same typed API for bundlers without the plugin.
+The artifact is versioned JSON containing int8 neural weights, per-tensor scales and dimensions, token vocabulary, labels, task metadata, and relative task/decoder module paths. The Vite hook converts it into an ESM module that initializes portable inference against the application task and decoder. Those modules remain build dependencies and travel with the artifact. The generated `.ts` wrapper offers the same typed API for other bundlers.
 
 A static import includes the model in the importing module's dependency graph. A dynamic import loads it lazily. Vite hashes the emitted chunk for updates; ESM caches the module and initialized model. There is no persistent offline cache or service worker yet.
 
@@ -93,15 +95,15 @@ The example recognizes active, inactive, and churned status; exclusion of churne
 
 The AST is a predicate, an AND of predicates, or an OR of predicates/AND groups. AND binds more tightly than OR. Limits are eight clauses, 500 input characters, and bounded schema arrays. Exclusion uses `neq`; there is no general recursive NOT expression or executable query output.
 
-Explicit `and` and `or` joins work. Training-derived field tokens reject detected mixed-field clauses that would otherwise lose constraints. This is not a guarantee of semantic completeness. Implicit joins, dates, ownership, ranges, parentheses, arbitrary nesting, general negation, and unseen semantic classes remain research work. The challenge report makes those limitations visible.
+Explicit `and` and `or` joins work. The AST decoder rejects recognized mixed-field clauses that would otherwise lose constraints. This is not a guarantee of semantic completeness. Implicit joins, dates, ownership, ranges, parentheses, arbitrary nesting, general negation, and unseen semantic classes remain research work. The challenge report makes those limitations visible.
 
-The confidence value is a heuristic using score separation and vocabulary coverage. It is not calibrated. Unknown inputs can still be misclassified, so the example is a preview UI. Schema validity guarantees structure and allowed values, not that an interpretation matches the user's intent.
+The confidence value is the minimum token softmax score. Unknown vocabulary tokens cause abstention. It is not calibrated. Unknown inputs can still be misclassified, so the example is a preview UI. Schema validity guarantees structure and allowed values, not that an interpretation matches the user's intent.
 
 ## Training and evaluation
 
-The trainer fits its vocabulary and field tokens on training data only. It compares nearest-centroid classification and full-batch softmax regression over normalized word and bigram features. Both are quantized before evaluation. The compiler and numeric normalizer are shared across candidates. No teacher, remote service, or separate Python environment is used.
+The trainer fits its vocabulary on training data only and trains learned embeddings plus a context-window MLP with TensorFlow's native CPU backend under Bun. A training-only recipe supplies semantic token annotations. The deterministic decoder composes their meaning into a strict AST. See the [neural training guide](neural-training.md) for the shared architecture and supervision contract.
 
-The smallest candidate meeting validation accuracy and artifact size thresholds is packaged. The held-out eval set is scored after selection. Reports include exact structural match, invalid-output rate, abstention, confidence bins, per-example failures, dataset hashes, and an artifact hash. Object key order does not affect exact match; array order and boolean structure do.
+The quantized model must pass validation accuracy and size requirements before packaging. Evaluation labels do not influence selection. Reports compare untrained, float, quantized, and deterministic results, including exact structural match, abstention, per-example failures, loss history, dataset hashes, and artifact hashes. Object key order does not affect exact match; array order and boolean structure do.
 
 CLI evaluation currently uses the full project configuration, including its training and validation files. No candidate is packaged when requirements fail; an existing artifact remains untouched and the command exits nonzero. Build scripts stop on that failure. Artifact size is measured as serialized bytes, including metadata, and excludes the JavaScript runtime, Zod, and the application.
 

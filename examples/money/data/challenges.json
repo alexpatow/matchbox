@@ -1,0 +1,58 @@
+[
+  {
+    "input": "$15",
+    "output": null
+  },
+  {
+    "input": "between 10 and 20 euros",
+    "output": null
+  },
+  {
+    "input": "€10 or €20",
+    "output": null
+  },
+  {
+    "input": "under 50 euros",
+    "output": null
+  },
+  {
+    "input": "over 30 pounds",
+    "output": null
+  },
+  {
+    "input": "EUR -15",
+    "output": null
+  },
+  {
+    "input": "1,23 EUR",
+    "output": null
+  },
+  {
+    "input": "fifteen",
+    "output": null
+  },
+  {
+    "input": "EUR 10 USD",
+    "output": null
+  },
+  {
+    "input": "€10 plus €20",
+    "output": null
+  },
+  {
+    "input": "two hundred euros",
+    "output": null
+  },
+  {
+    "input": "send 15 euros to Alice",
+    "output": null
+  },
+  {
+    "input": "EUR 1.234",
+    "output": null
+  },
+  {
+    "input": "€5 €10",
+    "output": null
+  }
+]

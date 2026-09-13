@@ -1,0 +1,24 @@
+{"input": "€27.35", "output": {"amount": 27.35, "currency": "EUR", "approximate": false}}
+{"input": "USD 846.23", "output": {"amount": 846.23, "currency": "USD", "approximate": false}}
+{"input": "about £ 39.95", "output": {"amount": 39.95, "currency": "GBP", "approximate": true}}
+{"input": "SEK 8,765.43", "output": {"amount": 8765.43, "currency": "SEK", "approximate": false}}
+{"input": "a budget of 73 dollars", "output": {"amount": 73, "currency": "USD", "approximate": false}}
+{"input": "we paid around 91 euros", "output": {"amount": 91, "currency": "EUR", "approximate": true}}
+{"input": "the price is 142 pounds", "output": {"amount": 142, "currency": "GBP", "approximate": false}}
+{"input": "invoice 31415 totals € 28.65", "output": {"amount": 28.65, "currency": "EUR", "approximate": false}}
+{"input": "in 2026 we paid USD 59.20", "output": {"amount": 59.2, "currency": "USD", "approximate": false}}
+{"input": "the budget is about 63 thousand kronor", "output": {"amount": 63000, "currency": "SEK", "approximate": true}}
+{"input": "a price of roughly 42 euros", "output": {"amount": 42, "currency": "EUR", "approximate": true}}
+{"input": "around £ 17.25", "output": {"amount": 17.25, "currency": "GBP", "approximate": true}}
+{"input": "83k EUR", "output": {"amount": 83000, "currency": "EUR", "approximate": false}}
+{"input": "7m USD", "output": {"amount": 7000000, "currency": "USD", "approximate": false}}
+{"input": "ninety eight euros", "output": {"amount": 98, "currency": "EUR", "approximate": false}}
+{"input": "sixty four dollars", "output": {"amount": 64, "currency": "USD", "approximate": false}}
+{"input": "thirty seven pounds", "output": {"amount": 37, "currency": "GBP", "approximate": false}}
+{"input": "eighty nine kronor", "output": {"amount": 89, "currency": "SEK", "approximate": false}}
+{"input": "around twenty six grand in euros", "output": {"amount": 26000, "currency": "EUR", "approximate": true}}
+{"input": "we paid SEK 681.45", "output": {"amount": 681.45, "currency": "SEK", "approximate": false}}
+{"input": "£ 206.17 for order 97531", "output": {"amount": 206.17, "currency": "GBP", "approximate": false}}
+{"input": "about 4,321.09 dollars", "output": {"amount": 4321.09, "currency": "USD", "approximate": true}}
+{"input": "a price of forty eight euros", "output": {"amount": 48, "currency": "EUR", "approximate": false}}
+{"input": "the budget is 1.25 million dollars", "output": {"amount": 1250000, "currency": "USD", "approximate": false}}

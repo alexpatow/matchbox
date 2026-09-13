@@ -5,3 +5,4 @@ export type { Customer } from "./customers.js";
 export { matchesFilter } from "./apply-filter.js";
 export { loadFilters } from "./load-filters.js";
 export { benchmark } from "./benchmark.js";
+export { default as decode } from "./decode.js";

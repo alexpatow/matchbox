@@ -174,3 +174,235 @@
 {"input":"annual recurring revenue = 20000","output":{"field":"arr","operator":"eq","value":20000}}
 {"input":"customers with ARR = 100k","output":{"field":"arr","operator":"eq","value":100000}}
 {"input":"show accounts with revenue = 500","output":{"field":"arr","operator":"eq","value":500}}
+{"input":"ARR over €1.25m","output":{"field":"arr","operator":"gt","value":1250000}}
+{"input":"ARR over $2,500","output":{"field":"arr","operator":"gt","value":2500}}
+{"input":"annual recurring revenue over €1.25m","output":{"field":"arr","operator":"gt","value":1250000}}
+{"input":"annual recurring revenue over $2,500","output":{"field":"arr","operator":"gt","value":2500}}
+{"input":"customers with ARR over €1.25m","output":{"field":"arr","operator":"gt","value":1250000}}
+{"input":"customers with ARR over $2,500","output":{"field":"arr","operator":"gt","value":2500}}
+{"input":"show accounts with revenue over €1.25m","output":{"field":"arr","operator":"gt","value":1250000}}
+{"input":"show accounts with revenue over $2,500","output":{"field":"arr","operator":"gt","value":2500}}
+{"input":"ARR above €1.25m","output":{"field":"arr","operator":"gt","value":1250000}}
+{"input":"ARR above $2,500","output":{"field":"arr","operator":"gt","value":2500}}
+{"input":"annual recurring revenue above €1.25m","output":{"field":"arr","operator":"gt","value":1250000}}
+{"input":"annual recurring revenue above $2,500","output":{"field":"arr","operator":"gt","value":2500}}
+{"input":"customers with ARR above €1.25m","output":{"field":"arr","operator":"gt","value":1250000}}
+{"input":"customers with ARR above $2,500","output":{"field":"arr","operator":"gt","value":2500}}
+{"input":"show accounts with revenue above €1.25m","output":{"field":"arr","operator":"gt","value":1250000}}
+{"input":"show accounts with revenue above $2,500","output":{"field":"arr","operator":"gt","value":2500}}
+{"input":"ARR greater than €1.25m","output":{"field":"arr","operator":"gt","value":1250000}}
+{"input":"ARR greater than $2,500","output":{"field":"arr","operator":"gt","value":2500}}
+{"input":"annual recurring revenue greater than €1.25m","output":{"field":"arr","operator":"gt","value":1250000}}
+{"input":"annual recurring revenue greater than $2,500","output":{"field":"arr","operator":"gt","value":2500}}
+{"input":"customers with ARR greater than €1.25m","output":{"field":"arr","operator":"gt","value":1250000}}
+{"input":"customers with ARR greater than $2,500","output":{"field":"arr","operator":"gt","value":2500}}
+{"input":"show accounts with revenue greater than €1.25m","output":{"field":"arr","operator":"gt","value":1250000}}
+{"input":"show accounts with revenue greater than $2,500","output":{"field":"arr","operator":"gt","value":2500}}
+{"input":"ARR more than €1.25m","output":{"field":"arr","operator":"gt","value":1250000}}
+{"input":"ARR more than $2,500","output":{"field":"arr","operator":"gt","value":2500}}
+{"input":"annual recurring revenue more than €1.25m","output":{"field":"arr","operator":"gt","value":1250000}}
+{"input":"annual recurring revenue more than $2,500","output":{"field":"arr","operator":"gt","value":2500}}
+{"input":"customers with ARR more than €1.25m","output":{"field":"arr","operator":"gt","value":1250000}}
+{"input":"customers with ARR more than $2,500","output":{"field":"arr","operator":"gt","value":2500}}
+{"input":"show accounts with revenue more than €1.25m","output":{"field":"arr","operator":"gt","value":1250000}}
+{"input":"show accounts with revenue more than $2,500","output":{"field":"arr","operator":"gt","value":2500}}
+{"input":"ARR > €1.25m","output":{"field":"arr","operator":"gt","value":1250000}}
+{"input":"ARR > $2,500","output":{"field":"arr","operator":"gt","value":2500}}
+{"input":"annual recurring revenue > €1.25m","output":{"field":"arr","operator":"gt","value":1250000}}
+{"input":"annual recurring revenue > $2,500","output":{"field":"arr","operator":"gt","value":2500}}
+{"input":"customers with ARR > €1.25m","output":{"field":"arr","operator":"gt","value":1250000}}
+{"input":"customers with ARR > $2,500","output":{"field":"arr","operator":"gt","value":2500}}
+{"input":"show accounts with revenue > €1.25m","output":{"field":"arr","operator":"gt","value":1250000}}
+{"input":"show accounts with revenue > $2,500","output":{"field":"arr","operator":"gt","value":2500}}
+{"input":"ARR at least €1.25m","output":{"field":"arr","operator":"gte","value":1250000}}
+{"input":"ARR at least $2,500","output":{"field":"arr","operator":"gte","value":2500}}
+{"input":"annual recurring revenue at least €1.25m","output":{"field":"arr","operator":"gte","value":1250000}}
+{"input":"annual recurring revenue at least $2,500","output":{"field":"arr","operator":"gte","value":2500}}
+{"input":"customers with ARR at least €1.25m","output":{"field":"arr","operator":"gte","value":1250000}}
+{"input":"customers with ARR at least $2,500","output":{"field":"arr","operator":"gte","value":2500}}
+{"input":"show accounts with revenue at least €1.25m","output":{"field":"arr","operator":"gte","value":1250000}}
+{"input":"show accounts with revenue at least $2,500","output":{"field":"arr","operator":"gte","value":2500}}
+{"input":"ARR no less than €1.25m","output":{"field":"arr","operator":"gte","value":1250000}}
+{"input":"ARR no less than $2,500","output":{"field":"arr","operator":"gte","value":2500}}
+{"input":"annual recurring revenue no less than €1.25m","output":{"field":"arr","operator":"gte","value":1250000}}
+{"input":"annual recurring revenue no less than $2,500","output":{"field":"arr","operator":"gte","value":2500}}
+{"input":"customers with ARR no less than €1.25m","output":{"field":"arr","operator":"gte","value":1250000}}
+{"input":"customers with ARR no less than $2,500","output":{"field":"arr","operator":"gte","value":2500}}
+{"input":"show accounts with revenue no less than €1.25m","output":{"field":"arr","operator":"gte","value":1250000}}
+{"input":"show accounts with revenue no less than $2,500","output":{"field":"arr","operator":"gte","value":2500}}
+{"input":"ARR greater than or equal to €1.25m","output":{"field":"arr","operator":"gte","value":1250000}}
+{"input":"ARR greater than or equal to $2,500","output":{"field":"arr","operator":"gte","value":2500}}
+{"input":"annual recurring revenue greater than or equal to €1.25m","output":{"field":"arr","operator":"gte","value":1250000}}
+{"input":"annual recurring revenue greater than or equal to $2,500","output":{"field":"arr","operator":"gte","value":2500}}
+{"input":"customers with ARR greater than or equal to €1.25m","output":{"field":"arr","operator":"gte","value":1250000}}
+{"input":"customers with ARR greater than or equal to $2,500","output":{"field":"arr","operator":"gte","value":2500}}
+{"input":"show accounts with revenue greater than or equal to €1.25m","output":{"field":"arr","operator":"gte","value":1250000}}
+{"input":"show accounts with revenue greater than or equal to $2,500","output":{"field":"arr","operator":"gte","value":2500}}
+{"input":"ARR >= €1.25m","output":{"field":"arr","operator":"gte","value":1250000}}
+{"input":"ARR >= $2,500","output":{"field":"arr","operator":"gte","value":2500}}
+{"input":"annual recurring revenue >= €1.25m","output":{"field":"arr","operator":"gte","value":1250000}}
+{"input":"annual recurring revenue >= $2,500","output":{"field":"arr","operator":"gte","value":2500}}
+{"input":"customers with ARR >= €1.25m","output":{"field":"arr","operator":"gte","value":1250000}}
+{"input":"customers with ARR >= $2,500","output":{"field":"arr","operator":"gte","value":2500}}
+{"input":"show accounts with revenue >= €1.25m","output":{"field":"arr","operator":"gte","value":1250000}}
+{"input":"show accounts with revenue >= $2,500","output":{"field":"arr","operator":"gte","value":2500}}
+{"input":"ARR under €1.25m","output":{"field":"arr","operator":"lt","value":1250000}}
+{"input":"ARR under $2,500","output":{"field":"arr","operator":"lt","value":2500}}
+{"input":"annual recurring revenue under €1.25m","output":{"field":"arr","operator":"lt","value":1250000}}
+{"input":"annual recurring revenue under $2,500","output":{"field":"arr","operator":"lt","value":2500}}
+{"input":"customers with ARR under €1.25m","output":{"field":"arr","operator":"lt","value":1250000}}
+{"input":"customers with ARR under $2,500","output":{"field":"arr","operator":"lt","value":2500}}
+{"input":"show accounts with revenue under €1.25m","output":{"field":"arr","operator":"lt","value":1250000}}
+{"input":"show accounts with revenue under $2,500","output":{"field":"arr","operator":"lt","value":2500}}
+{"input":"ARR below €1.25m","output":{"field":"arr","operator":"lt","value":1250000}}
+{"input":"ARR below $2,500","output":{"field":"arr","operator":"lt","value":2500}}
+{"input":"annual recurring revenue below €1.25m","output":{"field":"arr","operator":"lt","value":1250000}}
+{"input":"annual recurring revenue below $2,500","output":{"field":"arr","operator":"lt","value":2500}}
+{"input":"customers with ARR below €1.25m","output":{"field":"arr","operator":"lt","value":1250000}}
+{"input":"customers with ARR below $2,500","output":{"field":"arr","operator":"lt","value":2500}}
+{"input":"show accounts with revenue below €1.25m","output":{"field":"arr","operator":"lt","value":1250000}}
+{"input":"show accounts with revenue below $2,500","output":{"field":"arr","operator":"lt","value":2500}}
+{"input":"ARR less than €1.25m","output":{"field":"arr","operator":"lt","value":1250000}}
+{"input":"ARR less than $2,500","output":{"field":"arr","operator":"lt","value":2500}}
+{"input":"annual recurring revenue less than €1.25m","output":{"field":"arr","operator":"lt","value":1250000}}
+{"input":"annual recurring revenue less than $2,500","output":{"field":"arr","operator":"lt","value":2500}}
+{"input":"customers with ARR less than €1.25m","output":{"field":"arr","operator":"lt","value":1250000}}
+{"input":"customers with ARR less than $2,500","output":{"field":"arr","operator":"lt","value":2500}}
+{"input":"show accounts with revenue less than €1.25m","output":{"field":"arr","operator":"lt","value":1250000}}
+{"input":"show accounts with revenue less than $2,500","output":{"field":"arr","operator":"lt","value":2500}}
+{"input":"ARR < €1.25m","output":{"field":"arr","operator":"lt","value":1250000}}
+{"input":"ARR < $2,500","output":{"field":"arr","operator":"lt","value":2500}}
+{"input":"annual recurring revenue < €1.25m","output":{"field":"arr","operator":"lt","value":1250000}}
+{"input":"annual recurring revenue < $2,500","output":{"field":"arr","operator":"lt","value":2500}}
+{"input":"customers with ARR < €1.25m","output":{"field":"arr","operator":"lt","value":1250000}}
+{"input":"customers with ARR < $2,500","output":{"field":"arr","operator":"lt","value":2500}}
+{"input":"show accounts with revenue < €1.25m","output":{"field":"arr","operator":"lt","value":1250000}}
+{"input":"show accounts with revenue < $2,500","output":{"field":"arr","operator":"lt","value":2500}}
+{"input":"ARR at most €1.25m","output":{"field":"arr","operator":"lte","value":1250000}}
+{"input":"ARR at most $2,500","output":{"field":"arr","operator":"lte","value":2500}}
+{"input":"annual recurring revenue at most €1.25m","output":{"field":"arr","operator":"lte","value":1250000}}
+{"input":"annual recurring revenue at most $2,500","output":{"field":"arr","operator":"lte","value":2500}}
+{"input":"customers with ARR at most €1.25m","output":{"field":"arr","operator":"lte","value":1250000}}
+{"input":"customers with ARR at most $2,500","output":{"field":"arr","operator":"lte","value":2500}}
+{"input":"show accounts with revenue at most €1.25m","output":{"field":"arr","operator":"lte","value":1250000}}
+{"input":"show accounts with revenue at most $2,500","output":{"field":"arr","operator":"lte","value":2500}}
+{"input":"ARR no more than €1.25m","output":{"field":"arr","operator":"lte","value":1250000}}
+{"input":"ARR no more than $2,500","output":{"field":"arr","operator":"lte","value":2500}}
+{"input":"annual recurring revenue no more than €1.25m","output":{"field":"arr","operator":"lte","value":1250000}}
+{"input":"annual recurring revenue no more than $2,500","output":{"field":"arr","operator":"lte","value":2500}}
+{"input":"customers with ARR no more than €1.25m","output":{"field":"arr","operator":"lte","value":1250000}}
+{"input":"customers with ARR no more than $2,500","output":{"field":"arr","operator":"lte","value":2500}}
+{"input":"show accounts with revenue no more than €1.25m","output":{"field":"arr","operator":"lte","value":1250000}}
+{"input":"show accounts with revenue no more than $2,500","output":{"field":"arr","operator":"lte","value":2500}}
+{"input":"ARR less than or equal to €1.25m","output":{"field":"arr","operator":"lte","value":1250000}}
+{"input":"ARR less than or equal to $2,500","output":{"field":"arr","operator":"lte","value":2500}}
+{"input":"annual recurring revenue less than or equal to €1.25m","output":{"field":"arr","operator":"lte","value":1250000}}
+{"input":"annual recurring revenue less than or equal to $2,500","output":{"field":"arr","operator":"lte","value":2500}}
+{"input":"customers with ARR less than or equal to €1.25m","output":{"field":"arr","operator":"lte","value":1250000}}
+{"input":"customers with ARR less than or equal to $2,500","output":{"field":"arr","operator":"lte","value":2500}}
+{"input":"show accounts with revenue less than or equal to €1.25m","output":{"field":"arr","operator":"lte","value":1250000}}
+{"input":"show accounts with revenue less than or equal to $2,500","output":{"field":"arr","operator":"lte","value":2500}}
+{"input":"ARR <= €1.25m","output":{"field":"arr","operator":"lte","value":1250000}}
+{"input":"ARR <= $2,500","output":{"field":"arr","operator":"lte","value":2500}}
+{"input":"annual recurring revenue <= €1.25m","output":{"field":"arr","operator":"lte","value":1250000}}
+{"input":"annual recurring revenue <= $2,500","output":{"field":"arr","operator":"lte","value":2500}}
+{"input":"customers with ARR <= €1.25m","output":{"field":"arr","operator":"lte","value":1250000}}
+{"input":"customers with ARR <= $2,500","output":{"field":"arr","operator":"lte","value":2500}}
+{"input":"show accounts with revenue <= €1.25m","output":{"field":"arr","operator":"lte","value":1250000}}
+{"input":"show accounts with revenue <= $2,500","output":{"field":"arr","operator":"lte","value":2500}}
+{"input":"ARR exactly €1.25m","output":{"field":"arr","operator":"eq","value":1250000}}
+{"input":"ARR exactly $2,500","output":{"field":"arr","operator":"eq","value":2500}}
+{"input":"annual recurring revenue exactly €1.25m","output":{"field":"arr","operator":"eq","value":1250000}}
+{"input":"annual recurring revenue exactly $2,500","output":{"field":"arr","operator":"eq","value":2500}}
+{"input":"customers with ARR exactly €1.25m","output":{"field":"arr","operator":"eq","value":1250000}}
+{"input":"customers with ARR exactly $2,500","output":{"field":"arr","operator":"eq","value":2500}}
+{"input":"show accounts with revenue exactly €1.25m","output":{"field":"arr","operator":"eq","value":1250000}}
+{"input":"show accounts with revenue exactly $2,500","output":{"field":"arr","operator":"eq","value":2500}}
+{"input":"ARR equal to €1.25m","output":{"field":"arr","operator":"eq","value":1250000}}
+{"input":"ARR equal to $2,500","output":{"field":"arr","operator":"eq","value":2500}}
+{"input":"annual recurring revenue equal to €1.25m","output":{"field":"arr","operator":"eq","value":1250000}}
+{"input":"annual recurring revenue equal to $2,500","output":{"field":"arr","operator":"eq","value":2500}}
+{"input":"customers with ARR equal to €1.25m","output":{"field":"arr","operator":"eq","value":1250000}}
+{"input":"customers with ARR equal to $2,500","output":{"field":"arr","operator":"eq","value":2500}}
+{"input":"show accounts with revenue equal to €1.25m","output":{"field":"arr","operator":"eq","value":1250000}}
+{"input":"show accounts with revenue equal to $2,500","output":{"field":"arr","operator":"eq","value":2500}}
+{"input":"ARR = €1.25m","output":{"field":"arr","operator":"eq","value":1250000}}
+{"input":"ARR = $2,500","output":{"field":"arr","operator":"eq","value":2500}}
+{"input":"annual recurring revenue = €1.25m","output":{"field":"arr","operator":"eq","value":1250000}}
+{"input":"annual recurring revenue = $2,500","output":{"field":"arr","operator":"eq","value":2500}}
+{"input":"customers with ARR = €1.25m","output":{"field":"arr","operator":"eq","value":1250000}}
+{"input":"customers with ARR = $2,500","output":{"field":"arr","operator":"eq","value":2500}}
+{"input":"show accounts with revenue = €1.25m","output":{"field":"arr","operator":"eq","value":1250000}}
+{"input":"show accounts with revenue = $2,500","output":{"field":"arr","operator":"eq","value":2500}}
+{"input":"active and Swedish customers","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"active or Swedish customers","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"active and German customers","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"}]}}
+{"input":"active or German customers","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"}]}}
+{"input":"active and ARR over 50k","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"active or ARR over 50k","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"active customers and Swedish customers","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"active customers or Swedish customers","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"active customers and German customers","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"}]}}
+{"input":"active customers or German customers","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"}]}}
+{"input":"active customers and ARR over 50k","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"active customers or ARR over 50k","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"active accounts and Swedish customers","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"active accounts or Swedish customers","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"active accounts and German customers","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"}]}}
+{"input":"active accounts or German customers","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"}]}}
+{"input":"active accounts and ARR over 50k","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"active accounts or ARR over 50k","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"active companies and Swedish customers","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"active companies or Swedish customers","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"active companies and German customers","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"}]}}
+{"input":"active companies or German customers","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"}]}}
+{"input":"active companies and ARR over 50k","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"active companies or ARR over 50k","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"customers that are active and Swedish customers","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"customers that are active or Swedish customers","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"customers that are active and German customers","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"}]}}
+{"input":"customers that are active or German customers","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"}]}}
+{"input":"customers that are active and ARR over 50k","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"customers that are active or ARR over 50k","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"accounts currently active and Swedish customers","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"accounts currently active or Swedish customers","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"accounts currently active and German customers","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"}]}}
+{"input":"accounts currently active or German customers","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"}]}}
+{"input":"accounts currently active and ARR over 50k","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"accounts currently active or ARR over 50k","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"with status active and Swedish customers","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"with status active or Swedish customers","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"with status active and German customers","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"}]}}
+{"input":"with status active or German customers","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"}]}}
+{"input":"with status active and ARR over 50k","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"with status active or ARR over 50k","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"status is active and Swedish customers","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"status is active or Swedish customers","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"status is active and German customers","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"}]}}
+{"input":"status is active or German customers","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"}]}}
+{"input":"status is active and ARR over 50k","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"status is active or ARR over 50k","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"show active accounts and Swedish customers","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"show active accounts or Swedish customers","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"show active accounts and German customers","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"}]}}
+{"input":"show active accounts or German customers","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"}]}}
+{"input":"show active accounts and ARR over 50k","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"show active accounts or ARR over 50k","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"find active companies and Swedish customers","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"find active companies or Swedish customers","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"find active companies and German customers","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"}]}}
+{"input":"find active companies or German customers","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"}]}}
+{"input":"find active companies and ARR over 50k","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"find active companies or ARR over 50k","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"companies with active status and Swedish customers","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"companies with active status or Swedish customers","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"companies with active status and German customers","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"}]}}
+{"input":"companies with active status or German customers","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"}]}}
+{"input":"companies with active status and ARR over 50k","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"companies with active status or ARR over 50k","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"currently active and Swedish customers","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"currently active or Swedish customers","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"currently active and German customers","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"}]}}
+{"input":"currently active or German customers","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"}]}}
+{"input":"currently active and ARR over 50k","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"currently active or ARR over 50k","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}

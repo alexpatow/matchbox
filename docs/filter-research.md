@@ -1,4 +1,6 @@
-# Filter proof findings
+# Historical filter proof findings
+
+This document records BOO-46 before the TensorFlow migration. BOO-47 removes these handwritten trainers and routes filters through the shared neural training path. Current results and limitations are in the [neural training guide](neural-training.md).
 
 The first full toolchain works: examples train a small local model, validation selects a candidate, packaging generates a typed file import, and React uses it to filter a table. This experiment does not yet establish a compelling advantage over a reasonable deterministic parser.
 

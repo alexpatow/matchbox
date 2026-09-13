@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@matchbox-ai/core": "workspace:*",
+    "@tensorflow/tfjs-node": "4.22.0",
     "zod": "4.6.3"
   },
   "devDependencies": {
