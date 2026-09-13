@@ -76,8 +76,8 @@ export function App() {
           autoComplete="off"
         />
         <p id="query-help">
-          Use status, country, or ARR clauses joined with “and” or “or”. Dates and implicit joins
-          are not supported yet.
+          Country names cover the full reference list; the sample table contains four countries. Use
+          “and” or “or” between clauses. Dates and implicit joins are not supported yet.
         </p>
         <div className="suggestions">
           {suggestions.map((suggestion) => (

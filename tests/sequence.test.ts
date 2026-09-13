@@ -61,7 +61,7 @@ describe("trained sequence artifacts", () => {
     expect(normalizeNumber("1.234")).toBeNull();
   });
   test("abstains on ambiguous currencies, ranges, unsupported precision, and multiple amounts", async () => {
-    for (const input of ["$15", "EUR 10 USD", "under 50 euros", "1.234 EUR", "€5 €10"])
+    for (const input of ["EUR 10 USD", "under 50 euros", "1.234 EUR", "€5 €10"])
       expect((await money.parse(input)).status).toBe("uncertain");
   });
   test("the parity model handles unseen long strings and validates its input", async () => {
@@ -71,5 +71,12 @@ describe("trained sequence artifacts", () => {
         value: { even: BigInt(input) % 2n === 0n },
       });
     expect((await parity.parse("2.0")).status).toBe("uncertain");
+  });
+});
+
+test("the money example interprets the dollar symbol as USD", async () => {
+  expect(await money.parse("$15")).toMatchObject({
+    status: "ok",
+    value: { amount: 15, currency: "USD", approximate: false },
   });
 });

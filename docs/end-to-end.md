@@ -91,7 +91,7 @@ Keep the loader outside the component. Imports are SSR-safe, while the hook load
 
 ## Supported behavior and boundaries
 
-The example recognizes active, inactive, and churned status; exclusion of churned customers; Sweden, Germany, America, and Norway; and ARR comparisons. Nonnegative numeric amounts can use decimal points, comma thousands separators, and `k` or `m` suffixes. Currency symbols are syntactic prefixes, with amounts interpreted in the application's unit; no currency conversion occurs.
+The example recognizes active, inactive, and churned status; exclusion of churned customers; the 250 countries and territories in the reference list; and ARR comparisons. Nonnegative numeric amounts can use decimal points, comma thousands separators, and `k` or `m` suffixes. Currency symbols are syntactic prefixes, with amounts interpreted in the application's unit; no currency conversion occurs.
 
 The AST is a predicate, an AND of predicates, or an OR of predicates/AND groups. AND binds more tightly than OR. Limits are eight clauses, 500 input characters, and bounded schema arrays. Exclusion uses `neq`; there is no general recursive NOT expression or executable query output.
 

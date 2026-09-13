@@ -1,3 +1,4 @@
+import { countries, countryCodes, countryAliases } from "../examples/filters/src/countries";
 import { expect, test } from "bun:test";
 import {
   createSequenceParser,
@@ -84,4 +85,27 @@ test("the AST compiler refuses partial results when a clause is unrecognized", (
       confidence: 1,
     })).value,
   ).toBeNull();
+});
+
+test("every supported country name parses to its code", async () => {
+  for (const code of countryCodes) {
+    const input = `find accounts based in ${countries[code].name}`;
+    expect((await parser.parse(input)).value, input).toEqual({
+      field: "country",
+      operator: "eq",
+      value: code,
+    });
+  }
+});
+test("country-name conjunctions remain inside the country span", async () => {
+  expect((await parser.parse("Trinidad and Tobago customers and ARR over 50k")).value).toEqual({
+    and: [
+      { field: "country", operator: "eq", value: "TT" },
+      { field: "arr", operator: "gt", value: 50000 },
+    ],
+  });
+});
+
+test("country reference aliases always consume at least one token", () => {
+  expect(countryAliases.every((alias) => alias.keys.length > 0)).toBe(true);
 });

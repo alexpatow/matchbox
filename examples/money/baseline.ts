@@ -2,6 +2,7 @@ import { tokenize, type MatchboxParser } from "@matchbox-ai/core/runtime";
 import { decode, normalizeNumber } from "./src";
 const currency: Record<string, string> = {
   "€": "EUR",
+  $: "USD",
   eur: "EUR",
   euro: "EUR",
   euros: "EUR",
@@ -30,7 +31,7 @@ const baseline: MatchboxParser<unknown> = {
               ? "MILLION"
               : ["about", "around", "roughly"].includes(token.key)
                 ? "APPROX"
-                : ["$", "between", "or", "under", "over"].includes(token.key)
+                : ["between", "or", "under", "over"].includes(token.key)
                   ? "REJECT"
                   : "O"),
     }));

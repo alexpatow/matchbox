@@ -37,7 +37,7 @@ Parity tokenizes raw digit strings and supervises only the final token. Its cont
 
 Money tokenizes words, digit sequences, and punctuation. Every numeric token has the same learned input key, `<number>`, while retaining its original text and offsets for normalization. Labels identify amounts, currencies, thousand/million modifiers, approximation, and neutral text. For example, a number after `invoice` can receive O while a number after `€` receives AMOUNT. The decoder contains no invoice-ID or year regex.
 
-The deterministic decoder supports nonnegative amounts, English decimal notation, correctly grouped comma thousands, English number words below 100, EUR/USD/GBP/SEK, and thousand/million modifiers. It performs arithmetic in minor units and checks the safe-integer bound. A bare `$` is ambiguous and abstains. Locale inference, currency conversion, ranges, negative amounts, arbitrary number-word grammars, and natural-language instructions are outside this example.
+The deterministic decoder supports nonnegative amounts, English decimal notation, correctly grouped comma thousands, English number words below 100, EUR/USD/GBP/SEK, and thousand/million modifiers. It performs arithmetic in minor units and checks the safe-integer bound. The example explicitly interprets a bare `$` as USD; this is an application convention, not a universal currency-symbol meaning. Locale inference, currency conversion, ranges, negative amounts, arbitrary number-word grammars, and natural-language instructions are outside this example.
 
 ## The supervision contract is still experimental
 
@@ -83,33 +83,35 @@ These results were measured locally on macOS arm64 with Bun 1.4.2 and TensorFlow
 
 | Measurement                             | Parity |    Money |
 | --------------------------------------- | -----: | -------: |
-| Training examples                       |    400 |    1,596 |
-| Validation examples                     |    100 |       20 |
-| Evaluation examples                     |    100 |       24 |
-| Trainable parameters                    |    530 |    1,041 |
-| Artifact bytes                          |  2,802 |    4,920 |
+| Training examples                       |    400 |    1,666 |
+| Validation examples                     |    100 |       22 |
+| Evaluation examples                     |    100 |       26 |
+| Trainable parameters                    |    530 |    1,049 |
+| Artifact bytes                          |  2,802 |    4,918 |
 | Untrained, ungated exact accuracy       |    39% |       0% |
 | Shuffled-label control, ungated         |    40% | Not run. |
 | Trained float evaluation accuracy       |   100% |     100% |
 | Trained int8 evaluation accuracy        |   100% |     100% |
-| Deterministic baseline accuracy         |   100% |    87.5% |
-| Correct abstentions on challenge inputs |    7/7 |    14/14 |
+| Deterministic baseline accuracy         |   100% |    84.6% |
+| Correct abstentions on challenge inputs |    7/7 |    13/13 |
 
-The first and final training losses were approximately 0.690 and 0.00000116 for parity, and 0.881 and 0.0000521 for money. The untrained and shuffled controls use a zero confidence threshold so abstention gating cannot manufacture the comparison. Ordinary runtime evaluation retains the 0.75 threshold. The shuffled control preserves the label counts and changes their association with training inputs.
+The first and final training losses were approximately 0.690 and 0.00000116 for parity, and 0.874 and 0.0000459 for money. The untrained and shuffled controls use a zero confidence threshold so abstention gating cannot manufacture the comparison. Ordinary runtime evaluation retains the 0.75 threshold. The shuffled control preserves the label counts and changes their association with training inputs.
 
 Export verification compares the independent float runtime with TensorFlow on the first 16 training inputs plus every validation input. There were zero label disagreements; maximum top-label probability error was below 0.000001. Float and quantized structured results are evaluated separately after the validation gate. Build reports include loss history, failures, dataset and artifact hashes, confidence error, and size.
 
-The money baseline misses the three examples with another number used as an invoice ID, year, or order number. This baseline could be extended with a few context rules. The comparison demonstrates that this model learned the distinction, not that the model has established a compelling maintenance advantage over rules.
+The money baseline misses the four examples with another number used as an invoice ID, year, or order number. This baseline could be extended with a few context rules. The comparison demonstrates that this model learned the distinction, not that the model has established a compelling maintenance advantage over rules.
 
 ## Filter migration
 
 The filter example now uses the same native TensorFlow trainer and portable sequence runtime. Its build-only recipe supplies weak semantic token labels, and its deterministic decoder constructs the bounded application AST. The handwritten training implementations and predicate-template artifact format are removed.
 
-The training file now contains 408 records: the original 176, 160 currency/scale variations, and 72 explicit compositions. The existing 32 validation and 32 evaluation records were preserved. Those evaluation inputs were already known from BOO-46, so this is a compatibility check rather than a new blind benchmark. The model has 1,219 parameters and a 9,224-byte artifact. Both the neural model and rules score 100% on that evaluation set. Initial/final training loss was approximately 2.065/0.000484, with zero export label disagreements.
+The filter schema, reference data, and datasets now cover 250 countries and territories. The model predicts generic COUNTRY spans; the deterministic normalizer maps recognized names and unambiguous demonyms to codes. This avoids one neural class per country. Shared nationality words default to a unique independent country where possible; genuinely ambiguous aliases are omitted. Boolean words within country names are protected from the AST conjunction splitter.
+
+The original 32 validation and evaluation inputs remain, each supplemented by a coverage query for every country. These generated queries test roster coverage, not independent language generalization. The model has 7,648 parameters and a 41,293-byte artifact; the country reference database is a separate application dependency. The fictional customer table still contains only eight records in four countries, so a valid country filter can produce an empty table.
 
 ## Evaluation limits and next experiments
 
-Money's 24 evaluation examples were authored separately from its generator, with unseen numeric values and number-word combinations. Their language vocabulary and several construction patterns remain close to training. They were examined during development and are not an independent benchmark. Several challenge rejections come directly from the unknown-token policy. Broader language support and calibrated uncertainty remain open work.
+Money's 26 evaluation examples were authored separately from its generator, with unseen numeric values and number-word combinations. Their language vocabulary and several construction patterns remain close to training. They were examined during development and are not an independent benchmark. Several challenge rejections come directly from the unknown-token policy. Broader language support and calibrated uncertainty remain open work.
 
 Parity's longer strings test a local final-digit rule; they do not establish general sequence reasoning. One initializer configuration and one architecture are used here. We have not performed multi-seed selection, broader architecture search, or a money shuffled-label control.
 

@@ -796,6 +796,76 @@
 {"input":"30m USD","output":{"amount":30000000,"currency":"USD","approximate":false}}
 {"input":"40m USD","output":{"amount":40000000,"currency":"USD","approximate":false}}
 {"input":"50m USD","output":{"amount":50000000,"currency":"USD","approximate":false}}
+{"input":"$ 12.50","output":{"amount":12.5,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ 12.50","output":{"amount":12.5,"currency":"USD","approximate":false}}
+{"input":"$ 7","output":{"amount":7,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ 7","output":{"amount":7,"currency":"USD","approximate":false}}
+{"input":"$ 35","output":{"amount":35,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ 35","output":{"amount":35,"currency":"USD","approximate":false}}
+{"input":"$ 250","output":{"amount":250,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ 250","output":{"amount":250,"currency":"USD","approximate":false}}
+{"input":"$ 1,200","output":{"amount":1200,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ 1,200","output":{"amount":1200,"currency":"USD","approximate":false}}
+{"input":"$ one","output":{"amount":1,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ one","output":{"amount":1,"currency":"USD","approximate":false}}
+{"input":"$ two","output":{"amount":2,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ two","output":{"amount":2,"currency":"USD","approximate":false}}
+{"input":"$ three","output":{"amount":3,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ three","output":{"amount":3,"currency":"USD","approximate":false}}
+{"input":"$ four","output":{"amount":4,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ four","output":{"amount":4,"currency":"USD","approximate":false}}
+{"input":"$ five","output":{"amount":5,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ five","output":{"amount":5,"currency":"USD","approximate":false}}
+{"input":"$ six","output":{"amount":6,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ six","output":{"amount":6,"currency":"USD","approximate":false}}
+{"input":"$ seven","output":{"amount":7,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ seven","output":{"amount":7,"currency":"USD","approximate":false}}
+{"input":"$ eight","output":{"amount":8,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ eight","output":{"amount":8,"currency":"USD","approximate":false}}
+{"input":"$ nine","output":{"amount":9,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ nine","output":{"amount":9,"currency":"USD","approximate":false}}
+{"input":"$ ten","output":{"amount":10,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ ten","output":{"amount":10,"currency":"USD","approximate":false}}
+{"input":"$ eleven","output":{"amount":11,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ eleven","output":{"amount":11,"currency":"USD","approximate":false}}
+{"input":"$ twelve","output":{"amount":12,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ twelve","output":{"amount":12,"currency":"USD","approximate":false}}
+{"input":"$ thirteen","output":{"amount":13,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ thirteen","output":{"amount":13,"currency":"USD","approximate":false}}
+{"input":"$ fourteen","output":{"amount":14,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ fourteen","output":{"amount":14,"currency":"USD","approximate":false}}
+{"input":"$ fifteen","output":{"amount":15,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ fifteen","output":{"amount":15,"currency":"USD","approximate":false}}
+{"input":"$ sixteen","output":{"amount":16,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ sixteen","output":{"amount":16,"currency":"USD","approximate":false}}
+{"input":"$ seventeen","output":{"amount":17,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ seventeen","output":{"amount":17,"currency":"USD","approximate":false}}
+{"input":"$ eighteen","output":{"amount":18,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ eighteen","output":{"amount":18,"currency":"USD","approximate":false}}
+{"input":"$ nineteen","output":{"amount":19,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ nineteen","output":{"amount":19,"currency":"USD","approximate":false}}
+{"input":"$ twenty","output":{"amount":20,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ twenty","output":{"amount":20,"currency":"USD","approximate":false}}
+{"input":"$ thirty","output":{"amount":30,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ thirty","output":{"amount":30,"currency":"USD","approximate":false}}
+{"input":"$ forty","output":{"amount":40,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ forty","output":{"amount":40,"currency":"USD","approximate":false}}
+{"input":"$ fifty","output":{"amount":50,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ fifty","output":{"amount":50,"currency":"USD","approximate":false}}
+{"input":"$ sixty","output":{"amount":60,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ sixty","output":{"amount":60,"currency":"USD","approximate":false}}
+{"input":"$ seventy","output":{"amount":70,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ seventy","output":{"amount":70,"currency":"USD","approximate":false}}
+{"input":"$ eighty","output":{"amount":80,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ eighty","output":{"amount":80,"currency":"USD","approximate":false}}
+{"input":"$ ninety","output":{"amount":90,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ ninety","output":{"amount":90,"currency":"USD","approximate":false}}
+{"input":"$ twenty one","output":{"amount":21,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ twenty one","output":{"amount":21,"currency":"USD","approximate":false}}
+{"input":"$ thirty two","output":{"amount":32,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ thirty two","output":{"amount":32,"currency":"USD","approximate":false}}
+{"input":"$ forty three","output":{"amount":43,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ forty three","output":{"amount":43,"currency":"USD","approximate":false}}
 {"input":"£ 12.50","output":{"amount":12.5,"currency":"GBP","approximate":false}}
 {"input":"12.50 pounds","output":{"amount":12.5,"currency":"GBP","approximate":false}}
 {"input":"about 12.50 pounds","output":{"amount":12.5,"currency":"GBP","approximate":true}}

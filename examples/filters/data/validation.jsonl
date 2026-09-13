@@ -30,3 +30,253 @@
 {"input":"show inactive customers and German customers and ARR over 75000","output":{"and":[{"field":"status","operator":"eq","value":"inactive"},{"field":"country","operator":"eq","value":"DE"},{"field":"arr","operator":"gt","value":75000}]}}
 {"input":"show Swedish customers or German customers and ARR under 75000","output":{"or":[{"field":"country","operator":"eq","value":"SE"},{"and":[{"field":"country","operator":"eq","value":"DE"},{"field":"arr","operator":"lt","value":75000}]}]}}
 {"input":"show Swedish customers and not churned","output":{"and":[{"field":"country","operator":"eq","value":"SE"},{"field":"status","operator":"neq","value":"churned"}]}}
+{"input":"show companies based in Aruba","output":{"field":"country","operator":"eq","value":"AW"}}
+{"input":"show companies based in Afghanistan","output":{"field":"country","operator":"eq","value":"AF"}}
+{"input":"show companies based in Angola","output":{"field":"country","operator":"eq","value":"AO"}}
+{"input":"show companies based in Anguilla","output":{"field":"country","operator":"eq","value":"AI"}}
+{"input":"show companies based in Åland Islands","output":{"field":"country","operator":"eq","value":"AX"}}
+{"input":"show companies based in Albania","output":{"field":"country","operator":"eq","value":"AL"}}
+{"input":"show companies based in Andorra","output":{"field":"country","operator":"eq","value":"AD"}}
+{"input":"show companies based in United Arab Emirates","output":{"field":"country","operator":"eq","value":"AE"}}
+{"input":"show companies based in Argentina","output":{"field":"country","operator":"eq","value":"AR"}}
+{"input":"show companies based in Armenia","output":{"field":"country","operator":"eq","value":"AM"}}
+{"input":"show companies based in American Samoa","output":{"field":"country","operator":"eq","value":"AS"}}
+{"input":"show companies based in Antarctica","output":{"field":"country","operator":"eq","value":"AQ"}}
+{"input":"show companies based in French Southern and Antarctic Lands","output":{"field":"country","operator":"eq","value":"TF"}}
+{"input":"show companies based in Antigua and Barbuda","output":{"field":"country","operator":"eq","value":"AG"}}
+{"input":"show companies based in Australia","output":{"field":"country","operator":"eq","value":"AU"}}
+{"input":"show companies based in Austria","output":{"field":"country","operator":"eq","value":"AT"}}
+{"input":"show companies based in Azerbaijan","output":{"field":"country","operator":"eq","value":"AZ"}}
+{"input":"show companies based in Burundi","output":{"field":"country","operator":"eq","value":"BI"}}
+{"input":"show companies based in Belgium","output":{"field":"country","operator":"eq","value":"BE"}}
+{"input":"show companies based in Benin","output":{"field":"country","operator":"eq","value":"BJ"}}
+{"input":"show companies based in Burkina Faso","output":{"field":"country","operator":"eq","value":"BF"}}
+{"input":"show companies based in Bangladesh","output":{"field":"country","operator":"eq","value":"BD"}}
+{"input":"show companies based in Bulgaria","output":{"field":"country","operator":"eq","value":"BG"}}
+{"input":"show companies based in Bahrain","output":{"field":"country","operator":"eq","value":"BH"}}
+{"input":"show companies based in Bahamas","output":{"field":"country","operator":"eq","value":"BS"}}
+{"input":"show companies based in Bosnia and Herzegovina","output":{"field":"country","operator":"eq","value":"BA"}}
+{"input":"show companies based in Saint Barthélemy","output":{"field":"country","operator":"eq","value":"BL"}}
+{"input":"show companies based in Saint Helena, Ascension and Tristan da Cunha","output":{"field":"country","operator":"eq","value":"SH"}}
+{"input":"show companies based in Belarus","output":{"field":"country","operator":"eq","value":"BY"}}
+{"input":"show companies based in Belize","output":{"field":"country","operator":"eq","value":"BZ"}}
+{"input":"show companies based in Bermuda","output":{"field":"country","operator":"eq","value":"BM"}}
+{"input":"show companies based in Bolivia","output":{"field":"country","operator":"eq","value":"BO"}}
+{"input":"show companies based in Caribbean Netherlands","output":{"field":"country","operator":"eq","value":"BQ"}}
+{"input":"show companies based in Brazil","output":{"field":"country","operator":"eq","value":"BR"}}
+{"input":"show companies based in Barbados","output":{"field":"country","operator":"eq","value":"BB"}}
+{"input":"show companies based in Brunei","output":{"field":"country","operator":"eq","value":"BN"}}
+{"input":"show companies based in Bhutan","output":{"field":"country","operator":"eq","value":"BT"}}
+{"input":"show companies based in Bouvet Island","output":{"field":"country","operator":"eq","value":"BV"}}
+{"input":"show companies based in Botswana","output":{"field":"country","operator":"eq","value":"BW"}}
+{"input":"show companies based in Central African Republic","output":{"field":"country","operator":"eq","value":"CF"}}
+{"input":"show companies based in Canada","output":{"field":"country","operator":"eq","value":"CA"}}
+{"input":"show companies based in Cocos (Keeling) Islands","output":{"field":"country","operator":"eq","value":"CC"}}
+{"input":"show companies based in Switzerland","output":{"field":"country","operator":"eq","value":"CH"}}
+{"input":"show companies based in Chile","output":{"field":"country","operator":"eq","value":"CL"}}
+{"input":"show companies based in China","output":{"field":"country","operator":"eq","value":"CN"}}
+{"input":"show companies based in Ivory Coast","output":{"field":"country","operator":"eq","value":"CI"}}
+{"input":"show companies based in Cameroon","output":{"field":"country","operator":"eq","value":"CM"}}
+{"input":"show companies based in DR Congo","output":{"field":"country","operator":"eq","value":"CD"}}
+{"input":"show companies based in Congo","output":{"field":"country","operator":"eq","value":"CG"}}
+{"input":"show companies based in Cook Islands","output":{"field":"country","operator":"eq","value":"CK"}}
+{"input":"show companies based in Colombia","output":{"field":"country","operator":"eq","value":"CO"}}
+{"input":"show companies based in Comoros","output":{"field":"country","operator":"eq","value":"KM"}}
+{"input":"show companies based in Cape Verde","output":{"field":"country","operator":"eq","value":"CV"}}
+{"input":"show companies based in Costa Rica","output":{"field":"country","operator":"eq","value":"CR"}}
+{"input":"show companies based in Cuba","output":{"field":"country","operator":"eq","value":"CU"}}
+{"input":"show companies based in Curaçao","output":{"field":"country","operator":"eq","value":"CW"}}
+{"input":"show companies based in Christmas Island","output":{"field":"country","operator":"eq","value":"CX"}}
+{"input":"show companies based in Cayman Islands","output":{"field":"country","operator":"eq","value":"KY"}}
+{"input":"show companies based in Cyprus","output":{"field":"country","operator":"eq","value":"CY"}}
+{"input":"show companies based in Czechia","output":{"field":"country","operator":"eq","value":"CZ"}}
+{"input":"show companies based in Germany","output":{"field":"country","operator":"eq","value":"DE"}}
+{"input":"show companies based in Djibouti","output":{"field":"country","operator":"eq","value":"DJ"}}
+{"input":"show companies based in Dominica","output":{"field":"country","operator":"eq","value":"DM"}}
+{"input":"show companies based in Denmark","output":{"field":"country","operator":"eq","value":"DK"}}
+{"input":"show companies based in Dominican Republic","output":{"field":"country","operator":"eq","value":"DO"}}
+{"input":"show companies based in Algeria","output":{"field":"country","operator":"eq","value":"DZ"}}
+{"input":"show companies based in Ecuador","output":{"field":"country","operator":"eq","value":"EC"}}
+{"input":"show companies based in Egypt","output":{"field":"country","operator":"eq","value":"EG"}}
+{"input":"show companies based in Eritrea","output":{"field":"country","operator":"eq","value":"ER"}}
+{"input":"show companies based in Western Sahara","output":{"field":"country","operator":"eq","value":"EH"}}
+{"input":"show companies based in Spain","output":{"field":"country","operator":"eq","value":"ES"}}
+{"input":"show companies based in Estonia","output":{"field":"country","operator":"eq","value":"EE"}}
+{"input":"show companies based in Ethiopia","output":{"field":"country","operator":"eq","value":"ET"}}
+{"input":"show companies based in Finland","output":{"field":"country","operator":"eq","value":"FI"}}
+{"input":"show companies based in Fiji","output":{"field":"country","operator":"eq","value":"FJ"}}
+{"input":"show companies based in Falkland Islands","output":{"field":"country","operator":"eq","value":"FK"}}
+{"input":"show companies based in France","output":{"field":"country","operator":"eq","value":"FR"}}
+{"input":"show companies based in Faroe Islands","output":{"field":"country","operator":"eq","value":"FO"}}
+{"input":"show companies based in Micronesia","output":{"field":"country","operator":"eq","value":"FM"}}
+{"input":"show companies based in Gabon","output":{"field":"country","operator":"eq","value":"GA"}}
+{"input":"show companies based in United Kingdom","output":{"field":"country","operator":"eq","value":"GB"}}
+{"input":"show companies based in Georgia","output":{"field":"country","operator":"eq","value":"GE"}}
+{"input":"show companies based in Guernsey","output":{"field":"country","operator":"eq","value":"GG"}}
+{"input":"show companies based in Ghana","output":{"field":"country","operator":"eq","value":"GH"}}
+{"input":"show companies based in Gibraltar","output":{"field":"country","operator":"eq","value":"GI"}}
+{"input":"show companies based in Guinea","output":{"field":"country","operator":"eq","value":"GN"}}
+{"input":"show companies based in Guadeloupe","output":{"field":"country","operator":"eq","value":"GP"}}
+{"input":"show companies based in Gambia","output":{"field":"country","operator":"eq","value":"GM"}}
+{"input":"show companies based in Guinea-Bissau","output":{"field":"country","operator":"eq","value":"GW"}}
+{"input":"show companies based in Equatorial Guinea","output":{"field":"country","operator":"eq","value":"GQ"}}
+{"input":"show companies based in Greece","output":{"field":"country","operator":"eq","value":"GR"}}
+{"input":"show companies based in Grenada","output":{"field":"country","operator":"eq","value":"GD"}}
+{"input":"show companies based in Greenland","output":{"field":"country","operator":"eq","value":"GL"}}
+{"input":"show companies based in Guatemala","output":{"field":"country","operator":"eq","value":"GT"}}
+{"input":"show companies based in French Guiana","output":{"field":"country","operator":"eq","value":"GF"}}
+{"input":"show companies based in Guam","output":{"field":"country","operator":"eq","value":"GU"}}
+{"input":"show companies based in Guyana","output":{"field":"country","operator":"eq","value":"GY"}}
+{"input":"show companies based in Hong Kong","output":{"field":"country","operator":"eq","value":"HK"}}
+{"input":"show companies based in Heard Island and McDonald Islands","output":{"field":"country","operator":"eq","value":"HM"}}
+{"input":"show companies based in Honduras","output":{"field":"country","operator":"eq","value":"HN"}}
+{"input":"show companies based in Croatia","output":{"field":"country","operator":"eq","value":"HR"}}
+{"input":"show companies based in Haiti","output":{"field":"country","operator":"eq","value":"HT"}}
+{"input":"show companies based in Hungary","output":{"field":"country","operator":"eq","value":"HU"}}
+{"input":"show companies based in Indonesia","output":{"field":"country","operator":"eq","value":"ID"}}
+{"input":"show companies based in Isle of Man","output":{"field":"country","operator":"eq","value":"IM"}}
+{"input":"show companies based in India","output":{"field":"country","operator":"eq","value":"IN"}}
+{"input":"show companies based in British Indian Ocean Territory","output":{"field":"country","operator":"eq","value":"IO"}}
+{"input":"show companies based in Ireland","output":{"field":"country","operator":"eq","value":"IE"}}
+{"input":"show companies based in Iran","output":{"field":"country","operator":"eq","value":"IR"}}
+{"input":"show companies based in Iraq","output":{"field":"country","operator":"eq","value":"IQ"}}
+{"input":"show companies based in Iceland","output":{"field":"country","operator":"eq","value":"IS"}}
+{"input":"show companies based in Israel","output":{"field":"country","operator":"eq","value":"IL"}}
+{"input":"show companies based in Italy","output":{"field":"country","operator":"eq","value":"IT"}}
+{"input":"show companies based in Jamaica","output":{"field":"country","operator":"eq","value":"JM"}}
+{"input":"show companies based in Jersey","output":{"field":"country","operator":"eq","value":"JE"}}
+{"input":"show companies based in Jordan","output":{"field":"country","operator":"eq","value":"JO"}}
+{"input":"show companies based in Japan","output":{"field":"country","operator":"eq","value":"JP"}}
+{"input":"show companies based in Kazakhstan","output":{"field":"country","operator":"eq","value":"KZ"}}
+{"input":"show companies based in Kenya","output":{"field":"country","operator":"eq","value":"KE"}}
+{"input":"show companies based in Kyrgyzstan","output":{"field":"country","operator":"eq","value":"KG"}}
+{"input":"show companies based in Cambodia","output":{"field":"country","operator":"eq","value":"KH"}}
+{"input":"show companies based in Kiribati","output":{"field":"country","operator":"eq","value":"KI"}}
+{"input":"show companies based in Saint Kitts and Nevis","output":{"field":"country","operator":"eq","value":"KN"}}
+{"input":"show companies based in South Korea","output":{"field":"country","operator":"eq","value":"KR"}}
+{"input":"show companies based in Kosovo","output":{"field":"country","operator":"eq","value":"XK"}}
+{"input":"show companies based in Kuwait","output":{"field":"country","operator":"eq","value":"KW"}}
+{"input":"show companies based in Laos","output":{"field":"country","operator":"eq","value":"LA"}}
+{"input":"show companies based in Lebanon","output":{"field":"country","operator":"eq","value":"LB"}}
+{"input":"show companies based in Liberia","output":{"field":"country","operator":"eq","value":"LR"}}
+{"input":"show companies based in Libya","output":{"field":"country","operator":"eq","value":"LY"}}
+{"input":"show companies based in Saint Lucia","output":{"field":"country","operator":"eq","value":"LC"}}
+{"input":"show companies based in Liechtenstein","output":{"field":"country","operator":"eq","value":"LI"}}
+{"input":"show companies based in Sri Lanka","output":{"field":"country","operator":"eq","value":"LK"}}
+{"input":"show companies based in Lesotho","output":{"field":"country","operator":"eq","value":"LS"}}
+{"input":"show companies based in Lithuania","output":{"field":"country","operator":"eq","value":"LT"}}
+{"input":"show companies based in Luxembourg","output":{"field":"country","operator":"eq","value":"LU"}}
+{"input":"show companies based in Latvia","output":{"field":"country","operator":"eq","value":"LV"}}
+{"input":"show companies based in Macau","output":{"field":"country","operator":"eq","value":"MO"}}
+{"input":"show companies based in Saint Martin","output":{"field":"country","operator":"eq","value":"MF"}}
+{"input":"show companies based in Morocco","output":{"field":"country","operator":"eq","value":"MA"}}
+{"input":"show companies based in Monaco","output":{"field":"country","operator":"eq","value":"MC"}}
+{"input":"show companies based in Moldova","output":{"field":"country","operator":"eq","value":"MD"}}
+{"input":"show companies based in Madagascar","output":{"field":"country","operator":"eq","value":"MG"}}
+{"input":"show companies based in Maldives","output":{"field":"country","operator":"eq","value":"MV"}}
+{"input":"show companies based in Mexico","output":{"field":"country","operator":"eq","value":"MX"}}
+{"input":"show companies based in Marshall Islands","output":{"field":"country","operator":"eq","value":"MH"}}
+{"input":"show companies based in North Macedonia","output":{"field":"country","operator":"eq","value":"MK"}}
+{"input":"show companies based in Mali","output":{"field":"country","operator":"eq","value":"ML"}}
+{"input":"show companies based in Malta","output":{"field":"country","operator":"eq","value":"MT"}}
+{"input":"show companies based in Myanmar","output":{"field":"country","operator":"eq","value":"MM"}}
+{"input":"show companies based in Montenegro","output":{"field":"country","operator":"eq","value":"ME"}}
+{"input":"show companies based in Mongolia","output":{"field":"country","operator":"eq","value":"MN"}}
+{"input":"show companies based in Northern Mariana Islands","output":{"field":"country","operator":"eq","value":"MP"}}
+{"input":"show companies based in Mozambique","output":{"field":"country","operator":"eq","value":"MZ"}}
+{"input":"show companies based in Mauritania","output":{"field":"country","operator":"eq","value":"MR"}}
+{"input":"show companies based in Montserrat","output":{"field":"country","operator":"eq","value":"MS"}}
+{"input":"show companies based in Martinique","output":{"field":"country","operator":"eq","value":"MQ"}}
+{"input":"show companies based in Mauritius","output":{"field":"country","operator":"eq","value":"MU"}}
+{"input":"show companies based in Malawi","output":{"field":"country","operator":"eq","value":"MW"}}
+{"input":"show companies based in Malaysia","output":{"field":"country","operator":"eq","value":"MY"}}
+{"input":"show companies based in Mayotte","output":{"field":"country","operator":"eq","value":"YT"}}
+{"input":"show companies based in Namibia","output":{"field":"country","operator":"eq","value":"NA"}}
+{"input":"show companies based in New Caledonia","output":{"field":"country","operator":"eq","value":"NC"}}
+{"input":"show companies based in Niger","output":{"field":"country","operator":"eq","value":"NE"}}
+{"input":"show companies based in Norfolk Island","output":{"field":"country","operator":"eq","value":"NF"}}
+{"input":"show companies based in Nigeria","output":{"field":"country","operator":"eq","value":"NG"}}
+{"input":"show companies based in Nicaragua","output":{"field":"country","operator":"eq","value":"NI"}}
+{"input":"show companies based in Niue","output":{"field":"country","operator":"eq","value":"NU"}}
+{"input":"show companies based in Netherlands","output":{"field":"country","operator":"eq","value":"NL"}}
+{"input":"show companies based in Norway","output":{"field":"country","operator":"eq","value":"NO"}}
+{"input":"show companies based in Nepal","output":{"field":"country","operator":"eq","value":"NP"}}
+{"input":"show companies based in Nauru","output":{"field":"country","operator":"eq","value":"NR"}}
+{"input":"show companies based in New Zealand","output":{"field":"country","operator":"eq","value":"NZ"}}
+{"input":"show companies based in Oman","output":{"field":"country","operator":"eq","value":"OM"}}
+{"input":"show companies based in Pakistan","output":{"field":"country","operator":"eq","value":"PK"}}
+{"input":"show companies based in Panama","output":{"field":"country","operator":"eq","value":"PA"}}
+{"input":"show companies based in Pitcairn Islands","output":{"field":"country","operator":"eq","value":"PN"}}
+{"input":"show companies based in Peru","output":{"field":"country","operator":"eq","value":"PE"}}
+{"input":"show companies based in Philippines","output":{"field":"country","operator":"eq","value":"PH"}}
+{"input":"show companies based in Palau","output":{"field":"country","operator":"eq","value":"PW"}}
+{"input":"show companies based in Papua New Guinea","output":{"field":"country","operator":"eq","value":"PG"}}
+{"input":"show companies based in Poland","output":{"field":"country","operator":"eq","value":"PL"}}
+{"input":"show companies based in Puerto Rico","output":{"field":"country","operator":"eq","value":"PR"}}
+{"input":"show companies based in North Korea","output":{"field":"country","operator":"eq","value":"KP"}}
+{"input":"show companies based in Portugal","output":{"field":"country","operator":"eq","value":"PT"}}
+{"input":"show companies based in Paraguay","output":{"field":"country","operator":"eq","value":"PY"}}
+{"input":"show companies based in Palestine","output":{"field":"country","operator":"eq","value":"PS"}}
+{"input":"show companies based in French Polynesia","output":{"field":"country","operator":"eq","value":"PF"}}
+{"input":"show companies based in Qatar","output":{"field":"country","operator":"eq","value":"QA"}}
+{"input":"show companies based in Réunion","output":{"field":"country","operator":"eq","value":"RE"}}
+{"input":"show companies based in Romania","output":{"field":"country","operator":"eq","value":"RO"}}
+{"input":"show companies based in Russia","output":{"field":"country","operator":"eq","value":"RU"}}
+{"input":"show companies based in Rwanda","output":{"field":"country","operator":"eq","value":"RW"}}
+{"input":"show companies based in Saudi Arabia","output":{"field":"country","operator":"eq","value":"SA"}}
+{"input":"show companies based in Sudan","output":{"field":"country","operator":"eq","value":"SD"}}
+{"input":"show companies based in Senegal","output":{"field":"country","operator":"eq","value":"SN"}}
+{"input":"show companies based in Singapore","output":{"field":"country","operator":"eq","value":"SG"}}
+{"input":"show companies based in South Georgia","output":{"field":"country","operator":"eq","value":"GS"}}
+{"input":"show companies based in Svalbard and Jan Mayen","output":{"field":"country","operator":"eq","value":"SJ"}}
+{"input":"show companies based in Solomon Islands","output":{"field":"country","operator":"eq","value":"SB"}}
+{"input":"show companies based in Sierra Leone","output":{"field":"country","operator":"eq","value":"SL"}}
+{"input":"show companies based in El Salvador","output":{"field":"country","operator":"eq","value":"SV"}}
+{"input":"show companies based in San Marino","output":{"field":"country","operator":"eq","value":"SM"}}
+{"input":"show companies based in Somalia","output":{"field":"country","operator":"eq","value":"SO"}}
+{"input":"show companies based in Saint Pierre and Miquelon","output":{"field":"country","operator":"eq","value":"PM"}}
+{"input":"show companies based in Serbia","output":{"field":"country","operator":"eq","value":"RS"}}
+{"input":"show companies based in South Sudan","output":{"field":"country","operator":"eq","value":"SS"}}
+{"input":"show companies based in São Tomé and Príncipe","output":{"field":"country","operator":"eq","value":"ST"}}
+{"input":"show companies based in Suriname","output":{"field":"country","operator":"eq","value":"SR"}}
+{"input":"show companies based in Slovakia","output":{"field":"country","operator":"eq","value":"SK"}}
+{"input":"show companies based in Slovenia","output":{"field":"country","operator":"eq","value":"SI"}}
+{"input":"show companies based in Sweden","output":{"field":"country","operator":"eq","value":"SE"}}
+{"input":"show companies based in Eswatini","output":{"field":"country","operator":"eq","value":"SZ"}}
+{"input":"show companies based in Sint Maarten","output":{"field":"country","operator":"eq","value":"SX"}}
+{"input":"show companies based in Seychelles","output":{"field":"country","operator":"eq","value":"SC"}}
+{"input":"show companies based in Syria","output":{"field":"country","operator":"eq","value":"SY"}}
+{"input":"show companies based in Turks and Caicos Islands","output":{"field":"country","operator":"eq","value":"TC"}}
+{"input":"show companies based in Chad","output":{"field":"country","operator":"eq","value":"TD"}}
+{"input":"show companies based in Togo","output":{"field":"country","operator":"eq","value":"TG"}}
+{"input":"show companies based in Thailand","output":{"field":"country","operator":"eq","value":"TH"}}
+{"input":"show companies based in Tajikistan","output":{"field":"country","operator":"eq","value":"TJ"}}
+{"input":"show companies based in Tokelau","output":{"field":"country","operator":"eq","value":"TK"}}
+{"input":"show companies based in Turkmenistan","output":{"field":"country","operator":"eq","value":"TM"}}
+{"input":"show companies based in Timor-Leste","output":{"field":"country","operator":"eq","value":"TL"}}
+{"input":"show companies based in Tonga","output":{"field":"country","operator":"eq","value":"TO"}}
+{"input":"show companies based in Trinidad and Tobago","output":{"field":"country","operator":"eq","value":"TT"}}
+{"input":"show companies based in Tunisia","output":{"field":"country","operator":"eq","value":"TN"}}
+{"input":"show companies based in Türkiye","output":{"field":"country","operator":"eq","value":"TR"}}
+{"input":"show companies based in Tuvalu","output":{"field":"country","operator":"eq","value":"TV"}}
+{"input":"show companies based in Taiwan","output":{"field":"country","operator":"eq","value":"TW"}}
+{"input":"show companies based in Tanzania","output":{"field":"country","operator":"eq","value":"TZ"}}
+{"input":"show companies based in Uganda","output":{"field":"country","operator":"eq","value":"UG"}}
+{"input":"show companies based in Ukraine","output":{"field":"country","operator":"eq","value":"UA"}}
+{"input":"show companies based in United States Minor Outlying Islands","output":{"field":"country","operator":"eq","value":"UM"}}
+{"input":"show companies based in Uruguay","output":{"field":"country","operator":"eq","value":"UY"}}
+{"input":"show companies based in United States","output":{"field":"country","operator":"eq","value":"US"}}
+{"input":"show companies based in Uzbekistan","output":{"field":"country","operator":"eq","value":"UZ"}}
+{"input":"show companies based in Vatican City","output":{"field":"country","operator":"eq","value":"VA"}}
+{"input":"show companies based in Saint Vincent and the Grenadines","output":{"field":"country","operator":"eq","value":"VC"}}
+{"input":"show companies based in Venezuela","output":{"field":"country","operator":"eq","value":"VE"}}
+{"input":"show companies based in British Virgin Islands","output":{"field":"country","operator":"eq","value":"VG"}}
+{"input":"show companies based in United States Virgin Islands","output":{"field":"country","operator":"eq","value":"VI"}}
+{"input":"show companies based in Vietnam","output":{"field":"country","operator":"eq","value":"VN"}}
+{"input":"show companies based in Vanuatu","output":{"field":"country","operator":"eq","value":"VU"}}
+{"input":"show companies based in Wallis and Futuna","output":{"field":"country","operator":"eq","value":"WF"}}
+{"input":"show companies based in Samoa","output":{"field":"country","operator":"eq","value":"WS"}}
+{"input":"show companies based in Yemen","output":{"field":"country","operator":"eq","value":"YE"}}
+{"input":"show companies based in South Africa","output":{"field":"country","operator":"eq","value":"ZA"}}
+{"input":"show companies based in Zambia","output":{"field":"country","operator":"eq","value":"ZM"}}
+{"input":"show companies based in Zimbabwe","output":{"field":"country","operator":"eq","value":"ZW"}}

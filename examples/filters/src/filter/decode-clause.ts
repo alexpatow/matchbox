@@ -1,10 +1,15 @@
+import { normalizeCountry } from "../countries";
 import type { TaggedToken, Predicate } from "@matchbox-ai/core/runtime";
 export function decodeClause(tokens: readonly TaggedToken[]): Predicate | null {
   const labels = new Set(tokens.map((token) => token.label));
   const statuses = [...labels].filter((label) => label.startsWith("STATUS_"));
-  const countries = [...labels].filter((label) => label.startsWith("COUNTRY_"));
+  const countryTokens = tokens.filter((token) => token.label === "COUNTRY");
+  const country = normalizeCountry(countryTokens.map((token) => token.text).join(" "));
   const amounts = tokens.filter((token) => token.label === "AMOUNT");
-  if (Number(statuses.length > 0) + Number(countries.length > 0) + Number(labels.has("ARR")) !== 1)
+  if (
+    Number(statuses.length > 0) + Number(countryTokens.length > 0) + Number(labels.has("ARR")) !==
+    1
+  )
     return null;
   const negate = labels.has("NEGATE");
   if (statuses.length === 1 && !amounts.length) {
@@ -14,8 +19,8 @@ export function decodeClause(tokens: readonly TaggedToken[]): Predicate | null {
       ? null
       : { field: "status", operator: negate ? "neq" : "eq", value };
   }
-  if (countries.length === 1 && !amounts.length && !negate)
-    return { field: "country", operator: "eq", value: countries[0]!.slice(8) };
+  if (country !== null && !amounts.length && !negate)
+    return { field: "country", operator: "eq", value: country };
   if (!labels.has("ARR") || amounts.length !== 1 || negate) return null;
   const text = amounts[0]!.text;
   if (!/^(?:\d+(?:\.\d+)?|\d{1,3}(?:,\d{3})+(?:\.\d+)?)$/.test(text)) return null;

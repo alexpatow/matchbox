@@ -26,7 +26,7 @@ export function TrainingApp() {
       <ModelExample
         name="money"
         title="Find the money in the sentence."
-        description="The model recognizes amounts and currencies. A deterministic decoder handles arithmetic. This first example supports English number words below one hundred and four explicit currencies."
+        description="The model recognizes amounts and currencies. A deterministic decoder handles arithmetic. This first example supports English number words below one hundred and four currencies. In this example, $ means USD."
         suggestions={[
           "invoice 31415 totals € 28.65",
           "around twenty six grand in euros",

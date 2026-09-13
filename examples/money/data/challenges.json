@@ -1,14 +1,10 @@
 [
   {
-    "input": "$15",
-    "output": null
-  },
-  {
     "input": "between 10 and 20 euros",
     "output": null
   },
   {
-    "input": "€10 or €20",
+    "input": "\u20ac10 or \u20ac20",
     "output": null
   },
   {
@@ -36,7 +32,7 @@
     "output": null
   },
   {
-    "input": "€10 plus €20",
+    "input": "\u20ac10 plus \u20ac20",
     "output": null
   },
   {
@@ -52,7 +48,7 @@
     "output": null
   },
   {
-    "input": "€5 €10",
+    "input": "\u20ac5 \u20ac10",
     "output": null
   }
 ]

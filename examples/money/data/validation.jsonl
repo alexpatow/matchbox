@@ -18,3 +18,5 @@
 {"input": "roughly twenty nine euros", "output": {"amount": 29, "currency": "EUR", "approximate": true}}
 {"input": "we paid about 87 pounds", "output": {"amount": 87, "currency": "GBP", "approximate": true}}
 {"input": "a budget of 62 euros", "output": {"amount": 62, "currency": "EUR", "approximate": false}}
+{"input": "$19.75", "output": {"amount": 19.75, "currency": "USD", "approximate": false}}
+{"input": "about $83", "output": {"amount": 83.0, "currency": "USD", "approximate": true}}

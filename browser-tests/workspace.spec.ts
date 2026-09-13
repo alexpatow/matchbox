@@ -28,6 +28,12 @@ test("the generated model parses locally, filters customers, and handles uncerta
   await expect(page.locator("tbody tr")).toHaveCount(8);
   await page.getByRole("textbox", { name: "Filter customers", exact: true }).fill("");
   await expect(page.getByRole("status")).toContainText("All customers are shown");
+  await page
+    .getByRole("textbox", { name: "Filter customers", exact: true })
+    .fill("French customers");
+  await expect(page.getByLabel("Parsed filters")).toContainText("France");
+  await expect(page.locator("tbody tr")).toHaveCount(0);
+  await expect(page.getByText("No customers match these filters.")).toBeVisible();
   expect(errors).toEqual([]);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(
     true,

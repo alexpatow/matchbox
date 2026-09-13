@@ -33,7 +33,8 @@ test("trained money and parity artifacts run offline with measured browser laten
   );
   await page.screenshot({ path: testInfo.outputPath("trained-examples.png"), fullPage: true });
   await page.getByRole("button", { name: "$15", exact: true }).click();
-  await expect(page.locator("#money-status")).toContainText("Uncertain.");
+  await expect(page.getByLabel("money output")).toContainText('"amount": 15');
+  await expect(page.getByLabel("money output")).toContainText('"currency": "USD"');
   expect(errors).toEqual([]);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(
     true,

@@ -30,3 +30,253 @@
 {"input":"find inactive customers and German customers and ARR over 60000","output":{"and":[{"field":"status","operator":"eq","value":"inactive"},{"field":"country","operator":"eq","value":"DE"},{"field":"arr","operator":"gt","value":60000}]}}
 {"input":"find Swedish customers or German customers and ARR under 60000","output":{"or":[{"field":"country","operator":"eq","value":"SE"},{"and":[{"field":"country","operator":"eq","value":"DE"},{"field":"arr","operator":"lt","value":60000}]}]}}
 {"input":"find Swedish customers and not churned","output":{"and":[{"field":"country","operator":"eq","value":"SE"},{"field":"status","operator":"neq","value":"churned"}]}}
+{"input":"find accounts based in Aruba","output":{"field":"country","operator":"eq","value":"AW"}}
+{"input":"find accounts based in Afghanistan","output":{"field":"country","operator":"eq","value":"AF"}}
+{"input":"find accounts based in Angola","output":{"field":"country","operator":"eq","value":"AO"}}
+{"input":"find accounts based in Anguilla","output":{"field":"country","operator":"eq","value":"AI"}}
+{"input":"find accounts based in Åland Islands","output":{"field":"country","operator":"eq","value":"AX"}}
+{"input":"find accounts based in Albania","output":{"field":"country","operator":"eq","value":"AL"}}
+{"input":"find accounts based in Andorra","output":{"field":"country","operator":"eq","value":"AD"}}
+{"input":"find accounts based in United Arab Emirates","output":{"field":"country","operator":"eq","value":"AE"}}
+{"input":"find accounts based in Argentina","output":{"field":"country","operator":"eq","value":"AR"}}
+{"input":"find accounts based in Armenia","output":{"field":"country","operator":"eq","value":"AM"}}
+{"input":"find accounts based in American Samoa","output":{"field":"country","operator":"eq","value":"AS"}}
+{"input":"find accounts based in Antarctica","output":{"field":"country","operator":"eq","value":"AQ"}}
+{"input":"find accounts based in French Southern and Antarctic Lands","output":{"field":"country","operator":"eq","value":"TF"}}
+{"input":"find accounts based in Antigua and Barbuda","output":{"field":"country","operator":"eq","value":"AG"}}
+{"input":"find accounts based in Australia","output":{"field":"country","operator":"eq","value":"AU"}}
+{"input":"find accounts based in Austria","output":{"field":"country","operator":"eq","value":"AT"}}
+{"input":"find accounts based in Azerbaijan","output":{"field":"country","operator":"eq","value":"AZ"}}
+{"input":"find accounts based in Burundi","output":{"field":"country","operator":"eq","value":"BI"}}
+{"input":"find accounts based in Belgium","output":{"field":"country","operator":"eq","value":"BE"}}
+{"input":"find accounts based in Benin","output":{"field":"country","operator":"eq","value":"BJ"}}
+{"input":"find accounts based in Burkina Faso","output":{"field":"country","operator":"eq","value":"BF"}}
+{"input":"find accounts based in Bangladesh","output":{"field":"country","operator":"eq","value":"BD"}}
+{"input":"find accounts based in Bulgaria","output":{"field":"country","operator":"eq","value":"BG"}}
+{"input":"find accounts based in Bahrain","output":{"field":"country","operator":"eq","value":"BH"}}
+{"input":"find accounts based in Bahamas","output":{"field":"country","operator":"eq","value":"BS"}}
+{"input":"find accounts based in Bosnia and Herzegovina","output":{"field":"country","operator":"eq","value":"BA"}}
+{"input":"find accounts based in Saint Barthélemy","output":{"field":"country","operator":"eq","value":"BL"}}
+{"input":"find accounts based in Saint Helena, Ascension and Tristan da Cunha","output":{"field":"country","operator":"eq","value":"SH"}}
+{"input":"find accounts based in Belarus","output":{"field":"country","operator":"eq","value":"BY"}}
+{"input":"find accounts based in Belize","output":{"field":"country","operator":"eq","value":"BZ"}}
+{"input":"find accounts based in Bermuda","output":{"field":"country","operator":"eq","value":"BM"}}
+{"input":"find accounts based in Bolivia","output":{"field":"country","operator":"eq","value":"BO"}}
+{"input":"find accounts based in Caribbean Netherlands","output":{"field":"country","operator":"eq","value":"BQ"}}
+{"input":"find accounts based in Brazil","output":{"field":"country","operator":"eq","value":"BR"}}
+{"input":"find accounts based in Barbados","output":{"field":"country","operator":"eq","value":"BB"}}
+{"input":"find accounts based in Brunei","output":{"field":"country","operator":"eq","value":"BN"}}
+{"input":"find accounts based in Bhutan","output":{"field":"country","operator":"eq","value":"BT"}}
+{"input":"find accounts based in Bouvet Island","output":{"field":"country","operator":"eq","value":"BV"}}
+{"input":"find accounts based in Botswana","output":{"field":"country","operator":"eq","value":"BW"}}
+{"input":"find accounts based in Central African Republic","output":{"field":"country","operator":"eq","value":"CF"}}
+{"input":"find accounts based in Canada","output":{"field":"country","operator":"eq","value":"CA"}}
+{"input":"find accounts based in Cocos (Keeling) Islands","output":{"field":"country","operator":"eq","value":"CC"}}
+{"input":"find accounts based in Switzerland","output":{"field":"country","operator":"eq","value":"CH"}}
+{"input":"find accounts based in Chile","output":{"field":"country","operator":"eq","value":"CL"}}
+{"input":"find accounts based in China","output":{"field":"country","operator":"eq","value":"CN"}}
+{"input":"find accounts based in Ivory Coast","output":{"field":"country","operator":"eq","value":"CI"}}
+{"input":"find accounts based in Cameroon","output":{"field":"country","operator":"eq","value":"CM"}}
+{"input":"find accounts based in DR Congo","output":{"field":"country","operator":"eq","value":"CD"}}
+{"input":"find accounts based in Congo","output":{"field":"country","operator":"eq","value":"CG"}}
+{"input":"find accounts based in Cook Islands","output":{"field":"country","operator":"eq","value":"CK"}}
+{"input":"find accounts based in Colombia","output":{"field":"country","operator":"eq","value":"CO"}}
+{"input":"find accounts based in Comoros","output":{"field":"country","operator":"eq","value":"KM"}}
+{"input":"find accounts based in Cape Verde","output":{"field":"country","operator":"eq","value":"CV"}}
+{"input":"find accounts based in Costa Rica","output":{"field":"country","operator":"eq","value":"CR"}}
+{"input":"find accounts based in Cuba","output":{"field":"country","operator":"eq","value":"CU"}}
+{"input":"find accounts based in Curaçao","output":{"field":"country","operator":"eq","value":"CW"}}
+{"input":"find accounts based in Christmas Island","output":{"field":"country","operator":"eq","value":"CX"}}
+{"input":"find accounts based in Cayman Islands","output":{"field":"country","operator":"eq","value":"KY"}}
+{"input":"find accounts based in Cyprus","output":{"field":"country","operator":"eq","value":"CY"}}
+{"input":"find accounts based in Czechia","output":{"field":"country","operator":"eq","value":"CZ"}}
+{"input":"find accounts based in Germany","output":{"field":"country","operator":"eq","value":"DE"}}
+{"input":"find accounts based in Djibouti","output":{"field":"country","operator":"eq","value":"DJ"}}
+{"input":"find accounts based in Dominica","output":{"field":"country","operator":"eq","value":"DM"}}
+{"input":"find accounts based in Denmark","output":{"field":"country","operator":"eq","value":"DK"}}
+{"input":"find accounts based in Dominican Republic","output":{"field":"country","operator":"eq","value":"DO"}}
+{"input":"find accounts based in Algeria","output":{"field":"country","operator":"eq","value":"DZ"}}
+{"input":"find accounts based in Ecuador","output":{"field":"country","operator":"eq","value":"EC"}}
+{"input":"find accounts based in Egypt","output":{"field":"country","operator":"eq","value":"EG"}}
+{"input":"find accounts based in Eritrea","output":{"field":"country","operator":"eq","value":"ER"}}
+{"input":"find accounts based in Western Sahara","output":{"field":"country","operator":"eq","value":"EH"}}
+{"input":"find accounts based in Spain","output":{"field":"country","operator":"eq","value":"ES"}}
+{"input":"find accounts based in Estonia","output":{"field":"country","operator":"eq","value":"EE"}}
+{"input":"find accounts based in Ethiopia","output":{"field":"country","operator":"eq","value":"ET"}}
+{"input":"find accounts based in Finland","output":{"field":"country","operator":"eq","value":"FI"}}
+{"input":"find accounts based in Fiji","output":{"field":"country","operator":"eq","value":"FJ"}}
+{"input":"find accounts based in Falkland Islands","output":{"field":"country","operator":"eq","value":"FK"}}
+{"input":"find accounts based in France","output":{"field":"country","operator":"eq","value":"FR"}}
+{"input":"find accounts based in Faroe Islands","output":{"field":"country","operator":"eq","value":"FO"}}
+{"input":"find accounts based in Micronesia","output":{"field":"country","operator":"eq","value":"FM"}}
+{"input":"find accounts based in Gabon","output":{"field":"country","operator":"eq","value":"GA"}}
+{"input":"find accounts based in United Kingdom","output":{"field":"country","operator":"eq","value":"GB"}}
+{"input":"find accounts based in Georgia","output":{"field":"country","operator":"eq","value":"GE"}}
+{"input":"find accounts based in Guernsey","output":{"field":"country","operator":"eq","value":"GG"}}
+{"input":"find accounts based in Ghana","output":{"field":"country","operator":"eq","value":"GH"}}
+{"input":"find accounts based in Gibraltar","output":{"field":"country","operator":"eq","value":"GI"}}
+{"input":"find accounts based in Guinea","output":{"field":"country","operator":"eq","value":"GN"}}
+{"input":"find accounts based in Guadeloupe","output":{"field":"country","operator":"eq","value":"GP"}}
+{"input":"find accounts based in Gambia","output":{"field":"country","operator":"eq","value":"GM"}}
+{"input":"find accounts based in Guinea-Bissau","output":{"field":"country","operator":"eq","value":"GW"}}
+{"input":"find accounts based in Equatorial Guinea","output":{"field":"country","operator":"eq","value":"GQ"}}
+{"input":"find accounts based in Greece","output":{"field":"country","operator":"eq","value":"GR"}}
+{"input":"find accounts based in Grenada","output":{"field":"country","operator":"eq","value":"GD"}}
+{"input":"find accounts based in Greenland","output":{"field":"country","operator":"eq","value":"GL"}}
+{"input":"find accounts based in Guatemala","output":{"field":"country","operator":"eq","value":"GT"}}
+{"input":"find accounts based in French Guiana","output":{"field":"country","operator":"eq","value":"GF"}}
+{"input":"find accounts based in Guam","output":{"field":"country","operator":"eq","value":"GU"}}
+{"input":"find accounts based in Guyana","output":{"field":"country","operator":"eq","value":"GY"}}
+{"input":"find accounts based in Hong Kong","output":{"field":"country","operator":"eq","value":"HK"}}
+{"input":"find accounts based in Heard Island and McDonald Islands","output":{"field":"country","operator":"eq","value":"HM"}}
+{"input":"find accounts based in Honduras","output":{"field":"country","operator":"eq","value":"HN"}}
+{"input":"find accounts based in Croatia","output":{"field":"country","operator":"eq","value":"HR"}}
+{"input":"find accounts based in Haiti","output":{"field":"country","operator":"eq","value":"HT"}}
+{"input":"find accounts based in Hungary","output":{"field":"country","operator":"eq","value":"HU"}}
+{"input":"find accounts based in Indonesia","output":{"field":"country","operator":"eq","value":"ID"}}
+{"input":"find accounts based in Isle of Man","output":{"field":"country","operator":"eq","value":"IM"}}
+{"input":"find accounts based in India","output":{"field":"country","operator":"eq","value":"IN"}}
+{"input":"find accounts based in British Indian Ocean Territory","output":{"field":"country","operator":"eq","value":"IO"}}
+{"input":"find accounts based in Ireland","output":{"field":"country","operator":"eq","value":"IE"}}
+{"input":"find accounts based in Iran","output":{"field":"country","operator":"eq","value":"IR"}}
+{"input":"find accounts based in Iraq","output":{"field":"country","operator":"eq","value":"IQ"}}
+{"input":"find accounts based in Iceland","output":{"field":"country","operator":"eq","value":"IS"}}
+{"input":"find accounts based in Israel","output":{"field":"country","operator":"eq","value":"IL"}}
+{"input":"find accounts based in Italy","output":{"field":"country","operator":"eq","value":"IT"}}
+{"input":"find accounts based in Jamaica","output":{"field":"country","operator":"eq","value":"JM"}}
+{"input":"find accounts based in Jersey","output":{"field":"country","operator":"eq","value":"JE"}}
+{"input":"find accounts based in Jordan","output":{"field":"country","operator":"eq","value":"JO"}}
+{"input":"find accounts based in Japan","output":{"field":"country","operator":"eq","value":"JP"}}
+{"input":"find accounts based in Kazakhstan","output":{"field":"country","operator":"eq","value":"KZ"}}
+{"input":"find accounts based in Kenya","output":{"field":"country","operator":"eq","value":"KE"}}
+{"input":"find accounts based in Kyrgyzstan","output":{"field":"country","operator":"eq","value":"KG"}}
+{"input":"find accounts based in Cambodia","output":{"field":"country","operator":"eq","value":"KH"}}
+{"input":"find accounts based in Kiribati","output":{"field":"country","operator":"eq","value":"KI"}}
+{"input":"find accounts based in Saint Kitts and Nevis","output":{"field":"country","operator":"eq","value":"KN"}}
+{"input":"find accounts based in South Korea","output":{"field":"country","operator":"eq","value":"KR"}}
+{"input":"find accounts based in Kosovo","output":{"field":"country","operator":"eq","value":"XK"}}
+{"input":"find accounts based in Kuwait","output":{"field":"country","operator":"eq","value":"KW"}}
+{"input":"find accounts based in Laos","output":{"field":"country","operator":"eq","value":"LA"}}
+{"input":"find accounts based in Lebanon","output":{"field":"country","operator":"eq","value":"LB"}}
+{"input":"find accounts based in Liberia","output":{"field":"country","operator":"eq","value":"LR"}}
+{"input":"find accounts based in Libya","output":{"field":"country","operator":"eq","value":"LY"}}
+{"input":"find accounts based in Saint Lucia","output":{"field":"country","operator":"eq","value":"LC"}}
+{"input":"find accounts based in Liechtenstein","output":{"field":"country","operator":"eq","value":"LI"}}
+{"input":"find accounts based in Sri Lanka","output":{"field":"country","operator":"eq","value":"LK"}}
+{"input":"find accounts based in Lesotho","output":{"field":"country","operator":"eq","value":"LS"}}
+{"input":"find accounts based in Lithuania","output":{"field":"country","operator":"eq","value":"LT"}}
+{"input":"find accounts based in Luxembourg","output":{"field":"country","operator":"eq","value":"LU"}}
+{"input":"find accounts based in Latvia","output":{"field":"country","operator":"eq","value":"LV"}}
+{"input":"find accounts based in Macau","output":{"field":"country","operator":"eq","value":"MO"}}
+{"input":"find accounts based in Saint Martin","output":{"field":"country","operator":"eq","value":"MF"}}
+{"input":"find accounts based in Morocco","output":{"field":"country","operator":"eq","value":"MA"}}
+{"input":"find accounts based in Monaco","output":{"field":"country","operator":"eq","value":"MC"}}
+{"input":"find accounts based in Moldova","output":{"field":"country","operator":"eq","value":"MD"}}
+{"input":"find accounts based in Madagascar","output":{"field":"country","operator":"eq","value":"MG"}}
+{"input":"find accounts based in Maldives","output":{"field":"country","operator":"eq","value":"MV"}}
+{"input":"find accounts based in Mexico","output":{"field":"country","operator":"eq","value":"MX"}}
+{"input":"find accounts based in Marshall Islands","output":{"field":"country","operator":"eq","value":"MH"}}
+{"input":"find accounts based in North Macedonia","output":{"field":"country","operator":"eq","value":"MK"}}
+{"input":"find accounts based in Mali","output":{"field":"country","operator":"eq","value":"ML"}}
+{"input":"find accounts based in Malta","output":{"field":"country","operator":"eq","value":"MT"}}
+{"input":"find accounts based in Myanmar","output":{"field":"country","operator":"eq","value":"MM"}}
+{"input":"find accounts based in Montenegro","output":{"field":"country","operator":"eq","value":"ME"}}
+{"input":"find accounts based in Mongolia","output":{"field":"country","operator":"eq","value":"MN"}}
+{"input":"find accounts based in Northern Mariana Islands","output":{"field":"country","operator":"eq","value":"MP"}}
+{"input":"find accounts based in Mozambique","output":{"field":"country","operator":"eq","value":"MZ"}}
+{"input":"find accounts based in Mauritania","output":{"field":"country","operator":"eq","value":"MR"}}
+{"input":"find accounts based in Montserrat","output":{"field":"country","operator":"eq","value":"MS"}}
+{"input":"find accounts based in Martinique","output":{"field":"country","operator":"eq","value":"MQ"}}
+{"input":"find accounts based in Mauritius","output":{"field":"country","operator":"eq","value":"MU"}}
+{"input":"find accounts based in Malawi","output":{"field":"country","operator":"eq","value":"MW"}}
+{"input":"find accounts based in Malaysia","output":{"field":"country","operator":"eq","value":"MY"}}
+{"input":"find accounts based in Mayotte","output":{"field":"country","operator":"eq","value":"YT"}}
+{"input":"find accounts based in Namibia","output":{"field":"country","operator":"eq","value":"NA"}}
+{"input":"find accounts based in New Caledonia","output":{"field":"country","operator":"eq","value":"NC"}}
+{"input":"find accounts based in Niger","output":{"field":"country","operator":"eq","value":"NE"}}
+{"input":"find accounts based in Norfolk Island","output":{"field":"country","operator":"eq","value":"NF"}}
+{"input":"find accounts based in Nigeria","output":{"field":"country","operator":"eq","value":"NG"}}
+{"input":"find accounts based in Nicaragua","output":{"field":"country","operator":"eq","value":"NI"}}
+{"input":"find accounts based in Niue","output":{"field":"country","operator":"eq","value":"NU"}}
+{"input":"find accounts based in Netherlands","output":{"field":"country","operator":"eq","value":"NL"}}
+{"input":"find accounts based in Norway","output":{"field":"country","operator":"eq","value":"NO"}}
+{"input":"find accounts based in Nepal","output":{"field":"country","operator":"eq","value":"NP"}}
+{"input":"find accounts based in Nauru","output":{"field":"country","operator":"eq","value":"NR"}}
+{"input":"find accounts based in New Zealand","output":{"field":"country","operator":"eq","value":"NZ"}}
+{"input":"find accounts based in Oman","output":{"field":"country","operator":"eq","value":"OM"}}
+{"input":"find accounts based in Pakistan","output":{"field":"country","operator":"eq","value":"PK"}}
+{"input":"find accounts based in Panama","output":{"field":"country","operator":"eq","value":"PA"}}
+{"input":"find accounts based in Pitcairn Islands","output":{"field":"country","operator":"eq","value":"PN"}}
+{"input":"find accounts based in Peru","output":{"field":"country","operator":"eq","value":"PE"}}
+{"input":"find accounts based in Philippines","output":{"field":"country","operator":"eq","value":"PH"}}
+{"input":"find accounts based in Palau","output":{"field":"country","operator":"eq","value":"PW"}}
+{"input":"find accounts based in Papua New Guinea","output":{"field":"country","operator":"eq","value":"PG"}}
+{"input":"find accounts based in Poland","output":{"field":"country","operator":"eq","value":"PL"}}
+{"input":"find accounts based in Puerto Rico","output":{"field":"country","operator":"eq","value":"PR"}}
+{"input":"find accounts based in North Korea","output":{"field":"country","operator":"eq","value":"KP"}}
+{"input":"find accounts based in Portugal","output":{"field":"country","operator":"eq","value":"PT"}}
+{"input":"find accounts based in Paraguay","output":{"field":"country","operator":"eq","value":"PY"}}
+{"input":"find accounts based in Palestine","output":{"field":"country","operator":"eq","value":"PS"}}
+{"input":"find accounts based in French Polynesia","output":{"field":"country","operator":"eq","value":"PF"}}
+{"input":"find accounts based in Qatar","output":{"field":"country","operator":"eq","value":"QA"}}
+{"input":"find accounts based in Réunion","output":{"field":"country","operator":"eq","value":"RE"}}
+{"input":"find accounts based in Romania","output":{"field":"country","operator":"eq","value":"RO"}}
+{"input":"find accounts based in Russia","output":{"field":"country","operator":"eq","value":"RU"}}
+{"input":"find accounts based in Rwanda","output":{"field":"country","operator":"eq","value":"RW"}}
+{"input":"find accounts based in Saudi Arabia","output":{"field":"country","operator":"eq","value":"SA"}}
+{"input":"find accounts based in Sudan","output":{"field":"country","operator":"eq","value":"SD"}}
+{"input":"find accounts based in Senegal","output":{"field":"country","operator":"eq","value":"SN"}}
+{"input":"find accounts based in Singapore","output":{"field":"country","operator":"eq","value":"SG"}}
+{"input":"find accounts based in South Georgia","output":{"field":"country","operator":"eq","value":"GS"}}
+{"input":"find accounts based in Svalbard and Jan Mayen","output":{"field":"country","operator":"eq","value":"SJ"}}
+{"input":"find accounts based in Solomon Islands","output":{"field":"country","operator":"eq","value":"SB"}}
+{"input":"find accounts based in Sierra Leone","output":{"field":"country","operator":"eq","value":"SL"}}
+{"input":"find accounts based in El Salvador","output":{"field":"country","operator":"eq","value":"SV"}}
+{"input":"find accounts based in San Marino","output":{"field":"country","operator":"eq","value":"SM"}}
+{"input":"find accounts based in Somalia","output":{"field":"country","operator":"eq","value":"SO"}}
+{"input":"find accounts based in Saint Pierre and Miquelon","output":{"field":"country","operator":"eq","value":"PM"}}
+{"input":"find accounts based in Serbia","output":{"field":"country","operator":"eq","value":"RS"}}
+{"input":"find accounts based in South Sudan","output":{"field":"country","operator":"eq","value":"SS"}}
+{"input":"find accounts based in São Tomé and Príncipe","output":{"field":"country","operator":"eq","value":"ST"}}
+{"input":"find accounts based in Suriname","output":{"field":"country","operator":"eq","value":"SR"}}
+{"input":"find accounts based in Slovakia","output":{"field":"country","operator":"eq","value":"SK"}}
+{"input":"find accounts based in Slovenia","output":{"field":"country","operator":"eq","value":"SI"}}
+{"input":"find accounts based in Sweden","output":{"field":"country","operator":"eq","value":"SE"}}
+{"input":"find accounts based in Eswatini","output":{"field":"country","operator":"eq","value":"SZ"}}
+{"input":"find accounts based in Sint Maarten","output":{"field":"country","operator":"eq","value":"SX"}}
+{"input":"find accounts based in Seychelles","output":{"field":"country","operator":"eq","value":"SC"}}
+{"input":"find accounts based in Syria","output":{"field":"country","operator":"eq","value":"SY"}}
+{"input":"find accounts based in Turks and Caicos Islands","output":{"field":"country","operator":"eq","value":"TC"}}
+{"input":"find accounts based in Chad","output":{"field":"country","operator":"eq","value":"TD"}}
+{"input":"find accounts based in Togo","output":{"field":"country","operator":"eq","value":"TG"}}
+{"input":"find accounts based in Thailand","output":{"field":"country","operator":"eq","value":"TH"}}
+{"input":"find accounts based in Tajikistan","output":{"field":"country","operator":"eq","value":"TJ"}}
+{"input":"find accounts based in Tokelau","output":{"field":"country","operator":"eq","value":"TK"}}
+{"input":"find accounts based in Turkmenistan","output":{"field":"country","operator":"eq","value":"TM"}}
+{"input":"find accounts based in Timor-Leste","output":{"field":"country","operator":"eq","value":"TL"}}
+{"input":"find accounts based in Tonga","output":{"field":"country","operator":"eq","value":"TO"}}
+{"input":"find accounts based in Trinidad and Tobago","output":{"field":"country","operator":"eq","value":"TT"}}
+{"input":"find accounts based in Tunisia","output":{"field":"country","operator":"eq","value":"TN"}}
+{"input":"find accounts based in Türkiye","output":{"field":"country","operator":"eq","value":"TR"}}
+{"input":"find accounts based in Tuvalu","output":{"field":"country","operator":"eq","value":"TV"}}
+{"input":"find accounts based in Taiwan","output":{"field":"country","operator":"eq","value":"TW"}}
+{"input":"find accounts based in Tanzania","output":{"field":"country","operator":"eq","value":"TZ"}}
+{"input":"find accounts based in Uganda","output":{"field":"country","operator":"eq","value":"UG"}}
+{"input":"find accounts based in Ukraine","output":{"field":"country","operator":"eq","value":"UA"}}
+{"input":"find accounts based in United States Minor Outlying Islands","output":{"field":"country","operator":"eq","value":"UM"}}
+{"input":"find accounts based in Uruguay","output":{"field":"country","operator":"eq","value":"UY"}}
+{"input":"find accounts based in United States","output":{"field":"country","operator":"eq","value":"US"}}
+{"input":"find accounts based in Uzbekistan","output":{"field":"country","operator":"eq","value":"UZ"}}
+{"input":"find accounts based in Vatican City","output":{"field":"country","operator":"eq","value":"VA"}}
+{"input":"find accounts based in Saint Vincent and the Grenadines","output":{"field":"country","operator":"eq","value":"VC"}}
+{"input":"find accounts based in Venezuela","output":{"field":"country","operator":"eq","value":"VE"}}
+{"input":"find accounts based in British Virgin Islands","output":{"field":"country","operator":"eq","value":"VG"}}
+{"input":"find accounts based in United States Virgin Islands","output":{"field":"country","operator":"eq","value":"VI"}}
+{"input":"find accounts based in Vietnam","output":{"field":"country","operator":"eq","value":"VN"}}
+{"input":"find accounts based in Vanuatu","output":{"field":"country","operator":"eq","value":"VU"}}
+{"input":"find accounts based in Wallis and Futuna","output":{"field":"country","operator":"eq","value":"WF"}}
+{"input":"find accounts based in Samoa","output":{"field":"country","operator":"eq","value":"WS"}}
+{"input":"find accounts based in Yemen","output":{"field":"country","operator":"eq","value":"YE"}}
+{"input":"find accounts based in South Africa","output":{"field":"country","operator":"eq","value":"ZA"}}
+{"input":"find accounts based in Zambia","output":{"field":"country","operator":"eq","value":"ZM"}}
+{"input":"find accounts based in Zimbabwe","output":{"field":"country","operator":"eq","value":"ZW"}}

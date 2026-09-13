@@ -11,12 +11,14 @@ function add(parts: Part[], amount: number, currency: string, approximate = fals
   const labels = parts.flatMap(([text, label]) => tokenize(text, "words").map(() => label));
   if (labels.length !== tokenize(input, "words").length)
     throw new Error(`Boundary mismatch: ${input}`);
+  if (spans[input]) return;
   rows.push({ input, output: { amount, currency, approximate } });
   spans[input] = labels;
 }
 const currencies = [
   ["EUR", "€", "euros"],
   ["USD", "USD", "dollars"],
+  ["USD", "$", "dollars"],
   ["GBP", "£", "pounds"],
   ["SEK", "SEK", "kronor"],
 ] as const;

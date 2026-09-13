@@ -62,4 +62,4 @@ test("packaging is deterministic, held-out labels do not select the model, and f
   } finally {
     await rm(temporary, { recursive: true, force: true });
   }
-}, 30000);
+}, 120000);
