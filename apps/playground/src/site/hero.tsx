@@ -5,7 +5,6 @@ export function Hero() {
     <section className="hero" aria-labelledby="title">
       <MatchboxArt />
       <div className="hero-copy">
-        <p className="eyebrow">A little model goes a long way.</p>
         <h1 id="title">
           Compile examples.
           <br />
@@ -26,7 +25,7 @@ export function Hero() {
         </div>
       </div>
       <div className="hero-bottom">
-        <span>Teach a task. Import a function.</span>
+        <a href="#benchmark">Benchmark your browser ↗</a>
         <code>const result = await model.parse(input)</code>
       </div>
     </section>

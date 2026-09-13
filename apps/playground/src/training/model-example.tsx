@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useMatchbox } from "@matchbox-ai/core/react";
 import type { ParseResult } from "@matchbox-ai/core/runtime";
+import { BenchmarkPanel } from "@/benchmark";
 import { Button } from "@/components/ui/button";
 import { measure } from "./measure.js";
 import type { ExampleLoader, TrainingReport } from "./types.js";
@@ -17,8 +18,6 @@ export function ModelExample({ name, title, description, suggestions, load }: Pr
   const [result, setResult] = useState<ParseResult<unknown> | null>(null);
   const [report, setReport] = useState<TrainingReport | null>(null);
   const [failure, setFailure] = useState<string | null>(null);
-  const [timing, setTiming] = useState<Awaited<ReturnType<typeof measure>> | null>(null);
-  const [measuring, setMeasuring] = useState(false);
   useEffect(() => {
     let current = true;
     load()
@@ -49,7 +48,6 @@ export function ModelExample({ name, title, description, suggestions, load }: Pr
     setQuery(value);
     setResult(null);
     setFailure(null);
-    setTiming(null);
   }
   return (
     <section className="query-section training-example" aria-labelledby={`${name}-title`}>
@@ -97,7 +95,7 @@ export function ModelExample({ name, title, description, suggestions, load }: Pr
         </code>
       </pre>
       <details className="developer-details">
-        <summary>Inspect training and browser timing</summary>
+        <summary>Inspect training</summary>
         {report && (
           <p>
             Training loss fell from {report.loss[0]?.toFixed(4)} to {report.loss.at(-1)?.toFixed(6)}
@@ -108,27 +106,15 @@ export function ModelExample({ name, title, description, suggestions, load }: Pr
         <pre>
           <code>{`import model from "./${name}.matchbox";\nconst result = await model.parse(input);`}</code>
         </pre>
-        <Button
-          disabled={measuring || status !== "ready"}
-          onClick={async () => {
-            setMeasuring(true);
-            try {
-              setTiming(await measure({ parse }, query));
-            } catch (cause) {
-              setFailure(String(cause));
-            } finally {
-              setMeasuring(false);
-            }
-          }}
-        >
-          Measure {name}
-        </Button>
-        {timing && <output data-testid={`${name}-timing`}>{JSON.stringify(timing)}</output>}
-        <p>
-          Timing includes 300 warm parses after 20 warmups. Confidence is an uncalibrated model
-          score.
-        </p>
+        <p>Confidence is an uncalibrated model score.</p>
       </details>
+      <BenchmarkPanel
+        key={query}
+        run={() => measure({ parse }, query)}
+        ready={status === "ready"}
+        buttonLabel={`Measure ${name}`}
+        testId={`${name}-timing`}
+      />
     </section>
   );
 }

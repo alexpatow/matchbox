@@ -54,11 +54,6 @@ export function PipelineExplorer() {
             </button>
           ))}
         </div>
-        <p>
-          Keep the choices explicit.
-          <br />
-          Keep the runtime boring.
-        </p>
       </div>
       <div role="tabpanel" id="file-panel" aria-labelledby={`file-${selected}`} tabIndex={0}>
         <div className="file-caption">

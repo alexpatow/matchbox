@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useMatchbox } from "@matchbox-ai/core/react";
 import type { ParseResult } from "@matchbox-ai/core/runtime";
+import { BenchmarkPanel } from "@/benchmark";
 import { Button } from "@/components/ui/button";
 import { customers, matchesFilter, loadFilters, benchmark, type Filter } from "@/filter";
 import { CustomerTable } from "./customer-table";
@@ -14,10 +15,6 @@ export function FilterDemo() {
   const { parse, status, error: loadError } = useMatchbox(loadFilters);
   const [query, setQuery] = useState("");
   const [result, setResult] = useState<ParseResult<Filter> | null>(null);
-  const [measurement, setMeasurement] = useState<Awaited<ReturnType<typeof benchmark>> | null>(
-    null,
-  );
-  const [measuring, setMeasuring] = useState(false);
   const [error, setError] = useState<string | null>(null);
   useEffect(() => {
     let current = true;
@@ -45,12 +42,8 @@ export function FilterDemo() {
   return (
     <section id="demo" className="demo" aria-labelledby="demo-title">
       <div className="section-heading">
-        <p className="eyebrow">Run a little intelligence.</p>
         <h2 id="demo-title">Fuzzy input. Strict output.</h2>
-        <p>
-          A tiny model recognizes what you mean. Your application gets a validated filter. Try it
-          here. Every keystroke stays on your device.
-        </p>
+        <p>Turn a query into validated filters, entirely on your device.</p>
       </div>
       <section className="query-section" aria-labelledby="query-label">
         <label id="query-label" htmlFor="query">
@@ -65,8 +58,7 @@ export function FilterDemo() {
           autoComplete="off"
         />
         <p id="query-help">
-          Country names cover the full reference list; the sample table contains four countries. Use
-          “and” or “or” between clauses. Dates and implicit joins are not supported yet.
+          Join clauses with “and” or “or”. Dates and implicit joins are not supported yet.
         </p>
         <div className="suggestions">
           {suggestions.map((suggestion) => (
@@ -96,7 +88,7 @@ export function FilterDemo() {
       </section>
       <CustomerTable rows={rows} />
       <details className="developer-details">
-        <summary>See the typed output and browser timing</summary>
+        <summary>Inspect the typed output</summary>
         <pre>
           <code>
             {
@@ -109,27 +101,15 @@ export function FilterDemo() {
             {result ? JSON.stringify(result, null, 2) : "Your validated output will appear here."}
           </code>
         </pre>
-        <Button
-          disabled={measuring || status !== "ready"}
-          onClick={async () => {
-            setMeasuring(true);
-            try {
-              setMeasurement(await benchmark());
-            } catch (cause) {
-              setError(String(cause));
-            } finally {
-              setMeasuring(false);
-            }
-          }}
-        >
-          Measure this browser
-        </Button>
-        {measurement && <output data-testid="benchmark">{JSON.stringify(measurement)}</output>}
-        <p>
-          Timing uses 300 warm parses on this device. Loading here may use the module cache.
-          Confidence is an uncalibrated score, not a correctness guarantee.
-        </p>
+        <p>Confidence is an uncalibrated model score.</p>
       </details>
+      <BenchmarkPanel
+        run={benchmark}
+        ready={status === "ready"}
+        buttonLabel="Measure this browser"
+        testId="benchmark"
+        featured
+      />
     </section>
   );
 }

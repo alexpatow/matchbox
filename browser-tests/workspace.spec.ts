@@ -45,11 +45,13 @@ test("measures real browser inference and enforces a generous regression budget"
 }, testInfo) => {
   await page.goto("/");
   await expect(page.getByRole("status")).toContainText("The model is ready");
-  await page.getByText("See the typed output and browser timing", { exact: true }).click();
   await page.getByRole("button", { name: "Measure this browser" }).click();
   const output = page.getByTestId("benchmark");
   await expect(output).toBeVisible();
-  const metrics = JSON.parse((await output.textContent())!);
+  const metrics = JSON.parse((await output.getAttribute("data-report"))!);
+  await expect(output).toContainText("Median / p50");
+  await expect(output).toContainText("95th percentile");
+  await page.locator("#benchmark").screenshot({ path: testInfo.outputPath("benchmark-panel.png") });
   await writeFile(
     testInfo.outputPath("browser-benchmark.json"),
     JSON.stringify({ project: testInfo.project.name, ...metrics }, null, 2),
