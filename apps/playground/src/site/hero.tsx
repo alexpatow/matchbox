@@ -1,58 +1,33 @@
+import { Link } from "react-router-dom";
+import { MatchboxArt } from "./matchbox-art";
 export function Hero() {
   return (
     <section className="hero" aria-labelledby="title">
+      <MatchboxArt />
       <div className="hero-copy">
-        <p className="eyebrow">Small models belong in your app.</p>
+        <p className="eyebrow">A little model goes a long way.</p>
         <h1 id="title">
-          Compile examples
+          Compile examples.
           <br />
-          into <em>tiny models.</em>
+          <span>Ship tiny models.</span>
         </h1>
         <p className="hero-description">
-          Teach a narrow task. Get a typed function that runs in the browser. Matchbox brings
-          learned behavior to the fuzzy parts of ordinary software.
+          Turn fuzzy input into typed output.
+          <br />
+          Train in TypeScript. Run right in the browser.
         </p>
         <div className="hero-actions">
-          <a className="action-link" href="/docs/getting-started">
-            Start building <span aria-hidden="true">↗</span>
-          </a>
+          <Link className="action-link" to="/docs/getting-started">
+            Get started <span aria-hidden="true">↗</span>
+          </Link>
           <a href="#demo">
-            Try it below <span aria-hidden="true">↓</span>
+            Try a model <span aria-hidden="true">↓</span>
           </a>
         </div>
-        <p className="release-note">
-          Matchbox is an experimental framework, currently private and unpublished.
-        </p>
       </div>
-      <div className="hero-artifact">
-        <div className="artifact-label">
-          <span className="match-mark" aria-hidden="true">
-            ✳
-          </span>
-          <span>Learn once. Run locally.</span>
-        </div>
-        <pre>
-          <code>{`import money from "./.matchbox/money/model.matchbox";
-
-const result = await money.parse(
-  "around fifteen grand euros"
-);`}</code>
-        </pre>
-        <div className="artifact-result">
-          <span>Example output from the explicit money pipeline:</span>
-          <pre>
-            <code>{`{
-  status: "ok",
-  value: {
-    amount: 15000,
-    currency: "EUR",
-    approximate: true
-  }
-  // Confidence omitted here.
-}`}</code>
-          </pre>
-        </div>
-        <a href="/training">Explore the simple and explicit pipelines ↗</a>
+      <div className="hero-bottom">
+        <span>Teach a task. Import a function.</span>
+        <code>const result = await model.parse(input)</code>
       </div>
     </section>
   );

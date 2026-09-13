@@ -1,32 +1,25 @@
-import { StrictMode, lazy, Suspense } from "react";
+import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "@fontsource-variable/inter";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "@fontsource-variable/geist";
+import "@fontsource-variable/geist-mono";
 import { TrainingApp } from "./training";
+import { DocsApp } from "./docs";
 import { App } from "./app";
+import { RouteEffects } from "./site";
 import "./styles.css";
 import "./site.css";
-
-const DocsApp = lazy(() => import("./docs").then((module) => ({ default: module.DocsApp })));
-
 const root = document.getElementById("root");
 if (!root) throw new Error("The example root element is missing.");
-
 createRoot(root).render(
   <StrictMode>
-    {window.location.pathname.startsWith("/docs") ? (
-      <Suspense
-        fallback={
-          <main className="workspace">
-            <p>Loading documentation…</p>
-          </main>
-        }
-      >
-        <DocsApp />
-      </Suspense>
-    ) : window.location.pathname === "/training" ? (
-      <TrainingApp />
-    ) : (
-      <App />
-    )}
+    <BrowserRouter>
+      <RouteEffects />
+      <Routes>
+        <Route path="/docs/*" element={<DocsApp />} />
+        <Route path="/training" element={<TrainingApp />} />
+        <Route path="*" element={<App />} />
+      </Routes>
+    </BrowserRouter>
   </StrictMode>,
 );

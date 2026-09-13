@@ -1,0 +1,186 @@
+.demo {
+  padding: 78px 0 0;
+  scroll-margin-top: 28px;
+}
+.demo .query-section {
+  border: 1px solid var(--border);
+  border-bottom: 0;
+  background: #0c0c0c;
+  padding: 26px 28px 22px;
+  border-radius: 8px 8px 0 0;
+}
+.demo .query-section label {
+  color: #9c9c9c;
+  font-size: 12px;
+  font-weight: 400;
+}
+.demo #query-help {
+  margin-top: 12px;
+  font-size: 11px;
+  color: #777;
+}
+.demo .table-scroll {
+  border: 1px solid var(--border);
+  padding: 0 28px 12px;
+  background: #0c0c0c;
+  border-radius: 0 0 8px 8px;
+}
+.demo .developer-details {
+  margin-top: 12px;
+  color: #888;
+}
+.framework-story {
+  padding: 100px 0 0;
+}
+.pipeline-explorer {
+  display: grid;
+  grid-template-columns: 235px minmax(0, 1fr);
+  border: 1px solid #282828;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #0c0c0c;
+}
+.file-tree {
+  border-right: 1px solid #282828;
+  padding: 25px 16px;
+}
+.folder-name {
+  display: block;
+  color: #a3a3a3;
+  font-size: 12px;
+  font-family: "Geist Mono Variable", monospace;
+  padding: 0 10px 22px;
+}
+.file-tree button {
+  border: 0;
+  background: transparent;
+  color: #777;
+  width: 100%;
+  padding: 12px 10px;
+  font-family: "Geist Mono Variable", monospace;
+  font-size: 12px;
+  text-align: left;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.file-tree button[aria-selected="true"] {
+  background: #232323;
+  color: #eee;
+}
+.file-tree button:hover {
+  color: #eee;
+}
+.file-tree button span {
+  color: #7d9dba;
+  font-size: 10px;
+  padding-right: 12px;
+}
+.file-tree p {
+  font-size: 11px;
+  line-height: 1.8;
+  margin: 58px 10px 0;
+  color: #676767;
+}
+.pipeline-explorer [role="tabpanel"] {
+  min-width: 0;
+}
+.file-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 17px 24px;
+  border-bottom: 1px solid #232323;
+  font-size: 11px;
+  color: #777;
+}
+.file-caption span:first-child {
+  color: #aaa;
+  font-family: "Geist Mono Variable", monospace;
+}
+.pipeline-explorer pre {
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+  font-size: 12px;
+  line-height: 1.8;
+  padding: 28px;
+  margin: 0;
+  height: 302px;
+}
+.file-description {
+  border-top: 1px solid #232323;
+  font-size: 12px;
+  line-height: 1.7;
+  color: #818181;
+  padding: 16px 24px;
+  margin: 0;
+  min-height: 75px;
+}
+.story-note {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  color: #808080;
+  font-size: 13px;
+  line-height: 1.8;
+  padding-top: 22px;
+}
+.story-note a {
+  color: #b8b8b8;
+  white-space: nowrap;
+  font-size: 12px;
+}
+@media (max-width: 700px) {
+  .demo {
+    padding-top: 54px;
+  }
+  .demo .query-section {
+    padding: 20px 16px;
+  }
+  .demo .table-scroll {
+    padding: 0 16px 12px;
+  }
+  .pipeline-explorer {
+    grid-template-columns: 1fr;
+  }
+  .file-tree {
+    border-right: 0;
+    border-bottom: 1px solid #282828;
+    padding: 14px;
+  }
+  .folder-name {
+    padding: 0 6px 14px;
+  }
+  .file-tree [role="tablist"] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .file-tree button {
+    width: auto;
+    font-size: 11px;
+    padding: 9px;
+  }
+  .file-tree button span {
+    display: none;
+  }
+  .file-tree p {
+    display: none;
+  }
+  .file-caption span:last-child {
+    display: none;
+  }
+  .pipeline-explorer pre {
+    padding: 20px;
+    font-size: 11px;
+  }
+  .framework-story {
+    padding-top: 64px;
+  }
+  .story-note {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}

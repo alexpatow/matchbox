@@ -92,7 +92,9 @@ export function ModelExample({ name, title, description, suggestions, load }: Pr
                 : "Parsing…")}
       </output>
       <pre aria-label={`${name} output`}>
-        <code>{JSON.stringify(result, null, 2)}</code>
+        <code>
+          {result ? JSON.stringify(result, null, 2) : "Preparing the model on your device…"}
+        </code>
       </pre>
       <details className="developer-details">
         <summary>Inspect training and browser timing</summary>

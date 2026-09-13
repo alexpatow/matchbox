@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom";
 export function SiteFooter() {
   return (
     <footer className="site-footer">
       <div>
-        <a className="wordmark" href="/">
+        <Link className="wordmark" to="/">
           Matchbox.
-        </a>
+        </Link>
         <p>Compile examples into tiny models for the browser.</p>
       </div>
       <div>

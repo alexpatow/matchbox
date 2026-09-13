@@ -45,11 +45,11 @@ export function FilterDemo() {
   return (
     <section id="demo" className="demo" aria-labelledby="demo-title">
       <div className="section-heading">
-        <p className="eyebrow">Try a trained model.</p>
-        <h2 id="demo-title">A search box that understands.</h2>
+        <p className="eyebrow">Run a little intelligence.</p>
+        <h2 id="demo-title">Fuzzy input. Strict output.</h2>
         <p>
-          Turn language into validated filters, then let ordinary application code filter the table.
-          This example runs on your device.
+          A tiny model recognizes what you mean. Your application gets a validated filter. Try it
+          here. Every keystroke stays on your device.
         </p>
       </div>
       <section className="query-section" aria-labelledby="query-label">
@@ -75,11 +75,15 @@ export function FilterDemo() {
             </Button>
           ))}
         </div>
-        <output className="parse-status" aria-live="polite">
+        <output
+          className="parse-status"
+          data-loading={status === "loading" || (!!query.trim() && !result && !error && !loadError)}
+          aria-live="polite"
+        >
           {error ||
             loadError ||
             (status === "loading"
-              ? "Loading the local model…"
+              ? "Preparing the model on your device…"
               : !query.trim()
                 ? "The model is ready. All customers are shown."
                 : !result
@@ -101,10 +105,12 @@ export function FilterDemo() {
           </code>
         </pre>
         <pre aria-label="Parser output">
-          <code>{JSON.stringify(result, null, 2)}</code>
+          <code>
+            {result ? JSON.stringify(result, null, 2) : "Your validated output will appear here."}
+          </code>
         </pre>
         <Button
-          disabled={measuring}
+          disabled={measuring || status !== "ready"}
           onClick={async () => {
             setMeasuring(true);
             try {

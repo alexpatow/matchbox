@@ -2,8 +2,6 @@
 
 Train a small parser from examples, check it against independent evals, and import it into a browser application.
 
-Matchbox is experimental, private, and unpublished. These instructions are for developers with repository access. Public package installation is not available yet.
-
 ## Run the working examples
 
 Use Bun 1.4.2 and Node 24. From your Matchbox checkout:
@@ -30,7 +28,7 @@ bunx matchbox train money
 bunx matchbox dev money
 ```
 
-The scaffold links to the local pre-release packages. Keep the Matchbox checkout available while using it.
+The scaffold links to your local packages. Keep the Matchbox checkout available while using it.
 
 ## Understand what you own
 

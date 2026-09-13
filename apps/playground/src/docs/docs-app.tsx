@@ -1,9 +1,16 @@
+import { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { SiteHeader, SiteFooter } from "@/site";
 import { documents, navigation, documentLink } from "./documents";
 export function DocsApp() {
-  const slug = decodeURI(window.location.pathname.slice(6)) || "getting-started";
+  const { pathname } = useLocation();
+  const slug = decodeURI(pathname.slice(6)) || "getting-started";
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.title = `${documents[slug]?.match(/^# (.+)/m)?.[1] ?? "Documentation"} · Matchbox`;
+  }, [slug]);
   const source = documents[slug];
   return (
     <div className="workspace docs-workspace">
@@ -15,13 +22,13 @@ export function DocsApp() {
               <div key={group}>
                 <p>{group}</p>
                 {pages.map(([path, title]) => (
-                  <a
+                  <Link
                     key={path}
-                    href={`/docs/${path}`}
+                    to={`/docs/${path}`}
                     aria-current={slug === path ? "page" : undefined}
                   >
                     {title}
-                  </a>
+                  </Link>
                 ))}
               </div>
             ))}
@@ -34,7 +41,14 @@ export function DocsApp() {
               <Markdown
                 remarkPlugins={[remarkGfm]}
                 components={{
-                  a: ({ href, children }) => <a href={documentLink(href, slug)}>{children}</a>,
+                  a: ({ href, children }) => {
+                    const target = documentLink(href, slug);
+                    return target?.startsWith("/docs/") ? (
+                      <Link to={target}>{children}</Link>
+                    ) : (
+                      <a href={target}>{children}</a>
+                    );
+                  },
                 }}
               >
                 {source}

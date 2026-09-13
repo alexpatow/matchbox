@@ -1,12 +1,13 @@
+import { Link } from "react-router-dom";
 export function SiteHeader() {
   return (
     <header className="masthead">
-      <a className="wordmark" href="/">
+      <Link className="wordmark" to="/">
         Matchbox<span aria-hidden="true">.</span>
-      </a>
+      </Link>
       <nav aria-label="Main navigation">
-        <a href="/docs/getting-started">Documentation</a>
-        <a href="/training">Examples</a>
+        <Link to="/docs/getting-started">Documentation</Link>
+        <Link to="/training">Examples</Link>
       </nav>
     </header>
   );

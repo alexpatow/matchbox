@@ -8,9 +8,11 @@ test("the framework story leads into working documentation", async ({ page }, te
     "https://x.com/shuding",
   );
   await page.screenshot({ path: testInfo.outputPath("homepage.png"), fullPage: true });
-  await page.getByRole("link", { name: "Start building" }).click();
+  const origin = await page.evaluate(() => performance.timeOrigin);
+  await page.getByRole("link", { name: "Get started" }).click();
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Getting started");
-  await expect(page.getByRole("main")).toContainText("private, and unpublished");
+  expect(await page.evaluate(() => performance.timeOrigin)).toBe(origin);
+  await expect(page.getByRole("main")).not.toContainText("private, and unpublished");
   const links = await page
     .getByRole("navigation", { name: "Documentation" })
     .getByRole("link")
@@ -25,4 +27,14 @@ test("the framework story leads into working documentation", async ({ page }, te
   }
   await page.goto("/docs/getting-started");
   await page.screenshot({ path: testInfo.outputPath("documentation.png"), fullPage: true });
+});
+
+test("the file explorer supports keyboard navigation", async ({ page }) => {
+  await page.goto("/");
+  await page.getByRole("tab", { name: "parser.ts", exact: true }).focus();
+  await page.keyboard.press("ArrowDown");
+  await expect(page.getByRole("tab", { name: "pipeline.ts", exact: true })).toBeFocused();
+  await expect(page.getByRole("tabpanel")).toContainText("fieldClassifier");
+  await page.getByRole("tab", { name: "app.ts", exact: true }).click();
+  await expect(page.getByRole("tabpanel")).toContainText("money.parse");
 });
