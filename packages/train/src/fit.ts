@@ -1,6 +1,6 @@
-import { features, vector, numbers, words } from "../runtime/features.js";
-import type { ModelArtifact, Predicate, Template } from "../runtime/index.js";
-import type { DatasetExample } from "../dataset/index.js";
+import { clauseFeatures } from "@matchbox-ai/core/runtime";
+import type { ModelArtifact, Predicate, Template } from "@matchbox-ai/core/runtime";
+import type { DatasetExample } from "@matchbox-ai/core";
 
 export function fit(
   examples: readonly DatasetExample<Predicate>[],
@@ -9,10 +9,12 @@ export function fit(
   ModelArtifact,
   "vocabulary" | "templates" | "weights" | "scale" | "algorithm" | "fieldTokens"
 > {
-  const vocabulary = [...new Set(examples.flatMap((row) => features(row.input)))].sort();
+  const vocabulary = [
+    ...new Set(examples.flatMap((row) => clauseFeatures.features(row.input))),
+  ].sort();
   const tokenFields = new Map<string, Set<string>>();
   for (const example of examples)
-    for (const token of words(example.input)) {
+    for (const token of clauseFeatures.words(example.input)) {
       const fields = tokenFields.get(token) ?? new Set<string>();
       fields.add(example.output.field);
       tokenFields.set(token, fields);
@@ -28,7 +30,8 @@ export function fit(
     const numberSlot = typeof row.output.value === "number";
     if (
       numberSlot &&
-      (numbers(row.input).length !== 1 || numbers(row.input)[0] !== row.output.value)
+      (clauseFeatures.numbers(row.input).length !== 1 ||
+        clauseFeatures.numbers(row.input)[0] !== row.output.value)
     )
       throw new Error(`Training amount must match one numeric input span: ${row.input}`);
     const predicate = {
@@ -46,7 +49,7 @@ export function fit(
     return index;
   });
   if (templates.length < 2) throw new Error("Training needs at least two clause classes.");
-  const inputs = examples.map((row) => vector(row.input, vocabulary));
+  const inputs = examples.map((row) => clauseFeatures.vector(row.input, vocabulary));
   const weights = templates.map(() => vocabulary.map(() => 0));
   if (algorithm === "centroid") {
     inputs.forEach((input, row) =>

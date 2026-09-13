@@ -3,5 +3,5 @@
   "compilerOptions": {
     "types": ["node"]
   },
-  "include": ["rolldown.config.ts", "src/train/**/*.ts", "src/vite/**/*.ts"]
+  "include": ["rolldown.config.ts", "src/vite/**/*.ts"]
 }

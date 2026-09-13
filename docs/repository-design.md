@@ -2,9 +2,9 @@
 
 These decisions implement BOO-30 and the repo setup agreed with Alex on 2026-09-13.
 
-## Two workspaces
+## Workspace boundaries
 
-`packages/core` owns the portable TypeScript library. `examples/filters` owns the browser-only React/Vite app. Bun manages installation and scripts. Runtime, React, training, and Vite tooling use separate package subpath exports, without introducing additional workspaces.
+`packages/core` owns task definitions, datasets, the portable runtime, and the Vite import plugin. `packages/react` exposes `@matchbox-ai/react`. `packages/train` exposes `@matchbox-ai/train` and owns the CLI. `examples/filters` owns the browser-only React/Vite app. Bun manages installation and scripts. Cross-package imports use package exports.
 
 The foundation started with a bootstrap version export. BOO-31 adds the [parser task API](parser-api.md), including validation and serializable training metadata. BOO-32 adds versioned datasets. BOO-46 connects the first learned filter flow, described in the [end-to-end guide](end-to-end.md).
 
@@ -14,7 +14,7 @@ Rolldown bundles the library to ESM. TypeScript emits declarations. The package 
 
 The core watchers refresh both JavaScript and declarations after source changes. Bun runs the two watch commands together, without an additional task orchestrator.
 
-Portable library source typechecking has no ambient Bun, Node, or DOM globals. Training and Vite modules are checked separately with Node types and built for Node. The CLI runs with Bun to load TypeScript project files. React is an optional peer dependency used only through the React subpath. Training is not re-exported through browser entry points.
+Portable library source typechecking has no ambient Bun, Node, or DOM globals. The training package and Vite modules are checked with Node types and built for Node. The CLI runs with Bun to load TypeScript project files. React is a peer dependency of the React package only. Training is not re-exported through browser entry points.
 
 The package targets ES2022 ESM with no CommonJS entry point. Node 24 is the initial tested Node consumer and tooling version. Browser integration runs in Chromium at desktop and mobile viewport sizes. Other browsers remain unverified.
 

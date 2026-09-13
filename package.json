@@ -19,13 +19,16 @@
     "test:browser": "playwright test",
     "check": "bun run lint && bun run format:check && bun run typecheck && bun run test && bun run build",
     "preview": "bun run --filter @matchbox-ai/filters-example preview",
-    "matchbox": "bun packages/core/src/train/cli.ts",
-    "train": "bun run build:core && bun run matchbox train examples/filters/matchbox.config.ts",
+    "matchbox": "bun packages/train/src/cli.ts",
+    "train": "bun run build:packages && bun run matchbox train examples/filters/matchbox.config.ts",
     "eval": "bun run matchbox eval examples/filters/matchbox.config.ts",
-    "research": "bun run train && bun examples/filters/scripts/challenges.ts"
+    "research": "bun run train && bun examples/filters/scripts/challenges.ts",
+    "build:packages": "bun run build:core && bun run --filter @matchbox-ai/react build && bun run --filter @matchbox-ai/train build"
   },
   "devDependencies": {
     "@matchbox-ai/core": "workspace:*",
+    "@matchbox-ai/react": "workspace:*",
+    "@matchbox-ai/train": "workspace:*",
     "@playwright/test": "1.63.0",
     "@types/bun": "1.4.2",
     "oxfmt": "0.67.0",

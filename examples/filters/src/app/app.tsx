@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useMatchbox } from "@matchbox-ai/core/react";
+import { useMatchbox } from "@matchbox-ai/react";
 import type { ParseResult } from "@matchbox-ai/core/runtime";
 import { Button } from "@/components/ui/button";
 import { customers, matchesFilter, loadFilters, benchmark, type Filter } from "@/filter";

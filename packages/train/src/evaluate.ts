@@ -1,5 +1,5 @@
-import type { DatasetExample } from "../dataset/index.js";
-import type { MatchboxParser } from "../runtime/index.js";
+import type { DatasetExample } from "@matchbox-ai/core";
+import type { MatchboxParser } from "@matchbox-ai/core/runtime";
 function canonical(value: unknown): string {
   if (Array.isArray(value)) return `[${value.map(canonical).join(",")}]`;
   if (value !== null && typeof value === "object")

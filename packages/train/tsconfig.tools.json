@@ -1,9 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "lib": ["ES2022"],
     "types": []
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["src/vite"]
+  "include": ["rolldown.config.ts"]
 }

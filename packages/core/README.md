@@ -22,4 +22,4 @@ See the repository's [parser API guide](../../docs/parser-api.md) for the suppor
 
 `parseDatasets` validates separate JSONL training and evaluation sources against a task. See the [dataset format guide](../../docs/dataset-format.md) for authoring rules, diagnostics, and versioning.
 
-The package now exports `@matchbox-ai/core/runtime`, `@matchbox-ai/core/react`, `@matchbox-ai/core/vite`, and `@matchbox-ai/core/train`. The Vite plugin turns generated `.matchbox` artifacts into typed parser modules. Training is Bun-based and stays outside the browser graph. See the [end-to-end guide](../../docs/end-to-end.md).
+Core exports `@matchbox-ai/core/runtime` and `@matchbox-ai/core/vite`. React and training live in the separate `@matchbox-ai/react` and `@matchbox-ai/train` packages. The Vite plugin turns generated `.matchbox` artifacts into typed parser modules. Training is Bun-based and stays outside the browser graph. See the [end-to-end guide](../../docs/end-to-end.md).

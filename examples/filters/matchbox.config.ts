@@ -1,4 +1,4 @@
-import type { TrainingConfig } from "@matchbox-ai/core/train";
+import type { TrainingConfig } from "@matchbox-ai/train";
 export default {
   formatVersion: 1,
   task: "./src/filter/task.ts",

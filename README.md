@@ -27,7 +27,7 @@ bun run test:browser
 
 `bun run check` runs linting, formatting checks, TypeScript checks, package tests, and production builds. The browser test builds and serves the production example automatically. GitHub Actions runs both checks on pull requests.
 
-The workspace contains `packages/core` for the ESM library and `examples/filters` for the React/Vite example. [Repository design](docs/repository-design.md) explains the boundaries, build output, and development workflow. UI source attribution is in [Third-party notices](THIRD-PARTY-NOTICES.md).
+The workspace contains `packages/core` for task definitions and runtime, `packages/react` for React integration, `packages/train` for training and the CLI, and `examples/filters` for the React/Vite example. [Repository design](docs/repository-design.md) explains the boundaries, build output, and development workflow. UI source attribution is in [Third-party notices](THIRD-PARTY-NOTICES.md).
 
 ## Why Matchbox
 

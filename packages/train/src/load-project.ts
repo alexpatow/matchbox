@@ -2,9 +2,9 @@ import { readFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import { z } from "zod";
-import { parseDatasets } from "../dataset/index.js";
-import type { ParserDefinition } from "../parser/index.js";
-import type { MatchboxParser } from "../runtime/index.js";
+import { parseDatasets } from "@matchbox-ai/core";
+import type { ParserDefinition } from "@matchbox-ai/core";
+import type { MatchboxParser } from "@matchbox-ai/core/runtime";
 const configSchema = z.strictObject({
   formatVersion: z.literal(1),
   task: z.string(),

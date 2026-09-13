@@ -1,8 +1,7 @@
 {
-  "name": "@matchbox-ai/core",
+  "name": "@matchbox-ai/react",
   "version": "0.0.0",
   "private": true,
-  "description": "Compile examples into tiny models for the browser.",
   "files": [
     "dist",
     "README.md"
@@ -13,14 +12,6 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
-    },
-    "./runtime": {
-      "types": "./dist/runtime/index.d.ts",
-      "import": "./dist/runtime/index.js"
-    },
-    "./vite": {
-      "types": "./dist/vite/index.d.ts",
-      "import": "./dist/vite/index.js"
     }
   },
   "scripts": {
@@ -31,11 +22,14 @@
     "dev:types": "tsc -p tsconfig.build.json --watch"
   },
   "dependencies": {
-    "zod": "4.6.3"
+    "@matchbox-ai/core": "workspace:*"
   },
   "devDependencies": {
-    "@types/node": "22.20.2",
+    "@types/react": "19.3.0",
     "rolldown": "1.2.8",
     "typescript": "7.0.2"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0"
   }
 }

@@ -15,7 +15,7 @@ Open `http://127.0.0.1:5173`. Try `active customers and Swedish customers and AR
 
 `bun run check` trains, typechecks, tests, and builds the production app. `bun run test:browser` verifies offline inference and records browser timing under `test-results/`. `bun run research` produces the separate challenge report. The test suite verifies that changing held-out labels cannot change the selected artifact.
 
-The commands work in this private workspace. Matchbox is not published to npm yet. The built core package also contains the Bun-based `matchbox` executable. The long-form workspace command is:
+The commands work in this private workspace. Matchbox is not published to npm yet. The training package also contains the Bun-based `matchbox` executable. The long-form workspace command is:
 
 ```sh
 bun run matchbox train examples/filters/matchbox.config.ts
@@ -73,7 +73,7 @@ The artifact is versioned JSON containing int8-quantized weights, feature vocabu
 A static import includes the model in the importing module's dependency graph. A dynamic import loads it lazily. Vite hashes the emitted chunk for updates; ESM caches the module and initialized model. There is no persistent offline cache or service worker yet.
 
 ```tsx
-import { useMatchbox } from "@matchbox-ai/core/react";
+import { useMatchbox } from "@matchbox-ai/react";
 
 const loadFilters = () => import("./generated/filters.matchbox");
 
@@ -107,6 +107,6 @@ CLI evaluation currently uses the full project configuration, including its trai
 
 ## Inspiration
 
-[Eve's file-based authoring](https://github.com/vercel/eve) informed the small conventional project layout. [vGPU's shader imports](https://github.com/vercel-labs/vgpu/blob/main/packages/wgsl/README.md) informed the custom-extension load hook and generated type boundary. Its [public API and size discipline](https://github.com/vercel-labs/vgpu) informed separate runtime/tooling entry points and explicit budgets. These are design references, not dependencies or copied source.
+[Eve's file-based authoring](https://github.com/vercel/eve) informed the small conventional project layout. [vGPU's shader imports](https://github.com/vercel-labs/vgpu/blob/main/packages/wgsl/README.md) informed the custom-extension load hook and generated type boundary. Its [public API and size discipline](https://github.com/vercel-labs/vgpu) informed separate runtime/tooling packages and entry points and explicit budgets. These are design references, not dependencies or copied source.
 
 Plain JavaScript is the first backend. WASM and WebGPU need a measured advantage before they justify extra startup and packaging work. The runtime exposes no tensors, tokenizer setup, or GPU configuration to consumers.

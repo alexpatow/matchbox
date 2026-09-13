@@ -2,7 +2,7 @@ import { createHash } from "node:crypto";
 import { dirname, relative, resolve } from "node:path";
 import { readFile } from "node:fs/promises";
 import { z } from "zod";
-import { createParser, readArtifact, type ModelArtifact } from "../runtime/index.js";
+import { createParser, readArtifact, type ModelArtifact } from "@matchbox-ai/core/runtime";
 import { fit } from "./fit.js";
 import { evaluate } from "./evaluate.js";
 import { loadProject } from "./load-project.js";

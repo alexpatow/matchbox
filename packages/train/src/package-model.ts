@@ -1,6 +1,6 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import { dirname, basename } from "node:path";
-import type { ModelArtifact } from "../runtime/index.js";
+import type { ModelArtifact } from "@matchbox-ai/core/runtime";
 export async function packageModel(output: string, model: ModelArtifact, report: unknown) {
   await mkdir(dirname(output), { recursive: true });
   const declaration = output.replace(/\.matchbox$/, ".d.matchbox.ts");

@@ -21,7 +21,7 @@ test("packaging is deterministic, held-out labels do not select the model, and f
     maxBytes: 64000,
   };
   async function train() {
-    const child = Bun.spawn(["bun", "packages/core/dist/train/cli.js", "train", configPath], {
+    const child = Bun.spawn(["bun", "packages/train/dist/cli.js", "train", configPath], {
       stdout: "pipe",
       stderr: "pipe",
     });

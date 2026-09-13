@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import type { MatchboxParser } from "../runtime/index.js";
+import type { MatchboxParser } from "@matchbox-ai/core/runtime";
 /** Keep the loader outside the component so its identity remains stable. */
 export function useMatchbox<Output>(loader: () => Promise<{ default: MatchboxParser<Output> }>) {
   const [settled, setSettled] = useState<{ loader: typeof loader; error: string | null } | null>(

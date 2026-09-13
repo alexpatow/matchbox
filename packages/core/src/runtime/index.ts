@@ -9,3 +9,4 @@ export type {
   FilterExpression,
   Template,
 } from "./types.js";
+export * as clauseFeatures from "./features.js";
