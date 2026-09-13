@@ -50,7 +50,7 @@ Within outputs, v0 supports:
 
 Use `z.strictObject()` or `.strict()`. Ordinary `z.object()` strips unknown keys, while the serialized output contract disallows them. Requiring strict objects keeps validation behavior explicit.
 
-Unsupported schemas fail at definition time. This includes transforms, overwrites such as `.trim()`, coercion, defaults, catches, custom/async refinements, conditional checks, arbitrary unknown/any values, dates, bigint, records, maps, sets, tuples, intersections, lazy/recursive schemas, readonly wrappers, and string formats other than flagless regexes. Add support only when both runtime and metadata behavior are tested.
+Unsupported schemas fail at definition time. This includes transforms, overwrites such as `.trim()`, coercion, non-boolean defaults, catches, custom/async refinements, conditional checks, arbitrary unknown/any values, dates, bigint, records, maps, sets, tuples, intersections, lazy/recursive schemas, readonly wrappers, and string formats other than flagless regexes. Add support only when both runtime and metadata behavior are tested.
 
 Both schema and data traversal are limited to 64 nested containers. Validation accepts plain JSON data, not class instances, accessors, sparse arrays, symbol properties, or circular references. `__proto__` is reserved because Zod omits it while constructing parsed objects.
 

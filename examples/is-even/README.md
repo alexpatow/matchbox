@@ -1,14 +1,16 @@
-# Train a parity model
+# is-even
 
-This example checks the complete training/export/browser path using digit strings and `{ even: boolean }` outputs. The model learns weights from examples. Modulo is used only to generate training labels and to implement the comparison baseline.
-
-From the repository root:
+This self-contained example is authored under matchbox/is-even/. parser.ts defines the output contract; pipeline.ts explicitly selects the learning strategy and acceptance gates. Training examples live in data/, and independent validation/test data lives in evals/.
 
 ```sh
-bun run build:packages
-bun run matchbox train examples/is-even/matchbox.config.ts
+cd examples/is-even
+bunx matchbox train is-even
+bunx matchbox eval is-even
+bunx matchbox dev is-even
 ```
 
-`data/train.jsonl`, `validation.jsonl`, and `evals.jsonl` are disjoint number ranges. Half the evaluation inputs are much longer strings. `generate.ts` recreates only the training set and preserves the committed validation and evaluation fixtures. `recipe.ts` supervises the final token of each string. The context-window model therefore has an explicit positional bias; this is an educational pipeline check, not a useful replacement for modulo.
+Generated artifacts are written to .matchbox/is-even/model.matchbox, with a typed wrapper and report.json. The shared browser demo lives in apps/playground.
 
-The training report includes an untrained comparison and a separately fitted shuffled-label control. See the [training guide](../../docs/neural-training.md) and the `/training` page in the Vite example.
+tokenClassifier uses lib/recipe.ts for training supervision and lib/decode.ts for browser-safe output decoding. Any domain normalization is visible application code. The model learns recognition, and the decoder validates or normalizes those predictions.
+
+The project-level scripts/generate-data.ts regenerates training data only. It preserves independent evaluation fixtures.

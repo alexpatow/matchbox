@@ -1,5 +1,5 @@
-import money from "../examples/money-pipeline/.matchbox/parser.matchbox";
-import parity from "../examples/is-even/src/generated/is-even.matchbox";
+import money from "../examples/money-pipeline/.matchbox/money/model.matchbox";
+import parity from "../examples/is-even/.matchbox/is-even/model.matchbox";
 export async function checkSequenceTypes() {
   const result = await money.parse("€12.50");
   if (result.status === "ok") {

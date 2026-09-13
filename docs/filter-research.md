@@ -6,7 +6,7 @@ The first full toolchain works: examples train a small local model, validation s
 
 ## Reproduction and data
 
-Run `bun run train`, `bun run eval`, `bun run research`, and `bun run test:browser`. The artifact report is generated beside `examples/filters/src/generated/filters.matchbox`; challenge results are in `challenges.report.json`. Browser results are written under `test-results/` and uploaded by CI.
+Run `bun run train`, `bun run eval`, `bun run research`, and `bun run test:browser`. The artifact report is generated beside `examples/filters/.matchbox/filters/model.matchbox`; challenge results are in `challenges.report.json`. Browser results are written under `test-results/` and uploaded by CI.
 
 The fixed corpus contains 176 single-clause training examples, 32 validation examples, and 32 evaluation examples across 13 output classes. These cover three statuses, churn exclusion, four countries, five numeric operators, and explicit AND/OR combinations. Examples contain no missing labels and must satisfy the application schema before fitting. All three splits are separate files. Exact input overlap across splits is rejected.
 

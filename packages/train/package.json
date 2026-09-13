@@ -8,7 +8,8 @@
   "files": [
     "dist",
     "README.md",
-    "templates"
+    "templates",
+    "docs"
   ],
   "type": "module",
   "sideEffects": false,
@@ -19,7 +20,7 @@
     }
   },
   "scripts": {
-    "build": "rolldown --config && tsc -p tsconfig.build.json",
+    "build": "bun ../../scripts/package-docs.ts train && rolldown --config && chmod +x dist/cli.js && tsc -p tsconfig.build.json",
     "dev": "bun run --parallel \"dev:*\"",
     "typecheck": "tsc --noEmit && tsc -p tsconfig.tools.json",
     "dev:js": "rolldown --config --watch",

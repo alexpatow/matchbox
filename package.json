@@ -3,13 +3,14 @@
   "private": true,
   "workspaces": [
     "packages/*",
-    "examples/*"
+    "examples/*",
+    "apps/*"
   ],
   "type": "module",
   "scripts": {
     "dev": "bun run train && bun run --parallel --filter \"*\" dev",
     "build:core": "bun run --filter @matchbox-ai/core build",
-    "build": "bun run train && bun run --filter \"*\" build",
+    "build": "bun run train && bun run build:apps",
     "lint": "oxlint --deny-warnings .",
     "lint:fix": "oxlint --fix .",
     "format": "oxfmt --write .",
@@ -18,21 +19,22 @@
     "test": "bun run train && bun test ./tests",
     "test:browser": "playwright test",
     "check": "bun run lint && bun run format:check && bun run train && bun run check:prepared",
-    "preview": "bun run --filter @matchbox-ai/filters-example preview",
-    "matchbox": "bun packages/train/src/cli.ts",
+    "preview": "bun run --filter @matchbox-ai/playground preview",
+    "matchbox": "bun packages/train/src/cli/main.ts",
     "train": "bun run build:packages && bun run train:filters && bun run train:neural",
-    "eval": "bun run matchbox eval examples/filters/matchbox.config.ts",
+    "eval": "bun run matchbox eval examples/filters",
     "research": "bun run train && bun examples/filters/scripts/challenges.ts",
-    "build:packages": "bun run build:core && bun run --filter @matchbox-ai/react build && bun run --filter @matchbox-ai/train build",
-    "train:filters": "bun run matchbox train examples/filters/matchbox.config.ts",
-    "train:neural": "bun run matchbox train examples/is-even/matchbox.config.ts && bun run matchbox train examples/money-pipeline/matchbox.config.ts && bun run matchbox train examples/money-simple",
-    "check:prepared": "tsc --noEmit && bun run --filter \"*\" typecheck && bun test ./tests && bun run --filter \"*\" build"
+    "build:packages": "bun run build:core && bun run --filter @matchbox-ai/train build",
+    "train:filters": "bun run matchbox train examples/filters",
+    "train:neural": "bun run matchbox train examples/is-even && bun run matchbox train examples/money-pipeline && bun run matchbox train examples/money-simple",
+    "check:prepared": "tsc --noEmit && bun run --filter \"*\" typecheck && bun test ./tests && bun run build:apps",
+    "build:apps": "bun run --filter @matchbox-ai/playground build && bun run --filter @matchbox-ai/benchmarks build"
   },
   "devDependencies": {
     "@matchbox-ai/core": "workspace:*",
-    "@matchbox-ai/react": "workspace:*",
     "@matchbox-ai/train": "workspace:*",
     "@playwright/test": "1.63.0",
+    "@tensorflow/tfjs-core": "4.22.0",
     "@types/bun": "1.4.2",
     "oxfmt": "0.67.0",
     "oxlint": "1.82.0",

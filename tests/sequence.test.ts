@@ -1,22 +1,19 @@
 import { describe, expect, test } from "bun:test";
 import { readFile } from "node:fs/promises";
-import {
-  createSequenceParser,
-  readSequenceArtifact,
-  sequencePredictor,
-} from "@matchbox-ai/core/runtime";
-import money from "../examples/money-pipeline/.matchbox/parser.js";
-import parity from "../examples/is-even/src/generated/is-even.js";
-import { task, decode, normalizeNumber } from "../examples/money-pipeline/parser";
+import { createParser } from "@matchbox-ai/core/runtime";
+import { readSequenceArtifact, tensorPredictor } from "@matchbox-ai/core/internal";
+import money from "../examples/money-pipeline/.matchbox/money/model.js";
+import parity from "../examples/is-even/.matchbox/is-even/model.js";
+import { task, decode, normalizeNumber } from "../examples/money-pipeline/matchbox/money";
 const artifact = JSON.parse(
   await readFile(
-    new URL("../examples/money-pipeline/.matchbox/parser.matchbox", import.meta.url),
+    new URL("../examples/money-pipeline/.matchbox/money/model.matchbox", import.meta.url),
     "utf8",
   ),
 );
 const report = JSON.parse(
   await readFile(
-    new URL("../examples/money-pipeline/.matchbox/parser.matchbox.report.json", import.meta.url),
+    new URL("../examples/money-pipeline/.matchbox/money/report.json", import.meta.url),
     "utf8",
   ),
 );
@@ -26,16 +23,16 @@ describe("trained sequence artifacts", () => {
       status: "ok",
       value: { amount: 123.45, currency: "EUR", approximate: false },
     });
-    const tags = sequencePredictor(readSequenceArtifact(artifact))("invoice 99991 totals € 123.45");
+    const predictor = await tensorPredictor(readSequenceArtifact(artifact));
+    const tags = predictor.sequence("invoice 99991 totals € 123.45");
+    predictor.dispose();
     expect(tags.find((token) => token.text === "99991")?.label).toBe("O");
     expect(tags.find((token) => token.text === "123.45")?.label).toBe("AMOUNT");
   });
   test("the saved weights determine recognition", async () => {
     const blank = structuredClone(artifact);
     for (const matrix of blank.weights) matrix.values.fill(0);
-    expect((await createSequenceParser(blank, task, decode).parse("EUR 19.75")).status).toBe(
-      "uncertain",
-    );
+    expect((await createParser(blank, task, decode).parse("EUR 19.75")).status).toBe("uncertain");
     expect((await money.parse("EUR 19.75")).status).toBe("ok");
   });
   test("rejects incompatible shapes and out-of-range int8 values", () => {

@@ -3,9 +3,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "generate": "bun generate.ts",
-    "train": "bun ../../packages/train/src/cli.ts train",
-    "typecheck": "tsc --noEmit"
+    "generate": "bun scripts/generate-data.ts",
+    "train": "matchbox train money",
+    "typecheck": "tsc --noEmit",
+    "eval": "matchbox eval money"
   },
   "dependencies": {
     "@matchbox-ai/core": "workspace:*",

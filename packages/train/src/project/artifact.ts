@@ -1,12 +1,8 @@
 import { readFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
-import {
-  createParser,
-  readArtifact,
-  sequencePredictor,
-  recordPredictor,
-} from "@matchbox-ai/core/runtime";
+import { createParser } from "@matchbox-ai/core/runtime";
+import { readArtifact, tensorPredictor } from "@matchbox-ai/core/internal";
 import type { SequenceDecoder } from "@matchbox-ai/core/runtime";
 import type { ParserDefinition } from "@matchbox-ai/core";
 import type { z } from "zod";
@@ -31,10 +27,15 @@ export async function loadArtifact(configPath: string) {
     task,
     decode,
     parser: createParser(artifact, task, decode),
-    inspect: (input: string) => {
-      if (artifact.kind === "record-parser") return recordPredictor(artifact)(input);
-      const tokens = sequencePredictor(artifact)(input);
-      return { tokens, candidate: decode!(tokens, input) };
+    inspect: async (input: string) => {
+      const predictor = await tensorPredictor(artifact);
+      try {
+        if (artifact.kind === "record-parser") return predictor.record(input);
+        const tokens = predictor.sequence(input);
+        return { tokens, candidate: decode!(tokens, input) };
+      } finally {
+        predictor.dispose();
+      }
     },
     output,
     config,
