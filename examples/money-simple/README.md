@@ -1,15 +1,14 @@
-# Money with a simple pipeline
+# money-simple
 
-This example learns `{ amount, currency, approximate }` directly from input/output examples. It has no recipe, decoder, aliases, or money normalizer. `parser/parser.ts` defines the output schema; `parser/data/train.jsonl` teaches meanings. Validation and eval fixtures live independently in `evals/`.
+This self-contained example is authored under matchbox/money/. parser.ts defines the output contract; pipeline.ts explicitly selects the learning strategy and acceptance gates. Training examples live in data/, and independent validation/test data lives in evals/.
 
-```bash
+```sh
 cd examples/money-simple
-bun run train
-bun ../../packages/train/dist/cli.js
+bunx matchbox train money
+bunx matchbox eval money
+bunx matchbox dev money
 ```
 
-Type `around fifteen grand euros`, or use `/inspect` to see per-field predictions. Use `/save <correct JSON>` after an input to explicitly add a training example, then `/train`. Merely running inference never saves data. The saved model imports through `.matchbox/parser.matchbox` in a Vite app using the Matchbox plugin, or through the generated `.matchbox/parser.ts` wrapper.
+Generated artifacts are written to .matchbox/money/model.matchbox, with a typed wrapper and report.json. The shared browser demo lives in apps/playground.
 
-The first architecture learns a finite vocabulary of values for each field. It can combine fields and learn new expression meanings through examples, but it cannot output an amount absent from its training value domain. It ignores word order. `123.45 euros` abstains because that numeric token is unseen. The confidence score is uncalibrated.
-
-See [the comparison](../README.md) and the [explicit pipeline](../money-pipeline/README.md), which trades application-owned normalization rules for broader numeric coverage.
+fieldClassifier learns finite field values without dictionaries or normalization. It ignores word order and cannot emit unseen numeric values. Unknown vocabulary leads to uncertainty. Confidence is uncalibrated.

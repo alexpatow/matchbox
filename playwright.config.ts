@@ -11,10 +11,18 @@ export default defineConfig({
     { name: "chromium", use: { ...devices["Desktop Chrome"] } },
     { name: "mobile-chromium", use: { ...devices["Pixel 7"] } },
   ],
-  webServer: {
-    command: "bun run build && bun run preview",
-    url: "http://127.0.0.1:4173",
-    reuseExistingServer: false,
-    timeout: 180_000,
-  },
+  webServer: [
+    {
+      command: "bun run build && bun run preview",
+      url: "http://127.0.0.1:4173",
+      reuseExistingServer: false,
+      timeout: 180_000,
+    },
+    {
+      command: "bun run --filter @matchbox-ai/benchmarks preview",
+      url: "http://127.0.0.1:4174",
+      reuseExistingServer: false,
+      timeout: 180_000,
+    },
+  ],
 });

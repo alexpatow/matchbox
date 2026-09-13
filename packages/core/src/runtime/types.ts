@@ -11,5 +11,6 @@ export type ParseResult<Output> =
   | { status: "ok"; value: Output; confidence: number }
   | { status: "uncertain"; value: null; confidence: number; reason: string };
 export interface MatchboxParser<Output> {
+  load?(): Promise<void>;
   parse(input: string): Promise<ParseResult<Output>>;
 }

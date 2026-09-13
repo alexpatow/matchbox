@@ -1,7 +1,7 @@
 import { writeFile } from "node:fs/promises";
-import filters from "../src/generated/filters";
-import baseline from "../src/filter/baseline";
-import challenges from "../data/challenges.json";
+import filters from "../.matchbox/filters/model";
+import baseline from "../matchbox/filters/evals/baseline";
+import challenges from "../matchbox/filters/evals/research.json";
 const results = [];
 for (const row of challenges) {
   results.push({
@@ -11,7 +11,7 @@ for (const row of challenges) {
   });
 }
 await writeFile(
-  new URL("../src/generated/challenges.report.json", import.meta.url),
+  new URL("../.matchbox/filters/challenges.report.json", import.meta.url),
   JSON.stringify(results, null, 2) + "\n",
 );
 console.log(JSON.stringify(results, null, 2));

@@ -7,14 +7,26 @@ Build the smallest credible examples-to-browser proof. The README describes the 
 ## Repository
 
 - Use Bun workspaces and scripts. Do not add Turborepo.
-- Keep portable library code in `packages/core` and the browser-only React/Vite example in `examples/filters`.
+- Keep portable library code in `packages/core` and the browser-only React/Vite playground in `apps/playground`.
 - Use TypeScript for training work. Developers should not need to manage a separate training stack.
-- React integration lives in `packages/react` and is imported from `@matchbox-ai/react`. Training and the CLI live in `packages/train`, exposed as `@matchbox-ai/train`.
-- Examples live in `examples/is-even`, `examples/money-simple`, and `examples/money-pipeline`; their shared browser demo remains in `examples/filters`. New example conventions are authored `parser/`, independent `evals/`, and ignored `.matchbox/` artifacts. Keep generated weights out of Git and preserve independent evaluation data when regenerating training examples.
+- React integration lives in `packages/core/src/react` and is imported from `@matchbox-ai/core/react`. Training and the CLI live in `packages/train`, exposed as `@matchbox-ai/train`.
+- Examples live in `examples/is-even`, `examples/money-simple`, and `examples/money-pipeline`; their shared browser demo lives in `apps/playground`. New example conventions are authored `matchbox/<task>/parser.ts` and explicit `pipeline.ts`, independent task-local `evals/`, and ignored project-local `.matchbox/<task>/` artifacts. Keep generated weights out of Git and preserve independent evaluation data when regenerating training examples.
 - Train learned examples through the native TensorFlow trainers. The default structured-value trainer has no domain dictionaries; explicit sequence recipes and decoders remain application-owned. Keep deterministic rule parsers only as evaluation baselines.
 - Keep training dependencies out of browser entry points. Cross-package imports use package exports.
 - Ship ESM and TypeScript declarations. Use Rolldown for library JavaScript and TypeScript for declarations.
 - Consumers import the package through its exports, not aliases pointing into library source.
+
+## Abstraction boundary
+
+Matchbox owns task contracts, explicit authoring primitives, dataset workflows, training orchestration, evaluation, packaging, deterministic validation, abstention, and the typed application API. TensorFlow owns neural-network representation, serialization, loading, and execution.
+
+- Use native TensorFlow for training and TensorFlow.js CPU for browser inference. Export TensorFlow model topology and weights, then load and execute the model through TensorFlow APIs.
+- Do not build or retain a handwritten JS inference engine, manually reconstruct a trained network with matrix operations, or add a runtime/backend selection framework. Sub-millisecond differences between equivalent runtimes do not justify owning that layer.
+- Schemas describe valid application output. A declaration such as z.number() must not silently choose digit heads, a numeric representation, or a domain normalizer.
+- Expose learning strategies, encoders, supervision, and output transformations as small, documented primitives. Compose consequential choices explicitly in pipeline.ts and application-owned helpers. Agent instructions should guide those choices rather than hide them in framework heuristics.
+- Do not fix a model limitation by silently adding dictionaries, regexes, semantic mappings, or automatic numeric encodings. Propose a new primitive with its contract, limitations, and held-out evaluation evidence before implementing it.
+- Keep application consumption simple: parser.parse(input) returns typed validated output or uncertainty. Unfamiliar vocabulary is a model-coverage limitation, not invalid user input. Confidence is currently uncalibrated.
+- Before adding an abstraction or optimization, identify whether it belongs to Matchbox, TensorFlow, or the authored application pipeline. Keep work within the owning layer.
 
 ## Code style
 
@@ -33,3 +45,9 @@ The example is for developers evaluating tiny, typed browser-local models. The b
 ## Workflow
 
 Work on a ticket branch and open a PR against `main`. Do not merge without instruction. Keep generated build output out of Git and commit the Bun lockfile. Write documentation in Markdown and use complete sentences without em dashes.
+
+## Authoring API
+
+Every conventional task has an explicit pipeline.ts. Use the documented primitives from @matchbox-ai/train. Keep model internals behind @matchbox-ai/core/internal. Public docs live in docs/ and are copied into package builds. The coding-agent workflow lives in skills/matchbox/SKILL.md.
+
+Training-data generators and research runners belong in project-level scripts/, alongside matchbox/, not inside a model/task directory.

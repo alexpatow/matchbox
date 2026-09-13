@@ -5,20 +5,20 @@ import { resolve } from "node:path";
 
 test("packaging is deterministic, held-out labels do not select the model, and failed budgets preserve the previous artifact", async () => {
   const temporary = await mkdtemp(resolve(tmpdir(), "matchbox-training-"));
-  const root = resolve("examples/filters");
+  const root = resolve("examples/filters/matchbox/filters");
   const output = resolve(temporary, "filters.matchbox");
   const configPath = resolve(temporary, "matchbox.config.ts");
   const evaluationPath = resolve(temporary, "evals.jsonl");
   const config = {
     formatVersion: 1,
     sequence: {
-      recipe: resolve(root, "recipe.ts"),
-      decoder: resolve(root, "src/filter/decode.ts"),
+      recipe: resolve(root, "lib/recipe.ts"),
+      decoder: resolve(root, "lib/decode.ts"),
     },
-    task: resolve(root, "src/filter/task.ts"),
-    baseline: resolve(root, "src/filter/baseline.ts"),
+    task: resolve(root, "parser.ts"),
+    baseline: resolve(root, "evals/baseline.ts"),
     train: resolve(root, "data/train.jsonl"),
-    validation: resolve(root, "data/validation.jsonl"),
+    validation: resolve(root, "evals/validation.jsonl"),
     eval: evaluationPath,
     output,
     minAccuracy: 0.95,
@@ -37,7 +37,7 @@ test("packaging is deterministic, held-out labels do not select the model, and f
     return { code, stdout, stderr };
   }
   try {
-    const evaluation = await readFile(resolve(root, "data/evals.jsonl"), "utf8");
+    const evaluation = await readFile(resolve(root, "evals/test.jsonl"), "utf8");
     await writeFile(evaluationPath, evaluation);
     await writeFile(configPath, `export default ${JSON.stringify(config)};`);
     expect((await train()).code).toBe(0);
@@ -60,7 +60,7 @@ test("packaging is deterministic, held-out labels do not select the model, and f
     await writeFile(evaluationPath, changed.map((row) => JSON.stringify(row)).join("\n"));
     expect((await train()).code).toBe(0);
     expect(await readFile(output, "utf8")).toBe(original);
-    const report = JSON.parse(await readFile(`${output}.report.json`, "utf8"));
+    const report = JSON.parse(await readFile(resolve(temporary, "report.json"), "utf8"));
     expect(report.quantized.exactAccuracy).toBeLessThan(1);
     await writeFile(configPath, `export default ${JSON.stringify({ ...config, maxBytes: 1 })};`);
     const failed = await train();

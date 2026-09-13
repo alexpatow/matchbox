@@ -1,7 +1,6 @@
 import { describe, expect, test } from "bun:test";
 import { fileURLToPath } from "node:url";
 import manifest from "../packages/core/package.json";
-import reactManifest from "../packages/react/package.json";
 import trainManifest from "../packages/train/package.json";
 
 const coreDirectory = fileURLToPath(new URL("../packages/core", import.meta.url));
@@ -10,7 +9,6 @@ describe("built package contract", () => {
   test("ships the ESM and declaration files advertised by its export map", async () => {
     for (const [name, packageManifest] of [
       ["core", manifest],
-      ["react", reactManifest],
       ["train", trainManifest],
     ] as const) {
       const directory = fileURLToPath(new URL(`../packages/${name}`, import.meta.url));

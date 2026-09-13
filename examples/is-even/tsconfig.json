@@ -4,5 +4,5 @@
     "types": ["bun"],
     "allowArbitraryExtensions": true
   },
-  "include": ["**/*.ts"]
+  "include": ["matchbox/**/*.ts", "scripts/**/*.ts"]
 }

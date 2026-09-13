@@ -3,8 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "train": "bun ../../packages/train/src/cli.ts train",
-    "typecheck": "tsc --noEmit"
+    "train": "matchbox train money",
+    "typecheck": "tsc --noEmit",
+    "eval": "matchbox eval money"
   },
   "dependencies": {
     "@matchbox-ai/core": "workspace:*",
