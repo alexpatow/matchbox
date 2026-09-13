@@ -1,3 +1,4 @@
+import { countryCodes } from "../countries";
 import { defineParser } from "@matchbox-ai/core";
 import { z } from "zod";
 export const clauseSchema = z.union([
@@ -9,7 +10,7 @@ export const clauseSchema = z.union([
   z.strictObject({
     field: z.literal("country"),
     operator: z.enum(["eq", "neq"]),
-    value: z.enum(["SE", "DE", "US", "NO"]),
+    value: z.enum(countryCodes),
   }),
   z.strictObject({
     field: z.literal("arr"),

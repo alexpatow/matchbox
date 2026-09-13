@@ -1,6 +1,7 @@
+import type { CountryCode } from "../countries";
 export interface Customer {
   name: string;
-  country: "SE" | "DE" | "US" | "NO";
+  country: CountryCode;
   status: "active" | "inactive" | "churned";
   arr: number;
 }

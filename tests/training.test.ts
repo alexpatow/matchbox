@@ -11,6 +11,10 @@ test("packaging is deterministic, held-out labels do not select the model, and f
   const evaluationPath = resolve(temporary, "evals.jsonl");
   const config = {
     formatVersion: 1,
+    sequence: {
+      recipe: resolve(root, "recipe.ts"),
+      decoder: resolve(root, "src/filter/decode.ts"),
+    },
     task: resolve(root, "src/filter/task.ts"),
     baseline: resolve(root, "src/filter/baseline.ts"),
     train: resolve(root, "data/train.jsonl"),
@@ -20,8 +24,8 @@ test("packaging is deterministic, held-out labels do not select the model, and f
     minAccuracy: 0.95,
     maxBytes: 64000,
   };
-  async function train() {
-    const child = Bun.spawn(["bun", "packages/train/dist/cli.js", "train", configPath], {
+  async function train(command: "train" | "eval" = "train") {
+    const child = Bun.spawn(["bun", "packages/train/dist/cli.js", command, configPath], {
       stdout: "pipe",
       stderr: "pipe",
     });
@@ -38,6 +42,14 @@ test("packaging is deterministic, held-out labels do not select the model, and f
     await writeFile(configPath, `export default ${JSON.stringify(config)};`);
     expect((await train()).code).toBe(0);
     const original = await readFile(output, "utf8");
+    await writeFile(
+      configPath,
+      `export default ${JSON.stringify({ ...config, sequence: { ...config.sequence, decoder: "./missing-decoder.ts" } })};`,
+    );
+    const evaluated = await train("eval");
+    expect(evaluated.code).toBe(0);
+    expect(JSON.parse(evaluated.stdout).exactAccuracy).toBe(1);
+    await writeFile(configPath, `export default ${JSON.stringify(config)};`);
     const changed = evaluation
       .trim()
       .split("\n")
@@ -49,16 +61,13 @@ test("packaging is deterministic, held-out labels do not select the model, and f
     expect((await train()).code).toBe(0);
     expect(await readFile(output, "utf8")).toBe(original);
     const report = JSON.parse(await readFile(`${output}.report.json`, "utf8"));
-    expect(
-      report.candidates.find((candidate: { algorithm: string }) => candidate.algorithm === "linear")
-        .eval.exactAccuracy,
-    ).toBeLessThan(1);
+    expect(report.quantized.exactAccuracy).toBeLessThan(1);
     await writeFile(configPath, `export default ${JSON.stringify({ ...config, maxBytes: 1 })};`);
     const failed = await train();
     expect(failed.code).toBe(1);
-    expect(failed.stderr).toContain("No model meets");
+    expect(failed.stderr).toContain("failed validation/size");
     expect(await readFile(output, "utf8")).toBe(original);
   } finally {
     await rm(temporary, { recursive: true, force: true });
   }
-}, 30000);
+}, 120000);

@@ -1,0 +1,1666 @@
+{"input":"€ 12.50","output":{"amount":12.5,"currency":"EUR","approximate":false}}
+{"input":"12.50 euros","output":{"amount":12.5,"currency":"EUR","approximate":false}}
+{"input":"about 12.50 euros","output":{"amount":12.5,"currency":"EUR","approximate":true}}
+{"input":"we paid 12.50 EUR","output":{"amount":12.5,"currency":"EUR","approximate":false}}
+{"input":"invoice 2048 totals € 12.50","output":{"amount":12.5,"currency":"EUR","approximate":false}}
+{"input":"in 2024 we paid 12.50 euros","output":{"amount":12.5,"currency":"EUR","approximate":false}}
+{"input":"12.50 euros for order 1234","output":{"amount":12.5,"currency":"EUR","approximate":false}}
+{"input":"the budget is 12.50 thousand euros","output":{"amount":12500,"currency":"EUR","approximate":false}}
+{"input":"around 12.50 grand in euros","output":{"amount":12500,"currency":"EUR","approximate":true}}
+{"input":"roughly EUR 12.50 million","output":{"amount":12500000,"currency":"EUR","approximate":true}}
+{"input":"a price of 12.50 euros","output":{"amount":12.5,"currency":"EUR","approximate":false}}
+{"input":"€ 7","output":{"amount":7,"currency":"EUR","approximate":false}}
+{"input":"7 euros","output":{"amount":7,"currency":"EUR","approximate":false}}
+{"input":"about 7 euros","output":{"amount":7,"currency":"EUR","approximate":true}}
+{"input":"we paid 7 EUR","output":{"amount":7,"currency":"EUR","approximate":false}}
+{"input":"invoice 2048 totals € 7","output":{"amount":7,"currency":"EUR","approximate":false}}
+{"input":"in 2024 we paid 7 euros","output":{"amount":7,"currency":"EUR","approximate":false}}
+{"input":"7 euros for order 1234","output":{"amount":7,"currency":"EUR","approximate":false}}
+{"input":"the budget is 7 thousand euros","output":{"amount":7000,"currency":"EUR","approximate":false}}
+{"input":"around 7 grand in euros","output":{"amount":7000,"currency":"EUR","approximate":true}}
+{"input":"roughly EUR 7 million","output":{"amount":7000000,"currency":"EUR","approximate":true}}
+{"input":"a price of 7 euros","output":{"amount":7,"currency":"EUR","approximate":false}}
+{"input":"€ 35","output":{"amount":35,"currency":"EUR","approximate":false}}
+{"input":"35 euros","output":{"amount":35,"currency":"EUR","approximate":false}}
+{"input":"about 35 euros","output":{"amount":35,"currency":"EUR","approximate":true}}
+{"input":"we paid 35 EUR","output":{"amount":35,"currency":"EUR","approximate":false}}
+{"input":"invoice 2048 totals € 35","output":{"amount":35,"currency":"EUR","approximate":false}}
+{"input":"in 2024 we paid 35 euros","output":{"amount":35,"currency":"EUR","approximate":false}}
+{"input":"35 euros for order 1234","output":{"amount":35,"currency":"EUR","approximate":false}}
+{"input":"the budget is 35 thousand euros","output":{"amount":35000,"currency":"EUR","approximate":false}}
+{"input":"around 35 grand in euros","output":{"amount":35000,"currency":"EUR","approximate":true}}
+{"input":"roughly EUR 35 million","output":{"amount":35000000,"currency":"EUR","approximate":true}}
+{"input":"a price of 35 euros","output":{"amount":35,"currency":"EUR","approximate":false}}
+{"input":"€ 250","output":{"amount":250,"currency":"EUR","approximate":false}}
+{"input":"250 euros","output":{"amount":250,"currency":"EUR","approximate":false}}
+{"input":"about 250 euros","output":{"amount":250,"currency":"EUR","approximate":true}}
+{"input":"we paid 250 EUR","output":{"amount":250,"currency":"EUR","approximate":false}}
+{"input":"invoice 2048 totals € 250","output":{"amount":250,"currency":"EUR","approximate":false}}
+{"input":"in 2024 we paid 250 euros","output":{"amount":250,"currency":"EUR","approximate":false}}
+{"input":"250 euros for order 1234","output":{"amount":250,"currency":"EUR","approximate":false}}
+{"input":"the budget is 250 thousand euros","output":{"amount":250000,"currency":"EUR","approximate":false}}
+{"input":"around 250 grand in euros","output":{"amount":250000,"currency":"EUR","approximate":true}}
+{"input":"roughly EUR 250 million","output":{"amount":250000000,"currency":"EUR","approximate":true}}
+{"input":"a price of 250 euros","output":{"amount":250,"currency":"EUR","approximate":false}}
+{"input":"€ 1,200","output":{"amount":1200,"currency":"EUR","approximate":false}}
+{"input":"1,200 euros","output":{"amount":1200,"currency":"EUR","approximate":false}}
+{"input":"about 1,200 euros","output":{"amount":1200,"currency":"EUR","approximate":true}}
+{"input":"we paid 1,200 EUR","output":{"amount":1200,"currency":"EUR","approximate":false}}
+{"input":"invoice 2048 totals € 1,200","output":{"amount":1200,"currency":"EUR","approximate":false}}
+{"input":"in 2024 we paid 1,200 euros","output":{"amount":1200,"currency":"EUR","approximate":false}}
+{"input":"1,200 euros for order 1234","output":{"amount":1200,"currency":"EUR","approximate":false}}
+{"input":"the budget is 1,200 thousand euros","output":{"amount":1200000,"currency":"EUR","approximate":false}}
+{"input":"around 1,200 grand in euros","output":{"amount":1200000,"currency":"EUR","approximate":true}}
+{"input":"roughly EUR 1,200 million","output":{"amount":1200000000,"currency":"EUR","approximate":true}}
+{"input":"a price of 1,200 euros","output":{"amount":1200,"currency":"EUR","approximate":false}}
+{"input":"€ one","output":{"amount":1,"currency":"EUR","approximate":false}}
+{"input":"one euros","output":{"amount":1,"currency":"EUR","approximate":false}}
+{"input":"about one euros","output":{"amount":1,"currency":"EUR","approximate":true}}
+{"input":"we paid one EUR","output":{"amount":1,"currency":"EUR","approximate":false}}
+{"input":"invoice 2048 totals € one","output":{"amount":1,"currency":"EUR","approximate":false}}
+{"input":"in 2024 we paid one euros","output":{"amount":1,"currency":"EUR","approximate":false}}
+{"input":"one euros for order 1234","output":{"amount":1,"currency":"EUR","approximate":false}}
+{"input":"the budget is one thousand euros","output":{"amount":1000,"currency":"EUR","approximate":false}}
+{"input":"around one grand in euros","output":{"amount":1000,"currency":"EUR","approximate":true}}
+{"input":"roughly EUR one million","output":{"amount":1000000,"currency":"EUR","approximate":true}}
+{"input":"a price of one euros","output":{"amount":1,"currency":"EUR","approximate":false}}
+{"input":"€ two","output":{"amount":2,"currency":"EUR","approximate":false}}
+{"input":"two euros","output":{"amount":2,"currency":"EUR","approximate":false}}
+{"input":"about two euros","output":{"amount":2,"currency":"EUR","approximate":true}}
+{"input":"we paid two EUR","output":{"amount":2,"currency":"EUR","approximate":false}}
+{"input":"invoice 2048 totals € two","output":{"amount":2,"currency":"EUR","approximate":false}}
+{"input":"in 2024 we paid two euros","output":{"amount":2,"currency":"EUR","approximate":false}}
+{"input":"two euros for order 1234","output":{"amount":2,"currency":"EUR","approximate":false}}
+{"input":"the budget is two thousand euros","output":{"amount":2000,"currency":"EUR","approximate":false}}
+{"input":"around two grand in euros","output":{"amount":2000,"currency":"EUR","approximate":true}}
+{"input":"roughly EUR two million","output":{"amount":2000000,"currency":"EUR","approximate":true}}
+{"input":"a price of two euros","output":{"amount":2,"currency":"EUR","approximate":false}}
+{"input":"€ three","output":{"amount":3,"currency":"EUR","approximate":false}}
+{"input":"three euros","output":{"amount":3,"currency":"EUR","approximate":false}}
+{"input":"about three euros","output":{"amount":3,"currency":"EUR","approximate":true}}
+{"input":"we paid three EUR","output":{"amount":3,"currency":"EUR","approximate":false}}
+{"input":"invoice 2048 totals € three","output":{"amount":3,"currency":"EUR","approximate":false}}
+{"input":"in 2024 we paid three euros","output":{"amount":3,"currency":"EUR","approximate":false}}
+{"input":"three euros for order 1234","output":{"amount":3,"currency":"EUR","approximate":false}}
+{"input":"the budget is three thousand euros","output":{"amount":3000,"currency":"EUR","approximate":false}}
+{"input":"around three grand in euros","output":{"amount":3000,"currency":"EUR","approximate":true}}
+{"input":"roughly EUR three million","output":{"amount":3000000,"currency":"EUR","approximate":true}}
+{"input":"a price of three euros","output":{"amount":3,"currency":"EUR","approximate":false}}
+{"input":"€ four","output":{"amount":4,"currency":"EUR","approximate":false}}
+{"input":"four euros","output":{"amount":4,"currency":"EUR","approximate":false}}
+{"input":"about four euros","output":{"amount":4,"currency":"EUR","approximate":true}}
+{"input":"we paid four EUR","output":{"amount":4,"currency":"EUR","approximate":false}}
+{"input":"invoice 2048 totals € four","output":{"amount":4,"currency":"EUR","approximate":false}}
+{"input":"in 2024 we paid four euros","output":{"amount":4,"currency":"EUR","approximate":false}}
+{"input":"four euros for order 1234","output":{"amount":4,"currency":"EUR","approximate":false}}
+{"input":"the budget is four thousand euros","output":{"amount":4000,"currency":"EUR","approximate":false}}
+{"input":"around four grand in euros","output":{"amount":4000,"currency":"EUR","approximate":true}}
+{"input":"roughly EUR four million","output":{"amount":4000000,"currency":"EUR","approximate":true}}
+{"input":"a price of four euros","output":{"amount":4,"currency":"EUR","approximate":false}}
+{"input":"€ five","output":{"amount":5,"currency":"EUR","approximate":false}}
+{"input":"five euros","output":{"amount":5,"currency":"EUR","approximate":false}}
+{"input":"about five euros","output":{"amount":5,"currency":"EUR","approximate":true}}
+{"input":"we paid five EUR","output":{"amount":5,"currency":"EUR","approximate":false}}
+{"input":"invoice 2048 totals € five","output":{"amount":5,"currency":"EUR","approximate":false}}
+{"input":"in 2024 we paid five euros","output":{"amount":5,"currency":"EUR","approximate":false}}
+{"input":"five euros for order 1234","output":{"amount":5,"currency":"EUR","approximate":false}}
+{"input":"the budget is five thousand euros","output":{"amount":5000,"currency":"EUR","approximate":false}}
+{"input":"around five grand in euros","output":{"amount":5000,"currency":"EUR","approximate":true}}
+{"input":"roughly EUR five million","output":{"amount":5000000,"currency":"EUR","approximate":true}}
+{"input":"a price of five euros","output":{"amount":5,"currency":"EUR","approximate":false}}
+{"input":"€ six","output":{"amount":6,"currency":"EUR","approximate":false}}
+{"input":"six euros","output":{"amount":6,"currency":"EUR","approximate":false}}
+{"input":"about six euros","output":{"amount":6,"currency":"EUR","approximate":true}}
+{"input":"we paid six EUR","output":{"amount":6,"currency":"EUR","approximate":false}}
+{"input":"invoice 2048 totals € six","output":{"amount":6,"currency":"EUR","approximate":false}}
+{"input":"in 2024 we paid six euros","output":{"amount":6,"currency":"EUR","approximate":false}}
+{"input":"six euros for order 1234","output":{"amount":6,"currency":"EUR","approximate":false}}
+{"input":"the budget is six thousand euros","output":{"amount":6000,"currency":"EUR","approximate":false}}
+{"input":"around six grand in euros","output":{"amount":6000,"currency":"EUR","approximate":true}}
+{"input":"roughly EUR six million","output":{"amount":6000000,"currency":"EUR","approximate":true}}
+{"input":"a price of six euros","output":{"amount":6,"currency":"EUR","approximate":false}}
+{"input":"€ seven","output":{"amount":7,"currency":"EUR","approximate":false}}
+{"input":"seven euros","output":{"amount":7,"currency":"EUR","approximate":false}}
+{"input":"about seven euros","output":{"amount":7,"currency":"EUR","approximate":true}}
+{"input":"we paid seven EUR","output":{"amount":7,"currency":"EUR","approximate":false}}
+{"input":"invoice 2048 totals € seven","output":{"amount":7,"currency":"EUR","approximate":false}}
+{"input":"in 2024 we paid seven euros","output":{"amount":7,"currency":"EUR","approximate":false}}
+{"input":"seven euros for order 1234","output":{"amount":7,"currency":"EUR","approximate":false}}
+{"input":"the budget is seven thousand euros","output":{"amount":7000,"currency":"EUR","approximate":false}}
+{"input":"around seven grand in euros","output":{"amount":7000,"currency":"EUR","approximate":true}}
+{"input":"roughly EUR seven million","output":{"amount":7000000,"currency":"EUR","approximate":true}}
+{"input":"a price of seven euros","output":{"amount":7,"currency":"EUR","approximate":false}}
+{"input":"€ eight","output":{"amount":8,"currency":"EUR","approximate":false}}
+{"input":"eight euros","output":{"amount":8,"currency":"EUR","approximate":false}}
+{"input":"about eight euros","output":{"amount":8,"currency":"EUR","approximate":true}}
+{"input":"we paid eight EUR","output":{"amount":8,"currency":"EUR","approximate":false}}
+{"input":"invoice 2048 totals € eight","output":{"amount":8,"currency":"EUR","approximate":false}}
+{"input":"in 2024 we paid eight euros","output":{"amount":8,"currency":"EUR","approximate":false}}
+{"input":"eight euros for order 1234","output":{"amount":8,"currency":"EUR","approximate":false}}
+{"input":"the budget is eight thousand euros","output":{"amount":8000,"currency":"EUR","approximate":false}}
+{"input":"around eight grand in euros","output":{"amount":8000,"currency":"EUR","approximate":true}}
+{"input":"roughly EUR eight million","output":{"amount":8000000,"currency":"EUR","approximate":true}}
+{"input":"a price of eight euros","output":{"amount":8,"currency":"EUR","approximate":false}}
+{"input":"€ nine","output":{"amount":9,"currency":"EUR","approximate":false}}
+{"input":"nine euros","output":{"amount":9,"currency":"EUR","approximate":false}}
+{"input":"about nine euros","output":{"amount":9,"currency":"EUR","approximate":true}}
+{"input":"we paid nine EUR","output":{"amount":9,"currency":"EUR","approximate":false}}
+{"input":"invoice 2048 totals € nine","output":{"amount":9,"currency":"EUR","approximate":false}}
+{"input":"in 2024 we paid nine euros","output":{"amount":9,"currency":"EUR","approximate":false}}
+{"input":"nine euros for order 1234","output":{"amount":9,"currency":"EUR","approximate":false}}
+{"input":"the budget is nine thousand euros","output":{"amount":9000,"currency":"EUR","approximate":false}}
+{"input":"around nine grand in euros","output":{"amount":9000,"currency":"EUR","approximate":true}}
+{"input":"roughly EUR nine million","output":{"amount":9000000,"currency":"EUR","approximate":true}}
+{"input":"a price of nine euros","output":{"amount":9,"currency":"EUR","approximate":false}}
+{"input":"€ ten","output":{"amount":10,"currency":"EUR","approximate":false}}
+{"input":"ten euros","output":{"amount":10,"currency":"EUR","approximate":false}}
+{"input":"about ten euros","output":{"amount":10,"currency":"EUR","approximate":true}}
+{"input":"we paid ten EUR","output":{"amount":10,"currency":"EUR","approximate":false}}
+{"input":"invoice 2048 totals € ten","output":{"amount":10,"currency":"EUR","approximate":false}}
+{"input":"in 2024 we paid ten euros","output":{"amount":10,"currency":"EUR","approximate":false}}
+{"input":"ten euros for order 1234","output":{"amount":10,"currency":"EUR","approximate":false}}
+{"input":"the budget is ten thousand euros","output":{"amount":10000,"currency":"EUR","approximate":false}}
+{"input":"around ten grand in euros","output":{"amount":10000,"currency":"EUR","approximate":true}}
+{"input":"roughly EUR ten million","output":{"amount":10000000,"currency":"EUR","approximate":true}}
+{"input":"a price of ten euros","output":{"amount":10,"currency":"EUR","approximate":false}}
+{"input":"€ eleven","output":{"amount":11,"currency":"EUR","approximate":false}}
+{"input":"eleven euros","output":{"amount":11,"currency":"EUR","approximate":false}}
+{"input":"about eleven euros","output":{"amount":11,"currency":"EUR","approximate":true}}
+{"input":"we paid eleven EUR","output":{"amount":11,"currency":"EUR","approximate":false}}
+{"input":"invoice 2048 totals € eleven","output":{"amount":11,"currency":"EUR","approximate":false}}
+{"input":"in 2024 we paid eleven euros","output":{"amount":11,"currency":"EUR","approximate":false}}
+{"input":"eleven euros for order 1234","output":{"amount":11,"currency":"EUR","approximate":false}}
+{"input":"the budget is eleven thousand euros","output":{"amount":11000,"currency":"EUR","approximate":false}}
+{"input":"around eleven grand in euros","output":{"amount":11000,"currency":"EUR","approximate":true}}
+{"input":"roughly EUR eleven million","output":{"amount":11000000,"currency":"EUR","approximate":true}}
+{"input":"a price of eleven euros","output":{"amount":11,"currency":"EUR","approximate":false}}
+{"input":"€ twelve","output":{"amount":12,"currency":"EUR","approximate":false}}
+{"input":"twelve euros","output":{"amount":12,"currency":"EUR","approximate":false}}
+{"input":"about twelve euros","output":{"amount":12,"currency":"EUR","approximate":true}}
+{"input":"we paid twelve EUR","output":{"amount":12,"currency":"EUR","approximate":false}}
+{"input":"invoice 2048 totals € twelve","output":{"amount":12,"currency":"EUR","approximate":false}}
+{"input":"in 2024 we paid twelve euros","output":{"amount":12,"currency":"EUR","approximate":false}}
+{"input":"twelve euros for order 1234","output":{"amount":12,"currency":"EUR","approximate":false}}
+{"input":"the budget is twelve thousand euros","output":{"amount":12000,"currency":"EUR","approximate":false}}
+{"input":"around twelve grand in euros","output":{"amount":12000,"currency":"EUR","approximate":true}}
+{"input":"roughly EUR twelve million","output":{"amount":12000000,"currency":"EUR","approximate":true}}
+{"input":"a price of twelve euros","output":{"amount":12,"currency":"EUR","approximate":false}}
+{"input":"€ thirteen","output":{"amount":13,"currency":"EUR","approximate":false}}
+{"input":"thirteen euros","output":{"amount":13,"currency":"EUR","approximate":false}}
+{"input":"about thirteen euros","output":{"amount":13,"currency":"EUR","approximate":true}}
+{"input":"we paid thirteen EUR","output":{"amount":13,"currency":"EUR","approximate":false}}
+{"input":"invoice 2048 totals € thirteen","output":{"amount":13,"currency":"EUR","approximate":false}}
+{"input":"in 2024 we paid thirteen euros","output":{"amount":13,"currency":"EUR","approximate":false}}
+{"input":"thirteen euros for order 1234","output":{"amount":13,"currency":"EUR","approximate":false}}
+{"input":"the budget is thirteen thousand euros","output":{"amount":13000,"currency":"EUR","approximate":false}}
+{"input":"around thirteen grand in euros","output":{"amount":13000,"currency":"EUR","approximate":true}}
+{"input":"roughly EUR thirteen million","output":{"amount":13000000,"currency":"EUR","approximate":true}}
+{"input":"a price of thirteen euros","output":{"amount":13,"currency":"EUR","approximate":false}}
+{"input":"€ fourteen","output":{"amount":14,"currency":"EUR","approximate":false}}
+{"input":"fourteen euros","output":{"amount":14,"currency":"EUR","approximate":false}}
+{"input":"about fourteen euros","output":{"amount":14,"currency":"EUR","approximate":true}}
+{"input":"we paid fourteen EUR","output":{"amount":14,"currency":"EUR","approximate":false}}
+{"input":"invoice 2048 totals € fourteen","output":{"amount":14,"currency":"EUR","approximate":false}}
+{"input":"in 2024 we paid fourteen euros","output":{"amount":14,"currency":"EUR","approximate":false}}
+{"input":"fourteen euros for order 1234","output":{"amount":14,"currency":"EUR","approximate":false}}
+{"input":"the budget is fourteen thousand euros","output":{"amount":14000,"currency":"EUR","approximate":false}}
+{"input":"around fourteen grand in euros","output":{"amount":14000,"currency":"EUR","approximate":true}}
+{"input":"roughly EUR fourteen million","output":{"amount":14000000,"currency":"EUR","approximate":true}}
+{"input":"a price of fourteen euros","output":{"amount":14,"currency":"EUR","approximate":false}}
+{"input":"€ fifteen","output":{"amount":15,"currency":"EUR","approximate":false}}
+{"input":"fifteen euros","output":{"amount":15,"currency":"EUR","approximate":false}}
+{"input":"about fifteen euros","output":{"amount":15,"currency":"EUR","approximate":true}}
+{"input":"we paid fifteen EUR","output":{"amount":15,"currency":"EUR","approximate":false}}
+{"input":"invoice 2048 totals € fifteen","output":{"amount":15,"currency":"EUR","approximate":false}}
+{"input":"in 2024 we paid fifteen euros","output":{"amount":15,"currency":"EUR","approximate":false}}
+{"input":"fifteen euros for order 1234","output":{"amount":15,"currency":"EUR","approximate":false}}
+{"input":"the budget is fifteen thousand euros","output":{"amount":15000,"currency":"EUR","approximate":false}}
+{"input":"around fifteen grand in euros","output":{"amount":15000,"currency":"EUR","approximate":true}}
+{"input":"roughly EUR fifteen million","output":{"amount":15000000,"currency":"EUR","approximate":true}}
+{"input":"a price of fifteen euros","output":{"amount":15,"currency":"EUR","approximate":false}}
+{"input":"€ sixteen","output":{"amount":16,"currency":"EUR","approximate":false}}
+{"input":"sixteen euros","output":{"amount":16,"currency":"EUR","approximate":false}}
+{"input":"about sixteen euros","output":{"amount":16,"currency":"EUR","approximate":true}}
+{"input":"we paid sixteen EUR","output":{"amount":16,"currency":"EUR","approximate":false}}
+{"input":"invoice 2048 totals € sixteen","output":{"amount":16,"currency":"EUR","approximate":false}}
+{"input":"in 2024 we paid sixteen euros","output":{"amount":16,"currency":"EUR","approximate":false}}
+{"input":"sixteen euros for order 1234","output":{"amount":16,"currency":"EUR","approximate":false}}
+{"input":"the budget is sixteen thousand euros","output":{"amount":16000,"currency":"EUR","approximate":false}}
+{"input":"around sixteen grand in euros","output":{"amount":16000,"currency":"EUR","approximate":true}}
+{"input":"roughly EUR sixteen million","output":{"amount":16000000,"currency":"EUR","approximate":true}}
+{"input":"a price of sixteen euros","output":{"amount":16,"currency":"EUR","approximate":false}}
+{"input":"€ seventeen","output":{"amount":17,"currency":"EUR","approximate":false}}
+{"input":"seventeen euros","output":{"amount":17,"currency":"EUR","approximate":false}}
+{"input":"about seventeen euros","output":{"amount":17,"currency":"EUR","approximate":true}}
+{"input":"we paid seventeen EUR","output":{"amount":17,"currency":"EUR","approximate":false}}
+{"input":"invoice 2048 totals € seventeen","output":{"amount":17,"currency":"EUR","approximate":false}}
+{"input":"in 2024 we paid seventeen euros","output":{"amount":17,"currency":"EUR","approximate":false}}
+{"input":"seventeen euros for order 1234","output":{"amount":17,"currency":"EUR","approximate":false}}
+{"input":"the budget is seventeen thousand euros","output":{"amount":17000,"currency":"EUR","approximate":false}}
+{"input":"around seventeen grand in euros","output":{"amount":17000,"currency":"EUR","approximate":true}}
+{"input":"roughly EUR seventeen million","output":{"amount":17000000,"currency":"EUR","approximate":true}}
+{"input":"a price of seventeen euros","output":{"amount":17,"currency":"EUR","approximate":false}}
+{"input":"€ eighteen","output":{"amount":18,"currency":"EUR","approximate":false}}
+{"input":"eighteen euros","output":{"amount":18,"currency":"EUR","approximate":false}}
+{"input":"about eighteen euros","output":{"amount":18,"currency":"EUR","approximate":true}}
+{"input":"we paid eighteen EUR","output":{"amount":18,"currency":"EUR","approximate":false}}
+{"input":"invoice 2048 totals € eighteen","output":{"amount":18,"currency":"EUR","approximate":false}}
+{"input":"in 2024 we paid eighteen euros","output":{"amount":18,"currency":"EUR","approximate":false}}
+{"input":"eighteen euros for order 1234","output":{"amount":18,"currency":"EUR","approximate":false}}
+{"input":"the budget is eighteen thousand euros","output":{"amount":18000,"currency":"EUR","approximate":false}}
+{"input":"around eighteen grand in euros","output":{"amount":18000,"currency":"EUR","approximate":true}}
+{"input":"roughly EUR eighteen million","output":{"amount":18000000,"currency":"EUR","approximate":true}}
+{"input":"a price of eighteen euros","output":{"amount":18,"currency":"EUR","approximate":false}}
+{"input":"€ nineteen","output":{"amount":19,"currency":"EUR","approximate":false}}
+{"input":"nineteen euros","output":{"amount":19,"currency":"EUR","approximate":false}}
+{"input":"about nineteen euros","output":{"amount":19,"currency":"EUR","approximate":true}}
+{"input":"we paid nineteen EUR","output":{"amount":19,"currency":"EUR","approximate":false}}
+{"input":"invoice 2048 totals € nineteen","output":{"amount":19,"currency":"EUR","approximate":false}}
+{"input":"in 2024 we paid nineteen euros","output":{"amount":19,"currency":"EUR","approximate":false}}
+{"input":"nineteen euros for order 1234","output":{"amount":19,"currency":"EUR","approximate":false}}
+{"input":"the budget is nineteen thousand euros","output":{"amount":19000,"currency":"EUR","approximate":false}}
+{"input":"around nineteen grand in euros","output":{"amount":19000,"currency":"EUR","approximate":true}}
+{"input":"roughly EUR nineteen million","output":{"amount":19000000,"currency":"EUR","approximate":true}}
+{"input":"a price of nineteen euros","output":{"amount":19,"currency":"EUR","approximate":false}}
+{"input":"€ twenty","output":{"amount":20,"currency":"EUR","approximate":false}}
+{"input":"twenty euros","output":{"amount":20,"currency":"EUR","approximate":false}}
+{"input":"about twenty euros","output":{"amount":20,"currency":"EUR","approximate":true}}
+{"input":"we paid twenty EUR","output":{"amount":20,"currency":"EUR","approximate":false}}
+{"input":"invoice 2048 totals € twenty","output":{"amount":20,"currency":"EUR","approximate":false}}
+{"input":"in 2024 we paid twenty euros","output":{"amount":20,"currency":"EUR","approximate":false}}
+{"input":"twenty euros for order 1234","output":{"amount":20,"currency":"EUR","approximate":false}}
+{"input":"the budget is twenty thousand euros","output":{"amount":20000,"currency":"EUR","approximate":false}}
+{"input":"around twenty grand in euros","output":{"amount":20000,"currency":"EUR","approximate":true}}
+{"input":"roughly EUR twenty million","output":{"amount":20000000,"currency":"EUR","approximate":true}}
+{"input":"a price of twenty euros","output":{"amount":20,"currency":"EUR","approximate":false}}
+{"input":"€ thirty","output":{"amount":30,"currency":"EUR","approximate":false}}
+{"input":"thirty euros","output":{"amount":30,"currency":"EUR","approximate":false}}
+{"input":"about thirty euros","output":{"amount":30,"currency":"EUR","approximate":true}}
+{"input":"we paid thirty EUR","output":{"amount":30,"currency":"EUR","approximate":false}}
+{"input":"invoice 2048 totals € thirty","output":{"amount":30,"currency":"EUR","approximate":false}}
+{"input":"in 2024 we paid thirty euros","output":{"amount":30,"currency":"EUR","approximate":false}}
+{"input":"thirty euros for order 1234","output":{"amount":30,"currency":"EUR","approximate":false}}
+{"input":"the budget is thirty thousand euros","output":{"amount":30000,"currency":"EUR","approximate":false}}
+{"input":"around thirty grand in euros","output":{"amount":30000,"currency":"EUR","approximate":true}}
+{"input":"roughly EUR thirty million","output":{"amount":30000000,"currency":"EUR","approximate":true}}
+{"input":"a price of thirty euros","output":{"amount":30,"currency":"EUR","approximate":false}}
+{"input":"€ forty","output":{"amount":40,"currency":"EUR","approximate":false}}
+{"input":"forty euros","output":{"amount":40,"currency":"EUR","approximate":false}}
+{"input":"about forty euros","output":{"amount":40,"currency":"EUR","approximate":true}}
+{"input":"we paid forty EUR","output":{"amount":40,"currency":"EUR","approximate":false}}
+{"input":"invoice 2048 totals € forty","output":{"amount":40,"currency":"EUR","approximate":false}}
+{"input":"in 2024 we paid forty euros","output":{"amount":40,"currency":"EUR","approximate":false}}
+{"input":"forty euros for order 1234","output":{"amount":40,"currency":"EUR","approximate":false}}
+{"input":"the budget is forty thousand euros","output":{"amount":40000,"currency":"EUR","approximate":false}}
+{"input":"around forty grand in euros","output":{"amount":40000,"currency":"EUR","approximate":true}}
+{"input":"roughly EUR forty million","output":{"amount":40000000,"currency":"EUR","approximate":true}}
+{"input":"a price of forty euros","output":{"amount":40,"currency":"EUR","approximate":false}}
+{"input":"€ fifty","output":{"amount":50,"currency":"EUR","approximate":false}}
+{"input":"fifty euros","output":{"amount":50,"currency":"EUR","approximate":false}}
+{"input":"about fifty euros","output":{"amount":50,"currency":"EUR","approximate":true}}
+{"input":"we paid fifty EUR","output":{"amount":50,"currency":"EUR","approximate":false}}
+{"input":"invoice 2048 totals € fifty","output":{"amount":50,"currency":"EUR","approximate":false}}
+{"input":"in 2024 we paid fifty euros","output":{"amount":50,"currency":"EUR","approximate":false}}
+{"input":"fifty euros for order 1234","output":{"amount":50,"currency":"EUR","approximate":false}}
+{"input":"the budget is fifty thousand euros","output":{"amount":50000,"currency":"EUR","approximate":false}}
+{"input":"around fifty grand in euros","output":{"amount":50000,"currency":"EUR","approximate":true}}
+{"input":"roughly EUR fifty million","output":{"amount":50000000,"currency":"EUR","approximate":true}}
+{"input":"a price of fifty euros","output":{"amount":50,"currency":"EUR","approximate":false}}
+{"input":"€ sixty","output":{"amount":60,"currency":"EUR","approximate":false}}
+{"input":"sixty euros","output":{"amount":60,"currency":"EUR","approximate":false}}
+{"input":"about sixty euros","output":{"amount":60,"currency":"EUR","approximate":true}}
+{"input":"we paid sixty EUR","output":{"amount":60,"currency":"EUR","approximate":false}}
+{"input":"invoice 2048 totals € sixty","output":{"amount":60,"currency":"EUR","approximate":false}}
+{"input":"in 2024 we paid sixty euros","output":{"amount":60,"currency":"EUR","approximate":false}}
+{"input":"sixty euros for order 1234","output":{"amount":60,"currency":"EUR","approximate":false}}
+{"input":"the budget is sixty thousand euros","output":{"amount":60000,"currency":"EUR","approximate":false}}
+{"input":"around sixty grand in euros","output":{"amount":60000,"currency":"EUR","approximate":true}}
+{"input":"roughly EUR sixty million","output":{"amount":60000000,"currency":"EUR","approximate":true}}
+{"input":"a price of sixty euros","output":{"amount":60,"currency":"EUR","approximate":false}}
+{"input":"€ seventy","output":{"amount":70,"currency":"EUR","approximate":false}}
+{"input":"seventy euros","output":{"amount":70,"currency":"EUR","approximate":false}}
+{"input":"about seventy euros","output":{"amount":70,"currency":"EUR","approximate":true}}
+{"input":"we paid seventy EUR","output":{"amount":70,"currency":"EUR","approximate":false}}
+{"input":"invoice 2048 totals € seventy","output":{"amount":70,"currency":"EUR","approximate":false}}
+{"input":"in 2024 we paid seventy euros","output":{"amount":70,"currency":"EUR","approximate":false}}
+{"input":"seventy euros for order 1234","output":{"amount":70,"currency":"EUR","approximate":false}}
+{"input":"the budget is seventy thousand euros","output":{"amount":70000,"currency":"EUR","approximate":false}}
+{"input":"around seventy grand in euros","output":{"amount":70000,"currency":"EUR","approximate":true}}
+{"input":"roughly EUR seventy million","output":{"amount":70000000,"currency":"EUR","approximate":true}}
+{"input":"a price of seventy euros","output":{"amount":70,"currency":"EUR","approximate":false}}
+{"input":"€ eighty","output":{"amount":80,"currency":"EUR","approximate":false}}
+{"input":"eighty euros","output":{"amount":80,"currency":"EUR","approximate":false}}
+{"input":"about eighty euros","output":{"amount":80,"currency":"EUR","approximate":true}}
+{"input":"we paid eighty EUR","output":{"amount":80,"currency":"EUR","approximate":false}}
+{"input":"invoice 2048 totals € eighty","output":{"amount":80,"currency":"EUR","approximate":false}}
+{"input":"in 2024 we paid eighty euros","output":{"amount":80,"currency":"EUR","approximate":false}}
+{"input":"eighty euros for order 1234","output":{"amount":80,"currency":"EUR","approximate":false}}
+{"input":"the budget is eighty thousand euros","output":{"amount":80000,"currency":"EUR","approximate":false}}
+{"input":"around eighty grand in euros","output":{"amount":80000,"currency":"EUR","approximate":true}}
+{"input":"roughly EUR eighty million","output":{"amount":80000000,"currency":"EUR","approximate":true}}
+{"input":"a price of eighty euros","output":{"amount":80,"currency":"EUR","approximate":false}}
+{"input":"€ ninety","output":{"amount":90,"currency":"EUR","approximate":false}}
+{"input":"ninety euros","output":{"amount":90,"currency":"EUR","approximate":false}}
+{"input":"about ninety euros","output":{"amount":90,"currency":"EUR","approximate":true}}
+{"input":"we paid ninety EUR","output":{"amount":90,"currency":"EUR","approximate":false}}
+{"input":"invoice 2048 totals € ninety","output":{"amount":90,"currency":"EUR","approximate":false}}
+{"input":"in 2024 we paid ninety euros","output":{"amount":90,"currency":"EUR","approximate":false}}
+{"input":"ninety euros for order 1234","output":{"amount":90,"currency":"EUR","approximate":false}}
+{"input":"the budget is ninety thousand euros","output":{"amount":90000,"currency":"EUR","approximate":false}}
+{"input":"around ninety grand in euros","output":{"amount":90000,"currency":"EUR","approximate":true}}
+{"input":"roughly EUR ninety million","output":{"amount":90000000,"currency":"EUR","approximate":true}}
+{"input":"a price of ninety euros","output":{"amount":90,"currency":"EUR","approximate":false}}
+{"input":"€ twenty one","output":{"amount":21,"currency":"EUR","approximate":false}}
+{"input":"twenty one euros","output":{"amount":21,"currency":"EUR","approximate":false}}
+{"input":"about twenty one euros","output":{"amount":21,"currency":"EUR","approximate":true}}
+{"input":"we paid twenty one EUR","output":{"amount":21,"currency":"EUR","approximate":false}}
+{"input":"invoice 2048 totals € twenty one","output":{"amount":21,"currency":"EUR","approximate":false}}
+{"input":"in 2024 we paid twenty one euros","output":{"amount":21,"currency":"EUR","approximate":false}}
+{"input":"twenty one euros for order 1234","output":{"amount":21,"currency":"EUR","approximate":false}}
+{"input":"the budget is twenty one thousand euros","output":{"amount":21000,"currency":"EUR","approximate":false}}
+{"input":"around twenty one grand in euros","output":{"amount":21000,"currency":"EUR","approximate":true}}
+{"input":"roughly EUR twenty one million","output":{"amount":21000000,"currency":"EUR","approximate":true}}
+{"input":"a price of twenty one euros","output":{"amount":21,"currency":"EUR","approximate":false}}
+{"input":"€ thirty two","output":{"amount":32,"currency":"EUR","approximate":false}}
+{"input":"thirty two euros","output":{"amount":32,"currency":"EUR","approximate":false}}
+{"input":"about thirty two euros","output":{"amount":32,"currency":"EUR","approximate":true}}
+{"input":"we paid thirty two EUR","output":{"amount":32,"currency":"EUR","approximate":false}}
+{"input":"invoice 2048 totals € thirty two","output":{"amount":32,"currency":"EUR","approximate":false}}
+{"input":"in 2024 we paid thirty two euros","output":{"amount":32,"currency":"EUR","approximate":false}}
+{"input":"thirty two euros for order 1234","output":{"amount":32,"currency":"EUR","approximate":false}}
+{"input":"the budget is thirty two thousand euros","output":{"amount":32000,"currency":"EUR","approximate":false}}
+{"input":"around thirty two grand in euros","output":{"amount":32000,"currency":"EUR","approximate":true}}
+{"input":"roughly EUR thirty two million","output":{"amount":32000000,"currency":"EUR","approximate":true}}
+{"input":"a price of thirty two euros","output":{"amount":32,"currency":"EUR","approximate":false}}
+{"input":"€ forty three","output":{"amount":43,"currency":"EUR","approximate":false}}
+{"input":"forty three euros","output":{"amount":43,"currency":"EUR","approximate":false}}
+{"input":"about forty three euros","output":{"amount":43,"currency":"EUR","approximate":true}}
+{"input":"we paid forty three EUR","output":{"amount":43,"currency":"EUR","approximate":false}}
+{"input":"invoice 2048 totals € forty three","output":{"amount":43,"currency":"EUR","approximate":false}}
+{"input":"in 2024 we paid forty three euros","output":{"amount":43,"currency":"EUR","approximate":false}}
+{"input":"forty three euros for order 1234","output":{"amount":43,"currency":"EUR","approximate":false}}
+{"input":"the budget is forty three thousand euros","output":{"amount":43000,"currency":"EUR","approximate":false}}
+{"input":"around forty three grand in euros","output":{"amount":43000,"currency":"EUR","approximate":true}}
+{"input":"roughly EUR forty three million","output":{"amount":43000000,"currency":"EUR","approximate":true}}
+{"input":"a price of forty three euros","output":{"amount":43,"currency":"EUR","approximate":false}}
+{"input":"5k EUR","output":{"amount":5000,"currency":"EUR","approximate":false}}
+{"input":"10k EUR","output":{"amount":10000,"currency":"EUR","approximate":false}}
+{"input":"15k EUR","output":{"amount":15000,"currency":"EUR","approximate":false}}
+{"input":"20k EUR","output":{"amount":20000,"currency":"EUR","approximate":false}}
+{"input":"30k EUR","output":{"amount":30000,"currency":"EUR","approximate":false}}
+{"input":"40k EUR","output":{"amount":40000,"currency":"EUR","approximate":false}}
+{"input":"50k EUR","output":{"amount":50000,"currency":"EUR","approximate":false}}
+{"input":"5m EUR","output":{"amount":5000000,"currency":"EUR","approximate":false}}
+{"input":"10m EUR","output":{"amount":10000000,"currency":"EUR","approximate":false}}
+{"input":"15m EUR","output":{"amount":15000000,"currency":"EUR","approximate":false}}
+{"input":"20m EUR","output":{"amount":20000000,"currency":"EUR","approximate":false}}
+{"input":"30m EUR","output":{"amount":30000000,"currency":"EUR","approximate":false}}
+{"input":"40m EUR","output":{"amount":40000000,"currency":"EUR","approximate":false}}
+{"input":"50m EUR","output":{"amount":50000000,"currency":"EUR","approximate":false}}
+{"input":"USD 12.50","output":{"amount":12.5,"currency":"USD","approximate":false}}
+{"input":"12.50 dollars","output":{"amount":12.5,"currency":"USD","approximate":false}}
+{"input":"about 12.50 dollars","output":{"amount":12.5,"currency":"USD","approximate":true}}
+{"input":"we paid 12.50 USD","output":{"amount":12.5,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals USD 12.50","output":{"amount":12.5,"currency":"USD","approximate":false}}
+{"input":"in 2024 we paid 12.50 dollars","output":{"amount":12.5,"currency":"USD","approximate":false}}
+{"input":"12.50 dollars for order 1234","output":{"amount":12.5,"currency":"USD","approximate":false}}
+{"input":"the budget is 12.50 thousand dollars","output":{"amount":12500,"currency":"USD","approximate":false}}
+{"input":"around 12.50 grand in dollars","output":{"amount":12500,"currency":"USD","approximate":true}}
+{"input":"roughly USD 12.50 million","output":{"amount":12500000,"currency":"USD","approximate":true}}
+{"input":"a price of 12.50 dollars","output":{"amount":12.5,"currency":"USD","approximate":false}}
+{"input":"USD 7","output":{"amount":7,"currency":"USD","approximate":false}}
+{"input":"7 dollars","output":{"amount":7,"currency":"USD","approximate":false}}
+{"input":"about 7 dollars","output":{"amount":7,"currency":"USD","approximate":true}}
+{"input":"we paid 7 USD","output":{"amount":7,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals USD 7","output":{"amount":7,"currency":"USD","approximate":false}}
+{"input":"in 2024 we paid 7 dollars","output":{"amount":7,"currency":"USD","approximate":false}}
+{"input":"7 dollars for order 1234","output":{"amount":7,"currency":"USD","approximate":false}}
+{"input":"the budget is 7 thousand dollars","output":{"amount":7000,"currency":"USD","approximate":false}}
+{"input":"around 7 grand in dollars","output":{"amount":7000,"currency":"USD","approximate":true}}
+{"input":"roughly USD 7 million","output":{"amount":7000000,"currency":"USD","approximate":true}}
+{"input":"a price of 7 dollars","output":{"amount":7,"currency":"USD","approximate":false}}
+{"input":"USD 35","output":{"amount":35,"currency":"USD","approximate":false}}
+{"input":"35 dollars","output":{"amount":35,"currency":"USD","approximate":false}}
+{"input":"about 35 dollars","output":{"amount":35,"currency":"USD","approximate":true}}
+{"input":"we paid 35 USD","output":{"amount":35,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals USD 35","output":{"amount":35,"currency":"USD","approximate":false}}
+{"input":"in 2024 we paid 35 dollars","output":{"amount":35,"currency":"USD","approximate":false}}
+{"input":"35 dollars for order 1234","output":{"amount":35,"currency":"USD","approximate":false}}
+{"input":"the budget is 35 thousand dollars","output":{"amount":35000,"currency":"USD","approximate":false}}
+{"input":"around 35 grand in dollars","output":{"amount":35000,"currency":"USD","approximate":true}}
+{"input":"roughly USD 35 million","output":{"amount":35000000,"currency":"USD","approximate":true}}
+{"input":"a price of 35 dollars","output":{"amount":35,"currency":"USD","approximate":false}}
+{"input":"USD 250","output":{"amount":250,"currency":"USD","approximate":false}}
+{"input":"250 dollars","output":{"amount":250,"currency":"USD","approximate":false}}
+{"input":"about 250 dollars","output":{"amount":250,"currency":"USD","approximate":true}}
+{"input":"we paid 250 USD","output":{"amount":250,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals USD 250","output":{"amount":250,"currency":"USD","approximate":false}}
+{"input":"in 2024 we paid 250 dollars","output":{"amount":250,"currency":"USD","approximate":false}}
+{"input":"250 dollars for order 1234","output":{"amount":250,"currency":"USD","approximate":false}}
+{"input":"the budget is 250 thousand dollars","output":{"amount":250000,"currency":"USD","approximate":false}}
+{"input":"around 250 grand in dollars","output":{"amount":250000,"currency":"USD","approximate":true}}
+{"input":"roughly USD 250 million","output":{"amount":250000000,"currency":"USD","approximate":true}}
+{"input":"a price of 250 dollars","output":{"amount":250,"currency":"USD","approximate":false}}
+{"input":"USD 1,200","output":{"amount":1200,"currency":"USD","approximate":false}}
+{"input":"1,200 dollars","output":{"amount":1200,"currency":"USD","approximate":false}}
+{"input":"about 1,200 dollars","output":{"amount":1200,"currency":"USD","approximate":true}}
+{"input":"we paid 1,200 USD","output":{"amount":1200,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals USD 1,200","output":{"amount":1200,"currency":"USD","approximate":false}}
+{"input":"in 2024 we paid 1,200 dollars","output":{"amount":1200,"currency":"USD","approximate":false}}
+{"input":"1,200 dollars for order 1234","output":{"amount":1200,"currency":"USD","approximate":false}}
+{"input":"the budget is 1,200 thousand dollars","output":{"amount":1200000,"currency":"USD","approximate":false}}
+{"input":"around 1,200 grand in dollars","output":{"amount":1200000,"currency":"USD","approximate":true}}
+{"input":"roughly USD 1,200 million","output":{"amount":1200000000,"currency":"USD","approximate":true}}
+{"input":"a price of 1,200 dollars","output":{"amount":1200,"currency":"USD","approximate":false}}
+{"input":"USD one","output":{"amount":1,"currency":"USD","approximate":false}}
+{"input":"one dollars","output":{"amount":1,"currency":"USD","approximate":false}}
+{"input":"about one dollars","output":{"amount":1,"currency":"USD","approximate":true}}
+{"input":"we paid one USD","output":{"amount":1,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals USD one","output":{"amount":1,"currency":"USD","approximate":false}}
+{"input":"in 2024 we paid one dollars","output":{"amount":1,"currency":"USD","approximate":false}}
+{"input":"one dollars for order 1234","output":{"amount":1,"currency":"USD","approximate":false}}
+{"input":"the budget is one thousand dollars","output":{"amount":1000,"currency":"USD","approximate":false}}
+{"input":"around one grand in dollars","output":{"amount":1000,"currency":"USD","approximate":true}}
+{"input":"roughly USD one million","output":{"amount":1000000,"currency":"USD","approximate":true}}
+{"input":"a price of one dollars","output":{"amount":1,"currency":"USD","approximate":false}}
+{"input":"USD two","output":{"amount":2,"currency":"USD","approximate":false}}
+{"input":"two dollars","output":{"amount":2,"currency":"USD","approximate":false}}
+{"input":"about two dollars","output":{"amount":2,"currency":"USD","approximate":true}}
+{"input":"we paid two USD","output":{"amount":2,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals USD two","output":{"amount":2,"currency":"USD","approximate":false}}
+{"input":"in 2024 we paid two dollars","output":{"amount":2,"currency":"USD","approximate":false}}
+{"input":"two dollars for order 1234","output":{"amount":2,"currency":"USD","approximate":false}}
+{"input":"the budget is two thousand dollars","output":{"amount":2000,"currency":"USD","approximate":false}}
+{"input":"around two grand in dollars","output":{"amount":2000,"currency":"USD","approximate":true}}
+{"input":"roughly USD two million","output":{"amount":2000000,"currency":"USD","approximate":true}}
+{"input":"a price of two dollars","output":{"amount":2,"currency":"USD","approximate":false}}
+{"input":"USD three","output":{"amount":3,"currency":"USD","approximate":false}}
+{"input":"three dollars","output":{"amount":3,"currency":"USD","approximate":false}}
+{"input":"about three dollars","output":{"amount":3,"currency":"USD","approximate":true}}
+{"input":"we paid three USD","output":{"amount":3,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals USD three","output":{"amount":3,"currency":"USD","approximate":false}}
+{"input":"in 2024 we paid three dollars","output":{"amount":3,"currency":"USD","approximate":false}}
+{"input":"three dollars for order 1234","output":{"amount":3,"currency":"USD","approximate":false}}
+{"input":"the budget is three thousand dollars","output":{"amount":3000,"currency":"USD","approximate":false}}
+{"input":"around three grand in dollars","output":{"amount":3000,"currency":"USD","approximate":true}}
+{"input":"roughly USD three million","output":{"amount":3000000,"currency":"USD","approximate":true}}
+{"input":"a price of three dollars","output":{"amount":3,"currency":"USD","approximate":false}}
+{"input":"USD four","output":{"amount":4,"currency":"USD","approximate":false}}
+{"input":"four dollars","output":{"amount":4,"currency":"USD","approximate":false}}
+{"input":"about four dollars","output":{"amount":4,"currency":"USD","approximate":true}}
+{"input":"we paid four USD","output":{"amount":4,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals USD four","output":{"amount":4,"currency":"USD","approximate":false}}
+{"input":"in 2024 we paid four dollars","output":{"amount":4,"currency":"USD","approximate":false}}
+{"input":"four dollars for order 1234","output":{"amount":4,"currency":"USD","approximate":false}}
+{"input":"the budget is four thousand dollars","output":{"amount":4000,"currency":"USD","approximate":false}}
+{"input":"around four grand in dollars","output":{"amount":4000,"currency":"USD","approximate":true}}
+{"input":"roughly USD four million","output":{"amount":4000000,"currency":"USD","approximate":true}}
+{"input":"a price of four dollars","output":{"amount":4,"currency":"USD","approximate":false}}
+{"input":"USD five","output":{"amount":5,"currency":"USD","approximate":false}}
+{"input":"five dollars","output":{"amount":5,"currency":"USD","approximate":false}}
+{"input":"about five dollars","output":{"amount":5,"currency":"USD","approximate":true}}
+{"input":"we paid five USD","output":{"amount":5,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals USD five","output":{"amount":5,"currency":"USD","approximate":false}}
+{"input":"in 2024 we paid five dollars","output":{"amount":5,"currency":"USD","approximate":false}}
+{"input":"five dollars for order 1234","output":{"amount":5,"currency":"USD","approximate":false}}
+{"input":"the budget is five thousand dollars","output":{"amount":5000,"currency":"USD","approximate":false}}
+{"input":"around five grand in dollars","output":{"amount":5000,"currency":"USD","approximate":true}}
+{"input":"roughly USD five million","output":{"amount":5000000,"currency":"USD","approximate":true}}
+{"input":"a price of five dollars","output":{"amount":5,"currency":"USD","approximate":false}}
+{"input":"USD six","output":{"amount":6,"currency":"USD","approximate":false}}
+{"input":"six dollars","output":{"amount":6,"currency":"USD","approximate":false}}
+{"input":"about six dollars","output":{"amount":6,"currency":"USD","approximate":true}}
+{"input":"we paid six USD","output":{"amount":6,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals USD six","output":{"amount":6,"currency":"USD","approximate":false}}
+{"input":"in 2024 we paid six dollars","output":{"amount":6,"currency":"USD","approximate":false}}
+{"input":"six dollars for order 1234","output":{"amount":6,"currency":"USD","approximate":false}}
+{"input":"the budget is six thousand dollars","output":{"amount":6000,"currency":"USD","approximate":false}}
+{"input":"around six grand in dollars","output":{"amount":6000,"currency":"USD","approximate":true}}
+{"input":"roughly USD six million","output":{"amount":6000000,"currency":"USD","approximate":true}}
+{"input":"a price of six dollars","output":{"amount":6,"currency":"USD","approximate":false}}
+{"input":"USD seven","output":{"amount":7,"currency":"USD","approximate":false}}
+{"input":"seven dollars","output":{"amount":7,"currency":"USD","approximate":false}}
+{"input":"about seven dollars","output":{"amount":7,"currency":"USD","approximate":true}}
+{"input":"we paid seven USD","output":{"amount":7,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals USD seven","output":{"amount":7,"currency":"USD","approximate":false}}
+{"input":"in 2024 we paid seven dollars","output":{"amount":7,"currency":"USD","approximate":false}}
+{"input":"seven dollars for order 1234","output":{"amount":7,"currency":"USD","approximate":false}}
+{"input":"the budget is seven thousand dollars","output":{"amount":7000,"currency":"USD","approximate":false}}
+{"input":"around seven grand in dollars","output":{"amount":7000,"currency":"USD","approximate":true}}
+{"input":"roughly USD seven million","output":{"amount":7000000,"currency":"USD","approximate":true}}
+{"input":"a price of seven dollars","output":{"amount":7,"currency":"USD","approximate":false}}
+{"input":"USD eight","output":{"amount":8,"currency":"USD","approximate":false}}
+{"input":"eight dollars","output":{"amount":8,"currency":"USD","approximate":false}}
+{"input":"about eight dollars","output":{"amount":8,"currency":"USD","approximate":true}}
+{"input":"we paid eight USD","output":{"amount":8,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals USD eight","output":{"amount":8,"currency":"USD","approximate":false}}
+{"input":"in 2024 we paid eight dollars","output":{"amount":8,"currency":"USD","approximate":false}}
+{"input":"eight dollars for order 1234","output":{"amount":8,"currency":"USD","approximate":false}}
+{"input":"the budget is eight thousand dollars","output":{"amount":8000,"currency":"USD","approximate":false}}
+{"input":"around eight grand in dollars","output":{"amount":8000,"currency":"USD","approximate":true}}
+{"input":"roughly USD eight million","output":{"amount":8000000,"currency":"USD","approximate":true}}
+{"input":"a price of eight dollars","output":{"amount":8,"currency":"USD","approximate":false}}
+{"input":"USD nine","output":{"amount":9,"currency":"USD","approximate":false}}
+{"input":"nine dollars","output":{"amount":9,"currency":"USD","approximate":false}}
+{"input":"about nine dollars","output":{"amount":9,"currency":"USD","approximate":true}}
+{"input":"we paid nine USD","output":{"amount":9,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals USD nine","output":{"amount":9,"currency":"USD","approximate":false}}
+{"input":"in 2024 we paid nine dollars","output":{"amount":9,"currency":"USD","approximate":false}}
+{"input":"nine dollars for order 1234","output":{"amount":9,"currency":"USD","approximate":false}}
+{"input":"the budget is nine thousand dollars","output":{"amount":9000,"currency":"USD","approximate":false}}
+{"input":"around nine grand in dollars","output":{"amount":9000,"currency":"USD","approximate":true}}
+{"input":"roughly USD nine million","output":{"amount":9000000,"currency":"USD","approximate":true}}
+{"input":"a price of nine dollars","output":{"amount":9,"currency":"USD","approximate":false}}
+{"input":"USD ten","output":{"amount":10,"currency":"USD","approximate":false}}
+{"input":"ten dollars","output":{"amount":10,"currency":"USD","approximate":false}}
+{"input":"about ten dollars","output":{"amount":10,"currency":"USD","approximate":true}}
+{"input":"we paid ten USD","output":{"amount":10,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals USD ten","output":{"amount":10,"currency":"USD","approximate":false}}
+{"input":"in 2024 we paid ten dollars","output":{"amount":10,"currency":"USD","approximate":false}}
+{"input":"ten dollars for order 1234","output":{"amount":10,"currency":"USD","approximate":false}}
+{"input":"the budget is ten thousand dollars","output":{"amount":10000,"currency":"USD","approximate":false}}
+{"input":"around ten grand in dollars","output":{"amount":10000,"currency":"USD","approximate":true}}
+{"input":"roughly USD ten million","output":{"amount":10000000,"currency":"USD","approximate":true}}
+{"input":"a price of ten dollars","output":{"amount":10,"currency":"USD","approximate":false}}
+{"input":"USD eleven","output":{"amount":11,"currency":"USD","approximate":false}}
+{"input":"eleven dollars","output":{"amount":11,"currency":"USD","approximate":false}}
+{"input":"about eleven dollars","output":{"amount":11,"currency":"USD","approximate":true}}
+{"input":"we paid eleven USD","output":{"amount":11,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals USD eleven","output":{"amount":11,"currency":"USD","approximate":false}}
+{"input":"in 2024 we paid eleven dollars","output":{"amount":11,"currency":"USD","approximate":false}}
+{"input":"eleven dollars for order 1234","output":{"amount":11,"currency":"USD","approximate":false}}
+{"input":"the budget is eleven thousand dollars","output":{"amount":11000,"currency":"USD","approximate":false}}
+{"input":"around eleven grand in dollars","output":{"amount":11000,"currency":"USD","approximate":true}}
+{"input":"roughly USD eleven million","output":{"amount":11000000,"currency":"USD","approximate":true}}
+{"input":"a price of eleven dollars","output":{"amount":11,"currency":"USD","approximate":false}}
+{"input":"USD twelve","output":{"amount":12,"currency":"USD","approximate":false}}
+{"input":"twelve dollars","output":{"amount":12,"currency":"USD","approximate":false}}
+{"input":"about twelve dollars","output":{"amount":12,"currency":"USD","approximate":true}}
+{"input":"we paid twelve USD","output":{"amount":12,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals USD twelve","output":{"amount":12,"currency":"USD","approximate":false}}
+{"input":"in 2024 we paid twelve dollars","output":{"amount":12,"currency":"USD","approximate":false}}
+{"input":"twelve dollars for order 1234","output":{"amount":12,"currency":"USD","approximate":false}}
+{"input":"the budget is twelve thousand dollars","output":{"amount":12000,"currency":"USD","approximate":false}}
+{"input":"around twelve grand in dollars","output":{"amount":12000,"currency":"USD","approximate":true}}
+{"input":"roughly USD twelve million","output":{"amount":12000000,"currency":"USD","approximate":true}}
+{"input":"a price of twelve dollars","output":{"amount":12,"currency":"USD","approximate":false}}
+{"input":"USD thirteen","output":{"amount":13,"currency":"USD","approximate":false}}
+{"input":"thirteen dollars","output":{"amount":13,"currency":"USD","approximate":false}}
+{"input":"about thirteen dollars","output":{"amount":13,"currency":"USD","approximate":true}}
+{"input":"we paid thirteen USD","output":{"amount":13,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals USD thirteen","output":{"amount":13,"currency":"USD","approximate":false}}
+{"input":"in 2024 we paid thirteen dollars","output":{"amount":13,"currency":"USD","approximate":false}}
+{"input":"thirteen dollars for order 1234","output":{"amount":13,"currency":"USD","approximate":false}}
+{"input":"the budget is thirteen thousand dollars","output":{"amount":13000,"currency":"USD","approximate":false}}
+{"input":"around thirteen grand in dollars","output":{"amount":13000,"currency":"USD","approximate":true}}
+{"input":"roughly USD thirteen million","output":{"amount":13000000,"currency":"USD","approximate":true}}
+{"input":"a price of thirteen dollars","output":{"amount":13,"currency":"USD","approximate":false}}
+{"input":"USD fourteen","output":{"amount":14,"currency":"USD","approximate":false}}
+{"input":"fourteen dollars","output":{"amount":14,"currency":"USD","approximate":false}}
+{"input":"about fourteen dollars","output":{"amount":14,"currency":"USD","approximate":true}}
+{"input":"we paid fourteen USD","output":{"amount":14,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals USD fourteen","output":{"amount":14,"currency":"USD","approximate":false}}
+{"input":"in 2024 we paid fourteen dollars","output":{"amount":14,"currency":"USD","approximate":false}}
+{"input":"fourteen dollars for order 1234","output":{"amount":14,"currency":"USD","approximate":false}}
+{"input":"the budget is fourteen thousand dollars","output":{"amount":14000,"currency":"USD","approximate":false}}
+{"input":"around fourteen grand in dollars","output":{"amount":14000,"currency":"USD","approximate":true}}
+{"input":"roughly USD fourteen million","output":{"amount":14000000,"currency":"USD","approximate":true}}
+{"input":"a price of fourteen dollars","output":{"amount":14,"currency":"USD","approximate":false}}
+{"input":"USD fifteen","output":{"amount":15,"currency":"USD","approximate":false}}
+{"input":"fifteen dollars","output":{"amount":15,"currency":"USD","approximate":false}}
+{"input":"about fifteen dollars","output":{"amount":15,"currency":"USD","approximate":true}}
+{"input":"we paid fifteen USD","output":{"amount":15,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals USD fifteen","output":{"amount":15,"currency":"USD","approximate":false}}
+{"input":"in 2024 we paid fifteen dollars","output":{"amount":15,"currency":"USD","approximate":false}}
+{"input":"fifteen dollars for order 1234","output":{"amount":15,"currency":"USD","approximate":false}}
+{"input":"the budget is fifteen thousand dollars","output":{"amount":15000,"currency":"USD","approximate":false}}
+{"input":"around fifteen grand in dollars","output":{"amount":15000,"currency":"USD","approximate":true}}
+{"input":"roughly USD fifteen million","output":{"amount":15000000,"currency":"USD","approximate":true}}
+{"input":"a price of fifteen dollars","output":{"amount":15,"currency":"USD","approximate":false}}
+{"input":"USD sixteen","output":{"amount":16,"currency":"USD","approximate":false}}
+{"input":"sixteen dollars","output":{"amount":16,"currency":"USD","approximate":false}}
+{"input":"about sixteen dollars","output":{"amount":16,"currency":"USD","approximate":true}}
+{"input":"we paid sixteen USD","output":{"amount":16,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals USD sixteen","output":{"amount":16,"currency":"USD","approximate":false}}
+{"input":"in 2024 we paid sixteen dollars","output":{"amount":16,"currency":"USD","approximate":false}}
+{"input":"sixteen dollars for order 1234","output":{"amount":16,"currency":"USD","approximate":false}}
+{"input":"the budget is sixteen thousand dollars","output":{"amount":16000,"currency":"USD","approximate":false}}
+{"input":"around sixteen grand in dollars","output":{"amount":16000,"currency":"USD","approximate":true}}
+{"input":"roughly USD sixteen million","output":{"amount":16000000,"currency":"USD","approximate":true}}
+{"input":"a price of sixteen dollars","output":{"amount":16,"currency":"USD","approximate":false}}
+{"input":"USD seventeen","output":{"amount":17,"currency":"USD","approximate":false}}
+{"input":"seventeen dollars","output":{"amount":17,"currency":"USD","approximate":false}}
+{"input":"about seventeen dollars","output":{"amount":17,"currency":"USD","approximate":true}}
+{"input":"we paid seventeen USD","output":{"amount":17,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals USD seventeen","output":{"amount":17,"currency":"USD","approximate":false}}
+{"input":"in 2024 we paid seventeen dollars","output":{"amount":17,"currency":"USD","approximate":false}}
+{"input":"seventeen dollars for order 1234","output":{"amount":17,"currency":"USD","approximate":false}}
+{"input":"the budget is seventeen thousand dollars","output":{"amount":17000,"currency":"USD","approximate":false}}
+{"input":"around seventeen grand in dollars","output":{"amount":17000,"currency":"USD","approximate":true}}
+{"input":"roughly USD seventeen million","output":{"amount":17000000,"currency":"USD","approximate":true}}
+{"input":"a price of seventeen dollars","output":{"amount":17,"currency":"USD","approximate":false}}
+{"input":"USD eighteen","output":{"amount":18,"currency":"USD","approximate":false}}
+{"input":"eighteen dollars","output":{"amount":18,"currency":"USD","approximate":false}}
+{"input":"about eighteen dollars","output":{"amount":18,"currency":"USD","approximate":true}}
+{"input":"we paid eighteen USD","output":{"amount":18,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals USD eighteen","output":{"amount":18,"currency":"USD","approximate":false}}
+{"input":"in 2024 we paid eighteen dollars","output":{"amount":18,"currency":"USD","approximate":false}}
+{"input":"eighteen dollars for order 1234","output":{"amount":18,"currency":"USD","approximate":false}}
+{"input":"the budget is eighteen thousand dollars","output":{"amount":18000,"currency":"USD","approximate":false}}
+{"input":"around eighteen grand in dollars","output":{"amount":18000,"currency":"USD","approximate":true}}
+{"input":"roughly USD eighteen million","output":{"amount":18000000,"currency":"USD","approximate":true}}
+{"input":"a price of eighteen dollars","output":{"amount":18,"currency":"USD","approximate":false}}
+{"input":"USD nineteen","output":{"amount":19,"currency":"USD","approximate":false}}
+{"input":"nineteen dollars","output":{"amount":19,"currency":"USD","approximate":false}}
+{"input":"about nineteen dollars","output":{"amount":19,"currency":"USD","approximate":true}}
+{"input":"we paid nineteen USD","output":{"amount":19,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals USD nineteen","output":{"amount":19,"currency":"USD","approximate":false}}
+{"input":"in 2024 we paid nineteen dollars","output":{"amount":19,"currency":"USD","approximate":false}}
+{"input":"nineteen dollars for order 1234","output":{"amount":19,"currency":"USD","approximate":false}}
+{"input":"the budget is nineteen thousand dollars","output":{"amount":19000,"currency":"USD","approximate":false}}
+{"input":"around nineteen grand in dollars","output":{"amount":19000,"currency":"USD","approximate":true}}
+{"input":"roughly USD nineteen million","output":{"amount":19000000,"currency":"USD","approximate":true}}
+{"input":"a price of nineteen dollars","output":{"amount":19,"currency":"USD","approximate":false}}
+{"input":"USD twenty","output":{"amount":20,"currency":"USD","approximate":false}}
+{"input":"twenty dollars","output":{"amount":20,"currency":"USD","approximate":false}}
+{"input":"about twenty dollars","output":{"amount":20,"currency":"USD","approximate":true}}
+{"input":"we paid twenty USD","output":{"amount":20,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals USD twenty","output":{"amount":20,"currency":"USD","approximate":false}}
+{"input":"in 2024 we paid twenty dollars","output":{"amount":20,"currency":"USD","approximate":false}}
+{"input":"twenty dollars for order 1234","output":{"amount":20,"currency":"USD","approximate":false}}
+{"input":"the budget is twenty thousand dollars","output":{"amount":20000,"currency":"USD","approximate":false}}
+{"input":"around twenty grand in dollars","output":{"amount":20000,"currency":"USD","approximate":true}}
+{"input":"roughly USD twenty million","output":{"amount":20000000,"currency":"USD","approximate":true}}
+{"input":"a price of twenty dollars","output":{"amount":20,"currency":"USD","approximate":false}}
+{"input":"USD thirty","output":{"amount":30,"currency":"USD","approximate":false}}
+{"input":"thirty dollars","output":{"amount":30,"currency":"USD","approximate":false}}
+{"input":"about thirty dollars","output":{"amount":30,"currency":"USD","approximate":true}}
+{"input":"we paid thirty USD","output":{"amount":30,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals USD thirty","output":{"amount":30,"currency":"USD","approximate":false}}
+{"input":"in 2024 we paid thirty dollars","output":{"amount":30,"currency":"USD","approximate":false}}
+{"input":"thirty dollars for order 1234","output":{"amount":30,"currency":"USD","approximate":false}}
+{"input":"the budget is thirty thousand dollars","output":{"amount":30000,"currency":"USD","approximate":false}}
+{"input":"around thirty grand in dollars","output":{"amount":30000,"currency":"USD","approximate":true}}
+{"input":"roughly USD thirty million","output":{"amount":30000000,"currency":"USD","approximate":true}}
+{"input":"a price of thirty dollars","output":{"amount":30,"currency":"USD","approximate":false}}
+{"input":"USD forty","output":{"amount":40,"currency":"USD","approximate":false}}
+{"input":"forty dollars","output":{"amount":40,"currency":"USD","approximate":false}}
+{"input":"about forty dollars","output":{"amount":40,"currency":"USD","approximate":true}}
+{"input":"we paid forty USD","output":{"amount":40,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals USD forty","output":{"amount":40,"currency":"USD","approximate":false}}
+{"input":"in 2024 we paid forty dollars","output":{"amount":40,"currency":"USD","approximate":false}}
+{"input":"forty dollars for order 1234","output":{"amount":40,"currency":"USD","approximate":false}}
+{"input":"the budget is forty thousand dollars","output":{"amount":40000,"currency":"USD","approximate":false}}
+{"input":"around forty grand in dollars","output":{"amount":40000,"currency":"USD","approximate":true}}
+{"input":"roughly USD forty million","output":{"amount":40000000,"currency":"USD","approximate":true}}
+{"input":"a price of forty dollars","output":{"amount":40,"currency":"USD","approximate":false}}
+{"input":"USD fifty","output":{"amount":50,"currency":"USD","approximate":false}}
+{"input":"fifty dollars","output":{"amount":50,"currency":"USD","approximate":false}}
+{"input":"about fifty dollars","output":{"amount":50,"currency":"USD","approximate":true}}
+{"input":"we paid fifty USD","output":{"amount":50,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals USD fifty","output":{"amount":50,"currency":"USD","approximate":false}}
+{"input":"in 2024 we paid fifty dollars","output":{"amount":50,"currency":"USD","approximate":false}}
+{"input":"fifty dollars for order 1234","output":{"amount":50,"currency":"USD","approximate":false}}
+{"input":"the budget is fifty thousand dollars","output":{"amount":50000,"currency":"USD","approximate":false}}
+{"input":"around fifty grand in dollars","output":{"amount":50000,"currency":"USD","approximate":true}}
+{"input":"roughly USD fifty million","output":{"amount":50000000,"currency":"USD","approximate":true}}
+{"input":"a price of fifty dollars","output":{"amount":50,"currency":"USD","approximate":false}}
+{"input":"USD sixty","output":{"amount":60,"currency":"USD","approximate":false}}
+{"input":"sixty dollars","output":{"amount":60,"currency":"USD","approximate":false}}
+{"input":"about sixty dollars","output":{"amount":60,"currency":"USD","approximate":true}}
+{"input":"we paid sixty USD","output":{"amount":60,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals USD sixty","output":{"amount":60,"currency":"USD","approximate":false}}
+{"input":"in 2024 we paid sixty dollars","output":{"amount":60,"currency":"USD","approximate":false}}
+{"input":"sixty dollars for order 1234","output":{"amount":60,"currency":"USD","approximate":false}}
+{"input":"the budget is sixty thousand dollars","output":{"amount":60000,"currency":"USD","approximate":false}}
+{"input":"around sixty grand in dollars","output":{"amount":60000,"currency":"USD","approximate":true}}
+{"input":"roughly USD sixty million","output":{"amount":60000000,"currency":"USD","approximate":true}}
+{"input":"a price of sixty dollars","output":{"amount":60,"currency":"USD","approximate":false}}
+{"input":"USD seventy","output":{"amount":70,"currency":"USD","approximate":false}}
+{"input":"seventy dollars","output":{"amount":70,"currency":"USD","approximate":false}}
+{"input":"about seventy dollars","output":{"amount":70,"currency":"USD","approximate":true}}
+{"input":"we paid seventy USD","output":{"amount":70,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals USD seventy","output":{"amount":70,"currency":"USD","approximate":false}}
+{"input":"in 2024 we paid seventy dollars","output":{"amount":70,"currency":"USD","approximate":false}}
+{"input":"seventy dollars for order 1234","output":{"amount":70,"currency":"USD","approximate":false}}
+{"input":"the budget is seventy thousand dollars","output":{"amount":70000,"currency":"USD","approximate":false}}
+{"input":"around seventy grand in dollars","output":{"amount":70000,"currency":"USD","approximate":true}}
+{"input":"roughly USD seventy million","output":{"amount":70000000,"currency":"USD","approximate":true}}
+{"input":"a price of seventy dollars","output":{"amount":70,"currency":"USD","approximate":false}}
+{"input":"USD eighty","output":{"amount":80,"currency":"USD","approximate":false}}
+{"input":"eighty dollars","output":{"amount":80,"currency":"USD","approximate":false}}
+{"input":"about eighty dollars","output":{"amount":80,"currency":"USD","approximate":true}}
+{"input":"we paid eighty USD","output":{"amount":80,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals USD eighty","output":{"amount":80,"currency":"USD","approximate":false}}
+{"input":"in 2024 we paid eighty dollars","output":{"amount":80,"currency":"USD","approximate":false}}
+{"input":"eighty dollars for order 1234","output":{"amount":80,"currency":"USD","approximate":false}}
+{"input":"the budget is eighty thousand dollars","output":{"amount":80000,"currency":"USD","approximate":false}}
+{"input":"around eighty grand in dollars","output":{"amount":80000,"currency":"USD","approximate":true}}
+{"input":"roughly USD eighty million","output":{"amount":80000000,"currency":"USD","approximate":true}}
+{"input":"a price of eighty dollars","output":{"amount":80,"currency":"USD","approximate":false}}
+{"input":"USD ninety","output":{"amount":90,"currency":"USD","approximate":false}}
+{"input":"ninety dollars","output":{"amount":90,"currency":"USD","approximate":false}}
+{"input":"about ninety dollars","output":{"amount":90,"currency":"USD","approximate":true}}
+{"input":"we paid ninety USD","output":{"amount":90,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals USD ninety","output":{"amount":90,"currency":"USD","approximate":false}}
+{"input":"in 2024 we paid ninety dollars","output":{"amount":90,"currency":"USD","approximate":false}}
+{"input":"ninety dollars for order 1234","output":{"amount":90,"currency":"USD","approximate":false}}
+{"input":"the budget is ninety thousand dollars","output":{"amount":90000,"currency":"USD","approximate":false}}
+{"input":"around ninety grand in dollars","output":{"amount":90000,"currency":"USD","approximate":true}}
+{"input":"roughly USD ninety million","output":{"amount":90000000,"currency":"USD","approximate":true}}
+{"input":"a price of ninety dollars","output":{"amount":90,"currency":"USD","approximate":false}}
+{"input":"USD twenty one","output":{"amount":21,"currency":"USD","approximate":false}}
+{"input":"twenty one dollars","output":{"amount":21,"currency":"USD","approximate":false}}
+{"input":"about twenty one dollars","output":{"amount":21,"currency":"USD","approximate":true}}
+{"input":"we paid twenty one USD","output":{"amount":21,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals USD twenty one","output":{"amount":21,"currency":"USD","approximate":false}}
+{"input":"in 2024 we paid twenty one dollars","output":{"amount":21,"currency":"USD","approximate":false}}
+{"input":"twenty one dollars for order 1234","output":{"amount":21,"currency":"USD","approximate":false}}
+{"input":"the budget is twenty one thousand dollars","output":{"amount":21000,"currency":"USD","approximate":false}}
+{"input":"around twenty one grand in dollars","output":{"amount":21000,"currency":"USD","approximate":true}}
+{"input":"roughly USD twenty one million","output":{"amount":21000000,"currency":"USD","approximate":true}}
+{"input":"a price of twenty one dollars","output":{"amount":21,"currency":"USD","approximate":false}}
+{"input":"USD thirty two","output":{"amount":32,"currency":"USD","approximate":false}}
+{"input":"thirty two dollars","output":{"amount":32,"currency":"USD","approximate":false}}
+{"input":"about thirty two dollars","output":{"amount":32,"currency":"USD","approximate":true}}
+{"input":"we paid thirty two USD","output":{"amount":32,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals USD thirty two","output":{"amount":32,"currency":"USD","approximate":false}}
+{"input":"in 2024 we paid thirty two dollars","output":{"amount":32,"currency":"USD","approximate":false}}
+{"input":"thirty two dollars for order 1234","output":{"amount":32,"currency":"USD","approximate":false}}
+{"input":"the budget is thirty two thousand dollars","output":{"amount":32000,"currency":"USD","approximate":false}}
+{"input":"around thirty two grand in dollars","output":{"amount":32000,"currency":"USD","approximate":true}}
+{"input":"roughly USD thirty two million","output":{"amount":32000000,"currency":"USD","approximate":true}}
+{"input":"a price of thirty two dollars","output":{"amount":32,"currency":"USD","approximate":false}}
+{"input":"USD forty three","output":{"amount":43,"currency":"USD","approximate":false}}
+{"input":"forty three dollars","output":{"amount":43,"currency":"USD","approximate":false}}
+{"input":"about forty three dollars","output":{"amount":43,"currency":"USD","approximate":true}}
+{"input":"we paid forty three USD","output":{"amount":43,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals USD forty three","output":{"amount":43,"currency":"USD","approximate":false}}
+{"input":"in 2024 we paid forty three dollars","output":{"amount":43,"currency":"USD","approximate":false}}
+{"input":"forty three dollars for order 1234","output":{"amount":43,"currency":"USD","approximate":false}}
+{"input":"the budget is forty three thousand dollars","output":{"amount":43000,"currency":"USD","approximate":false}}
+{"input":"around forty three grand in dollars","output":{"amount":43000,"currency":"USD","approximate":true}}
+{"input":"roughly USD forty three million","output":{"amount":43000000,"currency":"USD","approximate":true}}
+{"input":"a price of forty three dollars","output":{"amount":43,"currency":"USD","approximate":false}}
+{"input":"5k USD","output":{"amount":5000,"currency":"USD","approximate":false}}
+{"input":"10k USD","output":{"amount":10000,"currency":"USD","approximate":false}}
+{"input":"15k USD","output":{"amount":15000,"currency":"USD","approximate":false}}
+{"input":"20k USD","output":{"amount":20000,"currency":"USD","approximate":false}}
+{"input":"30k USD","output":{"amount":30000,"currency":"USD","approximate":false}}
+{"input":"40k USD","output":{"amount":40000,"currency":"USD","approximate":false}}
+{"input":"50k USD","output":{"amount":50000,"currency":"USD","approximate":false}}
+{"input":"5m USD","output":{"amount":5000000,"currency":"USD","approximate":false}}
+{"input":"10m USD","output":{"amount":10000000,"currency":"USD","approximate":false}}
+{"input":"15m USD","output":{"amount":15000000,"currency":"USD","approximate":false}}
+{"input":"20m USD","output":{"amount":20000000,"currency":"USD","approximate":false}}
+{"input":"30m USD","output":{"amount":30000000,"currency":"USD","approximate":false}}
+{"input":"40m USD","output":{"amount":40000000,"currency":"USD","approximate":false}}
+{"input":"50m USD","output":{"amount":50000000,"currency":"USD","approximate":false}}
+{"input":"$ 12.50","output":{"amount":12.5,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ 12.50","output":{"amount":12.5,"currency":"USD","approximate":false}}
+{"input":"$ 7","output":{"amount":7,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ 7","output":{"amount":7,"currency":"USD","approximate":false}}
+{"input":"$ 35","output":{"amount":35,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ 35","output":{"amount":35,"currency":"USD","approximate":false}}
+{"input":"$ 250","output":{"amount":250,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ 250","output":{"amount":250,"currency":"USD","approximate":false}}
+{"input":"$ 1,200","output":{"amount":1200,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ 1,200","output":{"amount":1200,"currency":"USD","approximate":false}}
+{"input":"$ one","output":{"amount":1,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ one","output":{"amount":1,"currency":"USD","approximate":false}}
+{"input":"$ two","output":{"amount":2,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ two","output":{"amount":2,"currency":"USD","approximate":false}}
+{"input":"$ three","output":{"amount":3,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ three","output":{"amount":3,"currency":"USD","approximate":false}}
+{"input":"$ four","output":{"amount":4,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ four","output":{"amount":4,"currency":"USD","approximate":false}}
+{"input":"$ five","output":{"amount":5,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ five","output":{"amount":5,"currency":"USD","approximate":false}}
+{"input":"$ six","output":{"amount":6,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ six","output":{"amount":6,"currency":"USD","approximate":false}}
+{"input":"$ seven","output":{"amount":7,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ seven","output":{"amount":7,"currency":"USD","approximate":false}}
+{"input":"$ eight","output":{"amount":8,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ eight","output":{"amount":8,"currency":"USD","approximate":false}}
+{"input":"$ nine","output":{"amount":9,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ nine","output":{"amount":9,"currency":"USD","approximate":false}}
+{"input":"$ ten","output":{"amount":10,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ ten","output":{"amount":10,"currency":"USD","approximate":false}}
+{"input":"$ eleven","output":{"amount":11,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ eleven","output":{"amount":11,"currency":"USD","approximate":false}}
+{"input":"$ twelve","output":{"amount":12,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ twelve","output":{"amount":12,"currency":"USD","approximate":false}}
+{"input":"$ thirteen","output":{"amount":13,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ thirteen","output":{"amount":13,"currency":"USD","approximate":false}}
+{"input":"$ fourteen","output":{"amount":14,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ fourteen","output":{"amount":14,"currency":"USD","approximate":false}}
+{"input":"$ fifteen","output":{"amount":15,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ fifteen","output":{"amount":15,"currency":"USD","approximate":false}}
+{"input":"$ sixteen","output":{"amount":16,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ sixteen","output":{"amount":16,"currency":"USD","approximate":false}}
+{"input":"$ seventeen","output":{"amount":17,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ seventeen","output":{"amount":17,"currency":"USD","approximate":false}}
+{"input":"$ eighteen","output":{"amount":18,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ eighteen","output":{"amount":18,"currency":"USD","approximate":false}}
+{"input":"$ nineteen","output":{"amount":19,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ nineteen","output":{"amount":19,"currency":"USD","approximate":false}}
+{"input":"$ twenty","output":{"amount":20,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ twenty","output":{"amount":20,"currency":"USD","approximate":false}}
+{"input":"$ thirty","output":{"amount":30,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ thirty","output":{"amount":30,"currency":"USD","approximate":false}}
+{"input":"$ forty","output":{"amount":40,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ forty","output":{"amount":40,"currency":"USD","approximate":false}}
+{"input":"$ fifty","output":{"amount":50,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ fifty","output":{"amount":50,"currency":"USD","approximate":false}}
+{"input":"$ sixty","output":{"amount":60,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ sixty","output":{"amount":60,"currency":"USD","approximate":false}}
+{"input":"$ seventy","output":{"amount":70,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ seventy","output":{"amount":70,"currency":"USD","approximate":false}}
+{"input":"$ eighty","output":{"amount":80,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ eighty","output":{"amount":80,"currency":"USD","approximate":false}}
+{"input":"$ ninety","output":{"amount":90,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ ninety","output":{"amount":90,"currency":"USD","approximate":false}}
+{"input":"$ twenty one","output":{"amount":21,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ twenty one","output":{"amount":21,"currency":"USD","approximate":false}}
+{"input":"$ thirty two","output":{"amount":32,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ thirty two","output":{"amount":32,"currency":"USD","approximate":false}}
+{"input":"$ forty three","output":{"amount":43,"currency":"USD","approximate":false}}
+{"input":"invoice 2048 totals $ forty three","output":{"amount":43,"currency":"USD","approximate":false}}
+{"input":"£ 12.50","output":{"amount":12.5,"currency":"GBP","approximate":false}}
+{"input":"12.50 pounds","output":{"amount":12.5,"currency":"GBP","approximate":false}}
+{"input":"about 12.50 pounds","output":{"amount":12.5,"currency":"GBP","approximate":true}}
+{"input":"we paid 12.50 GBP","output":{"amount":12.5,"currency":"GBP","approximate":false}}
+{"input":"invoice 2048 totals £ 12.50","output":{"amount":12.5,"currency":"GBP","approximate":false}}
+{"input":"in 2024 we paid 12.50 pounds","output":{"amount":12.5,"currency":"GBP","approximate":false}}
+{"input":"12.50 pounds for order 1234","output":{"amount":12.5,"currency":"GBP","approximate":false}}
+{"input":"the budget is 12.50 thousand pounds","output":{"amount":12500,"currency":"GBP","approximate":false}}
+{"input":"around 12.50 grand in pounds","output":{"amount":12500,"currency":"GBP","approximate":true}}
+{"input":"roughly GBP 12.50 million","output":{"amount":12500000,"currency":"GBP","approximate":true}}
+{"input":"a price of 12.50 pounds","output":{"amount":12.5,"currency":"GBP","approximate":false}}
+{"input":"£ 7","output":{"amount":7,"currency":"GBP","approximate":false}}
+{"input":"7 pounds","output":{"amount":7,"currency":"GBP","approximate":false}}
+{"input":"about 7 pounds","output":{"amount":7,"currency":"GBP","approximate":true}}
+{"input":"we paid 7 GBP","output":{"amount":7,"currency":"GBP","approximate":false}}
+{"input":"invoice 2048 totals £ 7","output":{"amount":7,"currency":"GBP","approximate":false}}
+{"input":"in 2024 we paid 7 pounds","output":{"amount":7,"currency":"GBP","approximate":false}}
+{"input":"7 pounds for order 1234","output":{"amount":7,"currency":"GBP","approximate":false}}
+{"input":"the budget is 7 thousand pounds","output":{"amount":7000,"currency":"GBP","approximate":false}}
+{"input":"around 7 grand in pounds","output":{"amount":7000,"currency":"GBP","approximate":true}}
+{"input":"roughly GBP 7 million","output":{"amount":7000000,"currency":"GBP","approximate":true}}
+{"input":"a price of 7 pounds","output":{"amount":7,"currency":"GBP","approximate":false}}
+{"input":"£ 35","output":{"amount":35,"currency":"GBP","approximate":false}}
+{"input":"35 pounds","output":{"amount":35,"currency":"GBP","approximate":false}}
+{"input":"about 35 pounds","output":{"amount":35,"currency":"GBP","approximate":true}}
+{"input":"we paid 35 GBP","output":{"amount":35,"currency":"GBP","approximate":false}}
+{"input":"invoice 2048 totals £ 35","output":{"amount":35,"currency":"GBP","approximate":false}}
+{"input":"in 2024 we paid 35 pounds","output":{"amount":35,"currency":"GBP","approximate":false}}
+{"input":"35 pounds for order 1234","output":{"amount":35,"currency":"GBP","approximate":false}}
+{"input":"the budget is 35 thousand pounds","output":{"amount":35000,"currency":"GBP","approximate":false}}
+{"input":"around 35 grand in pounds","output":{"amount":35000,"currency":"GBP","approximate":true}}
+{"input":"roughly GBP 35 million","output":{"amount":35000000,"currency":"GBP","approximate":true}}
+{"input":"a price of 35 pounds","output":{"amount":35,"currency":"GBP","approximate":false}}
+{"input":"£ 250","output":{"amount":250,"currency":"GBP","approximate":false}}
+{"input":"250 pounds","output":{"amount":250,"currency":"GBP","approximate":false}}
+{"input":"about 250 pounds","output":{"amount":250,"currency":"GBP","approximate":true}}
+{"input":"we paid 250 GBP","output":{"amount":250,"currency":"GBP","approximate":false}}
+{"input":"invoice 2048 totals £ 250","output":{"amount":250,"currency":"GBP","approximate":false}}
+{"input":"in 2024 we paid 250 pounds","output":{"amount":250,"currency":"GBP","approximate":false}}
+{"input":"250 pounds for order 1234","output":{"amount":250,"currency":"GBP","approximate":false}}
+{"input":"the budget is 250 thousand pounds","output":{"amount":250000,"currency":"GBP","approximate":false}}
+{"input":"around 250 grand in pounds","output":{"amount":250000,"currency":"GBP","approximate":true}}
+{"input":"roughly GBP 250 million","output":{"amount":250000000,"currency":"GBP","approximate":true}}
+{"input":"a price of 250 pounds","output":{"amount":250,"currency":"GBP","approximate":false}}
+{"input":"£ 1,200","output":{"amount":1200,"currency":"GBP","approximate":false}}
+{"input":"1,200 pounds","output":{"amount":1200,"currency":"GBP","approximate":false}}
+{"input":"about 1,200 pounds","output":{"amount":1200,"currency":"GBP","approximate":true}}
+{"input":"we paid 1,200 GBP","output":{"amount":1200,"currency":"GBP","approximate":false}}
+{"input":"invoice 2048 totals £ 1,200","output":{"amount":1200,"currency":"GBP","approximate":false}}
+{"input":"in 2024 we paid 1,200 pounds","output":{"amount":1200,"currency":"GBP","approximate":false}}
+{"input":"1,200 pounds for order 1234","output":{"amount":1200,"currency":"GBP","approximate":false}}
+{"input":"the budget is 1,200 thousand pounds","output":{"amount":1200000,"currency":"GBP","approximate":false}}
+{"input":"around 1,200 grand in pounds","output":{"amount":1200000,"currency":"GBP","approximate":true}}
+{"input":"roughly GBP 1,200 million","output":{"amount":1200000000,"currency":"GBP","approximate":true}}
+{"input":"a price of 1,200 pounds","output":{"amount":1200,"currency":"GBP","approximate":false}}
+{"input":"£ one","output":{"amount":1,"currency":"GBP","approximate":false}}
+{"input":"one pounds","output":{"amount":1,"currency":"GBP","approximate":false}}
+{"input":"about one pounds","output":{"amount":1,"currency":"GBP","approximate":true}}
+{"input":"we paid one GBP","output":{"amount":1,"currency":"GBP","approximate":false}}
+{"input":"invoice 2048 totals £ one","output":{"amount":1,"currency":"GBP","approximate":false}}
+{"input":"in 2024 we paid one pounds","output":{"amount":1,"currency":"GBP","approximate":false}}
+{"input":"one pounds for order 1234","output":{"amount":1,"currency":"GBP","approximate":false}}
+{"input":"the budget is one thousand pounds","output":{"amount":1000,"currency":"GBP","approximate":false}}
+{"input":"around one grand in pounds","output":{"amount":1000,"currency":"GBP","approximate":true}}
+{"input":"roughly GBP one million","output":{"amount":1000000,"currency":"GBP","approximate":true}}
+{"input":"a price of one pounds","output":{"amount":1,"currency":"GBP","approximate":false}}
+{"input":"£ two","output":{"amount":2,"currency":"GBP","approximate":false}}
+{"input":"two pounds","output":{"amount":2,"currency":"GBP","approximate":false}}
+{"input":"about two pounds","output":{"amount":2,"currency":"GBP","approximate":true}}
+{"input":"we paid two GBP","output":{"amount":2,"currency":"GBP","approximate":false}}
+{"input":"invoice 2048 totals £ two","output":{"amount":2,"currency":"GBP","approximate":false}}
+{"input":"in 2024 we paid two pounds","output":{"amount":2,"currency":"GBP","approximate":false}}
+{"input":"two pounds for order 1234","output":{"amount":2,"currency":"GBP","approximate":false}}
+{"input":"the budget is two thousand pounds","output":{"amount":2000,"currency":"GBP","approximate":false}}
+{"input":"around two grand in pounds","output":{"amount":2000,"currency":"GBP","approximate":true}}
+{"input":"roughly GBP two million","output":{"amount":2000000,"currency":"GBP","approximate":true}}
+{"input":"a price of two pounds","output":{"amount":2,"currency":"GBP","approximate":false}}
+{"input":"£ three","output":{"amount":3,"currency":"GBP","approximate":false}}
+{"input":"three pounds","output":{"amount":3,"currency":"GBP","approximate":false}}
+{"input":"about three pounds","output":{"amount":3,"currency":"GBP","approximate":true}}
+{"input":"we paid three GBP","output":{"amount":3,"currency":"GBP","approximate":false}}
+{"input":"invoice 2048 totals £ three","output":{"amount":3,"currency":"GBP","approximate":false}}
+{"input":"in 2024 we paid three pounds","output":{"amount":3,"currency":"GBP","approximate":false}}
+{"input":"three pounds for order 1234","output":{"amount":3,"currency":"GBP","approximate":false}}
+{"input":"the budget is three thousand pounds","output":{"amount":3000,"currency":"GBP","approximate":false}}
+{"input":"around three grand in pounds","output":{"amount":3000,"currency":"GBP","approximate":true}}
+{"input":"roughly GBP three million","output":{"amount":3000000,"currency":"GBP","approximate":true}}
+{"input":"a price of three pounds","output":{"amount":3,"currency":"GBP","approximate":false}}
+{"input":"£ four","output":{"amount":4,"currency":"GBP","approximate":false}}
+{"input":"four pounds","output":{"amount":4,"currency":"GBP","approximate":false}}
+{"input":"about four pounds","output":{"amount":4,"currency":"GBP","approximate":true}}
+{"input":"we paid four GBP","output":{"amount":4,"currency":"GBP","approximate":false}}
+{"input":"invoice 2048 totals £ four","output":{"amount":4,"currency":"GBP","approximate":false}}
+{"input":"in 2024 we paid four pounds","output":{"amount":4,"currency":"GBP","approximate":false}}
+{"input":"four pounds for order 1234","output":{"amount":4,"currency":"GBP","approximate":false}}
+{"input":"the budget is four thousand pounds","output":{"amount":4000,"currency":"GBP","approximate":false}}
+{"input":"around four grand in pounds","output":{"amount":4000,"currency":"GBP","approximate":true}}
+{"input":"roughly GBP four million","output":{"amount":4000000,"currency":"GBP","approximate":true}}
+{"input":"a price of four pounds","output":{"amount":4,"currency":"GBP","approximate":false}}
+{"input":"£ five","output":{"amount":5,"currency":"GBP","approximate":false}}
+{"input":"five pounds","output":{"amount":5,"currency":"GBP","approximate":false}}
+{"input":"about five pounds","output":{"amount":5,"currency":"GBP","approximate":true}}
+{"input":"we paid five GBP","output":{"amount":5,"currency":"GBP","approximate":false}}
+{"input":"invoice 2048 totals £ five","output":{"amount":5,"currency":"GBP","approximate":false}}
+{"input":"in 2024 we paid five pounds","output":{"amount":5,"currency":"GBP","approximate":false}}
+{"input":"five pounds for order 1234","output":{"amount":5,"currency":"GBP","approximate":false}}
+{"input":"the budget is five thousand pounds","output":{"amount":5000,"currency":"GBP","approximate":false}}
+{"input":"around five grand in pounds","output":{"amount":5000,"currency":"GBP","approximate":true}}
+{"input":"roughly GBP five million","output":{"amount":5000000,"currency":"GBP","approximate":true}}
+{"input":"a price of five pounds","output":{"amount":5,"currency":"GBP","approximate":false}}
+{"input":"£ six","output":{"amount":6,"currency":"GBP","approximate":false}}
+{"input":"six pounds","output":{"amount":6,"currency":"GBP","approximate":false}}
+{"input":"about six pounds","output":{"amount":6,"currency":"GBP","approximate":true}}
+{"input":"we paid six GBP","output":{"amount":6,"currency":"GBP","approximate":false}}
+{"input":"invoice 2048 totals £ six","output":{"amount":6,"currency":"GBP","approximate":false}}
+{"input":"in 2024 we paid six pounds","output":{"amount":6,"currency":"GBP","approximate":false}}
+{"input":"six pounds for order 1234","output":{"amount":6,"currency":"GBP","approximate":false}}
+{"input":"the budget is six thousand pounds","output":{"amount":6000,"currency":"GBP","approximate":false}}
+{"input":"around six grand in pounds","output":{"amount":6000,"currency":"GBP","approximate":true}}
+{"input":"roughly GBP six million","output":{"amount":6000000,"currency":"GBP","approximate":true}}
+{"input":"a price of six pounds","output":{"amount":6,"currency":"GBP","approximate":false}}
+{"input":"£ seven","output":{"amount":7,"currency":"GBP","approximate":false}}
+{"input":"seven pounds","output":{"amount":7,"currency":"GBP","approximate":false}}
+{"input":"about seven pounds","output":{"amount":7,"currency":"GBP","approximate":true}}
+{"input":"we paid seven GBP","output":{"amount":7,"currency":"GBP","approximate":false}}
+{"input":"invoice 2048 totals £ seven","output":{"amount":7,"currency":"GBP","approximate":false}}
+{"input":"in 2024 we paid seven pounds","output":{"amount":7,"currency":"GBP","approximate":false}}
+{"input":"seven pounds for order 1234","output":{"amount":7,"currency":"GBP","approximate":false}}
+{"input":"the budget is seven thousand pounds","output":{"amount":7000,"currency":"GBP","approximate":false}}
+{"input":"around seven grand in pounds","output":{"amount":7000,"currency":"GBP","approximate":true}}
+{"input":"roughly GBP seven million","output":{"amount":7000000,"currency":"GBP","approximate":true}}
+{"input":"a price of seven pounds","output":{"amount":7,"currency":"GBP","approximate":false}}
+{"input":"£ eight","output":{"amount":8,"currency":"GBP","approximate":false}}
+{"input":"eight pounds","output":{"amount":8,"currency":"GBP","approximate":false}}
+{"input":"about eight pounds","output":{"amount":8,"currency":"GBP","approximate":true}}
+{"input":"we paid eight GBP","output":{"amount":8,"currency":"GBP","approximate":false}}
+{"input":"invoice 2048 totals £ eight","output":{"amount":8,"currency":"GBP","approximate":false}}
+{"input":"in 2024 we paid eight pounds","output":{"amount":8,"currency":"GBP","approximate":false}}
+{"input":"eight pounds for order 1234","output":{"amount":8,"currency":"GBP","approximate":false}}
+{"input":"the budget is eight thousand pounds","output":{"amount":8000,"currency":"GBP","approximate":false}}
+{"input":"around eight grand in pounds","output":{"amount":8000,"currency":"GBP","approximate":true}}
+{"input":"roughly GBP eight million","output":{"amount":8000000,"currency":"GBP","approximate":true}}
+{"input":"a price of eight pounds","output":{"amount":8,"currency":"GBP","approximate":false}}
+{"input":"£ nine","output":{"amount":9,"currency":"GBP","approximate":false}}
+{"input":"nine pounds","output":{"amount":9,"currency":"GBP","approximate":false}}
+{"input":"about nine pounds","output":{"amount":9,"currency":"GBP","approximate":true}}
+{"input":"we paid nine GBP","output":{"amount":9,"currency":"GBP","approximate":false}}
+{"input":"invoice 2048 totals £ nine","output":{"amount":9,"currency":"GBP","approximate":false}}
+{"input":"in 2024 we paid nine pounds","output":{"amount":9,"currency":"GBP","approximate":false}}
+{"input":"nine pounds for order 1234","output":{"amount":9,"currency":"GBP","approximate":false}}
+{"input":"the budget is nine thousand pounds","output":{"amount":9000,"currency":"GBP","approximate":false}}
+{"input":"around nine grand in pounds","output":{"amount":9000,"currency":"GBP","approximate":true}}
+{"input":"roughly GBP nine million","output":{"amount":9000000,"currency":"GBP","approximate":true}}
+{"input":"a price of nine pounds","output":{"amount":9,"currency":"GBP","approximate":false}}
+{"input":"£ ten","output":{"amount":10,"currency":"GBP","approximate":false}}
+{"input":"ten pounds","output":{"amount":10,"currency":"GBP","approximate":false}}
+{"input":"about ten pounds","output":{"amount":10,"currency":"GBP","approximate":true}}
+{"input":"we paid ten GBP","output":{"amount":10,"currency":"GBP","approximate":false}}
+{"input":"invoice 2048 totals £ ten","output":{"amount":10,"currency":"GBP","approximate":false}}
+{"input":"in 2024 we paid ten pounds","output":{"amount":10,"currency":"GBP","approximate":false}}
+{"input":"ten pounds for order 1234","output":{"amount":10,"currency":"GBP","approximate":false}}
+{"input":"the budget is ten thousand pounds","output":{"amount":10000,"currency":"GBP","approximate":false}}
+{"input":"around ten grand in pounds","output":{"amount":10000,"currency":"GBP","approximate":true}}
+{"input":"roughly GBP ten million","output":{"amount":10000000,"currency":"GBP","approximate":true}}
+{"input":"a price of ten pounds","output":{"amount":10,"currency":"GBP","approximate":false}}
+{"input":"£ eleven","output":{"amount":11,"currency":"GBP","approximate":false}}
+{"input":"eleven pounds","output":{"amount":11,"currency":"GBP","approximate":false}}
+{"input":"about eleven pounds","output":{"amount":11,"currency":"GBP","approximate":true}}
+{"input":"we paid eleven GBP","output":{"amount":11,"currency":"GBP","approximate":false}}
+{"input":"invoice 2048 totals £ eleven","output":{"amount":11,"currency":"GBP","approximate":false}}
+{"input":"in 2024 we paid eleven pounds","output":{"amount":11,"currency":"GBP","approximate":false}}
+{"input":"eleven pounds for order 1234","output":{"amount":11,"currency":"GBP","approximate":false}}
+{"input":"the budget is eleven thousand pounds","output":{"amount":11000,"currency":"GBP","approximate":false}}
+{"input":"around eleven grand in pounds","output":{"amount":11000,"currency":"GBP","approximate":true}}
+{"input":"roughly GBP eleven million","output":{"amount":11000000,"currency":"GBP","approximate":true}}
+{"input":"a price of eleven pounds","output":{"amount":11,"currency":"GBP","approximate":false}}
+{"input":"£ twelve","output":{"amount":12,"currency":"GBP","approximate":false}}
+{"input":"twelve pounds","output":{"amount":12,"currency":"GBP","approximate":false}}
+{"input":"about twelve pounds","output":{"amount":12,"currency":"GBP","approximate":true}}
+{"input":"we paid twelve GBP","output":{"amount":12,"currency":"GBP","approximate":false}}
+{"input":"invoice 2048 totals £ twelve","output":{"amount":12,"currency":"GBP","approximate":false}}
+{"input":"in 2024 we paid twelve pounds","output":{"amount":12,"currency":"GBP","approximate":false}}
+{"input":"twelve pounds for order 1234","output":{"amount":12,"currency":"GBP","approximate":false}}
+{"input":"the budget is twelve thousand pounds","output":{"amount":12000,"currency":"GBP","approximate":false}}
+{"input":"around twelve grand in pounds","output":{"amount":12000,"currency":"GBP","approximate":true}}
+{"input":"roughly GBP twelve million","output":{"amount":12000000,"currency":"GBP","approximate":true}}
+{"input":"a price of twelve pounds","output":{"amount":12,"currency":"GBP","approximate":false}}
+{"input":"£ thirteen","output":{"amount":13,"currency":"GBP","approximate":false}}
+{"input":"thirteen pounds","output":{"amount":13,"currency":"GBP","approximate":false}}
+{"input":"about thirteen pounds","output":{"amount":13,"currency":"GBP","approximate":true}}
+{"input":"we paid thirteen GBP","output":{"amount":13,"currency":"GBP","approximate":false}}
+{"input":"invoice 2048 totals £ thirteen","output":{"amount":13,"currency":"GBP","approximate":false}}
+{"input":"in 2024 we paid thirteen pounds","output":{"amount":13,"currency":"GBP","approximate":false}}
+{"input":"thirteen pounds for order 1234","output":{"amount":13,"currency":"GBP","approximate":false}}
+{"input":"the budget is thirteen thousand pounds","output":{"amount":13000,"currency":"GBP","approximate":false}}
+{"input":"around thirteen grand in pounds","output":{"amount":13000,"currency":"GBP","approximate":true}}
+{"input":"roughly GBP thirteen million","output":{"amount":13000000,"currency":"GBP","approximate":true}}
+{"input":"a price of thirteen pounds","output":{"amount":13,"currency":"GBP","approximate":false}}
+{"input":"£ fourteen","output":{"amount":14,"currency":"GBP","approximate":false}}
+{"input":"fourteen pounds","output":{"amount":14,"currency":"GBP","approximate":false}}
+{"input":"about fourteen pounds","output":{"amount":14,"currency":"GBP","approximate":true}}
+{"input":"we paid fourteen GBP","output":{"amount":14,"currency":"GBP","approximate":false}}
+{"input":"invoice 2048 totals £ fourteen","output":{"amount":14,"currency":"GBP","approximate":false}}
+{"input":"in 2024 we paid fourteen pounds","output":{"amount":14,"currency":"GBP","approximate":false}}
+{"input":"fourteen pounds for order 1234","output":{"amount":14,"currency":"GBP","approximate":false}}
+{"input":"the budget is fourteen thousand pounds","output":{"amount":14000,"currency":"GBP","approximate":false}}
+{"input":"around fourteen grand in pounds","output":{"amount":14000,"currency":"GBP","approximate":true}}
+{"input":"roughly GBP fourteen million","output":{"amount":14000000,"currency":"GBP","approximate":true}}
+{"input":"a price of fourteen pounds","output":{"amount":14,"currency":"GBP","approximate":false}}
+{"input":"£ fifteen","output":{"amount":15,"currency":"GBP","approximate":false}}
+{"input":"fifteen pounds","output":{"amount":15,"currency":"GBP","approximate":false}}
+{"input":"about fifteen pounds","output":{"amount":15,"currency":"GBP","approximate":true}}
+{"input":"we paid fifteen GBP","output":{"amount":15,"currency":"GBP","approximate":false}}
+{"input":"invoice 2048 totals £ fifteen","output":{"amount":15,"currency":"GBP","approximate":false}}
+{"input":"in 2024 we paid fifteen pounds","output":{"amount":15,"currency":"GBP","approximate":false}}
+{"input":"fifteen pounds for order 1234","output":{"amount":15,"currency":"GBP","approximate":false}}
+{"input":"the budget is fifteen thousand pounds","output":{"amount":15000,"currency":"GBP","approximate":false}}
+{"input":"around fifteen grand in pounds","output":{"amount":15000,"currency":"GBP","approximate":true}}
+{"input":"roughly GBP fifteen million","output":{"amount":15000000,"currency":"GBP","approximate":true}}
+{"input":"a price of fifteen pounds","output":{"amount":15,"currency":"GBP","approximate":false}}
+{"input":"£ sixteen","output":{"amount":16,"currency":"GBP","approximate":false}}
+{"input":"sixteen pounds","output":{"amount":16,"currency":"GBP","approximate":false}}
+{"input":"about sixteen pounds","output":{"amount":16,"currency":"GBP","approximate":true}}
+{"input":"we paid sixteen GBP","output":{"amount":16,"currency":"GBP","approximate":false}}
+{"input":"invoice 2048 totals £ sixteen","output":{"amount":16,"currency":"GBP","approximate":false}}
+{"input":"in 2024 we paid sixteen pounds","output":{"amount":16,"currency":"GBP","approximate":false}}
+{"input":"sixteen pounds for order 1234","output":{"amount":16,"currency":"GBP","approximate":false}}
+{"input":"the budget is sixteen thousand pounds","output":{"amount":16000,"currency":"GBP","approximate":false}}
+{"input":"around sixteen grand in pounds","output":{"amount":16000,"currency":"GBP","approximate":true}}
+{"input":"roughly GBP sixteen million","output":{"amount":16000000,"currency":"GBP","approximate":true}}
+{"input":"a price of sixteen pounds","output":{"amount":16,"currency":"GBP","approximate":false}}
+{"input":"£ seventeen","output":{"amount":17,"currency":"GBP","approximate":false}}
+{"input":"seventeen pounds","output":{"amount":17,"currency":"GBP","approximate":false}}
+{"input":"about seventeen pounds","output":{"amount":17,"currency":"GBP","approximate":true}}
+{"input":"we paid seventeen GBP","output":{"amount":17,"currency":"GBP","approximate":false}}
+{"input":"invoice 2048 totals £ seventeen","output":{"amount":17,"currency":"GBP","approximate":false}}
+{"input":"in 2024 we paid seventeen pounds","output":{"amount":17,"currency":"GBP","approximate":false}}
+{"input":"seventeen pounds for order 1234","output":{"amount":17,"currency":"GBP","approximate":false}}
+{"input":"the budget is seventeen thousand pounds","output":{"amount":17000,"currency":"GBP","approximate":false}}
+{"input":"around seventeen grand in pounds","output":{"amount":17000,"currency":"GBP","approximate":true}}
+{"input":"roughly GBP seventeen million","output":{"amount":17000000,"currency":"GBP","approximate":true}}
+{"input":"a price of seventeen pounds","output":{"amount":17,"currency":"GBP","approximate":false}}
+{"input":"£ eighteen","output":{"amount":18,"currency":"GBP","approximate":false}}
+{"input":"eighteen pounds","output":{"amount":18,"currency":"GBP","approximate":false}}
+{"input":"about eighteen pounds","output":{"amount":18,"currency":"GBP","approximate":true}}
+{"input":"we paid eighteen GBP","output":{"amount":18,"currency":"GBP","approximate":false}}
+{"input":"invoice 2048 totals £ eighteen","output":{"amount":18,"currency":"GBP","approximate":false}}
+{"input":"in 2024 we paid eighteen pounds","output":{"amount":18,"currency":"GBP","approximate":false}}
+{"input":"eighteen pounds for order 1234","output":{"amount":18,"currency":"GBP","approximate":false}}
+{"input":"the budget is eighteen thousand pounds","output":{"amount":18000,"currency":"GBP","approximate":false}}
+{"input":"around eighteen grand in pounds","output":{"amount":18000,"currency":"GBP","approximate":true}}
+{"input":"roughly GBP eighteen million","output":{"amount":18000000,"currency":"GBP","approximate":true}}
+{"input":"a price of eighteen pounds","output":{"amount":18,"currency":"GBP","approximate":false}}
+{"input":"£ nineteen","output":{"amount":19,"currency":"GBP","approximate":false}}
+{"input":"nineteen pounds","output":{"amount":19,"currency":"GBP","approximate":false}}
+{"input":"about nineteen pounds","output":{"amount":19,"currency":"GBP","approximate":true}}
+{"input":"we paid nineteen GBP","output":{"amount":19,"currency":"GBP","approximate":false}}
+{"input":"invoice 2048 totals £ nineteen","output":{"amount":19,"currency":"GBP","approximate":false}}
+{"input":"in 2024 we paid nineteen pounds","output":{"amount":19,"currency":"GBP","approximate":false}}
+{"input":"nineteen pounds for order 1234","output":{"amount":19,"currency":"GBP","approximate":false}}
+{"input":"the budget is nineteen thousand pounds","output":{"amount":19000,"currency":"GBP","approximate":false}}
+{"input":"around nineteen grand in pounds","output":{"amount":19000,"currency":"GBP","approximate":true}}
+{"input":"roughly GBP nineteen million","output":{"amount":19000000,"currency":"GBP","approximate":true}}
+{"input":"a price of nineteen pounds","output":{"amount":19,"currency":"GBP","approximate":false}}
+{"input":"£ twenty","output":{"amount":20,"currency":"GBP","approximate":false}}
+{"input":"twenty pounds","output":{"amount":20,"currency":"GBP","approximate":false}}
+{"input":"about twenty pounds","output":{"amount":20,"currency":"GBP","approximate":true}}
+{"input":"we paid twenty GBP","output":{"amount":20,"currency":"GBP","approximate":false}}
+{"input":"invoice 2048 totals £ twenty","output":{"amount":20,"currency":"GBP","approximate":false}}
+{"input":"in 2024 we paid twenty pounds","output":{"amount":20,"currency":"GBP","approximate":false}}
+{"input":"twenty pounds for order 1234","output":{"amount":20,"currency":"GBP","approximate":false}}
+{"input":"the budget is twenty thousand pounds","output":{"amount":20000,"currency":"GBP","approximate":false}}
+{"input":"around twenty grand in pounds","output":{"amount":20000,"currency":"GBP","approximate":true}}
+{"input":"roughly GBP twenty million","output":{"amount":20000000,"currency":"GBP","approximate":true}}
+{"input":"a price of twenty pounds","output":{"amount":20,"currency":"GBP","approximate":false}}
+{"input":"£ thirty","output":{"amount":30,"currency":"GBP","approximate":false}}
+{"input":"thirty pounds","output":{"amount":30,"currency":"GBP","approximate":false}}
+{"input":"about thirty pounds","output":{"amount":30,"currency":"GBP","approximate":true}}
+{"input":"we paid thirty GBP","output":{"amount":30,"currency":"GBP","approximate":false}}
+{"input":"invoice 2048 totals £ thirty","output":{"amount":30,"currency":"GBP","approximate":false}}
+{"input":"in 2024 we paid thirty pounds","output":{"amount":30,"currency":"GBP","approximate":false}}
+{"input":"thirty pounds for order 1234","output":{"amount":30,"currency":"GBP","approximate":false}}
+{"input":"the budget is thirty thousand pounds","output":{"amount":30000,"currency":"GBP","approximate":false}}
+{"input":"around thirty grand in pounds","output":{"amount":30000,"currency":"GBP","approximate":true}}
+{"input":"roughly GBP thirty million","output":{"amount":30000000,"currency":"GBP","approximate":true}}
+{"input":"a price of thirty pounds","output":{"amount":30,"currency":"GBP","approximate":false}}
+{"input":"£ forty","output":{"amount":40,"currency":"GBP","approximate":false}}
+{"input":"forty pounds","output":{"amount":40,"currency":"GBP","approximate":false}}
+{"input":"about forty pounds","output":{"amount":40,"currency":"GBP","approximate":true}}
+{"input":"we paid forty GBP","output":{"amount":40,"currency":"GBP","approximate":false}}
+{"input":"invoice 2048 totals £ forty","output":{"amount":40,"currency":"GBP","approximate":false}}
+{"input":"in 2024 we paid forty pounds","output":{"amount":40,"currency":"GBP","approximate":false}}
+{"input":"forty pounds for order 1234","output":{"amount":40,"currency":"GBP","approximate":false}}
+{"input":"the budget is forty thousand pounds","output":{"amount":40000,"currency":"GBP","approximate":false}}
+{"input":"around forty grand in pounds","output":{"amount":40000,"currency":"GBP","approximate":true}}
+{"input":"roughly GBP forty million","output":{"amount":40000000,"currency":"GBP","approximate":true}}
+{"input":"a price of forty pounds","output":{"amount":40,"currency":"GBP","approximate":false}}
+{"input":"£ fifty","output":{"amount":50,"currency":"GBP","approximate":false}}
+{"input":"fifty pounds","output":{"amount":50,"currency":"GBP","approximate":false}}
+{"input":"about fifty pounds","output":{"amount":50,"currency":"GBP","approximate":true}}
+{"input":"we paid fifty GBP","output":{"amount":50,"currency":"GBP","approximate":false}}
+{"input":"invoice 2048 totals £ fifty","output":{"amount":50,"currency":"GBP","approximate":false}}
+{"input":"in 2024 we paid fifty pounds","output":{"amount":50,"currency":"GBP","approximate":false}}
+{"input":"fifty pounds for order 1234","output":{"amount":50,"currency":"GBP","approximate":false}}
+{"input":"the budget is fifty thousand pounds","output":{"amount":50000,"currency":"GBP","approximate":false}}
+{"input":"around fifty grand in pounds","output":{"amount":50000,"currency":"GBP","approximate":true}}
+{"input":"roughly GBP fifty million","output":{"amount":50000000,"currency":"GBP","approximate":true}}
+{"input":"a price of fifty pounds","output":{"amount":50,"currency":"GBP","approximate":false}}
+{"input":"£ sixty","output":{"amount":60,"currency":"GBP","approximate":false}}
+{"input":"sixty pounds","output":{"amount":60,"currency":"GBP","approximate":false}}
+{"input":"about sixty pounds","output":{"amount":60,"currency":"GBP","approximate":true}}
+{"input":"we paid sixty GBP","output":{"amount":60,"currency":"GBP","approximate":false}}
+{"input":"invoice 2048 totals £ sixty","output":{"amount":60,"currency":"GBP","approximate":false}}
+{"input":"in 2024 we paid sixty pounds","output":{"amount":60,"currency":"GBP","approximate":false}}
+{"input":"sixty pounds for order 1234","output":{"amount":60,"currency":"GBP","approximate":false}}
+{"input":"the budget is sixty thousand pounds","output":{"amount":60000,"currency":"GBP","approximate":false}}
+{"input":"around sixty grand in pounds","output":{"amount":60000,"currency":"GBP","approximate":true}}
+{"input":"roughly GBP sixty million","output":{"amount":60000000,"currency":"GBP","approximate":true}}
+{"input":"a price of sixty pounds","output":{"amount":60,"currency":"GBP","approximate":false}}
+{"input":"£ seventy","output":{"amount":70,"currency":"GBP","approximate":false}}
+{"input":"seventy pounds","output":{"amount":70,"currency":"GBP","approximate":false}}
+{"input":"about seventy pounds","output":{"amount":70,"currency":"GBP","approximate":true}}
+{"input":"we paid seventy GBP","output":{"amount":70,"currency":"GBP","approximate":false}}
+{"input":"invoice 2048 totals £ seventy","output":{"amount":70,"currency":"GBP","approximate":false}}
+{"input":"in 2024 we paid seventy pounds","output":{"amount":70,"currency":"GBP","approximate":false}}
+{"input":"seventy pounds for order 1234","output":{"amount":70,"currency":"GBP","approximate":false}}
+{"input":"the budget is seventy thousand pounds","output":{"amount":70000,"currency":"GBP","approximate":false}}
+{"input":"around seventy grand in pounds","output":{"amount":70000,"currency":"GBP","approximate":true}}
+{"input":"roughly GBP seventy million","output":{"amount":70000000,"currency":"GBP","approximate":true}}
+{"input":"a price of seventy pounds","output":{"amount":70,"currency":"GBP","approximate":false}}
+{"input":"£ eighty","output":{"amount":80,"currency":"GBP","approximate":false}}
+{"input":"eighty pounds","output":{"amount":80,"currency":"GBP","approximate":false}}
+{"input":"about eighty pounds","output":{"amount":80,"currency":"GBP","approximate":true}}
+{"input":"we paid eighty GBP","output":{"amount":80,"currency":"GBP","approximate":false}}
+{"input":"invoice 2048 totals £ eighty","output":{"amount":80,"currency":"GBP","approximate":false}}
+{"input":"in 2024 we paid eighty pounds","output":{"amount":80,"currency":"GBP","approximate":false}}
+{"input":"eighty pounds for order 1234","output":{"amount":80,"currency":"GBP","approximate":false}}
+{"input":"the budget is eighty thousand pounds","output":{"amount":80000,"currency":"GBP","approximate":false}}
+{"input":"around eighty grand in pounds","output":{"amount":80000,"currency":"GBP","approximate":true}}
+{"input":"roughly GBP eighty million","output":{"amount":80000000,"currency":"GBP","approximate":true}}
+{"input":"a price of eighty pounds","output":{"amount":80,"currency":"GBP","approximate":false}}
+{"input":"£ ninety","output":{"amount":90,"currency":"GBP","approximate":false}}
+{"input":"ninety pounds","output":{"amount":90,"currency":"GBP","approximate":false}}
+{"input":"about ninety pounds","output":{"amount":90,"currency":"GBP","approximate":true}}
+{"input":"we paid ninety GBP","output":{"amount":90,"currency":"GBP","approximate":false}}
+{"input":"invoice 2048 totals £ ninety","output":{"amount":90,"currency":"GBP","approximate":false}}
+{"input":"in 2024 we paid ninety pounds","output":{"amount":90,"currency":"GBP","approximate":false}}
+{"input":"ninety pounds for order 1234","output":{"amount":90,"currency":"GBP","approximate":false}}
+{"input":"the budget is ninety thousand pounds","output":{"amount":90000,"currency":"GBP","approximate":false}}
+{"input":"around ninety grand in pounds","output":{"amount":90000,"currency":"GBP","approximate":true}}
+{"input":"roughly GBP ninety million","output":{"amount":90000000,"currency":"GBP","approximate":true}}
+{"input":"a price of ninety pounds","output":{"amount":90,"currency":"GBP","approximate":false}}
+{"input":"£ twenty one","output":{"amount":21,"currency":"GBP","approximate":false}}
+{"input":"twenty one pounds","output":{"amount":21,"currency":"GBP","approximate":false}}
+{"input":"about twenty one pounds","output":{"amount":21,"currency":"GBP","approximate":true}}
+{"input":"we paid twenty one GBP","output":{"amount":21,"currency":"GBP","approximate":false}}
+{"input":"invoice 2048 totals £ twenty one","output":{"amount":21,"currency":"GBP","approximate":false}}
+{"input":"in 2024 we paid twenty one pounds","output":{"amount":21,"currency":"GBP","approximate":false}}
+{"input":"twenty one pounds for order 1234","output":{"amount":21,"currency":"GBP","approximate":false}}
+{"input":"the budget is twenty one thousand pounds","output":{"amount":21000,"currency":"GBP","approximate":false}}
+{"input":"around twenty one grand in pounds","output":{"amount":21000,"currency":"GBP","approximate":true}}
+{"input":"roughly GBP twenty one million","output":{"amount":21000000,"currency":"GBP","approximate":true}}
+{"input":"a price of twenty one pounds","output":{"amount":21,"currency":"GBP","approximate":false}}
+{"input":"£ thirty two","output":{"amount":32,"currency":"GBP","approximate":false}}
+{"input":"thirty two pounds","output":{"amount":32,"currency":"GBP","approximate":false}}
+{"input":"about thirty two pounds","output":{"amount":32,"currency":"GBP","approximate":true}}
+{"input":"we paid thirty two GBP","output":{"amount":32,"currency":"GBP","approximate":false}}
+{"input":"invoice 2048 totals £ thirty two","output":{"amount":32,"currency":"GBP","approximate":false}}
+{"input":"in 2024 we paid thirty two pounds","output":{"amount":32,"currency":"GBP","approximate":false}}
+{"input":"thirty two pounds for order 1234","output":{"amount":32,"currency":"GBP","approximate":false}}
+{"input":"the budget is thirty two thousand pounds","output":{"amount":32000,"currency":"GBP","approximate":false}}
+{"input":"around thirty two grand in pounds","output":{"amount":32000,"currency":"GBP","approximate":true}}
+{"input":"roughly GBP thirty two million","output":{"amount":32000000,"currency":"GBP","approximate":true}}
+{"input":"a price of thirty two pounds","output":{"amount":32,"currency":"GBP","approximate":false}}
+{"input":"£ forty three","output":{"amount":43,"currency":"GBP","approximate":false}}
+{"input":"forty three pounds","output":{"amount":43,"currency":"GBP","approximate":false}}
+{"input":"about forty three pounds","output":{"amount":43,"currency":"GBP","approximate":true}}
+{"input":"we paid forty three GBP","output":{"amount":43,"currency":"GBP","approximate":false}}
+{"input":"invoice 2048 totals £ forty three","output":{"amount":43,"currency":"GBP","approximate":false}}
+{"input":"in 2024 we paid forty three pounds","output":{"amount":43,"currency":"GBP","approximate":false}}
+{"input":"forty three pounds for order 1234","output":{"amount":43,"currency":"GBP","approximate":false}}
+{"input":"the budget is forty three thousand pounds","output":{"amount":43000,"currency":"GBP","approximate":false}}
+{"input":"around forty three grand in pounds","output":{"amount":43000,"currency":"GBP","approximate":true}}
+{"input":"roughly GBP forty three million","output":{"amount":43000000,"currency":"GBP","approximate":true}}
+{"input":"a price of forty three pounds","output":{"amount":43,"currency":"GBP","approximate":false}}
+{"input":"5k GBP","output":{"amount":5000,"currency":"GBP","approximate":false}}
+{"input":"10k GBP","output":{"amount":10000,"currency":"GBP","approximate":false}}
+{"input":"15k GBP","output":{"amount":15000,"currency":"GBP","approximate":false}}
+{"input":"20k GBP","output":{"amount":20000,"currency":"GBP","approximate":false}}
+{"input":"30k GBP","output":{"amount":30000,"currency":"GBP","approximate":false}}
+{"input":"40k GBP","output":{"amount":40000,"currency":"GBP","approximate":false}}
+{"input":"50k GBP","output":{"amount":50000,"currency":"GBP","approximate":false}}
+{"input":"5m GBP","output":{"amount":5000000,"currency":"GBP","approximate":false}}
+{"input":"10m GBP","output":{"amount":10000000,"currency":"GBP","approximate":false}}
+{"input":"15m GBP","output":{"amount":15000000,"currency":"GBP","approximate":false}}
+{"input":"20m GBP","output":{"amount":20000000,"currency":"GBP","approximate":false}}
+{"input":"30m GBP","output":{"amount":30000000,"currency":"GBP","approximate":false}}
+{"input":"40m GBP","output":{"amount":40000000,"currency":"GBP","approximate":false}}
+{"input":"50m GBP","output":{"amount":50000000,"currency":"GBP","approximate":false}}
+{"input":"SEK 12.50","output":{"amount":12.5,"currency":"SEK","approximate":false}}
+{"input":"12.50 kronor","output":{"amount":12.5,"currency":"SEK","approximate":false}}
+{"input":"about 12.50 kronor","output":{"amount":12.5,"currency":"SEK","approximate":true}}
+{"input":"we paid 12.50 SEK","output":{"amount":12.5,"currency":"SEK","approximate":false}}
+{"input":"invoice 2048 totals SEK 12.50","output":{"amount":12.5,"currency":"SEK","approximate":false}}
+{"input":"in 2024 we paid 12.50 kronor","output":{"amount":12.5,"currency":"SEK","approximate":false}}
+{"input":"12.50 kronor for order 1234","output":{"amount":12.5,"currency":"SEK","approximate":false}}
+{"input":"the budget is 12.50 thousand kronor","output":{"amount":12500,"currency":"SEK","approximate":false}}
+{"input":"around 12.50 grand in kronor","output":{"amount":12500,"currency":"SEK","approximate":true}}
+{"input":"roughly SEK 12.50 million","output":{"amount":12500000,"currency":"SEK","approximate":true}}
+{"input":"a price of 12.50 kronor","output":{"amount":12.5,"currency":"SEK","approximate":false}}
+{"input":"SEK 7","output":{"amount":7,"currency":"SEK","approximate":false}}
+{"input":"7 kronor","output":{"amount":7,"currency":"SEK","approximate":false}}
+{"input":"about 7 kronor","output":{"amount":7,"currency":"SEK","approximate":true}}
+{"input":"we paid 7 SEK","output":{"amount":7,"currency":"SEK","approximate":false}}
+{"input":"invoice 2048 totals SEK 7","output":{"amount":7,"currency":"SEK","approximate":false}}
+{"input":"in 2024 we paid 7 kronor","output":{"amount":7,"currency":"SEK","approximate":false}}
+{"input":"7 kronor for order 1234","output":{"amount":7,"currency":"SEK","approximate":false}}
+{"input":"the budget is 7 thousand kronor","output":{"amount":7000,"currency":"SEK","approximate":false}}
+{"input":"around 7 grand in kronor","output":{"amount":7000,"currency":"SEK","approximate":true}}
+{"input":"roughly SEK 7 million","output":{"amount":7000000,"currency":"SEK","approximate":true}}
+{"input":"a price of 7 kronor","output":{"amount":7,"currency":"SEK","approximate":false}}
+{"input":"SEK 35","output":{"amount":35,"currency":"SEK","approximate":false}}
+{"input":"35 kronor","output":{"amount":35,"currency":"SEK","approximate":false}}
+{"input":"about 35 kronor","output":{"amount":35,"currency":"SEK","approximate":true}}
+{"input":"we paid 35 SEK","output":{"amount":35,"currency":"SEK","approximate":false}}
+{"input":"invoice 2048 totals SEK 35","output":{"amount":35,"currency":"SEK","approximate":false}}
+{"input":"in 2024 we paid 35 kronor","output":{"amount":35,"currency":"SEK","approximate":false}}
+{"input":"35 kronor for order 1234","output":{"amount":35,"currency":"SEK","approximate":false}}
+{"input":"the budget is 35 thousand kronor","output":{"amount":35000,"currency":"SEK","approximate":false}}
+{"input":"around 35 grand in kronor","output":{"amount":35000,"currency":"SEK","approximate":true}}
+{"input":"roughly SEK 35 million","output":{"amount":35000000,"currency":"SEK","approximate":true}}
+{"input":"a price of 35 kronor","output":{"amount":35,"currency":"SEK","approximate":false}}
+{"input":"SEK 250","output":{"amount":250,"currency":"SEK","approximate":false}}
+{"input":"250 kronor","output":{"amount":250,"currency":"SEK","approximate":false}}
+{"input":"about 250 kronor","output":{"amount":250,"currency":"SEK","approximate":true}}
+{"input":"we paid 250 SEK","output":{"amount":250,"currency":"SEK","approximate":false}}
+{"input":"invoice 2048 totals SEK 250","output":{"amount":250,"currency":"SEK","approximate":false}}
+{"input":"in 2024 we paid 250 kronor","output":{"amount":250,"currency":"SEK","approximate":false}}
+{"input":"250 kronor for order 1234","output":{"amount":250,"currency":"SEK","approximate":false}}
+{"input":"the budget is 250 thousand kronor","output":{"amount":250000,"currency":"SEK","approximate":false}}
+{"input":"around 250 grand in kronor","output":{"amount":250000,"currency":"SEK","approximate":true}}
+{"input":"roughly SEK 250 million","output":{"amount":250000000,"currency":"SEK","approximate":true}}
+{"input":"a price of 250 kronor","output":{"amount":250,"currency":"SEK","approximate":false}}
+{"input":"SEK 1,200","output":{"amount":1200,"currency":"SEK","approximate":false}}
+{"input":"1,200 kronor","output":{"amount":1200,"currency":"SEK","approximate":false}}
+{"input":"about 1,200 kronor","output":{"amount":1200,"currency":"SEK","approximate":true}}
+{"input":"we paid 1,200 SEK","output":{"amount":1200,"currency":"SEK","approximate":false}}
+{"input":"invoice 2048 totals SEK 1,200","output":{"amount":1200,"currency":"SEK","approximate":false}}
+{"input":"in 2024 we paid 1,200 kronor","output":{"amount":1200,"currency":"SEK","approximate":false}}
+{"input":"1,200 kronor for order 1234","output":{"amount":1200,"currency":"SEK","approximate":false}}
+{"input":"the budget is 1,200 thousand kronor","output":{"amount":1200000,"currency":"SEK","approximate":false}}
+{"input":"around 1,200 grand in kronor","output":{"amount":1200000,"currency":"SEK","approximate":true}}
+{"input":"roughly SEK 1,200 million","output":{"amount":1200000000,"currency":"SEK","approximate":true}}
+{"input":"a price of 1,200 kronor","output":{"amount":1200,"currency":"SEK","approximate":false}}
+{"input":"SEK one","output":{"amount":1,"currency":"SEK","approximate":false}}
+{"input":"one kronor","output":{"amount":1,"currency":"SEK","approximate":false}}
+{"input":"about one kronor","output":{"amount":1,"currency":"SEK","approximate":true}}
+{"input":"we paid one SEK","output":{"amount":1,"currency":"SEK","approximate":false}}
+{"input":"invoice 2048 totals SEK one","output":{"amount":1,"currency":"SEK","approximate":false}}
+{"input":"in 2024 we paid one kronor","output":{"amount":1,"currency":"SEK","approximate":false}}
+{"input":"one kronor for order 1234","output":{"amount":1,"currency":"SEK","approximate":false}}
+{"input":"the budget is one thousand kronor","output":{"amount":1000,"currency":"SEK","approximate":false}}
+{"input":"around one grand in kronor","output":{"amount":1000,"currency":"SEK","approximate":true}}
+{"input":"roughly SEK one million","output":{"amount":1000000,"currency":"SEK","approximate":true}}
+{"input":"a price of one kronor","output":{"amount":1,"currency":"SEK","approximate":false}}
+{"input":"SEK two","output":{"amount":2,"currency":"SEK","approximate":false}}
+{"input":"two kronor","output":{"amount":2,"currency":"SEK","approximate":false}}
+{"input":"about two kronor","output":{"amount":2,"currency":"SEK","approximate":true}}
+{"input":"we paid two SEK","output":{"amount":2,"currency":"SEK","approximate":false}}
+{"input":"invoice 2048 totals SEK two","output":{"amount":2,"currency":"SEK","approximate":false}}
+{"input":"in 2024 we paid two kronor","output":{"amount":2,"currency":"SEK","approximate":false}}
+{"input":"two kronor for order 1234","output":{"amount":2,"currency":"SEK","approximate":false}}
+{"input":"the budget is two thousand kronor","output":{"amount":2000,"currency":"SEK","approximate":false}}
+{"input":"around two grand in kronor","output":{"amount":2000,"currency":"SEK","approximate":true}}
+{"input":"roughly SEK two million","output":{"amount":2000000,"currency":"SEK","approximate":true}}
+{"input":"a price of two kronor","output":{"amount":2,"currency":"SEK","approximate":false}}
+{"input":"SEK three","output":{"amount":3,"currency":"SEK","approximate":false}}
+{"input":"three kronor","output":{"amount":3,"currency":"SEK","approximate":false}}
+{"input":"about three kronor","output":{"amount":3,"currency":"SEK","approximate":true}}
+{"input":"we paid three SEK","output":{"amount":3,"currency":"SEK","approximate":false}}
+{"input":"invoice 2048 totals SEK three","output":{"amount":3,"currency":"SEK","approximate":false}}
+{"input":"in 2024 we paid three kronor","output":{"amount":3,"currency":"SEK","approximate":false}}
+{"input":"three kronor for order 1234","output":{"amount":3,"currency":"SEK","approximate":false}}
+{"input":"the budget is three thousand kronor","output":{"amount":3000,"currency":"SEK","approximate":false}}
+{"input":"around three grand in kronor","output":{"amount":3000,"currency":"SEK","approximate":true}}
+{"input":"roughly SEK three million","output":{"amount":3000000,"currency":"SEK","approximate":true}}
+{"input":"a price of three kronor","output":{"amount":3,"currency":"SEK","approximate":false}}
+{"input":"SEK four","output":{"amount":4,"currency":"SEK","approximate":false}}
+{"input":"four kronor","output":{"amount":4,"currency":"SEK","approximate":false}}
+{"input":"about four kronor","output":{"amount":4,"currency":"SEK","approximate":true}}
+{"input":"we paid four SEK","output":{"amount":4,"currency":"SEK","approximate":false}}
+{"input":"invoice 2048 totals SEK four","output":{"amount":4,"currency":"SEK","approximate":false}}
+{"input":"in 2024 we paid four kronor","output":{"amount":4,"currency":"SEK","approximate":false}}
+{"input":"four kronor for order 1234","output":{"amount":4,"currency":"SEK","approximate":false}}
+{"input":"the budget is four thousand kronor","output":{"amount":4000,"currency":"SEK","approximate":false}}
+{"input":"around four grand in kronor","output":{"amount":4000,"currency":"SEK","approximate":true}}
+{"input":"roughly SEK four million","output":{"amount":4000000,"currency":"SEK","approximate":true}}
+{"input":"a price of four kronor","output":{"amount":4,"currency":"SEK","approximate":false}}
+{"input":"SEK five","output":{"amount":5,"currency":"SEK","approximate":false}}
+{"input":"five kronor","output":{"amount":5,"currency":"SEK","approximate":false}}
+{"input":"about five kronor","output":{"amount":5,"currency":"SEK","approximate":true}}
+{"input":"we paid five SEK","output":{"amount":5,"currency":"SEK","approximate":false}}
+{"input":"invoice 2048 totals SEK five","output":{"amount":5,"currency":"SEK","approximate":false}}
+{"input":"in 2024 we paid five kronor","output":{"amount":5,"currency":"SEK","approximate":false}}
+{"input":"five kronor for order 1234","output":{"amount":5,"currency":"SEK","approximate":false}}
+{"input":"the budget is five thousand kronor","output":{"amount":5000,"currency":"SEK","approximate":false}}
+{"input":"around five grand in kronor","output":{"amount":5000,"currency":"SEK","approximate":true}}
+{"input":"roughly SEK five million","output":{"amount":5000000,"currency":"SEK","approximate":true}}
+{"input":"a price of five kronor","output":{"amount":5,"currency":"SEK","approximate":false}}
+{"input":"SEK six","output":{"amount":6,"currency":"SEK","approximate":false}}
+{"input":"six kronor","output":{"amount":6,"currency":"SEK","approximate":false}}
+{"input":"about six kronor","output":{"amount":6,"currency":"SEK","approximate":true}}
+{"input":"we paid six SEK","output":{"amount":6,"currency":"SEK","approximate":false}}
+{"input":"invoice 2048 totals SEK six","output":{"amount":6,"currency":"SEK","approximate":false}}
+{"input":"in 2024 we paid six kronor","output":{"amount":6,"currency":"SEK","approximate":false}}
+{"input":"six kronor for order 1234","output":{"amount":6,"currency":"SEK","approximate":false}}
+{"input":"the budget is six thousand kronor","output":{"amount":6000,"currency":"SEK","approximate":false}}
+{"input":"around six grand in kronor","output":{"amount":6000,"currency":"SEK","approximate":true}}
+{"input":"roughly SEK six million","output":{"amount":6000000,"currency":"SEK","approximate":true}}
+{"input":"a price of six kronor","output":{"amount":6,"currency":"SEK","approximate":false}}
+{"input":"SEK seven","output":{"amount":7,"currency":"SEK","approximate":false}}
+{"input":"seven kronor","output":{"amount":7,"currency":"SEK","approximate":false}}
+{"input":"about seven kronor","output":{"amount":7,"currency":"SEK","approximate":true}}
+{"input":"we paid seven SEK","output":{"amount":7,"currency":"SEK","approximate":false}}
+{"input":"invoice 2048 totals SEK seven","output":{"amount":7,"currency":"SEK","approximate":false}}
+{"input":"in 2024 we paid seven kronor","output":{"amount":7,"currency":"SEK","approximate":false}}
+{"input":"seven kronor for order 1234","output":{"amount":7,"currency":"SEK","approximate":false}}
+{"input":"the budget is seven thousand kronor","output":{"amount":7000,"currency":"SEK","approximate":false}}
+{"input":"around seven grand in kronor","output":{"amount":7000,"currency":"SEK","approximate":true}}
+{"input":"roughly SEK seven million","output":{"amount":7000000,"currency":"SEK","approximate":true}}
+{"input":"a price of seven kronor","output":{"amount":7,"currency":"SEK","approximate":false}}
+{"input":"SEK eight","output":{"amount":8,"currency":"SEK","approximate":false}}
+{"input":"eight kronor","output":{"amount":8,"currency":"SEK","approximate":false}}
+{"input":"about eight kronor","output":{"amount":8,"currency":"SEK","approximate":true}}
+{"input":"we paid eight SEK","output":{"amount":8,"currency":"SEK","approximate":false}}
+{"input":"invoice 2048 totals SEK eight","output":{"amount":8,"currency":"SEK","approximate":false}}
+{"input":"in 2024 we paid eight kronor","output":{"amount":8,"currency":"SEK","approximate":false}}
+{"input":"eight kronor for order 1234","output":{"amount":8,"currency":"SEK","approximate":false}}
+{"input":"the budget is eight thousand kronor","output":{"amount":8000,"currency":"SEK","approximate":false}}
+{"input":"around eight grand in kronor","output":{"amount":8000,"currency":"SEK","approximate":true}}
+{"input":"roughly SEK eight million","output":{"amount":8000000,"currency":"SEK","approximate":true}}
+{"input":"a price of eight kronor","output":{"amount":8,"currency":"SEK","approximate":false}}
+{"input":"SEK nine","output":{"amount":9,"currency":"SEK","approximate":false}}
+{"input":"nine kronor","output":{"amount":9,"currency":"SEK","approximate":false}}
+{"input":"about nine kronor","output":{"amount":9,"currency":"SEK","approximate":true}}
+{"input":"we paid nine SEK","output":{"amount":9,"currency":"SEK","approximate":false}}
+{"input":"invoice 2048 totals SEK nine","output":{"amount":9,"currency":"SEK","approximate":false}}
+{"input":"in 2024 we paid nine kronor","output":{"amount":9,"currency":"SEK","approximate":false}}
+{"input":"nine kronor for order 1234","output":{"amount":9,"currency":"SEK","approximate":false}}
+{"input":"the budget is nine thousand kronor","output":{"amount":9000,"currency":"SEK","approximate":false}}
+{"input":"around nine grand in kronor","output":{"amount":9000,"currency":"SEK","approximate":true}}
+{"input":"roughly SEK nine million","output":{"amount":9000000,"currency":"SEK","approximate":true}}
+{"input":"a price of nine kronor","output":{"amount":9,"currency":"SEK","approximate":false}}
+{"input":"SEK ten","output":{"amount":10,"currency":"SEK","approximate":false}}
+{"input":"ten kronor","output":{"amount":10,"currency":"SEK","approximate":false}}
+{"input":"about ten kronor","output":{"amount":10,"currency":"SEK","approximate":true}}
+{"input":"we paid ten SEK","output":{"amount":10,"currency":"SEK","approximate":false}}
+{"input":"invoice 2048 totals SEK ten","output":{"amount":10,"currency":"SEK","approximate":false}}
+{"input":"in 2024 we paid ten kronor","output":{"amount":10,"currency":"SEK","approximate":false}}
+{"input":"ten kronor for order 1234","output":{"amount":10,"currency":"SEK","approximate":false}}
+{"input":"the budget is ten thousand kronor","output":{"amount":10000,"currency":"SEK","approximate":false}}
+{"input":"around ten grand in kronor","output":{"amount":10000,"currency":"SEK","approximate":true}}
+{"input":"roughly SEK ten million","output":{"amount":10000000,"currency":"SEK","approximate":true}}
+{"input":"a price of ten kronor","output":{"amount":10,"currency":"SEK","approximate":false}}
+{"input":"SEK eleven","output":{"amount":11,"currency":"SEK","approximate":false}}
+{"input":"eleven kronor","output":{"amount":11,"currency":"SEK","approximate":false}}
+{"input":"about eleven kronor","output":{"amount":11,"currency":"SEK","approximate":true}}
+{"input":"we paid eleven SEK","output":{"amount":11,"currency":"SEK","approximate":false}}
+{"input":"invoice 2048 totals SEK eleven","output":{"amount":11,"currency":"SEK","approximate":false}}
+{"input":"in 2024 we paid eleven kronor","output":{"amount":11,"currency":"SEK","approximate":false}}
+{"input":"eleven kronor for order 1234","output":{"amount":11,"currency":"SEK","approximate":false}}
+{"input":"the budget is eleven thousand kronor","output":{"amount":11000,"currency":"SEK","approximate":false}}
+{"input":"around eleven grand in kronor","output":{"amount":11000,"currency":"SEK","approximate":true}}
+{"input":"roughly SEK eleven million","output":{"amount":11000000,"currency":"SEK","approximate":true}}
+{"input":"a price of eleven kronor","output":{"amount":11,"currency":"SEK","approximate":false}}
+{"input":"SEK twelve","output":{"amount":12,"currency":"SEK","approximate":false}}
+{"input":"twelve kronor","output":{"amount":12,"currency":"SEK","approximate":false}}
+{"input":"about twelve kronor","output":{"amount":12,"currency":"SEK","approximate":true}}
+{"input":"we paid twelve SEK","output":{"amount":12,"currency":"SEK","approximate":false}}
+{"input":"invoice 2048 totals SEK twelve","output":{"amount":12,"currency":"SEK","approximate":false}}
+{"input":"in 2024 we paid twelve kronor","output":{"amount":12,"currency":"SEK","approximate":false}}
+{"input":"twelve kronor for order 1234","output":{"amount":12,"currency":"SEK","approximate":false}}
+{"input":"the budget is twelve thousand kronor","output":{"amount":12000,"currency":"SEK","approximate":false}}
+{"input":"around twelve grand in kronor","output":{"amount":12000,"currency":"SEK","approximate":true}}
+{"input":"roughly SEK twelve million","output":{"amount":12000000,"currency":"SEK","approximate":true}}
+{"input":"a price of twelve kronor","output":{"amount":12,"currency":"SEK","approximate":false}}
+{"input":"SEK thirteen","output":{"amount":13,"currency":"SEK","approximate":false}}
+{"input":"thirteen kronor","output":{"amount":13,"currency":"SEK","approximate":false}}
+{"input":"about thirteen kronor","output":{"amount":13,"currency":"SEK","approximate":true}}
+{"input":"we paid thirteen SEK","output":{"amount":13,"currency":"SEK","approximate":false}}
+{"input":"invoice 2048 totals SEK thirteen","output":{"amount":13,"currency":"SEK","approximate":false}}
+{"input":"in 2024 we paid thirteen kronor","output":{"amount":13,"currency":"SEK","approximate":false}}
+{"input":"thirteen kronor for order 1234","output":{"amount":13,"currency":"SEK","approximate":false}}
+{"input":"the budget is thirteen thousand kronor","output":{"amount":13000,"currency":"SEK","approximate":false}}
+{"input":"around thirteen grand in kronor","output":{"amount":13000,"currency":"SEK","approximate":true}}
+{"input":"roughly SEK thirteen million","output":{"amount":13000000,"currency":"SEK","approximate":true}}
+{"input":"a price of thirteen kronor","output":{"amount":13,"currency":"SEK","approximate":false}}
+{"input":"SEK fourteen","output":{"amount":14,"currency":"SEK","approximate":false}}
+{"input":"fourteen kronor","output":{"amount":14,"currency":"SEK","approximate":false}}
+{"input":"about fourteen kronor","output":{"amount":14,"currency":"SEK","approximate":true}}
+{"input":"we paid fourteen SEK","output":{"amount":14,"currency":"SEK","approximate":false}}
+{"input":"invoice 2048 totals SEK fourteen","output":{"amount":14,"currency":"SEK","approximate":false}}
+{"input":"in 2024 we paid fourteen kronor","output":{"amount":14,"currency":"SEK","approximate":false}}
+{"input":"fourteen kronor for order 1234","output":{"amount":14,"currency":"SEK","approximate":false}}
+{"input":"the budget is fourteen thousand kronor","output":{"amount":14000,"currency":"SEK","approximate":false}}
+{"input":"around fourteen grand in kronor","output":{"amount":14000,"currency":"SEK","approximate":true}}
+{"input":"roughly SEK fourteen million","output":{"amount":14000000,"currency":"SEK","approximate":true}}
+{"input":"a price of fourteen kronor","output":{"amount":14,"currency":"SEK","approximate":false}}
+{"input":"SEK fifteen","output":{"amount":15,"currency":"SEK","approximate":false}}
+{"input":"fifteen kronor","output":{"amount":15,"currency":"SEK","approximate":false}}
+{"input":"about fifteen kronor","output":{"amount":15,"currency":"SEK","approximate":true}}
+{"input":"we paid fifteen SEK","output":{"amount":15,"currency":"SEK","approximate":false}}
+{"input":"invoice 2048 totals SEK fifteen","output":{"amount":15,"currency":"SEK","approximate":false}}
+{"input":"in 2024 we paid fifteen kronor","output":{"amount":15,"currency":"SEK","approximate":false}}
+{"input":"fifteen kronor for order 1234","output":{"amount":15,"currency":"SEK","approximate":false}}
+{"input":"the budget is fifteen thousand kronor","output":{"amount":15000,"currency":"SEK","approximate":false}}
+{"input":"around fifteen grand in kronor","output":{"amount":15000,"currency":"SEK","approximate":true}}
+{"input":"roughly SEK fifteen million","output":{"amount":15000000,"currency":"SEK","approximate":true}}
+{"input":"a price of fifteen kronor","output":{"amount":15,"currency":"SEK","approximate":false}}
+{"input":"SEK sixteen","output":{"amount":16,"currency":"SEK","approximate":false}}
+{"input":"sixteen kronor","output":{"amount":16,"currency":"SEK","approximate":false}}
+{"input":"about sixteen kronor","output":{"amount":16,"currency":"SEK","approximate":true}}
+{"input":"we paid sixteen SEK","output":{"amount":16,"currency":"SEK","approximate":false}}
+{"input":"invoice 2048 totals SEK sixteen","output":{"amount":16,"currency":"SEK","approximate":false}}
+{"input":"in 2024 we paid sixteen kronor","output":{"amount":16,"currency":"SEK","approximate":false}}
+{"input":"sixteen kronor for order 1234","output":{"amount":16,"currency":"SEK","approximate":false}}
+{"input":"the budget is sixteen thousand kronor","output":{"amount":16000,"currency":"SEK","approximate":false}}
+{"input":"around sixteen grand in kronor","output":{"amount":16000,"currency":"SEK","approximate":true}}
+{"input":"roughly SEK sixteen million","output":{"amount":16000000,"currency":"SEK","approximate":true}}
+{"input":"a price of sixteen kronor","output":{"amount":16,"currency":"SEK","approximate":false}}
+{"input":"SEK seventeen","output":{"amount":17,"currency":"SEK","approximate":false}}
+{"input":"seventeen kronor","output":{"amount":17,"currency":"SEK","approximate":false}}
+{"input":"about seventeen kronor","output":{"amount":17,"currency":"SEK","approximate":true}}
+{"input":"we paid seventeen SEK","output":{"amount":17,"currency":"SEK","approximate":false}}
+{"input":"invoice 2048 totals SEK seventeen","output":{"amount":17,"currency":"SEK","approximate":false}}
+{"input":"in 2024 we paid seventeen kronor","output":{"amount":17,"currency":"SEK","approximate":false}}
+{"input":"seventeen kronor for order 1234","output":{"amount":17,"currency":"SEK","approximate":false}}
+{"input":"the budget is seventeen thousand kronor","output":{"amount":17000,"currency":"SEK","approximate":false}}
+{"input":"around seventeen grand in kronor","output":{"amount":17000,"currency":"SEK","approximate":true}}
+{"input":"roughly SEK seventeen million","output":{"amount":17000000,"currency":"SEK","approximate":true}}
+{"input":"a price of seventeen kronor","output":{"amount":17,"currency":"SEK","approximate":false}}
+{"input":"SEK eighteen","output":{"amount":18,"currency":"SEK","approximate":false}}
+{"input":"eighteen kronor","output":{"amount":18,"currency":"SEK","approximate":false}}
+{"input":"about eighteen kronor","output":{"amount":18,"currency":"SEK","approximate":true}}
+{"input":"we paid eighteen SEK","output":{"amount":18,"currency":"SEK","approximate":false}}
+{"input":"invoice 2048 totals SEK eighteen","output":{"amount":18,"currency":"SEK","approximate":false}}
+{"input":"in 2024 we paid eighteen kronor","output":{"amount":18,"currency":"SEK","approximate":false}}
+{"input":"eighteen kronor for order 1234","output":{"amount":18,"currency":"SEK","approximate":false}}
+{"input":"the budget is eighteen thousand kronor","output":{"amount":18000,"currency":"SEK","approximate":false}}
+{"input":"around eighteen grand in kronor","output":{"amount":18000,"currency":"SEK","approximate":true}}
+{"input":"roughly SEK eighteen million","output":{"amount":18000000,"currency":"SEK","approximate":true}}
+{"input":"a price of eighteen kronor","output":{"amount":18,"currency":"SEK","approximate":false}}
+{"input":"SEK nineteen","output":{"amount":19,"currency":"SEK","approximate":false}}
+{"input":"nineteen kronor","output":{"amount":19,"currency":"SEK","approximate":false}}
+{"input":"about nineteen kronor","output":{"amount":19,"currency":"SEK","approximate":true}}
+{"input":"we paid nineteen SEK","output":{"amount":19,"currency":"SEK","approximate":false}}
+{"input":"invoice 2048 totals SEK nineteen","output":{"amount":19,"currency":"SEK","approximate":false}}
+{"input":"in 2024 we paid nineteen kronor","output":{"amount":19,"currency":"SEK","approximate":false}}
+{"input":"nineteen kronor for order 1234","output":{"amount":19,"currency":"SEK","approximate":false}}
+{"input":"the budget is nineteen thousand kronor","output":{"amount":19000,"currency":"SEK","approximate":false}}
+{"input":"around nineteen grand in kronor","output":{"amount":19000,"currency":"SEK","approximate":true}}
+{"input":"roughly SEK nineteen million","output":{"amount":19000000,"currency":"SEK","approximate":true}}
+{"input":"a price of nineteen kronor","output":{"amount":19,"currency":"SEK","approximate":false}}
+{"input":"SEK twenty","output":{"amount":20,"currency":"SEK","approximate":false}}
+{"input":"twenty kronor","output":{"amount":20,"currency":"SEK","approximate":false}}
+{"input":"about twenty kronor","output":{"amount":20,"currency":"SEK","approximate":true}}
+{"input":"we paid twenty SEK","output":{"amount":20,"currency":"SEK","approximate":false}}
+{"input":"invoice 2048 totals SEK twenty","output":{"amount":20,"currency":"SEK","approximate":false}}
+{"input":"in 2024 we paid twenty kronor","output":{"amount":20,"currency":"SEK","approximate":false}}
+{"input":"twenty kronor for order 1234","output":{"amount":20,"currency":"SEK","approximate":false}}
+{"input":"the budget is twenty thousand kronor","output":{"amount":20000,"currency":"SEK","approximate":false}}
+{"input":"around twenty grand in kronor","output":{"amount":20000,"currency":"SEK","approximate":true}}
+{"input":"roughly SEK twenty million","output":{"amount":20000000,"currency":"SEK","approximate":true}}
+{"input":"a price of twenty kronor","output":{"amount":20,"currency":"SEK","approximate":false}}
+{"input":"SEK thirty","output":{"amount":30,"currency":"SEK","approximate":false}}
+{"input":"thirty kronor","output":{"amount":30,"currency":"SEK","approximate":false}}
+{"input":"about thirty kronor","output":{"amount":30,"currency":"SEK","approximate":true}}
+{"input":"we paid thirty SEK","output":{"amount":30,"currency":"SEK","approximate":false}}
+{"input":"invoice 2048 totals SEK thirty","output":{"amount":30,"currency":"SEK","approximate":false}}
+{"input":"in 2024 we paid thirty kronor","output":{"amount":30,"currency":"SEK","approximate":false}}
+{"input":"thirty kronor for order 1234","output":{"amount":30,"currency":"SEK","approximate":false}}
+{"input":"the budget is thirty thousand kronor","output":{"amount":30000,"currency":"SEK","approximate":false}}
+{"input":"around thirty grand in kronor","output":{"amount":30000,"currency":"SEK","approximate":true}}
+{"input":"roughly SEK thirty million","output":{"amount":30000000,"currency":"SEK","approximate":true}}
+{"input":"a price of thirty kronor","output":{"amount":30,"currency":"SEK","approximate":false}}
+{"input":"SEK forty","output":{"amount":40,"currency":"SEK","approximate":false}}
+{"input":"forty kronor","output":{"amount":40,"currency":"SEK","approximate":false}}
+{"input":"about forty kronor","output":{"amount":40,"currency":"SEK","approximate":true}}
+{"input":"we paid forty SEK","output":{"amount":40,"currency":"SEK","approximate":false}}
+{"input":"invoice 2048 totals SEK forty","output":{"amount":40,"currency":"SEK","approximate":false}}
+{"input":"in 2024 we paid forty kronor","output":{"amount":40,"currency":"SEK","approximate":false}}
+{"input":"forty kronor for order 1234","output":{"amount":40,"currency":"SEK","approximate":false}}
+{"input":"the budget is forty thousand kronor","output":{"amount":40000,"currency":"SEK","approximate":false}}
+{"input":"around forty grand in kronor","output":{"amount":40000,"currency":"SEK","approximate":true}}
+{"input":"roughly SEK forty million","output":{"amount":40000000,"currency":"SEK","approximate":true}}
+{"input":"a price of forty kronor","output":{"amount":40,"currency":"SEK","approximate":false}}
+{"input":"SEK fifty","output":{"amount":50,"currency":"SEK","approximate":false}}
+{"input":"fifty kronor","output":{"amount":50,"currency":"SEK","approximate":false}}
+{"input":"about fifty kronor","output":{"amount":50,"currency":"SEK","approximate":true}}
+{"input":"we paid fifty SEK","output":{"amount":50,"currency":"SEK","approximate":false}}
+{"input":"invoice 2048 totals SEK fifty","output":{"amount":50,"currency":"SEK","approximate":false}}
+{"input":"in 2024 we paid fifty kronor","output":{"amount":50,"currency":"SEK","approximate":false}}
+{"input":"fifty kronor for order 1234","output":{"amount":50,"currency":"SEK","approximate":false}}
+{"input":"the budget is fifty thousand kronor","output":{"amount":50000,"currency":"SEK","approximate":false}}
+{"input":"around fifty grand in kronor","output":{"amount":50000,"currency":"SEK","approximate":true}}
+{"input":"roughly SEK fifty million","output":{"amount":50000000,"currency":"SEK","approximate":true}}
+{"input":"a price of fifty kronor","output":{"amount":50,"currency":"SEK","approximate":false}}
+{"input":"SEK sixty","output":{"amount":60,"currency":"SEK","approximate":false}}
+{"input":"sixty kronor","output":{"amount":60,"currency":"SEK","approximate":false}}
+{"input":"about sixty kronor","output":{"amount":60,"currency":"SEK","approximate":true}}
+{"input":"we paid sixty SEK","output":{"amount":60,"currency":"SEK","approximate":false}}
+{"input":"invoice 2048 totals SEK sixty","output":{"amount":60,"currency":"SEK","approximate":false}}
+{"input":"in 2024 we paid sixty kronor","output":{"amount":60,"currency":"SEK","approximate":false}}
+{"input":"sixty kronor for order 1234","output":{"amount":60,"currency":"SEK","approximate":false}}
+{"input":"the budget is sixty thousand kronor","output":{"amount":60000,"currency":"SEK","approximate":false}}
+{"input":"around sixty grand in kronor","output":{"amount":60000,"currency":"SEK","approximate":true}}
+{"input":"roughly SEK sixty million","output":{"amount":60000000,"currency":"SEK","approximate":true}}
+{"input":"a price of sixty kronor","output":{"amount":60,"currency":"SEK","approximate":false}}
+{"input":"SEK seventy","output":{"amount":70,"currency":"SEK","approximate":false}}
+{"input":"seventy kronor","output":{"amount":70,"currency":"SEK","approximate":false}}
+{"input":"about seventy kronor","output":{"amount":70,"currency":"SEK","approximate":true}}
+{"input":"we paid seventy SEK","output":{"amount":70,"currency":"SEK","approximate":false}}
+{"input":"invoice 2048 totals SEK seventy","output":{"amount":70,"currency":"SEK","approximate":false}}
+{"input":"in 2024 we paid seventy kronor","output":{"amount":70,"currency":"SEK","approximate":false}}
+{"input":"seventy kronor for order 1234","output":{"amount":70,"currency":"SEK","approximate":false}}
+{"input":"the budget is seventy thousand kronor","output":{"amount":70000,"currency":"SEK","approximate":false}}
+{"input":"around seventy grand in kronor","output":{"amount":70000,"currency":"SEK","approximate":true}}
+{"input":"roughly SEK seventy million","output":{"amount":70000000,"currency":"SEK","approximate":true}}
+{"input":"a price of seventy kronor","output":{"amount":70,"currency":"SEK","approximate":false}}
+{"input":"SEK eighty","output":{"amount":80,"currency":"SEK","approximate":false}}
+{"input":"eighty kronor","output":{"amount":80,"currency":"SEK","approximate":false}}
+{"input":"about eighty kronor","output":{"amount":80,"currency":"SEK","approximate":true}}
+{"input":"we paid eighty SEK","output":{"amount":80,"currency":"SEK","approximate":false}}
+{"input":"invoice 2048 totals SEK eighty","output":{"amount":80,"currency":"SEK","approximate":false}}
+{"input":"in 2024 we paid eighty kronor","output":{"amount":80,"currency":"SEK","approximate":false}}
+{"input":"eighty kronor for order 1234","output":{"amount":80,"currency":"SEK","approximate":false}}
+{"input":"the budget is eighty thousand kronor","output":{"amount":80000,"currency":"SEK","approximate":false}}
+{"input":"around eighty grand in kronor","output":{"amount":80000,"currency":"SEK","approximate":true}}
+{"input":"roughly SEK eighty million","output":{"amount":80000000,"currency":"SEK","approximate":true}}
+{"input":"a price of eighty kronor","output":{"amount":80,"currency":"SEK","approximate":false}}
+{"input":"SEK ninety","output":{"amount":90,"currency":"SEK","approximate":false}}
+{"input":"ninety kronor","output":{"amount":90,"currency":"SEK","approximate":false}}
+{"input":"about ninety kronor","output":{"amount":90,"currency":"SEK","approximate":true}}
+{"input":"we paid ninety SEK","output":{"amount":90,"currency":"SEK","approximate":false}}
+{"input":"invoice 2048 totals SEK ninety","output":{"amount":90,"currency":"SEK","approximate":false}}
+{"input":"in 2024 we paid ninety kronor","output":{"amount":90,"currency":"SEK","approximate":false}}
+{"input":"ninety kronor for order 1234","output":{"amount":90,"currency":"SEK","approximate":false}}
+{"input":"the budget is ninety thousand kronor","output":{"amount":90000,"currency":"SEK","approximate":false}}
+{"input":"around ninety grand in kronor","output":{"amount":90000,"currency":"SEK","approximate":true}}
+{"input":"roughly SEK ninety million","output":{"amount":90000000,"currency":"SEK","approximate":true}}
+{"input":"a price of ninety kronor","output":{"amount":90,"currency":"SEK","approximate":false}}
+{"input":"SEK twenty one","output":{"amount":21,"currency":"SEK","approximate":false}}
+{"input":"twenty one kronor","output":{"amount":21,"currency":"SEK","approximate":false}}
+{"input":"about twenty one kronor","output":{"amount":21,"currency":"SEK","approximate":true}}
+{"input":"we paid twenty one SEK","output":{"amount":21,"currency":"SEK","approximate":false}}
+{"input":"invoice 2048 totals SEK twenty one","output":{"amount":21,"currency":"SEK","approximate":false}}
+{"input":"in 2024 we paid twenty one kronor","output":{"amount":21,"currency":"SEK","approximate":false}}
+{"input":"twenty one kronor for order 1234","output":{"amount":21,"currency":"SEK","approximate":false}}
+{"input":"the budget is twenty one thousand kronor","output":{"amount":21000,"currency":"SEK","approximate":false}}
+{"input":"around twenty one grand in kronor","output":{"amount":21000,"currency":"SEK","approximate":true}}
+{"input":"roughly SEK twenty one million","output":{"amount":21000000,"currency":"SEK","approximate":true}}
+{"input":"a price of twenty one kronor","output":{"amount":21,"currency":"SEK","approximate":false}}
+{"input":"SEK thirty two","output":{"amount":32,"currency":"SEK","approximate":false}}
+{"input":"thirty two kronor","output":{"amount":32,"currency":"SEK","approximate":false}}
+{"input":"about thirty two kronor","output":{"amount":32,"currency":"SEK","approximate":true}}
+{"input":"we paid thirty two SEK","output":{"amount":32,"currency":"SEK","approximate":false}}
+{"input":"invoice 2048 totals SEK thirty two","output":{"amount":32,"currency":"SEK","approximate":false}}
+{"input":"in 2024 we paid thirty two kronor","output":{"amount":32,"currency":"SEK","approximate":false}}
+{"input":"thirty two kronor for order 1234","output":{"amount":32,"currency":"SEK","approximate":false}}
+{"input":"the budget is thirty two thousand kronor","output":{"amount":32000,"currency":"SEK","approximate":false}}
+{"input":"around thirty two grand in kronor","output":{"amount":32000,"currency":"SEK","approximate":true}}
+{"input":"roughly SEK thirty two million","output":{"amount":32000000,"currency":"SEK","approximate":true}}
+{"input":"a price of thirty two kronor","output":{"amount":32,"currency":"SEK","approximate":false}}
+{"input":"SEK forty three","output":{"amount":43,"currency":"SEK","approximate":false}}
+{"input":"forty three kronor","output":{"amount":43,"currency":"SEK","approximate":false}}
+{"input":"about forty three kronor","output":{"amount":43,"currency":"SEK","approximate":true}}
+{"input":"we paid forty three SEK","output":{"amount":43,"currency":"SEK","approximate":false}}
+{"input":"invoice 2048 totals SEK forty three","output":{"amount":43,"currency":"SEK","approximate":false}}
+{"input":"in 2024 we paid forty three kronor","output":{"amount":43,"currency":"SEK","approximate":false}}
+{"input":"forty three kronor for order 1234","output":{"amount":43,"currency":"SEK","approximate":false}}
+{"input":"the budget is forty three thousand kronor","output":{"amount":43000,"currency":"SEK","approximate":false}}
+{"input":"around forty three grand in kronor","output":{"amount":43000,"currency":"SEK","approximate":true}}
+{"input":"roughly SEK forty three million","output":{"amount":43000000,"currency":"SEK","approximate":true}}
+{"input":"a price of forty three kronor","output":{"amount":43,"currency":"SEK","approximate":false}}
+{"input":"5k SEK","output":{"amount":5000,"currency":"SEK","approximate":false}}
+{"input":"10k SEK","output":{"amount":10000,"currency":"SEK","approximate":false}}
+{"input":"15k SEK","output":{"amount":15000,"currency":"SEK","approximate":false}}
+{"input":"20k SEK","output":{"amount":20000,"currency":"SEK","approximate":false}}
+{"input":"30k SEK","output":{"amount":30000,"currency":"SEK","approximate":false}}
+{"input":"40k SEK","output":{"amount":40000,"currency":"SEK","approximate":false}}
+{"input":"50k SEK","output":{"amount":50000,"currency":"SEK","approximate":false}}
+{"input":"5m SEK","output":{"amount":5000000,"currency":"SEK","approximate":false}}
+{"input":"10m SEK","output":{"amount":10000000,"currency":"SEK","approximate":false}}
+{"input":"15m SEK","output":{"amount":15000000,"currency":"SEK","approximate":false}}
+{"input":"20m SEK","output":{"amount":20000000,"currency":"SEK","approximate":false}}
+{"input":"30m SEK","output":{"amount":30000000,"currency":"SEK","approximate":false}}
+{"input":"40m SEK","output":{"amount":40000000,"currency":"SEK","approximate":false}}
+{"input":"50m SEK","output":{"amount":50000000,"currency":"SEK","approximate":false}}

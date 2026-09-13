@@ -1,3 +1,5 @@
+import { countryAliases, normalizeCountry } from "../countries";
+import { tokenize } from "@matchbox-ai/core/runtime";
 import { compileClauses, type Predicate, type MatchboxParser } from "@matchbox-ai/core/runtime";
 import task, { type Filter } from "./task.js";
 function recognize(text: string): { value: Predicate | null; confidence: number } {
@@ -11,30 +13,12 @@ function recognize(text: string): { value: Predicate | null; confidence: number 
     .trim();
   let value: Predicate | null = null;
   const status = lower.match(/^(?:(not|exclude|except|without) )?(active|inactive|churned)$/);
-  const country = lower.match(
-    /^(?:(?:based in|in|from|country) )?(swedish|sweden|german|germany|american|america|norwegian|norway)$/,
-  );
+  const country = normalizeCountry(lower.replace(/^(?:based in|in|from|country) /, ""));
   const money = lower.match(
     /^(?:arr|annual recurring revenue|revenue) (over|above|greater than|more than|under|below|less than|at least|no less than|greater than or equal to|at most|no more than|less than or equal to|exactly|equal to|>=|<=|>|<|=) [$€]?(\d[\d,]*(?:\.\d+)?)(k|m)?$/,
   );
   if (status) value = { field: "status", operator: status[1] ? "neq" : "eq", value: status[2]! };
-  if (country)
-    value = {
-      field: "country",
-      operator: "eq",
-      value: (
-        {
-          swedish: "SE",
-          sweden: "SE",
-          german: "DE",
-          germany: "DE",
-          american: "US",
-          america: "US",
-          norwegian: "NO",
-          norway: "NO",
-        } as Record<string, string>
-      )[country[1]!]!,
-    };
+  if (country) value = { field: "country", operator: "eq", value: country };
   if (money)
     value = {
       field: "arr",
@@ -70,7 +54,27 @@ function recognize(text: string): { value: Predicate | null; confidence: number 
 }
 const baseline: MatchboxParser<Filter> = {
   async parse(input) {
-    const candidate = compileClauses(input, recognize);
+    const tokens = tokenize(input, "words");
+    const masked = input.split("");
+    for (let start = 0; start < tokens.length; start++) {
+      const match = countryAliases.find(
+        ({ keys, alias, isCode }) =>
+          (!isCode || tokens[start]?.text === alias) &&
+          keys.every((key, offset) => tokens[start + offset]?.key === key),
+      );
+      if (match) {
+        for (let i = tokens[start]!.start; i < tokens[start + match.keys.length - 1]!.end; i++)
+          masked[i] = "_";
+        start += match.keys.length - 1;
+      }
+    }
+    const text = masked.join("");
+    let cursor = 0;
+    const candidate = compileClauses(text, (clause) => {
+      const start = text.indexOf(clause, cursor);
+      cursor = start + clause.length;
+      return recognize(input.slice(start, cursor));
+    });
     const result = task.validateOutput(candidate.value);
     return result.success
       ? { status: "ok", confidence: 1, value: result.data }

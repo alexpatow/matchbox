@@ -1,15 +1,10 @@
+import { countries } from "@/countries";
 import type { Filter, Clause } from "@/filter";
-const countries: Record<string, string> = {
-  SE: "Sweden",
-  DE: "Germany",
-  US: "United States",
-  NO: "Norway",
-};
 const operators = { eq: "=", neq: "≠", gt: ">", gte: "≥", lt: "<", lte: "≤" };
 function label(clause: Clause) {
   const value =
     clause.field === "country"
-      ? countries[clause.value]
+      ? countries[clause.value].name
       : clause.field === "arr"
         ? clause.value.toLocaleString("en-US")
         : clause.value;

@@ -6,7 +6,7 @@ Matchbox is a framework for training tiny, task-specific models from examples an
 
 The idea is **regex++**: use small learned models where fuzzy or contextual input makes pattern matching brittle, but the output is small, rigid, and machine-readable.
 
-**Status:** A working filter proof now connects JSONL examples, two tiny learned baselines, evaluation, generated `.matchbox` imports, and a browser-only React demo. The parser supports explicit status/country/ARR clauses with deterministic validation. This is an experimental toolchain, with substantial language-coverage and model research still open. See the [end-to-end guide](docs/end-to-end.md) and [research findings](docs/filter-research.md).
+**Status:** Working filter, parity, and money examples connect training, evaluation, generated `.matchbox` imports, and browser inference. Parity and money train neural weights with TensorFlow.js under Bun and ship a separate tiny JavaScript runtime. The money proof learns contextual token labels and uses deterministic normalization. These are controlled research datasets with substantial language-coverage work remaining. See the [training guide and results](docs/neural-training.md) and the [filter guide](docs/end-to-end.md).
 
 ## Local development
 
@@ -17,7 +17,7 @@ bun install --frozen-lockfile
 bun run dev
 ```
 
-Open <http://127.0.0.1:5173>. The demo trains during startup, then loads a generated model and filters fictional customers locally. Try `active customers and Swedish customers and ARR over 50k`.
+Open <http://127.0.0.1:5173>. All three examples train during startup, then loads a generated model and filters fictional customers locally. Try `active customers and Swedish customers and ARR over 50k`. Open <http://127.0.0.1:5173/training> to try the parity and money models.
 
 ```sh
 bun run check

@@ -48,7 +48,9 @@ export function App() {
         <a className="wordmark" href="/">
           Matchbox<span aria-hidden="true">.</span>
         </a>
-        <span className="caption">This model runs in your browser.</span>
+        <a className="caption" href="/training">
+          Explore the trained models
+        </a>
       </header>
       <section className="introduction" aria-labelledby="title">
         <p className="eyebrow">A small model becomes an ordinary dependency.</p>
@@ -74,8 +76,8 @@ export function App() {
           autoComplete="off"
         />
         <p id="query-help">
-          Use status, country, or ARR clauses joined with “and” or “or”. Dates and implicit joins
-          are not supported yet.
+          Country names cover the full reference list; the sample table contains four countries. Use
+          “and” or “or” between clauses. Dates and implicit joins are not supported yet.
         </p>
         <div className="suggestions">
           {suggestions.map((suggestion) => (
@@ -135,8 +137,8 @@ export function App() {
       </details>
       <footer>
         <p>
-          This is an experimental clause classifier with deterministic validation. It does not send
-          queries to a server.
+          This is an experimental trained token classifier with deterministic validation. It does
+          not send queries to a server.
         </p>
         <a href="https://www.fluidfunctionalism.com/docs/button">
           The controls use Fluid Functionalism.

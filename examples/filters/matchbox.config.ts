@@ -1,6 +1,7 @@
 import type { TrainingConfig } from "@matchbox-ai/train";
 export default {
   formatVersion: 1,
+  sequence: { recipe: "./recipe.ts", decoder: "./src/filter/decode.ts" },
   task: "./src/filter/task.ts",
   baseline: "./src/filter/baseline.ts",
   train: "./data/train.jsonl",

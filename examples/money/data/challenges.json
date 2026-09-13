@@ -1,0 +1,54 @@
+[
+  {
+    "input": "between 10 and 20 euros",
+    "output": null
+  },
+  {
+    "input": "\u20ac10 or \u20ac20",
+    "output": null
+  },
+  {
+    "input": "under 50 euros",
+    "output": null
+  },
+  {
+    "input": "over 30 pounds",
+    "output": null
+  },
+  {
+    "input": "EUR -15",
+    "output": null
+  },
+  {
+    "input": "1,23 EUR",
+    "output": null
+  },
+  {
+    "input": "fifteen",
+    "output": null
+  },
+  {
+    "input": "EUR 10 USD",
+    "output": null
+  },
+  {
+    "input": "\u20ac10 plus \u20ac20",
+    "output": null
+  },
+  {
+    "input": "two hundred euros",
+    "output": null
+  },
+  {
+    "input": "send 15 euros to Alice",
+    "output": null
+  },
+  {
+    "input": "EUR 1.234",
+    "output": null
+  },
+  {
+    "input": "\u20ac5 \u20ac10",
+    "output": null
+  }
+]

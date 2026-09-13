@@ -10,7 +10,7 @@ The foundation started with a bootstrap version export. BOO-31 adds the [parser 
 
 ## Package consumption
 
-Rolldown bundles the library to ESM. TypeScript emits declarations. The package export map points to `dist/` in development and production, so the example exercises the actual package boundary. Root build scripts respect the workspace dependency graph. `bun run dev` builds core and trains the example once before starting its JavaScript/declaration watchers and the Vite server together.
+Rolldown bundles the library to ESM. TypeScript emits declarations. The package export map points to `dist/` in development and production, so the example exercises the actual package boundary. Root build scripts respect the workspace dependency graph. `bun run dev` builds core and trains all examples once before starting its JavaScript/declaration watchers and the Vite server together.
 
 The core watchers refresh both JavaScript and declarations after source changes. Bun runs the two watch commands together, without an additional task orchestrator.
 
@@ -22,7 +22,7 @@ The package targets ES2022 ESM with no CommonJS entry point. Node 24 is the init
 
 Oxlint checks correctness, React hooks, and accessibility. Oxfmt owns formatting. TypeScript checks types separately from bundling. Bun tests verify the built export map and Node consumption; Playwright exercises the production Vite build through an actual browser.
 
-GitHub Actions installs the frozen Bun lockfile, runs the same local checks, and runs the Chromium smoke test. No publishing or deployment workflow is configured. Both workspaces remain private until a release is explicitly planned.
+GitHub Actions installs the frozen Bun lockfile, runs the same local checks, and runs the Chromium smoke test. No publishing or deployment workflow is configured. All workspaces remain private until a release is explicitly planned.
 
 ## Example UI
 
@@ -35,3 +35,7 @@ The Fluid Functionalism controls now drive a local learned filter parser, explic
 - [Vite](https://vite.dev/guide/) supplies the browser dev server and static production build.
 - [Oxlint](https://oxc.rs/docs/guide/usage/linter) and [Oxfmt](https://oxc.rs/docs/guide/usage/formatter) provide linting and formatting.
 - [Fluid Functionalism](https://www.fluidfunctionalism.com/docs/button) supplies the adapted button component.
+
+## Sequence training examples
+
+BOO-47 adds `examples/is-even` and `examples/money` as task and dataset workspaces. Their shared browser UI remains in `examples/filters` at `/training`. The training package owns the native TensorFlow Node binding; the portable core executes exported embedding/window/dense operations without it. See the [training guide](neural-training.md).

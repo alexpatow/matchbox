@@ -17,13 +17,16 @@
     "typecheck": "bun run train && tsc --noEmit && bun run --filter \"*\" typecheck",
     "test": "bun run train && bun test ./tests",
     "test:browser": "playwright test",
-    "check": "bun run lint && bun run format:check && bun run typecheck && bun run test && bun run build",
+    "check": "bun run lint && bun run format:check && bun run train && bun run check:prepared",
     "preview": "bun run --filter @matchbox-ai/filters-example preview",
     "matchbox": "bun packages/train/src/cli.ts",
-    "train": "bun run build:packages && bun run matchbox train examples/filters/matchbox.config.ts",
+    "train": "bun run build:packages && bun run train:filters && bun run train:neural",
     "eval": "bun run matchbox eval examples/filters/matchbox.config.ts",
     "research": "bun run train && bun examples/filters/scripts/challenges.ts",
-    "build:packages": "bun run build:core && bun run --filter @matchbox-ai/react build && bun run --filter @matchbox-ai/train build"
+    "build:packages": "bun run build:core && bun run --filter @matchbox-ai/react build && bun run --filter @matchbox-ai/train build",
+    "train:filters": "bun run matchbox train examples/filters/matchbox.config.ts",
+    "train:neural": "bun run matchbox train examples/is-even/matchbox.config.ts && bun run matchbox train examples/money/matchbox.config.ts",
+    "check:prepared": "tsc --noEmit && bun run --filter \"*\" typecheck && bun test ./tests && bun run --filter \"*\" build"
   },
   "devDependencies": {
     "@matchbox-ai/core": "workspace:*",
@@ -40,5 +43,8 @@
     "bun": ">=1.4.2",
     "node": ">=24"
   },
-  "packageManager": "bun@1.4.2"
+  "packageManager": "bun@1.4.2",
+  "trustedDependencies": [
+    "@tensorflow/tfjs-node"
+  ]
 }

@@ -1,12 +1,17 @@
+import { countries, countryCodes, countryAliases } from "../examples/filters/src/countries";
 import { expect, test } from "bun:test";
-import { createParser, readArtifact, compileClauses } from "@matchbox-ai/core/runtime";
-import { task, matchesFilter, customers } from "../examples/filters/src/filter";
-const model = readArtifact(
+import {
+  createSequenceParser,
+  readSequenceArtifact,
+  compileClauses,
+} from "@matchbox-ai/core/runtime";
+import { task, decode, matchesFilter, customers } from "../examples/filters/src/filter";
+const model = readSequenceArtifact(
   await Bun.file(
     new URL("../examples/filters/src/generated/filters.matchbox", import.meta.url),
   ).json(),
 );
-const parser = createParser(model, task);
+const parser = createSequenceParser(model, task, decode);
 
 test("the packaged learned model composes clauses and normalizes unseen amounts", async () => {
   const result = await parser.parse("active customers and Swedish customers and ARR over €50,001");
@@ -55,9 +60,11 @@ test.each([
 });
 
 test("rejects malformed artifacts and stale task schemas at initialization", () => {
-  expect(() => readArtifact({ ...model, formatVersion: 2 })).toThrow();
-  expect(() => readArtifact({ ...model, weights: [[]] })).toThrow("dimensions");
-  expect(() => createParser({ ...model, taskMetadata: {} }, task)).toThrow("schema differ");
+  expect(() => readSequenceArtifact({ ...model, formatVersion: 2 })).toThrow();
+  expect(() => readSequenceArtifact({ ...model, weights: [[]] })).toThrow();
+  expect(() => createSequenceParser({ ...model, taskMetadata: {} }, task, decode)).toThrow(
+    "schema differ",
+  );
 });
 
 test("all emitted filters pass schema validation on the fixed evaluation set", async () => {
@@ -78,4 +85,27 @@ test("the AST compiler refuses partial results when a clause is unrecognized", (
       confidence: 1,
     })).value,
   ).toBeNull();
+});
+
+test("every supported country name parses to its code", async () => {
+  for (const code of countryCodes) {
+    const input = `find accounts based in ${countries[code].name}`;
+    expect((await parser.parse(input)).value, input).toEqual({
+      field: "country",
+      operator: "eq",
+      value: code,
+    });
+  }
+});
+test("country-name conjunctions remain inside the country span", async () => {
+  expect((await parser.parse("Trinidad and Tobago customers and ARR over 50k")).value).toEqual({
+    and: [
+      { field: "country", operator: "eq", value: "TT" },
+      { field: "arr", operator: "gt", value: 50000 },
+    ],
+  });
+});
+
+test("country reference aliases always consume at least one token", () => {
+  expect(countryAliases.every((alias) => alias.keys.length > 0)).toBe(true);
 });
