@@ -1,4 +1,5 @@
 export interface TimingResult {
+  inputs?: string[];
   samples: number;
   accepted: number;
   p50Ms: number;

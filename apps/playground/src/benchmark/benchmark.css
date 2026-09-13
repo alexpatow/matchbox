@@ -91,6 +91,7 @@
   padding-left: 28px;
 }
 .timing-metrics dt {
+  min-height: 32px;
   color: #9c958a;
   font-size: 12px;
   margin-bottom: 12px;
@@ -193,9 +194,55 @@
     justify-content: space-between;
   }
   .timing-metrics > div:last-child dt {
+    min-height: 0;
     margin: 0;
   }
   .timing-metrics > div:last-child dd {
     font-size: 28px;
+  }
+}
+.benchmark-purpose {
+  max-width: 680px;
+  font-size: 13px;
+  line-height: 1.8;
+  color: #a79d8e;
+  margin: 20px 0 0;
+}
+.timing-metrics dd.metric-help {
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 1.7;
+  letter-spacing: 0;
+  color: #a39a8d;
+  margin-top: 14px;
+}
+.benchmark-procedure {
+  margin-top: 16px;
+  font-size: 12px;
+  line-height: 1.8;
+  color: #9f978c;
+}
+.benchmark-procedure summary {
+  cursor: pointer;
+  color: #c1b6a4;
+}
+.benchmark-procedure p {
+  max-width: 720px;
+}
+.benchmark-procedure ul {
+  padding-left: 20px;
+}
+.benchmark-procedure code {
+  overflow-wrap: anywhere;
+  font-size: 11px;
+}
+@media (max-width: 600px) {
+  .timing-metrics > div:last-child {
+    display: grid;
+    grid-template-columns: 1fr auto;
+  }
+  .timing-metrics > div:last-child dd.metric-help {
+    grid-column: 1 / -1;
+    font-size: 12px;
   }
 }

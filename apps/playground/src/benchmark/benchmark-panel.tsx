@@ -22,7 +22,7 @@ export function BenchmarkPanel({ run, ready, buttonLabel, testId, featured = fal
       <div className="benchmark-heading">
         <div>
           <p className="benchmark-kicker">Measured on your device</p>
-          <h3>{featured ? "Measure local inference." : "Browser performance"}</h3>
+          <h3>{"Time a prediction on your device."}</h3>
         </div>
         <Button
           className="benchmark-run"
@@ -48,6 +48,9 @@ export function BenchmarkPanel({ run, ready, buttonLabel, testId, featured = fal
           {running ? "Measuring…" : buttonLabel}
         </Button>
       </div>
+      <p className="benchmark-purpose">
+        We time how long it takes to turn one input into structured data on your device.
+      </p>
       {error && (
         <p className="benchmark-error" role="alert">
           {error}
@@ -58,22 +61,43 @@ export function BenchmarkPanel({ run, ready, buttonLabel, testId, featured = fal
       ) : (
         <div className="benchmark-empty">
           <span className="benchmark-workload">
-            300<span>parses</span>
+            300<span>timed runs</span>
           </span>
           <p>
-            Measure median and p95 inference times.
-            <br />
-            Results come from this device.
+            We repeat the {featured ? "same three sample queries" : "current input"} to measure
+            typical and slower response times.
           </p>
         </div>
       )}
       <p className="benchmark-method">
-        {running && "Running 20 warmups and 300 timed parses."}
-        {!running &&
-          (featured
-            ? "Three sample queries, 20 warmups, 300 timed parses. Includes validation; excludes model loading and rendering."
-            : "Uses the current input: 20 warmups, then 300 timed parses. Excludes model loading and rendering.")}
+        {running
+          ? "Preparing with 20 untimed runs, then timing 300 runs."
+          : "Times are per input, in milliseconds (1 ms = 1/1,000 second). Loading the model and drawing the UI are excluded."}
       </p>
+      <details className="benchmark-procedure">
+        <summary>What does this test measure?</summary>
+        <p>
+          We run the parser 20 times to warm it up, then time 300 calls, including output
+          validation. Repeating a small set of inputs measures execution speed. It does not
+          establish accuracy on unfamiliar inputs.
+        </p>
+        <p>
+          “Answers returned” counts runs that produced a validated result instead of “uncertain”.
+          Check accuracy separately with test inputs that have known correct answers.
+        </p>
+        {result?.inputs && (
+          <>
+            <p>Inputs repeated in this run:</p>
+            <ul>
+              {result.inputs.map((input) => (
+                <li key={input}>
+                  <code>{input}</code>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+      </details>
     </section>
   );
 }
