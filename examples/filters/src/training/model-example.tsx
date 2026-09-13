@@ -64,7 +64,7 @@ export function ModelExample({ name, title, description, suggestions, load }: Pr
         </p>
       )}
       <label htmlFor={name}>
-        {name === "money" ? "Parse a money expression" : "Classify a digit string"}
+        {name.startsWith("money") ? "Parse a money expression" : "Classify a digit string"}
       </label>
       <input
         id={name}

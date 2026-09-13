@@ -1,31 +1,18 @@
+import { loadConfig } from "./project/index.js";
 import { readFile } from "node:fs/promises";
-import { dirname, resolve } from "node:path";
+import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import { z } from "zod";
 import { parseDatasets } from "@matchbox-ai/core";
 import type { ParserDefinition } from "@matchbox-ai/core";
 import type { MatchboxParser } from "@matchbox-ai/core/runtime";
-const configSchema = z.strictObject({
-  formatVersion: z.literal(1),
-  challenges: z.string().optional(),
-  sequence: z.strictObject({ recipe: z.string(), decoder: z.string() }),
-  task: z.string(),
-  baseline: z.string(),
-  train: z.string(),
-  validation: z.string(),
-  eval: z.string(),
-  output: z.string(),
-  minAccuracy: z.number().min(0).max(1),
-  maxBytes: z.number().positive(),
-});
 export async function loadProject(path: string) {
-  const root = dirname(resolve(path));
-  const config = configSchema.parse((await import(pathToFileURL(resolve(path)).href)).default);
+  const { config, root } = await loadConfig(path);
   const taskPath = resolve(root, config.task);
   const task: ParserDefinition<z.ZodType> = (await import(pathToFileURL(taskPath).href)).default;
-  const baseline: MatchboxParser<unknown> = (
-    await import(pathToFileURL(resolve(root, config.baseline)).href)
-  ).default;
+  const baseline: MatchboxParser<unknown> | null = config.baseline
+    ? (await import(pathToFileURL(resolve(root, config.baseline)).href)).default
+    : null;
   const sources = await Promise.all(
     [config.train, config.validation, config.eval].map(async (source) => ({
       source,
@@ -57,6 +44,7 @@ export async function loadProject(path: string) {
     }),
   );
   return {
+    root,
     config,
     task,
     baseline,

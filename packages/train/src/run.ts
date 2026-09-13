@@ -1,5 +1,16 @@
 import { loadProject } from "./load-project.js";
-import { runSequence } from "./sequence/index.js";
-export async function run(command: "train" | "eval", path: string) {
-  return runSequence(command, await loadProject(path), path);
+export async function run(
+  command: "train" | "eval",
+  path: string,
+  progress?: (epoch: number, loss: number) => void,
+) {
+  const project = await loadProject(path);
+  if (project.config.sequence) {
+    const { runSequence } = await import("./sequence/index.js");
+    return runSequence(command, project, progress);
+  }
+  if (command !== "train")
+    throw new Error("Use the eval CLI command to evaluate a saved artifact.");
+  const { runRecord } = await import("./record/index.js");
+  return runRecord(project, progress);
 }

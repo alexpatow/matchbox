@@ -13,3 +13,5 @@ examples/filters/src/generated/
 
 examples/is-even/src/generated/
 examples/money/src/generated/
+
+**/.matchbox/

@@ -1,10 +1,9 @@
 {
-  "name": "@matchbox-ai/money-example",
+  "name": "@matchbox-ai/money-simple-example",
   "private": true,
   "type": "module",
   "scripts": {
-    "generate": "bun generate.ts",
-    "train": "bun ../../packages/train/src/cli.ts train matchbox.config.ts",
+    "train": "bun ../../packages/train/src/cli.ts train",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

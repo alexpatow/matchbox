@@ -5,18 +5,18 @@ import {
   readSequenceArtifact,
   sequencePredictor,
 } from "@matchbox-ai/core/runtime";
-import money from "../examples/money/src/generated/money.js";
+import money from "../examples/money-pipeline/.matchbox/parser.js";
 import parity from "../examples/is-even/src/generated/is-even.js";
-import { task, decode, normalizeNumber } from "../examples/money/src";
+import { task, decode, normalizeNumber } from "../examples/money-pipeline/parser";
 const artifact = JSON.parse(
   await readFile(
-    new URL("../examples/money/src/generated/money.matchbox", import.meta.url),
+    new URL("../examples/money-pipeline/.matchbox/parser.matchbox", import.meta.url),
     "utf8",
   ),
 );
 const report = JSON.parse(
   await readFile(
-    new URL("../examples/money/src/generated/money.matchbox.report.json", import.meta.url),
+    new URL("../examples/money-pipeline/.matchbox/parser.matchbox.report.json", import.meta.url),
     "utf8",
   ),
 );

@@ -1,3 +1,5 @@
+> The money example now lives in `examples/money-pipeline`, using `parser/`, `evals/`, and `.matchbox/`. This page records the sequence-model research. The new dictionary-free structured-value trainer and current CLI are covered in [the examples comparison](../examples/README.md) and [CLI guide](cli.md).
+
 # Training tiny sequence models
 
 BOO-47 routes filters, parity, and money through one TensorFlow sequence trainer under Bun and export them for a separate plain JavaScript browser runtime. The old handwritten centroid and softmax trainers are removed. Deterministic rule parsers remain evaluation baselines. Date/time parsing is the next application after money; this change does not implement it.
@@ -17,11 +19,11 @@ To run a single task after building packages:
 ```sh
 bun run build:packages
 bun run matchbox train examples/is-even/matchbox.config.ts
-bun run matchbox train examples/money/matchbox.config.ts
-bun run matchbox eval examples/money/matchbox.config.ts
+bun run matchbox train examples/money-pipeline/matchbox.config.ts
+bun run matchbox eval examples/money-pipeline/matchbox.config.ts
 ```
 
-`train` reads committed JSONL. To regenerate the synthetic training data explicitly, run `bun examples/is-even/generate.ts` or `bun examples/money/generate.ts`. Both generators preserve the committed validation and evaluation files. Both generators are TypeScript and run locally. No teacher service, separate Python training stack, pretrained model, or GPU is needed. The training package installs TensorFlow’s native CPU binding through `@tensorflow/tfjs-node`; its install script is explicitly trusted by Bun.
+`train` reads committed JSONL. To regenerate the synthetic training data explicitly, run `bun examples/is-even/generate.ts` or `bun examples/money-pipeline/generate.ts`. Both generators preserve the committed validation and evaluation files. Both generators are TypeScript and run locally. No teacher service, separate Python training stack, pretrained model, or GPU is needed. The training package installs TensorFlow’s native CPU binding through `@tensorflow/tfjs-node`; its install script is explicitly trusted by Bun.
 
 ## Native training backend
 

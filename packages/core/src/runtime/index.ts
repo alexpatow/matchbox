@@ -14,3 +14,13 @@ export type {
   SequenceDecoder,
   WeightMatrix,
 } from "../sequence/index.js";
+
+export { readArtifact, createParser } from "./artifact.js";
+export {
+  readRecordArtifact,
+  recordFeatures,
+  recordTokens,
+  recordPredictor,
+  createRecordParser,
+} from "../record/index.js";
+export type { RecordArtifact } from "../record/index.js";

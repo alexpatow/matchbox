@@ -1,6 +1,4 @@
-import { z } from "zod";
-
-const nativeLengthGuard = z.string().min(0)._zod.def.checks?.[0]?._zod.def.when;
+import type { z } from "zod";
 
 const supported = new Set([
   "less_than",
@@ -13,6 +11,13 @@ const supported = new Set([
 /** Zod Core introspection is isolated here and in schema-contract.ts. */
 export function checkConstraints(schema: z.core.$ZodType, path: string): void {
   const def = schema._zod.def;
+  // Derive the native guard from the consumer's Zod instance; linked packages can have separate copies.
+  const nativeLengthGuard =
+    (def.type === "string" || def.type === "array") &&
+    "min" in schema &&
+    typeof schema.min === "function"
+      ? (schema as z.ZodString).min(0)._zod.def.checks?.at(-1)?._zod.def.when
+      : undefined;
   if ("coerce" in def && def.coerce) {
     throw new TypeError(`${path}: coercion cannot be serialized. Use an explicit input type.`);
   }

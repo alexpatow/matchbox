@@ -9,13 +9,23 @@ test("trained money and parity artifacts run offline with measured browser laten
   await expect(page.locator("#money-status")).toHaveText("Parsed locally from trained weights.");
   await expect(page.locator("#is-even-status")).toHaveText("Parsed locally from trained weights.");
   await expect(page.getByLabel("money output")).toContainText('"amount": 28.65');
+  await expect(page.locator("#money-simple-status")).toHaveText(
+    "Parsed locally from trained weights.",
+  );
+  await expect(page.getByLabel("money-simple output", { exact: true })).toContainText(
+    '"amount": 15000',
+  );
   await page.route("**/*", (route) => route.abort());
+  await page.getByRole("button", { name: "about fifty pounds", exact: true }).click();
+  await expect(page.getByLabel("money-simple output", { exact: true })).toContainText(
+    '"amount": 50',
+  );
   await page.getByRole("button", { name: "around twenty six grand in euros", exact: true }).click();
   await expect(page.getByLabel("money output")).toContainText('"amount": 26000');
   await page.getByRole("button", { name: "10001", exact: true }).click();
   await expect(page.getByLabel("is-even output")).toContainText('"even": false');
   const timings: Record<string, unknown> = {};
-  for (const name of ["money", "is-even"]) {
+  for (const name of ["money", "is-even", "money-simple"]) {
     const section = page.locator(`#${name}`).locator("..");
     await section.getByText("Inspect training and browser timing", { exact: true }).click();
     await page.getByRole("button", { name: `Measure ${name}`, exact: true }).click();

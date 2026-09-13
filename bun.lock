@@ -54,8 +54,20 @@
         "typescript": "7.0.2",
       },
     },
-    "examples/money": {
-      "name": "@matchbox-ai/money-example",
+    "examples/money-pipeline": {
+      "name": "@matchbox-ai/money-pipeline-example",
+      "dependencies": {
+        "@matchbox-ai/core": "workspace:*",
+        "zod": "4.6.3",
+      },
+      "devDependencies": {
+        "@matchbox-ai/train": "workspace:*",
+        "@types/bun": "1.4.2",
+        "typescript": "7.0.2",
+      },
+    },
+    "examples/money-simple": {
+      "name": "@matchbox-ai/money-simple-example",
       "dependencies": {
         "@matchbox-ai/core": "workspace:*",
         "zod": "4.6.3",
@@ -111,6 +123,9 @@
       },
     },
   },
+  "trustedDependencies": [
+    "@tensorflow/tfjs-node",
+  ],
   "packages": {
     "@fontsource-variable/inter": ["@fontsource-variable/inter@5.3.0", "", {}, "sha512-OupL48va4JNofb97w6NYeF9S7W/kHNKM0Er8Dem5nqi4jeOLrVJDoE8tZEpnMJmtkvNbB1EIPPwHcdkF6b1oUA=="],
 
@@ -132,7 +147,9 @@
 
     "@matchbox-ai/is-even-example": ["@matchbox-ai/is-even-example@workspace:examples/is-even"],
 
-    "@matchbox-ai/money-example": ["@matchbox-ai/money-example@workspace:examples/money"],
+    "@matchbox-ai/money-pipeline-example": ["@matchbox-ai/money-pipeline-example@workspace:examples/money-pipeline"],
+
+    "@matchbox-ai/money-simple-example": ["@matchbox-ai/money-simple-example@workspace:examples/money-simple"],
 
     "@matchbox-ai/react": ["@matchbox-ai/react@workspace:packages/react"],
 

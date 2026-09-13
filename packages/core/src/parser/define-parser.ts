@@ -1,3 +1,4 @@
+import { snapshotDefaults } from "./snapshot-defaults.js";
 import type { z } from "zod";
 import { checkSchema, checkStructuredRoot, schemaMetadata } from "./schema-contract.js";
 import { readFields } from "./field-metadata.js";
@@ -8,10 +9,11 @@ import { validate } from "./validation.js";
 export function defineParser<Output extends z.ZodType>(
   config: ParserConfig<Output>,
 ): ParserDefinition<Output> {
-  const { input, output } = config;
+  const { input } = config;
+  checkSchema(config.output, "output");
+  const output = snapshotDefaults(config.output);
   checkSchema(input, "input");
   if (input._zod.def.type !== "string") throw new TypeError("input: expected z.string().");
-  checkSchema(output, "output");
   checkStructuredRoot(output);
   const metadata: ParserMetadata = {
     formatVersion: 1,

@@ -1,13 +1,19 @@
 # @matchbox-ai/train
 
-The Bun-based Matchbox training package owns the `matchbox` executable and training configuration types.
+The Bun-based training package owns the `matchbox` executable and `TrainingConfig` types. Native TensorFlow is loaded only for training; inference and browser imports remain portable JavaScript.
 
-```ts
-import type { TrainingConfig } from "@matchbox-ai/train";
+```bash
+matchbox init my-parser
+cd my-parser
+bun install
+bun run train
+bun run dev
 ```
 
-In this workspace, run `bun run train` to build the packages and train the filter, parity, and money examples. The executable supports `matchbox train [config]` and `matchbox eval [config]`. It generates the model artifact, typed declarations, a TypeScript wrapper, and evaluation metadata. See the [end-to-end guide](../../docs/end-to-end.md).
+The current private workspace scaffold uses local file dependencies. Build the packages before invoking `packages/train/dist/cli.js`. Published registry installation is not available yet.
 
-Training imports the shared tokenizer and artifact contract through core's runtime export, so training and inference use identical preprocessing. No training module is imported by core or the React integration.
+The CLI discovers `parser/parser.ts`, `parser/data/train.jsonl`, and separate `evals/validation.jsonl` and `evals/evals.jsonl` fixtures. Generated weights, reports, and typed wrappers go under `.matchbox/`. A root `matchbox.config.ts` is optional.
 
-Sequence training uses `@tensorflow/tfjs-node` on its native TensorFlow CPU backend. Experimental `SequenceRecipe` adapters supply token supervision, while application-owned decoders normalize predicted spans. TensorFlow is a training-only dependency. All three examples use this shared sequence trainer; the handwritten centroid and linear trainers have been removed. See the [neural training guide](../../docs/neural-training.md) for the configuration, supervision contract, and measured results.
+The default trainer learns structured primitive field values directly from examples. Adding both `parser/recipe.ts` and `parser/decode.ts` opts into an explicit sequence pipeline. Both use native `@tensorflow/tfjs-node`, held-out evaluation, int8 export, and deterministic schema validation. See [the CLI guide](../../docs/cli.md) and [examples](../../examples/README.md).
+
+Commands include `init`, `dev`, `train`, `eval`, `parse`, `inspect`, `info`, and explicit `save`. Use `--help`, `--json`, and `--config <path>` for scripting. The interactive session exposes `/train`, `/eval`, `/inspect`, `/info`, `/save`, and `/exit`.

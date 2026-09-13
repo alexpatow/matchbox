@@ -1,5 +1,5 @@
 import { ModelExample } from "./model-example.js";
-import { loadMoney, loadParity } from "./load-examples.js";
+import { loadMoney, loadParity, loadSimpleMoney } from "./load-examples.js";
 export function TrainingApp() {
   return (
     <main className="workspace">
@@ -24,9 +24,16 @@ export function TrainingApp() {
         </p>
       </section>
       <ModelExample
+        name="money-simple"
+        title="Learn the meaning from examples."
+        description="The simple pipeline predicts structured values directly. It has no number-word dictionary, aliases, or custom decoder. It currently recognizes five learned amounts and four currencies; unseen values require more training examples."
+        suggestions={["around fifteen grand euros", "twenty dollars", "about fifty pounds"]}
+        load={loadSimpleMoney}
+      />
+      <ModelExample
         name="money"
-        title="Find the money in the sentence."
-        description="The model recognizes amounts and currencies. A deterministic decoder handles arithmetic. This first example supports English number words below one hundred and four currencies. In this example, $ means USD."
+        title="Add an explicit recognition pipeline."
+        description="The model recognizes amounts and currencies. Application code converts number words, applies multipliers, and performs arithmetic. This first example supports English number words below one hundred and four currencies. In this example, $ means USD."
         suggestions={[
           "invoice 31415 totals € 28.65",
           "around twenty six grand in euros",
