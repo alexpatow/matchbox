@@ -21,3 +21,5 @@ See the repository's [parser API guide](../../docs/parser-api.md) for the suppor
 `bun run build` emits browser-compatible ESM and TypeScript declarations in `dist/`. Zod is an external dependency. Consumers import through the public export map and do not depend on Bun. Runtime source has no ambient Node, Bun, or DOM types.
 
 `parseDatasets` validates separate JSONL training and evaluation sources against a task. See the [dataset format guide](../../docs/dataset-format.md) for authoring rules, diagnostics, and versioning.
+
+Core exports `@matchbox-ai/core/runtime` and `@matchbox-ai/core/vite`. React and training live in the separate `@matchbox-ai/react` and `@matchbox-ai/train` packages. The Vite plugin turns generated `.matchbox` artifacts into typed parser modules. Training is Bun-based and stays outside the browser graph. See the [end-to-end guide](../../docs/end-to-end.md).

@@ -6,7 +6,8 @@
     "types": ["vite/client"],
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "allowArbitraryExtensions": true
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"]
 }

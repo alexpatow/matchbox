@@ -2,19 +2,19 @@
 
 These decisions implement BOO-30 and the repo setup agreed with Alex on 2026-09-13.
 
-## Two workspaces
+## Workspace boundaries
 
-`packages/core` owns the portable TypeScript library. `examples/filters` owns the browser-only React/Vite app. Bun manages installation and scripts. Runtime and training can separate later when real code needs that boundary; there are no empty placeholder packages.
+`packages/core` owns task definitions, datasets, the portable runtime, and the Vite import plugin. `packages/react` exposes `@matchbox-ai/react`. `packages/train` exposes `@matchbox-ai/train` and owns the CLI. `examples/filters` owns the browser-only React/Vite app. Bun manages installation and scripts. Cross-package imports use package exports.
 
-The foundation started with a bootstrap version export. BOO-31 adds the [parser task API](parser-api.md), including validation and serializable training metadata. The AST, datasets, training, runtime, and React hook remain separate Linear work.
+The foundation started with a bootstrap version export. BOO-31 adds the [parser task API](parser-api.md), including validation and serializable training metadata. BOO-32 adds versioned datasets. BOO-46 connects the first learned filter flow, described in the [end-to-end guide](end-to-end.md).
 
 ## Package consumption
 
-Rolldown bundles the library to ESM. TypeScript emits declarations. The package export map points to `dist/` in development and production, so the example exercises the actual package boundary. Root build scripts respect the workspace dependency graph. `bun run dev` builds core once before starting its JavaScript/declaration watchers and the Vite server together.
+Rolldown bundles the library to ESM. TypeScript emits declarations. The package export map points to `dist/` in development and production, so the example exercises the actual package boundary. Root build scripts respect the workspace dependency graph. `bun run dev` builds core and trains the example once before starting its JavaScript/declaration watchers and the Vite server together.
 
 The core watchers refresh both JavaScript and declarations after source changes. Bun runs the two watch commands together, without an additional task orchestrator.
 
-Library source typechecking has no ambient Bun, Node, or DOM globals. Browser-specific initialization must be explicit when it arrives. Training remains TypeScript and must not be re-exported through the browser entry point.
+Portable library source typechecking has no ambient Bun, Node, or DOM globals. The training package and Vite modules are checked with Node types and built for Node. The CLI runs with Bun to load TypeScript project files. React is a peer dependency of the React package only. Training is not re-exported through browser entry points.
 
 The package targets ES2022 ESM with no CommonJS entry point. Node 24 is the initial tested Node consumer and tooling version. Browser integration runs in Chromium at desktop and mobile viewport sizes. Other browsers remain unverified.
 
@@ -26,7 +26,7 @@ GitHub Actions installs the frozen Bun lockfile, runs the same local checks, and
 
 ## Example UI
 
-A small Fluid Functionalism button checks the imported core version and exercises task definition, validation, and serialization in the browser. The page deliberately contains no parser input or inference results yet. Registry source provenance and modifications are recorded in `THIRD-PARTY-NOTICES.md`. UI dependencies belong only to the example.
+The Fluid Functionalism controls now drive a local learned filter parser, explicit filter chips, and a fictional customer table. Empty and uncertain states show all rows. Registry source provenance and modifications are recorded in `THIRD-PARTY-NOTICES.md`. UI dependencies belong only to the example.
 
 ## References
 

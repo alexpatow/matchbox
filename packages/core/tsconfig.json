@@ -4,5 +4,6 @@
     "lib": ["ES2022"],
     "types": []
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts"],
+  "exclude": ["src/vite"]
 }

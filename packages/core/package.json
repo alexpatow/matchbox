@@ -13,6 +13,14 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
+    },
+    "./runtime": {
+      "types": "./dist/runtime/index.d.ts",
+      "import": "./dist/runtime/index.js"
+    },
+    "./vite": {
+      "types": "./dist/vite/index.d.ts",
+      "import": "./dist/vite/index.js"
     }
   },
   "scripts": {
@@ -26,6 +34,7 @@
     "zod": "4.6.3"
   },
   "devDependencies": {
+    "@types/node": "22.20.2",
     "rolldown": "1.2.8",
     "typescript": "7.0.2"
   }

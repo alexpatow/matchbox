@@ -9,7 +9,8 @@ Build the smallest credible examples-to-browser proof. The README describes the 
 - Use Bun workspaces and scripts. Do not add Turborepo.
 - Keep portable library code in `packages/core` and the browser-only React/Vite example in `examples/filters`.
 - Use TypeScript for training work. Developers should not need to manage a separate training stack.
-- Keep training dependencies out of the browser entry point. Extract packages only when implementation warrants them.
+- React integration lives in `packages/react` and is imported from `@matchbox-ai/react`. Training and the CLI live in `packages/train`, exposed as `@matchbox-ai/train`.
+- Keep training dependencies out of browser entry points. Cross-package imports use package exports.
 - Ship ESM and TypeScript declarations. Use Rolldown for library JavaScript and TypeScript for declarations.
 - Consumers import the package through its exports, not aliases pointing into library source.
 

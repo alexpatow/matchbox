@@ -1,56 +1,145 @@
-import { useState } from "react";
-import { version } from "@matchbox-ai/core";
+import { useEffect, useState } from "react";
+import { useMatchbox } from "@matchbox-ai/react";
+import type { ParseResult } from "@matchbox-ai/core/runtime";
 import { Button } from "@/components/ui/button";
-import { checkPackage } from "@/lib";
-
+import { customers, matchesFilter, loadFilters, benchmark, type Filter } from "@/filter";
+import { CustomerTable } from "./customer-table";
+import { FilterChips } from "./filter-chips";
+const suggestions = [
+  "active customers and Swedish customers and ARR over 50k",
+  "German customers or Swedish customers",
+  "ARR at least 75k and not churned",
+];
 export function App() {
-  const [checks, setChecks] = useState(0);
-
+  const { parse, status, error: loadError } = useMatchbox(loadFilters);
+  const [query, setQuery] = useState("");
+  const [result, setResult] = useState<ParseResult<Filter> | null>(null);
+  const [measurement, setMeasurement] = useState<Awaited<ReturnType<typeof benchmark>> | null>(
+    null,
+  );
+  const [measuring, setMeasuring] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  useEffect(() => {
+    let current = true;
+    if (query.trim())
+      parse(query)
+        .then((value) => {
+          if (current) setResult(value);
+        })
+        .catch((cause) => {
+          if (current) setError(String(cause));
+        });
+    return () => {
+      current = false;
+    };
+  }, [query, parse]);
+  function updateQuery(value: string) {
+    setQuery(value);
+    setResult(null);
+    setError(null);
+  }
+  const rows =
+    result?.status === "ok"
+      ? customers.filter((row) => matchesFilter(row, result.value))
+      : customers;
   return (
     <main className="workspace">
       <header className="masthead">
         <a className="wordmark" href="/">
           Matchbox<span aria-hidden="true">.</span>
         </a>
-        <span className="caption">The filter example starts here.</span>
+        <span className="caption">This model runs in your browser.</span>
       </header>
       <section className="introduction" aria-labelledby="title">
-        <p className="eyebrow">This is the foundation.</p>
+        <p className="eyebrow">A small model becomes an ordinary dependency.</p>
         <h1 id="title">
-          Tiny models become
+          Ask for the customers
           <br />
-          ordinary software.
+          you want to see.
         </h1>
-        <p className="description">Compile examples into tiny models for the browser.</p>
+        <p className="description">
+          Examples become a tiny learned parser. Your application keeps the rules.
+        </p>
       </section>
-      <section className="package-check" aria-labelledby="package-title">
-        <div>
-          <h2 id="package-title">The workspace is connected.</h2>
-          <p>This React app imports the local Matchbox package.</p>
+      <section className="query-section" aria-labelledby="query-label">
+        <label id="query-label" htmlFor="query">
+          Filter customers
+        </label>
+        <input
+          id="query"
+          value={query}
+          onChange={(event) => updateQuery(event.target.value)}
+          placeholder="Try active customers and ARR over 50k"
+          aria-describedby="query-help"
+          autoComplete="off"
+        />
+        <p id="query-help">
+          Use status, country, or ARR clauses joined with “and” or “or”. Dates and implicit joins
+          are not supported yet.
+        </p>
+        <div className="suggestions">
+          {suggestions.map((suggestion) => (
+            <Button variant="secondary" key={suggestion} onClick={() => updateQuery(suggestion)}>
+              {suggestion}
+            </Button>
+          ))}
         </div>
+        <output className="parse-status" aria-live="polite">
+          {error ||
+            loadError ||
+            (status === "loading"
+              ? "Loading the local model…"
+              : !query.trim()
+                ? "The model is ready. All customers are shown."
+                : !result
+                  ? "Parsing…"
+                  : result.status === "ok"
+                    ? `Parsed locally. Confidence score: ${result.confidence.toFixed(2)}.`
+                    : "Uncertain. Try a supported example. All customers are shown.")}
+        </output>
+        {result?.status === "ok" && <FilterChips filter={result.value} />}
+      </section>
+      <CustomerTable rows={rows} />
+      <details className="developer-details">
+        <summary>See the typed output and browser timing</summary>
         <pre>
-          <code>{'import { version } from "@matchbox-ai/core";'}</code>
+          <code>
+            {
+              'import filters from "./filters.matchbox";\nconst result = await filters.parse(input);'
+            }
+          </code>
         </pre>
-        <div className="check-actions">
-          <Button
-            onClick={() => {
-              checkPackage();
-              setChecks((count) => count + 1);
-            }}
-          >
-            Check package import
-          </Button>
-          <output aria-live="polite">
-            {checks > 0
-              ? `Check ${checks} passed. Core v${version} passed task validation in this browser.`
-              : `Core v${version} is loaded. Run the browser check.`}
-          </output>
-        </div>
-      </section>
+        <pre aria-label="Parser output">
+          <code>{JSON.stringify(result, null, 2)}</code>
+        </pre>
+        <Button
+          disabled={measuring}
+          onClick={async () => {
+            setMeasuring(true);
+            try {
+              setMeasurement(await benchmark());
+            } catch (cause) {
+              setError(String(cause));
+            } finally {
+              setMeasuring(false);
+            }
+          }}
+        >
+          Measure this browser
+        </Button>
+        {measurement && <output data-testid="benchmark">{JSON.stringify(measurement)}</output>}
+        <p>
+          Timing uses 300 warm parses on this device. Loading here may use the module cache.
+          Confidence is an uncalibrated score, not a correctness guarantee.
+        </p>
+      </details>
       <footer>
-        <p>Parsing and model inference will arrive in later tickets.</p>
+        <p>
+          This is an experimental clause classifier with deterministic validation. It does not send
+          queries to a server.
+        </p>
         <a href="https://www.fluidfunctionalism.com/docs/button">
-          The button uses Fluid Functionalism.
+          The controls use Fluid Functionalism.
         </a>
       </footer>
     </main>

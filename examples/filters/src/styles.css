@@ -142,3 +142,131 @@ footer p {
     padding: 16px;
   }
 }
+
+.query-section {
+  border-top: 1px solid var(--border);
+  padding: 28px 0;
+}
+.query-section label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.query-section input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #a5ab9e;
+  border-radius: 6px;
+  background: #fffefb;
+  color: var(--foreground);
+  font: inherit;
+  font-size: 16px;
+  padding: 18px;
+}
+.query-section input:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+#query-help,
+.parse-status,
+.developer-details p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--muted-foreground);
+}
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0;
+}
+.suggestions button {
+  font-size: 12px;
+  white-space: normal;
+  height: auto;
+  min-height: 40px;
+  text-align: left;
+}
+.parse-status {
+  min-height: 24px;
+}
+.filter-chips,
+.filter-group,
+.filter-part {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.filter-chips {
+  margin-top: 16px;
+}
+.filter-chip {
+  border: 1px solid #ccd5c3;
+  background: #ecf0e6;
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-size: 13px;
+}
+.join {
+  color: var(--muted-foreground);
+  font-size: 10px;
+}
+.table-scroll {
+  overflow-x: auto;
+  border-top: 1px solid var(--border);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13px;
+  white-space: nowrap;
+}
+caption {
+  text-align: left;
+  color: var(--muted-foreground);
+  padding: 20px 0;
+  font-size: 12px;
+}
+th,
+td {
+  padding: 16px 12px;
+  border-bottom: 1px solid var(--border);
+}
+thead th {
+  color: var(--muted-foreground);
+  font-size: 11px;
+  font-weight: 500;
+}
+tbody th {
+  font-weight: 500;
+}
+th:first-child,
+td:first-child {
+  padding-left: 0;
+}
+th:last-child,
+td:last-child {
+  text-align: right;
+  padding-right: 0;
+  font-variant-numeric: tabular-nums;
+}
+.developer-details {
+  margin-top: 28px;
+  font-size: 13px;
+}
+.developer-details summary {
+  cursor: pointer;
+  padding: 12px 0;
+}
+.developer-details output {
+  display: block;
+  overflow-wrap: anywhere;
+  margin: 16px 0;
+}
+.empty {
+  font-size: 14px;
+  color: var(--muted-foreground);
+}

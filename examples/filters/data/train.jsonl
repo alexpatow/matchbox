@@ -1,0 +1,176 @@
+{"input":"active","output":{"field":"status","operator":"eq","value":"active"}}
+{"input":"active customers","output":{"field":"status","operator":"eq","value":"active"}}
+{"input":"active accounts","output":{"field":"status","operator":"eq","value":"active"}}
+{"input":"active companies","output":{"field":"status","operator":"eq","value":"active"}}
+{"input":"customers that are active","output":{"field":"status","operator":"eq","value":"active"}}
+{"input":"accounts currently active","output":{"field":"status","operator":"eq","value":"active"}}
+{"input":"with status active","output":{"field":"status","operator":"eq","value":"active"}}
+{"input":"status is active","output":{"field":"status","operator":"eq","value":"active"}}
+{"input":"show active accounts","output":{"field":"status","operator":"eq","value":"active"}}
+{"input":"find active companies","output":{"field":"status","operator":"eq","value":"active"}}
+{"input":"companies with active status","output":{"field":"status","operator":"eq","value":"active"}}
+{"input":"currently active","output":{"field":"status","operator":"eq","value":"active"}}
+{"input":"inactive","output":{"field":"status","operator":"eq","value":"inactive"}}
+{"input":"inactive customers","output":{"field":"status","operator":"eq","value":"inactive"}}
+{"input":"inactive accounts","output":{"field":"status","operator":"eq","value":"inactive"}}
+{"input":"inactive companies","output":{"field":"status","operator":"eq","value":"inactive"}}
+{"input":"customers that are inactive","output":{"field":"status","operator":"eq","value":"inactive"}}
+{"input":"accounts currently inactive","output":{"field":"status","operator":"eq","value":"inactive"}}
+{"input":"with status inactive","output":{"field":"status","operator":"eq","value":"inactive"}}
+{"input":"status is inactive","output":{"field":"status","operator":"eq","value":"inactive"}}
+{"input":"show inactive accounts","output":{"field":"status","operator":"eq","value":"inactive"}}
+{"input":"find inactive companies","output":{"field":"status","operator":"eq","value":"inactive"}}
+{"input":"companies with inactive status","output":{"field":"status","operator":"eq","value":"inactive"}}
+{"input":"currently inactive","output":{"field":"status","operator":"eq","value":"inactive"}}
+{"input":"churned","output":{"field":"status","operator":"eq","value":"churned"}}
+{"input":"churned customers","output":{"field":"status","operator":"eq","value":"churned"}}
+{"input":"churned accounts","output":{"field":"status","operator":"eq","value":"churned"}}
+{"input":"churned companies","output":{"field":"status","operator":"eq","value":"churned"}}
+{"input":"customers that are churned","output":{"field":"status","operator":"eq","value":"churned"}}
+{"input":"accounts currently churned","output":{"field":"status","operator":"eq","value":"churned"}}
+{"input":"with status churned","output":{"field":"status","operator":"eq","value":"churned"}}
+{"input":"status is churned","output":{"field":"status","operator":"eq","value":"churned"}}
+{"input":"show churned accounts","output":{"field":"status","operator":"eq","value":"churned"}}
+{"input":"find churned companies","output":{"field":"status","operator":"eq","value":"churned"}}
+{"input":"companies with churned status","output":{"field":"status","operator":"eq","value":"churned"}}
+{"input":"currently churned","output":{"field":"status","operator":"eq","value":"churned"}}
+{"input":"not churned","output":{"field":"status","operator":"neq","value":"churned"}}
+{"input":"not churned customers","output":{"field":"status","operator":"neq","value":"churned"}}
+{"input":"exclude churned","output":{"field":"status","operator":"neq","value":"churned"}}
+{"input":"exclude churned accounts","output":{"field":"status","operator":"neq","value":"churned"}}
+{"input":"customers except churned","output":{"field":"status","operator":"neq","value":"churned"}}
+{"input":"accounts except churned","output":{"field":"status","operator":"neq","value":"churned"}}
+{"input":"without churned customers","output":{"field":"status","operator":"neq","value":"churned"}}
+{"input":"status is not churned","output":{"field":"status","operator":"neq","value":"churned"}}
+{"input":"show not churned accounts","output":{"field":"status","operator":"neq","value":"churned"}}
+{"input":"find not churned companies","output":{"field":"status","operator":"neq","value":"churned"}}
+{"input":"companies without churned status","output":{"field":"status","operator":"neq","value":"churned"}}
+{"input":"customers that have not churned","output":{"field":"status","operator":"neq","value":"churned"}}
+{"input":"Swedish customers","output":{"field":"country","operator":"eq","value":"SE"}}
+{"input":"Swedish accounts","output":{"field":"country","operator":"eq","value":"SE"}}
+{"input":"Swedish companies","output":{"field":"country","operator":"eq","value":"SE"}}
+{"input":"in Sweden","output":{"field":"country","operator":"eq","value":"SE"}}
+{"input":"customers in Sweden","output":{"field":"country","operator":"eq","value":"SE"}}
+{"input":"accounts from Sweden","output":{"field":"country","operator":"eq","value":"SE"}}
+{"input":"companies based in Sweden","output":{"field":"country","operator":"eq","value":"SE"}}
+{"input":"country is Sweden","output":{"field":"country","operator":"eq","value":"SE"}}
+{"input":"show Swedish accounts","output":{"field":"country","operator":"eq","value":"SE"}}
+{"input":"find Swedish companies","output":{"field":"country","operator":"eq","value":"SE"}}
+{"input":"from Sweden","output":{"field":"country","operator":"eq","value":"SE"}}
+{"input":"Sweden customers","output":{"field":"country","operator":"eq","value":"SE"}}
+{"input":"German customers","output":{"field":"country","operator":"eq","value":"DE"}}
+{"input":"German accounts","output":{"field":"country","operator":"eq","value":"DE"}}
+{"input":"German companies","output":{"field":"country","operator":"eq","value":"DE"}}
+{"input":"in Germany","output":{"field":"country","operator":"eq","value":"DE"}}
+{"input":"customers in Germany","output":{"field":"country","operator":"eq","value":"DE"}}
+{"input":"accounts from Germany","output":{"field":"country","operator":"eq","value":"DE"}}
+{"input":"companies based in Germany","output":{"field":"country","operator":"eq","value":"DE"}}
+{"input":"country is Germany","output":{"field":"country","operator":"eq","value":"DE"}}
+{"input":"show German accounts","output":{"field":"country","operator":"eq","value":"DE"}}
+{"input":"find German companies","output":{"field":"country","operator":"eq","value":"DE"}}
+{"input":"from Germany","output":{"field":"country","operator":"eq","value":"DE"}}
+{"input":"Germany customers","output":{"field":"country","operator":"eq","value":"DE"}}
+{"input":"American customers","output":{"field":"country","operator":"eq","value":"US"}}
+{"input":"American accounts","output":{"field":"country","operator":"eq","value":"US"}}
+{"input":"American companies","output":{"field":"country","operator":"eq","value":"US"}}
+{"input":"in America","output":{"field":"country","operator":"eq","value":"US"}}
+{"input":"customers in America","output":{"field":"country","operator":"eq","value":"US"}}
+{"input":"accounts from America","output":{"field":"country","operator":"eq","value":"US"}}
+{"input":"companies based in America","output":{"field":"country","operator":"eq","value":"US"}}
+{"input":"country is America","output":{"field":"country","operator":"eq","value":"US"}}
+{"input":"show American accounts","output":{"field":"country","operator":"eq","value":"US"}}
+{"input":"find American companies","output":{"field":"country","operator":"eq","value":"US"}}
+{"input":"from America","output":{"field":"country","operator":"eq","value":"US"}}
+{"input":"America customers","output":{"field":"country","operator":"eq","value":"US"}}
+{"input":"Norwegian customers","output":{"field":"country","operator":"eq","value":"NO"}}
+{"input":"Norwegian accounts","output":{"field":"country","operator":"eq","value":"NO"}}
+{"input":"Norwegian companies","output":{"field":"country","operator":"eq","value":"NO"}}
+{"input":"in Norway","output":{"field":"country","operator":"eq","value":"NO"}}
+{"input":"customers in Norway","output":{"field":"country","operator":"eq","value":"NO"}}
+{"input":"accounts from Norway","output":{"field":"country","operator":"eq","value":"NO"}}
+{"input":"companies based in Norway","output":{"field":"country","operator":"eq","value":"NO"}}
+{"input":"country is Norway","output":{"field":"country","operator":"eq","value":"NO"}}
+{"input":"show Norwegian accounts","output":{"field":"country","operator":"eq","value":"NO"}}
+{"input":"find Norwegian companies","output":{"field":"country","operator":"eq","value":"NO"}}
+{"input":"from Norway","output":{"field":"country","operator":"eq","value":"NO"}}
+{"input":"Norway customers","output":{"field":"country","operator":"eq","value":"NO"}}
+{"input":"ARR over 50k","output":{"field":"arr","operator":"gt","value":50000}}
+{"input":"annual recurring revenue over 20000","output":{"field":"arr","operator":"gt","value":20000}}
+{"input":"customers with ARR over 100k","output":{"field":"arr","operator":"gt","value":100000}}
+{"input":"show accounts with revenue over 500","output":{"field":"arr","operator":"gt","value":500}}
+{"input":"ARR above 50k","output":{"field":"arr","operator":"gt","value":50000}}
+{"input":"annual recurring revenue above 20000","output":{"field":"arr","operator":"gt","value":20000}}
+{"input":"customers with ARR above 100k","output":{"field":"arr","operator":"gt","value":100000}}
+{"input":"show accounts with revenue above 500","output":{"field":"arr","operator":"gt","value":500}}
+{"input":"ARR greater than 50k","output":{"field":"arr","operator":"gt","value":50000}}
+{"input":"annual recurring revenue greater than 20000","output":{"field":"arr","operator":"gt","value":20000}}
+{"input":"customers with ARR greater than 100k","output":{"field":"arr","operator":"gt","value":100000}}
+{"input":"show accounts with revenue greater than 500","output":{"field":"arr","operator":"gt","value":500}}
+{"input":"ARR more than 50k","output":{"field":"arr","operator":"gt","value":50000}}
+{"input":"annual recurring revenue more than 20000","output":{"field":"arr","operator":"gt","value":20000}}
+{"input":"customers with ARR more than 100k","output":{"field":"arr","operator":"gt","value":100000}}
+{"input":"show accounts with revenue more than 500","output":{"field":"arr","operator":"gt","value":500}}
+{"input":"ARR > 50k","output":{"field":"arr","operator":"gt","value":50000}}
+{"input":"annual recurring revenue > 20000","output":{"field":"arr","operator":"gt","value":20000}}
+{"input":"customers with ARR > 100k","output":{"field":"arr","operator":"gt","value":100000}}
+{"input":"show accounts with revenue > 500","output":{"field":"arr","operator":"gt","value":500}}
+{"input":"ARR at least 50k","output":{"field":"arr","operator":"gte","value":50000}}
+{"input":"annual recurring revenue at least 20000","output":{"field":"arr","operator":"gte","value":20000}}
+{"input":"customers with ARR at least 100k","output":{"field":"arr","operator":"gte","value":100000}}
+{"input":"show accounts with revenue at least 500","output":{"field":"arr","operator":"gte","value":500}}
+{"input":"ARR no less than 50k","output":{"field":"arr","operator":"gte","value":50000}}
+{"input":"annual recurring revenue no less than 20000","output":{"field":"arr","operator":"gte","value":20000}}
+{"input":"customers with ARR no less than 100k","output":{"field":"arr","operator":"gte","value":100000}}
+{"input":"show accounts with revenue no less than 500","output":{"field":"arr","operator":"gte","value":500}}
+{"input":"ARR greater than or equal to 50k","output":{"field":"arr","operator":"gte","value":50000}}
+{"input":"annual recurring revenue greater than or equal to 20000","output":{"field":"arr","operator":"gte","value":20000}}
+{"input":"customers with ARR greater than or equal to 100k","output":{"field":"arr","operator":"gte","value":100000}}
+{"input":"show accounts with revenue greater than or equal to 500","output":{"field":"arr","operator":"gte","value":500}}
+{"input":"ARR >= 50k","output":{"field":"arr","operator":"gte","value":50000}}
+{"input":"annual recurring revenue >= 20000","output":{"field":"arr","operator":"gte","value":20000}}
+{"input":"customers with ARR >= 100k","output":{"field":"arr","operator":"gte","value":100000}}
+{"input":"show accounts with revenue >= 500","output":{"field":"arr","operator":"gte","value":500}}
+{"input":"ARR under 50k","output":{"field":"arr","operator":"lt","value":50000}}
+{"input":"annual recurring revenue under 20000","output":{"field":"arr","operator":"lt","value":20000}}
+{"input":"customers with ARR under 100k","output":{"field":"arr","operator":"lt","value":100000}}
+{"input":"show accounts with revenue under 500","output":{"field":"arr","operator":"lt","value":500}}
+{"input":"ARR below 50k","output":{"field":"arr","operator":"lt","value":50000}}
+{"input":"annual recurring revenue below 20000","output":{"field":"arr","operator":"lt","value":20000}}
+{"input":"customers with ARR below 100k","output":{"field":"arr","operator":"lt","value":100000}}
+{"input":"show accounts with revenue below 500","output":{"field":"arr","operator":"lt","value":500}}
+{"input":"ARR less than 50k","output":{"field":"arr","operator":"lt","value":50000}}
+{"input":"annual recurring revenue less than 20000","output":{"field":"arr","operator":"lt","value":20000}}
+{"input":"customers with ARR less than 100k","output":{"field":"arr","operator":"lt","value":100000}}
+{"input":"show accounts with revenue less than 500","output":{"field":"arr","operator":"lt","value":500}}
+{"input":"ARR < 50k","output":{"field":"arr","operator":"lt","value":50000}}
+{"input":"annual recurring revenue < 20000","output":{"field":"arr","operator":"lt","value":20000}}
+{"input":"customers with ARR < 100k","output":{"field":"arr","operator":"lt","value":100000}}
+{"input":"show accounts with revenue < 500","output":{"field":"arr","operator":"lt","value":500}}
+{"input":"ARR at most 50k","output":{"field":"arr","operator":"lte","value":50000}}
+{"input":"annual recurring revenue at most 20000","output":{"field":"arr","operator":"lte","value":20000}}
+{"input":"customers with ARR at most 100k","output":{"field":"arr","operator":"lte","value":100000}}
+{"input":"show accounts with revenue at most 500","output":{"field":"arr","operator":"lte","value":500}}
+{"input":"ARR no more than 50k","output":{"field":"arr","operator":"lte","value":50000}}
+{"input":"annual recurring revenue no more than 20000","output":{"field":"arr","operator":"lte","value":20000}}
+{"input":"customers with ARR no more than 100k","output":{"field":"arr","operator":"lte","value":100000}}
+{"input":"show accounts with revenue no more than 500","output":{"field":"arr","operator":"lte","value":500}}
+{"input":"ARR less than or equal to 50k","output":{"field":"arr","operator":"lte","value":50000}}
+{"input":"annual recurring revenue less than or equal to 20000","output":{"field":"arr","operator":"lte","value":20000}}
+{"input":"customers with ARR less than or equal to 100k","output":{"field":"arr","operator":"lte","value":100000}}
+{"input":"show accounts with revenue less than or equal to 500","output":{"field":"arr","operator":"lte","value":500}}
+{"input":"ARR <= 50k","output":{"field":"arr","operator":"lte","value":50000}}
+{"input":"annual recurring revenue <= 20000","output":{"field":"arr","operator":"lte","value":20000}}
+{"input":"customers with ARR <= 100k","output":{"field":"arr","operator":"lte","value":100000}}
+{"input":"show accounts with revenue <= 500","output":{"field":"arr","operator":"lte","value":500}}
+{"input":"ARR exactly 50k","output":{"field":"arr","operator":"eq","value":50000}}
+{"input":"annual recurring revenue exactly 20000","output":{"field":"arr","operator":"eq","value":20000}}
+{"input":"customers with ARR exactly 100k","output":{"field":"arr","operator":"eq","value":100000}}
+{"input":"show accounts with revenue exactly 500","output":{"field":"arr","operator":"eq","value":500}}
+{"input":"ARR equal to 50k","output":{"field":"arr","operator":"eq","value":50000}}
+{"input":"annual recurring revenue equal to 20000","output":{"field":"arr","operator":"eq","value":20000}}
+{"input":"customers with ARR equal to 100k","output":{"field":"arr","operator":"eq","value":100000}}
+{"input":"show accounts with revenue equal to 500","output":{"field":"arr","operator":"eq","value":500}}
+{"input":"ARR = 50k","output":{"field":"arr","operator":"eq","value":50000}}
+{"input":"annual recurring revenue = 20000","output":{"field":"arr","operator":"eq","value":20000}}
+{"input":"customers with ARR = 100k","output":{"field":"arr","operator":"eq","value":100000}}
+{"input":"show accounts with revenue = 500","output":{"field":"arr","operator":"eq","value":500}}

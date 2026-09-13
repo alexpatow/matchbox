@@ -1,0 +1,35 @@
+{
+  "name": "@matchbox-ai/react",
+  "version": "0.0.0",
+  "private": true,
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "rolldown --config && tsc -p tsconfig.build.json",
+    "dev": "bun run --parallel \"dev:*\"",
+    "typecheck": "tsc --noEmit && tsc -p tsconfig.tools.json",
+    "dev:js": "rolldown --config --watch",
+    "dev:types": "tsc -p tsconfig.build.json --watch"
+  },
+  "dependencies": {
+    "@matchbox-ai/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "rolldown": "1.2.8",
+    "typescript": "7.0.2"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0"
+  }
+}
