@@ -1,7 +1,13 @@
 {
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "types": ["bun"]
+    "types": ["bun"],
+    "allowArbitraryExtensions": true
   },
-  "include": ["tests/**/*.ts", "playwright.config.ts", "browser-tests/**/*.ts"]
+  "include": [
+    "tests/**/*.ts",
+    "playwright.config.ts",
+    "browser-tests/**/*.ts",
+    "examples/filters/scripts/**/*.ts"
+  ]
 }

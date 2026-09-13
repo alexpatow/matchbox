@@ -6,7 +6,7 @@ Matchbox is a framework for training tiny, task-specific models from examples an
 
 The idea is **regex++**: use small learned models where fuzzy or contextual input makes pattern matching brittle, but the output is small, rigid, and machine-readable.
 
-**Status:** The repository foundation includes a TypeScript library, a browser-only React example, and build/test tooling. `defineParser` now supports constrained Zod task definitions, validation, and serializable training metadata. `parseDatasets` validates versioned JSONL train/eval sources with typed results and source/line diagnostics. See the [dataset format guide](docs/dataset-format.md). Training commands and generated inference APIs below remain proposals. No training pipeline, model runtime, or benchmark results exist yet.
+**Status:** A working filter proof now connects JSONL examples, two tiny learned baselines, evaluation, generated `.matchbox` imports, and a browser-only React demo. The parser supports explicit status/country/ARR clauses with deterministic validation. This is an experimental toolchain, with substantial language-coverage and model research still open. See the [end-to-end guide](docs/end-to-end.md) and [research findings](docs/filter-research.md).
 
 ## Local development
 
@@ -17,7 +17,7 @@ bun install --frozen-lockfile
 bun run dev
 ```
 
-Open <http://127.0.0.1:5173>. The minimal page imports the built local core package and verifies browser interaction. It does not perform model inference yet.
+Open <http://127.0.0.1:5173>. The demo trains during startup, then loads a generated model and filters fictional customers locally. Try `active customers and Swedish customers and ARR over 50k`.
 
 ```sh
 bun run check

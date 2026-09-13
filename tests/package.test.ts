@@ -6,7 +6,7 @@ const coreDirectory = fileURLToPath(new URL("../packages/core", import.meta.url)
 
 describe("built package contract", () => {
   test("ships the ESM and declaration files advertised by its export map", async () => {
-    for (const target of Object.values(manifest.exports["."])) {
+    for (const target of Object.values(manifest.exports).flatMap((entry) => Object.values(entry))) {
       expect(await Bun.file(`${coreDirectory}/${target}`).exists()).toBe(true);
     }
   });

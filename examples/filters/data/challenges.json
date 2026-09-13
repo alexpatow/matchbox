@@ -1,0 +1,69 @@
+[
+  {
+    "input": "send an email to everyone",
+    "expected": null
+  },
+  {
+    "input": "customers created last July",
+    "expected": null
+  },
+  {
+    "input": "customers Alice owns",
+    "expected": null
+  },
+  {
+    "input": "ARR between 20k and 100k",
+    "expected": null
+  },
+  {
+    "input": "active Swedish customers over 50k ARR",
+    "expected": {
+      "and": [
+        {
+          "field": "status",
+          "operator": "eq",
+          "value": "active"
+        },
+        {
+          "field": "country",
+          "operator": "eq",
+          "value": "SE"
+        },
+        {
+          "field": "arr",
+          "operator": "gt",
+          "value": 50000
+        }
+      ]
+    }
+  },
+  {
+    "input": "Swedish or German customers",
+    "expected": {
+      "or": [
+        {
+          "field": "country",
+          "operator": "eq",
+          "value": "SE"
+        },
+        {
+          "field": "country",
+          "operator": "eq",
+          "value": "DE"
+        }
+      ]
+    }
+  },
+  {
+    "input": "not active customers",
+    "expected": {
+      "field": "status",
+      "operator": "neq",
+      "value": "active"
+    }
+  },
+  {
+    "input": "ARR under -50k",
+    "expected": null
+  }
+]

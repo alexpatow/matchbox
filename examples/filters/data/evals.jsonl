@@ -1,0 +1,32 @@
+{"input":"find active customers","output":{"field":"status","operator":"eq","value":"active"}}
+{"input":"accounts that are active","output":{"field":"status","operator":"eq","value":"active"}}
+{"input":"find inactive customers","output":{"field":"status","operator":"eq","value":"inactive"}}
+{"input":"accounts that are inactive","output":{"field":"status","operator":"eq","value":"inactive"}}
+{"input":"find churned customers","output":{"field":"status","operator":"eq","value":"churned"}}
+{"input":"accounts that are churned","output":{"field":"status","operator":"eq","value":"churned"}}
+{"input":"find not churned customers","output":{"field":"status","operator":"neq","value":"churned"}}
+{"input":"exclude churned companies","output":{"field":"status","operator":"neq","value":"churned"}}
+{"input":"find Swedish customers","output":{"field":"country","operator":"eq","value":"SE"}}
+{"input":"customers based in Sweden","output":{"field":"country","operator":"eq","value":"SE"}}
+{"input":"find German customers","output":{"field":"country","operator":"eq","value":"DE"}}
+{"input":"customers based in Germany","output":{"field":"country","operator":"eq","value":"DE"}}
+{"input":"find American customers","output":{"field":"country","operator":"eq","value":"US"}}
+{"input":"customers based in America","output":{"field":"country","operator":"eq","value":"US"}}
+{"input":"find Norwegian customers","output":{"field":"country","operator":"eq","value":"NO"}}
+{"input":"customers based in Norway","output":{"field":"country","operator":"eq","value":"NO"}}
+{"input":"ARR over €42,000","output":{"field":"arr","operator":"gt","value":42000}}
+{"input":"find accounts with revenue above 0.5m","output":{"field":"arr","operator":"gt","value":500000}}
+{"input":"ARR at least €42,000","output":{"field":"arr","operator":"gte","value":42000}}
+{"input":"find accounts with revenue no less than 0.5m","output":{"field":"arr","operator":"gte","value":500000}}
+{"input":"ARR under €42,000","output":{"field":"arr","operator":"lt","value":42000}}
+{"input":"find accounts with revenue below 0.5m","output":{"field":"arr","operator":"lt","value":500000}}
+{"input":"ARR at most €42,000","output":{"field":"arr","operator":"lte","value":42000}}
+{"input":"find accounts with revenue no more than 0.5m","output":{"field":"arr","operator":"lte","value":500000}}
+{"input":"ARR exactly €42,000","output":{"field":"arr","operator":"eq","value":42000}}
+{"input":"find accounts with revenue equal to 0.5m","output":{"field":"arr","operator":"eq","value":500000}}
+{"input":"find active customers and Swedish customers and ARR over 60000","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"},{"field":"arr","operator":"gt","value":60000}]}}
+{"input":"find active customers and German customers and ARR over 60000","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"},{"field":"arr","operator":"gt","value":60000}]}}
+{"input":"find inactive customers and Swedish customers and ARR over 60000","output":{"and":[{"field":"status","operator":"eq","value":"inactive"},{"field":"country","operator":"eq","value":"SE"},{"field":"arr","operator":"gt","value":60000}]}}
+{"input":"find inactive customers and German customers and ARR over 60000","output":{"and":[{"field":"status","operator":"eq","value":"inactive"},{"field":"country","operator":"eq","value":"DE"},{"field":"arr","operator":"gt","value":60000}]}}
+{"input":"find Swedish customers or German customers and ARR under 60000","output":{"or":[{"field":"country","operator":"eq","value":"SE"},{"and":[{"field":"country","operator":"eq","value":"DE"},{"field":"arr","operator":"lt","value":60000}]}]}}
+{"input":"find Swedish customers and not churned","output":{"and":[{"field":"country","operator":"eq","value":"SE"},{"field":"status","operator":"neq","value":"churned"}]}}
