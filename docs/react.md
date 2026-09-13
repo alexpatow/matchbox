@@ -13,4 +13,4 @@ function Search() {
 }
 ```
 
-The hook exposes loading, ready, and error state. Keep the loader outside the component. React is a peer dependency of this package; core and training do not depend on React. See the [end-to-end guide](../../docs/end-to-end.md).
+The hook exposes loading, ready, and error state. Keep the loader outside the component. React is a peer dependency of this package; core and training do not depend on React. See the [end-to-end guide](end-to-end.md).

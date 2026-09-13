@@ -10,5 +10,11 @@ export async function measure(parser: MatchboxParser<unknown>, input: string) {
     if (result.status === "ok") accepted++;
   }
   timings.sort((a, b) => a - b);
-  return { samples: timings.length, accepted, p50Ms: timings[149]!, p95Ms: timings[284]! };
+  return {
+    inputs: [input],
+    samples: timings.length,
+    accepted,
+    p50Ms: timings[149]!,
+    p95Ms: timings[284]!,
+  };
 }

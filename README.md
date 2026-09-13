@@ -1,10 +1,12 @@
 # Matchbox
 
-**Compile examples into tiny models for the browser.**
+**Build small models that run in the browser.**
 
-Matchbox trains small, task-specific models for fuzzy inputs and strict structured outputs. Its aim is regex++: learned recognition where application heuristics become brittle, followed by ordinary validation and application-owned normalization where needed.
+Matchbox is a TypeScript framework for building small, task-specific models and shipping them inside web applications. Define a task, train from examples, evaluate it, and run the model locally in the browser.
 
-Developers author a parser contract, an explicit training pipeline, examples, and independent evals. Matchbox trains through native TensorFlow, evaluates, packages weights, and exposes a typed browser-local parse API. The current examples demonstrate controlled tasks; they do not establish broad language understanding.
+Small models could predict what to prefetch, prioritize speculative work, classify content, or turn natural language into structured data. Replacing brittle parsing rules is one use case. The current authoring API focuses on parsers, with working filter, money, and parity examples.
+
+For these examples, developers author a parser contract, an explicit training pipeline, examples, and independent evals. Matchbox trains through native TensorFlow, evaluates, packages weights, and exposes a typed browser-local parse API. The current examples demonstrate controlled tasks; they do not establish broad language understanding.
 
 ## Start locally
 

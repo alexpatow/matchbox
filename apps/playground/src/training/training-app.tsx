@@ -1,16 +1,10 @@
+import { SiteHeader, SiteFooter } from "@/site";
 import { ModelExample } from "./model-example.js";
 import { loadMoney, loadParity, loadSimpleMoney } from "./load-examples.js";
 export function TrainingApp() {
   return (
     <main className="workspace">
-      <header className="masthead">
-        <a className="wordmark" href="/">
-          Matchbox<span aria-hidden="true">.</span>
-        </a>
-        <a className="caption" href="/">
-          Try customer filters
-        </a>
-      </header>
+      <SiteHeader />
       <section className="introduction">
         <p className="eyebrow">Examples become weights. Weights become software.</p>
         <h1>
@@ -19,8 +13,8 @@ export function TrainingApp() {
           learned from examples.
         </h1>
         <p className="description">
-          These models learned with TensorFlow.js during the build. Their exported weights run here
-          in plain JavaScript.
+          These models learned with TensorFlow.js during the build. Their exported models run here
+          through TensorFlow.js CPU.
         </p>
       </section>
       <ModelExample
@@ -49,15 +43,7 @@ export function TrainingApp() {
         suggestions={["12345678901234567890", "10001", "42"]}
         load={loadParity}
       />
-      <footer>
-        <p>
-          These are small, controlled evaluations. Unknown words cause abstention. All inference
-          stays on this device.
-        </p>
-        <a href="https://www.fluidfunctionalism.com/docs/button">
-          The controls use Fluid Functionalism.
-        </a>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }

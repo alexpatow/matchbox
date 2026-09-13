@@ -1,0 +1,138 @@
+.hero {
+  overflow: clip;
+  position: relative;
+  isolation: isolate;
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  padding-bottom: 44px;
+}
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  width: 650px;
+  padding: 60px 0;
+  pointer-events: none;
+}
+.hero-copy a {
+  pointer-events: auto;
+}
+.hero h1 {
+  font-size: clamp(48px, 5.2vw, 72px);
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: -0.058em;
+}
+.hero h1 span {
+  color: #a2a2a2;
+}
+.hero-description {
+  color: #999;
+  font-size: 18px;
+  line-height: 1.65;
+  margin: 26px 0 30px;
+}
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  font-size: 13px;
+}
+.hero-actions > a:last-child {
+  color: #b1b1b1;
+  text-decoration: none;
+}
+.matchbox-art {
+  position: absolute;
+  z-index: 0;
+  right: -130px;
+  top: 0;
+  width: 780px;
+  height: 590px;
+  pointer-events: none;
+}
+.matchbox-art svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.matchbox-object {
+  transform-origin: 420px 270px;
+  animation: settle 1.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes settle {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 21px 0;
+  border-top: 1px solid #232323;
+  border-bottom: 1px solid #232323;
+  color: #797979;
+  font-size: 12px;
+}
+.hero-bottom code {
+  color: #a0a0a0;
+  font-size: 11px;
+}
+@media (max-width: 1000px) {
+  .hero h1 {
+    font-size: 58px;
+  }
+  .matchbox-art {
+    right: -85px;
+    width: 630px;
+    opacity: 0.75;
+  }
+  .hero-copy {
+    width: 520px;
+  }
+}
+@media (max-width: 700px) {
+  .hero {
+    min-height: 720px;
+    align-items: flex-start;
+  }
+  .hero-copy {
+    width: 100%;
+    padding-top: 60px;
+  }
+  .hero h1 {
+    font-size: clamp(43px, 8.5vw, 58px);
+  }
+  .hero-description {
+    font-size: 16px;
+  }
+  .matchbox-art {
+    top: 290px;
+    right: -35px;
+    width: 540px;
+    height: 390px;
+    opacity: 1;
+  }
+  .hero-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+@media (max-width: 400px) {
+  .matchbox-art {
+    width: 430px;
+    top: 310px;
+    right: -25px;
+  }
+}

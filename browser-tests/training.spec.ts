@@ -26,12 +26,10 @@ test("trained money and parity artifacts run offline with measured browser laten
   await expect(page.getByLabel("is-even output")).toContainText('"even": false');
   const timings: Record<string, unknown> = {};
   for (const name of ["money", "is-even", "money-simple"]) {
-    const section = page.locator(`#${name}`).locator("..");
-    await section.getByText("Inspect training and browser timing", { exact: true }).click();
     await page.getByRole("button", { name: `Measure ${name}`, exact: true }).click();
     const output = page.getByTestId(`${name}-timing`);
     await expect(output).toBeVisible();
-    const result = JSON.parse((await output.textContent())!);
+    const result = JSON.parse((await output.getAttribute("data-report"))!);
     expect(result.samples).toBe(300);
     expect(result.accepted).toBe(300);
     expect(result.p95Ms).toBeLessThan(50);
