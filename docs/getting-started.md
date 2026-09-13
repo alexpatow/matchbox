@@ -1,6 +1,6 @@
 # Getting started
 
-Train a small parser from examples, check it against independent evals, and import it into a browser application.
+Matchbox is a TypeScript framework for building small models that run in the browser. This guide walks through the current parser workflow: train from examples, check independent evals, and import the model into your application.
 
 ## Run the working examples
 

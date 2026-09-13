@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 
 test("the framework story leads into working documentation", async ({ page }, testInfo) => {
   await page.goto("/");
-  await expect(page.getByRole("heading", { level: 1 })).toContainText("Compile examples");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("Build small models");
   await expect(page.getByRole("link", { name: "@shuding" })).toHaveAttribute(
     "href",
     "https://x.com/shuding",

@@ -6,14 +6,14 @@ export function Hero() {
       <MatchboxArt />
       <div className="hero-copy">
         <h1 id="title">
-          Compile examples.
+          Build small models
           <br />
-          <span>Ship tiny models.</span>
+          <span>for the browser.</span>
         </h1>
         <p className="hero-description">
-          Turn fuzzy input into typed output.
+          Train from examples. Evaluate. Ship.
           <br />
-          Train in TypeScript. Run right in the browser.
+          A TypeScript framework for models that run inside your app.
         </p>
         <div className="hero-actions">
           <Link className="action-link" to="/docs/getting-started">
