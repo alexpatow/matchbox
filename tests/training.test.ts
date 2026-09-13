@@ -24,8 +24,8 @@ test("packaging is deterministic, held-out labels do not select the model, and f
     minAccuracy: 0.95,
     maxBytes: 64000,
   };
-  async function train() {
-    const child = Bun.spawn(["bun", "packages/train/dist/cli.js", "train", configPath], {
+  async function train(command: "train" | "eval" = "train") {
+    const child = Bun.spawn(["bun", "packages/train/dist/cli.js", command, configPath], {
       stdout: "pipe",
       stderr: "pipe",
     });
@@ -42,6 +42,14 @@ test("packaging is deterministic, held-out labels do not select the model, and f
     await writeFile(configPath, `export default ${JSON.stringify(config)};`);
     expect((await train()).code).toBe(0);
     const original = await readFile(output, "utf8");
+    await writeFile(
+      configPath,
+      `export default ${JSON.stringify({ ...config, sequence: { ...config.sequence, decoder: "./missing-decoder.ts" } })};`,
+    );
+    const evaluated = await train("eval");
+    expect(evaluated.code).toBe(0);
+    expect(JSON.parse(evaluated.stdout).exactAccuracy).toBe(1);
+    await writeFile(configPath, `export default ${JSON.stringify(config)};`);
     const changed = evaluation
       .trim()
       .split("\n")

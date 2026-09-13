@@ -21,18 +21,22 @@ export async function runSequence(
   const { task, config } = project;
   const root = dirname(resolve(configPath));
   const sequence = config.sequence!;
-  const decode: SequenceDecoder = (
-    await import(pathToFileURL(resolve(root, sequence.decoder)).href)
-  ).default;
+  const savedArtifact =
+    command === "eval"
+      ? readSequenceArtifact(JSON.parse(await readFile(project.output, "utf8")))
+      : null;
+  const decoderPath = savedArtifact
+    ? resolve(dirname(project.output), savedArtifact.decoderModule)
+    : resolve(root, sequence.decoder);
+  const decode: SequenceDecoder = (await import(pathToFileURL(decoderPath).href)).default;
   const evaluateSequence = (
     parser: MatchboxParser<unknown>,
     examples: readonly DatasetExample<unknown>[],
   ) => evaluate(parser, examples, (value) => task.validateOutput(value).success);
   const parser = (artifact: unknown) => createSequenceParser(artifact, task, decode);
-  if (command === "eval") {
-    const artifact = readSequenceArtifact(JSON.parse(await readFile(project.output, "utf8")));
+  if (savedArtifact) {
     console.log(
-      JSON.stringify(await evaluateSequence(parser(artifact), project.evaluation), null, 2),
+      JSON.stringify(await evaluateSequence(parser(savedArtifact), project.evaluation), null, 2),
     );
     return;
   }

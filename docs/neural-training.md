@@ -21,7 +21,7 @@ bun run matchbox train examples/money/matchbox.config.ts
 bun run matchbox eval examples/money/matchbox.config.ts
 ```
 
-`train` reads committed JSONL. To regenerate the synthetic training data explicitly, run `bun examples/is-even/generate.ts` or `bun examples/money/generate.ts`. The money generator does not overwrite the separately authored validation and evaluation files. Both generators are TypeScript and run locally. No teacher service, separate Python training stack, pretrained model, or GPU is needed. The training package installs TensorFlow’s native CPU binding through `@tensorflow/tfjs-node`; its install script is explicitly trusted by Bun.
+`train` reads committed JSONL. To regenerate the synthetic training data explicitly, run `bun examples/is-even/generate.ts` or `bun examples/money/generate.ts`. Both generators preserve the committed validation and evaluation files. Both generators are TypeScript and run locally. No teacher service, separate Python training stack, pretrained model, or GPU is needed. The training package installs TensorFlow’s native CPU binding through `@tensorflow/tfjs-node`; its install script is explicitly trusted by Bun.
 
 ## Native training backend
 
