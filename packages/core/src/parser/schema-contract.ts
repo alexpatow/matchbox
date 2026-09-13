@@ -65,6 +65,11 @@ export function checkSchema(
     case "nullable":
       visit(def.innerType, "nullable");
       return;
+    case "default":
+      if (!optionalProperty || def.innerType._zod.def.type !== "boolean")
+        throw new TypeError(`${path}: defaults currently support boolean object properties.`);
+      visit(def.innerType, "default");
+      return;
     case "optional":
       if (!optionalProperty)
         throw new TypeError(`${path}: optional is only supported directly on object properties.`);
@@ -88,11 +93,12 @@ export function checkStructuredRoot(schema: z.core.$ZodType, path = "output"): v
 }
 
 export function schemaMetadata(schema: z.ZodType): z.core.JSONSchema.BaseSchema {
-  return z.toJSONSchema(schema, {
+  const result = z.toJSONSchema(schema, {
     target: "draft-2020-12",
     cycles: "throw",
     unrepresentable: "throw",
     // User metadata must not override validation keywords or inject functions into the artifact.
     metadata: z.registry(),
   });
+  return result;
 }

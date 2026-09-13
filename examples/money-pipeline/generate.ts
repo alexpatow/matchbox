@@ -103,7 +103,7 @@ for (const [code, symbol, name] of currencies) {
         code,
       );
 }
-const root = new URL("./data/", import.meta.url);
+const root = new URL("./parser/data/", import.meta.url);
 await mkdir(root, { recursive: true });
 await writeFile(
   new URL("train.jsonl", root),

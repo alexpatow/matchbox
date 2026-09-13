@@ -25,7 +25,7 @@
     "research": "bun run train && bun examples/filters/scripts/challenges.ts",
     "build:packages": "bun run build:core && bun run --filter @matchbox-ai/react build && bun run --filter @matchbox-ai/train build",
     "train:filters": "bun run matchbox train examples/filters/matchbox.config.ts",
-    "train:neural": "bun run matchbox train examples/is-even/matchbox.config.ts && bun run matchbox train examples/money/matchbox.config.ts",
+    "train:neural": "bun run matchbox train examples/is-even/matchbox.config.ts && bun run matchbox train examples/money-pipeline/matchbox.config.ts && bun run matchbox train examples/money-simple",
     "check:prepared": "tsc --noEmit && bun run --filter \"*\" typecheck && bun test ./tests && bun run --filter \"*\" build"
   },
   "devDependencies": {

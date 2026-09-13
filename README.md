@@ -368,3 +368,7 @@ Matchbox is not a general LLM framework, agent framework, hosted inference API, 
 **Architecture is an implementation detail.** Developers define problems, not neural networks.
 
 **No AI theater.** If a regex is better, use the regex.
+
+## Try the local workflow
+
+The [CLI guide](docs/cli.md) covers initialization, training, evaluation, interactive parsing, and corrections. [Two money examples](examples/README.md) show the difference between learning structured values directly and authoring an explicit recognition/normalization pipeline. Both appear in the browser demo at `/training`.

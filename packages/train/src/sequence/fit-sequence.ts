@@ -10,6 +10,7 @@ export async function fitSequence(
   metadata: Pick<SequenceArtifact, "taskModule" | "taskMetadata" | "decoderModule">,
   probes: readonly string[] = [],
   shuffleLabels = false,
+  progress?: (epoch: number, loss: number) => void,
 ) {
   await tf.setBackend("tensorflow");
   await tf.ready();
@@ -86,8 +87,7 @@ export async function fitSequence(
       callbacks: {
         onEpochEnd(epoch, logs) {
           history.push(Number(logs?.loss));
-          if (epoch % 10 === 0)
-            console.log(`Epoch ${epoch + 1}: loss ${Number(logs?.loss).toFixed(4)}`);
+          progress?.(epoch + 1, Number(logs?.loss));
         },
       },
     });

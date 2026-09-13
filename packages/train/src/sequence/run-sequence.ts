@@ -16,11 +16,12 @@ const hash = (value: string) => createHash("sha256").update(value).digest("hex")
 export async function runSequence(
   command: "train" | "eval",
   project: Awaited<ReturnType<typeof loadProject>>,
-  configPath: string,
+  progress?: (epoch: number, loss: number) => void,
 ) {
   const { task, config } = project;
-  const root = dirname(resolve(configPath));
-  const sequence = config.sequence!;
+  const root = project.root;
+  const sequence = config.sequence;
+  if (!sequence) throw new Error("A sequence pipeline needs both recipe and decoder modules.");
   const savedArtifact =
     command === "eval"
       ? readSequenceArtifact(JSON.parse(await readFile(project.output, "utf8")))
@@ -35,10 +36,7 @@ export async function runSequence(
   ) => evaluate(parser, examples, (value) => task.validateOutput(value).success);
   const parser = (artifact: unknown) => createSequenceParser(artifact, task, decode);
   if (savedArtifact) {
-    console.log(
-      JSON.stringify(await evaluateSequence(parser(savedArtifact), project.evaluation), null, 2),
-    );
-    return;
+    return { evaluation: await evaluateSequence(parser(savedArtifact), project.evaluation) };
   }
   const recipe: SequenceRecipe = (await import(pathToFileURL(resolve(root, sequence.recipe)).href))
     .default;
@@ -68,6 +66,8 @@ export async function runSequence(
       decoderModule: modulePath(resolve(root, sequence.decoder)),
     },
     project.validation.map((row) => row.input),
+    false,
+    progress,
   );
   const validation = await evaluateSequence(parser(fit.quantized), project.validation);
   const bytes = Buffer.byteLength(JSON.stringify(fit.quantized));
@@ -120,13 +120,13 @@ export async function runSequence(
     float: await evaluateSequence(parser(fit.float), project.evaluation),
     quantized: await evaluateSequence(parser(fit.quantized), project.evaluation),
     challenges: challenges ? await evaluateSequence(parser(fit.quantized), challenges) : null,
-    baseline: await evaluateSequence(project.baseline, project.evaluation),
+    baseline: project.baseline
+      ? await evaluateSequence(project.baseline, project.evaluation)
+      : null,
     trainingMs: performance.now() - started,
     notes:
       "Validation gates export. Eval labels do not influence selection. Scores are uncalibrated. Unknown tokens abstain. JSON int8 arrays are portable but not a packed binary format.",
   };
   await packageModel(project.output, fit.quantized, report);
-  console.log(
-    `${fit.quantized.architecture}: ${report.parameters} parameters, ${bytes} bytes, eval ${(report.quantized.exactAccuracy * 100).toFixed(1)}%, untrained ${(report.untrained.exactAccuracy * 100).toFixed(1)}%.`,
-  );
+  return { report, output: project.output };
 }

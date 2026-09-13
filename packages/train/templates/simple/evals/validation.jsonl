@@ -1,0 +1,20 @@
+{"input":"we paid a price of fifteen dollars","output":{"amount":15,"currency":"USD","approximate":false}}
+{"input":"we paid a price of fifteen euros","output":{"amount":15,"currency":"EUR","approximate":false}}
+{"input":"we paid a price of fifteen pounds","output":{"amount":15,"currency":"GBP","approximate":false}}
+{"input":"we paid a price of fifteen kronor","output":{"amount":15,"currency":"SEK","approximate":false}}
+{"input":"we paid a price of twenty dollars","output":{"amount":20,"currency":"USD","approximate":false}}
+{"input":"we paid a price of twenty euros","output":{"amount":20,"currency":"EUR","approximate":false}}
+{"input":"we paid a price of twenty pounds","output":{"amount":20,"currency":"GBP","approximate":false}}
+{"input":"we paid a price of twenty kronor","output":{"amount":20,"currency":"SEK","approximate":false}}
+{"input":"we paid a price of fifty dollars","output":{"amount":50,"currency":"USD","approximate":false}}
+{"input":"we paid a price of fifty euros","output":{"amount":50,"currency":"EUR","approximate":false}}
+{"input":"we paid a price of fifty pounds","output":{"amount":50,"currency":"GBP","approximate":false}}
+{"input":"we paid a price of fifty kronor","output":{"amount":50,"currency":"SEK","approximate":false}}
+{"input":"we paid a price of fifteen grand dollars","output":{"amount":15000,"currency":"USD","approximate":false}}
+{"input":"we paid a price of fifteen grand euros","output":{"amount":15000,"currency":"EUR","approximate":false}}
+{"input":"we paid a price of fifteen grand pounds","output":{"amount":15000,"currency":"GBP","approximate":false}}
+{"input":"we paid a price of fifteen grand kronor","output":{"amount":15000,"currency":"SEK","approximate":false}}
+{"input":"we paid a price of twenty grand dollars","output":{"amount":20000,"currency":"USD","approximate":false}}
+{"input":"we paid a price of twenty grand euros","output":{"amount":20000,"currency":"EUR","approximate":false}}
+{"input":"we paid a price of twenty grand pounds","output":{"amount":20000,"currency":"GBP","approximate":false}}
+{"input":"we paid a price of twenty grand kronor","output":{"amount":20000,"currency":"SEK","approximate":false}}

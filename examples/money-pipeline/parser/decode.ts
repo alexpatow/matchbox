@@ -1,5 +1,5 @@
 import type { SequenceDecoder } from "@matchbox-ai/core/runtime";
-import { normalizeNumber } from "./normalization/index.js";
+import { normalizeNumber } from "./lib/index.js";
 const decode: SequenceDecoder = (tokens, input) => {
   const amounts = tokens.filter((token) => token.label === "AMOUNT");
   if (!amounts.length) return null;
