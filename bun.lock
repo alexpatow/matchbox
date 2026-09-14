@@ -99,7 +99,7 @@
     },
     "packages/cli": {
       "name": "matchbox-ai",
-      "version": "0.0.0",
+      "version": "0.1.0",
       "bin": {
         "matchbox-ai": "./dist/cli.js",
       },
@@ -127,7 +127,7 @@
     },
     "packages/core": {
       "name": "@matchbox-ai/core",
-      "version": "0.0.0",
+      "version": "0.1.0",
       "dependencies": {
         "@tensorflow/tfjs-backend-cpu": "4.22.0",
         "@tensorflow/tfjs-core": "4.22.0",
@@ -149,7 +149,7 @@
     },
     "packages/train": {
       "name": "@matchbox-ai/train",
-      "version": "0.0.0",
+      "version": "0.1.0",
       "dependencies": {
         "@tensorflow/tfjs-node": "4.22.0",
         "zod": "4.6.3",
