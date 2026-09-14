@@ -1,10 +1,14 @@
 import type { SequenceRecipe } from "@matchbox-ai/train";
+import rejections from "./data/train-rejections.json";
 import annotations from "./data/train-spans.json";
 const spans: Record<string, string[]> = annotations;
 const recipe: SequenceRecipe = {
+  tokenDropout: 0.01,
+  rejections,
   tokenizer: "words",
   readout: "all",
   labels: [
+    "REJECT",
     "O",
     "DURATION",
     "RELATIVE",

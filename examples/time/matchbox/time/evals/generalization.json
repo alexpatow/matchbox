@@ -1,0 +1,146 @@
+[
+  {
+    "slice": "composition",
+    "input": "in 8 minutes and 40 seconds please",
+    "output": {
+      "kind": "relative",
+      "seconds": 520
+    }
+  },
+  {
+    "slice": "composition",
+    "input": "for 3 minutes and 12 seconds",
+    "output": {
+      "kind": "duration",
+      "seconds": 192
+    }
+  },
+  {
+    "slice": "composition",
+    "input": "in two days and four hours",
+    "output": {
+      "kind": "relative",
+      "seconds": 187200
+    }
+  },
+  {
+    "slice": "composition",
+    "input": "please remind me in thirteen minutes",
+    "output": {
+      "kind": "relative",
+      "seconds": 780
+    }
+  },
+  {
+    "slice": "composition",
+    "input": "set a timer for eleven minutes and 9 seconds",
+    "output": {
+      "kind": "duration",
+      "seconds": 669
+    }
+  },
+  {
+    "slice": "composition",
+    "input": "please schedule today at 8:42 pm",
+    "output": {
+      "kind": "datetime",
+      "dayOffset": 0,
+      "hour": 20,
+      "minute": 42
+    }
+  },
+  {
+    "slice": "composition",
+    "input": "a reminder in 4 hours and 23 minutes",
+    "output": {
+      "kind": "relative",
+      "seconds": 15780
+    }
+  },
+  {
+    "slice": "composition",
+    "input": "tomorrow at 19:17 please?",
+    "output": {
+      "kind": "datetime",
+      "dayOffset": 1,
+      "hour": 19,
+      "minute": 17
+    }
+  },
+  {
+    "slice": "unfamiliar-context",
+    "input": "could you remind me in 28 minutes",
+    "output": {
+      "kind": "relative",
+      "seconds": 1680
+    }
+  },
+  {
+    "slice": "unfamiliar-context",
+    "input": "start the timer for 43 seconds",
+    "output": {
+      "kind": "duration",
+      "seconds": 43
+    }
+  },
+  {
+    "slice": "unfamiliar-context",
+    "input": "the meeting is tomorrow at 8 pm",
+    "output": {
+      "kind": "datetime",
+      "dayOffset": 1,
+      "hour": 20,
+      "minute": 0
+    }
+  },
+  {
+    "slice": "unfamiliar-context",
+    "input": "we will meet today at 14:26",
+    "output": {
+      "kind": "datetime",
+      "dayOffset": 0,
+      "hour": 14,
+      "minute": 26
+    }
+  },
+  {
+    "slice": "negation",
+    "input": "never remind me in 28 minutes",
+    "output": null
+  },
+  {
+    "slice": "past",
+    "input": "eleven minutes ago",
+    "output": null
+  },
+  {
+    "slice": "ambiguous",
+    "input": "set a timer for 4 minutes or 13 minutes",
+    "output": null
+  },
+  {
+    "slice": "ambiguous",
+    "input": "today at 2 pm or tomorrow at 8 pm",
+    "output": null
+  },
+  {
+    "slice": "unsupported",
+    "input": "in 14 business days",
+    "output": null
+  },
+  {
+    "slice": "unsupported",
+    "input": "tomorrow afternoon",
+    "output": null
+  },
+  {
+    "slice": "invalid-clock",
+    "input": "schedule today at 18:65",
+    "output": null
+  },
+  {
+    "slice": "unsupported",
+    "input": "in negative seven minutes",
+    "output": null
+  }
+]

@@ -1,0 +1,8174 @@
+[
+  {
+    "input": "not € 12.50",
+    "output": null
+  },
+  {
+    "input": "never € 12.50",
+    "output": null
+  },
+  {
+    "input": "without € 12.50",
+    "output": null
+  },
+  {
+    "input": "under € 12.50",
+    "output": null
+  },
+  {
+    "input": "over € 12.50",
+    "output": null
+  },
+  {
+    "input": "not we paid 12.50 EUR",
+    "output": null
+  },
+  {
+    "input": "never we paid 12.50 EUR",
+    "output": null
+  },
+  {
+    "input": "without we paid 12.50 EUR",
+    "output": null
+  },
+  {
+    "input": "under we paid 12.50 EUR",
+    "output": null
+  },
+  {
+    "input": "over we paid 12.50 EUR",
+    "output": null
+  },
+  {
+    "input": "not a price of roughly 12.50 euros",
+    "output": null
+  },
+  {
+    "input": "never a price of roughly 12.50 euros",
+    "output": null
+  },
+  {
+    "input": "without a price of roughly 12.50 euros",
+    "output": null
+  },
+  {
+    "input": "under a price of roughly 12.50 euros",
+    "output": null
+  },
+  {
+    "input": "over a price of roughly 12.50 euros",
+    "output": null
+  },
+  {
+    "input": "not about 7 euros",
+    "output": null
+  },
+  {
+    "input": "never about 7 euros",
+    "output": null
+  },
+  {
+    "input": "without about 7 euros",
+    "output": null
+  },
+  {
+    "input": "under about 7 euros",
+    "output": null
+  },
+  {
+    "input": "over about 7 euros",
+    "output": null
+  },
+  {
+    "input": "not the budget is 7 thousand euros",
+    "output": null
+  },
+  {
+    "input": "never the budget is 7 thousand euros",
+    "output": null
+  },
+  {
+    "input": "without the budget is 7 thousand euros",
+    "output": null
+  },
+  {
+    "input": "under the budget is 7 thousand euros",
+    "output": null
+  },
+  {
+    "input": "over the budget is 7 thousand euros",
+    "output": null
+  },
+  {
+    "input": "not 35 euros",
+    "output": null
+  },
+  {
+    "input": "never 35 euros",
+    "output": null
+  },
+  {
+    "input": "without 35 euros",
+    "output": null
+  },
+  {
+    "input": "under 35 euros",
+    "output": null
+  },
+  {
+    "input": "over 35 euros",
+    "output": null
+  },
+  {
+    "input": "not invoice 2048 totals € 35",
+    "output": null
+  },
+  {
+    "input": "never invoice 2048 totals € 35",
+    "output": null
+  },
+  {
+    "input": "without invoice 2048 totals € 35",
+    "output": null
+  },
+  {
+    "input": "under invoice 2048 totals € 35",
+    "output": null
+  },
+  {
+    "input": "over invoice 2048 totals € 35",
+    "output": null
+  },
+  {
+    "input": "not the budget is 35 million euros",
+    "output": null
+  },
+  {
+    "input": "never the budget is 35 million euros",
+    "output": null
+  },
+  {
+    "input": "without the budget is 35 million euros",
+    "output": null
+  },
+  {
+    "input": "under the budget is 35 million euros",
+    "output": null
+  },
+  {
+    "input": "over the budget is 35 million euros",
+    "output": null
+  },
+  {
+    "input": "not we paid EUR 250",
+    "output": null
+  },
+  {
+    "input": "never we paid EUR 250",
+    "output": null
+  },
+  {
+    "input": "without we paid EUR 250",
+    "output": null
+  },
+  {
+    "input": "under we paid EUR 250",
+    "output": null
+  },
+  {
+    "input": "over we paid EUR 250",
+    "output": null
+  },
+  {
+    "input": "not around 250 grand in euros",
+    "output": null
+  },
+  {
+    "input": "never around 250 grand in euros",
+    "output": null
+  },
+  {
+    "input": "without around 250 grand in euros",
+    "output": null
+  },
+  {
+    "input": "under around 250 grand in euros",
+    "output": null
+  },
+  {
+    "input": "over around 250 grand in euros",
+    "output": null
+  },
+  {
+    "input": "not send 1,200 euros to Maja",
+    "output": null
+  },
+  {
+    "input": "never send 1,200 euros to Maja",
+    "output": null
+  },
+  {
+    "input": "without send 1,200 euros to Maja",
+    "output": null
+  },
+  {
+    "input": "under send 1,200 euros to Maja",
+    "output": null
+  },
+  {
+    "input": "over send 1,200 euros to Maja",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid 1,200 euros",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid 1,200 euros",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid 1,200 euros",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid 1,200 euros",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid 1,200 euros",
+    "output": null
+  },
+  {
+    "input": "not a price of 1,200 euros",
+    "output": null
+  },
+  {
+    "input": "never a price of 1,200 euros",
+    "output": null
+  },
+  {
+    "input": "without a price of 1,200 euros",
+    "output": null
+  },
+  {
+    "input": "under a price of 1,200 euros",
+    "output": null
+  },
+  {
+    "input": "over a price of 1,200 euros",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid EUR one",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid EUR one",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid EUR one",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid EUR one",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid EUR one",
+    "output": null
+  },
+  {
+    "input": "not roughly EUR one million",
+    "output": null
+  },
+  {
+    "input": "never roughly EUR one million",
+    "output": null
+  },
+  {
+    "input": "without roughly EUR one million",
+    "output": null
+  },
+  {
+    "input": "under roughly EUR one million",
+    "output": null
+  },
+  {
+    "input": "over roughly EUR one million",
+    "output": null
+  },
+  {
+    "input": "not Oskar paid two euros yesterday",
+    "output": null
+  },
+  {
+    "input": "never Oskar paid two euros yesterday",
+    "output": null
+  },
+  {
+    "input": "without Oskar paid two euros yesterday",
+    "output": null
+  },
+  {
+    "input": "under Oskar paid two euros yesterday",
+    "output": null
+  },
+  {
+    "input": "over Oskar paid two euros yesterday",
+    "output": null
+  },
+  {
+    "input": "not two euros for order 1234",
+    "output": null
+  },
+  {
+    "input": "never two euros for order 1234",
+    "output": null
+  },
+  {
+    "input": "without two euros for order 1234",
+    "output": null
+  },
+  {
+    "input": "under two euros for order 1234",
+    "output": null
+  },
+  {
+    "input": "over two euros for order 1234",
+    "output": null
+  },
+  {
+    "input": "not € three",
+    "output": null
+  },
+  {
+    "input": "never € three",
+    "output": null
+  },
+  {
+    "input": "without € three",
+    "output": null
+  },
+  {
+    "input": "under € three",
+    "output": null
+  },
+  {
+    "input": "over € three",
+    "output": null
+  },
+  {
+    "input": "not we paid three EUR",
+    "output": null
+  },
+  {
+    "input": "never we paid three EUR",
+    "output": null
+  },
+  {
+    "input": "without we paid three EUR",
+    "output": null
+  },
+  {
+    "input": "under we paid three EUR",
+    "output": null
+  },
+  {
+    "input": "over we paid three EUR",
+    "output": null
+  },
+  {
+    "input": "not a price of roughly three euros",
+    "output": null
+  },
+  {
+    "input": "never a price of roughly three euros",
+    "output": null
+  },
+  {
+    "input": "without a price of roughly three euros",
+    "output": null
+  },
+  {
+    "input": "under a price of roughly three euros",
+    "output": null
+  },
+  {
+    "input": "over a price of roughly three euros",
+    "output": null
+  },
+  {
+    "input": "not about four euros",
+    "output": null
+  },
+  {
+    "input": "never about four euros",
+    "output": null
+  },
+  {
+    "input": "without about four euros",
+    "output": null
+  },
+  {
+    "input": "under about four euros",
+    "output": null
+  },
+  {
+    "input": "over about four euros",
+    "output": null
+  },
+  {
+    "input": "not the budget is four thousand euros",
+    "output": null
+  },
+  {
+    "input": "never the budget is four thousand euros",
+    "output": null
+  },
+  {
+    "input": "without the budget is four thousand euros",
+    "output": null
+  },
+  {
+    "input": "under the budget is four thousand euros",
+    "output": null
+  },
+  {
+    "input": "over the budget is four thousand euros",
+    "output": null
+  },
+  {
+    "input": "not five euros",
+    "output": null
+  },
+  {
+    "input": "never five euros",
+    "output": null
+  },
+  {
+    "input": "without five euros",
+    "output": null
+  },
+  {
+    "input": "under five euros",
+    "output": null
+  },
+  {
+    "input": "over five euros",
+    "output": null
+  },
+  {
+    "input": "not invoice 2048 totals € five",
+    "output": null
+  },
+  {
+    "input": "never invoice 2048 totals € five",
+    "output": null
+  },
+  {
+    "input": "without invoice 2048 totals € five",
+    "output": null
+  },
+  {
+    "input": "under invoice 2048 totals € five",
+    "output": null
+  },
+  {
+    "input": "over invoice 2048 totals € five",
+    "output": null
+  },
+  {
+    "input": "not the budget is five million euros",
+    "output": null
+  },
+  {
+    "input": "never the budget is five million euros",
+    "output": null
+  },
+  {
+    "input": "without the budget is five million euros",
+    "output": null
+  },
+  {
+    "input": "under the budget is five million euros",
+    "output": null
+  },
+  {
+    "input": "over the budget is five million euros",
+    "output": null
+  },
+  {
+    "input": "not we paid EUR six",
+    "output": null
+  },
+  {
+    "input": "never we paid EUR six",
+    "output": null
+  },
+  {
+    "input": "without we paid EUR six",
+    "output": null
+  },
+  {
+    "input": "under we paid EUR six",
+    "output": null
+  },
+  {
+    "input": "over we paid EUR six",
+    "output": null
+  },
+  {
+    "input": "not around six grand in euros",
+    "output": null
+  },
+  {
+    "input": "never around six grand in euros",
+    "output": null
+  },
+  {
+    "input": "without around six grand in euros",
+    "output": null
+  },
+  {
+    "input": "under around six grand in euros",
+    "output": null
+  },
+  {
+    "input": "over around six grand in euros",
+    "output": null
+  },
+  {
+    "input": "not send seven euros to Maja",
+    "output": null
+  },
+  {
+    "input": "never send seven euros to Maja",
+    "output": null
+  },
+  {
+    "input": "without send seven euros to Maja",
+    "output": null
+  },
+  {
+    "input": "under send seven euros to Maja",
+    "output": null
+  },
+  {
+    "input": "over send seven euros to Maja",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid seven euros",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid seven euros",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid seven euros",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid seven euros",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid seven euros",
+    "output": null
+  },
+  {
+    "input": "not a price of seven euros",
+    "output": null
+  },
+  {
+    "input": "never a price of seven euros",
+    "output": null
+  },
+  {
+    "input": "without a price of seven euros",
+    "output": null
+  },
+  {
+    "input": "under a price of seven euros",
+    "output": null
+  },
+  {
+    "input": "over a price of seven euros",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid EUR eight",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid EUR eight",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid EUR eight",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid EUR eight",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid EUR eight",
+    "output": null
+  },
+  {
+    "input": "not roughly EUR eight million",
+    "output": null
+  },
+  {
+    "input": "never roughly EUR eight million",
+    "output": null
+  },
+  {
+    "input": "without roughly EUR eight million",
+    "output": null
+  },
+  {
+    "input": "under roughly EUR eight million",
+    "output": null
+  },
+  {
+    "input": "over roughly EUR eight million",
+    "output": null
+  },
+  {
+    "input": "not Oskar paid nine euros yesterday",
+    "output": null
+  },
+  {
+    "input": "never Oskar paid nine euros yesterday",
+    "output": null
+  },
+  {
+    "input": "without Oskar paid nine euros yesterday",
+    "output": null
+  },
+  {
+    "input": "under Oskar paid nine euros yesterday",
+    "output": null
+  },
+  {
+    "input": "over Oskar paid nine euros yesterday",
+    "output": null
+  },
+  {
+    "input": "not nine euros for order 1234",
+    "output": null
+  },
+  {
+    "input": "never nine euros for order 1234",
+    "output": null
+  },
+  {
+    "input": "without nine euros for order 1234",
+    "output": null
+  },
+  {
+    "input": "under nine euros for order 1234",
+    "output": null
+  },
+  {
+    "input": "over nine euros for order 1234",
+    "output": null
+  },
+  {
+    "input": "not € ten",
+    "output": null
+  },
+  {
+    "input": "never € ten",
+    "output": null
+  },
+  {
+    "input": "without € ten",
+    "output": null
+  },
+  {
+    "input": "under € ten",
+    "output": null
+  },
+  {
+    "input": "over € ten",
+    "output": null
+  },
+  {
+    "input": "not we paid ten EUR",
+    "output": null
+  },
+  {
+    "input": "never we paid ten EUR",
+    "output": null
+  },
+  {
+    "input": "without we paid ten EUR",
+    "output": null
+  },
+  {
+    "input": "under we paid ten EUR",
+    "output": null
+  },
+  {
+    "input": "over we paid ten EUR",
+    "output": null
+  },
+  {
+    "input": "not a price of roughly ten euros",
+    "output": null
+  },
+  {
+    "input": "never a price of roughly ten euros",
+    "output": null
+  },
+  {
+    "input": "without a price of roughly ten euros",
+    "output": null
+  },
+  {
+    "input": "under a price of roughly ten euros",
+    "output": null
+  },
+  {
+    "input": "over a price of roughly ten euros",
+    "output": null
+  },
+  {
+    "input": "not about eleven euros",
+    "output": null
+  },
+  {
+    "input": "never about eleven euros",
+    "output": null
+  },
+  {
+    "input": "without about eleven euros",
+    "output": null
+  },
+  {
+    "input": "under about eleven euros",
+    "output": null
+  },
+  {
+    "input": "over about eleven euros",
+    "output": null
+  },
+  {
+    "input": "not the budget is eleven thousand euros",
+    "output": null
+  },
+  {
+    "input": "never the budget is eleven thousand euros",
+    "output": null
+  },
+  {
+    "input": "without the budget is eleven thousand euros",
+    "output": null
+  },
+  {
+    "input": "under the budget is eleven thousand euros",
+    "output": null
+  },
+  {
+    "input": "over the budget is eleven thousand euros",
+    "output": null
+  },
+  {
+    "input": "not twelve euros",
+    "output": null
+  },
+  {
+    "input": "never twelve euros",
+    "output": null
+  },
+  {
+    "input": "without twelve euros",
+    "output": null
+  },
+  {
+    "input": "under twelve euros",
+    "output": null
+  },
+  {
+    "input": "over twelve euros",
+    "output": null
+  },
+  {
+    "input": "not invoice 2048 totals € twelve",
+    "output": null
+  },
+  {
+    "input": "never invoice 2048 totals € twelve",
+    "output": null
+  },
+  {
+    "input": "without invoice 2048 totals € twelve",
+    "output": null
+  },
+  {
+    "input": "under invoice 2048 totals € twelve",
+    "output": null
+  },
+  {
+    "input": "over invoice 2048 totals € twelve",
+    "output": null
+  },
+  {
+    "input": "not the budget is twelve million euros",
+    "output": null
+  },
+  {
+    "input": "never the budget is twelve million euros",
+    "output": null
+  },
+  {
+    "input": "without the budget is twelve million euros",
+    "output": null
+  },
+  {
+    "input": "under the budget is twelve million euros",
+    "output": null
+  },
+  {
+    "input": "over the budget is twelve million euros",
+    "output": null
+  },
+  {
+    "input": "not we paid EUR thirteen",
+    "output": null
+  },
+  {
+    "input": "never we paid EUR thirteen",
+    "output": null
+  },
+  {
+    "input": "without we paid EUR thirteen",
+    "output": null
+  },
+  {
+    "input": "under we paid EUR thirteen",
+    "output": null
+  },
+  {
+    "input": "over we paid EUR thirteen",
+    "output": null
+  },
+  {
+    "input": "not around thirteen grand in euros",
+    "output": null
+  },
+  {
+    "input": "never around thirteen grand in euros",
+    "output": null
+  },
+  {
+    "input": "without around thirteen grand in euros",
+    "output": null
+  },
+  {
+    "input": "under around thirteen grand in euros",
+    "output": null
+  },
+  {
+    "input": "over around thirteen grand in euros",
+    "output": null
+  },
+  {
+    "input": "not send fourteen euros to Maja",
+    "output": null
+  },
+  {
+    "input": "never send fourteen euros to Maja",
+    "output": null
+  },
+  {
+    "input": "without send fourteen euros to Maja",
+    "output": null
+  },
+  {
+    "input": "under send fourteen euros to Maja",
+    "output": null
+  },
+  {
+    "input": "over send fourteen euros to Maja",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid fourteen euros",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid fourteen euros",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid fourteen euros",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid fourteen euros",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid fourteen euros",
+    "output": null
+  },
+  {
+    "input": "not a price of fourteen euros",
+    "output": null
+  },
+  {
+    "input": "never a price of fourteen euros",
+    "output": null
+  },
+  {
+    "input": "without a price of fourteen euros",
+    "output": null
+  },
+  {
+    "input": "under a price of fourteen euros",
+    "output": null
+  },
+  {
+    "input": "over a price of fourteen euros",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid EUR fifteen",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid EUR fifteen",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid EUR fifteen",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid EUR fifteen",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid EUR fifteen",
+    "output": null
+  },
+  {
+    "input": "not roughly EUR fifteen million",
+    "output": null
+  },
+  {
+    "input": "never roughly EUR fifteen million",
+    "output": null
+  },
+  {
+    "input": "without roughly EUR fifteen million",
+    "output": null
+  },
+  {
+    "input": "under roughly EUR fifteen million",
+    "output": null
+  },
+  {
+    "input": "over roughly EUR fifteen million",
+    "output": null
+  },
+  {
+    "input": "not Oskar paid sixteen euros yesterday",
+    "output": null
+  },
+  {
+    "input": "never Oskar paid sixteen euros yesterday",
+    "output": null
+  },
+  {
+    "input": "without Oskar paid sixteen euros yesterday",
+    "output": null
+  },
+  {
+    "input": "under Oskar paid sixteen euros yesterday",
+    "output": null
+  },
+  {
+    "input": "over Oskar paid sixteen euros yesterday",
+    "output": null
+  },
+  {
+    "input": "not sixteen euros for order 1234",
+    "output": null
+  },
+  {
+    "input": "never sixteen euros for order 1234",
+    "output": null
+  },
+  {
+    "input": "without sixteen euros for order 1234",
+    "output": null
+  },
+  {
+    "input": "under sixteen euros for order 1234",
+    "output": null
+  },
+  {
+    "input": "over sixteen euros for order 1234",
+    "output": null
+  },
+  {
+    "input": "not € seventeen",
+    "output": null
+  },
+  {
+    "input": "never € seventeen",
+    "output": null
+  },
+  {
+    "input": "without € seventeen",
+    "output": null
+  },
+  {
+    "input": "under € seventeen",
+    "output": null
+  },
+  {
+    "input": "over € seventeen",
+    "output": null
+  },
+  {
+    "input": "not we paid seventeen EUR",
+    "output": null
+  },
+  {
+    "input": "never we paid seventeen EUR",
+    "output": null
+  },
+  {
+    "input": "without we paid seventeen EUR",
+    "output": null
+  },
+  {
+    "input": "under we paid seventeen EUR",
+    "output": null
+  },
+  {
+    "input": "over we paid seventeen EUR",
+    "output": null
+  },
+  {
+    "input": "not a price of roughly seventeen euros",
+    "output": null
+  },
+  {
+    "input": "never a price of roughly seventeen euros",
+    "output": null
+  },
+  {
+    "input": "without a price of roughly seventeen euros",
+    "output": null
+  },
+  {
+    "input": "under a price of roughly seventeen euros",
+    "output": null
+  },
+  {
+    "input": "over a price of roughly seventeen euros",
+    "output": null
+  },
+  {
+    "input": "not about eighteen euros",
+    "output": null
+  },
+  {
+    "input": "never about eighteen euros",
+    "output": null
+  },
+  {
+    "input": "without about eighteen euros",
+    "output": null
+  },
+  {
+    "input": "under about eighteen euros",
+    "output": null
+  },
+  {
+    "input": "over about eighteen euros",
+    "output": null
+  },
+  {
+    "input": "not the budget is eighteen thousand euros",
+    "output": null
+  },
+  {
+    "input": "never the budget is eighteen thousand euros",
+    "output": null
+  },
+  {
+    "input": "without the budget is eighteen thousand euros",
+    "output": null
+  },
+  {
+    "input": "under the budget is eighteen thousand euros",
+    "output": null
+  },
+  {
+    "input": "over the budget is eighteen thousand euros",
+    "output": null
+  },
+  {
+    "input": "not nineteen euros",
+    "output": null
+  },
+  {
+    "input": "never nineteen euros",
+    "output": null
+  },
+  {
+    "input": "without nineteen euros",
+    "output": null
+  },
+  {
+    "input": "under nineteen euros",
+    "output": null
+  },
+  {
+    "input": "over nineteen euros",
+    "output": null
+  },
+  {
+    "input": "not invoice 2048 totals € nineteen",
+    "output": null
+  },
+  {
+    "input": "never invoice 2048 totals € nineteen",
+    "output": null
+  },
+  {
+    "input": "without invoice 2048 totals € nineteen",
+    "output": null
+  },
+  {
+    "input": "under invoice 2048 totals € nineteen",
+    "output": null
+  },
+  {
+    "input": "over invoice 2048 totals € nineteen",
+    "output": null
+  },
+  {
+    "input": "not the budget is nineteen million euros",
+    "output": null
+  },
+  {
+    "input": "never the budget is nineteen million euros",
+    "output": null
+  },
+  {
+    "input": "without the budget is nineteen million euros",
+    "output": null
+  },
+  {
+    "input": "under the budget is nineteen million euros",
+    "output": null
+  },
+  {
+    "input": "over the budget is nineteen million euros",
+    "output": null
+  },
+  {
+    "input": "not we paid EUR twenty",
+    "output": null
+  },
+  {
+    "input": "never we paid EUR twenty",
+    "output": null
+  },
+  {
+    "input": "without we paid EUR twenty",
+    "output": null
+  },
+  {
+    "input": "under we paid EUR twenty",
+    "output": null
+  },
+  {
+    "input": "over we paid EUR twenty",
+    "output": null
+  },
+  {
+    "input": "not around twenty grand in euros",
+    "output": null
+  },
+  {
+    "input": "never around twenty grand in euros",
+    "output": null
+  },
+  {
+    "input": "without around twenty grand in euros",
+    "output": null
+  },
+  {
+    "input": "under around twenty grand in euros",
+    "output": null
+  },
+  {
+    "input": "over around twenty grand in euros",
+    "output": null
+  },
+  {
+    "input": "not send thirty euros to Maja",
+    "output": null
+  },
+  {
+    "input": "never send thirty euros to Maja",
+    "output": null
+  },
+  {
+    "input": "without send thirty euros to Maja",
+    "output": null
+  },
+  {
+    "input": "under send thirty euros to Maja",
+    "output": null
+  },
+  {
+    "input": "over send thirty euros to Maja",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid thirty euros",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid thirty euros",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid thirty euros",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid thirty euros",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid thirty euros",
+    "output": null
+  },
+  {
+    "input": "not a price of thirty euros",
+    "output": null
+  },
+  {
+    "input": "never a price of thirty euros",
+    "output": null
+  },
+  {
+    "input": "without a price of thirty euros",
+    "output": null
+  },
+  {
+    "input": "under a price of thirty euros",
+    "output": null
+  },
+  {
+    "input": "over a price of thirty euros",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid EUR forty",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid EUR forty",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid EUR forty",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid EUR forty",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid EUR forty",
+    "output": null
+  },
+  {
+    "input": "not roughly EUR forty million",
+    "output": null
+  },
+  {
+    "input": "never roughly EUR forty million",
+    "output": null
+  },
+  {
+    "input": "without roughly EUR forty million",
+    "output": null
+  },
+  {
+    "input": "under roughly EUR forty million",
+    "output": null
+  },
+  {
+    "input": "over roughly EUR forty million",
+    "output": null
+  },
+  {
+    "input": "not Oskar paid fifty euros yesterday",
+    "output": null
+  },
+  {
+    "input": "never Oskar paid fifty euros yesterday",
+    "output": null
+  },
+  {
+    "input": "without Oskar paid fifty euros yesterday",
+    "output": null
+  },
+  {
+    "input": "under Oskar paid fifty euros yesterday",
+    "output": null
+  },
+  {
+    "input": "over Oskar paid fifty euros yesterday",
+    "output": null
+  },
+  {
+    "input": "not fifty euros for order 1234",
+    "output": null
+  },
+  {
+    "input": "never fifty euros for order 1234",
+    "output": null
+  },
+  {
+    "input": "without fifty euros for order 1234",
+    "output": null
+  },
+  {
+    "input": "under fifty euros for order 1234",
+    "output": null
+  },
+  {
+    "input": "over fifty euros for order 1234",
+    "output": null
+  },
+  {
+    "input": "not € sixty",
+    "output": null
+  },
+  {
+    "input": "never € sixty",
+    "output": null
+  },
+  {
+    "input": "without € sixty",
+    "output": null
+  },
+  {
+    "input": "under € sixty",
+    "output": null
+  },
+  {
+    "input": "over € sixty",
+    "output": null
+  },
+  {
+    "input": "not we paid sixty EUR",
+    "output": null
+  },
+  {
+    "input": "never we paid sixty EUR",
+    "output": null
+  },
+  {
+    "input": "without we paid sixty EUR",
+    "output": null
+  },
+  {
+    "input": "under we paid sixty EUR",
+    "output": null
+  },
+  {
+    "input": "over we paid sixty EUR",
+    "output": null
+  },
+  {
+    "input": "not a price of roughly sixty euros",
+    "output": null
+  },
+  {
+    "input": "never a price of roughly sixty euros",
+    "output": null
+  },
+  {
+    "input": "without a price of roughly sixty euros",
+    "output": null
+  },
+  {
+    "input": "under a price of roughly sixty euros",
+    "output": null
+  },
+  {
+    "input": "over a price of roughly sixty euros",
+    "output": null
+  },
+  {
+    "input": "not about seventy euros",
+    "output": null
+  },
+  {
+    "input": "never about seventy euros",
+    "output": null
+  },
+  {
+    "input": "without about seventy euros",
+    "output": null
+  },
+  {
+    "input": "under about seventy euros",
+    "output": null
+  },
+  {
+    "input": "over about seventy euros",
+    "output": null
+  },
+  {
+    "input": "not the budget is seventy thousand euros",
+    "output": null
+  },
+  {
+    "input": "never the budget is seventy thousand euros",
+    "output": null
+  },
+  {
+    "input": "without the budget is seventy thousand euros",
+    "output": null
+  },
+  {
+    "input": "under the budget is seventy thousand euros",
+    "output": null
+  },
+  {
+    "input": "over the budget is seventy thousand euros",
+    "output": null
+  },
+  {
+    "input": "not eighty euros",
+    "output": null
+  },
+  {
+    "input": "never eighty euros",
+    "output": null
+  },
+  {
+    "input": "without eighty euros",
+    "output": null
+  },
+  {
+    "input": "under eighty euros",
+    "output": null
+  },
+  {
+    "input": "over eighty euros",
+    "output": null
+  },
+  {
+    "input": "not invoice 2048 totals € eighty",
+    "output": null
+  },
+  {
+    "input": "never invoice 2048 totals € eighty",
+    "output": null
+  },
+  {
+    "input": "without invoice 2048 totals € eighty",
+    "output": null
+  },
+  {
+    "input": "under invoice 2048 totals € eighty",
+    "output": null
+  },
+  {
+    "input": "over invoice 2048 totals € eighty",
+    "output": null
+  },
+  {
+    "input": "not the budget is eighty million euros",
+    "output": null
+  },
+  {
+    "input": "never the budget is eighty million euros",
+    "output": null
+  },
+  {
+    "input": "without the budget is eighty million euros",
+    "output": null
+  },
+  {
+    "input": "under the budget is eighty million euros",
+    "output": null
+  },
+  {
+    "input": "over the budget is eighty million euros",
+    "output": null
+  },
+  {
+    "input": "not we paid EUR ninety",
+    "output": null
+  },
+  {
+    "input": "never we paid EUR ninety",
+    "output": null
+  },
+  {
+    "input": "without we paid EUR ninety",
+    "output": null
+  },
+  {
+    "input": "under we paid EUR ninety",
+    "output": null
+  },
+  {
+    "input": "over we paid EUR ninety",
+    "output": null
+  },
+  {
+    "input": "not around ninety grand in euros",
+    "output": null
+  },
+  {
+    "input": "never around ninety grand in euros",
+    "output": null
+  },
+  {
+    "input": "without around ninety grand in euros",
+    "output": null
+  },
+  {
+    "input": "under around ninety grand in euros",
+    "output": null
+  },
+  {
+    "input": "over around ninety grand in euros",
+    "output": null
+  },
+  {
+    "input": "not send twenty one euros to Maja",
+    "output": null
+  },
+  {
+    "input": "never send twenty one euros to Maja",
+    "output": null
+  },
+  {
+    "input": "without send twenty one euros to Maja",
+    "output": null
+  },
+  {
+    "input": "under send twenty one euros to Maja",
+    "output": null
+  },
+  {
+    "input": "over send twenty one euros to Maja",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid twenty one euros",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid twenty one euros",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid twenty one euros",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid twenty one euros",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid twenty one euros",
+    "output": null
+  },
+  {
+    "input": "not a price of twenty one euros",
+    "output": null
+  },
+  {
+    "input": "never a price of twenty one euros",
+    "output": null
+  },
+  {
+    "input": "without a price of twenty one euros",
+    "output": null
+  },
+  {
+    "input": "under a price of twenty one euros",
+    "output": null
+  },
+  {
+    "input": "over a price of twenty one euros",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid EUR thirty two",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid EUR thirty two",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid EUR thirty two",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid EUR thirty two",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid EUR thirty two",
+    "output": null
+  },
+  {
+    "input": "not roughly EUR thirty two million",
+    "output": null
+  },
+  {
+    "input": "never roughly EUR thirty two million",
+    "output": null
+  },
+  {
+    "input": "without roughly EUR thirty two million",
+    "output": null
+  },
+  {
+    "input": "under roughly EUR thirty two million",
+    "output": null
+  },
+  {
+    "input": "over roughly EUR thirty two million",
+    "output": null
+  },
+  {
+    "input": "not Oskar paid forty three euros yesterday",
+    "output": null
+  },
+  {
+    "input": "never Oskar paid forty three euros yesterday",
+    "output": null
+  },
+  {
+    "input": "without Oskar paid forty three euros yesterday",
+    "output": null
+  },
+  {
+    "input": "under Oskar paid forty three euros yesterday",
+    "output": null
+  },
+  {
+    "input": "over Oskar paid forty three euros yesterday",
+    "output": null
+  },
+  {
+    "input": "not forty three euros for order 1234",
+    "output": null
+  },
+  {
+    "input": "never forty three euros for order 1234",
+    "output": null
+  },
+  {
+    "input": "without forty three euros for order 1234",
+    "output": null
+  },
+  {
+    "input": "under forty three euros for order 1234",
+    "output": null
+  },
+  {
+    "input": "over forty three euros for order 1234",
+    "output": null
+  },
+  {
+    "input": "not € fifty four",
+    "output": null
+  },
+  {
+    "input": "never € fifty four",
+    "output": null
+  },
+  {
+    "input": "without € fifty four",
+    "output": null
+  },
+  {
+    "input": "under € fifty four",
+    "output": null
+  },
+  {
+    "input": "over € fifty four",
+    "output": null
+  },
+  {
+    "input": "not we paid fifty four EUR",
+    "output": null
+  },
+  {
+    "input": "never we paid fifty four EUR",
+    "output": null
+  },
+  {
+    "input": "without we paid fifty four EUR",
+    "output": null
+  },
+  {
+    "input": "under we paid fifty four EUR",
+    "output": null
+  },
+  {
+    "input": "over we paid fifty four EUR",
+    "output": null
+  },
+  {
+    "input": "not a price of roughly fifty four euros",
+    "output": null
+  },
+  {
+    "input": "never a price of roughly fifty four euros",
+    "output": null
+  },
+  {
+    "input": "without a price of roughly fifty four euros",
+    "output": null
+  },
+  {
+    "input": "under a price of roughly fifty four euros",
+    "output": null
+  },
+  {
+    "input": "over a price of roughly fifty four euros",
+    "output": null
+  },
+  {
+    "input": "not about sixty five euros",
+    "output": null
+  },
+  {
+    "input": "never about sixty five euros",
+    "output": null
+  },
+  {
+    "input": "without about sixty five euros",
+    "output": null
+  },
+  {
+    "input": "under about sixty five euros",
+    "output": null
+  },
+  {
+    "input": "over about sixty five euros",
+    "output": null
+  },
+  {
+    "input": "not the budget is sixty five thousand euros",
+    "output": null
+  },
+  {
+    "input": "never the budget is sixty five thousand euros",
+    "output": null
+  },
+  {
+    "input": "without the budget is sixty five thousand euros",
+    "output": null
+  },
+  {
+    "input": "under the budget is sixty five thousand euros",
+    "output": null
+  },
+  {
+    "input": "over the budget is sixty five thousand euros",
+    "output": null
+  },
+  {
+    "input": "not seventy six euros",
+    "output": null
+  },
+  {
+    "input": "never seventy six euros",
+    "output": null
+  },
+  {
+    "input": "without seventy six euros",
+    "output": null
+  },
+  {
+    "input": "under seventy six euros",
+    "output": null
+  },
+  {
+    "input": "over seventy six euros",
+    "output": null
+  },
+  {
+    "input": "not invoice 2048 totals € seventy six",
+    "output": null
+  },
+  {
+    "input": "never invoice 2048 totals € seventy six",
+    "output": null
+  },
+  {
+    "input": "without invoice 2048 totals € seventy six",
+    "output": null
+  },
+  {
+    "input": "under invoice 2048 totals € seventy six",
+    "output": null
+  },
+  {
+    "input": "over invoice 2048 totals € seventy six",
+    "output": null
+  },
+  {
+    "input": "not the budget is seventy six million euros",
+    "output": null
+  },
+  {
+    "input": "never the budget is seventy six million euros",
+    "output": null
+  },
+  {
+    "input": "without the budget is seventy six million euros",
+    "output": null
+  },
+  {
+    "input": "under the budget is seventy six million euros",
+    "output": null
+  },
+  {
+    "input": "over the budget is seventy six million euros",
+    "output": null
+  },
+  {
+    "input": "not we paid EUR eighty seven",
+    "output": null
+  },
+  {
+    "input": "never we paid EUR eighty seven",
+    "output": null
+  },
+  {
+    "input": "without we paid EUR eighty seven",
+    "output": null
+  },
+  {
+    "input": "under we paid EUR eighty seven",
+    "output": null
+  },
+  {
+    "input": "over we paid EUR eighty seven",
+    "output": null
+  },
+  {
+    "input": "not around eighty seven grand in euros",
+    "output": null
+  },
+  {
+    "input": "never around eighty seven grand in euros",
+    "output": null
+  },
+  {
+    "input": "without around eighty seven grand in euros",
+    "output": null
+  },
+  {
+    "input": "under around eighty seven grand in euros",
+    "output": null
+  },
+  {
+    "input": "over around eighty seven grand in euros",
+    "output": null
+  },
+  {
+    "input": "not send ninety nine euros to Maja",
+    "output": null
+  },
+  {
+    "input": "never send ninety nine euros to Maja",
+    "output": null
+  },
+  {
+    "input": "without send ninety nine euros to Maja",
+    "output": null
+  },
+  {
+    "input": "under send ninety nine euros to Maja",
+    "output": null
+  },
+  {
+    "input": "over send ninety nine euros to Maja",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid ninety nine euros",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid ninety nine euros",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid ninety nine euros",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid ninety nine euros",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid ninety nine euros",
+    "output": null
+  },
+  {
+    "input": "not a price of ninety nine euros",
+    "output": null
+  },
+  {
+    "input": "never a price of ninety nine euros",
+    "output": null
+  },
+  {
+    "input": "without a price of ninety nine euros",
+    "output": null
+  },
+  {
+    "input": "under a price of ninety nine euros",
+    "output": null
+  },
+  {
+    "input": "over a price of ninety nine euros",
+    "output": null
+  },
+  {
+    "input": "not 50k EUR",
+    "output": null
+  },
+  {
+    "input": "never 50k EUR",
+    "output": null
+  },
+  {
+    "input": "without 50k EUR",
+    "output": null
+  },
+  {
+    "input": "under 50k EUR",
+    "output": null
+  },
+  {
+    "input": "over 50k EUR",
+    "output": null
+  },
+  {
+    "input": "not 50m EUR",
+    "output": null
+  },
+  {
+    "input": "never 50m EUR",
+    "output": null
+  },
+  {
+    "input": "without 50m EUR",
+    "output": null
+  },
+  {
+    "input": "under 50m EUR",
+    "output": null
+  },
+  {
+    "input": "over 50m EUR",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid USD 12.50",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid USD 12.50",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid USD 12.50",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid USD 12.50",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid USD 12.50",
+    "output": null
+  },
+  {
+    "input": "not roughly USD 12.50 million",
+    "output": null
+  },
+  {
+    "input": "never roughly USD 12.50 million",
+    "output": null
+  },
+  {
+    "input": "without roughly USD 12.50 million",
+    "output": null
+  },
+  {
+    "input": "under roughly USD 12.50 million",
+    "output": null
+  },
+  {
+    "input": "over roughly USD 12.50 million",
+    "output": null
+  },
+  {
+    "input": "not Oskar paid 7 dollars yesterday",
+    "output": null
+  },
+  {
+    "input": "never Oskar paid 7 dollars yesterday",
+    "output": null
+  },
+  {
+    "input": "without Oskar paid 7 dollars yesterday",
+    "output": null
+  },
+  {
+    "input": "under Oskar paid 7 dollars yesterday",
+    "output": null
+  },
+  {
+    "input": "over Oskar paid 7 dollars yesterday",
+    "output": null
+  },
+  {
+    "input": "not 7 dollars for order 1234",
+    "output": null
+  },
+  {
+    "input": "never 7 dollars for order 1234",
+    "output": null
+  },
+  {
+    "input": "without 7 dollars for order 1234",
+    "output": null
+  },
+  {
+    "input": "under 7 dollars for order 1234",
+    "output": null
+  },
+  {
+    "input": "over 7 dollars for order 1234",
+    "output": null
+  },
+  {
+    "input": "not USD 35",
+    "output": null
+  },
+  {
+    "input": "never USD 35",
+    "output": null
+  },
+  {
+    "input": "without USD 35",
+    "output": null
+  },
+  {
+    "input": "under USD 35",
+    "output": null
+  },
+  {
+    "input": "over USD 35",
+    "output": null
+  },
+  {
+    "input": "not we paid 35 USD",
+    "output": null
+  },
+  {
+    "input": "never we paid 35 USD",
+    "output": null
+  },
+  {
+    "input": "without we paid 35 USD",
+    "output": null
+  },
+  {
+    "input": "under we paid 35 USD",
+    "output": null
+  },
+  {
+    "input": "over we paid 35 USD",
+    "output": null
+  },
+  {
+    "input": "not a price of roughly 35 dollars",
+    "output": null
+  },
+  {
+    "input": "never a price of roughly 35 dollars",
+    "output": null
+  },
+  {
+    "input": "without a price of roughly 35 dollars",
+    "output": null
+  },
+  {
+    "input": "under a price of roughly 35 dollars",
+    "output": null
+  },
+  {
+    "input": "over a price of roughly 35 dollars",
+    "output": null
+  },
+  {
+    "input": "not about 250 dollars",
+    "output": null
+  },
+  {
+    "input": "never about 250 dollars",
+    "output": null
+  },
+  {
+    "input": "without about 250 dollars",
+    "output": null
+  },
+  {
+    "input": "under about 250 dollars",
+    "output": null
+  },
+  {
+    "input": "over about 250 dollars",
+    "output": null
+  },
+  {
+    "input": "not the budget is 250 thousand dollars",
+    "output": null
+  },
+  {
+    "input": "never the budget is 250 thousand dollars",
+    "output": null
+  },
+  {
+    "input": "without the budget is 250 thousand dollars",
+    "output": null
+  },
+  {
+    "input": "under the budget is 250 thousand dollars",
+    "output": null
+  },
+  {
+    "input": "over the budget is 250 thousand dollars",
+    "output": null
+  },
+  {
+    "input": "not 1,200 dollars",
+    "output": null
+  },
+  {
+    "input": "never 1,200 dollars",
+    "output": null
+  },
+  {
+    "input": "without 1,200 dollars",
+    "output": null
+  },
+  {
+    "input": "under 1,200 dollars",
+    "output": null
+  },
+  {
+    "input": "over 1,200 dollars",
+    "output": null
+  },
+  {
+    "input": "not invoice 2048 totals USD 1,200",
+    "output": null
+  },
+  {
+    "input": "never invoice 2048 totals USD 1,200",
+    "output": null
+  },
+  {
+    "input": "without invoice 2048 totals USD 1,200",
+    "output": null
+  },
+  {
+    "input": "under invoice 2048 totals USD 1,200",
+    "output": null
+  },
+  {
+    "input": "over invoice 2048 totals USD 1,200",
+    "output": null
+  },
+  {
+    "input": "not the budget is 1,200 million dollars",
+    "output": null
+  },
+  {
+    "input": "never the budget is 1,200 million dollars",
+    "output": null
+  },
+  {
+    "input": "without the budget is 1,200 million dollars",
+    "output": null
+  },
+  {
+    "input": "under the budget is 1,200 million dollars",
+    "output": null
+  },
+  {
+    "input": "over the budget is 1,200 million dollars",
+    "output": null
+  },
+  {
+    "input": "not we paid USD one",
+    "output": null
+  },
+  {
+    "input": "never we paid USD one",
+    "output": null
+  },
+  {
+    "input": "without we paid USD one",
+    "output": null
+  },
+  {
+    "input": "under we paid USD one",
+    "output": null
+  },
+  {
+    "input": "over we paid USD one",
+    "output": null
+  },
+  {
+    "input": "not around one grand in dollars",
+    "output": null
+  },
+  {
+    "input": "never around one grand in dollars",
+    "output": null
+  },
+  {
+    "input": "without around one grand in dollars",
+    "output": null
+  },
+  {
+    "input": "under around one grand in dollars",
+    "output": null
+  },
+  {
+    "input": "over around one grand in dollars",
+    "output": null
+  },
+  {
+    "input": "not send two dollars to Maja",
+    "output": null
+  },
+  {
+    "input": "never send two dollars to Maja",
+    "output": null
+  },
+  {
+    "input": "without send two dollars to Maja",
+    "output": null
+  },
+  {
+    "input": "under send two dollars to Maja",
+    "output": null
+  },
+  {
+    "input": "over send two dollars to Maja",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid two dollars",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid two dollars",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid two dollars",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid two dollars",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid two dollars",
+    "output": null
+  },
+  {
+    "input": "not a price of two dollars",
+    "output": null
+  },
+  {
+    "input": "never a price of two dollars",
+    "output": null
+  },
+  {
+    "input": "without a price of two dollars",
+    "output": null
+  },
+  {
+    "input": "under a price of two dollars",
+    "output": null
+  },
+  {
+    "input": "over a price of two dollars",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid USD three",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid USD three",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid USD three",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid USD three",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid USD three",
+    "output": null
+  },
+  {
+    "input": "not roughly USD three million",
+    "output": null
+  },
+  {
+    "input": "never roughly USD three million",
+    "output": null
+  },
+  {
+    "input": "without roughly USD three million",
+    "output": null
+  },
+  {
+    "input": "under roughly USD three million",
+    "output": null
+  },
+  {
+    "input": "over roughly USD three million",
+    "output": null
+  },
+  {
+    "input": "not Oskar paid four dollars yesterday",
+    "output": null
+  },
+  {
+    "input": "never Oskar paid four dollars yesterday",
+    "output": null
+  },
+  {
+    "input": "without Oskar paid four dollars yesterday",
+    "output": null
+  },
+  {
+    "input": "under Oskar paid four dollars yesterday",
+    "output": null
+  },
+  {
+    "input": "over Oskar paid four dollars yesterday",
+    "output": null
+  },
+  {
+    "input": "not four dollars for order 1234",
+    "output": null
+  },
+  {
+    "input": "never four dollars for order 1234",
+    "output": null
+  },
+  {
+    "input": "without four dollars for order 1234",
+    "output": null
+  },
+  {
+    "input": "under four dollars for order 1234",
+    "output": null
+  },
+  {
+    "input": "over four dollars for order 1234",
+    "output": null
+  },
+  {
+    "input": "not USD five",
+    "output": null
+  },
+  {
+    "input": "never USD five",
+    "output": null
+  },
+  {
+    "input": "without USD five",
+    "output": null
+  },
+  {
+    "input": "under USD five",
+    "output": null
+  },
+  {
+    "input": "over USD five",
+    "output": null
+  },
+  {
+    "input": "not we paid five USD",
+    "output": null
+  },
+  {
+    "input": "never we paid five USD",
+    "output": null
+  },
+  {
+    "input": "without we paid five USD",
+    "output": null
+  },
+  {
+    "input": "under we paid five USD",
+    "output": null
+  },
+  {
+    "input": "over we paid five USD",
+    "output": null
+  },
+  {
+    "input": "not a price of roughly five dollars",
+    "output": null
+  },
+  {
+    "input": "never a price of roughly five dollars",
+    "output": null
+  },
+  {
+    "input": "without a price of roughly five dollars",
+    "output": null
+  },
+  {
+    "input": "under a price of roughly five dollars",
+    "output": null
+  },
+  {
+    "input": "over a price of roughly five dollars",
+    "output": null
+  },
+  {
+    "input": "not about six dollars",
+    "output": null
+  },
+  {
+    "input": "never about six dollars",
+    "output": null
+  },
+  {
+    "input": "without about six dollars",
+    "output": null
+  },
+  {
+    "input": "under about six dollars",
+    "output": null
+  },
+  {
+    "input": "over about six dollars",
+    "output": null
+  },
+  {
+    "input": "not the budget is six thousand dollars",
+    "output": null
+  },
+  {
+    "input": "never the budget is six thousand dollars",
+    "output": null
+  },
+  {
+    "input": "without the budget is six thousand dollars",
+    "output": null
+  },
+  {
+    "input": "under the budget is six thousand dollars",
+    "output": null
+  },
+  {
+    "input": "over the budget is six thousand dollars",
+    "output": null
+  },
+  {
+    "input": "not seven dollars",
+    "output": null
+  },
+  {
+    "input": "never seven dollars",
+    "output": null
+  },
+  {
+    "input": "without seven dollars",
+    "output": null
+  },
+  {
+    "input": "under seven dollars",
+    "output": null
+  },
+  {
+    "input": "over seven dollars",
+    "output": null
+  },
+  {
+    "input": "not invoice 2048 totals USD seven",
+    "output": null
+  },
+  {
+    "input": "never invoice 2048 totals USD seven",
+    "output": null
+  },
+  {
+    "input": "without invoice 2048 totals USD seven",
+    "output": null
+  },
+  {
+    "input": "under invoice 2048 totals USD seven",
+    "output": null
+  },
+  {
+    "input": "over invoice 2048 totals USD seven",
+    "output": null
+  },
+  {
+    "input": "not the budget is seven million dollars",
+    "output": null
+  },
+  {
+    "input": "never the budget is seven million dollars",
+    "output": null
+  },
+  {
+    "input": "without the budget is seven million dollars",
+    "output": null
+  },
+  {
+    "input": "under the budget is seven million dollars",
+    "output": null
+  },
+  {
+    "input": "over the budget is seven million dollars",
+    "output": null
+  },
+  {
+    "input": "not we paid USD eight",
+    "output": null
+  },
+  {
+    "input": "never we paid USD eight",
+    "output": null
+  },
+  {
+    "input": "without we paid USD eight",
+    "output": null
+  },
+  {
+    "input": "under we paid USD eight",
+    "output": null
+  },
+  {
+    "input": "over we paid USD eight",
+    "output": null
+  },
+  {
+    "input": "not around eight grand in dollars",
+    "output": null
+  },
+  {
+    "input": "never around eight grand in dollars",
+    "output": null
+  },
+  {
+    "input": "without around eight grand in dollars",
+    "output": null
+  },
+  {
+    "input": "under around eight grand in dollars",
+    "output": null
+  },
+  {
+    "input": "over around eight grand in dollars",
+    "output": null
+  },
+  {
+    "input": "not send nine dollars to Maja",
+    "output": null
+  },
+  {
+    "input": "never send nine dollars to Maja",
+    "output": null
+  },
+  {
+    "input": "without send nine dollars to Maja",
+    "output": null
+  },
+  {
+    "input": "under send nine dollars to Maja",
+    "output": null
+  },
+  {
+    "input": "over send nine dollars to Maja",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid nine dollars",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid nine dollars",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid nine dollars",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid nine dollars",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid nine dollars",
+    "output": null
+  },
+  {
+    "input": "not a price of nine dollars",
+    "output": null
+  },
+  {
+    "input": "never a price of nine dollars",
+    "output": null
+  },
+  {
+    "input": "without a price of nine dollars",
+    "output": null
+  },
+  {
+    "input": "under a price of nine dollars",
+    "output": null
+  },
+  {
+    "input": "over a price of nine dollars",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid USD ten",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid USD ten",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid USD ten",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid USD ten",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid USD ten",
+    "output": null
+  },
+  {
+    "input": "not roughly USD ten million",
+    "output": null
+  },
+  {
+    "input": "never roughly USD ten million",
+    "output": null
+  },
+  {
+    "input": "without roughly USD ten million",
+    "output": null
+  },
+  {
+    "input": "under roughly USD ten million",
+    "output": null
+  },
+  {
+    "input": "over roughly USD ten million",
+    "output": null
+  },
+  {
+    "input": "not Oskar paid eleven dollars yesterday",
+    "output": null
+  },
+  {
+    "input": "never Oskar paid eleven dollars yesterday",
+    "output": null
+  },
+  {
+    "input": "without Oskar paid eleven dollars yesterday",
+    "output": null
+  },
+  {
+    "input": "under Oskar paid eleven dollars yesterday",
+    "output": null
+  },
+  {
+    "input": "over Oskar paid eleven dollars yesterday",
+    "output": null
+  },
+  {
+    "input": "not eleven dollars for order 1234",
+    "output": null
+  },
+  {
+    "input": "never eleven dollars for order 1234",
+    "output": null
+  },
+  {
+    "input": "without eleven dollars for order 1234",
+    "output": null
+  },
+  {
+    "input": "under eleven dollars for order 1234",
+    "output": null
+  },
+  {
+    "input": "over eleven dollars for order 1234",
+    "output": null
+  },
+  {
+    "input": "not USD twelve",
+    "output": null
+  },
+  {
+    "input": "never USD twelve",
+    "output": null
+  },
+  {
+    "input": "without USD twelve",
+    "output": null
+  },
+  {
+    "input": "under USD twelve",
+    "output": null
+  },
+  {
+    "input": "over USD twelve",
+    "output": null
+  },
+  {
+    "input": "not we paid twelve USD",
+    "output": null
+  },
+  {
+    "input": "never we paid twelve USD",
+    "output": null
+  },
+  {
+    "input": "without we paid twelve USD",
+    "output": null
+  },
+  {
+    "input": "under we paid twelve USD",
+    "output": null
+  },
+  {
+    "input": "over we paid twelve USD",
+    "output": null
+  },
+  {
+    "input": "not a price of roughly twelve dollars",
+    "output": null
+  },
+  {
+    "input": "never a price of roughly twelve dollars",
+    "output": null
+  },
+  {
+    "input": "without a price of roughly twelve dollars",
+    "output": null
+  },
+  {
+    "input": "under a price of roughly twelve dollars",
+    "output": null
+  },
+  {
+    "input": "over a price of roughly twelve dollars",
+    "output": null
+  },
+  {
+    "input": "not about thirteen dollars",
+    "output": null
+  },
+  {
+    "input": "never about thirteen dollars",
+    "output": null
+  },
+  {
+    "input": "without about thirteen dollars",
+    "output": null
+  },
+  {
+    "input": "under about thirteen dollars",
+    "output": null
+  },
+  {
+    "input": "over about thirteen dollars",
+    "output": null
+  },
+  {
+    "input": "not the budget is thirteen thousand dollars",
+    "output": null
+  },
+  {
+    "input": "never the budget is thirteen thousand dollars",
+    "output": null
+  },
+  {
+    "input": "without the budget is thirteen thousand dollars",
+    "output": null
+  },
+  {
+    "input": "under the budget is thirteen thousand dollars",
+    "output": null
+  },
+  {
+    "input": "over the budget is thirteen thousand dollars",
+    "output": null
+  },
+  {
+    "input": "not fourteen dollars",
+    "output": null
+  },
+  {
+    "input": "never fourteen dollars",
+    "output": null
+  },
+  {
+    "input": "without fourteen dollars",
+    "output": null
+  },
+  {
+    "input": "under fourteen dollars",
+    "output": null
+  },
+  {
+    "input": "over fourteen dollars",
+    "output": null
+  },
+  {
+    "input": "not invoice 2048 totals USD fourteen",
+    "output": null
+  },
+  {
+    "input": "never invoice 2048 totals USD fourteen",
+    "output": null
+  },
+  {
+    "input": "without invoice 2048 totals USD fourteen",
+    "output": null
+  },
+  {
+    "input": "under invoice 2048 totals USD fourteen",
+    "output": null
+  },
+  {
+    "input": "over invoice 2048 totals USD fourteen",
+    "output": null
+  },
+  {
+    "input": "not the budget is fourteen million dollars",
+    "output": null
+  },
+  {
+    "input": "never the budget is fourteen million dollars",
+    "output": null
+  },
+  {
+    "input": "without the budget is fourteen million dollars",
+    "output": null
+  },
+  {
+    "input": "under the budget is fourteen million dollars",
+    "output": null
+  },
+  {
+    "input": "over the budget is fourteen million dollars",
+    "output": null
+  },
+  {
+    "input": "not we paid USD fifteen",
+    "output": null
+  },
+  {
+    "input": "never we paid USD fifteen",
+    "output": null
+  },
+  {
+    "input": "without we paid USD fifteen",
+    "output": null
+  },
+  {
+    "input": "under we paid USD fifteen",
+    "output": null
+  },
+  {
+    "input": "over we paid USD fifteen",
+    "output": null
+  },
+  {
+    "input": "not around fifteen grand in dollars",
+    "output": null
+  },
+  {
+    "input": "never around fifteen grand in dollars",
+    "output": null
+  },
+  {
+    "input": "without around fifteen grand in dollars",
+    "output": null
+  },
+  {
+    "input": "under around fifteen grand in dollars",
+    "output": null
+  },
+  {
+    "input": "over around fifteen grand in dollars",
+    "output": null
+  },
+  {
+    "input": "not send sixteen dollars to Maja",
+    "output": null
+  },
+  {
+    "input": "never send sixteen dollars to Maja",
+    "output": null
+  },
+  {
+    "input": "without send sixteen dollars to Maja",
+    "output": null
+  },
+  {
+    "input": "under send sixteen dollars to Maja",
+    "output": null
+  },
+  {
+    "input": "over send sixteen dollars to Maja",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid sixteen dollars",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid sixteen dollars",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid sixteen dollars",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid sixteen dollars",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid sixteen dollars",
+    "output": null
+  },
+  {
+    "input": "not a price of sixteen dollars",
+    "output": null
+  },
+  {
+    "input": "never a price of sixteen dollars",
+    "output": null
+  },
+  {
+    "input": "without a price of sixteen dollars",
+    "output": null
+  },
+  {
+    "input": "under a price of sixteen dollars",
+    "output": null
+  },
+  {
+    "input": "over a price of sixteen dollars",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid USD seventeen",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid USD seventeen",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid USD seventeen",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid USD seventeen",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid USD seventeen",
+    "output": null
+  },
+  {
+    "input": "not roughly USD seventeen million",
+    "output": null
+  },
+  {
+    "input": "never roughly USD seventeen million",
+    "output": null
+  },
+  {
+    "input": "without roughly USD seventeen million",
+    "output": null
+  },
+  {
+    "input": "under roughly USD seventeen million",
+    "output": null
+  },
+  {
+    "input": "over roughly USD seventeen million",
+    "output": null
+  },
+  {
+    "input": "not Oskar paid eighteen dollars yesterday",
+    "output": null
+  },
+  {
+    "input": "never Oskar paid eighteen dollars yesterday",
+    "output": null
+  },
+  {
+    "input": "without Oskar paid eighteen dollars yesterday",
+    "output": null
+  },
+  {
+    "input": "under Oskar paid eighteen dollars yesterday",
+    "output": null
+  },
+  {
+    "input": "over Oskar paid eighteen dollars yesterday",
+    "output": null
+  },
+  {
+    "input": "not eighteen dollars for order 1234",
+    "output": null
+  },
+  {
+    "input": "never eighteen dollars for order 1234",
+    "output": null
+  },
+  {
+    "input": "without eighteen dollars for order 1234",
+    "output": null
+  },
+  {
+    "input": "under eighteen dollars for order 1234",
+    "output": null
+  },
+  {
+    "input": "over eighteen dollars for order 1234",
+    "output": null
+  },
+  {
+    "input": "not USD nineteen",
+    "output": null
+  },
+  {
+    "input": "never USD nineteen",
+    "output": null
+  },
+  {
+    "input": "without USD nineteen",
+    "output": null
+  },
+  {
+    "input": "under USD nineteen",
+    "output": null
+  },
+  {
+    "input": "over USD nineteen",
+    "output": null
+  },
+  {
+    "input": "not we paid nineteen USD",
+    "output": null
+  },
+  {
+    "input": "never we paid nineteen USD",
+    "output": null
+  },
+  {
+    "input": "without we paid nineteen USD",
+    "output": null
+  },
+  {
+    "input": "under we paid nineteen USD",
+    "output": null
+  },
+  {
+    "input": "over we paid nineteen USD",
+    "output": null
+  },
+  {
+    "input": "not a price of roughly nineteen dollars",
+    "output": null
+  },
+  {
+    "input": "never a price of roughly nineteen dollars",
+    "output": null
+  },
+  {
+    "input": "without a price of roughly nineteen dollars",
+    "output": null
+  },
+  {
+    "input": "under a price of roughly nineteen dollars",
+    "output": null
+  },
+  {
+    "input": "over a price of roughly nineteen dollars",
+    "output": null
+  },
+  {
+    "input": "not about twenty dollars",
+    "output": null
+  },
+  {
+    "input": "never about twenty dollars",
+    "output": null
+  },
+  {
+    "input": "without about twenty dollars",
+    "output": null
+  },
+  {
+    "input": "under about twenty dollars",
+    "output": null
+  },
+  {
+    "input": "over about twenty dollars",
+    "output": null
+  },
+  {
+    "input": "not the budget is twenty thousand dollars",
+    "output": null
+  },
+  {
+    "input": "never the budget is twenty thousand dollars",
+    "output": null
+  },
+  {
+    "input": "without the budget is twenty thousand dollars",
+    "output": null
+  },
+  {
+    "input": "under the budget is twenty thousand dollars",
+    "output": null
+  },
+  {
+    "input": "over the budget is twenty thousand dollars",
+    "output": null
+  },
+  {
+    "input": "not thirty dollars",
+    "output": null
+  },
+  {
+    "input": "never thirty dollars",
+    "output": null
+  },
+  {
+    "input": "without thirty dollars",
+    "output": null
+  },
+  {
+    "input": "under thirty dollars",
+    "output": null
+  },
+  {
+    "input": "over thirty dollars",
+    "output": null
+  },
+  {
+    "input": "not invoice 2048 totals USD thirty",
+    "output": null
+  },
+  {
+    "input": "never invoice 2048 totals USD thirty",
+    "output": null
+  },
+  {
+    "input": "without invoice 2048 totals USD thirty",
+    "output": null
+  },
+  {
+    "input": "under invoice 2048 totals USD thirty",
+    "output": null
+  },
+  {
+    "input": "over invoice 2048 totals USD thirty",
+    "output": null
+  },
+  {
+    "input": "not the budget is thirty million dollars",
+    "output": null
+  },
+  {
+    "input": "never the budget is thirty million dollars",
+    "output": null
+  },
+  {
+    "input": "without the budget is thirty million dollars",
+    "output": null
+  },
+  {
+    "input": "under the budget is thirty million dollars",
+    "output": null
+  },
+  {
+    "input": "over the budget is thirty million dollars",
+    "output": null
+  },
+  {
+    "input": "not we paid USD forty",
+    "output": null
+  },
+  {
+    "input": "never we paid USD forty",
+    "output": null
+  },
+  {
+    "input": "without we paid USD forty",
+    "output": null
+  },
+  {
+    "input": "under we paid USD forty",
+    "output": null
+  },
+  {
+    "input": "over we paid USD forty",
+    "output": null
+  },
+  {
+    "input": "not around forty grand in dollars",
+    "output": null
+  },
+  {
+    "input": "never around forty grand in dollars",
+    "output": null
+  },
+  {
+    "input": "without around forty grand in dollars",
+    "output": null
+  },
+  {
+    "input": "under around forty grand in dollars",
+    "output": null
+  },
+  {
+    "input": "over around forty grand in dollars",
+    "output": null
+  },
+  {
+    "input": "not send fifty dollars to Maja",
+    "output": null
+  },
+  {
+    "input": "never send fifty dollars to Maja",
+    "output": null
+  },
+  {
+    "input": "without send fifty dollars to Maja",
+    "output": null
+  },
+  {
+    "input": "under send fifty dollars to Maja",
+    "output": null
+  },
+  {
+    "input": "over send fifty dollars to Maja",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid fifty dollars",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid fifty dollars",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid fifty dollars",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid fifty dollars",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid fifty dollars",
+    "output": null
+  },
+  {
+    "input": "not a price of fifty dollars",
+    "output": null
+  },
+  {
+    "input": "never a price of fifty dollars",
+    "output": null
+  },
+  {
+    "input": "without a price of fifty dollars",
+    "output": null
+  },
+  {
+    "input": "under a price of fifty dollars",
+    "output": null
+  },
+  {
+    "input": "over a price of fifty dollars",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid USD sixty",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid USD sixty",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid USD sixty",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid USD sixty",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid USD sixty",
+    "output": null
+  },
+  {
+    "input": "not roughly USD sixty million",
+    "output": null
+  },
+  {
+    "input": "never roughly USD sixty million",
+    "output": null
+  },
+  {
+    "input": "without roughly USD sixty million",
+    "output": null
+  },
+  {
+    "input": "under roughly USD sixty million",
+    "output": null
+  },
+  {
+    "input": "over roughly USD sixty million",
+    "output": null
+  },
+  {
+    "input": "not Oskar paid seventy dollars yesterday",
+    "output": null
+  },
+  {
+    "input": "never Oskar paid seventy dollars yesterday",
+    "output": null
+  },
+  {
+    "input": "without Oskar paid seventy dollars yesterday",
+    "output": null
+  },
+  {
+    "input": "under Oskar paid seventy dollars yesterday",
+    "output": null
+  },
+  {
+    "input": "over Oskar paid seventy dollars yesterday",
+    "output": null
+  },
+  {
+    "input": "not seventy dollars for order 1234",
+    "output": null
+  },
+  {
+    "input": "never seventy dollars for order 1234",
+    "output": null
+  },
+  {
+    "input": "without seventy dollars for order 1234",
+    "output": null
+  },
+  {
+    "input": "under seventy dollars for order 1234",
+    "output": null
+  },
+  {
+    "input": "over seventy dollars for order 1234",
+    "output": null
+  },
+  {
+    "input": "not USD eighty",
+    "output": null
+  },
+  {
+    "input": "never USD eighty",
+    "output": null
+  },
+  {
+    "input": "without USD eighty",
+    "output": null
+  },
+  {
+    "input": "under USD eighty",
+    "output": null
+  },
+  {
+    "input": "over USD eighty",
+    "output": null
+  },
+  {
+    "input": "not we paid eighty USD",
+    "output": null
+  },
+  {
+    "input": "never we paid eighty USD",
+    "output": null
+  },
+  {
+    "input": "without we paid eighty USD",
+    "output": null
+  },
+  {
+    "input": "under we paid eighty USD",
+    "output": null
+  },
+  {
+    "input": "over we paid eighty USD",
+    "output": null
+  },
+  {
+    "input": "not a price of roughly eighty dollars",
+    "output": null
+  },
+  {
+    "input": "never a price of roughly eighty dollars",
+    "output": null
+  },
+  {
+    "input": "without a price of roughly eighty dollars",
+    "output": null
+  },
+  {
+    "input": "under a price of roughly eighty dollars",
+    "output": null
+  },
+  {
+    "input": "over a price of roughly eighty dollars",
+    "output": null
+  },
+  {
+    "input": "not about ninety dollars",
+    "output": null
+  },
+  {
+    "input": "never about ninety dollars",
+    "output": null
+  },
+  {
+    "input": "without about ninety dollars",
+    "output": null
+  },
+  {
+    "input": "under about ninety dollars",
+    "output": null
+  },
+  {
+    "input": "over about ninety dollars",
+    "output": null
+  },
+  {
+    "input": "not the budget is ninety thousand dollars",
+    "output": null
+  },
+  {
+    "input": "never the budget is ninety thousand dollars",
+    "output": null
+  },
+  {
+    "input": "without the budget is ninety thousand dollars",
+    "output": null
+  },
+  {
+    "input": "under the budget is ninety thousand dollars",
+    "output": null
+  },
+  {
+    "input": "over the budget is ninety thousand dollars",
+    "output": null
+  },
+  {
+    "input": "not twenty one dollars",
+    "output": null
+  },
+  {
+    "input": "never twenty one dollars",
+    "output": null
+  },
+  {
+    "input": "without twenty one dollars",
+    "output": null
+  },
+  {
+    "input": "under twenty one dollars",
+    "output": null
+  },
+  {
+    "input": "over twenty one dollars",
+    "output": null
+  },
+  {
+    "input": "not invoice 2048 totals USD twenty one",
+    "output": null
+  },
+  {
+    "input": "never invoice 2048 totals USD twenty one",
+    "output": null
+  },
+  {
+    "input": "without invoice 2048 totals USD twenty one",
+    "output": null
+  },
+  {
+    "input": "under invoice 2048 totals USD twenty one",
+    "output": null
+  },
+  {
+    "input": "over invoice 2048 totals USD twenty one",
+    "output": null
+  },
+  {
+    "input": "not the budget is twenty one million dollars",
+    "output": null
+  },
+  {
+    "input": "never the budget is twenty one million dollars",
+    "output": null
+  },
+  {
+    "input": "without the budget is twenty one million dollars",
+    "output": null
+  },
+  {
+    "input": "under the budget is twenty one million dollars",
+    "output": null
+  },
+  {
+    "input": "over the budget is twenty one million dollars",
+    "output": null
+  },
+  {
+    "input": "not we paid USD thirty two",
+    "output": null
+  },
+  {
+    "input": "never we paid USD thirty two",
+    "output": null
+  },
+  {
+    "input": "without we paid USD thirty two",
+    "output": null
+  },
+  {
+    "input": "under we paid USD thirty two",
+    "output": null
+  },
+  {
+    "input": "over we paid USD thirty two",
+    "output": null
+  },
+  {
+    "input": "not around thirty two grand in dollars",
+    "output": null
+  },
+  {
+    "input": "never around thirty two grand in dollars",
+    "output": null
+  },
+  {
+    "input": "without around thirty two grand in dollars",
+    "output": null
+  },
+  {
+    "input": "under around thirty two grand in dollars",
+    "output": null
+  },
+  {
+    "input": "over around thirty two grand in dollars",
+    "output": null
+  },
+  {
+    "input": "not send forty three dollars to Maja",
+    "output": null
+  },
+  {
+    "input": "never send forty three dollars to Maja",
+    "output": null
+  },
+  {
+    "input": "without send forty three dollars to Maja",
+    "output": null
+  },
+  {
+    "input": "under send forty three dollars to Maja",
+    "output": null
+  },
+  {
+    "input": "over send forty three dollars to Maja",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid forty three dollars",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid forty three dollars",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid forty three dollars",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid forty three dollars",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid forty three dollars",
+    "output": null
+  },
+  {
+    "input": "not a price of forty three dollars",
+    "output": null
+  },
+  {
+    "input": "never a price of forty three dollars",
+    "output": null
+  },
+  {
+    "input": "without a price of forty three dollars",
+    "output": null
+  },
+  {
+    "input": "under a price of forty three dollars",
+    "output": null
+  },
+  {
+    "input": "over a price of forty three dollars",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid USD fifty four",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid USD fifty four",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid USD fifty four",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid USD fifty four",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid USD fifty four",
+    "output": null
+  },
+  {
+    "input": "not roughly USD fifty four million",
+    "output": null
+  },
+  {
+    "input": "never roughly USD fifty four million",
+    "output": null
+  },
+  {
+    "input": "without roughly USD fifty four million",
+    "output": null
+  },
+  {
+    "input": "under roughly USD fifty four million",
+    "output": null
+  },
+  {
+    "input": "over roughly USD fifty four million",
+    "output": null
+  },
+  {
+    "input": "not Oskar paid sixty five dollars yesterday",
+    "output": null
+  },
+  {
+    "input": "never Oskar paid sixty five dollars yesterday",
+    "output": null
+  },
+  {
+    "input": "without Oskar paid sixty five dollars yesterday",
+    "output": null
+  },
+  {
+    "input": "under Oskar paid sixty five dollars yesterday",
+    "output": null
+  },
+  {
+    "input": "over Oskar paid sixty five dollars yesterday",
+    "output": null
+  },
+  {
+    "input": "not sixty five dollars for order 1234",
+    "output": null
+  },
+  {
+    "input": "never sixty five dollars for order 1234",
+    "output": null
+  },
+  {
+    "input": "without sixty five dollars for order 1234",
+    "output": null
+  },
+  {
+    "input": "under sixty five dollars for order 1234",
+    "output": null
+  },
+  {
+    "input": "over sixty five dollars for order 1234",
+    "output": null
+  },
+  {
+    "input": "not USD seventy six",
+    "output": null
+  },
+  {
+    "input": "never USD seventy six",
+    "output": null
+  },
+  {
+    "input": "without USD seventy six",
+    "output": null
+  },
+  {
+    "input": "under USD seventy six",
+    "output": null
+  },
+  {
+    "input": "over USD seventy six",
+    "output": null
+  },
+  {
+    "input": "not we paid seventy six USD",
+    "output": null
+  },
+  {
+    "input": "never we paid seventy six USD",
+    "output": null
+  },
+  {
+    "input": "without we paid seventy six USD",
+    "output": null
+  },
+  {
+    "input": "under we paid seventy six USD",
+    "output": null
+  },
+  {
+    "input": "over we paid seventy six USD",
+    "output": null
+  },
+  {
+    "input": "not a price of roughly seventy six dollars",
+    "output": null
+  },
+  {
+    "input": "never a price of roughly seventy six dollars",
+    "output": null
+  },
+  {
+    "input": "without a price of roughly seventy six dollars",
+    "output": null
+  },
+  {
+    "input": "under a price of roughly seventy six dollars",
+    "output": null
+  },
+  {
+    "input": "over a price of roughly seventy six dollars",
+    "output": null
+  },
+  {
+    "input": "not about eighty seven dollars",
+    "output": null
+  },
+  {
+    "input": "never about eighty seven dollars",
+    "output": null
+  },
+  {
+    "input": "without about eighty seven dollars",
+    "output": null
+  },
+  {
+    "input": "under about eighty seven dollars",
+    "output": null
+  },
+  {
+    "input": "over about eighty seven dollars",
+    "output": null
+  },
+  {
+    "input": "not the budget is eighty seven thousand dollars",
+    "output": null
+  },
+  {
+    "input": "never the budget is eighty seven thousand dollars",
+    "output": null
+  },
+  {
+    "input": "without the budget is eighty seven thousand dollars",
+    "output": null
+  },
+  {
+    "input": "under the budget is eighty seven thousand dollars",
+    "output": null
+  },
+  {
+    "input": "over the budget is eighty seven thousand dollars",
+    "output": null
+  },
+  {
+    "input": "not ninety nine dollars",
+    "output": null
+  },
+  {
+    "input": "never ninety nine dollars",
+    "output": null
+  },
+  {
+    "input": "without ninety nine dollars",
+    "output": null
+  },
+  {
+    "input": "under ninety nine dollars",
+    "output": null
+  },
+  {
+    "input": "over ninety nine dollars",
+    "output": null
+  },
+  {
+    "input": "not invoice 2048 totals USD ninety nine",
+    "output": null
+  },
+  {
+    "input": "never invoice 2048 totals USD ninety nine",
+    "output": null
+  },
+  {
+    "input": "without invoice 2048 totals USD ninety nine",
+    "output": null
+  },
+  {
+    "input": "under invoice 2048 totals USD ninety nine",
+    "output": null
+  },
+  {
+    "input": "over invoice 2048 totals USD ninety nine",
+    "output": null
+  },
+  {
+    "input": "not the budget is ninety nine million dollars",
+    "output": null
+  },
+  {
+    "input": "never the budget is ninety nine million dollars",
+    "output": null
+  },
+  {
+    "input": "without the budget is ninety nine million dollars",
+    "output": null
+  },
+  {
+    "input": "under the budget is ninety nine million dollars",
+    "output": null
+  },
+  {
+    "input": "over the budget is ninety nine million dollars",
+    "output": null
+  },
+  {
+    "input": "not 40k USD",
+    "output": null
+  },
+  {
+    "input": "never 40k USD",
+    "output": null
+  },
+  {
+    "input": "without 40k USD",
+    "output": null
+  },
+  {
+    "input": "under 40k USD",
+    "output": null
+  },
+  {
+    "input": "over 40k USD",
+    "output": null
+  },
+  {
+    "input": "not 40m USD",
+    "output": null
+  },
+  {
+    "input": "never 40m USD",
+    "output": null
+  },
+  {
+    "input": "without 40m USD",
+    "output": null
+  },
+  {
+    "input": "under 40m USD",
+    "output": null
+  },
+  {
+    "input": "over 40m USD",
+    "output": null
+  },
+  {
+    "input": "not invoice 2048 totals $ 35",
+    "output": null
+  },
+  {
+    "input": "never invoice 2048 totals $ 35",
+    "output": null
+  },
+  {
+    "input": "without invoice 2048 totals $ 35",
+    "output": null
+  },
+  {
+    "input": "under invoice 2048 totals $ 35",
+    "output": null
+  },
+  {
+    "input": "over invoice 2048 totals $ 35",
+    "output": null
+  },
+  {
+    "input": "not $ two",
+    "output": null
+  },
+  {
+    "input": "never $ two",
+    "output": null
+  },
+  {
+    "input": "without $ two",
+    "output": null
+  },
+  {
+    "input": "under $ two",
+    "output": null
+  },
+  {
+    "input": "over $ two",
+    "output": null
+  },
+  {
+    "input": "not invoice 2048 totals $ five",
+    "output": null
+  },
+  {
+    "input": "never invoice 2048 totals $ five",
+    "output": null
+  },
+  {
+    "input": "without invoice 2048 totals $ five",
+    "output": null
+  },
+  {
+    "input": "under invoice 2048 totals $ five",
+    "output": null
+  },
+  {
+    "input": "over invoice 2048 totals $ five",
+    "output": null
+  },
+  {
+    "input": "not $ nine",
+    "output": null
+  },
+  {
+    "input": "never $ nine",
+    "output": null
+  },
+  {
+    "input": "without $ nine",
+    "output": null
+  },
+  {
+    "input": "under $ nine",
+    "output": null
+  },
+  {
+    "input": "over $ nine",
+    "output": null
+  },
+  {
+    "input": "not invoice 2048 totals $ twelve",
+    "output": null
+  },
+  {
+    "input": "never invoice 2048 totals $ twelve",
+    "output": null
+  },
+  {
+    "input": "without invoice 2048 totals $ twelve",
+    "output": null
+  },
+  {
+    "input": "under invoice 2048 totals $ twelve",
+    "output": null
+  },
+  {
+    "input": "over invoice 2048 totals $ twelve",
+    "output": null
+  },
+  {
+    "input": "not $ sixteen",
+    "output": null
+  },
+  {
+    "input": "never $ sixteen",
+    "output": null
+  },
+  {
+    "input": "without $ sixteen",
+    "output": null
+  },
+  {
+    "input": "under $ sixteen",
+    "output": null
+  },
+  {
+    "input": "over $ sixteen",
+    "output": null
+  },
+  {
+    "input": "not invoice 2048 totals $ nineteen",
+    "output": null
+  },
+  {
+    "input": "never invoice 2048 totals $ nineteen",
+    "output": null
+  },
+  {
+    "input": "without invoice 2048 totals $ nineteen",
+    "output": null
+  },
+  {
+    "input": "under invoice 2048 totals $ nineteen",
+    "output": null
+  },
+  {
+    "input": "over invoice 2048 totals $ nineteen",
+    "output": null
+  },
+  {
+    "input": "not $ fifty",
+    "output": null
+  },
+  {
+    "input": "never $ fifty",
+    "output": null
+  },
+  {
+    "input": "without $ fifty",
+    "output": null
+  },
+  {
+    "input": "under $ fifty",
+    "output": null
+  },
+  {
+    "input": "over $ fifty",
+    "output": null
+  },
+  {
+    "input": "not invoice 2048 totals $ eighty",
+    "output": null
+  },
+  {
+    "input": "never invoice 2048 totals $ eighty",
+    "output": null
+  },
+  {
+    "input": "without invoice 2048 totals $ eighty",
+    "output": null
+  },
+  {
+    "input": "under invoice 2048 totals $ eighty",
+    "output": null
+  },
+  {
+    "input": "over invoice 2048 totals $ eighty",
+    "output": null
+  },
+  {
+    "input": "not $ forty three",
+    "output": null
+  },
+  {
+    "input": "never $ forty three",
+    "output": null
+  },
+  {
+    "input": "without $ forty three",
+    "output": null
+  },
+  {
+    "input": "under $ forty three",
+    "output": null
+  },
+  {
+    "input": "over $ forty three",
+    "output": null
+  },
+  {
+    "input": "not invoice 2048 totals $ seventy six",
+    "output": null
+  },
+  {
+    "input": "never invoice 2048 totals $ seventy six",
+    "output": null
+  },
+  {
+    "input": "without invoice 2048 totals $ seventy six",
+    "output": null
+  },
+  {
+    "input": "under invoice 2048 totals $ seventy six",
+    "output": null
+  },
+  {
+    "input": "over invoice 2048 totals $ seventy six",
+    "output": null
+  },
+  {
+    "input": "not send 12.50 pounds to Maja",
+    "output": null
+  },
+  {
+    "input": "never send 12.50 pounds to Maja",
+    "output": null
+  },
+  {
+    "input": "without send 12.50 pounds to Maja",
+    "output": null
+  },
+  {
+    "input": "under send 12.50 pounds to Maja",
+    "output": null
+  },
+  {
+    "input": "over send 12.50 pounds to Maja",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid 12.50 pounds",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid 12.50 pounds",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid 12.50 pounds",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid 12.50 pounds",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid 12.50 pounds",
+    "output": null
+  },
+  {
+    "input": "not a price of 12.50 pounds",
+    "output": null
+  },
+  {
+    "input": "never a price of 12.50 pounds",
+    "output": null
+  },
+  {
+    "input": "without a price of 12.50 pounds",
+    "output": null
+  },
+  {
+    "input": "under a price of 12.50 pounds",
+    "output": null
+  },
+  {
+    "input": "over a price of 12.50 pounds",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid GBP 7",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid GBP 7",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid GBP 7",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid GBP 7",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid GBP 7",
+    "output": null
+  },
+  {
+    "input": "not roughly GBP 7 million",
+    "output": null
+  },
+  {
+    "input": "never roughly GBP 7 million",
+    "output": null
+  },
+  {
+    "input": "without roughly GBP 7 million",
+    "output": null
+  },
+  {
+    "input": "under roughly GBP 7 million",
+    "output": null
+  },
+  {
+    "input": "over roughly GBP 7 million",
+    "output": null
+  },
+  {
+    "input": "not Oskar paid 35 pounds yesterday",
+    "output": null
+  },
+  {
+    "input": "never Oskar paid 35 pounds yesterday",
+    "output": null
+  },
+  {
+    "input": "without Oskar paid 35 pounds yesterday",
+    "output": null
+  },
+  {
+    "input": "under Oskar paid 35 pounds yesterday",
+    "output": null
+  },
+  {
+    "input": "over Oskar paid 35 pounds yesterday",
+    "output": null
+  },
+  {
+    "input": "not 35 pounds for order 1234",
+    "output": null
+  },
+  {
+    "input": "never 35 pounds for order 1234",
+    "output": null
+  },
+  {
+    "input": "without 35 pounds for order 1234",
+    "output": null
+  },
+  {
+    "input": "under 35 pounds for order 1234",
+    "output": null
+  },
+  {
+    "input": "over 35 pounds for order 1234",
+    "output": null
+  },
+  {
+    "input": "not £ 250",
+    "output": null
+  },
+  {
+    "input": "never £ 250",
+    "output": null
+  },
+  {
+    "input": "without £ 250",
+    "output": null
+  },
+  {
+    "input": "under £ 250",
+    "output": null
+  },
+  {
+    "input": "over £ 250",
+    "output": null
+  },
+  {
+    "input": "not we paid 250 GBP",
+    "output": null
+  },
+  {
+    "input": "never we paid 250 GBP",
+    "output": null
+  },
+  {
+    "input": "without we paid 250 GBP",
+    "output": null
+  },
+  {
+    "input": "under we paid 250 GBP",
+    "output": null
+  },
+  {
+    "input": "over we paid 250 GBP",
+    "output": null
+  },
+  {
+    "input": "not a price of roughly 250 pounds",
+    "output": null
+  },
+  {
+    "input": "never a price of roughly 250 pounds",
+    "output": null
+  },
+  {
+    "input": "without a price of roughly 250 pounds",
+    "output": null
+  },
+  {
+    "input": "under a price of roughly 250 pounds",
+    "output": null
+  },
+  {
+    "input": "over a price of roughly 250 pounds",
+    "output": null
+  },
+  {
+    "input": "not about 1,200 pounds",
+    "output": null
+  },
+  {
+    "input": "never about 1,200 pounds",
+    "output": null
+  },
+  {
+    "input": "without about 1,200 pounds",
+    "output": null
+  },
+  {
+    "input": "under about 1,200 pounds",
+    "output": null
+  },
+  {
+    "input": "over about 1,200 pounds",
+    "output": null
+  },
+  {
+    "input": "not the budget is 1,200 thousand pounds",
+    "output": null
+  },
+  {
+    "input": "never the budget is 1,200 thousand pounds",
+    "output": null
+  },
+  {
+    "input": "without the budget is 1,200 thousand pounds",
+    "output": null
+  },
+  {
+    "input": "under the budget is 1,200 thousand pounds",
+    "output": null
+  },
+  {
+    "input": "over the budget is 1,200 thousand pounds",
+    "output": null
+  },
+  {
+    "input": "not one pounds",
+    "output": null
+  },
+  {
+    "input": "never one pounds",
+    "output": null
+  },
+  {
+    "input": "without one pounds",
+    "output": null
+  },
+  {
+    "input": "under one pounds",
+    "output": null
+  },
+  {
+    "input": "over one pounds",
+    "output": null
+  },
+  {
+    "input": "not invoice 2048 totals £ one",
+    "output": null
+  },
+  {
+    "input": "never invoice 2048 totals £ one",
+    "output": null
+  },
+  {
+    "input": "without invoice 2048 totals £ one",
+    "output": null
+  },
+  {
+    "input": "under invoice 2048 totals £ one",
+    "output": null
+  },
+  {
+    "input": "over invoice 2048 totals £ one",
+    "output": null
+  },
+  {
+    "input": "not the budget is one million pounds",
+    "output": null
+  },
+  {
+    "input": "never the budget is one million pounds",
+    "output": null
+  },
+  {
+    "input": "without the budget is one million pounds",
+    "output": null
+  },
+  {
+    "input": "under the budget is one million pounds",
+    "output": null
+  },
+  {
+    "input": "over the budget is one million pounds",
+    "output": null
+  },
+  {
+    "input": "not we paid GBP two",
+    "output": null
+  },
+  {
+    "input": "never we paid GBP two",
+    "output": null
+  },
+  {
+    "input": "without we paid GBP two",
+    "output": null
+  },
+  {
+    "input": "under we paid GBP two",
+    "output": null
+  },
+  {
+    "input": "over we paid GBP two",
+    "output": null
+  },
+  {
+    "input": "not around two grand in pounds",
+    "output": null
+  },
+  {
+    "input": "never around two grand in pounds",
+    "output": null
+  },
+  {
+    "input": "without around two grand in pounds",
+    "output": null
+  },
+  {
+    "input": "under around two grand in pounds",
+    "output": null
+  },
+  {
+    "input": "over around two grand in pounds",
+    "output": null
+  },
+  {
+    "input": "not send three pounds to Maja",
+    "output": null
+  },
+  {
+    "input": "never send three pounds to Maja",
+    "output": null
+  },
+  {
+    "input": "without send three pounds to Maja",
+    "output": null
+  },
+  {
+    "input": "under send three pounds to Maja",
+    "output": null
+  },
+  {
+    "input": "over send three pounds to Maja",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid three pounds",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid three pounds",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid three pounds",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid three pounds",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid three pounds",
+    "output": null
+  },
+  {
+    "input": "not a price of three pounds",
+    "output": null
+  },
+  {
+    "input": "never a price of three pounds",
+    "output": null
+  },
+  {
+    "input": "without a price of three pounds",
+    "output": null
+  },
+  {
+    "input": "under a price of three pounds",
+    "output": null
+  },
+  {
+    "input": "over a price of three pounds",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid GBP four",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid GBP four",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid GBP four",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid GBP four",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid GBP four",
+    "output": null
+  },
+  {
+    "input": "not roughly GBP four million",
+    "output": null
+  },
+  {
+    "input": "never roughly GBP four million",
+    "output": null
+  },
+  {
+    "input": "without roughly GBP four million",
+    "output": null
+  },
+  {
+    "input": "under roughly GBP four million",
+    "output": null
+  },
+  {
+    "input": "over roughly GBP four million",
+    "output": null
+  },
+  {
+    "input": "not Oskar paid five pounds yesterday",
+    "output": null
+  },
+  {
+    "input": "never Oskar paid five pounds yesterday",
+    "output": null
+  },
+  {
+    "input": "without Oskar paid five pounds yesterday",
+    "output": null
+  },
+  {
+    "input": "under Oskar paid five pounds yesterday",
+    "output": null
+  },
+  {
+    "input": "over Oskar paid five pounds yesterday",
+    "output": null
+  },
+  {
+    "input": "not five pounds for order 1234",
+    "output": null
+  },
+  {
+    "input": "never five pounds for order 1234",
+    "output": null
+  },
+  {
+    "input": "without five pounds for order 1234",
+    "output": null
+  },
+  {
+    "input": "under five pounds for order 1234",
+    "output": null
+  },
+  {
+    "input": "over five pounds for order 1234",
+    "output": null
+  },
+  {
+    "input": "not £ six",
+    "output": null
+  },
+  {
+    "input": "never £ six",
+    "output": null
+  },
+  {
+    "input": "without £ six",
+    "output": null
+  },
+  {
+    "input": "under £ six",
+    "output": null
+  },
+  {
+    "input": "over £ six",
+    "output": null
+  },
+  {
+    "input": "not we paid six GBP",
+    "output": null
+  },
+  {
+    "input": "never we paid six GBP",
+    "output": null
+  },
+  {
+    "input": "without we paid six GBP",
+    "output": null
+  },
+  {
+    "input": "under we paid six GBP",
+    "output": null
+  },
+  {
+    "input": "over we paid six GBP",
+    "output": null
+  },
+  {
+    "input": "not a price of roughly six pounds",
+    "output": null
+  },
+  {
+    "input": "never a price of roughly six pounds",
+    "output": null
+  },
+  {
+    "input": "without a price of roughly six pounds",
+    "output": null
+  },
+  {
+    "input": "under a price of roughly six pounds",
+    "output": null
+  },
+  {
+    "input": "over a price of roughly six pounds",
+    "output": null
+  },
+  {
+    "input": "not about seven pounds",
+    "output": null
+  },
+  {
+    "input": "never about seven pounds",
+    "output": null
+  },
+  {
+    "input": "without about seven pounds",
+    "output": null
+  },
+  {
+    "input": "under about seven pounds",
+    "output": null
+  },
+  {
+    "input": "over about seven pounds",
+    "output": null
+  },
+  {
+    "input": "not the budget is seven thousand pounds",
+    "output": null
+  },
+  {
+    "input": "never the budget is seven thousand pounds",
+    "output": null
+  },
+  {
+    "input": "without the budget is seven thousand pounds",
+    "output": null
+  },
+  {
+    "input": "under the budget is seven thousand pounds",
+    "output": null
+  },
+  {
+    "input": "over the budget is seven thousand pounds",
+    "output": null
+  },
+  {
+    "input": "not eight pounds",
+    "output": null
+  },
+  {
+    "input": "never eight pounds",
+    "output": null
+  },
+  {
+    "input": "without eight pounds",
+    "output": null
+  },
+  {
+    "input": "under eight pounds",
+    "output": null
+  },
+  {
+    "input": "over eight pounds",
+    "output": null
+  },
+  {
+    "input": "not invoice 2048 totals £ eight",
+    "output": null
+  },
+  {
+    "input": "never invoice 2048 totals £ eight",
+    "output": null
+  },
+  {
+    "input": "without invoice 2048 totals £ eight",
+    "output": null
+  },
+  {
+    "input": "under invoice 2048 totals £ eight",
+    "output": null
+  },
+  {
+    "input": "over invoice 2048 totals £ eight",
+    "output": null
+  },
+  {
+    "input": "not the budget is eight million pounds",
+    "output": null
+  },
+  {
+    "input": "never the budget is eight million pounds",
+    "output": null
+  },
+  {
+    "input": "without the budget is eight million pounds",
+    "output": null
+  },
+  {
+    "input": "under the budget is eight million pounds",
+    "output": null
+  },
+  {
+    "input": "over the budget is eight million pounds",
+    "output": null
+  },
+  {
+    "input": "not we paid GBP nine",
+    "output": null
+  },
+  {
+    "input": "never we paid GBP nine",
+    "output": null
+  },
+  {
+    "input": "without we paid GBP nine",
+    "output": null
+  },
+  {
+    "input": "under we paid GBP nine",
+    "output": null
+  },
+  {
+    "input": "over we paid GBP nine",
+    "output": null
+  },
+  {
+    "input": "not around nine grand in pounds",
+    "output": null
+  },
+  {
+    "input": "never around nine grand in pounds",
+    "output": null
+  },
+  {
+    "input": "without around nine grand in pounds",
+    "output": null
+  },
+  {
+    "input": "under around nine grand in pounds",
+    "output": null
+  },
+  {
+    "input": "over around nine grand in pounds",
+    "output": null
+  },
+  {
+    "input": "not send ten pounds to Maja",
+    "output": null
+  },
+  {
+    "input": "never send ten pounds to Maja",
+    "output": null
+  },
+  {
+    "input": "without send ten pounds to Maja",
+    "output": null
+  },
+  {
+    "input": "under send ten pounds to Maja",
+    "output": null
+  },
+  {
+    "input": "over send ten pounds to Maja",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid ten pounds",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid ten pounds",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid ten pounds",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid ten pounds",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid ten pounds",
+    "output": null
+  },
+  {
+    "input": "not a price of ten pounds",
+    "output": null
+  },
+  {
+    "input": "never a price of ten pounds",
+    "output": null
+  },
+  {
+    "input": "without a price of ten pounds",
+    "output": null
+  },
+  {
+    "input": "under a price of ten pounds",
+    "output": null
+  },
+  {
+    "input": "over a price of ten pounds",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid GBP eleven",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid GBP eleven",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid GBP eleven",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid GBP eleven",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid GBP eleven",
+    "output": null
+  },
+  {
+    "input": "not roughly GBP eleven million",
+    "output": null
+  },
+  {
+    "input": "never roughly GBP eleven million",
+    "output": null
+  },
+  {
+    "input": "without roughly GBP eleven million",
+    "output": null
+  },
+  {
+    "input": "under roughly GBP eleven million",
+    "output": null
+  },
+  {
+    "input": "over roughly GBP eleven million",
+    "output": null
+  },
+  {
+    "input": "not Oskar paid twelve pounds yesterday",
+    "output": null
+  },
+  {
+    "input": "never Oskar paid twelve pounds yesterday",
+    "output": null
+  },
+  {
+    "input": "without Oskar paid twelve pounds yesterday",
+    "output": null
+  },
+  {
+    "input": "under Oskar paid twelve pounds yesterday",
+    "output": null
+  },
+  {
+    "input": "over Oskar paid twelve pounds yesterday",
+    "output": null
+  },
+  {
+    "input": "not twelve pounds for order 1234",
+    "output": null
+  },
+  {
+    "input": "never twelve pounds for order 1234",
+    "output": null
+  },
+  {
+    "input": "without twelve pounds for order 1234",
+    "output": null
+  },
+  {
+    "input": "under twelve pounds for order 1234",
+    "output": null
+  },
+  {
+    "input": "over twelve pounds for order 1234",
+    "output": null
+  },
+  {
+    "input": "not £ thirteen",
+    "output": null
+  },
+  {
+    "input": "never £ thirteen",
+    "output": null
+  },
+  {
+    "input": "without £ thirteen",
+    "output": null
+  },
+  {
+    "input": "under £ thirteen",
+    "output": null
+  },
+  {
+    "input": "over £ thirteen",
+    "output": null
+  },
+  {
+    "input": "not we paid thirteen GBP",
+    "output": null
+  },
+  {
+    "input": "never we paid thirteen GBP",
+    "output": null
+  },
+  {
+    "input": "without we paid thirteen GBP",
+    "output": null
+  },
+  {
+    "input": "under we paid thirteen GBP",
+    "output": null
+  },
+  {
+    "input": "over we paid thirteen GBP",
+    "output": null
+  },
+  {
+    "input": "not a price of roughly thirteen pounds",
+    "output": null
+  },
+  {
+    "input": "never a price of roughly thirteen pounds",
+    "output": null
+  },
+  {
+    "input": "without a price of roughly thirteen pounds",
+    "output": null
+  },
+  {
+    "input": "under a price of roughly thirteen pounds",
+    "output": null
+  },
+  {
+    "input": "over a price of roughly thirteen pounds",
+    "output": null
+  },
+  {
+    "input": "not about fourteen pounds",
+    "output": null
+  },
+  {
+    "input": "never about fourteen pounds",
+    "output": null
+  },
+  {
+    "input": "without about fourteen pounds",
+    "output": null
+  },
+  {
+    "input": "under about fourteen pounds",
+    "output": null
+  },
+  {
+    "input": "over about fourteen pounds",
+    "output": null
+  },
+  {
+    "input": "not the budget is fourteen thousand pounds",
+    "output": null
+  },
+  {
+    "input": "never the budget is fourteen thousand pounds",
+    "output": null
+  },
+  {
+    "input": "without the budget is fourteen thousand pounds",
+    "output": null
+  },
+  {
+    "input": "under the budget is fourteen thousand pounds",
+    "output": null
+  },
+  {
+    "input": "over the budget is fourteen thousand pounds",
+    "output": null
+  },
+  {
+    "input": "not fifteen pounds",
+    "output": null
+  },
+  {
+    "input": "never fifteen pounds",
+    "output": null
+  },
+  {
+    "input": "without fifteen pounds",
+    "output": null
+  },
+  {
+    "input": "under fifteen pounds",
+    "output": null
+  },
+  {
+    "input": "over fifteen pounds",
+    "output": null
+  },
+  {
+    "input": "not invoice 2048 totals £ fifteen",
+    "output": null
+  },
+  {
+    "input": "never invoice 2048 totals £ fifteen",
+    "output": null
+  },
+  {
+    "input": "without invoice 2048 totals £ fifteen",
+    "output": null
+  },
+  {
+    "input": "under invoice 2048 totals £ fifteen",
+    "output": null
+  },
+  {
+    "input": "over invoice 2048 totals £ fifteen",
+    "output": null
+  },
+  {
+    "input": "not the budget is fifteen million pounds",
+    "output": null
+  },
+  {
+    "input": "never the budget is fifteen million pounds",
+    "output": null
+  },
+  {
+    "input": "without the budget is fifteen million pounds",
+    "output": null
+  },
+  {
+    "input": "under the budget is fifteen million pounds",
+    "output": null
+  },
+  {
+    "input": "over the budget is fifteen million pounds",
+    "output": null
+  },
+  {
+    "input": "not we paid GBP sixteen",
+    "output": null
+  },
+  {
+    "input": "never we paid GBP sixteen",
+    "output": null
+  },
+  {
+    "input": "without we paid GBP sixteen",
+    "output": null
+  },
+  {
+    "input": "under we paid GBP sixteen",
+    "output": null
+  },
+  {
+    "input": "over we paid GBP sixteen",
+    "output": null
+  },
+  {
+    "input": "not around sixteen grand in pounds",
+    "output": null
+  },
+  {
+    "input": "never around sixteen grand in pounds",
+    "output": null
+  },
+  {
+    "input": "without around sixteen grand in pounds",
+    "output": null
+  },
+  {
+    "input": "under around sixteen grand in pounds",
+    "output": null
+  },
+  {
+    "input": "over around sixteen grand in pounds",
+    "output": null
+  },
+  {
+    "input": "not send seventeen pounds to Maja",
+    "output": null
+  },
+  {
+    "input": "never send seventeen pounds to Maja",
+    "output": null
+  },
+  {
+    "input": "without send seventeen pounds to Maja",
+    "output": null
+  },
+  {
+    "input": "under send seventeen pounds to Maja",
+    "output": null
+  },
+  {
+    "input": "over send seventeen pounds to Maja",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid seventeen pounds",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid seventeen pounds",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid seventeen pounds",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid seventeen pounds",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid seventeen pounds",
+    "output": null
+  },
+  {
+    "input": "not a price of seventeen pounds",
+    "output": null
+  },
+  {
+    "input": "never a price of seventeen pounds",
+    "output": null
+  },
+  {
+    "input": "without a price of seventeen pounds",
+    "output": null
+  },
+  {
+    "input": "under a price of seventeen pounds",
+    "output": null
+  },
+  {
+    "input": "over a price of seventeen pounds",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid GBP eighteen",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid GBP eighteen",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid GBP eighteen",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid GBP eighteen",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid GBP eighteen",
+    "output": null
+  },
+  {
+    "input": "not roughly GBP eighteen million",
+    "output": null
+  },
+  {
+    "input": "never roughly GBP eighteen million",
+    "output": null
+  },
+  {
+    "input": "without roughly GBP eighteen million",
+    "output": null
+  },
+  {
+    "input": "under roughly GBP eighteen million",
+    "output": null
+  },
+  {
+    "input": "over roughly GBP eighteen million",
+    "output": null
+  },
+  {
+    "input": "not Oskar paid nineteen pounds yesterday",
+    "output": null
+  },
+  {
+    "input": "never Oskar paid nineteen pounds yesterday",
+    "output": null
+  },
+  {
+    "input": "without Oskar paid nineteen pounds yesterday",
+    "output": null
+  },
+  {
+    "input": "under Oskar paid nineteen pounds yesterday",
+    "output": null
+  },
+  {
+    "input": "over Oskar paid nineteen pounds yesterday",
+    "output": null
+  },
+  {
+    "input": "not nineteen pounds for order 1234",
+    "output": null
+  },
+  {
+    "input": "never nineteen pounds for order 1234",
+    "output": null
+  },
+  {
+    "input": "without nineteen pounds for order 1234",
+    "output": null
+  },
+  {
+    "input": "under nineteen pounds for order 1234",
+    "output": null
+  },
+  {
+    "input": "over nineteen pounds for order 1234",
+    "output": null
+  },
+  {
+    "input": "not £ twenty",
+    "output": null
+  },
+  {
+    "input": "never £ twenty",
+    "output": null
+  },
+  {
+    "input": "without £ twenty",
+    "output": null
+  },
+  {
+    "input": "under £ twenty",
+    "output": null
+  },
+  {
+    "input": "over £ twenty",
+    "output": null
+  },
+  {
+    "input": "not we paid twenty GBP",
+    "output": null
+  },
+  {
+    "input": "never we paid twenty GBP",
+    "output": null
+  },
+  {
+    "input": "without we paid twenty GBP",
+    "output": null
+  },
+  {
+    "input": "under we paid twenty GBP",
+    "output": null
+  },
+  {
+    "input": "over we paid twenty GBP",
+    "output": null
+  },
+  {
+    "input": "not a price of roughly twenty pounds",
+    "output": null
+  },
+  {
+    "input": "never a price of roughly twenty pounds",
+    "output": null
+  },
+  {
+    "input": "without a price of roughly twenty pounds",
+    "output": null
+  },
+  {
+    "input": "under a price of roughly twenty pounds",
+    "output": null
+  },
+  {
+    "input": "over a price of roughly twenty pounds",
+    "output": null
+  },
+  {
+    "input": "not about thirty pounds",
+    "output": null
+  },
+  {
+    "input": "never about thirty pounds",
+    "output": null
+  },
+  {
+    "input": "without about thirty pounds",
+    "output": null
+  },
+  {
+    "input": "under about thirty pounds",
+    "output": null
+  },
+  {
+    "input": "over about thirty pounds",
+    "output": null
+  },
+  {
+    "input": "not the budget is thirty thousand pounds",
+    "output": null
+  },
+  {
+    "input": "never the budget is thirty thousand pounds",
+    "output": null
+  },
+  {
+    "input": "without the budget is thirty thousand pounds",
+    "output": null
+  },
+  {
+    "input": "under the budget is thirty thousand pounds",
+    "output": null
+  },
+  {
+    "input": "over the budget is thirty thousand pounds",
+    "output": null
+  },
+  {
+    "input": "not forty pounds",
+    "output": null
+  },
+  {
+    "input": "never forty pounds",
+    "output": null
+  },
+  {
+    "input": "without forty pounds",
+    "output": null
+  },
+  {
+    "input": "under forty pounds",
+    "output": null
+  },
+  {
+    "input": "over forty pounds",
+    "output": null
+  },
+  {
+    "input": "not invoice 2048 totals £ forty",
+    "output": null
+  },
+  {
+    "input": "never invoice 2048 totals £ forty",
+    "output": null
+  },
+  {
+    "input": "without invoice 2048 totals £ forty",
+    "output": null
+  },
+  {
+    "input": "under invoice 2048 totals £ forty",
+    "output": null
+  },
+  {
+    "input": "over invoice 2048 totals £ forty",
+    "output": null
+  },
+  {
+    "input": "not the budget is forty million pounds",
+    "output": null
+  },
+  {
+    "input": "never the budget is forty million pounds",
+    "output": null
+  },
+  {
+    "input": "without the budget is forty million pounds",
+    "output": null
+  },
+  {
+    "input": "under the budget is forty million pounds",
+    "output": null
+  },
+  {
+    "input": "over the budget is forty million pounds",
+    "output": null
+  },
+  {
+    "input": "not we paid GBP fifty",
+    "output": null
+  },
+  {
+    "input": "never we paid GBP fifty",
+    "output": null
+  },
+  {
+    "input": "without we paid GBP fifty",
+    "output": null
+  },
+  {
+    "input": "under we paid GBP fifty",
+    "output": null
+  },
+  {
+    "input": "over we paid GBP fifty",
+    "output": null
+  },
+  {
+    "input": "not around fifty grand in pounds",
+    "output": null
+  },
+  {
+    "input": "never around fifty grand in pounds",
+    "output": null
+  },
+  {
+    "input": "without around fifty grand in pounds",
+    "output": null
+  },
+  {
+    "input": "under around fifty grand in pounds",
+    "output": null
+  },
+  {
+    "input": "over around fifty grand in pounds",
+    "output": null
+  },
+  {
+    "input": "not send sixty pounds to Maja",
+    "output": null
+  },
+  {
+    "input": "never send sixty pounds to Maja",
+    "output": null
+  },
+  {
+    "input": "without send sixty pounds to Maja",
+    "output": null
+  },
+  {
+    "input": "under send sixty pounds to Maja",
+    "output": null
+  },
+  {
+    "input": "over send sixty pounds to Maja",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid sixty pounds",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid sixty pounds",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid sixty pounds",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid sixty pounds",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid sixty pounds",
+    "output": null
+  },
+  {
+    "input": "not a price of sixty pounds",
+    "output": null
+  },
+  {
+    "input": "never a price of sixty pounds",
+    "output": null
+  },
+  {
+    "input": "without a price of sixty pounds",
+    "output": null
+  },
+  {
+    "input": "under a price of sixty pounds",
+    "output": null
+  },
+  {
+    "input": "over a price of sixty pounds",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid GBP seventy",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid GBP seventy",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid GBP seventy",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid GBP seventy",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid GBP seventy",
+    "output": null
+  },
+  {
+    "input": "not roughly GBP seventy million",
+    "output": null
+  },
+  {
+    "input": "never roughly GBP seventy million",
+    "output": null
+  },
+  {
+    "input": "without roughly GBP seventy million",
+    "output": null
+  },
+  {
+    "input": "under roughly GBP seventy million",
+    "output": null
+  },
+  {
+    "input": "over roughly GBP seventy million",
+    "output": null
+  },
+  {
+    "input": "not Oskar paid eighty pounds yesterday",
+    "output": null
+  },
+  {
+    "input": "never Oskar paid eighty pounds yesterday",
+    "output": null
+  },
+  {
+    "input": "without Oskar paid eighty pounds yesterday",
+    "output": null
+  },
+  {
+    "input": "under Oskar paid eighty pounds yesterday",
+    "output": null
+  },
+  {
+    "input": "over Oskar paid eighty pounds yesterday",
+    "output": null
+  },
+  {
+    "input": "not eighty pounds for order 1234",
+    "output": null
+  },
+  {
+    "input": "never eighty pounds for order 1234",
+    "output": null
+  },
+  {
+    "input": "without eighty pounds for order 1234",
+    "output": null
+  },
+  {
+    "input": "under eighty pounds for order 1234",
+    "output": null
+  },
+  {
+    "input": "over eighty pounds for order 1234",
+    "output": null
+  },
+  {
+    "input": "not £ ninety",
+    "output": null
+  },
+  {
+    "input": "never £ ninety",
+    "output": null
+  },
+  {
+    "input": "without £ ninety",
+    "output": null
+  },
+  {
+    "input": "under £ ninety",
+    "output": null
+  },
+  {
+    "input": "over £ ninety",
+    "output": null
+  },
+  {
+    "input": "not we paid ninety GBP",
+    "output": null
+  },
+  {
+    "input": "never we paid ninety GBP",
+    "output": null
+  },
+  {
+    "input": "without we paid ninety GBP",
+    "output": null
+  },
+  {
+    "input": "under we paid ninety GBP",
+    "output": null
+  },
+  {
+    "input": "over we paid ninety GBP",
+    "output": null
+  },
+  {
+    "input": "not a price of roughly ninety pounds",
+    "output": null
+  },
+  {
+    "input": "never a price of roughly ninety pounds",
+    "output": null
+  },
+  {
+    "input": "without a price of roughly ninety pounds",
+    "output": null
+  },
+  {
+    "input": "under a price of roughly ninety pounds",
+    "output": null
+  },
+  {
+    "input": "over a price of roughly ninety pounds",
+    "output": null
+  },
+  {
+    "input": "not about twenty one pounds",
+    "output": null
+  },
+  {
+    "input": "never about twenty one pounds",
+    "output": null
+  },
+  {
+    "input": "without about twenty one pounds",
+    "output": null
+  },
+  {
+    "input": "under about twenty one pounds",
+    "output": null
+  },
+  {
+    "input": "over about twenty one pounds",
+    "output": null
+  },
+  {
+    "input": "not the budget is twenty one thousand pounds",
+    "output": null
+  },
+  {
+    "input": "never the budget is twenty one thousand pounds",
+    "output": null
+  },
+  {
+    "input": "without the budget is twenty one thousand pounds",
+    "output": null
+  },
+  {
+    "input": "under the budget is twenty one thousand pounds",
+    "output": null
+  },
+  {
+    "input": "over the budget is twenty one thousand pounds",
+    "output": null
+  },
+  {
+    "input": "not thirty two pounds",
+    "output": null
+  },
+  {
+    "input": "never thirty two pounds",
+    "output": null
+  },
+  {
+    "input": "without thirty two pounds",
+    "output": null
+  },
+  {
+    "input": "under thirty two pounds",
+    "output": null
+  },
+  {
+    "input": "over thirty two pounds",
+    "output": null
+  },
+  {
+    "input": "not invoice 2048 totals £ thirty two",
+    "output": null
+  },
+  {
+    "input": "never invoice 2048 totals £ thirty two",
+    "output": null
+  },
+  {
+    "input": "without invoice 2048 totals £ thirty two",
+    "output": null
+  },
+  {
+    "input": "under invoice 2048 totals £ thirty two",
+    "output": null
+  },
+  {
+    "input": "over invoice 2048 totals £ thirty two",
+    "output": null
+  },
+  {
+    "input": "not the budget is thirty two million pounds",
+    "output": null
+  },
+  {
+    "input": "never the budget is thirty two million pounds",
+    "output": null
+  },
+  {
+    "input": "without the budget is thirty two million pounds",
+    "output": null
+  },
+  {
+    "input": "under the budget is thirty two million pounds",
+    "output": null
+  },
+  {
+    "input": "over the budget is thirty two million pounds",
+    "output": null
+  },
+  {
+    "input": "not we paid GBP forty three",
+    "output": null
+  },
+  {
+    "input": "never we paid GBP forty three",
+    "output": null
+  },
+  {
+    "input": "without we paid GBP forty three",
+    "output": null
+  },
+  {
+    "input": "under we paid GBP forty three",
+    "output": null
+  },
+  {
+    "input": "over we paid GBP forty three",
+    "output": null
+  },
+  {
+    "input": "not around forty three grand in pounds",
+    "output": null
+  },
+  {
+    "input": "never around forty three grand in pounds",
+    "output": null
+  },
+  {
+    "input": "without around forty three grand in pounds",
+    "output": null
+  },
+  {
+    "input": "under around forty three grand in pounds",
+    "output": null
+  },
+  {
+    "input": "over around forty three grand in pounds",
+    "output": null
+  },
+  {
+    "input": "not send fifty four pounds to Maja",
+    "output": null
+  },
+  {
+    "input": "never send fifty four pounds to Maja",
+    "output": null
+  },
+  {
+    "input": "without send fifty four pounds to Maja",
+    "output": null
+  },
+  {
+    "input": "under send fifty four pounds to Maja",
+    "output": null
+  },
+  {
+    "input": "over send fifty four pounds to Maja",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid fifty four pounds",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid fifty four pounds",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid fifty four pounds",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid fifty four pounds",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid fifty four pounds",
+    "output": null
+  },
+  {
+    "input": "not a price of fifty four pounds",
+    "output": null
+  },
+  {
+    "input": "never a price of fifty four pounds",
+    "output": null
+  },
+  {
+    "input": "without a price of fifty four pounds",
+    "output": null
+  },
+  {
+    "input": "under a price of fifty four pounds",
+    "output": null
+  },
+  {
+    "input": "over a price of fifty four pounds",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid GBP sixty five",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid GBP sixty five",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid GBP sixty five",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid GBP sixty five",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid GBP sixty five",
+    "output": null
+  },
+  {
+    "input": "not roughly GBP sixty five million",
+    "output": null
+  },
+  {
+    "input": "never roughly GBP sixty five million",
+    "output": null
+  },
+  {
+    "input": "without roughly GBP sixty five million",
+    "output": null
+  },
+  {
+    "input": "under roughly GBP sixty five million",
+    "output": null
+  },
+  {
+    "input": "over roughly GBP sixty five million",
+    "output": null
+  },
+  {
+    "input": "not Oskar paid seventy six pounds yesterday",
+    "output": null
+  },
+  {
+    "input": "never Oskar paid seventy six pounds yesterday",
+    "output": null
+  },
+  {
+    "input": "without Oskar paid seventy six pounds yesterday",
+    "output": null
+  },
+  {
+    "input": "under Oskar paid seventy six pounds yesterday",
+    "output": null
+  },
+  {
+    "input": "over Oskar paid seventy six pounds yesterday",
+    "output": null
+  },
+  {
+    "input": "not seventy six pounds for order 1234",
+    "output": null
+  },
+  {
+    "input": "never seventy six pounds for order 1234",
+    "output": null
+  },
+  {
+    "input": "without seventy six pounds for order 1234",
+    "output": null
+  },
+  {
+    "input": "under seventy six pounds for order 1234",
+    "output": null
+  },
+  {
+    "input": "over seventy six pounds for order 1234",
+    "output": null
+  },
+  {
+    "input": "not £ eighty seven",
+    "output": null
+  },
+  {
+    "input": "never £ eighty seven",
+    "output": null
+  },
+  {
+    "input": "without £ eighty seven",
+    "output": null
+  },
+  {
+    "input": "under £ eighty seven",
+    "output": null
+  },
+  {
+    "input": "over £ eighty seven",
+    "output": null
+  },
+  {
+    "input": "not we paid eighty seven GBP",
+    "output": null
+  },
+  {
+    "input": "never we paid eighty seven GBP",
+    "output": null
+  },
+  {
+    "input": "without we paid eighty seven GBP",
+    "output": null
+  },
+  {
+    "input": "under we paid eighty seven GBP",
+    "output": null
+  },
+  {
+    "input": "over we paid eighty seven GBP",
+    "output": null
+  },
+  {
+    "input": "not a price of roughly eighty seven pounds",
+    "output": null
+  },
+  {
+    "input": "never a price of roughly eighty seven pounds",
+    "output": null
+  },
+  {
+    "input": "without a price of roughly eighty seven pounds",
+    "output": null
+  },
+  {
+    "input": "under a price of roughly eighty seven pounds",
+    "output": null
+  },
+  {
+    "input": "over a price of roughly eighty seven pounds",
+    "output": null
+  },
+  {
+    "input": "not about ninety nine pounds",
+    "output": null
+  },
+  {
+    "input": "never about ninety nine pounds",
+    "output": null
+  },
+  {
+    "input": "without about ninety nine pounds",
+    "output": null
+  },
+  {
+    "input": "under about ninety nine pounds",
+    "output": null
+  },
+  {
+    "input": "over about ninety nine pounds",
+    "output": null
+  },
+  {
+    "input": "not the budget is ninety nine thousand pounds",
+    "output": null
+  },
+  {
+    "input": "never the budget is ninety nine thousand pounds",
+    "output": null
+  },
+  {
+    "input": "without the budget is ninety nine thousand pounds",
+    "output": null
+  },
+  {
+    "input": "under the budget is ninety nine thousand pounds",
+    "output": null
+  },
+  {
+    "input": "over the budget is ninety nine thousand pounds",
+    "output": null
+  },
+  {
+    "input": "not 10k GBP",
+    "output": null
+  },
+  {
+    "input": "never 10k GBP",
+    "output": null
+  },
+  {
+    "input": "without 10k GBP",
+    "output": null
+  },
+  {
+    "input": "under 10k GBP",
+    "output": null
+  },
+  {
+    "input": "over 10k GBP",
+    "output": null
+  },
+  {
+    "input": "not 10m GBP",
+    "output": null
+  },
+  {
+    "input": "never 10m GBP",
+    "output": null
+  },
+  {
+    "input": "without 10m GBP",
+    "output": null
+  },
+  {
+    "input": "under 10m GBP",
+    "output": null
+  },
+  {
+    "input": "over 10m GBP",
+    "output": null
+  },
+  {
+    "input": "not 12.50 kronor",
+    "output": null
+  },
+  {
+    "input": "never 12.50 kronor",
+    "output": null
+  },
+  {
+    "input": "without 12.50 kronor",
+    "output": null
+  },
+  {
+    "input": "under 12.50 kronor",
+    "output": null
+  },
+  {
+    "input": "over 12.50 kronor",
+    "output": null
+  },
+  {
+    "input": "not invoice 2048 totals SEK 12.50",
+    "output": null
+  },
+  {
+    "input": "never invoice 2048 totals SEK 12.50",
+    "output": null
+  },
+  {
+    "input": "without invoice 2048 totals SEK 12.50",
+    "output": null
+  },
+  {
+    "input": "under invoice 2048 totals SEK 12.50",
+    "output": null
+  },
+  {
+    "input": "over invoice 2048 totals SEK 12.50",
+    "output": null
+  },
+  {
+    "input": "not the budget is 12.50 million kronor",
+    "output": null
+  },
+  {
+    "input": "never the budget is 12.50 million kronor",
+    "output": null
+  },
+  {
+    "input": "without the budget is 12.50 million kronor",
+    "output": null
+  },
+  {
+    "input": "under the budget is 12.50 million kronor",
+    "output": null
+  },
+  {
+    "input": "over the budget is 12.50 million kronor",
+    "output": null
+  },
+  {
+    "input": "not we paid SEK 7",
+    "output": null
+  },
+  {
+    "input": "never we paid SEK 7",
+    "output": null
+  },
+  {
+    "input": "without we paid SEK 7",
+    "output": null
+  },
+  {
+    "input": "under we paid SEK 7",
+    "output": null
+  },
+  {
+    "input": "over we paid SEK 7",
+    "output": null
+  },
+  {
+    "input": "not around 7 grand in kronor",
+    "output": null
+  },
+  {
+    "input": "never around 7 grand in kronor",
+    "output": null
+  },
+  {
+    "input": "without around 7 grand in kronor",
+    "output": null
+  },
+  {
+    "input": "under around 7 grand in kronor",
+    "output": null
+  },
+  {
+    "input": "over around 7 grand in kronor",
+    "output": null
+  },
+  {
+    "input": "not send 35 kronor to Maja",
+    "output": null
+  },
+  {
+    "input": "never send 35 kronor to Maja",
+    "output": null
+  },
+  {
+    "input": "without send 35 kronor to Maja",
+    "output": null
+  },
+  {
+    "input": "under send 35 kronor to Maja",
+    "output": null
+  },
+  {
+    "input": "over send 35 kronor to Maja",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid 35 kronor",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid 35 kronor",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid 35 kronor",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid 35 kronor",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid 35 kronor",
+    "output": null
+  },
+  {
+    "input": "not a price of 35 kronor",
+    "output": null
+  },
+  {
+    "input": "never a price of 35 kronor",
+    "output": null
+  },
+  {
+    "input": "without a price of 35 kronor",
+    "output": null
+  },
+  {
+    "input": "under a price of 35 kronor",
+    "output": null
+  },
+  {
+    "input": "over a price of 35 kronor",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid SEK 250",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid SEK 250",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid SEK 250",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid SEK 250",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid SEK 250",
+    "output": null
+  },
+  {
+    "input": "not roughly SEK 250 million",
+    "output": null
+  },
+  {
+    "input": "never roughly SEK 250 million",
+    "output": null
+  },
+  {
+    "input": "without roughly SEK 250 million",
+    "output": null
+  },
+  {
+    "input": "under roughly SEK 250 million",
+    "output": null
+  },
+  {
+    "input": "over roughly SEK 250 million",
+    "output": null
+  },
+  {
+    "input": "not Oskar paid 1,200 kronor yesterday",
+    "output": null
+  },
+  {
+    "input": "never Oskar paid 1,200 kronor yesterday",
+    "output": null
+  },
+  {
+    "input": "without Oskar paid 1,200 kronor yesterday",
+    "output": null
+  },
+  {
+    "input": "under Oskar paid 1,200 kronor yesterday",
+    "output": null
+  },
+  {
+    "input": "over Oskar paid 1,200 kronor yesterday",
+    "output": null
+  },
+  {
+    "input": "not 1,200 kronor for order 1234",
+    "output": null
+  },
+  {
+    "input": "never 1,200 kronor for order 1234",
+    "output": null
+  },
+  {
+    "input": "without 1,200 kronor for order 1234",
+    "output": null
+  },
+  {
+    "input": "under 1,200 kronor for order 1234",
+    "output": null
+  },
+  {
+    "input": "over 1,200 kronor for order 1234",
+    "output": null
+  },
+  {
+    "input": "not SEK one",
+    "output": null
+  },
+  {
+    "input": "never SEK one",
+    "output": null
+  },
+  {
+    "input": "without SEK one",
+    "output": null
+  },
+  {
+    "input": "under SEK one",
+    "output": null
+  },
+  {
+    "input": "over SEK one",
+    "output": null
+  },
+  {
+    "input": "not we paid one SEK",
+    "output": null
+  },
+  {
+    "input": "never we paid one SEK",
+    "output": null
+  },
+  {
+    "input": "without we paid one SEK",
+    "output": null
+  },
+  {
+    "input": "under we paid one SEK",
+    "output": null
+  },
+  {
+    "input": "over we paid one SEK",
+    "output": null
+  },
+  {
+    "input": "not a price of roughly one kronor",
+    "output": null
+  },
+  {
+    "input": "never a price of roughly one kronor",
+    "output": null
+  },
+  {
+    "input": "without a price of roughly one kronor",
+    "output": null
+  },
+  {
+    "input": "under a price of roughly one kronor",
+    "output": null
+  },
+  {
+    "input": "over a price of roughly one kronor",
+    "output": null
+  },
+  {
+    "input": "not about two kronor",
+    "output": null
+  },
+  {
+    "input": "never about two kronor",
+    "output": null
+  },
+  {
+    "input": "without about two kronor",
+    "output": null
+  },
+  {
+    "input": "under about two kronor",
+    "output": null
+  },
+  {
+    "input": "over about two kronor",
+    "output": null
+  },
+  {
+    "input": "not the budget is two thousand kronor",
+    "output": null
+  },
+  {
+    "input": "never the budget is two thousand kronor",
+    "output": null
+  },
+  {
+    "input": "without the budget is two thousand kronor",
+    "output": null
+  },
+  {
+    "input": "under the budget is two thousand kronor",
+    "output": null
+  },
+  {
+    "input": "over the budget is two thousand kronor",
+    "output": null
+  },
+  {
+    "input": "not three kronor",
+    "output": null
+  },
+  {
+    "input": "never three kronor",
+    "output": null
+  },
+  {
+    "input": "without three kronor",
+    "output": null
+  },
+  {
+    "input": "under three kronor",
+    "output": null
+  },
+  {
+    "input": "over three kronor",
+    "output": null
+  },
+  {
+    "input": "not invoice 2048 totals SEK three",
+    "output": null
+  },
+  {
+    "input": "never invoice 2048 totals SEK three",
+    "output": null
+  },
+  {
+    "input": "without invoice 2048 totals SEK three",
+    "output": null
+  },
+  {
+    "input": "under invoice 2048 totals SEK three",
+    "output": null
+  },
+  {
+    "input": "over invoice 2048 totals SEK three",
+    "output": null
+  },
+  {
+    "input": "not the budget is three million kronor",
+    "output": null
+  },
+  {
+    "input": "never the budget is three million kronor",
+    "output": null
+  },
+  {
+    "input": "without the budget is three million kronor",
+    "output": null
+  },
+  {
+    "input": "under the budget is three million kronor",
+    "output": null
+  },
+  {
+    "input": "over the budget is three million kronor",
+    "output": null
+  },
+  {
+    "input": "not we paid SEK four",
+    "output": null
+  },
+  {
+    "input": "never we paid SEK four",
+    "output": null
+  },
+  {
+    "input": "without we paid SEK four",
+    "output": null
+  },
+  {
+    "input": "under we paid SEK four",
+    "output": null
+  },
+  {
+    "input": "over we paid SEK four",
+    "output": null
+  },
+  {
+    "input": "not around four grand in kronor",
+    "output": null
+  },
+  {
+    "input": "never around four grand in kronor",
+    "output": null
+  },
+  {
+    "input": "without around four grand in kronor",
+    "output": null
+  },
+  {
+    "input": "under around four grand in kronor",
+    "output": null
+  },
+  {
+    "input": "over around four grand in kronor",
+    "output": null
+  },
+  {
+    "input": "not send five kronor to Maja",
+    "output": null
+  },
+  {
+    "input": "never send five kronor to Maja",
+    "output": null
+  },
+  {
+    "input": "without send five kronor to Maja",
+    "output": null
+  },
+  {
+    "input": "under send five kronor to Maja",
+    "output": null
+  },
+  {
+    "input": "over send five kronor to Maja",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid five kronor",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid five kronor",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid five kronor",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid five kronor",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid five kronor",
+    "output": null
+  },
+  {
+    "input": "not a price of five kronor",
+    "output": null
+  },
+  {
+    "input": "never a price of five kronor",
+    "output": null
+  },
+  {
+    "input": "without a price of five kronor",
+    "output": null
+  },
+  {
+    "input": "under a price of five kronor",
+    "output": null
+  },
+  {
+    "input": "over a price of five kronor",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid SEK six",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid SEK six",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid SEK six",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid SEK six",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid SEK six",
+    "output": null
+  },
+  {
+    "input": "not roughly SEK six million",
+    "output": null
+  },
+  {
+    "input": "never roughly SEK six million",
+    "output": null
+  },
+  {
+    "input": "without roughly SEK six million",
+    "output": null
+  },
+  {
+    "input": "under roughly SEK six million",
+    "output": null
+  },
+  {
+    "input": "over roughly SEK six million",
+    "output": null
+  },
+  {
+    "input": "not Oskar paid seven kronor yesterday",
+    "output": null
+  },
+  {
+    "input": "never Oskar paid seven kronor yesterday",
+    "output": null
+  },
+  {
+    "input": "without Oskar paid seven kronor yesterday",
+    "output": null
+  },
+  {
+    "input": "under Oskar paid seven kronor yesterday",
+    "output": null
+  },
+  {
+    "input": "over Oskar paid seven kronor yesterday",
+    "output": null
+  },
+  {
+    "input": "not seven kronor for order 1234",
+    "output": null
+  },
+  {
+    "input": "never seven kronor for order 1234",
+    "output": null
+  },
+  {
+    "input": "without seven kronor for order 1234",
+    "output": null
+  },
+  {
+    "input": "under seven kronor for order 1234",
+    "output": null
+  },
+  {
+    "input": "over seven kronor for order 1234",
+    "output": null
+  },
+  {
+    "input": "not SEK eight",
+    "output": null
+  },
+  {
+    "input": "never SEK eight",
+    "output": null
+  },
+  {
+    "input": "without SEK eight",
+    "output": null
+  },
+  {
+    "input": "under SEK eight",
+    "output": null
+  },
+  {
+    "input": "over SEK eight",
+    "output": null
+  },
+  {
+    "input": "not we paid eight SEK",
+    "output": null
+  },
+  {
+    "input": "never we paid eight SEK",
+    "output": null
+  },
+  {
+    "input": "without we paid eight SEK",
+    "output": null
+  },
+  {
+    "input": "under we paid eight SEK",
+    "output": null
+  },
+  {
+    "input": "over we paid eight SEK",
+    "output": null
+  },
+  {
+    "input": "not a price of roughly eight kronor",
+    "output": null
+  },
+  {
+    "input": "never a price of roughly eight kronor",
+    "output": null
+  },
+  {
+    "input": "without a price of roughly eight kronor",
+    "output": null
+  },
+  {
+    "input": "under a price of roughly eight kronor",
+    "output": null
+  },
+  {
+    "input": "over a price of roughly eight kronor",
+    "output": null
+  },
+  {
+    "input": "not about nine kronor",
+    "output": null
+  },
+  {
+    "input": "never about nine kronor",
+    "output": null
+  },
+  {
+    "input": "without about nine kronor",
+    "output": null
+  },
+  {
+    "input": "under about nine kronor",
+    "output": null
+  },
+  {
+    "input": "over about nine kronor",
+    "output": null
+  },
+  {
+    "input": "not the budget is nine thousand kronor",
+    "output": null
+  },
+  {
+    "input": "never the budget is nine thousand kronor",
+    "output": null
+  },
+  {
+    "input": "without the budget is nine thousand kronor",
+    "output": null
+  },
+  {
+    "input": "under the budget is nine thousand kronor",
+    "output": null
+  },
+  {
+    "input": "over the budget is nine thousand kronor",
+    "output": null
+  },
+  {
+    "input": "not ten kronor",
+    "output": null
+  },
+  {
+    "input": "never ten kronor",
+    "output": null
+  },
+  {
+    "input": "without ten kronor",
+    "output": null
+  },
+  {
+    "input": "under ten kronor",
+    "output": null
+  },
+  {
+    "input": "over ten kronor",
+    "output": null
+  },
+  {
+    "input": "not invoice 2048 totals SEK ten",
+    "output": null
+  },
+  {
+    "input": "never invoice 2048 totals SEK ten",
+    "output": null
+  },
+  {
+    "input": "without invoice 2048 totals SEK ten",
+    "output": null
+  },
+  {
+    "input": "under invoice 2048 totals SEK ten",
+    "output": null
+  },
+  {
+    "input": "over invoice 2048 totals SEK ten",
+    "output": null
+  },
+  {
+    "input": "not the budget is ten million kronor",
+    "output": null
+  },
+  {
+    "input": "never the budget is ten million kronor",
+    "output": null
+  },
+  {
+    "input": "without the budget is ten million kronor",
+    "output": null
+  },
+  {
+    "input": "under the budget is ten million kronor",
+    "output": null
+  },
+  {
+    "input": "over the budget is ten million kronor",
+    "output": null
+  },
+  {
+    "input": "not we paid SEK eleven",
+    "output": null
+  },
+  {
+    "input": "never we paid SEK eleven",
+    "output": null
+  },
+  {
+    "input": "without we paid SEK eleven",
+    "output": null
+  },
+  {
+    "input": "under we paid SEK eleven",
+    "output": null
+  },
+  {
+    "input": "over we paid SEK eleven",
+    "output": null
+  },
+  {
+    "input": "not around eleven grand in kronor",
+    "output": null
+  },
+  {
+    "input": "never around eleven grand in kronor",
+    "output": null
+  },
+  {
+    "input": "without around eleven grand in kronor",
+    "output": null
+  },
+  {
+    "input": "under around eleven grand in kronor",
+    "output": null
+  },
+  {
+    "input": "over around eleven grand in kronor",
+    "output": null
+  },
+  {
+    "input": "not send twelve kronor to Maja",
+    "output": null
+  },
+  {
+    "input": "never send twelve kronor to Maja",
+    "output": null
+  },
+  {
+    "input": "without send twelve kronor to Maja",
+    "output": null
+  },
+  {
+    "input": "under send twelve kronor to Maja",
+    "output": null
+  },
+  {
+    "input": "over send twelve kronor to Maja",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid twelve kronor",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid twelve kronor",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid twelve kronor",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid twelve kronor",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid twelve kronor",
+    "output": null
+  },
+  {
+    "input": "not a price of twelve kronor",
+    "output": null
+  },
+  {
+    "input": "never a price of twelve kronor",
+    "output": null
+  },
+  {
+    "input": "without a price of twelve kronor",
+    "output": null
+  },
+  {
+    "input": "under a price of twelve kronor",
+    "output": null
+  },
+  {
+    "input": "over a price of twelve kronor",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid SEK thirteen",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid SEK thirteen",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid SEK thirteen",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid SEK thirteen",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid SEK thirteen",
+    "output": null
+  },
+  {
+    "input": "not roughly SEK thirteen million",
+    "output": null
+  },
+  {
+    "input": "never roughly SEK thirteen million",
+    "output": null
+  },
+  {
+    "input": "without roughly SEK thirteen million",
+    "output": null
+  },
+  {
+    "input": "under roughly SEK thirteen million",
+    "output": null
+  },
+  {
+    "input": "over roughly SEK thirteen million",
+    "output": null
+  },
+  {
+    "input": "not Oskar paid fourteen kronor yesterday",
+    "output": null
+  },
+  {
+    "input": "never Oskar paid fourteen kronor yesterday",
+    "output": null
+  },
+  {
+    "input": "without Oskar paid fourteen kronor yesterday",
+    "output": null
+  },
+  {
+    "input": "under Oskar paid fourteen kronor yesterday",
+    "output": null
+  },
+  {
+    "input": "over Oskar paid fourteen kronor yesterday",
+    "output": null
+  },
+  {
+    "input": "not fourteen kronor for order 1234",
+    "output": null
+  },
+  {
+    "input": "never fourteen kronor for order 1234",
+    "output": null
+  },
+  {
+    "input": "without fourteen kronor for order 1234",
+    "output": null
+  },
+  {
+    "input": "under fourteen kronor for order 1234",
+    "output": null
+  },
+  {
+    "input": "over fourteen kronor for order 1234",
+    "output": null
+  },
+  {
+    "input": "not SEK fifteen",
+    "output": null
+  },
+  {
+    "input": "never SEK fifteen",
+    "output": null
+  },
+  {
+    "input": "without SEK fifteen",
+    "output": null
+  },
+  {
+    "input": "under SEK fifteen",
+    "output": null
+  },
+  {
+    "input": "over SEK fifteen",
+    "output": null
+  },
+  {
+    "input": "not we paid fifteen SEK",
+    "output": null
+  },
+  {
+    "input": "never we paid fifteen SEK",
+    "output": null
+  },
+  {
+    "input": "without we paid fifteen SEK",
+    "output": null
+  },
+  {
+    "input": "under we paid fifteen SEK",
+    "output": null
+  },
+  {
+    "input": "over we paid fifteen SEK",
+    "output": null
+  },
+  {
+    "input": "not a price of roughly fifteen kronor",
+    "output": null
+  },
+  {
+    "input": "never a price of roughly fifteen kronor",
+    "output": null
+  },
+  {
+    "input": "without a price of roughly fifteen kronor",
+    "output": null
+  },
+  {
+    "input": "under a price of roughly fifteen kronor",
+    "output": null
+  },
+  {
+    "input": "over a price of roughly fifteen kronor",
+    "output": null
+  },
+  {
+    "input": "not about sixteen kronor",
+    "output": null
+  },
+  {
+    "input": "never about sixteen kronor",
+    "output": null
+  },
+  {
+    "input": "without about sixteen kronor",
+    "output": null
+  },
+  {
+    "input": "under about sixteen kronor",
+    "output": null
+  },
+  {
+    "input": "over about sixteen kronor",
+    "output": null
+  },
+  {
+    "input": "not the budget is sixteen thousand kronor",
+    "output": null
+  },
+  {
+    "input": "never the budget is sixteen thousand kronor",
+    "output": null
+  },
+  {
+    "input": "without the budget is sixteen thousand kronor",
+    "output": null
+  },
+  {
+    "input": "under the budget is sixteen thousand kronor",
+    "output": null
+  },
+  {
+    "input": "over the budget is sixteen thousand kronor",
+    "output": null
+  },
+  {
+    "input": "not seventeen kronor",
+    "output": null
+  },
+  {
+    "input": "never seventeen kronor",
+    "output": null
+  },
+  {
+    "input": "without seventeen kronor",
+    "output": null
+  },
+  {
+    "input": "under seventeen kronor",
+    "output": null
+  },
+  {
+    "input": "over seventeen kronor",
+    "output": null
+  },
+  {
+    "input": "not invoice 2048 totals SEK seventeen",
+    "output": null
+  },
+  {
+    "input": "never invoice 2048 totals SEK seventeen",
+    "output": null
+  },
+  {
+    "input": "without invoice 2048 totals SEK seventeen",
+    "output": null
+  },
+  {
+    "input": "under invoice 2048 totals SEK seventeen",
+    "output": null
+  },
+  {
+    "input": "over invoice 2048 totals SEK seventeen",
+    "output": null
+  },
+  {
+    "input": "not the budget is seventeen million kronor",
+    "output": null
+  },
+  {
+    "input": "never the budget is seventeen million kronor",
+    "output": null
+  },
+  {
+    "input": "without the budget is seventeen million kronor",
+    "output": null
+  },
+  {
+    "input": "under the budget is seventeen million kronor",
+    "output": null
+  },
+  {
+    "input": "over the budget is seventeen million kronor",
+    "output": null
+  },
+  {
+    "input": "not we paid SEK eighteen",
+    "output": null
+  },
+  {
+    "input": "never we paid SEK eighteen",
+    "output": null
+  },
+  {
+    "input": "without we paid SEK eighteen",
+    "output": null
+  },
+  {
+    "input": "under we paid SEK eighteen",
+    "output": null
+  },
+  {
+    "input": "over we paid SEK eighteen",
+    "output": null
+  },
+  {
+    "input": "not around eighteen grand in kronor",
+    "output": null
+  },
+  {
+    "input": "never around eighteen grand in kronor",
+    "output": null
+  },
+  {
+    "input": "without around eighteen grand in kronor",
+    "output": null
+  },
+  {
+    "input": "under around eighteen grand in kronor",
+    "output": null
+  },
+  {
+    "input": "over around eighteen grand in kronor",
+    "output": null
+  },
+  {
+    "input": "not send nineteen kronor to Maja",
+    "output": null
+  },
+  {
+    "input": "never send nineteen kronor to Maja",
+    "output": null
+  },
+  {
+    "input": "without send nineteen kronor to Maja",
+    "output": null
+  },
+  {
+    "input": "under send nineteen kronor to Maja",
+    "output": null
+  },
+  {
+    "input": "over send nineteen kronor to Maja",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid nineteen kronor",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid nineteen kronor",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid nineteen kronor",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid nineteen kronor",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid nineteen kronor",
+    "output": null
+  },
+  {
+    "input": "not a price of nineteen kronor",
+    "output": null
+  },
+  {
+    "input": "never a price of nineteen kronor",
+    "output": null
+  },
+  {
+    "input": "without a price of nineteen kronor",
+    "output": null
+  },
+  {
+    "input": "under a price of nineteen kronor",
+    "output": null
+  },
+  {
+    "input": "over a price of nineteen kronor",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid SEK twenty",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid SEK twenty",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid SEK twenty",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid SEK twenty",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid SEK twenty",
+    "output": null
+  },
+  {
+    "input": "not roughly SEK twenty million",
+    "output": null
+  },
+  {
+    "input": "never roughly SEK twenty million",
+    "output": null
+  },
+  {
+    "input": "without roughly SEK twenty million",
+    "output": null
+  },
+  {
+    "input": "under roughly SEK twenty million",
+    "output": null
+  },
+  {
+    "input": "over roughly SEK twenty million",
+    "output": null
+  },
+  {
+    "input": "not Oskar paid thirty kronor yesterday",
+    "output": null
+  },
+  {
+    "input": "never Oskar paid thirty kronor yesterday",
+    "output": null
+  },
+  {
+    "input": "without Oskar paid thirty kronor yesterday",
+    "output": null
+  },
+  {
+    "input": "under Oskar paid thirty kronor yesterday",
+    "output": null
+  },
+  {
+    "input": "over Oskar paid thirty kronor yesterday",
+    "output": null
+  },
+  {
+    "input": "not thirty kronor for order 1234",
+    "output": null
+  },
+  {
+    "input": "never thirty kronor for order 1234",
+    "output": null
+  },
+  {
+    "input": "without thirty kronor for order 1234",
+    "output": null
+  },
+  {
+    "input": "under thirty kronor for order 1234",
+    "output": null
+  },
+  {
+    "input": "over thirty kronor for order 1234",
+    "output": null
+  },
+  {
+    "input": "not SEK forty",
+    "output": null
+  },
+  {
+    "input": "never SEK forty",
+    "output": null
+  },
+  {
+    "input": "without SEK forty",
+    "output": null
+  },
+  {
+    "input": "under SEK forty",
+    "output": null
+  },
+  {
+    "input": "over SEK forty",
+    "output": null
+  },
+  {
+    "input": "not we paid forty SEK",
+    "output": null
+  },
+  {
+    "input": "never we paid forty SEK",
+    "output": null
+  },
+  {
+    "input": "without we paid forty SEK",
+    "output": null
+  },
+  {
+    "input": "under we paid forty SEK",
+    "output": null
+  },
+  {
+    "input": "over we paid forty SEK",
+    "output": null
+  },
+  {
+    "input": "not a price of roughly forty kronor",
+    "output": null
+  },
+  {
+    "input": "never a price of roughly forty kronor",
+    "output": null
+  },
+  {
+    "input": "without a price of roughly forty kronor",
+    "output": null
+  },
+  {
+    "input": "under a price of roughly forty kronor",
+    "output": null
+  },
+  {
+    "input": "over a price of roughly forty kronor",
+    "output": null
+  },
+  {
+    "input": "not about fifty kronor",
+    "output": null
+  },
+  {
+    "input": "never about fifty kronor",
+    "output": null
+  },
+  {
+    "input": "without about fifty kronor",
+    "output": null
+  },
+  {
+    "input": "under about fifty kronor",
+    "output": null
+  },
+  {
+    "input": "over about fifty kronor",
+    "output": null
+  },
+  {
+    "input": "not the budget is fifty thousand kronor",
+    "output": null
+  },
+  {
+    "input": "never the budget is fifty thousand kronor",
+    "output": null
+  },
+  {
+    "input": "without the budget is fifty thousand kronor",
+    "output": null
+  },
+  {
+    "input": "under the budget is fifty thousand kronor",
+    "output": null
+  },
+  {
+    "input": "over the budget is fifty thousand kronor",
+    "output": null
+  },
+  {
+    "input": "not sixty kronor",
+    "output": null
+  },
+  {
+    "input": "never sixty kronor",
+    "output": null
+  },
+  {
+    "input": "without sixty kronor",
+    "output": null
+  },
+  {
+    "input": "under sixty kronor",
+    "output": null
+  },
+  {
+    "input": "over sixty kronor",
+    "output": null
+  },
+  {
+    "input": "not invoice 2048 totals SEK sixty",
+    "output": null
+  },
+  {
+    "input": "never invoice 2048 totals SEK sixty",
+    "output": null
+  },
+  {
+    "input": "without invoice 2048 totals SEK sixty",
+    "output": null
+  },
+  {
+    "input": "under invoice 2048 totals SEK sixty",
+    "output": null
+  },
+  {
+    "input": "over invoice 2048 totals SEK sixty",
+    "output": null
+  },
+  {
+    "input": "not the budget is sixty million kronor",
+    "output": null
+  },
+  {
+    "input": "never the budget is sixty million kronor",
+    "output": null
+  },
+  {
+    "input": "without the budget is sixty million kronor",
+    "output": null
+  },
+  {
+    "input": "under the budget is sixty million kronor",
+    "output": null
+  },
+  {
+    "input": "over the budget is sixty million kronor",
+    "output": null
+  },
+  {
+    "input": "not we paid SEK seventy",
+    "output": null
+  },
+  {
+    "input": "never we paid SEK seventy",
+    "output": null
+  },
+  {
+    "input": "without we paid SEK seventy",
+    "output": null
+  },
+  {
+    "input": "under we paid SEK seventy",
+    "output": null
+  },
+  {
+    "input": "over we paid SEK seventy",
+    "output": null
+  },
+  {
+    "input": "not around seventy grand in kronor",
+    "output": null
+  },
+  {
+    "input": "never around seventy grand in kronor",
+    "output": null
+  },
+  {
+    "input": "without around seventy grand in kronor",
+    "output": null
+  },
+  {
+    "input": "under around seventy grand in kronor",
+    "output": null
+  },
+  {
+    "input": "over around seventy grand in kronor",
+    "output": null
+  },
+  {
+    "input": "not send eighty kronor to Maja",
+    "output": null
+  },
+  {
+    "input": "never send eighty kronor to Maja",
+    "output": null
+  },
+  {
+    "input": "without send eighty kronor to Maja",
+    "output": null
+  },
+  {
+    "input": "under send eighty kronor to Maja",
+    "output": null
+  },
+  {
+    "input": "over send eighty kronor to Maja",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid eighty kronor",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid eighty kronor",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid eighty kronor",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid eighty kronor",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid eighty kronor",
+    "output": null
+  },
+  {
+    "input": "not a price of eighty kronor",
+    "output": null
+  },
+  {
+    "input": "never a price of eighty kronor",
+    "output": null
+  },
+  {
+    "input": "without a price of eighty kronor",
+    "output": null
+  },
+  {
+    "input": "under a price of eighty kronor",
+    "output": null
+  },
+  {
+    "input": "over a price of eighty kronor",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid SEK ninety",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid SEK ninety",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid SEK ninety",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid SEK ninety",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid SEK ninety",
+    "output": null
+  },
+  {
+    "input": "not roughly SEK ninety million",
+    "output": null
+  },
+  {
+    "input": "never roughly SEK ninety million",
+    "output": null
+  },
+  {
+    "input": "without roughly SEK ninety million",
+    "output": null
+  },
+  {
+    "input": "under roughly SEK ninety million",
+    "output": null
+  },
+  {
+    "input": "over roughly SEK ninety million",
+    "output": null
+  },
+  {
+    "input": "not Oskar paid twenty one kronor yesterday",
+    "output": null
+  },
+  {
+    "input": "never Oskar paid twenty one kronor yesterday",
+    "output": null
+  },
+  {
+    "input": "without Oskar paid twenty one kronor yesterday",
+    "output": null
+  },
+  {
+    "input": "under Oskar paid twenty one kronor yesterday",
+    "output": null
+  },
+  {
+    "input": "over Oskar paid twenty one kronor yesterday",
+    "output": null
+  },
+  {
+    "input": "not twenty one kronor for order 1234",
+    "output": null
+  },
+  {
+    "input": "never twenty one kronor for order 1234",
+    "output": null
+  },
+  {
+    "input": "without twenty one kronor for order 1234",
+    "output": null
+  },
+  {
+    "input": "under twenty one kronor for order 1234",
+    "output": null
+  },
+  {
+    "input": "over twenty one kronor for order 1234",
+    "output": null
+  },
+  {
+    "input": "not SEK thirty two",
+    "output": null
+  },
+  {
+    "input": "never SEK thirty two",
+    "output": null
+  },
+  {
+    "input": "without SEK thirty two",
+    "output": null
+  },
+  {
+    "input": "under SEK thirty two",
+    "output": null
+  },
+  {
+    "input": "over SEK thirty two",
+    "output": null
+  },
+  {
+    "input": "not we paid thirty two SEK",
+    "output": null
+  },
+  {
+    "input": "never we paid thirty two SEK",
+    "output": null
+  },
+  {
+    "input": "without we paid thirty two SEK",
+    "output": null
+  },
+  {
+    "input": "under we paid thirty two SEK",
+    "output": null
+  },
+  {
+    "input": "over we paid thirty two SEK",
+    "output": null
+  },
+  {
+    "input": "not a price of roughly thirty two kronor",
+    "output": null
+  },
+  {
+    "input": "never a price of roughly thirty two kronor",
+    "output": null
+  },
+  {
+    "input": "without a price of roughly thirty two kronor",
+    "output": null
+  },
+  {
+    "input": "under a price of roughly thirty two kronor",
+    "output": null
+  },
+  {
+    "input": "over a price of roughly thirty two kronor",
+    "output": null
+  },
+  {
+    "input": "not about forty three kronor",
+    "output": null
+  },
+  {
+    "input": "never about forty three kronor",
+    "output": null
+  },
+  {
+    "input": "without about forty three kronor",
+    "output": null
+  },
+  {
+    "input": "under about forty three kronor",
+    "output": null
+  },
+  {
+    "input": "over about forty three kronor",
+    "output": null
+  },
+  {
+    "input": "not the budget is forty three thousand kronor",
+    "output": null
+  },
+  {
+    "input": "never the budget is forty three thousand kronor",
+    "output": null
+  },
+  {
+    "input": "without the budget is forty three thousand kronor",
+    "output": null
+  },
+  {
+    "input": "under the budget is forty three thousand kronor",
+    "output": null
+  },
+  {
+    "input": "over the budget is forty three thousand kronor",
+    "output": null
+  },
+  {
+    "input": "not fifty four kronor",
+    "output": null
+  },
+  {
+    "input": "never fifty four kronor",
+    "output": null
+  },
+  {
+    "input": "without fifty four kronor",
+    "output": null
+  },
+  {
+    "input": "under fifty four kronor",
+    "output": null
+  },
+  {
+    "input": "over fifty four kronor",
+    "output": null
+  },
+  {
+    "input": "not invoice 2048 totals SEK fifty four",
+    "output": null
+  },
+  {
+    "input": "never invoice 2048 totals SEK fifty four",
+    "output": null
+  },
+  {
+    "input": "without invoice 2048 totals SEK fifty four",
+    "output": null
+  },
+  {
+    "input": "under invoice 2048 totals SEK fifty four",
+    "output": null
+  },
+  {
+    "input": "over invoice 2048 totals SEK fifty four",
+    "output": null
+  },
+  {
+    "input": "not the budget is fifty four million kronor",
+    "output": null
+  },
+  {
+    "input": "never the budget is fifty four million kronor",
+    "output": null
+  },
+  {
+    "input": "without the budget is fifty four million kronor",
+    "output": null
+  },
+  {
+    "input": "under the budget is fifty four million kronor",
+    "output": null
+  },
+  {
+    "input": "over the budget is fifty four million kronor",
+    "output": null
+  },
+  {
+    "input": "not we paid SEK sixty five",
+    "output": null
+  },
+  {
+    "input": "never we paid SEK sixty five",
+    "output": null
+  },
+  {
+    "input": "without we paid SEK sixty five",
+    "output": null
+  },
+  {
+    "input": "under we paid SEK sixty five",
+    "output": null
+  },
+  {
+    "input": "over we paid SEK sixty five",
+    "output": null
+  },
+  {
+    "input": "not around sixty five grand in kronor",
+    "output": null
+  },
+  {
+    "input": "never around sixty five grand in kronor",
+    "output": null
+  },
+  {
+    "input": "without around sixty five grand in kronor",
+    "output": null
+  },
+  {
+    "input": "under around sixty five grand in kronor",
+    "output": null
+  },
+  {
+    "input": "over around sixty five grand in kronor",
+    "output": null
+  },
+  {
+    "input": "not send seventy six kronor to Maja",
+    "output": null
+  },
+  {
+    "input": "never send seventy six kronor to Maja",
+    "output": null
+  },
+  {
+    "input": "without send seventy six kronor to Maja",
+    "output": null
+  },
+  {
+    "input": "under send seventy six kronor to Maja",
+    "output": null
+  },
+  {
+    "input": "over send seventy six kronor to Maja",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid seventy six kronor",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid seventy six kronor",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid seventy six kronor",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid seventy six kronor",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid seventy six kronor",
+    "output": null
+  },
+  {
+    "input": "not a price of seventy six kronor",
+    "output": null
+  },
+  {
+    "input": "never a price of seventy six kronor",
+    "output": null
+  },
+  {
+    "input": "without a price of seventy six kronor",
+    "output": null
+  },
+  {
+    "input": "under a price of seventy six kronor",
+    "output": null
+  },
+  {
+    "input": "over a price of seventy six kronor",
+    "output": null
+  },
+  {
+    "input": "not in 2024 we paid SEK eighty seven",
+    "output": null
+  },
+  {
+    "input": "never in 2024 we paid SEK eighty seven",
+    "output": null
+  },
+  {
+    "input": "without in 2024 we paid SEK eighty seven",
+    "output": null
+  },
+  {
+    "input": "under in 2024 we paid SEK eighty seven",
+    "output": null
+  },
+  {
+    "input": "over in 2024 we paid SEK eighty seven",
+    "output": null
+  },
+  {
+    "input": "not roughly SEK eighty seven million",
+    "output": null
+  },
+  {
+    "input": "never roughly SEK eighty seven million",
+    "output": null
+  },
+  {
+    "input": "without roughly SEK eighty seven million",
+    "output": null
+  },
+  {
+    "input": "under roughly SEK eighty seven million",
+    "output": null
+  },
+  {
+    "input": "over roughly SEK eighty seven million",
+    "output": null
+  },
+  {
+    "input": "not Oskar paid ninety nine kronor yesterday",
+    "output": null
+  },
+  {
+    "input": "never Oskar paid ninety nine kronor yesterday",
+    "output": null
+  },
+  {
+    "input": "without Oskar paid ninety nine kronor yesterday",
+    "output": null
+  },
+  {
+    "input": "under Oskar paid ninety nine kronor yesterday",
+    "output": null
+  },
+  {
+    "input": "over Oskar paid ninety nine kronor yesterday",
+    "output": null
+  },
+  {
+    "input": "not ninety nine kronor for order 1234",
+    "output": null
+  },
+  {
+    "input": "never ninety nine kronor for order 1234",
+    "output": null
+  },
+  {
+    "input": "without ninety nine kronor for order 1234",
+    "output": null
+  },
+  {
+    "input": "under ninety nine kronor for order 1234",
+    "output": null
+  },
+  {
+    "input": "over ninety nine kronor for order 1234",
+    "output": null
+  },
+  {
+    "input": "not 5k SEK",
+    "output": null
+  },
+  {
+    "input": "never 5k SEK",
+    "output": null
+  },
+  {
+    "input": "without 5k SEK",
+    "output": null
+  },
+  {
+    "input": "under 5k SEK",
+    "output": null
+  },
+  {
+    "input": "over 5k SEK",
+    "output": null
+  },
+  {
+    "input": "not 5m SEK",
+    "output": null
+  },
+  {
+    "input": "never 5m SEK",
+    "output": null
+  },
+  {
+    "input": "without 5m SEK",
+    "output": null
+  },
+  {
+    "input": "under 5m SEK",
+    "output": null
+  },
+  {
+    "input": "over 5m SEK",
+    "output": null
+  },
+  {
+    "input": "three hundred euros",
+    "output": null
+  },
+  {
+    "input": "five hundred dollars",
+    "output": null
+  },
+  {
+    "input": "seven hundred pounds",
+    "output": null
+  }
+]

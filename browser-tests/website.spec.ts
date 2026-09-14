@@ -39,6 +39,8 @@ test("the file explorer supports keyboard navigation", async ({ page }) => {
   await expect(page.getByRole("tabpanel")).toContainText("annotate(example)");
   await page.getByRole("tab", { name: "data/train-spans.json", exact: true }).click();
   await expect(page.getByRole("tabpanel")).toContainText('"AMOUNT", "USD"');
+  await page.getByRole("tab", { name: "data/train-rejections.json", exact: true }).click();
+  await expect(page.getByRole("tabpanel")).toContainText('"output": null');
   await page.getByRole("tab", { name: "decode/decode.ts", exact: true }).click();
   await expect(page.getByRole("tabpanel")).toContainText("normalizeNumber");
   await page.getByRole("tab", { name: "decode/number-words.ts", exact: true }).click();

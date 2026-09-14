@@ -1,36 +1,59 @@
-import type { MatchboxParser } from "@matchbox-ai/core/runtime";
+import { type MatchboxParser } from "@matchbox-ai/core/runtime";
+import { tokenize } from "@matchbox-ai/core/internal";
 import task from "../parser";
+import decode from "../decode/decode";
 import { quantity } from "../decode/quantity";
-// Deliberately small rule baseline for canonical single-unit and clock expressions.
-const units: Record<string, number> = { second: 1, minute: 60, hour: 3600, day: 86400 };
+// The same output compiler, with explicit lexical recognition instead of learned labels.
+const units: Record<string, string> = {
+  second: "SECOND",
+  seconds: "SECOND",
+  minute: "MINUTE",
+  minutes: "MINUTE",
+  hour: "HOUR",
+  hours: "HOUR",
+  day: "DAY",
+  days: "DAY",
+};
+const labels: Record<string, string> = {
+  today: "TODAY",
+  tomorrow: "TOMORROW",
+  am: "AM",
+  pm: "PM",
+  ":": "COLON",
+  in: "RELATIVE",
+  for: "DURATION",
+  or: "REJECT",
+  not: "REJECT",
+  never: "REJECT",
+  without: "REJECT",
+  ago: "REJECT",
+  months: "REJECT",
+  weeks: "REJECT",
+  years: "REJECT",
+  business: "REJECT",
+  negative: "REJECT",
+};
 const baseline: MatchboxParser<unknown> = {
   async parse(input) {
-    const duration =
-      /^(?:(for|in) )?(\d+(?:\.\d+)?|one|two|three) (seconds?|minutes?|hours?|days?)$/i.exec(input);
-    const clock = /^(today|tomorrow) at (\d{1,2})(?::(\d{2}))?(?: (am|pm))?$/i.exec(input);
-    let value: unknown = null;
-    if (duration) {
-      const amount = quantity(duration[2]!);
-      if (amount !== null)
-        value = {
-          kind: duration[1]?.toLowerCase() === "in" ? "relative" : "duration",
-          seconds: amount * units[duration[3]!.toLowerCase().replace(/s$/, "")]!,
-        };
-    } else if (clock) {
-      const hour = Number(clock[2]);
-      const period = clock[4]?.toLowerCase();
-      if (!period || (hour >= 1 && hour <= 12))
-        value = {
-          kind: "datetime",
-          dayOffset: clock[1]!.toLowerCase() === "today" ? 0 : 1,
-          hour: period ? (hour % 12) + (period === "pm" ? 12 : 0) : hour,
-          minute: Number(clock[3] ?? 0),
-        };
-    }
-    const result = task.validateOutput(value);
+    const tokens = tokenize(input, "words");
+    const isClock = tokens.some((token) => ["today", "tomorrow"].includes(token.key));
+    const tagged = tokens.map((token) => ({
+      ...token,
+      confidence: 1,
+      label:
+        labels[token.key] ??
+        units[token.key] ??
+        (quantity(token.text) !== null ? (isClock ? "CLOCK" : "AMOUNT") : "O"),
+    }));
+    const result = task.validateOutput(decode(tagged, input));
     return result.success
       ? { status: "ok", value: result.data, confidence: 1 }
-      : { status: "uncertain", value: null, confidence: 0, reason: "No baseline rule matched." };
+      : {
+          status: "uncertain",
+          value: null,
+          confidence: 0,
+          reason: "No unambiguous supported expression.",
+        };
   },
 };
 export default baseline;

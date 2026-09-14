@@ -23,6 +23,7 @@ const labels: Record<string, string> = {
   no: "INVERT",
   not: "NEGATE",
   exclude: "NEGATE",
+  excluding: "NEGATE",
   except: "NEGATE",
   without: "NEGATE",
   k: "THOUSAND",

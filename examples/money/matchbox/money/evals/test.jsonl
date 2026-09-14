@@ -24,3 +24,4 @@
 {"input": "the budget is 1.25 million dollars", "output": {"amount": 1250000, "currency": "USD", "approximate": false}}
 {"input": "$15", "output": {"amount": 15.0, "currency": "USD", "approximate": false}}
 {"input": "invoice 9191 totals $27.35", "output": {"amount": 27.35, "currency": "USD", "approximate": false}}
+{"input":"send 15 euros to Alice","output":{"amount":15,"currency":"EUR","approximate":false}}

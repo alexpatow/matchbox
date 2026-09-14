@@ -4,7 +4,7 @@ import { createParser } from "@matchbox-ai/core/runtime";
 import task from "../examples/time/matchbox/time/parser";
 import decode from "../examples/time/matchbox/time/decode/decode";
 const root = new URL("../examples/time/", import.meta.url);
-test("time model passes held-out compositions and abstains on unsupported expressions", async () => {
+test("time model passes template regression cases and abstains on unsupported expressions", async () => {
   const artifact = JSON.parse(
     await readFile(new URL(".matchbox/time/model.matchbox", root), "utf8"),
   );

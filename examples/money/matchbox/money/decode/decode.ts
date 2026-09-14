@@ -1,6 +1,7 @@
 import type { SequenceDecoder } from "@matchbox-ai/core/runtime";
 import { normalizeNumber } from "./number-words";
 const decode: SequenceDecoder = (tokens, input) => {
+  if (tokens.some((token) => token.label === "REJECT")) return null;
   const amounts = tokens.filter((token) => token.label === "AMOUNT");
   if (!amounts.length) return null;
   const first = tokens.indexOf(amounts[0]!);

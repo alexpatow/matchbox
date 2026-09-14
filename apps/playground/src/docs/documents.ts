@@ -33,6 +33,7 @@ export const navigation = [
     [
       ["evaluation", "Evaluate a model"],
       ["reference/evaluation", "evaluate API"],
+      ["example-evaluation", "Example results"],
     ],
   ],
   [

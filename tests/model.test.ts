@@ -50,9 +50,7 @@ test.each([
   "send email to everyone",
   "ARR over -50k",
   "ARR over 1,2",
-  "active Swedish customers over 50k ARR",
   "ARR between 20k and 100k",
-  "not active customers",
   "(active customers)",
 ])("abstains on unsupported input: %s", async (input) => {
   expect((await parser.parse(input)).status).toBe("uncertain");
@@ -105,4 +103,31 @@ test("country-name conjunctions remain inside the country span", async () => {
 
 test("country reference aliases always consume at least one token", () => {
   expect(countryAliases.every((alias) => alias.keys.length > 0)).toBe(true);
+});
+
+test("implicit fields and shared restrictions compile a country alternative", async () => {
+  expect((await parser.parse("active Swedish customers over 50k ARR")).value).toEqual({
+    and: [
+      { field: "status", operator: "eq", value: "active" },
+      { field: "country", operator: "eq", value: "SE" },
+      { field: "arr", operator: "gt", value: 50000 },
+    ],
+  });
+  expect(
+    (await parser.parse("German or Swedish customers under 50k except churned ones")).value,
+  ).toEqual({
+    or: (["DE", "SE"] as const).map((value) => ({
+      and: [
+        { field: "country", operator: "eq", value },
+        { field: "status", operator: "neq", value: "churned" },
+        { field: "arr", operator: "lt", value: 50000 },
+      ],
+    })),
+  });
+  for (const value of ["active", "inactive"] as const)
+    expect((await parser.parse(`not ${value} customers`)).value).toEqual({
+      field: "status",
+      operator: "neq",
+      value,
+    });
 });

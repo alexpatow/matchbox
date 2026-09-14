@@ -64,3 +64,13 @@ Use **Measure browser speed** in the workbench or the benchmark controls on the 
 These measurements exclude model loading and UI rendering. Record the input, sample count, browser, and device with the result. The workbench uses 100 timed runs after 20 warmups; the website demo uses 300 timed runs after 20 warmups. Repeated-input latency is separate from held-out accuracy.
 
 See the [evaluation API](reference/evaluation.md) for exact metric fields and return types.
+
+## Repository example audit
+
+After `bun run train`, run `bun run eval:examples`. It writes `.matchbox/example-evaluation.json` with all predictions that disagree with expected outputs, slice metrics, false accepts, source hashes, and token-sequence overlap with training. Each example owns a frozen `evals/generalization.json` file. Treat those files as audit data; create new development fixtures when fixing failures and obtain a fresh independent evaluation before claiming improvement.
+
+A held-out string can still be identical to training at the model's input representation. Word tokenization maps all numbers to `<number>`. Changing 15 to 90 tests deterministic copying and arithmetic, not learned numerical generalization. Report accuracy on feature-novel inputs separately.
+
+The audit compares the network with an authored rules baseline and an empirical window/token classifier trained on the same annotations. Positive coverage, accuracy among accepted answers, and false acceptance of negative examples matter alongside exact match. A high abstention rate can hide an ineffective parser. Threshold curves are diagnostics, not permission to pick a threshold on test data.
+
+See [the measured example audit](example-evaluation.md) for current results and limitations.

@@ -1,3 +1,4 @@
+import { prepareSupervision } from "./prepare-supervision.js";
 import { createNetwork } from "./create-network.js";
 import * as tf from "@tensorflow/tfjs-node";
 import { tensorPredictor, tokenize, windows } from "@matchbox-ai/core/internal";
@@ -14,40 +15,13 @@ export async function fitSequence(
 ) {
   await tf.setBackend("tensorflow");
   await tf.ready();
-  const vocabulary = [
-    ...new Set(
-      examples.flatMap((row) => tokenize(row.input, recipe.tokenizer).map((token) => token.key)),
-    ),
-  ].sort();
-  const radius = 1;
-  const inputs: number[][] = [];
-  const labels: number[] = [];
-  for (const example of examples) {
-    const tokens = tokenize(example.input, recipe.tokenizer);
-    const annotations = recipe.annotate(example, tokens);
-    if (annotations.length !== tokens.length)
-      throw new Error(`Annotation length mismatch: ${example.input}`);
-    windows(tokens, vocabulary, radius).forEach((window, position) => {
-      const label = annotations[position];
-      if (label === null) return;
-      const id = recipe.labels.indexOf(label!);
-      if (id < 0) throw new Error(`Unknown annotation ${label}: ${example.input}`);
-      inputs.push(window);
-      labels.push(id);
-    });
-  }
-  if (recipe.labels.some((_, id) => !labels.includes(id)))
-    throw new Error("Every label needs supervised training examples.");
-  if (shuffleLabels) {
-    let state = 173;
-    for (let index = labels.length - 1; index > 0; index--) {
-      state = (Math.imul(state, 1664525) + 1013904223) >>> 0;
-      const other = state % (index + 1);
-      [labels[index], labels[other]] = [labels[other]!, labels[index]!];
-    }
-  }
+  const { vocabulary, radius, dropout, inputs, labels } = prepareSupervision(
+    examples,
+    recipe,
+    shuffleLabels,
+  );
   const model = createNetwork(vocabulary.length, recipe.labels.length);
-  const optimizer = tf.train.adam(0.02);
+  const optimizer = tf.train.adam(0.005);
   model.compile({ optimizer, loss: "categoricalCrossentropy" });
   const x = tf.tensor2d(inputs, [inputs.length, 3], "int32");
   const y = tf.tidy(() => tf.oneHot(tf.tensor1d(labels, "int32"), recipe.labels.length));
@@ -73,6 +47,7 @@ export async function fitSequence(
       vocabulary,
       labels: [...recipe.labels],
       radius,
+      unknownTokens: dropout > 0 ? "predict" : "abstain",
       threshold: 0.75,
       precision,
       weights,

@@ -1,3 +1,4 @@
+import { augment } from "./augment";
 import { mkdir, writeFile } from "node:fs/promises";
 import { tokenize } from "@matchbox-ai/train";
 type Part = [text: string, label: string];
@@ -58,13 +59,22 @@ const amounts = [
   ["twenty one", 21],
   ["thirty two", 32],
   ["forty three", 43],
+  ["fifty four", 54],
+  ["sixty five", 65],
+  ["seventy six", 76],
+  ["eighty seven", 87],
+  ["ninety nine", 99],
 ] as const;
 for (const [code, symbol, name] of currencies) {
   for (const [text, amount] of amounts) {
     const a: Part = [text, "AMOUNT"];
     add([[symbol + " ", code], a], amount, code);
     add([a, [" " + name, code]], amount, code);
+    add([["send ", "O"], a, [" " + name, code], [" to Maja", "O"]], amount, code);
+    add([["Oskar paid ", "O"], a, [" " + name, code], [" yesterday", "O"]], amount, code);
     add([["about ", "APPROX"], a, [" " + name, code]], amount, code, true);
+    add([["we paid ", "O"], [code + " ", code], a], amount, code);
+    add([["in 2024 we paid ", "O"], [code + " ", code], a], amount, code);
     add([["we paid ", "O"], a, [" " + code, code]], amount, code);
     add([["invoice 2048 totals ", "O"], [symbol + " ", code], a], amount, code);
     add([["in 2024 we paid ", "O"], a, [" " + name, code]], amount, code);
@@ -86,6 +96,12 @@ for (const [code, symbol, name] of currencies) {
       code,
       true,
     );
+    add([["a price of ", "O"], ["roughly ", "APPROX"], a, [" " + name, code]], amount, code, true);
+    add(
+      [["the budget is ", "O"], a, [" million ", "MILLION"], [name, code]],
+      amount * 1_000_000,
+      code,
+    );
     add([["a price of ", "O"], a, [" " + name, code]], amount, code);
   }
   for (const [word, scale] of [
@@ -103,6 +119,7 @@ for (const [code, symbol, name] of currencies) {
         code,
       );
 }
+const rejections = augment(rows, spans);
 const root = new URL("../matchbox/money/data/", import.meta.url);
 await mkdir(root, { recursive: true });
 await writeFile(
@@ -111,3 +128,5 @@ await writeFile(
 );
 await writeFile(new URL("train-spans.json", root), JSON.stringify(spans, null, 2) + "\n");
 console.log(`Generated ${rows.length} money examples with exact token annotations.`);
+
+await writeFile(new URL("train-rejections.json", root), JSON.stringify(rejections, null, 2) + "\n");

@@ -32,10 +32,12 @@ A duration is elapsed seconds. A relative result is an offset in seconds from a 
 
 ## Limits
 
-This first model covers English seconds, minutes, hours, and elapsed days, up to seven days. The authored quantity helper supports digits, decimals, one through twelve, `a`, `an`, and `half`. Calendar output supports today and tomorrow, 24-hour clocks, and AM/PM.
+This first model covers English seconds, minutes, hours, and elapsed days, up to seven days. The authored quantity helper supports digits, decimals, one through twenty, `a`, `an`, and `half`. Calendar output supports today and tomorrow, 24-hour clocks, and AM/PM.
 
 Weekdays, named months, absolute dates, timezones, recurrence, and fuzzy phrases such as “sometime soon” are outside the example. Unsupported interpretations should return uncertainty. Confidence is uncalibrated, and familiar words in a novel arrangement can still produce a wrong answer.
 
 ## Evaluation
 
-The generator writes only training data. Validation, test, and negative challenge fixtures are maintained separately. The test split checks held-out quantities and clock values; it is a small composition check, not evidence of broad natural-language date parsing. Training reports compare untrained and trained output, export parity, and the deterministic baseline. Browser speed is measured by the demo on your device.
+The generator writes only training data. Validation, test, and negative challenge fixtures are maintained separately. The test split checks held-out quantities and clock values; all twelve original test inputs have token sequences present in training after numeric normalization. They are regression checks, not evidence of compositional generalization. Training reports compare untrained and trained output, export parity, and the deterministic baseline. Browser speed is measured by the demo on your device.
+
+The frozen `evals/generalization.json` suite tests new contexts, unit combinations, and rejection cases. Run `bun run eval:examples` after training for the full comparison against rules and an empirical token/window lookup. See [the example audit](../example-evaluation.md).

@@ -1,0 +1,150 @@
+[
+  {
+    "slice": "currency-position",
+    "input": "Maja paid 18 euros yesterday",
+    "output": {
+      "amount": 18,
+      "currency": "EUR",
+      "approximate": false
+    }
+  },
+  {
+    "slice": "unfamiliar-name",
+    "input": "send 23 euros to Beatrice",
+    "output": {
+      "amount": 23,
+      "currency": "EUR",
+      "approximate": false
+    }
+  },
+  {
+    "slice": "unfamiliar-name",
+    "input": "Henrik paid 19 dollars yesterday",
+    "output": {
+      "amount": 19,
+      "currency": "USD",
+      "approximate": false
+    }
+  },
+  {
+    "slice": "distractor",
+    "input": "invoice 942 totals EUR 16 for order 82",
+    "output": {
+      "amount": 16,
+      "currency": "EUR",
+      "approximate": false
+    }
+  },
+  {
+    "slice": "distractor",
+    "input": "in 2031 we paid 46 euros for order 9",
+    "output": {
+      "amount": 46,
+      "currency": "EUR",
+      "approximate": false
+    }
+  },
+  {
+    "slice": "composition",
+    "input": "please send roughly 32 pounds to Maja",
+    "output": {
+      "amount": 32,
+      "currency": "GBP",
+      "approximate": true
+    }
+  },
+  {
+    "slice": "composition",
+    "input": "the budget is forty seven thousand euros please",
+    "output": {
+      "amount": 47000,
+      "currency": "EUR",
+      "approximate": false
+    }
+  },
+  {
+    "slice": "composition",
+    "input": "a price of SEK 72.15?",
+    "output": {
+      "amount": 72.15,
+      "currency": "SEK",
+      "approximate": false
+    }
+  },
+  {
+    "slice": "composition",
+    "input": "please we paid about 62 dollars yesterday",
+    "output": {
+      "amount": 62,
+      "currency": "USD",
+      "approximate": true
+    }
+  },
+  {
+    "slice": "unfamiliar-context",
+    "input": "payment received: 29 euros",
+    "output": {
+      "amount": 29,
+      "currency": "EUR",
+      "approximate": false
+    }
+  },
+  {
+    "slice": "unfamiliar-context",
+    "input": "the total comes to 84 dollars",
+    "output": {
+      "amount": 84,
+      "currency": "USD",
+      "approximate": false
+    }
+  },
+  {
+    "slice": "unfamiliar-context",
+    "input": "our subscription costs 21 euros monthly",
+    "output": {
+      "amount": 21,
+      "currency": "EUR",
+      "approximate": false
+    }
+  },
+  {
+    "slice": "negation",
+    "input": "never send 23 euros to Beatrice",
+    "output": null
+  },
+  {
+    "slice": "negation",
+    "input": "not a price of 29 euros",
+    "output": null
+  },
+  {
+    "slice": "ambiguous",
+    "input": "send 18 euros or 24 euros",
+    "output": null
+  },
+  {
+    "slice": "ambiguous",
+    "input": "we paid 13 euros and 22 dollars",
+    "output": null
+  },
+  {
+    "slice": "range",
+    "input": "roughly between 24 and 36 euros",
+    "output": null
+  },
+  {
+    "slice": "unsupported",
+    "input": "a price of three hundred and forty euros",
+    "output": null
+  },
+  {
+    "slice": "unsupported",
+    "input": "CAD 28.50",
+    "output": null
+  },
+  {
+    "slice": "unsupported",
+    "input": "a price of minus seventeen euros",
+    "output": null
+  }
+]

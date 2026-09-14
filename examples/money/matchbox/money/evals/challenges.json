@@ -40,10 +40,6 @@
     "output": null
   },
   {
-    "input": "send 15 euros to Alice",
-    "output": null
-  },
-  {
     "input": "EUR 1.234",
     "output": null
   },
