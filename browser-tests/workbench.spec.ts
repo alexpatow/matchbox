@@ -106,8 +106,11 @@ test("scaffolded workbench trains, predicts locally, evaluates, and protects hel
     server.kill("SIGTERM");
     const terminate = setTimeout(() => server.kill("SIGKILL"), 3000);
     await new Promise<void>((resolve) => {
-      if (server.exitCode !== null) resolve();
-      else server.once("exit", () => resolve());
+      if (server.exitCode !== null) {
+        resolve();
+      } else {
+        server.once("exit", () => resolve());
+      }
     });
     clearTimeout(terminate);
     await rm(directory, { recursive: true, force: true });

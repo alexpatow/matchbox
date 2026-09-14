@@ -11,7 +11,9 @@ export function parseSource<Output extends z.ZodType>(
   const examples: DatasetExample<z.output<Output>>[] = [];
   let rows = 0;
   for (const [index, text] of source.text.split(/\r?\n/).entries()) {
-    if (text.trim() === "") continue;
+    if (text.trim() === "") {
+      continue;
+    }
     rows++;
     const report = (issue: ValidationIssue) =>
       issues.push({ ...issue, source: source.source, split, line: index + 1 });
@@ -45,14 +47,20 @@ export function parseSource<Output extends z.ZodType>(
     const input = task.validateInput(example.input);
     const output = task.validateOutput(example.output);
     if (!input.success) {
-      for (const issue of input.issues) report({ ...issue, path: ["input", ...issue.path] });
+      for (const issue of input.issues) {
+        report({ ...issue, path: ["input", ...issue.path] });
+      }
     }
     if (!output.success) {
-      for (const issue of output.issues) report({ ...issue, path: ["output", ...issue.path] });
+      for (const issue of output.issues) {
+        report({ ...issue, path: ["output", ...issue.path] });
+      }
     }
-    if (input.success && output.success) examples.push({ input: input.data, output: output.data });
+    if (input.success && output.success) {
+      examples.push({ input: input.data, output: output.data });
+    }
   }
-  if (rows === 0)
+  if (rows === 0) {
     issues.push({
       code: "empty_dataset",
       path: [],
@@ -61,5 +69,6 @@ export function parseSource<Output extends z.ZodType>(
       split,
       line: 1,
     });
+  }
   return examples;
 }

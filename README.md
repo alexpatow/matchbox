@@ -56,3 +56,9 @@ packages/core contains the browser-facing framework and packages/train contains 
 Read the [docs index](docs/README.md), [project conventions](docs/project-structure.md), [primitives](docs/primitives/README.md), and [example comparison](examples/README.md). Public docs ship with all three packages for coding agents. The [Matchbox skill](skills/matchbox/SKILL.md) describes the development workflow. [Third-party notices](THIRD-PARTY-NOTICES.md) preserve source attribution.
 
 Run bun run check and bun run test:browser before proposing a PR. Generated artifacts remain ignored. Tiny models should earn their place through independent evaluations, honest performance measurements, and the ability to expand language coverage through examples.
+
+### Code quality
+
+`bun run lint` enforces correctness and readability through Oxlint. Nested and unnecessary ternaries, unbraced control flow, loose equality (except nullish checks), and unnecessary else branches fail the check. React hook dependency violations are errors.
+
+`bun run format:check` checks Oxfmt formatting. Use `bun run lint:fix` for safe lint fixes and `bun run format` for layout. Formatting does not rewrite branching logic. `bun run check` runs both gates before training, type checking, tests, and builds; CI runs that same command.

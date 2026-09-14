@@ -2,12 +2,12 @@ import { countries } from "../../../../examples/filters/matchbox/filters/countri
 import type { Filter, Clause } from "@/filter";
 const operators = { eq: "=", neq: "≠", gt: ">", gte: "≥", lt: "<", lte: "≤" };
 function label(clause: Clause) {
-  const value =
-    clause.field === "country"
-      ? countries[clause.value].name
-      : clause.field === "arr"
-        ? clause.value.toLocaleString("en-US")
-        : clause.value;
+  let value: string | number = clause.value;
+  if (clause.field === "country") {
+    value = countries[clause.value].name;
+  } else if (clause.field === "arr") {
+    value = clause.value.toLocaleString("en-US");
+  }
   return `${clause.field === "arr" ? "ARR" : clause.field} ${operators[clause.operator]} ${value}`;
 }
 export function FilterChips({ filter }: { filter: Filter }) {

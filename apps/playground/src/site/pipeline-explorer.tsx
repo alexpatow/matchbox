@@ -22,7 +22,12 @@ export function PipelineExplorer() {
               tabIndex={index === selected ? 0 : -1}
               onClick={() => setSelected(index)}
               onKeyDown={(event) => {
-                const offset = event.key === "ArrowDown" ? 1 : event.key === "ArrowUp" ? -1 : 0;
+                let offset = 0;
+                if (event.key === "ArrowDown") {
+                  offset = 1;
+                } else if (event.key === "ArrowUp") {
+                  offset = -1;
+                }
                 if (offset) {
                   event.preventDefault();
                   const next = (index + offset + files.length) % files.length;

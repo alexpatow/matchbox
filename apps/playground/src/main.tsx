@@ -10,7 +10,9 @@ import { RouteEffects } from "./site";
 import "./styles.css";
 import "./site.css";
 const root = document.getElementById("root");
-if (!root) throw new Error("The example root element is missing.");
+if (!root) {
+  throw new Error("The example root element is missing.");
+}
 createRoot(root).render(
   <StrictMode>
     <BrowserRouter>

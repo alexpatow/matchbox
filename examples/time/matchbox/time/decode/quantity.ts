@@ -25,8 +25,12 @@ const words: Record<string, number> = {
   half: 0.5,
 };
 export function quantity(text: string): number | null {
-  if (Object.hasOwn(words, text.toLowerCase())) return words[text.toLowerCase()]!;
-  if (!/^\d+(?:\.\d+)?$/.test(text)) return null;
+  if (Object.hasOwn(words, text.toLowerCase())) {
+    return words[text.toLowerCase()]!;
+  }
+  if (!/^\d+(?:\.\d+)?$/.test(text)) {
+    return null;
+  }
   const value = Number(text);
   return Number.isFinite(value) && value >= 0 ? value : null;
 }

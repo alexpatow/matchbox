@@ -43,8 +43,9 @@ export function readRecordArtifact(input: unknown): RecordArtifact {
       weight.values.length !== weight.shape.reduce((a, b) => a * b, 1) ||
       (model.precision === "int8" &&
         weight.values.some((value) => !Number.isInteger(value) || Math.abs(value) > 127))
-    )
+    ) {
       throw new Error("Invalid Matchbox record weights.");
+    }
   });
   if (
     new Set(model.vocabulary).size !== model.vocabulary.length ||
@@ -53,9 +54,11 @@ export function readRecordArtifact(input: unknown): RecordArtifact {
       (field) =>
         new Set(field.values.map((value) => JSON.stringify(value))).size !== field.values.length,
     )
-  )
+  ) {
     throw new Error("Duplicate record vocabulary, fields, or values.");
-  if (new Set(model.weights.map((weight) => weight.name)).size !== model.weights.length)
+  }
+  if (new Set(model.weights.map((weight) => weight.name)).size !== model.weights.length) {
     throw new Error("Duplicate TensorFlow weight names.");
+  }
   return model;
 }

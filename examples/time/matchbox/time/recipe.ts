@@ -26,7 +26,9 @@ const recipe: SequenceRecipe = {
   ],
   annotate(example) {
     const labels = spans[example.input];
-    if (!labels) throw new Error(`Missing training annotation: ${example.input}`);
+    if (!labels) {
+      throw new Error(`Missing training annotation: ${example.input}`);
+    }
     return labels;
   },
 };

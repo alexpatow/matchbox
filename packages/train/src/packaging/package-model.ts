@@ -8,7 +8,9 @@ export async function packageModel(
 ) {
   await mkdir(dirname(output), { recursive: true });
   const declaration = output.replace(/\.matchbox$/, ".d.matchbox.ts");
-  if (declaration === output) throw new Error("The output filename must end in .matchbox.");
+  if (declaration === output) {
+    throw new Error("The output filename must end in .matchbox.");
+  }
   const decoderImport =
     model.decoderModule === null
       ? ""

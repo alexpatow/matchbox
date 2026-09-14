@@ -17,7 +17,9 @@ export function packageCommand(
   args: string[] = [],
 ) {
   const resolved = resolveCommand(agent, action, args);
-  if (!resolved) throw new Error(`Cannot resolve ${action} for ${agent}.`);
+  if (!resolved) {
+    throw new Error(`Cannot resolve ${action} for ${agent}.`);
+  }
   return resolved;
 }
 
@@ -48,8 +50,11 @@ export async function installDependencies(root: string, agent: Agent) {
       );
     child.once("error", (error) => fail(error.message));
     child.once("exit", (code, signal) => {
-      if (code === 0) resolve();
-      else fail(signal ? `terminated by ${signal}` : `exit code ${code}`);
+      if (code === 0) {
+        resolve();
+      } else {
+        fail(signal ? `terminated by ${signal}` : `exit code ${code}`);
+      }
     });
   });
 }

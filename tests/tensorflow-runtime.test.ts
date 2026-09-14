@@ -38,7 +38,9 @@ for (const kind of ["money-simple", "money-pipeline"] as const) {
         if (actual.status === "ok") {
           accepted++;
           expect(actual.value).toEqual(row.output);
-        } else expect(actual.value).toBeNull();
+        } else {
+          expect(actual.value).toBeNull();
+        }
       }
       expect(accepted / rows.length).toBeGreaterThanOrEqual(0.9);
       const retained = tf.memory().numTensors;
@@ -59,7 +61,9 @@ for (const kind of ["money-simple", "money-pipeline"] as const) {
       expect(tf.memory().numTensors).toBe(before);
     } finally {
       parser.dispose();
-      if (previous) await tf.setBackend(previous);
+      if (previous) {
+        await tf.setBackend(previous);
+      }
     }
   });
 }
@@ -79,6 +83,8 @@ test("TensorFlow predictor refuses a silently changed backend", async () => {
     await tf.setBackend("cpu");
     predictor.dispose();
     // The alias shares the CPU backend; leave its lifecycle to TensorFlow.
-    if (previous) await tf.setBackend(previous);
+    if (previous) {
+      await tf.setBackend(previous);
+    }
   }
 });

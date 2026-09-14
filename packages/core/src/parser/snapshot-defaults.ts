@@ -35,6 +35,8 @@ export function snapshotDefaults<Output extends z.ZodType>(schema: Output): Outp
   }
   const copy = schema.clone(next);
   const metadata = z.globalRegistry.get(schema);
-  if (metadata) z.globalRegistry.add(copy, metadata);
+  if (metadata) {
+    z.globalRegistry.add(copy, metadata);
+  }
   return copy;
 }

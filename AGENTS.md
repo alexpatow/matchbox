@@ -30,7 +30,8 @@ Matchbox owns task contracts, explicit authoring primitives, dataset workflows, 
 
 ## Code style
 
-- Use Oxlint and Oxfmt. Run `bun run check` before proposing a PR.
+- Use Oxlint for correctness and readability, and Oxfmt for formatting. Run `bun run check` before proposing a PR.
+- Do not nest ternaries, including in JSX. Use guard clauses, named values, or focused helpers. Always brace control-flow bodies, use strict equality (`== null` is allowed for nullish checks), and avoid unnecessary else branches after returns. Do not silence these rules to preserve compact code.
 - Use kebab-case filenames. Tool-discovered config filenames retain their required names.
 - Put each React component in its own file.
 - Use pure `index.ts` re-export barrels for library directories. Authored Matchbox task modules are an exception: use `X.ts` or `X/X.ts`, with direct imports and no required barrel.

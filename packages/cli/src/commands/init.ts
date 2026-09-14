@@ -30,11 +30,13 @@ export async function initialize(
           { label: "Blank · Author your schema, examples, and pipeline", value: "blank" },
         ])
       : undefined);
-  if (!template || !["money", "blank"].includes(template))
+  if (!template || !["money", "blank"].includes(template)) {
     throw new Error("Choose --template money or --template blank.");
+  }
   name ??= template === "money" ? "money" : "my-task";
-  if (!/^[a-z][a-z0-9-]*$/.test(name))
+  if (!/^[a-z][a-z0-9-]*$/.test(name)) {
     throw new Error("Use a kebab-case task name, such as money.");
+  }
   const core = await packageRoot(
     fileURLToPath(import.meta.resolve("@matchbox-ai/core")),
     "@matchbox-ai/core",
@@ -50,13 +52,19 @@ export async function initialize(
       () => true,
       () => false,
     )
-  )
+  ) {
     throw new Error(`Refusing to overwrite ${resolve(root, prefix)}.`);
+  }
   const files = await templateFiles(
     resolve(cli, "templates", template, "matchbox", template === "money" ? "money" : "task"),
   );
   const dependencies = { ...manifest.devDependencies, ...manifest.dependencies };
-  const framework = dependencies.next ? "Next.js" : dependencies.vite ? "React/Vite" : "JavaScript";
+  let framework = "JavaScript";
+  if (dependencies.next) {
+    framework = "Next.js";
+  } else if (dependencies.vite) {
+    framework = "React/Vite";
+  }
   files["README.md"] = integrationGuide(name, template, framework, manager);
   manifest.dependencies ??= {};
   manifest.devDependencies ??= {};
@@ -65,15 +73,20 @@ export async function initialize(
     ["@matchbox-ai/train", train, true],
     ["matchbox-ai", cli, true],
   ] as const) {
-    if (dependencies[name]) continue;
+    if (dependencies[name]) {
+      continue;
+    }
     const { version } = JSON.parse(await readFile(resolve(path, "package.json"), "utf8"));
     (development ? manifest.devDependencies : manifest.dependencies)[name] = version;
   }
-  if (!dependencies.zod) manifest.dependencies.zod = "4.6.3";
-  if (manager === "bun")
+  if (!dependencies.zod) {
+    manifest.dependencies.zod = "4.6.3";
+  }
+  if (manager === "bun") {
     manifest.trustedDependencies = [
       ...new Set([...(manifest.trustedDependencies ?? []), "@tensorflow/tfjs-node"]),
     ];
+  }
   manifest.scripts = {
     "matchbox:dev": "matchbox-ai dev",
     "matchbox:train": "matchbox-ai train",
@@ -82,7 +95,9 @@ export async function initialize(
   };
   const ignorePath = resolve(root, ".gitignore");
   const ignore = await readFile(ignorePath, "utf8").catch((error: NodeJS.ErrnoException) => {
-    if (error.code !== "ENOENT") throw error;
+    if (error.code !== "ENOENT") {
+      throw error;
+    }
     return "";
   });
   for (const [file, text] of Object.entries(files)) {
@@ -91,12 +106,15 @@ export async function initialize(
     await writeFile(destination, text, { flag: "wx" });
   }
   await writeFile(manifestPath, JSON.stringify(manifest, null, 2) + "\n");
-  if (!ignore.split("\n").includes(".matchbox/"))
+  if (!ignore.split("\n").includes(".matchbox/")) {
     await writeFile(
       ignorePath,
       ignore + (ignore && !ignore.endsWith("\n") ? "\n" : "") + ".matchbox/\n",
     );
-  if (!skipInstall) await installDependencies(root, manager);
+  }
+  if (!skipInstall) {
+    await installDependencies(root, manager);
+  }
   const next = [
     ...(skipInstall ? [commandText(manager, "install")] : []),
     commandText(manager, "execute-local", ["matchbox-ai", "dev", name]),
@@ -111,8 +129,9 @@ export async function initialize(
     files: Object.keys(files).map((file) => `${prefix}/${file}`),
     next,
   };
-  if (json) console.log(JSON.stringify(result));
-  else {
+  if (json) {
+    console.log(JSON.stringify(result));
+  } else {
     const view = terminal(`Added ${name} to ${framework}`, [
       prefix,
       "",

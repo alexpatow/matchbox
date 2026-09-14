@@ -17,8 +17,8 @@ for (const [name, code] of [
   ["German", "DE"],
   ["French", "FR"],
   ["Norwegian", "NO"],
-])
-  for (const status of ["active", "inactive", "churned"])
+]) {
+  for (const status of ["active", "inactive", "churned"]) {
     for (const value of [20, 40, 80]) {
       const output = {
         and: [
@@ -30,9 +30,13 @@ for (const [name, code] of [
       add(`${status} ${name} customers over ${value}k ARR`, output);
       add(`please show ${status} ${name} customers over ${value}k ARR`, output);
     }
-for (const status of ["active", "inactive", "churned"])
-  for (const prefix of ["not", "exclude", "without"])
+  }
+}
+for (const status of ["active", "inactive", "churned"]) {
+  for (const prefix of ["not", "exclude", "without"]) {
     add(`${prefix} ${status} customers`, { field: "status", operator: "neq", value: status });
+  }
+}
 add("German or Swedish customers under 40k except churned accounts", {
   or: ["DE", "SE"].map((value) => ({
     and: [

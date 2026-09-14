@@ -34,22 +34,25 @@ export async function loadConfig(path: string) {
   if (pipelinePath) {
     const pipeline = pipelineSchema.parse((await import(pathToFileURL(pipelinePath).href)).default);
     defaults = { ...pipeline.acceptance };
-    if (pipeline.prediction.kind === "token-classifier")
+    if (pipeline.prediction.kind === "token-classifier") {
       defaults.sequence = {
         recipe: pipeline.prediction.recipe,
         decoder: pipeline.prediction.decode,
       };
-  } else if (!authored.sequence)
+    }
+  } else if (!authored.sequence) {
     throw new Error(
       `Missing pipeline.ts or pipeline/pipeline.ts in ${root}. Author an explicit pipeline before training.`,
     );
+  }
   const config = configSchema.parse({
     output: resolve(root, "../../.matchbox", basename(root), "model.matchbox"),
     ...defaults,
     ...authored,
   });
-  if (!config.challenges && (await exists("evals/challenges.json")))
+  if (!config.challenges && (await exists("evals/challenges.json"))) {
     config.challenges = "./evals/challenges.json";
+  }
   config.task = await resolveModule(root, config.task);
   if (config.sequence) {
     config.sequence.recipe = await resolveModule(root, config.sequence.recipe);

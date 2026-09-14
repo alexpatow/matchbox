@@ -10,15 +10,21 @@ export async function trainCommand(path: string, json = false, verbose = false) 
     const { train } = await import("@matchbox-ai/train");
     const result = await train(path, {
       onProgress: (epoch, loss) => {
-        if (json) return;
-        if (verbose) console.error(`Epoch ${epoch} · loss ${loss.toFixed(6)}`);
-        else if (epoch === 1 || epoch % 10 === 0) view?.update([path, `Training · epoch ${epoch}`]);
+        if (json) {
+          return;
+        }
+        if (verbose) {
+          console.error(`Epoch ${epoch} · loss ${loss.toFixed(6)}`);
+        } else if (epoch === 1 || epoch % 10 === 0) {
+          view?.update([path, `Training · epoch ${epoch}`]);
+        }
       },
     });
     view?.stop();
     if ("report" in result) {
-      if (json) print(result.report, true);
-      else {
+      if (json) {
+        print(result.report, true);
+      } else {
         const passed = result.report.quantized.exactAccuracy >= config.minAccuracy;
         console.log(
           passed

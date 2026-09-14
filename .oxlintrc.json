@@ -6,7 +6,19 @@
   },
   "rules": {
     "react/rules-of-hooks": "error",
-    "react/exhaustive-deps": "warn"
+    "react/exhaustive-deps": "error",
+    "no-nested-ternary": "error",
+    "curly": ["error", "all"],
+    "eqeqeq": [
+      "error",
+      "always",
+      {
+        "null": "ignore"
+      }
+    ],
+    "no-else-return": "error",
+    "no-lonely-if": "error",
+    "no-unneeded-ternary": "error"
   },
   "ignorePatterns": ["**/dist/**", "**/node_modules/**", "playwright-report/**", "test-results/**"],
   "overrides": [

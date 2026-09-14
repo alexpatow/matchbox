@@ -14,11 +14,15 @@ const tens: Record<string, number> = {
   ninety: 90,
 };
 export function normalizeNumber(text: string): number | null {
-  if (/^\d+(?:\.\d{1,2})?$/.test(text) || /^\d{1,3}(?:,\d{3})+(?:\.\d{1,2})?$/.test(text))
+  if (/^\d+(?:\.\d{1,2})?$/.test(text) || /^\d{1,3}(?:,\d{3})+(?:\.\d{1,2})?$/.test(text)) {
     return Number(text.replaceAll(",", ""));
+  }
   const words = text.toLowerCase().split(/\s+/);
-  if (words.length === 1) return small[words[0]!] ?? tens[words[0]!] ?? null;
-  if (words.length === 2 && tens[words[0]!] && small[words[1]!] && small[words[1]!]! < 10)
+  if (words.length === 1) {
+    return small[words[0]!] ?? tens[words[0]!] ?? null;
+  }
+  if (words.length === 2 && tens[words[0]!] && small[words[1]!] && small[words[1]!]! < 10) {
     return tens[words[0]!]! + small[words[1]!]!;
+  }
   return null;
 }

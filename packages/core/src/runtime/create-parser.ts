@@ -13,16 +13,20 @@ export function createParser<Output extends z.ZodType>(
   decode?: SequenceDecoder,
 ): MatchboxParser<z.output<Output>> & { load(): Promise<void>; dispose(): void } {
   const model = readArtifact(value);
-  if (JSON.stringify(model.taskMetadata) !== JSON.stringify(task.toJSON()))
+  if (JSON.stringify(model.taskMetadata) !== JSON.stringify(task.toJSON())) {
     throw new Error("The model and task schema differ. Retrain the model.");
-  if (model.kind === "sequence-parser" && !decode)
+  }
+  if (model.kind === "sequence-parser" && !decode) {
     throw new Error("The sequence artifact requires its explicit decoder.");
+  }
   let disposed = false;
   let release: (() => void) | undefined;
   let loading: Promise<MatchboxParser<z.output<Output>>> | undefined;
   const initialize = async () => {
     const { tensorPredictor } = await import("./tensorflow/index.js");
-    if (disposed) throw new Error("The parser has been disposed.");
+    if (disposed) {
+      throw new Error("The parser has been disposed.");
+    }
     const predictor = await tensorPredictor(model);
     if (disposed) {
       predictor.dispose();
@@ -34,13 +38,17 @@ export function createParser<Output extends z.ZodType>(
       : createSequenceParser(model, task, decode!, predictor.sequence);
   };
   const load = async () => {
-    if (disposed) throw new Error("The parser has been disposed.");
+    if (disposed) {
+      throw new Error("The parser has been disposed.");
+    }
     loading ??= initialize().catch((error: unknown) => {
       loading = undefined;
       throw error;
     });
     const parser = await loading;
-    if (disposed) throw new Error("The parser has been disposed.");
+    if (disposed) {
+      throw new Error("The parser has been disposed.");
+    }
     return parser;
   };
   return {
@@ -51,7 +59,9 @@ export function createParser<Output extends z.ZodType>(
       const parser = await load();
       const { prepareCpu } = await import("./tensorflow/index.js");
       await prepareCpu();
-      if (disposed) throw new Error("The parser has been disposed.");
+      if (disposed) {
+        throw new Error("The parser has been disposed.");
+      }
       return parser.parse(input);
     },
     dispose() {

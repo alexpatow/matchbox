@@ -22,6 +22,7 @@ export function metrics(value: {
       `\n  ${failure.input}\n    Expected: ${JSON.stringify(failure.expected)}\n    Actual:   ${JSON.stringify(failure.actual)}`,
     );
   }
-  if (value.failures.length > 10)
+  if (value.failures.length > 10) {
     console.log(`  ${value.failures.length - 10} more failures. Use --json for all results.`);
+  }
 }

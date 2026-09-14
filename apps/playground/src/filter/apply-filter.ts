@@ -18,7 +18,11 @@ function matchesClause(customer: Customer, clause: Clause): boolean {
   }
 }
 export function matchesFilter(customer: Customer, filter: Filter): boolean {
-  if ("or" in filter) return filter.or.some((node) => matchesFilter(customer, node));
-  if ("and" in filter) return filter.and.every((clause) => matchesClause(customer, clause));
+  if ("or" in filter) {
+    return filter.or.some((node) => matchesFilter(customer, node));
+  }
+  if ("and" in filter) {
+    return filter.and.every((clause) => matchesClause(customer, clause));
+  }
   return matchesClause(customer, filter);
 }

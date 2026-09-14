@@ -30,16 +30,18 @@ for (const name of ["is-even", "money", "time", "filters"]) {
   );
   const report = JSON.parse(await readFile(resolve(dirname(model.output), "report.json"), "utf8"));
   const artifactSha256 = hash(await readFile(model.output, "utf8"));
-  if (report.supervisionSha256 !== supervisionSha256 || report.artifactSha256 !== artifactSha256)
+  if (report.supervisionSha256 !== supervisionSha256 || report.artifactSha256 !== artifactSha256) {
     throw new Error(`Stale training report or artifact for ${name}. Run bun run train first.`);
+  }
   const source = await readFile(resolve(root, "evals/generalization.json"), "utf8");
   const cases: { slice: string; input: string; output: unknown }[] = JSON.parse(source);
   for (const row of cases) {
     if (
       !model.task.validateInput(row.input).success ||
       (row.output !== null && !model.task.validateOutput(row.output).success)
-    )
+    ) {
       throw new Error(`Invalid evaluation case: ${row.input}`);
+    }
   }
   const signature = (input: string) =>
     JSON.stringify(tokenize(input, recipe.tokenizer).map((t) => t.key));

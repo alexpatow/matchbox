@@ -10,8 +10,9 @@ test("validates explicit string inputs without coercion", () => {
     success: true,
     data: "Swedish customers",
   });
-  for (const input of ["", 42, null, "a".repeat(201)])
+  for (const input of ["", 42, null, "a".repeat(201)]) {
     expect(task.validateInput(input).success).toBe(false);
+  }
 });
 
 test("returns typed validated outputs and rejects unknown properties", () => {
@@ -24,10 +25,13 @@ test("returns typed validated outputs and rejects unknown properties", () => {
     { country: "SE", minimum: "50000" },
     { country: "SE" },
     { country: "SE", minimum: 1, unexpected: true },
-  ])
+  ]) {
     expect(task.validateOutput(value).success).toBe(false);
+  }
   const failed = task.validateOutput({ country: "SE", minimum: "50000" });
-  if (failed.success) throw new Error("Expected a validation failure.");
+  if (failed.success) {
+    throw new Error("Expected a validation failure.");
+  }
   expect(failed.issues[0]?.path).toEqual(["minimum"]);
 });
 

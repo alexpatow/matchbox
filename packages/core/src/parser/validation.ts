@@ -7,9 +7,13 @@ export function validate<Schema extends z.ZodType>(
   value: unknown,
 ): ValidationResult<z.output<Schema>> {
   const issue = jsonIssue(value);
-  if (issue) return { success: false, issues: [issue] };
+  if (issue) {
+    return { success: false, issues: [issue] };
+  }
   const result = schema.safeParse(value, { jitless: true });
-  if (result.success) return { success: true, data: result.data };
+  if (result.success) {
+    return { success: true, data: result.data };
+  }
   return {
     success: false,
     issues: result.error.issues.map(({ code, path, message }) => ({

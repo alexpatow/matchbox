@@ -35,15 +35,17 @@ export async function verifyExport(
           maxConfidenceError,
           Math.abs(maximum - prediction.confidence),
         );
-        if (prediction.value !== artifact.fields[index]!.values[scores.indexOf(maximum)])
+        if (prediction.value !== artifact.fields[index]!.values[scores.indexOf(maximum)]) {
           labelDisagreements++;
+        }
       });
     });
   } finally {
     predictor.dispose();
     await tf.setBackend("tensorflow");
   }
-  if (labelDisagreements || maxConfidenceError > 1e-5)
+  if (labelDisagreements || maxConfidenceError > 1e-5) {
     throw new Error("Serialized TensorFlow model disagrees with native predictions.");
+  }
   return { examples: probes.length, labelDisagreements, maxConfidenceError };
 }

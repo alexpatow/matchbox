@@ -5,9 +5,13 @@ export async function taskNames(cwd = process.cwd()) {
   let root = resolve(cwd);
   for (;;) {
     const names = await listTasks(root);
-    if (names.length) return names;
+    if (names.length) {
+      return names;
+    }
     const parent = dirname(root);
-    if (parent === root) return [];
+    if (parent === root) {
+      return [];
+    }
     root = parent;
   }
 }

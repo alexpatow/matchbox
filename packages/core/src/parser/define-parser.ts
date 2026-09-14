@@ -13,7 +13,9 @@ export function defineParser<Output extends z.ZodType>(
   checkSchema(config.output, "output");
   const output = snapshotDefaults(config.output);
   checkSchema(input, "input");
-  if (input._zod.def.type !== "string") throw new TypeError("input: expected z.string().");
+  if (input._zod.def.type !== "string") {
+    throw new TypeError("input: expected z.string().");
+  }
   checkStructuredRoot(output);
   const metadata: ParserMetadata = {
     formatVersion: 1,

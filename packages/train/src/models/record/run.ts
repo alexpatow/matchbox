@@ -35,10 +35,11 @@ export async function runRecord(
   };
   const validation = await evaluate(fit.quantized, project.validation);
   const bytes = Buffer.byteLength(JSON.stringify(fit.quantized));
-  if (validation.exactAccuracy < project.config.minAccuracy || bytes > project.config.maxBytes)
+  if (validation.exactAccuracy < project.config.minAccuracy || bytes > project.config.maxBytes) {
     throw new Error(
       `Record model failed validation/size requirements (${validation.exactAccuracy}, ${bytes} bytes). ${JSON.stringify(validation.failures.slice(0, 10))}`,
     );
+  }
   const report = {
     formatVersion: 1,
     architecture: fit.quantized.architecture,

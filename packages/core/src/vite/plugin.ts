@@ -7,7 +7,9 @@ export function matchbox() {
     name: "matchbox",
     enforce: "pre" as const,
     async load(id: string) {
-      if (!id.endsWith(".matchbox")) return null;
+      if (!id.endsWith(".matchbox")) {
+        return null;
+      }
       const raw = await readFile(id, "utf8");
       const model = readArtifact(JSON.parse(raw));
       const task = resolve(dirname(id), model.taskModule).replaceAll("\\", "/");

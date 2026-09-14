@@ -11,8 +11,9 @@ export function createSequenceParser<Output extends z.ZodType>(
   predictor: Awaited<ReturnType<typeof tensorPredictor>>["sequence"],
 ): MatchboxParser<z.output<Output>> {
   const model = readSequenceArtifact(artifact);
-  if (JSON.stringify(model.taskMetadata) !== JSON.stringify(task.toJSON()))
+  if (JSON.stringify(model.taskMetadata) !== JSON.stringify(task.toJSON())) {
     throw new Error("The model and task schema differ. Retrain the model.");
+  }
   const predict = predictor;
   const vocabulary = new Set(model.vocabulary);
   return {
@@ -23,22 +24,26 @@ export function createSequenceParser<Output extends z.ZodType>(
         confidence,
         reason,
       });
-      if (!task.validateInput(input).success || input.length > 512)
+      if (!task.validateInput(input).success || input.length > 512) {
         return uncertain("Input does not satisfy the supported input limits.");
+      }
       const tokens = predict(input);
       if (
         !tokens.length ||
         (model.unknownTokens === "abstain" && tokens.some((token) => !vocabulary.has(token.key)))
-      )
+      ) {
         return uncertain("The model has insufficient training coverage to answer confidently.");
+      }
       // Only positions supervised by the recipe contribute to the acceptance score.
       const relevant = model.readout === "last" ? tokens.slice(-1) : tokens;
       const confidence = Math.min(...relevant.map((token) => token.confidence));
-      if (confidence < model.threshold)
+      if (confidence < model.threshold) {
         return uncertain("Recognition confidence is too low.", confidence);
+      }
       const candidate = decode(tokens, input);
-      if (candidate == null)
+      if (candidate == null) {
         return uncertain("The recognized expression is ambiguous or unsupported.", confidence);
+      }
       const result = task.validateOutput(candidate);
       return result.success
         ? { status: "ok", value: result.data, confidence }

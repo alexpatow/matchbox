@@ -22,10 +22,11 @@ test("the packaged learned model composes clauses and normalizes unseen amounts"
       { field: "arr", operator: "gt", value: 50001 },
     ],
   });
-  if (result.status === "ok")
+  if (result.status === "ok") {
     expect(
       customers.filter((row) => matchesFilter(row, result.value)).map((row) => row.name),
     ).toEqual(["Northstar Studio"]);
+  }
 });
 
 test("AND binds tighter than OR and comparison phrases preserve their internal or", async () => {
@@ -69,7 +70,9 @@ test("all emitted filters pass schema validation on the fixed evaluation set", a
   for (const line of text.trim().split("\n")) {
     const row = JSON.parse(line);
     const result = await parser.parse(row.input);
-    if (result.status === "ok") expect(task.validateOutput(result.value).success).toBe(true);
+    if (result.status === "ok") {
+      expect(task.validateOutput(result.value).success).toBe(true);
+    }
   }
 });
 
@@ -124,10 +127,11 @@ test("implicit fields and shared restrictions compile a country alternative", as
       ],
     })),
   });
-  for (const value of ["active", "inactive"] as const)
+  for (const value of ["active", "inactive"] as const) {
     expect((await parser.parse(`not ${value} customers`)).value).toEqual({
       field: "status",
       operator: "neq",
       value,
     });
+  }
 });

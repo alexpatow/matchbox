@@ -21,21 +21,26 @@ export async function loadProject(path: string) {
     train: sources[0]!,
     eval: sources[2]!,
   });
-  for (const result of [training, evaluation])
-    if (!result.success)
+  for (const result of [training, evaluation]) {
+    if (!result.success) {
       throw new Error(
         result.issues
           .map((issue) => `${issue.source}:${issue.line} ${issue.path.join(".")}: ${issue.message}`)
           .join("\n"),
       );
-  if (!training.success || !evaluation.success) throw new Error("Invalid datasets.");
+    }
+  }
+  if (!training.success || !evaluation.success) {
+    throw new Error("Invalid datasets.");
+  }
   const groups = [training.data.train, training.data.eval, evaluation.data.eval];
   const seen = new Map<string, number>();
   groups.forEach((group, split) =>
     group.forEach((row) => {
       const key = row.input.trim().toLowerCase();
-      if (seen.has(key) && seen.get(key) !== split)
+      if (seen.has(key) && seen.get(key) !== split) {
         throw new Error(`Input overlaps dataset splits: ${row.input}`);
+      }
       seen.set(key, split);
     }),
   );

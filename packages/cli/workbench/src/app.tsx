@@ -1,6 +1,21 @@
 import { useWorkbench, ModelLab, OperationReport } from "./index";
 export function App() {
   const { state, error, pending, report, run } = useWorkbench();
+  function statusText() {
+    if (pending) {
+      return `Running ${state?.busy ?? "operation"}…`;
+    }
+    if (!state) {
+      return "Connecting to the local CLI…";
+    }
+    if (state.stale) {
+      return "Source changed. Train to update the model. Predictions use the previous model.";
+    }
+    if (state.ready) {
+      return "The model is ready. Predictions run in this browser.";
+    }
+    return "Train your first model. A blank task needs examples and independent evals first.";
+  }
   return (
     <main>
       <header>
@@ -25,17 +40,7 @@ export function App() {
           </button>
         </div>
       </section>
-      <output className="state">
-        {pending
-          ? `Running ${state?.busy ?? "operation"}…`
-          : !state
-            ? "Connecting to the local CLI…"
-            : state.stale
-              ? "Source changed. Train to update the model. Predictions use the previous model."
-              : state.ready
-                ? "The model is ready. Predictions run in this browser."
-                : "Train your first model. A blank task needs examples and independent evals first."}
-      </output>
+      <output className="state">{statusText()}</output>
       {(error || state?.error) && (
         <pre className="error" role="alert">
           {error || state?.error}

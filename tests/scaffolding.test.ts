@@ -12,7 +12,7 @@ async function run(args: string[], cwd: string) {
   ]);
   return { code, stdout, stderr };
 }
-for (const framework of ["vite", "next"])
+for (const framework of ["vite", "next"]) {
   test(`scaffolding preserves the ${framework} app and existing dependencies`, async () => {
     const directory = await mkdtemp(resolve(tmpdir(), "matchbox-existing-"));
     const manifest = {
@@ -59,6 +59,7 @@ for (const framework of ["vite", "next"])
       await rm(directory, { recursive: true, force: true });
     }
   });
+}
 test("empty directory and bare command never create an application", async () => {
   const directory = await mkdtemp(resolve(tmpdir(), "matchbox-empty-"));
   try {
