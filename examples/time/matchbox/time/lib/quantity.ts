@@ -1,0 +1,24 @@
+// Application-owned arithmetic. The model identifies quantity spans, not their numeric value.
+const words: Record<string, number> = {
+  a: 1,
+  an: 1,
+  one: 1,
+  two: 2,
+  three: 3,
+  four: 4,
+  five: 5,
+  six: 6,
+  seven: 7,
+  eight: 8,
+  nine: 9,
+  ten: 10,
+  eleven: 11,
+  twelve: 12,
+  half: 0.5,
+};
+export function quantity(text: string): number | null {
+  if (Object.hasOwn(words, text.toLowerCase())) return words[text.toLowerCase()]!;
+  if (!/^\d+(?:\.\d+)?$/.test(text)) return null;
+  const value = Number(text);
+  return Number.isFinite(value) && value >= 0 ? value : null;
+}

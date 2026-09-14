@@ -4,20 +4,13 @@ export function FrameworkStory() {
   return (
     <section className="framework-story" aria-labelledby="workflow-title">
       <div className="section-heading">
-        <h2 id="workflow-title">Take a model from examples to your app.</h2>
-        <p>
-          Define a task, train from examples, evaluate it, and import the trained model. Explore the
-          money example below.
-        </p>
+        <h2 id="workflow-title">Train it. Import it.</h2>
+        <p>The money example, from schema to a typed prediction.</p>
       </div>
       <PipelineExplorer />
       <div className="story-note">
-        <p>
-          Small models could predict what to prefetch, rank background work, or classify clipboard
-          content. The current examples start with filters, money, and a simple classification task.
-        </p>
-        <Link to="/docs/pipelines">
-          Explore the primitives <span aria-hidden="true">↗</span>
+        <Link to="/docs/getting-started">
+          Build your first model <span aria-hidden="true">↗</span>
         </Link>
       </div>
     </section>

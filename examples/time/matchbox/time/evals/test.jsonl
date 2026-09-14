@@ -1,0 +1,12 @@
+{"input": "for 75 minutes", "output": {"kind": "duration", "seconds": 4500}}
+{"input": "in 22 seconds", "output": {"kind": "relative", "seconds": 22}}
+{"input": "wait for 3.25 hours", "output": {"kind": "duration", "seconds": 11700}}
+{"input": "remind me in 47 minutes", "output": {"kind": "relative", "seconds": 2820}}
+{"input": "for three hours and 17 minutes", "output": {"kind": "duration", "seconds": 11820}}
+{"input": "in 4 hours and 35 minutes", "output": {"kind": "relative", "seconds": 16500}}
+{"input": "tomorrow at 5:40 pm", "output": {"kind": "datetime", "dayOffset": 1, "hour": 17, "minute": 40}}
+{"input": "today at 17:55", "output": {"kind": "datetime", "dayOffset": 0, "hour": 17, "minute": 55}}
+{"input": "schedule tomorrow at 5 am", "output": {"kind": "datetime", "dayOffset": 1, "hour": 5, "minute": 0}}
+{"input": "remind me today at 11:50 pm", "output": {"kind": "datetime", "dayOffset": 0, "hour": 23, "minute": 50}}
+{"input": "for 0.75 hours", "output": {"kind": "duration", "seconds": 2700}}
+{"input": "in 6.5 days", "output": {"kind": "relative", "seconds": 561600}}

@@ -1,9 +1,12 @@
 # Matchbox documentation
 
-Start with [getting started](getting-started.md), then read [project structure](project-structure.md), [pipelines](pipelines.md), and [evaluation](evaluation.md).
+Start with [Getting started](getting-started.md) to add a task, train a model, and import it into an existing app.
 
-The [primitive reference](primitives/README.md) describes supported authoring choices. [React](react.md), [browser runtime](runtime-backends.md), and [CLI](cli.md) cover application integration and local development. [Repository design](repository-design.md) is for contributors.
+- [CLI reference](cli.md) covers every command and option.
+- [API reference](reference/README.md) indexes the public contracts by package.
+- [Training pipelines](pipelines.md) explains the two learning strategies and their limits.
+- [Project structure](project-structure.md) maps authored files and generated artifacts.
+- [Evaluation](evaluation.md) explains validation gates, test data, and uncertainty.
+- [Money](examples/money.md) and [time](examples/time.md) show token recognition with explicit application-owned decoding.
 
-These docs ship in all three packages under node_modules/@matchbox-ai/{core,train}/docs and node_modules/matchbox-ai/docs. Use the installed version when assisting an application author. The bundled agent-skill.md provides the corresponding coding-agent workflow.
-
-See [Releases](releases.md) for Changesets, package versions, and npm publishing.
+Matchbox currently accepts string inputs. Core owns validation and browser integration; train owns build-time orchestration; TensorFlow owns training and execution.

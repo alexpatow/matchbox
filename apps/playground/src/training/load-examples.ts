@@ -13,3 +13,11 @@ export const loadParity: ExampleLoader = async () => {
   ]);
   return { default: model.default, report: report.default };
 };
+
+export const loadTime: ExampleLoader = async () => {
+  const [model, report] = await Promise.all([
+    import("../../../../examples/time/.matchbox/time/model.matchbox"),
+    import("../../../../examples/time/.matchbox/time/report.json"),
+  ]);
+  return { default: model.default, report: report.default };
+};

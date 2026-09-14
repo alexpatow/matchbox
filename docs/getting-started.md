@@ -1,88 +1,82 @@
 # Getting started
 
-Matchbox is a TypeScript framework for building small models that run in the browser. Start with the money example inside your existing application, train it locally, and import the result.
+Train the included money parser, try it locally, and call it from your app. You need an existing JavaScript project with a `package.json`, Bun 1.4.2+, and Node.js 24+ for native TensorFlow training. No API key is required.
 
-The CLI requires Bun 1.4.2 or newer and Node 24 or newer for the local training toolchain.
+## 1. Add a task
 
-## Add Matchbox to your app
-
-Once the first release is published, run this inside your existing React or Next.js app:
+Run from your application's root:
 
 ```sh
 bunx matchbox-ai init money --template money
-bunx matchbox-ai dev money
 ```
 
-The CLI installs `@matchbox-ai/core` as an application dependency and `@matchbox-ai/train` and `matchbox-ai` as development dependencies, using your package manager. It preserves existing scripts and framework configuration. Run your app's dev server separately. Use `--skip-install` to defer installation.
-
-When developing Matchbox itself, run `bun install` and `bun run build:packages` in this repository. Run `bun run matchbox init money --template money --directory /path/to/app --skip-install` to inspect a scaffold before the packages are published. It writes registry versions; it does not vendor a copy of the checkout.
-
-## Train in the workbench
-
-Choose **Train model**. Once training finishes, try `$15` or `around twenty six grand in euros`. Predictions run in your browser. Choose **Evaluate** to check independent test examples, or **Measure browser speed** to time the current input.
-
-The same operations are available in the terminal:
-
-```sh
-bunx matchbox-ai train money
-bunx matchbox-ai eval money
-```
-
-## Understand the authored task
+You can also launch the CLI with `npx matchbox-ai` or `pnpm dlx matchbox-ai`. Bun is still required by the training toolchain. Initialization installs dependencies using your app's package manager and adds these files:
 
 ```text
 matchbox/money/
-  parser.ts
-  pipeline.ts
-  lib/recipe.ts
-  lib/decode.ts
+  parser.ts                # Valid input and output.
+  pipeline.ts              # Explicit learning strategy.
+  lib/recipe.ts            # Training token labels.
+  lib/decode.ts            # Convert recognized spans to output.
   data/train.jsonl
   data/train-spans.json
-  evals/validation.jsonl
-  evals/test.jsonl
-.matchbox/money/
-  model.matchbox
-  model.ts
-  report.json
+  evals/validation.jsonl    # Gate model export.
+  evals/test.jsonl          # Measure the selected model.
 ```
 
-The parser defines valid output. The pipeline explicitly selects a token model. The recipe supplies supervised token labels; the decoder normalizes recognized spans. New training examples may need new token annotations. Read the generated task README before extending it.
+Your framework config and dev server stay as they are. With pnpm, approve `@tensorflow/tfjs-node` using `pnpm approve-builds` before training.
 
-Use `matchbox-ai init my-task --template blank` to author another task. The blank starter explicitly uses word features and finite field classification; replace that pipeline if it does not suit your task. Schemas do not automatically select numeric encodings or transformations.
+## 2. Train and try it
 
-## Import into React or Next.js
+```sh
+bunx matchbox-ai train money
+bunx matchbox-ai parse money '$15' --json
+bunx matchbox-ai eval money
+```
 
-The generated TypeScript wrapper needs no bundler plugin. This example assumes a component at your application root; adjust the relative path for your component's location. In Next.js, use a client component:
+Training writes `.matchbox/money/model.ts`, `model.matchbox`, and `report.json`. On a successful parse, `result.value` contains:
 
-```tsx
-"use client";
+```json
+{ "amount": 15, "currency": "USD", "approximate": false }
+```
 
-import { useMatchbox } from "@matchbox-ai/core/react";
+The full result also includes `status` and an uncalibrated `confidence` score.
 
-const loadMoney = () => import("./.matchbox/money/model");
+For a browser workbench, run `bunx matchbox-ai dev money`. It opens at `http://localhost:4190`. Try inputs, inspect recognized tokens, and measure inference on your device. Training runs locally; predictions run in the browser.
 
-export function MoneyButton() {
-  const { parse, status } = useMatchbox(loadMoney);
+## 3. Use it in your app
 
-  return (
-    <button
-      disabled={status !== "ready"}
-      onClick={async () => {
-        const result = await parse("twenty dollars");
-        if (result.status === "ok") console.log(result.value.amount);
-        else console.log(result.reason);
-      }}
-    >
-      Parse an amount
-    </button>
-  );
+The generated TypeScript module works without a bundler plugin. From a file in your application root:
+
+```ts
+import money from "./.matchbox/money/model";
+
+const result = await money.parse("twenty dollars");
+if (result.status === "ok") {
+  console.log(result.value.amount); // Typed as number.
+} else {
+  console.log(result.reason); // Ask for clarification or use a fallback.
 }
 ```
 
-Train before your application build. Generated artifacts remain ignored, so CI needs to train or restore a previously evaluated artifact. Import training helpers only in the authored pipeline and training scripts, never in client components. For `.matchbox` imports with Vite, the optional [Vite integration](react.md) remains available.
+Adjust the relative import for your file's location. In Next.js, import the model from a client component. See [React integration](react.md) for loading state and `useMatchbox`.
 
-## Run the repository showcase
+## 4. Change the behavior
 
-From the Matchbox checkout, `bun run dev` trains the examples and starts the showcase. The home page demonstrates customer filtering; `/training` demonstrates money parsing and the parity training check.
+Add input/output rows to `data/train.jsonl`. In this token-based example, add corresponding token labels to `data/train-spans.json`. Run `train` again, then `eval`. Keep validation and test examples separate from training.
 
-Continue with [CLI](cli.md), [Evaluation](evaluation.md), [Training pipelines](pipelines.md), or [Project structure](project-structure.md).
+The model learns which spans represent an amount, currency, or multiplier. `lib/decode.ts` does the arithmetic. Read [the money example](examples/money.md) before extending its supported number formats.
+
+To start your own task:
+
+```sh
+bunx matchbox-ai init intent --template blank
+```
+
+The blank template uses a finite field classifier and empty datasets. Define your labels, add training and independent eval examples, then train. [Choose a pipeline](pipelines.md) before using it for numeric or compositional output.
+
+## 5. Build and deploy
+
+Generated models are ignored by Git. Train before your app build, for example `bunx matchbox-ai train money && npm run build`, or restore a previously evaluated artifact together with its matching schema and decoder.
+
+Continue with [CLI commands](cli.md), [API reference](reference/README.md), or [project configuration](reference/configuration.md).
