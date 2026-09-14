@@ -1,5 +1,6 @@
 import type { SequenceDecoder } from "@matchbox-ai/core/runtime";
-import { decodeClock, quantity } from "./index";
+import { decodeClock } from "./decode-clock";
+import { quantity } from "./quantity";
 const scales: Record<string, number> = { SECOND: 1, MINUTE: 60, HOUR: 3600, DAY: 86400 };
 const decode: SequenceDecoder = (tokens) => {
   if (tokens.some((t) => t.label === "TODAY" || t.label === "TOMORROW")) return decodeClock(tokens);

@@ -26,7 +26,7 @@ The website's [examples page](/training) runs the exported model. This is a repo
 
 The model learns quantity, unit, duration/offset cue, day, clock, and meridiem labels from annotated examples. Training-only annotations live in `data/train-spans.json`.
 
-The browser decoder in `lib/` reads those labels, converts digits or a small explicit number-word vocabulary, multiplies units, and validates clock ranges. It can produce numeric amounts absent from training because it copies recognized input spans instead of classifying finite output values.
+The browser decoder in `decode/` reads those labels, converts digits or a small explicit number-word vocabulary, multiplies units, and validates clock ranges. It can produce numeric amounts absent from training because it copies recognized input spans instead of classifying finite output values.
 
 A duration is elapsed seconds. A relative result is an offset in seconds from a reference instant your app chooses. A datetime result is a local clock time on a relative calendar day. The application must resolve timezone, reference date, and daylight-saving ambiguity. Do not treat a calendar day as a fixed 24-hour offset.
 

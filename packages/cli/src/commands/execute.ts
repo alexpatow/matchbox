@@ -9,12 +9,12 @@ export async function execute(args: ReturnType<typeof argumentsFor>) {
   const command = args.command!;
   const path = await discover(args.config ?? args.target);
   if (command === "info") {
-    const { config, root } = await loadConfig(path);
+    const { config, root, pipelinePath } = await loadConfig(path);
     print(
       {
         config: path,
         authoring: config.sequence ? "custom sequence" : "learned structured values",
-        pipeline: resolve(root, "pipeline.ts"),
+        pipeline: pipelinePath ?? null,
         task: resolve(root, config.task),
         train: resolve(root, config.train),
         validation: resolve(root, config.validation),

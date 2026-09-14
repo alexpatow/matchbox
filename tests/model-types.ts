@@ -1,4 +1,4 @@
-import type { CountryCode } from "../examples/filters/matchbox/filters/lib/countries";
+import type { CountryCode } from "../examples/filters/matchbox/filters/countries/countries";
 import filters from "../examples/filters/.matchbox/filters/model.matchbox";
 const result = await filters.parse("Swedish customers");
 if (result.status === "ok" && "field" in result.value && result.value.field === "country") {

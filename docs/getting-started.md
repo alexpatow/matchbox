@@ -16,8 +16,8 @@ You can also launch the CLI with `npx matchbox-ai` or `pnpm dlx matchbox-ai`. Bu
 matchbox/money/
   parser.ts                # Valid input and output.
   pipeline.ts              # Explicit learning strategy.
-  lib/recipe.ts            # Training token labels.
-  lib/decode.ts            # Convert recognized spans to output.
+  recipe.ts            # Training token labels.
+  decode/decode.ts            # Convert recognized spans to output.
   data/train.jsonl
   data/train-spans.json
   evals/validation.jsonl    # Gate model export.
@@ -65,7 +65,7 @@ Adjust the relative import for your file's location. In Next.js, import the mode
 
 Add input/output rows to `data/train.jsonl`. In this token-based example, add corresponding token labels to `data/train-spans.json`. Run `train` again, then `eval`. Keep validation and test examples separate from training.
 
-The model learns which spans represent an amount, currency, or multiplier. `lib/decode.ts` does the arithmetic. Read [the money example](examples/money.md) before extending its supported number formats.
+The model learns which spans represent an amount, currency, or multiplier. `decode/decode.ts` does the arithmetic. Read [the money example](examples/money.md) before extending its supported number formats.
 
 To start your own task:
 

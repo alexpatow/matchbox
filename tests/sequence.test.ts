@@ -4,7 +4,9 @@ import { createParser } from "@matchbox-ai/core/runtime";
 import { readSequenceArtifact, tensorPredictor } from "@matchbox-ai/core/internal";
 import money from "../examples/money/.matchbox/money/model.js";
 import parity from "../examples/is-even/.matchbox/is-even/model.js";
-import { task, decode, normalizeNumber } from "../examples/money/matchbox/money";
+import task from "../examples/money/matchbox/money/parser";
+import decode from "../examples/money/matchbox/money/decode/decode";
+import { normalizeNumber } from "../examples/money/matchbox/money/decode/number-words";
 const artifact = JSON.parse(
   await readFile(
     new URL("../examples/money/.matchbox/money/model.matchbox", import.meta.url),

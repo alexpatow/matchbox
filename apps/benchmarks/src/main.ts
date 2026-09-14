@@ -1,5 +1,5 @@
 import { createParser } from "@matchbox-ai/core/runtime";
-import decode from "../../../examples/money/matchbox/money/lib/decode";
+import decode from "../../../examples/money/matchbox/money/decode/decode";
 import task from "../../../examples/money/matchbox/money/parser";
 import raw from "../../../examples/money/.matchbox/money/model.matchbox?raw";
 import evaluation from "../../../examples/money/matchbox/money/evals/test.jsonl?raw";

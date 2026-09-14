@@ -1,4 +1,4 @@
-import { countryCodes } from "./lib/countries";
+import { countryCodes } from "./countries/countries";
 import { defineParser } from "@matchbox-ai/core";
 import { z } from "zod";
 export const clauseSchema = z.union([

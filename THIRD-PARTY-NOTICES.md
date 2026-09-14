@@ -14,4 +14,4 @@ The Inter variable font is supplied by `@fontsource-variable/inter`; its license
 
 ## Country reference data
 
-The country names and English demonyms in `examples/filters/matchbox/filters/lib/countries/countries.json` are derived from [mledoze/countries](https://github.com/mledoze/countries), retrieved 2026-09-13. The derived database is provided under ODbL 1.0; the license is included alongside the data. Shared demonyms prefer a unique independent country; unresolved ambiguous aliases and empty aliases are omitted.
+The country names and English demonyms in `examples/filters/matchbox/filters/countries/countries.json` are derived from [mledoze/countries](https://github.com/mledoze/countries), retrieved 2026-09-13. The derived database is provided under ODbL 1.0; the license is included alongside the data. Shared demonyms prefer a unique independent country; unresolved ambiguous aliases and empty aliases are omitted.

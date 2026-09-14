@@ -12,8 +12,8 @@ test("packaging is deterministic, held-out labels do not select the model, and f
   const config = {
     formatVersion: 1,
     sequence: {
-      recipe: resolve(root, "lib/recipe.ts"),
-      decoder: resolve(root, "lib/decode.ts"),
+      recipe: resolve(root, "recipe.ts"),
+      decoder: resolve(root, "decode/decode.ts"),
     },
     task: resolve(root, "parser.ts"),
     baseline: resolve(root, "evals/baseline.ts"),

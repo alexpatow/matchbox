@@ -1,6 +1,6 @@
 # Explicit pipelines
 
-The parser defines valid input and output. The pipeline defines how the model learns. Matchbox requires pipeline.ts for conventional tasks; the scaffold writes it visibly.
+The parser defines valid input and output. The pipeline defines how the model learns. Matchbox requires `pipeline.ts` or `pipeline/pipeline.ts` for conventional tasks; the scaffold writes it visibly.
 
 ```ts
 import { definePipeline, wordTokens, fieldClassifier } from "@matchbox-ai/train";
@@ -18,12 +18,12 @@ An explicit token pipeline uses application-owned supervision and decoding:
 ```ts
 import { definePipeline, tokenClassifier } from "@matchbox-ai/train";
 export default definePipeline({
-  prediction: tokenClassifier({ recipe: "./lib/recipe.ts", decode: "./lib/decode.ts" }),
+  prediction: tokenClassifier(),
   acceptance: { minAccuracy: 0.85, maxBytes: 24000 },
 });
 ```
 
-Paths resolve relative to the task. The recipe supplies tokenizer, labels, readout, and annotation alignment. The decoder receives labeled spans and returns a candidate output or null. Matchbox verifies training annotations decode to the supplied training outputs. Recipe code runs during training; decoder code ships with the browser artifact and must remain browser-safe.
+Matchbox discovers `recipe.ts` or `recipe/recipe.ts`, and `decode.ts` or `decode/decode.ts`. Explicit path overrides resolve relative to the task directory. The recipe supplies tokenizer, labels, readout, and annotation alignment. The decoder receives labeled spans and returns a candidate output or null. Matchbox verifies training annotations decode to the supplied training outputs. Recipe code runs during training; decoder code ships with the browser artifact and must remain browser-safe.
 
 These are two existing, evaluated presets. Decimal codecs, arbitrary graphs, automatic architecture search, and hidden domain normalizers are not implemented. New primitives should demonstrate their limitations and held-out behavior before becoming defaults.
 

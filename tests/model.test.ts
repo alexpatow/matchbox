@@ -1,8 +1,5 @@
-import {
-  countries,
-  countryCodes,
-  countryAliases,
-} from "../examples/filters/matchbox/filters/lib/countries";
+import { countryAliases } from "../examples/filters/matchbox/filters/countries/aliases";
+import { countries, countryCodes } from "../examples/filters/matchbox/filters/countries/countries";
 import { expect, test } from "bun:test";
 import { compileClauses } from "@matchbox-ai/core/runtime";
 import { createParser } from "@matchbox-ai/core/runtime";

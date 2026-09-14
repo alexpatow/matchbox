@@ -1,5 +1,5 @@
 import type { SequenceRecipe } from "@matchbox-ai/train";
-import annotations from "../data/train-spans.json";
+import annotations from "./data/train-spans.json";
 const spans: Record<string, string[]> = annotations;
 const recipe: SequenceRecipe = {
   tokenizer: "words",

@@ -17,12 +17,16 @@ bun install --frozen-lockfile
 bun run dev
 ```
 
-The React playground runs at http://127.0.0.1:5173. Open /training for the money and parity examples. Packages are private and unpublished; [getting started](docs/getting-started.md) explains local scaffolding.
+The React playground runs at http://127.0.0.1:5173. Open /training for the time, money, and parity examples. [Getting started](docs/getting-started.md) explains scaffolding inside your application.
 
 ```text
 matchbox/money/
   parser.ts
   pipeline.ts
+  recipe.ts
+  decode/
+    decode.ts
+    number-words.ts
   data/train.jsonl
   evals/validation.jsonl
   evals/test.jsonl
@@ -31,7 +35,7 @@ matchbox/money/
 ```ts
 import { definePipeline, tokenClassifier } from "@matchbox-ai/train";
 export default definePipeline({
-  prediction: tokenClassifier({ recipe: "./lib/recipe.ts", decode: "./lib/decode.ts" }),
+  prediction: tokenClassifier(),
 });
 ```
 
