@@ -1,88 +1,93 @@
 # Getting started
 
-Matchbox is a TypeScript framework for building small models that run in the browser. This guide walks through the current parser workflow: train from examples, check independent evals, and import the model into your application.
+Matchbox is a TypeScript framework for building small models that run in the browser. Start with the money example inside your existing application, train it locally, and import the result.
 
-## Run the working examples
+## Build the local toolchain
 
 Use Bun 1.4.2 and Node 24. From your Matchbox checkout:
 
 ```sh
 bun install
-bun run train
-bun run dev
+bun run build:packages
 ```
 
-Training uses native TensorFlow. The playground loads the exported models through TensorFlow.js CPU. Your input stays in the browser during inference.
-
-Open the local URL printed by Vite. Try the filter demo, then visit `/training` to compare the two money pipelines and the parity training check.
-
-## Create a task
-
-After building the packages through `bun run train`, use the local CLI to scaffold a separate project:
+Add the example to an existing React or Next.js project using the built CLI:
 
 ```sh
-bun packages/train/dist/cli.js init money --directory /tmp/my-matchbox-app
-cd /tmp/my-matchbox-app
+bun packages/train/dist/cli.js init money --template money --directory /path/to/your-app
+cd /path/to/your-app
 bun install
-bunx matchbox train money
 bunx matchbox dev money
 ```
 
-The scaffold links to your local packages. Keep the Matchbox checkout available while using it.
+The current development scaffold packs local Matchbox packages into `vendor/matchbox/` archives. Bun installs these inside your app, so Next.js does not need access to external package symlinks. These are snapshots of the toolchain used at setup. Keep these local development archives with the app until registry packages are available. It preserves your app's dev/build scripts and framework configuration. Run your app's dev server separately.
 
-## Understand what you own
+## Train in the workbench
+
+Choose **Train model**. Once training finishes, try `$15` or `around twenty six grand in euros`. Predictions run in your browser. Choose **Evaluate** to check independent test examples, or **Measure browser speed** to time the current input.
+
+The same operations are available in the terminal:
+
+```sh
+bunx matchbox train money
+bunx matchbox eval money
+```
+
+## Understand the authored task
 
 ```text
 matchbox/money/
   parser.ts
   pipeline.ts
+  lib/recipe.ts
+  lib/decode.ts
   data/train.jsonl
+  data/train-spans.json
   evals/validation.jsonl
   evals/test.jsonl
 .matchbox/money/
   model.matchbox
   model.ts
-  model.d.matchbox.ts
   report.json
 ```
 
-`parser.ts` defines valid output with Zod. `pipeline.ts` selects the learning strategy explicitly. Training examples teach behavior; validation and test examples check it independently. Generated files go in `.matchbox/` and stay out of Git.
+The parser defines valid output. The pipeline explicitly selects a token model. The recipe supplies supervised token labels; the decoder normalizes recognized spans. New training examples may need new token annotations. Read the generated task README before extending it.
 
-The starter uses `fieldClassifier()`, which learns a finite set of values per field. A numeric output schema does not make it generalize to unseen amounts. Read [Training pipelines](pipelines.md) before choosing between direct value classification and a token model with an application-owned decoder.
+Use `matchbox init my-task --template blank` to author another task. The blank starter explicitly uses word features and finite field classification; replace that pipeline if it does not suit your task. Schemas do not automatically select numeric encodings or transformations.
 
-## Import a trained model
+## Import into React or Next.js
 
-In your Vite application's existing configuration, add the Matchbox plugin alongside your other plugins:
+The generated TypeScript wrapper needs no bundler plugin. This example assumes a component at your application root; adjust the relative path for your component's location. In Next.js, use a client component:
 
-```ts
-import { defineConfig } from "vite";
-import { matchbox } from "@matchbox-ai/core/vite";
+```tsx
+"use client";
 
-export default defineConfig({
-  plugins: [matchbox()],
-});
-```
+import { useMatchbox } from "@matchbox-ai/core/react";
 
-From a file at your application's root:
+const loadMoney = () => import("./.matchbox/money/model");
 
-```ts
-import money from "./.matchbox/money/model.matchbox";
+export function MoneyButton() {
+  const { parse, status } = useMatchbox(loadMoney);
 
-const result = await money.parse("twenty dollars");
-
-if (result.status === "ok") {
-  console.log(result.value.amount, result.value.currency);
-} else {
-  console.log(result.reason);
+  return (
+    <button
+      disabled={status !== "ready"}
+      onClick={async () => {
+        const result = await parse("twenty dollars");
+        if (result.status === "ok") console.log(result.value.amount);
+        else console.log(result.reason);
+      }}
+    >
+      Parse an amount
+    </button>
+  );
 }
 ```
 
-Use TypeScript's `allowArbitraryExtensions` option with `moduleResolution: "bundler"` so the generated declaration supplies the output type. For bundlers without the plugin, import the generated `model.ts` wrapper instead.
+Train before your application build. Generated artifacts remain ignored, so CI needs to train or restore a previously evaluated artifact. Import training helpers only in the authored pipeline and training scripts, never in client components. For `.matchbox` imports with Vite, the optional [Vite integration](react.md) remains available.
 
-The runtime loads lazily. Call `await money.load()` before going offline if you want to initialize ahead of the first parse. The [React hook](react.md) waits for initialization before reporting readiness.
+## Run the repository showcase
 
-## Decide whether it is ready to ship
+From the Matchbox checkout, `bun run dev` trains the examples and starts the showcase. The home page demonstrates customer filtering; `/training` demonstrates money parsing and the parity training check.
 
-Run `bunx matchbox eval money` and inspect the report. Keep test data independent from training data. Test unfamiliar inputs as well as familiar examples, and decide how your app should handle uncertainty.
-
-Continue with [Evaluation](evaluation.md), [Project structure](project-structure.md), or the [CLI reference](cli.md).
+Continue with [CLI](cli.md), [Evaluation](evaluation.md), [Training pipelines](pipelines.md), or [Project structure](project-structure.md).

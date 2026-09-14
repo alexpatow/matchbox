@@ -1,74 +1,53 @@
-import { createInterface } from "node:readline/promises";
-import { spawn } from "node:child_process";
+import open from "open";
 import { discover } from "../project/index.js";
-import { initialize } from "./init.js";
-async function child(args: string[]) {
-  return new Promise<void>((resolve, reject) => {
-    const processChild = spawn(process.execPath, [process.argv[1]!, ...args], { stdio: "inherit" });
-    processChild.once("error", reject);
-    processChild.once("exit", () => resolve());
-  });
-}
-export async function develop(config?: string) {
-  if (!process.stdin.isTTY || !process.stdout.isTTY)
-    throw new Error(
-      "Interactive mode needs a terminal. Use train, eval, parse, or inspect with --json in scripts.",
-    );
-  let path: string;
-  try {
-    path = await discover(config);
-  } catch (error) {
-    if (config) throw error;
-    await initialize();
-    return;
+import { serveWorkbench } from "../workbench/index.js";
+import { choose, terminal } from "./terminal.js";
+import { taskNames } from "./overview.js";
+export async function develop(config?: string, requestedPort = "4190", launch = true) {
+  const port = Number(requestedPort);
+  if (!Number.isInteger(port) || port < 0 || port > 65535)
+    throw new Error("Use a port from 0 to 65535.");
+  if (!config && process.stdin.isTTY) {
+    const names = await taskNames();
+    if (names.length > 1)
+      config = await choose(
+        "Choose a task",
+        names.map((name) => ({ label: name, value: name })),
+      );
   }
-  const prompt = createInterface({ input: process.stdin, output: process.stdout });
-  let lastInput: string | undefined;
-  console.log(
-    `\nMatchbox · ${path}\n\nType text to parse it locally.\n/train  /eval  /inspect [text]  /info  /save <correct JSON>  /help  /exit\n`,
-  );
-  try {
-    for (;;) {
-      const line = (await prompt.question("› ")).trim();
-      if (!line) continue;
-      if (line === "/exit") break;
-      const space = line.indexOf(" ");
-      const name = space < 0 ? line : line.slice(0, space);
-      const argument = space < 0 ? "" : line.slice(space + 1);
-      if (name === "/help") {
-        console.log(
-          "Type text to parse. /inspect shows recognition. /save <JSON> writes an explicit correction for your last input to training data. /train rebuilds the model; /eval checks held-out data. /info shows paths. /exit leaves the session.",
-        );
-        continue;
-      }
-      let args: string[];
-      if (["/train", "/eval", "/info"].includes(name)) args = [name.slice(1)];
-      else if (name === "/inspect") {
-        const input = argument || lastInput;
-        if (!input) {
-          console.log("Enter text first, or use /inspect <text>.");
-          continue;
-        }
-        args = ["inspect", input];
-      } else if (name === "/save") {
-        if (!lastInput || !argument) {
-          console.log("Parse an input first, then use /save <correct JSON>.");
-          continue;
-        }
-        args = ["save", lastInput, argument];
-      } else if (line.startsWith("/")) {
-        console.log("Unknown command. Use /help.");
-        continue;
-      } else {
-        lastInput = line;
-        args = ["parse", line];
-      }
-      // Each operation gets fresh modules, so task and config edits take effect without restarting.
-      prompt.pause();
-      await child([...args, "--config", path]);
-      prompt.resume();
+  const path = await discover(config);
+  const server = await serveWorkbench(path, port);
+  const lines = () => [
+    server.url,
+    `Task: ${server.state.task}`,
+    server.state.busy
+      ? `Running ${server.state.busy}…`
+      : server.state.stale
+        ? "Source changed. Train to update the model."
+        : server.state.ready
+          ? "Model ready. Predictions run in your browser."
+          : "Train the task to create its first model.",
+    "Your app runs separately. Press Ctrl+C to stop.",
+  ];
+  const view = terminal("Workbench", lines());
+  let previous = JSON.stringify(lines());
+  const timer = setInterval(() => {
+    const next = JSON.stringify(lines());
+    if (next !== previous) {
+      previous = next;
+      view.update(lines());
     }
-  } finally {
-    prompt.close();
-  }
+  }, 500);
+  const close = async () => {
+    clearInterval(timer);
+    view.stop();
+    await server.close();
+  };
+  process.once("SIGINT", () => {
+    void close();
+  });
+  process.once("SIGTERM", () => {
+    void close();
+  });
+  if (launch) await open(server.url).catch(() => {});
 }

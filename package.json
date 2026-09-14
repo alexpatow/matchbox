@@ -4,7 +4,8 @@
   "workspaces": [
     "packages/*",
     "examples/*",
-    "apps/*"
+    "apps/*",
+    "tests/fixtures/*"
   ],
   "type": "module",
   "scripts": {
@@ -26,7 +27,7 @@
     "research": "bun run train && bun examples/filters/scripts/challenges.ts",
     "build:packages": "bun run build:core && bun run --filter @matchbox-ai/train build",
     "train:filters": "bun run matchbox train examples/filters",
-    "train:neural": "bun run matchbox train examples/is-even && bun run matchbox train examples/money-pipeline && bun run matchbox train examples/money-simple",
+    "train:neural": "bun run matchbox train examples/is-even && bun run matchbox train examples/money && bun run matchbox train tests/fixtures/field-classifier",
     "check:prepared": "tsc --noEmit && bun run --filter \"*\" typecheck && bun test ./tests && bun run build:apps",
     "build:apps": "bun run --filter @matchbox-ai/playground build && bun run --filter @matchbox-ai/benchmarks build"
   },

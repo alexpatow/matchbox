@@ -1,5 +1,5 @@
 import { expect, test } from "bun:test";
-import { mkdtemp, readFile, rm, symlink, unlink, writeFile } from "node:fs/promises";
+import { mkdtemp, mkdir, readFile, rm, symlink, unlink, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { resolve } from "node:path";
 const root = resolve(".");
@@ -26,10 +26,25 @@ test("a scaffold trains, discovers nested projects, saves corrections, and evalu
   const temporary = await mkdtemp(resolve(tmpdir(), "matchbox-cli-"));
   const project = resolve(temporary, "parser-project");
   try {
-    const initialized = await cli(["init", "money", "--directory", project, "--json"]);
+    await mkdir(project);
+    await writeFile(
+      resolve(project, "package.json"),
+      JSON.stringify({ name: "existing-app", scripts: { dev: "vite", build: "vite build" } }),
+    );
+    const initialized = await cli([
+      "init",
+      "money",
+      "--directory",
+      project,
+      "--template",
+      "money",
+      "--json",
+    ]);
     expect(initialized.code).toBe(0);
     const evaluation = await readFile(resolve(project, "matchbox/money/evals/test.jsonl"), "utf8");
-    expect((await cli(["init", "money", "--directory", project, "--json"])).code).toBe(1);
+    expect(
+      (await cli(["init", "money", "--directory", project, "--template", "money", "--json"])).code,
+    ).toBe(1);
     await symlink(resolve(root, "node_modules"), resolve(project, "node_modules"), "dir");
     const trained = await cli(["train", "--json"], resolve(project, "matchbox/money/data"));
     expect(trained.code).toBe(0);
@@ -37,7 +52,7 @@ test("a scaffold trains, discovers nested projects, saves corrections, and evalu
     const prediction = await cli(["parse", "around fifteen grand euros", "--json"], project);
     expect(JSON.parse(prediction.stdout).value.amount).toBe(15000);
     const inspection = await cli(["inspect", "around fifteen grand euros", "--json"], project);
-    expect(JSON.parse(inspection.stdout).fields).toHaveLength(3);
+    expect(JSON.parse(inspection.stdout).tokens.length).toBeGreaterThan(0);
     const heldOut = JSON.parse(evaluation.split("\n")[0]!);
     expect(
       (await cli(["save", heldOut.input, JSON.stringify(heldOut.output), "--json"], project)).code,
@@ -59,7 +74,9 @@ test("a scaffold trains, discovers nested projects, saves corrections, and evalu
       evaluation,
     );
     const beforeSecondTask = await readFile(resolve(project, "matchbox/money/pipeline.ts"), "utf8");
-    expect((await cli(["init", "other", "--directory", project, "--json"])).code).toBe(0);
+    expect(
+      (await cli(["init", "other", "--directory", project, "--template", "money", "--json"])).code,
+    ).toBe(0);
     expect(await readFile(resolve(project, "matchbox/money/pipeline.ts"), "utf8")).toBe(
       beforeSecondTask,
     );

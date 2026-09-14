@@ -1,12 +1,11 @@
 # Examples
 
-Every example contains matchbox/<task>/parser.ts, pipeline.ts, data/train.jsonl, and independent evals/validation.jsonl and evals/test.jsonl. Generated artifacts live under the example project’s .matchbox/<task>/ directory. All examples train native TensorFlow weights.
+Each example has an explicit task and pipeline under matchbox/, separate training and evaluation data, and ignored .matchbox/ artifacts.
 
-| Example        | Explicit strategy                                             | Limitation                                                                      |
-| -------------- | ------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| money-simple   | Word features and field classification.                       | Outputs are restricted to training values; word order is ignored.               |
-| money-pipeline | Token supervision and application-owned normalization.        | Broader numeric handling comes from visible decoder code.                       |
-| is-even        | Character sequence recognition with a final-position readout. | This is a training control, not a reason to replace ordinary parity arithmetic. |
-| filters        | Token recognition followed by a constrained AST compiler.     | The controlled corpus does not establish unrestricted natural-language parsing. |
+| Example | What it demonstrates                                              | Boundary                                                    |
+| ------- | ----------------------------------------------------------------- | ----------------------------------------------------------- |
+| money   | Token recognition followed by an application-owned decoder.       | English number words below one hundred and four currencies. |
+| filters | Natural-language queries converted to validated customer filters. | Explicit conjunctions and a constrained application schema. |
+| is-even | A minimal learned classification sanity check.                    | Use modulo in actual applications.                          |
 
-apps/playground imports these examples’ generated artifacts. apps/benchmarks measures TensorFlow model loading and CPU inference. Runtime confidence is uncalibrated. Schema validation prevents malformed outputs from propagating, while independent evals measure semantic correctness.
+The finite-value classifier remains covered by tests/fixtures/field-classifier. The money example is also the CLI template; the package build copies its authored files so the two stay aligned.

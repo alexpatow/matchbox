@@ -31,28 +31,8 @@ export async function execute(args: ReturnType<typeof argumentsFor>) {
     return;
   }
   if (command === "train") {
-    if (!args.json)
-      console.log(`\nMatchbox · ${path}\n\n  Validating examples and preparing training…`);
-    const { config } = await loadConfig(path);
-    if (!args.json && !config.sequence)
-      console.error(
-        "  Pipeline: fieldClassifier learns a finite set of values per field. Numeric outputs cannot generalize to unseen amounts.",
-      );
-    const { run } = await import("../run.js");
-    const result = await run("train", path, (epoch, loss) => {
-      if (!args.json && (args.verbose || epoch === 1 || epoch === 100 || epoch % 10 === 0))
-        console.error(`  Training epoch ${epoch} · loss ${loss.toFixed(6)}`);
-    });
-    if ("report" in result) {
-      if (args.json) print(result.report, true);
-      else {
-        console.log("\n  Model packaged successfully.");
-        metrics(result.report.quantized);
-        console.log(
-          `  Size          ${result.report.bytes.toLocaleString()} bytes · ${result.report.parameters.toLocaleString()} parameters\n  Output        ${result.output}\n\nRun matchbox to try it interactively.`,
-        );
-      }
-    }
+    const { trainCommand } = await import("./train-command.js");
+    await trainCommand(path, args.json, args.verbose);
     return;
   }
   const model = await loadArtifact(path);

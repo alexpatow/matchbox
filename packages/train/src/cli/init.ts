@@ -1,106 +1,114 @@
 import { access, mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-async function packageRoot(file: string, name: string): Promise<string> {
-  let directory = dirname(file);
-  for (;;) {
-    const json = await readFile(resolve(directory, "package.json"), "utf8").catch(() => "{}");
-    if (JSON.parse(json).name === name) return directory;
-    const parent = dirname(directory);
-    if (parent === directory) throw new Error(`Cannot find installed ${name}.`);
-    directory = parent;
-  }
-}
-export async function initialize(name = "money", json = false, directory = process.cwd()) {
-  if (!/^[a-z][a-z0-9-]*$/.test(name))
-    throw new Error(
-      "Use a kebab-case task name, such as money. Use --directory to choose the project directory.",
-    );
+import { packageRoot, templateFiles } from "./scaffold-files.js";
+import { integrationGuide } from "./integration-guide.js";
+import { localDependency } from "./local-dependency.js";
+import { choose, terminal } from "./terminal.js";
+export async function initialize(
+  name?: string,
+  json = false,
+  directory = process.cwd(),
+  selected?: string,
+) {
   const root = resolve(directory);
+  const manifestPath = resolve(root, "package.json");
+  const manifest = JSON.parse(
+    await readFile(manifestPath, "utf8").catch(() => {
+      throw new Error(
+        `No package.json in ${root}. Create your React or Next.js app first, then run matchbox init inside it.`,
+      );
+    }),
+  );
+  const template =
+    selected ??
+    (process.stdin.isTTY && !json
+      ? await choose("Choose a starting point", [
+          { label: "Money · A trained token model with an explicit decoder", value: "money" },
+          { label: "Blank · Author your schema, examples, and pipeline", value: "blank" },
+        ])
+      : undefined);
+  if (!template || !["money", "blank"].includes(template))
+    throw new Error("Choose --template money or --template blank.");
+  name ??= template === "money" ? "money" : "my-task";
+  if (!/^[a-z][a-z0-9-]*$/.test(name))
+    throw new Error("Use a kebab-case task name, such as money.");
   const core = await packageRoot(
     fileURLToPath(import.meta.resolve("@matchbox-ai/core")),
     "@matchbox-ai/core",
   );
   const train = await packageRoot(fileURLToPath(import.meta.url), "@matchbox-ai/train");
   const prefix = `matchbox/${name}`;
-  const files: Record<string, string> = {};
-  for (const file of [
-    "parser.ts",
-    "pipeline.ts",
-    "data/train.jsonl",
-    "evals/validation.jsonl",
-    "evals/test.jsonl",
-  ])
-    files[`${prefix}/${file}`] = await readFile(
-      resolve(train, "templates/simple/matchbox/money", file),
-      "utf8",
-    );
-  for (const file of Object.keys(files))
-    if (
-      await access(resolve(root, file)).then(
-        () => true,
-        () => false,
-      )
+  if (
+    await access(resolve(root, prefix)).then(
+      () => true,
+      () => false,
     )
-      throw new Error(`Refusing to overwrite ${resolve(root, file)}.`);
-  const manifestPath = resolve(root, "package.json");
-  const previous = await readFile(manifestPath, "utf8").catch((error: NodeJS.ErrnoException) => {
-    if (error.code !== "ENOENT") throw error;
-    return null;
-  });
-  const manifest = previous
-    ? JSON.parse(previous)
-    : {
-        name: "matchbox-parser",
-        private: true,
-        type: "module",
-        scripts: { dev: "matchbox dev", train: "matchbox train", eval: "matchbox eval" },
-      };
-  manifest.dependencies = {
-    "@matchbox-ai/core": `file:${core}`,
-    zod: "4.6.3",
-    ...manifest.dependencies,
-  };
-  manifest.devDependencies = { "@matchbox-ai/train": `file:${train}`, ...manifest.devDependencies };
+  )
+    throw new Error(`Refusing to overwrite ${resolve(root, prefix)}.`);
+  const files = await templateFiles(
+    resolve(train, "templates", template, "matchbox", template === "money" ? "money" : "task"),
+  );
+  const dependencies = { ...manifest.devDependencies, ...manifest.dependencies };
+  const framework = dependencies.next ? "Next.js" : dependencies.vite ? "React/Vite" : "JavaScript";
+  files["README.md"] = integrationGuide(name, template, framework);
+  manifest.dependencies ??= {};
+  manifest.devDependencies ??= {};
+  // Install local package snapshots inside the app, so bundlers need no external symlink access.
+  const coreDependency =
+    dependencies["@matchbox-ai/core"] ?? (await localDependency(core, root, "core"));
+  if (!dependencies["@matchbox-ai/core"])
+    manifest.dependencies["@matchbox-ai/core"] = coreDependency;
+  if (!dependencies.zod) manifest.dependencies.zod = "4.6.3";
+  if (!dependencies["@matchbox-ai/train"])
+    manifest.devDependencies["@matchbox-ai/train"] = await localDependency(train, root, "train");
   manifest.overrides = {
-    "@matchbox-ai/core": manifest.dependencies["@matchbox-ai/core"],
+    "@matchbox-ai/core": coreDependency,
     ...manifest.overrides,
   };
   manifest.trustedDependencies = [
     ...new Set([...(manifest.trustedDependencies ?? []), "@tensorflow/tfjs-node"]),
   ];
-  const ignore = await readFile(resolve(root, ".gitignore"), "utf8").catch(
-    (error: NodeJS.ErrnoException) => {
-      if (error.code !== "ENOENT") throw error;
-      return "";
-    },
-  );
-  await mkdir(root, { recursive: true });
+  manifest.scripts = {
+    "matchbox:dev": "matchbox dev",
+    "matchbox:train": "matchbox train",
+    "matchbox:eval": "matchbox eval",
+    ...manifest.scripts,
+  };
+  const ignorePath = resolve(root, ".gitignore");
+  const ignore = await readFile(ignorePath, "utf8").catch((error: NodeJS.ErrnoException) => {
+    if (error.code !== "ENOENT") throw error;
+    return "";
+  });
   for (const [file, text] of Object.entries(files)) {
-    await mkdir(dirname(resolve(root, file)), { recursive: true });
-    await writeFile(resolve(root, file), text, { flag: "wx" });
+    const destination = resolve(root, prefix, file);
+    await mkdir(dirname(destination), { recursive: true });
+    await writeFile(destination, text, { flag: "wx" });
   }
   await writeFile(manifestPath, JSON.stringify(manifest, null, 2) + "\n");
-  const additions = ["node_modules/", ".matchbox/"].filter(
-    (line) => !ignore.split("\n").includes(line),
-  );
-  if (additions.length)
+  if (!ignore.split("\n").includes(".matchbox/"))
     await writeFile(
-      resolve(root, ".gitignore"),
-      ignore + (ignore && !ignore.endsWith("\n") ? "\n" : "") + additions.join("\n") + "\n",
+      ignorePath,
+      ignore + (ignore && !ignore.endsWith("\n") ? "\n" : "") + ".matchbox/\n",
     );
-  const next = ["bun install", `bunx matchbox train ${name}`, `bunx matchbox dev ${name}`];
-  if (json)
-    console.log(
-      JSON.stringify({
-        directory: root,
-        task: name,
-        files: [...Object.keys(files), "package.json", ".gitignore"],
-        next,
-      }),
-    );
-  else
-    console.log(
-      `\nCreated ${prefix} in ${root}.\n\n${next.map((command) => `  ${command}`).join("\n")}\n`,
-    );
+  const next = ["bun install", `bunx matchbox dev ${name}`];
+  const result = {
+    directory: root,
+    task: name,
+    template,
+    framework,
+    files: Object.keys(files).map((file) => `${prefix}/${file}`),
+    next,
+  };
+  if (json) console.log(JSON.stringify(result));
+  else {
+    const view = terminal(`Added ${name} to ${framework}`, [
+      prefix,
+      "",
+      ...next,
+      "",
+      `Integration guide: ${prefix}/README.md`,
+    ]);
+    view.stop();
+  }
 }

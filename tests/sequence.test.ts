@@ -2,20 +2,17 @@ import { describe, expect, test } from "bun:test";
 import { readFile } from "node:fs/promises";
 import { createParser } from "@matchbox-ai/core/runtime";
 import { readSequenceArtifact, tensorPredictor } from "@matchbox-ai/core/internal";
-import money from "../examples/money-pipeline/.matchbox/money/model.js";
+import money from "../examples/money/.matchbox/money/model.js";
 import parity from "../examples/is-even/.matchbox/is-even/model.js";
-import { task, decode, normalizeNumber } from "../examples/money-pipeline/matchbox/money";
+import { task, decode, normalizeNumber } from "../examples/money/matchbox/money";
 const artifact = JSON.parse(
   await readFile(
-    new URL("../examples/money-pipeline/.matchbox/money/model.matchbox", import.meta.url),
+    new URL("../examples/money/.matchbox/money/model.matchbox", import.meta.url),
     "utf8",
   ),
 );
 const report = JSON.parse(
-  await readFile(
-    new URL("../examples/money-pipeline/.matchbox/money/report.json", import.meta.url),
-    "utf8",
-  ),
+  await readFile(new URL("../examples/money/.matchbox/money/report.json", import.meta.url), "utf8"),
 );
 describe("trained sequence artifacts", () => {
   test("learned context distinguishes invoice IDs from money without a runtime regex for IDs", async () => {

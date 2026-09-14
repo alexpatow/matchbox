@@ -29,14 +29,13 @@ matchbox/money/
 ```
 
 ```ts
-import { definePipeline, wordTokens, fieldClassifier } from "@matchbox-ai/train";
+import { definePipeline, tokenClassifier } from "@matchbox-ai/train";
 export default definePipeline({
-  input: wordTokens(),
-  prediction: fieldClassifier(),
+  prediction: tokenClassifier({ recipe: "./lib/recipe.ts", decode: "./lib/decode.ts" }),
 });
 ```
 
-This explicit preset classifies field values seen in training. It cannot construct unseen amounts. The [pipeline example](examples/money-pipeline/README.md) demonstrates application-owned token supervision and normalization. Matchbox does not infer numeric encodings or add domain rules from a Zod schema.
+The [money example](examples/money/README.md) demonstrates learned token recognition, explicit supervision, and application-owned normalization. The CLI adds this task to an existing React or Next.js application without replacing its scripts or framework configuration.
 
 ```sh
 matchbox train money
@@ -44,7 +43,7 @@ matchbox eval money
 matchbox dev money
 ```
 
-Configure the Vite plugin, then import .matchbox/money/model.matchbox and call await parser.parse(input). React integration lives at @matchbox-ai/core/react. The runtime loads serialized TensorFlow models and returns validated outputs or uncertainty.
+Import the generated .matchbox/money/model.ts wrapper and call await parser.parse(input). React integration lives at @matchbox-ai/core/react. The runtime loads serialized TensorFlow models and returns validated outputs or uncertainty.
 
 ## Repository
 

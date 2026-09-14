@@ -10,7 +10,7 @@ Build the smallest credible examples-to-browser proof. The README describes the 
 - Keep portable library code in `packages/core` and the browser-only React/Vite playground in `apps/playground`.
 - Use TypeScript for training work. Developers should not need to manage a separate training stack.
 - React integration lives in `packages/core/src/react` and is imported from `@matchbox-ai/core/react`. Training and the CLI live in `packages/train`, exposed as `@matchbox-ai/train`.
-- Examples live in `examples/is-even`, `examples/money-simple`, and `examples/money-pipeline`; their shared browser demo lives in `apps/playground`. New example conventions are authored `matchbox/<task>/parser.ts` and explicit `pipeline.ts`, independent task-local `evals/`, and ignored project-local `.matchbox/<task>/` artifacts. Keep generated weights out of Git and preserve independent evaluation data when regenerating training examples.
+- Examples live in `examples/is-even`, `examples/filters`, and `examples/money`; their shared browser demo lives in `apps/playground`. New example conventions are authored `matchbox/<task>/parser.ts` and explicit `pipeline.ts`, independent task-local `evals/`, and ignored project-local `.matchbox/<task>/` artifacts. Keep generated weights out of Git and preserve independent evaluation data when regenerating training examples.
 - Train learned examples through the native TensorFlow trainers. The default structured-value trainer has no domain dictionaries; explicit sequence recipes and decoders remain application-owned. Keep deterministic rule parsers only as evaluation baselines.
 - Keep training dependencies out of browser entry points. Cross-package imports use package exports.
 - Ship ESM and TypeScript declarations. Use Rolldown for library JavaScript and TypeScript for declarations.
@@ -51,3 +51,7 @@ Work on a ticket branch and open a PR against `main`. Do not merge without instr
 Every conventional task has an explicit pipeline.ts. Use the documented primitives from @matchbox-ai/train. Keep model internals behind @matchbox-ai/core/internal. Public docs live in docs/ and are copied into package builds. The coding-agent workflow lives in skills/matchbox/SKILL.md.
 
 Training-data generators and research runners belong in project-level scripts/, alongside matchbox/, not inside a model/task directory.
+
+## CLI integration
+
+Use Commander for commands and Ink for interactive terminal UI. Scaffolding adds tasks to an existing application; preserve its framework configuration and scripts. The workbench runs separately on loopback. The generated TypeScript wrapper is the default React/Next.js integration; keep Next.js inference in client components. Keep the money CLI template synchronized from examples/money during package builds.
