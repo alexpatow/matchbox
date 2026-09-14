@@ -4,7 +4,7 @@ export default defineConfig({
   testDir: "./browser-tests",
   fullyParallel: true,
   // Workbench tests train native models. Avoid competing for the CI runner's CPU.
-  workers: process.env.CI ? 1 : undefined,
+  ...(process.env.CI ? { workers: 1 } : {}),
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
   reporter: "list",
