@@ -1,6 +1,6 @@
 # CLI
 
-Run Matchbox inside an existing React, Next.js, or other JavaScript application. Your application keeps its own dev server and framework configuration. The CLI uses Commander for commands and Ink for interactive setup and status.
+Run Matchbox inside an existing React, Next.js, or other JavaScript application. Your application keeps its own dev server and framework configuration. The command is provided by the @matchbox-ai/cli development dependency. Pipeline authoring and training APIs remain in @matchbox-ai/train. The CLI uses Commander for commands and Ink for interactive setup and status.
 
 ## Add a task
 

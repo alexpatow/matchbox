@@ -1,8 +1,8 @@
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
-import { discover, loadArtifact, loadConfig } from "../project/index.js";
-import { evaluateSequence } from "../evaluation/evaluate-sequence.js";
+import { discover, loadArtifact, loadConfig } from "@matchbox-ai/train/project";
+import { evaluate as evaluateSequence } from "@matchbox-ai/train";
 import { metrics, print } from "./output.js";
 import type { argumentsFor } from "./args.js";
 export async function execute(args: ReturnType<typeof argumentsFor>) {

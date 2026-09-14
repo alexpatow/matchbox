@@ -2,8 +2,8 @@ import { expect, test } from "bun:test";
 import { chmod, realpath, mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { resolve } from "node:path";
-import { packageManager } from "../packages/train/src/cli/install";
-const cli = resolve("packages/train/dist/cli.js");
+import { packageManager } from "../packages/cli/src/commands/install";
+const cli = resolve("packages/cli/dist/cli.js");
 
 test("package manager detection respects declarations, lockfiles, and workspace ancestors", async () => {
   const root = await mkdtemp(resolve(tmpdir(), "matchbox-detection-"));
@@ -47,7 +47,10 @@ for (const scenario of ["npm", "pnpm", "yarn", "failure", "skip"])
           name: "consumer",
           packageManager: `${manager}@${manager === "yarn" ? "1.22.22" : "10.0.0"}`,
           dependencies: { "@matchbox-ai/core": "workspace:*", zod: "4.6.3" },
-          devDependencies: { "@matchbox-ai/train": "workspace:*" },
+          devDependencies: {
+            "@matchbox-ai/train": "workspace:*",
+            "@matchbox-ai/cli": "workspace:*",
+          },
         }),
       );
       const child = Bun.spawn(

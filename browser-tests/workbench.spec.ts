@@ -6,7 +6,7 @@ import { tmpdir } from "node:os";
 import { resolve } from "node:path";
 const exec = promisify(execFile);
 const root = resolve(".");
-const cli = resolve(root, "packages/train/dist/cli.js");
+const cli = resolve(root, "packages/cli/dist/cli.js");
 test("scaffolded workbench trains, predicts locally, evaluates, and protects held-out data", async ({
   page,
   request,

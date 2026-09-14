@@ -40,7 +40,11 @@ export async function initialize(
     fileURLToPath(import.meta.resolve("@matchbox-ai/core")),
     "@matchbox-ai/core",
   );
-  const train = await packageRoot(fileURLToPath(import.meta.url), "@matchbox-ai/train");
+  const train = await packageRoot(
+    fileURLToPath(import.meta.resolve("@matchbox-ai/train")),
+    "@matchbox-ai/train",
+  );
+  const cli = await packageRoot(fileURLToPath(import.meta.url), "@matchbox-ai/cli");
   const prefix = `matchbox/${name}`;
   if (
     await access(resolve(root, prefix)).then(
@@ -50,7 +54,7 @@ export async function initialize(
   )
     throw new Error(`Refusing to overwrite ${resolve(root, prefix)}.`);
   const files = await templateFiles(
-    resolve(train, "templates", template, "matchbox", template === "money" ? "money" : "task"),
+    resolve(cli, "templates", template, "matchbox", template === "money" ? "money" : "task"),
   );
   const dependencies = { ...manifest.devDependencies, ...manifest.dependencies };
   const framework = dependencies.next ? "Next.js" : dependencies.vite ? "React/Vite" : "JavaScript";
@@ -65,9 +69,17 @@ export async function initialize(
   if (!dependencies.zod) manifest.dependencies.zod = "4.6.3";
   if (!dependencies["@matchbox-ai/train"])
     manifest.devDependencies["@matchbox-ai/train"] = await localDependency(train, root, "train");
+  const trainDependency =
+    manifest.devDependencies["@matchbox-ai/train"] ?? dependencies["@matchbox-ai/train"];
+  if (!dependencies["@matchbox-ai/cli"])
+    manifest.devDependencies["@matchbox-ai/cli"] = await localDependency(cli, root, "cli");
   if (manager === "bun") {
     // Bun needs an explicit override to resolve peers from unpublished tarballs.
-    manifest.overrides = { "@matchbox-ai/core": coreDependency, ...manifest.overrides };
+    manifest.overrides = {
+      "@matchbox-ai/core": coreDependency,
+      "@matchbox-ai/train": trainDependency,
+      ...manifest.overrides,
+    };
     manifest.trustedDependencies = [
       ...new Set([...(manifest.trustedDependencies ?? []), "@tensorflow/tfjs-node"]),
     ];

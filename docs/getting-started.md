@@ -11,10 +11,12 @@ bun install
 bun run build:packages
 ```
 
+The command lives in @matchbox-ai/cli. Authored pipelines import @matchbox-ai/train; application code imports @matchbox-ai/core. Scaffolding adds all three dependencies, with the CLI and training package in devDependencies.
+
 Add the example to an existing React or Next.js project using the built CLI:
 
 ```sh
-bun packages/train/dist/cli.js init money --template money --directory /path/to/your-app
+bun packages/cli/dist/cli.js init money --template money --directory /path/to/your-app
 cd /path/to/your-app
 bunx matchbox dev money
 ```

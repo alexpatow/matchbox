@@ -4,7 +4,7 @@ import { pathToFileURL } from "node:url";
 import type { ParserDefinition } from "@matchbox-ai/core";
 import type { z } from "zod";
 import { readEvaluation } from "./read-evaluation.js";
-import { loadConfig } from "../project/index.js";
+import { loadConfig } from "@matchbox-ai/train/project";
 export async function saveExample(path: string, input: string, output: unknown) {
   const { config, root } = await loadConfig(path);
   const task: ParserDefinition<z.ZodType> = (

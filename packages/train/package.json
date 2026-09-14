@@ -2,15 +2,10 @@
   "name": "@matchbox-ai/train",
   "version": "0.0.0",
   "private": true,
-  "bin": {
-    "matchbox": "./dist/cli.js"
-  },
   "files": [
     "dist",
     "README.md",
-    "templates",
-    "docs",
-    "workbench"
+    "docs"
   ],
   "type": "module",
   "sideEffects": false,
@@ -18,33 +13,26 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
+    },
+    "./project": {
+      "types": "./dist/project/index.d.ts",
+      "import": "./dist/project/index.js"
     }
   },
   "scripts": {
-    "build": "bun ../../scripts/package-docs.ts train && bun ../../scripts/package-templates.ts && rolldown --config && chmod +x dist/cli.js && tsc -p tsconfig.build.json",
+    "build": "bun ../../scripts/package-docs.ts train && rolldown --config && tsc -p tsconfig.build.json",
     "dev": "bun run --parallel \"dev:*\"",
-    "typecheck": "tsc --noEmit && tsc -p tsconfig.tools.json && tsc -p workbench/tsconfig.json",
+    "typecheck": "tsc --noEmit && tsc -p tsconfig.tools.json",
     "dev:js": "rolldown --config --watch",
     "dev:types": "tsc -p tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@fontsource-variable/geist": "5.3.0",
-    "@inkjs/ui": "^2.0.0",
     "@tensorflow/tfjs-node": "4.22.0",
-    "commander": "^15.0.0",
-    "ink": "^7.1.1",
-    "open": "^11.0.3",
-    "package-manager-detector": "^1.8.0",
-    "react": "19.3.0",
-    "react-dom": "19.3.0",
-    "vite": "8.3.0",
     "zod": "4.6.3"
   },
   "devDependencies": {
     "@matchbox-ai/core": "workspace:*",
     "@types/node": "22.20.2",
-    "@types/react": "19.3.0",
-    "@types/react-dom": "19.3.0",
     "rolldown": "1.2.8",
     "typescript": "7.0.2"
   },

@@ -9,7 +9,7 @@ Build the smallest credible examples-to-browser proof. The README describes the 
 - Use Bun workspaces and scripts. Do not add Turborepo.
 - Keep portable library code in `packages/core` and the browser-only React/Vite playground in `apps/playground`.
 - Use TypeScript for training work. Developers should not need to manage a separate training stack.
-- React integration lives in `packages/core/src/react` and is imported from `@matchbox-ai/core/react`. Training and the CLI live in `packages/train`, exposed as `@matchbox-ai/train`.
+- React integration lives in `packages/core/src/react` and is imported from `@matchbox-ai/core/react`. Training primitives live in `packages/train`, exposed as `@matchbox-ai/train`. The CLI, templates, and browser workbench live in `packages/cli`, exposed as `@matchbox-ai/cli` with the `matchbox` command.
 - Examples live in `examples/is-even`, `examples/filters`, and `examples/money`; their shared browser demo lives in `apps/playground`. New example conventions are authored `matchbox/<task>/parser.ts` and explicit `pipeline.ts`, independent task-local `evals/`, and ignored project-local `.matchbox/<task>/` artifacts. Keep generated weights out of Git and preserve independent evaluation data when regenerating training examples.
 - Train learned examples through the native TensorFlow trainers. The default structured-value trainer has no domain dictionaries; explicit sequence recipes and decoders remain application-owned. Keep deterministic rule parsers only as evaluation baselines.
 - Keep training dependencies out of browser entry points. Cross-package imports use package exports.

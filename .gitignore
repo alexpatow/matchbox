@@ -16,4 +16,6 @@ test-results/
 packages/core/docs/
 packages/train/docs/
 
-packages/train/templates/money/
+packages/cli/templates/money/
+
+packages/cli/docs/

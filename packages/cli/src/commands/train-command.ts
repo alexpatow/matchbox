@@ -1,4 +1,4 @@
-import { loadConfig } from "../project/index.js";
+import { loadConfig } from "@matchbox-ai/train/project";
 import { terminal } from "./terminal.js";
 import { metrics, print } from "./output.js";
 export async function trainCommand(path: string, json = false, verbose = false) {
@@ -7,11 +7,13 @@ export async function trainCommand(path: string, json = false, verbose = false) 
     ? null
     : terminal("Training", [path, "Validating examples and preparing training…"]);
   try {
-    const { run } = await import("../run.js");
-    const result = await run("train", path, (epoch, loss) => {
-      if (json) return;
-      if (verbose) console.error(`Epoch ${epoch} · loss ${loss.toFixed(6)}`);
-      else if (epoch === 1 || epoch % 10 === 0) view?.update([path, `Training · epoch ${epoch}`]);
+    const { train } = await import("@matchbox-ai/train");
+    const result = await train(path, {
+      onProgress: (epoch, loss) => {
+        if (json) return;
+        if (verbose) console.error(`Epoch ${epoch} · loss ${loss.toFixed(6)}`);
+        else if (epoch === 1 || epoch % 10 === 0) view?.update([path, `Training · epoch ${epoch}`]);
+      },
     });
     view?.stop();
     if ("report" in result) {

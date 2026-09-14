@@ -1,6 +1,7 @@
 import { cp, mkdir, rm } from "node:fs/promises";
 const name = process.argv[2];
-if (name !== "core" && name !== "train") throw new Error("Expected core or train.");
+if (!["core", "train", "cli"].includes(name ?? ""))
+  throw new Error("Expected core, train, or cli.");
 const root = new URL("../", import.meta.url);
 const output = new URL(`packages/${name}/docs/`, root);
 await rm(new URL(`packages/${name}/dist/`, root), { recursive: true, force: true });

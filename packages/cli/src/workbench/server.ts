@@ -2,7 +2,7 @@ import { createServer, searchForWorkspaceRoot } from "vite";
 import { stat } from "node:fs/promises";
 import { basename, dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { packageRoot } from "../cli/scaffold-files.js";
+import { packageRoot } from "../commands/scaffold-files.js";
 import { runCommand } from "./command.js";
 import { api } from "./api.js";
 import { modifiedAt, type WorkbenchState } from "./state.js";
@@ -28,7 +28,7 @@ export async function serveWorkbench(path: string, port: number) {
     state.stale = modelTime > 0 && (await modifiedAt(taskRoot)) > modelTime;
   }
   await refresh();
-  const packagePath = await packageRoot(fileURLToPath(import.meta.url), "@matchbox-ai/train");
+  const packagePath = await packageRoot(fileURLToPath(import.meta.url), "@matchbox-ai/cli");
   const server = await createServer({
     configFile: false,
     cacheDir: resolve(taskRoot, "../../.matchbox/.workbench-cache"),

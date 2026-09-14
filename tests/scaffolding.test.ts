@@ -2,7 +2,7 @@ import { expect, test } from "bun:test";
 import { mkdtemp, readFile, writeFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { resolve } from "node:path";
-const cli = resolve("packages/train/dist/cli.js");
+const cli = resolve("packages/cli/dist/cli.js");
 async function run(args: string[], cwd: string) {
   const child = Bun.spawn(["bun", cli, ...args], { cwd, stdout: "pipe", stderr: "pipe" });
   const [code, stdout, stderr] = await Promise.all([
@@ -23,7 +23,7 @@ for (const framework of ["vite", "next"])
         "matchbox:train": "custom train",
       },
       dependencies: { [framework]: "1.0.0", zod: "4.6.3", "@matchbox-ai/core": "workspace:*" },
-      devDependencies: { "@matchbox-ai/train": "workspace:*" },
+      devDependencies: { "@matchbox-ai/train": "workspace:*", "@matchbox-ai/cli": "workspace:*" },
     };
     try {
       await writeFile(resolve(directory, "package.json"), JSON.stringify(manifest));

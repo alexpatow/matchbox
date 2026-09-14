@@ -1,16 +1,16 @@
 #!/usr/bin/env bun
 import { CommanderError } from "commander";
-import { argumentsFor, execute } from "./index.js";
+import { argumentsFor, execute } from "./commands/index.js";
 try {
   const args = argumentsFor(process.argv.slice(2));
   if (args.command === "init") {
-    const { initialize } = await import("./init.js");
+    const { initialize } = await import("./commands/init.js");
     await initialize(args.rest[0], args.json, args.directory, args.template, args.skipInstall);
   } else if (args.command === "dev") {
-    const { develop } = await import("./dev.js");
+    const { develop } = await import("./commands/dev.js");
     await develop(args.config ?? args.target, args.port, args.open);
   } else if (!args.command) {
-    const { overview } = await import("./overview.js");
+    const { overview } = await import("./commands/overview.js");
     await overview();
   } else await execute(args);
 } catch (error) {

@@ -1,5 +1,5 @@
 import open from "open";
-import { discover } from "../project/index.js";
+import { discover } from "@matchbox-ai/train/project";
 import { serveWorkbench } from "../workbench/index.js";
 import { choose, terminal } from "./terminal.js";
 import { taskNames } from "./overview.js";

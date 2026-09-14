@@ -4,7 +4,7 @@ import { tmpdir } from "node:os";
 import { resolve } from "node:path";
 const root = resolve(".");
 async function cli(args: string[], cwd = root) {
-  const child = Bun.spawn(["bun", resolve(root, "packages/train/dist/cli.js"), ...args], {
+  const child = Bun.spawn(["bun", resolve(root, "packages/cli/dist/cli.js"), ...args], {
     cwd,
     stdout: "pipe",
     stderr: "pipe",
