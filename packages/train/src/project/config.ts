@@ -14,7 +14,6 @@ export const configSchema = z.strictObject({
   minAccuracy: z.number().min(0).max(1).default(0.95),
   maxBytes: z.number().positive().default(64000),
   sequence: z.strictObject({ recipe: z.string(), decoder: z.string() }).optional(),
-  baseline: z.string().optional(),
   challenges: z.string().optional(),
 });
 export async function loadConfig(path: string) {
@@ -49,8 +48,6 @@ export async function loadConfig(path: string) {
     ...defaults,
     ...authored,
   });
-  if (!config.baseline && (await exists("evals/baseline.ts")))
-    config.baseline = "./evals/baseline.ts";
   if (!config.challenges && (await exists("evals/challenges.json")))
     config.challenges = "./evals/challenges.json";
   config.task = await resolveModule(root, config.task);

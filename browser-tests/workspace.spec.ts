@@ -69,6 +69,8 @@ test("measures real browser inference and enforces a generous regression budget"
     testInfo.outputPath("browser-benchmark.json"),
     JSON.stringify({ project: testInfo.project.name, ...metrics }, null, 2),
   );
+  expect(metrics).not.toHaveProperty("candidates");
+  await expect(page.getByText("Compare with a handwritten rule parser")).toHaveCount(0);
   expect(metrics.samples).toBe(300);
   expect(metrics.p95Ms).toBeLessThan(50);
   await testInfo.attach("browser-benchmark.json", {

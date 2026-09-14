@@ -142,9 +142,6 @@ export async function runSequence(
     float: await evaluateSequence(parser(fit.float), project.evaluation),
     quantized: await evaluateSequence(parser(fit.quantized), project.evaluation),
     challenges: challenges ? await evaluateSequence(parser(fit.quantized), challenges) : null,
-    baseline: project.baseline
-      ? await evaluateSequence(project.baseline, project.evaluation)
-      : null,
     trainingMs: performance.now() - started,
     notes:
       "Validation gates export. Eval labels do not influence selection. Scores are uncalibrated. Unknown-token handling follows the explicit training recipe. JSON int8 arrays are portable but not a packed binary format.",

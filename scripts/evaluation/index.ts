@@ -1,1 +1,0 @@
-export { lookup } from "./lookup";

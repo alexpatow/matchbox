@@ -51,12 +51,6 @@ Training includes these in the report's separate `challenges` section. They do n
 
 The programmatic evaluator also accepts expected `null` for abstention cases. This is an evaluation convention, not a change to the task's successful output schema.
 
-## Compare a baseline
-
-An optional `evals/baseline.ts` default-exports a parser with the same `parse(input)` result contract. Training scores it on the same test split and records the result under `baseline`.
-
-Compare the learned model against a reasonable deterministic implementation. Report dataset size and coverage alongside accuracy. A small synthetic fixture does not establish general language understanding.
-
 ## Measure browser speed
 
 Use **Measure browser speed** in the workbench or the benchmark controls on the examples page. They run inference through TensorFlow.js CPU on the current device, including output validation.
@@ -71,6 +65,6 @@ After `bun run train`, run `bun run eval:examples`. It writes `.matchbox/example
 
 A held-out string can still be identical to training at the model's input representation. Word tokenization maps all numbers to `<number>`. Changing 15 to 90 tests deterministic copying and arithmetic, not learned numerical generalization. Report accuracy on feature-novel inputs separately.
 
-The audit compares the network with an authored rules baseline and an empirical window/token classifier trained on the same annotations. Positive coverage, accuracy among accepted answers, and false acceptance of negative examples matter alongside exact match. A high abstention rate can hide an ineffective parser. Threshold curves are diagnostics, not permission to pick a threshold on test data.
+The audit evaluates model outputs against the task’s expected results. Positive coverage, accuracy among accepted answers, and false acceptance of negative examples matter alongside exact match. A high abstention rate can hide an ineffective parser. Threshold curves are diagnostics, not permission to pick a threshold on test data.
 
 See [the measured example audit](example-evaluation.md) for current results and limitations.

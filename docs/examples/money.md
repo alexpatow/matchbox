@@ -16,4 +16,4 @@ Read `parser.ts` for the output contract, `pipeline.ts` for the learning strateg
 
 The recognizer is learned; number conversion and multiplication are authored. Training a different domain does not automatically inherit these rules.
 
-Training includes explicit neutral spans, rejection examples, and unknown-token masking. These choices are visible in the recipe and generator. The original test cases are development regressions. The frozen `evals/generalization.json` cases compare new contexts and rejection behavior against a nearest-currency rule baseline and an empirical token/window lookup. See [the example audit](../example-evaluation.md).
+Training includes explicit neutral spans, rejection examples, and unknown-token masking. These choices are visible in the recipe and generator. The original test cases are development regressions. The frozen `evals/generalization.json` cases check new contexts and rejection behavior. See [the example audit](../example-evaluation.md).

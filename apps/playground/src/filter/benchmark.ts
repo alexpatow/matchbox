@@ -29,19 +29,5 @@ export async function benchmark() {
   const { default: parser } = await loadFilters();
   const cachedLoadMs = performance.now() - start;
   const selected = await measure(parser);
-  const candidates = [];
-  // Comparison artifacts are lazy imports and never load during ordinary filtering.
-  const loaders = [
-    {
-      name: "rules",
-      load: () => import("../../../../examples/filters/matchbox/filters/evals/baseline"),
-    },
-  ];
-  for (const candidate of loaders) {
-    const start = performance.now();
-    const model = await candidate.load();
-    const moduleLoadMs = performance.now() - start;
-    candidates.push({ algorithm: candidate.name, moduleLoadMs, ...(await measure(model.default)) });
-  }
-  return { ...selected, cachedLoadMs, coldModuleLoadMs: modelLoadTime(), candidates };
+  return { ...selected, cachedLoadMs, coldModuleLoadMs: modelLoadTime() };
 }

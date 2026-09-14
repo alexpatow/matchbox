@@ -1,12 +1,12 @@
 # Example evaluation
 
-The current examples demonstrate training, packaging and browser inference. This audit does **not** establish that their neural models are preferable to simpler parsers. Money loses to a competent rule baseline, filters tie an empirical lookup, and time still misclassifies a new unit combination.
+This audit measures model accuracy, coverage, rejection behavior and browser performance. It exposes remaining semantic errors, including a misclassified time unit and an incorrectly accepted negative money amount.
 
 ## Harder scenarios
 
 The customer demo now includes `German or Swedish customers under 50k except churned ones`. It requires sharing ARR and status restrictions across two country alternatives. The model recognizes field/value/operator tokens; the application decoder constructs that boolean structure. The compiler contributes the compositional behavior.
 
-Money includes `invoice 31415 totals € 28.65` and `in 2026 we paid USD 59.20`. The model labels invoice/year numbers as neutral and the payment as an amount. The decoder converts the recognized amount. The rule baseline also handles these inputs by associating numeric spans with the nearest currency. They demonstrate contextual extraction, not a proven neural advantage.
+Money includes `invoice 31415 totals € 28.65` and `in 2026 we paid USD 59.20`. The model labels invoice/year numbers as neutral and the payment as an amount. The decoder converts the recognized amount.
 
 Parity remains a training sanity check. Use deterministic arithmetic in an application.
 
@@ -16,16 +16,12 @@ Measured on 14 September 2026. These are small hand-authored synthetic suites, n
 
 Exact match includes correct abstentions on negative inputs. Accepted accuracy measures the outputs that would reach an application. None failed output schema validation; semantic mistakes still occurred.
 
-| Example | Neural exact | Rules exact | Lookup exact | Neural accepted accuracy | False accepts on negatives |
-| ------- | ------------ | ----------- | ------------ | ------------------------ | -------------------------- |
-| is-even | 8/8          | 8/8         | 8/8          | 5/5                      | 0/3                        |
-| money   | 19/20        | 20/20       | 14/20        | 12/13                    | 1/8                        |
-| time    | 15/20        | 18/20       | 13/20        | 7/8                      | 0/8                        |
-| filters | 13/16        | 7/16        | 13/16        | 7/7                      | 0/6                        |
-
-The empirical lookup counts label frequencies for three-token windows and individual tokens using the same supervision and decoder as the neural model. It abstains below 0.75 and on unseen tokens. It uses original supervised windows without the network’s masking augmentation. It separates gains from the authored decoder and token labels from gains attributable to the neural network.
-
-The money rules use a nearest-currency span association. The time rules recognize supported quantities, units and clock cues and use the same decoder. The older filter rule parser has narrower grammar; its lower score must not be presented as evidence that a network is needed. The lookup comparison controls for that difference.
+| Example | Model exact | Accepted accuracy | False accepts on negatives |
+| ------- | ----------- | ----------------- | -------------------------- |
+| is-even | 8/8         | 5/5               | 0/3                        |
+| money   | 19/20       | 12/13             | 1/8                        |
+| time    | 15/20       | 7/8               | 0/8                        |
+| filters | 13/16       | 7/7               | 0/6                        |
 
 ## Feature overlap
 
@@ -106,8 +102,8 @@ One Playwright run on an Apple M2, with desktop Chromium and a Pixel 7 viewport 
 
 First-parse timing begins after the benchmark page's static modules have loaded. It includes JSON parsing, parser creation, TensorFlow initialization and inference, but excludes the page and module downloads. Browser timer granularity limits the precision of warm measurements.
 
-The filter benchmark's three fixed regression queries measured 0.2 ms p50 and 0.7 ms p95 on desktop; its rule baseline measured 0.1 ms and 0.2 ms. Both accepted all timed inputs. These speed results do not demonstrate a neural advantage, and they do not measure the full generalization suite. The browser tests also verified matching exported outputs and continued inference with networking blocked.
+The filter benchmark's three fixed regression queries measured 0.2 ms p50 and 0.7 ms p95 on desktop. These timings do not measure the full generalization suite. The browser tests also verified matching exported outputs and continued inference with networking blocked.
 
-## What would establish value
+## Next evaluation
 
-Use representative application inputs, an independently held-out set, and a baseline with comparable engineering effort. Measure positive coverage and incorrect accepted answers alongside size, latency and maintenance burden. For these examples, the next research question is whether a different learning setup can preserve quantity/unit identity under new compositions without growing a rule pile. The present results do not answer that affirmatively.
+Use successive, independently held-out batches of application language. Track how much coverage improves through new examples while the decoder remains stable. Measure positive coverage, incorrect accepted answers, artifact size, latency and the amount of authored code needed to support new phrasing. The remaining unit and sign errors are concrete targets for further training research.

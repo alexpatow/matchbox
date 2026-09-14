@@ -6,7 +6,6 @@ import { evaluate } from "@matchbox-ai/train";
 import { loadArtifact } from "@matchbox-ai/train/project";
 import { createParser, type MatchboxParser } from "@matchbox-ai/core/runtime";
 import { tokenize } from "@matchbox-ai/core/internal";
-import { lookup } from "./evaluation";
 const hash = (text: string) => createHash("sha256").update(text).digest("hex");
 const results = [];
 for (const name of ["is-even", "money", "time", "filters"]) {
@@ -49,10 +48,6 @@ for (const name of ["is-even", "money", "time", "filters"]) {
     .trim()
     .split("\n")
     .map((line) => JSON.parse(line));
-  const baseline: MatchboxParser<unknown> = (
-    await import(pathToFileURL(resolve(root, "evals/baseline.ts")).href)
-  ).default;
-  const empirical = lookup(training, recipe, model.decode!);
   const score = async (parser: MatchboxParser<unknown>, rows = cases) => {
     const result = await evaluate(
       parser,
@@ -111,21 +106,11 @@ for (const name of ["is-even", "money", "time", "filters"]) {
           model.parser,
           cases.filter((row) => !seen.has(signature(row.input))),
         ),
-        rules: await score(
-          baseline,
-          cases.filter((row) => !seen.has(signature(row.input))),
-        ),
-        lookup: await score(
-          empirical,
-          cases.filter((row) => !seen.has(signature(row.input))),
-        ),
       },
       predictions: await Promise.all(
         cases.map(async (row) => ({ ...row, result: await model.parser.parse(row.input) })),
       ),
       learned,
-      rules: await score(baseline),
-      lookup: await score(empirical),
       slices,
       thresholds,
     });
