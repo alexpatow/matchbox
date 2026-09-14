@@ -11,4 +11,4 @@ bunx matchbox-ai dev filters
 
 Generated artifacts are written to .matchbox/filters/model.matchbox, with a typed wrapper and report.json. The shared browser demo lives in apps/playground.
 
-tokenClassifier uses lib/recipe.ts for training supervision and lib/decode.ts for browser-safe output decoding. Any domain normalization is visible application code. The model learns recognition, and the decoder validates or normalizes those predictions.
+tokenClassifier uses recipe.ts for training supervision and decode/decode.ts for browser-safe output decoding. Any domain normalization is visible application code. The model learns recognition, and the decoder validates or normalizes those predictions.

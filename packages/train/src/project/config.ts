@@ -2,10 +2,11 @@ import { access, stat } from "node:fs/promises";
 import { basename, dirname, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import { z } from "zod";
+import { findEntry, resolveModule } from "./entry.js";
 import { pipelineSchema } from "../pipeline/index.js";
 export const configSchema = z.strictObject({
   formatVersion: z.literal(1).default(1),
-  task: z.string().default("./parser.ts"),
+  task: z.string().default("./parser"),
   train: z.string().default("./data/train.jsonl"),
   validation: z.string().default("./evals/validation.jsonl"),
   eval: z.string().default("./evals/test.jsonl"),
@@ -30,10 +31,9 @@ export async function loadConfig(path: string) {
     () => ({}),
   );
   let defaults: Record<string, unknown> = {};
-  if (await exists("pipeline.ts")) {
-    const pipeline = pipelineSchema.parse(
-      (await import(pathToFileURL(resolve(root, "pipeline.ts")).href)).default,
-    );
+  const pipelinePath = await findEntry(root, "pipeline");
+  if (pipelinePath) {
+    const pipeline = pipelineSchema.parse((await import(pathToFileURL(pipelinePath).href)).default);
     defaults = { ...pipeline.acceptance };
     if (pipeline.prediction.kind === "token-classifier")
       defaults.sequence = {
@@ -42,7 +42,7 @@ export async function loadConfig(path: string) {
       };
   } else if (!authored.sequence)
     throw new Error(
-      `Missing ${resolve(root, "pipeline.ts")}. Author an explicit pipeline before training.`,
+      `Missing pipeline.ts or pipeline/pipeline.ts in ${root}. Author an explicit pipeline before training.`,
     );
   const config = configSchema.parse({
     output: resolve(root, "../../.matchbox", basename(root), "model.matchbox"),
@@ -53,5 +53,10 @@ export async function loadConfig(path: string) {
     config.baseline = "./evals/baseline.ts";
   if (!config.challenges && (await exists("evals/challenges.json")))
     config.challenges = "./evals/challenges.json";
-  return { config, root };
+  config.task = await resolveModule(root, config.task);
+  if (config.sequence) {
+    config.sequence.recipe = await resolveModule(root, config.sequence.recipe);
+    config.sequence.decoder = await resolveModule(root, config.sequence.decoder);
+  }
+  return { config, root, pipelinePath };
 }

@@ -1,4 +1,4 @@
-import { countries } from "../../../../examples/filters/matchbox/filters/lib/countries";
+import { countries } from "../../../../examples/filters/matchbox/filters/countries/countries";
 import type { Filter, Clause } from "@/filter";
 const operators = { eq: "=", neq: "≠", gt: ">", gte: "≥", lt: "<", lte: "≤" };
 function label(clause: Clause) {

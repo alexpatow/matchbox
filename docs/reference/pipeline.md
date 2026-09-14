@@ -37,11 +37,11 @@ Use it for small, finite output domains. A numeric field is still a finite class
 
 ## tokenClassifier
 
-`tokenClassifier({ recipe: string, decode: string })` returns a token classifier declaration. Both paths are required and resolve relative to the task directory.
+`tokenClassifier(options?)` returns a token classifier declaration. It discovers `recipe.ts` or `recipe/recipe.ts`, and `decode.ts` or `decode/decode.ts`. Both modules remain authored and required for training. Optional `recipe` and `decode` string paths override these locations, relative to the task directory even when the pipeline lives in `pipeline/pipeline.ts`. Explicit filenames are used exactly; extensionless paths follow the named file-or-folder convention.
 
 ```ts
 export default definePipeline({
-  prediction: tokenClassifier({ recipe: "./lib/recipe.ts", decode: "./lib/decode.ts" }),
+  prediction: tokenClassifier(),
   acceptance: { minAccuracy: 0.9 },
 });
 ```

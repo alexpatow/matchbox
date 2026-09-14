@@ -33,7 +33,7 @@ Matchbox owns task contracts, explicit authoring primitives, dataset workflows, 
 - Use Oxlint and Oxfmt. Run `bun run check` before proposing a PR.
 - Use kebab-case filenames. Tool-discovered config filenames retain their required names.
 - Put each React component in its own file.
-- Use pure `index.ts` re-export barrels for directories. Consumers import from the directory.
+- Use pure `index.ts` re-export barrels for library directories. Authored Matchbox task modules are an exception: use `X.ts` or `X/X.ts`, with direct imports and no required barrel.
 - Keep files focused. Around 150 lines is a signal to extract related logic.
 - Add imports and their usage in the same edit.
 - Validate browser integration with `bun run test:browser`.
@@ -48,7 +48,7 @@ Work on a ticket branch and open a PR against `main`. Do not merge without instr
 
 ## Authoring API
 
-Every conventional task has an explicit pipeline.ts. Use the documented primitives from @matchbox-ai/train. Keep model internals behind @matchbox-ai/core/internal. Public docs live in docs/ and are copied into package builds. The coding-agent workflow lives in skills/matchbox/SKILL.md.
+Every conventional task has an explicit parser and pipeline entry point, each authored as `X.ts` or `X/X.ts`. Token classifiers discover similarly named recipe and decode modules; keep their learning and output transformations explicit. Put module-specific helpers alongside the named entry file, and shared domain code in a named task-level folder such as countries/. Do not put required task contracts in a generic lib/ folder. Use the documented primitives from @matchbox-ai/train. Keep model internals behind @matchbox-ai/core/internal. Public docs live in docs/ and are copied into package builds. The coding-agent workflow lives in skills/matchbox/SKILL.md.
 
 Training-data generators and research runners belong in project-level scripts/, alongside matchbox/, not inside a model/task directory.
 

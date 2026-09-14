@@ -5,7 +5,7 @@ import { readFile } from "node:fs/promises";
 import { createParser } from "@matchbox-ai/core/runtime";
 import task from "../tests/fixtures/field-classifier/matchbox/money/parser.js";
 import sequenceTask from "../examples/money/matchbox/money/parser.js";
-import decode from "../examples/money/matchbox/money/lib/decode.js";
+import decode from "../examples/money/matchbox/money/decode/decode.js";
 import { tensorPredictor } from "../packages/core/src/runtime/tensorflow/index.js";
 import * as tf from "@tensorflow/tfjs-core";
 

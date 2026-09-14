@@ -1,4 +1,4 @@
-import type { CountryCode } from "../../../../examples/filters/matchbox/filters/lib/countries";
+import type { CountryCode } from "../../../../examples/filters/matchbox/filters/countries/countries";
 export interface Customer {
   name: string;
   country: CountryCode;

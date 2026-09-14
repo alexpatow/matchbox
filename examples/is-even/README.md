@@ -11,6 +11,6 @@ bunx matchbox-ai dev is-even
 
 Generated artifacts are written to .matchbox/is-even/model.matchbox, with a typed wrapper and report.json. The shared browser demo lives in apps/playground.
 
-tokenClassifier uses lib/recipe.ts for training supervision and lib/decode.ts for browser-safe output decoding. Any domain normalization is visible application code. The model learns recognition, and the decoder validates or normalizes those predictions.
+tokenClassifier uses recipe.ts for training supervision and decode.ts for browser-safe output decoding. Any domain normalization is visible application code. The model learns recognition, and the decoder validates or normalizes those predictions.
 
 The project-level scripts/generate-data.ts regenerates training data only. It preserves independent evaluation fixtures.

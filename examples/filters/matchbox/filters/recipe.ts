@@ -1,4 +1,4 @@
-import { countryAliases } from "./countries";
+import { countryAliases } from "./countries/aliases";
 import type { SequenceRecipe } from "@matchbox-ai/train";
 const labels: Record<string, string> = {
   active: "STATUS_active",

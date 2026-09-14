@@ -7,7 +7,7 @@ description: Author, train, evaluate, and integrate tiny browser-local Matchbox 
 
 Read the installed package docs/README.md first, then project-structure.md, pipelines.md, evaluation.md, and primitives/README.md. In the framework repository, use root docs/. Match examples to the installed version.
 
-1. Inspect parser.ts, pipeline.ts, data/train.jsonl, and independent evals before changing behavior.
+1. Inspect parser, pipeline, recipe, and decode entry points (`X.ts` or `X/X.ts`), data/train.jsonl, and independent evals before changing behavior.
 2. Keep the output schema focused on valid application values. Make representation and supervision choices explicit in pipeline.ts or imported helpers.
 3. Use fieldClassifier for finite output domains and tokenClassifier for explicitly supervised token recognition. Explain their limits; do not promise unseen numeric outputs from a finite classifier.
 4. Keep domain dictionaries and normalizers application-owned and visible. Never insert one silently to make an evaluation pass.
@@ -20,3 +20,7 @@ Read the installed package docs/README.md first, then project-structure.md, pipe
 Scope changes to existing, documented primitives. Propose a new primitive separately with its contract, limitations, and evaluation evidence. Preserve authored code and tests when reorganizing folders.
 
 Matchbox owns authoring, workflows, evals, packaging, validation, and typed results. TensorFlow owns model execution. A schema must never silently select numeric encodings or domain normalizers.
+
+## Task layout
+
+Use `X.ts` or `X/X.ts` for parser, pipeline, recipe, and decode. Keep helper files with their owning module. Shared domain code belongs in a named task-level folder. No task or helper index barrel is required. `tokenClassifier()` discovers recipe and decode; explicit path overrides are relative to the task root. Never keep both entry forms. Retrain after relocating authored modules because artifacts reference concrete source paths.

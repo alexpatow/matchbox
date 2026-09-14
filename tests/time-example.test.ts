@@ -2,7 +2,7 @@ import { expect, test } from "bun:test";
 import { readFile } from "node:fs/promises";
 import { createParser } from "@matchbox-ai/core/runtime";
 import task from "../examples/time/matchbox/time/parser";
-import decode from "../examples/time/matchbox/time/lib/decode";
+import decode from "../examples/time/matchbox/time/decode/decode";
 const root = new URL("../examples/time/", import.meta.url);
 test("time model passes held-out compositions and abstains on unsupported expressions", async () => {
   const artifact = JSON.parse(

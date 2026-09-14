@@ -1,4 +1,5 @@
-import { countryAliases, normalizeCountry } from "../lib/countries";
+import { countryAliases } from "../countries/aliases";
+import { normalizeCountry } from "../countries/normalize";
 import { tokenize } from "@matchbox-ai/core/internal";
 import { compileClauses, type Predicate, type MatchboxParser } from "@matchbox-ai/core/runtime";
 import task, { type Filter } from "../parser.js";

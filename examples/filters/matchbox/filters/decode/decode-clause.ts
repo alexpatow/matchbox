@@ -1,4 +1,4 @@
-import { normalizeCountry } from "./countries";
+import { normalizeCountry } from "../countries/normalize";
 import type { TaggedToken, Predicate } from "@matchbox-ai/core/runtime";
 export function decodeClause(tokens: readonly TaggedToken[]): Predicate | null {
   const labels = new Set(tokens.map((token) => token.label));

@@ -1,6 +1,16 @@
 import { expect, test } from "bun:test";
 import manifest from "../packages/cli/package.json";
-import { mkdtemp, mkdir, readFile, rm, symlink, unlink, writeFile } from "node:fs/promises";
+import {
+  mkdtemp,
+  mkdir,
+  readFile,
+  rm,
+  symlink,
+  unlink,
+  writeFile,
+  rename,
+  realpath,
+} from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { resolve } from "node:path";
 const root = resolve(".");
@@ -44,6 +54,26 @@ test("a scaffold trains, discovers nested projects, saves corrections, and evalu
     ]);
     expect(initialized.code).toBe(0);
     const evaluation = await readFile(resolve(project, "matchbox/money/evals/test.jsonl"), "utf8");
+    const taskRoot = resolve(project, "matchbox/money");
+    for (const name of ["parser", "pipeline", "recipe"]) {
+      await mkdir(resolve(taskRoot, name));
+      await rename(resolve(taskRoot, `${name}.ts`), resolve(taskRoot, name, `${name}.ts`));
+    }
+    const recipe = resolve(taskRoot, "recipe/recipe.ts");
+    await writeFile(recipe, (await readFile(recipe, "utf8")).replace("./data/", "../data/"));
+    const baseline = resolve(taskRoot, "evals/baseline.ts");
+    await writeFile(
+      baseline,
+      (await readFile(baseline, "utf8")).replace('"../parser"', '"../parser/parser"'),
+    );
+    await symlink(resolve(root, "node_modules"), resolve(project, "node_modules"), "dir");
+    const info = await cli(["info", "--json"], resolve(taskRoot, "parser"));
+    expect(info.code).toBe(0);
+    expect(JSON.parse(info.stdout).pipeline).toBe(
+      await realpath(resolve(taskRoot, "pipeline/pipeline.ts")),
+    );
+    expect((await cli([], project)).stdout).toContain("money");
+
     expect(
       (
         await cli([
@@ -58,7 +88,6 @@ test("a scaffold trains, discovers nested projects, saves corrections, and evalu
         ])
       ).code,
     ).toBe(1);
-    await symlink(resolve(root, "node_modules"), resolve(project, "node_modules"), "dir");
     const trained = await cli(["train", "--json"], resolve(project, "matchbox/money/data"));
     expect(trained.code).toBe(0);
     expect(JSON.parse(trained.stdout).quantized.exactAccuracy).toBe(1);
@@ -86,7 +115,10 @@ test("a scaffold trains, discovers nested projects, saves corrections, and evalu
     expect(await readFile(resolve(project, "matchbox/money/evals/test.jsonl"), "utf8")).toBe(
       evaluation,
     );
-    const beforeSecondTask = await readFile(resolve(project, "matchbox/money/pipeline.ts"), "utf8");
+    const beforeSecondTask = await readFile(
+      resolve(project, "matchbox/money/pipeline/pipeline.ts"),
+      "utf8",
+    );
     expect(
       (
         await cli([
@@ -101,12 +133,18 @@ test("a scaffold trains, discovers nested projects, saves corrections, and evalu
         ])
       ).code,
     ).toBe(0);
-    expect(await readFile(resolve(project, "matchbox/money/pipeline.ts"), "utf8")).toBe(
+    expect(await readFile(resolve(project, "matchbox/money/pipeline/pipeline.ts"), "utf8")).toBe(
       beforeSecondTask,
     );
     expect((await cli(["info", "--json"], project)).stderr).toContain("Choose a task");
     expect((await cli(["info", "money", "--json"], project)).code).toBe(0);
     await unlink(resolve(project, "matchbox/money/data/train.jsonl"));
+    await unlink(resolve(taskRoot, "recipe/recipe.ts"));
+    const wrapper = await readFile(resolve(project, ".matchbox/money/model.ts"), "utf8");
+    expect(wrapper).toContain("/decode/decode");
+    expect(wrapper).toContain("/parser/parser");
+    expect(wrapper).not.toContain("recipe");
+    expect(wrapper).not.toContain("@matchbox-ai/train");
     const evaluated = await cli(["eval", "money", "--json"], project);
     expect(evaluated.code).toBe(0);
     expect(JSON.parse(evaluated.stdout).exactAccuracy).toBe(1);

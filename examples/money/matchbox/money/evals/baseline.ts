@@ -1,6 +1,7 @@
 import { type MatchboxParser } from "@matchbox-ai/core/runtime";
 import { tokenize } from "@matchbox-ai/core/internal";
-import { decode, normalizeNumber } from "../index";
+import decode from "../decode/decode";
+import { normalizeNumber } from "../decode/number-words";
 const currency: Record<string, string> = {
   "€": "EUR",
   $: "USD",

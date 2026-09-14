@@ -1,6 +1,6 @@
 import type { MatchboxParser } from "@matchbox-ai/core/runtime";
 import task from "../parser";
-import { quantity } from "../lib";
+import { quantity } from "../decode/quantity";
 // Deliberately small rule baseline for canonical single-unit and clock expressions.
 const units: Record<string, number> = { second: 1, minute: 60, hour: 3600, day: 86400 };
 const baseline: MatchboxParser<unknown> = {
