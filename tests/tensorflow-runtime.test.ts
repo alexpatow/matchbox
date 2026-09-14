@@ -3,9 +3,9 @@ import type { z } from "zod";
 import { expect, test } from "bun:test";
 import { readFile } from "node:fs/promises";
 import { createParser } from "@matchbox-ai/core/runtime";
-import task from "../examples/money-simple/matchbox/money/parser.js";
-import sequenceTask from "../examples/money-pipeline/matchbox/money/parser.js";
-import decode from "../examples/money-pipeline/matchbox/money/lib/decode.js";
+import task from "../tests/fixtures/field-classifier/matchbox/money/parser.js";
+import sequenceTask from "../examples/money/matchbox/money/parser.js";
+import decode from "../examples/money/matchbox/money/lib/decode.js";
 import { tensorPredictor } from "../packages/core/src/runtime/tensorflow/index.js";
 import * as tf from "@tensorflow/tfjs-core";
 
@@ -13,12 +13,20 @@ for (const kind of ["money-simple", "money-pipeline"] as const) {
   test(`TensorFlow model execution matches gold outputs on ${kind} held-out examples and releases tensors`, async () => {
     const previous = tf.getBackend();
     const artifact = JSON.parse(
-      await readFile(`examples/${kind}/.matchbox/money/model.matchbox`, "utf8"),
+      await readFile(
+        `${kind === "money-simple" ? "tests/fixtures/field-classifier" : "examples/money"}/.matchbox/money/model.matchbox`,
+        "utf8",
+      ),
     );
     const selectedTask: ParserDefinition<z.ZodType> = kind === "money-simple" ? task : sequenceTask;
     const decoder = kind === "money-simple" ? undefined : decode;
     const parser = createParser(artifact, selectedTask, decoder);
-    const rows = (await readFile(`examples/${kind}/matchbox/money/evals/test.jsonl`, "utf8"))
+    const rows = (
+      await readFile(
+        `${kind === "money-simple" ? "tests/fixtures/field-classifier" : "examples/money"}/matchbox/money/evals/test.jsonl`,
+        "utf8",
+      )
+    )
       .trim()
       .split("\n")
       .map((line) => JSON.parse(line) as { input: string; output: unknown });
@@ -55,7 +63,7 @@ for (const kind of ["money-simple", "money-pipeline"] as const) {
 
 test("TensorFlow predictor refuses a silently changed backend", async () => {
   const artifact = JSON.parse(
-    await readFile("examples/money-simple/.matchbox/money/model.matchbox", "utf8"),
+    await readFile("tests/fixtures/field-classifier/.matchbox/money/model.matchbox", "utf8"),
   );
   const previous = tf.getBackend();
   const predictor = await tensorPredictor(artifact);

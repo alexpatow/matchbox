@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { highlight } from "sugar-high";
-import parser from "../../../../examples/money-simple/matchbox/money/parser.ts?raw";
-import pipeline from "../../../../examples/money-simple/matchbox/money/pipeline.ts?raw";
+import parser from "../../../../examples/money/matchbox/money/parser.ts?raw";
+import pipeline from "../../../../examples/money/matchbox/money/pipeline.ts?raw";
 const files = [
   { name: "parser.ts", description: "Your schema defines a strict output contract.", code: parser },
   {
     name: "pipeline.ts",
     description:
-      "This simple classifier learns known values. An explicit token pipeline can recognize spans for your own decoder.",
+      "The model learns token labels. The authored recipe supplies supervision, and the decoder turns recognized spans into values.",
     code: pipeline,
   },
   {

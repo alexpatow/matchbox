@@ -34,7 +34,7 @@ test("the file explorer supports keyboard navigation", async ({ page }) => {
   await page.getByRole("tab", { name: "parser.ts", exact: true }).focus();
   await page.keyboard.press("ArrowDown");
   await expect(page.getByRole("tab", { name: "pipeline.ts", exact: true })).toBeFocused();
-  await expect(page.getByRole("tabpanel")).toContainText("fieldClassifier");
+  await expect(page.getByRole("tabpanel")).toContainText("tokenClassifier");
   await page.getByRole("tab", { name: "app.ts", exact: true }).click();
   await expect(page.getByRole("tabpanel")).toContainText("money.parse");
 });

@@ -16,7 +16,9 @@ async function select(root: string): Promise<string | undefined> {
       tasks.push(entry.name);
   tasks.sort();
   if (tasks.length > 1)
-    throw new Error(`Choose a task: ${tasks.join(", ")}. For example, matchbox train ${tasks[0]}.`);
+    throw new Error(
+      `Choose a task: ${tasks.join(", ")}. For example, matchbox-ai train ${tasks[0]}.`,
+    );
   return tasks.length ? resolve(directory, tasks[0]!) : undefined;
 }
 export async function discover(target?: string, cwd = process.cwd()): Promise<string> {
@@ -41,7 +43,7 @@ export async function discover(target?: string, cwd = process.cwd()): Promise<st
       throw new Error(
         target
           ? `Task not found: ${target}.`
-          : "No Matchbox project found. Run matchbox init <name>.",
+          : "No Matchbox project found. Run matchbox-ai init <name>.",
       );
     root = parent;
   }

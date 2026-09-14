@@ -4,9 +4,9 @@ This self-contained example is authored under matchbox/filters/. parser.ts defin
 
 ```sh
 cd examples/filters
-bunx matchbox train filters
-bunx matchbox eval filters
-bunx matchbox dev filters
+bunx matchbox-ai train filters
+bunx matchbox-ai eval filters
+bunx matchbox-ai dev filters
 ```
 
 Generated artifacts are written to .matchbox/filters/model.matchbox, with a typed wrapper and report.json. The shared browser demo lives in apps/playground.

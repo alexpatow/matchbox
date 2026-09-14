@@ -1,7 +1,8 @@
 import { createParser } from "@matchbox-ai/core/runtime";
-import task from "../../../examples/money-simple/matchbox/money/parser";
-import raw from "../../../examples/money-simple/.matchbox/money/model.matchbox?raw";
-import evaluation from "../../../examples/money-simple/matchbox/money/evals/test.jsonl?raw";
+import decode from "../../../examples/money/matchbox/money/lib/decode";
+import task from "../../../examples/money/matchbox/money/parser";
+import raw from "../../../examples/money/.matchbox/money/model.matchbox?raw";
+import evaluation from "../../../examples/money/matchbox/money/evals/test.jsonl?raw";
 
 async function benchmark() {
   const rows = evaluation
@@ -9,7 +10,7 @@ async function benchmark() {
     .split("\n")
     .map((line) => JSON.parse(line) as { input: string; output: unknown });
   const start = performance.now();
-  const parser = createParser(JSON.parse(raw), task);
+  const parser = createParser(JSON.parse(raw), task, decode);
   const first = await parser.parse(rows[0]!.input);
   const coldFirstParseMs = performance.now() - start;
   try {

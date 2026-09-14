@@ -5,7 +5,7 @@ import { createParser } from "@matchbox-ai/core/runtime";
 import { readRecordArtifact } from "@matchbox-ai/core/internal";
 import { z } from "zod";
 import { fitRecord } from "../packages/train/src/models/record/fit.js";
-import simple from "../examples/money-simple/.matchbox/money/model.js";
+import simple from "../tests/fixtures/field-classifier/.matchbox/money/model.js";
 
 test("new word meanings are learned by changing examples alone", async () => {
   const task = defineParser({ input: z.string(), output: z.strictObject({ amount: z.number() }) });
@@ -39,7 +39,7 @@ test("simple pipeline predicts structured values and abstains on unseen numeric 
   });
   expect((await simple.parse("123.45 euros")).status).toBe("uncertain");
   const artifact = JSON.parse(
-    await readFile("examples/money-simple/.matchbox/money/model.matchbox", "utf8"),
+    await readFile("tests/fixtures/field-classifier/.matchbox/money/model.matchbox", "utf8"),
   );
   artifact.weights[0].shape[0]++;
   expect(() => readRecordArtifact(artifact)).toThrow("weights");

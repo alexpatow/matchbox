@@ -3,9 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "train": "matchbox train filters",
+    "train": "matchbox-ai train filters",
     "typecheck": "tsc --noEmit",
-    "eval": "matchbox eval filters"
+    "eval": "matchbox-ai eval filters"
   },
   "dependencies": {
     "@matchbox-ai/core": "workspace:*",

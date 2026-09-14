@@ -1,12 +1,20 @@
 {
   "name": "@matchbox-ai/core",
   "version": "0.0.0",
-  "private": true,
   "description": "Compile examples into tiny models for the browser.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexpatow/matchbox.git",
+    "directory": "packages/core"
+  },
   "files": [
     "dist",
     "README.md",
-    "docs"
+    "docs",
+    "LICENSE",
+    "THIRD-PARTY-NOTICES.md",
+    "CHANGELOG.md"
   ],
   "type": "module",
   "sideEffects": false,
@@ -31,6 +39,9 @@
       "types": "./dist/internal/index.d.ts",
       "import": "./dist/internal/index.js"
     }
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "build": "bun ../../scripts/package-docs.ts core && rolldown --config && tsc -p tsconfig.build.json",

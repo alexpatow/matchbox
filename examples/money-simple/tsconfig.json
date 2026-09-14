@@ -1,8 +1,0 @@
-{
-  "extends": "../../tsconfig.base.json",
-  "compilerOptions": {
-    "types": ["bun"],
-    "allowArbitraryExtensions": true
-  },
-  "include": ["matchbox/**/*.ts", "scripts/**/*.ts"]
-}

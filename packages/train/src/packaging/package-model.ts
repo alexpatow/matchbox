@@ -12,8 +12,8 @@ export async function packageModel(
   const decoderImport =
     model.decoderModule === null
       ? ""
-      : `import decode from ${JSON.stringify(model.decoderModule.replace(/\.ts$/, ".js"))};\n`;
-  const taskImport = model.taskModule.replace(/\.ts$/, ".js");
+      : `import decode from ${JSON.stringify(model.decoderModule.replace(/\.ts$/, ""))};\n`;
+  const taskImport = model.taskModule.replace(/\.ts$/, "");
   await writeFile(output, JSON.stringify(model));
   await writeFile(
     declaration,

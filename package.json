@@ -4,7 +4,8 @@
   "workspaces": [
     "packages/*",
     "examples/*",
-    "apps/*"
+    "apps/*",
+    "tests/fixtures/*"
   ],
   "type": "module",
   "scripts": {
@@ -20,22 +21,28 @@
     "test:browser": "playwright test",
     "check": "bun run lint && bun run format:check && bun run train && bun run check:prepared",
     "preview": "bun run --filter @matchbox-ai/playground preview",
-    "matchbox": "bun packages/train/src/cli/main.ts",
+    "matchbox": "bun packages/cli/src/main.ts",
     "train": "bun run build:packages && bun run train:filters && bun run train:neural",
     "eval": "bun run matchbox eval examples/filters",
     "research": "bun run train && bun examples/filters/scripts/challenges.ts",
-    "build:packages": "bun run build:core && bun run --filter @matchbox-ai/train build",
+    "build:packages": "bun run build:core && bun run --filter @matchbox-ai/train build && bun run --filter matchbox-ai build",
     "train:filters": "bun run matchbox train examples/filters",
-    "train:neural": "bun run matchbox train examples/is-even && bun run matchbox train examples/money-pipeline && bun run matchbox train examples/money-simple",
+    "train:neural": "bun run matchbox train examples/is-even && bun run matchbox train examples/money && bun run matchbox train tests/fixtures/field-classifier",
     "check:prepared": "tsc --noEmit && bun run --filter \"*\" typecheck && bun test ./tests && bun run build:apps",
-    "build:apps": "bun run --filter @matchbox-ai/playground build && bun run --filter @matchbox-ai/benchmarks build"
+    "build:apps": "bun run --filter @matchbox-ai/playground build && bun run --filter @matchbox-ai/benchmarks build",
+    "changeset": "changeset",
+    "version-packages": "changeset version && bun install --lockfile-only && bun run format",
+    "release:pack": "changeset pack --out-dir .changeset/publish",
+    "release": "changeset publish"
   },
   "devDependencies": {
+    "@changesets/cli": "3.0.2",
     "@matchbox-ai/core": "workspace:*",
     "@matchbox-ai/train": "workspace:*",
     "@playwright/test": "1.63.0",
     "@tensorflow/tfjs-core": "4.22.0",
     "@types/bun": "1.4.2",
+    "matchbox-ai": "workspace:*",
     "oxfmt": "0.67.0",
     "oxlint": "1.82.0",
     "typescript": "7.0.2",

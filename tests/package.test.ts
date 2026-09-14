@@ -2,6 +2,7 @@ import { describe, expect, test } from "bun:test";
 import { fileURLToPath } from "node:url";
 import manifest from "../packages/core/package.json";
 import trainManifest from "../packages/train/package.json";
+import cliManifest from "../packages/cli/package.json";
 
 const coreDirectory = fileURLToPath(new URL("../packages/core", import.meta.url));
 
@@ -20,9 +21,27 @@ describe("built package contract", () => {
     }
     expect(
       await Bun.file(
-        new URL(`../packages/train/${trainManifest.bin.matchbox}`, import.meta.url),
+        new URL(`../packages/cli/${cliManifest.bin["matchbox-ai"]}`, import.meta.url),
       ).exists(),
     ).toBe(true);
+  });
+
+  test("the CLI owns developer UI while train remains a headless library", async () => {
+    expect("bin" in trainManifest).toBe(false);
+    for (const dependency of ["ink", "commander", "vite", "react", "open"]) {
+      expect(dependency in trainManifest.dependencies).toBe(false);
+      expect(dependency in cliManifest.dependencies).toBe(true);
+    }
+    expect("@tensorflow/tfjs-node" in cliManifest.dependencies).toBe(false);
+    for (const file of [
+      "workbench/index.html",
+      "templates/blank/matchbox/task/parser.ts",
+      "templates/money/matchbox/money/parser.ts",
+    ]) {
+      expect(await Bun.file(new URL(`../packages/cli/${file}`, import.meta.url)).exists()).toBe(
+        true,
+      );
+    }
   });
 
   test("a modern Node consumer can import by package name without browser globals", async () => {

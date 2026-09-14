@@ -1,15 +1,19 @@
 {
   "name": "@matchbox-ai/train",
   "version": "0.0.0",
-  "private": true,
-  "bin": {
-    "matchbox": "./dist/cli.js"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexpatow/matchbox.git",
+    "directory": "packages/train"
   },
   "files": [
     "dist",
     "README.md",
-    "templates",
-    "docs"
+    "docs",
+    "LICENSE",
+    "THIRD-PARTY-NOTICES.md",
+    "CHANGELOG.md"
   ],
   "type": "module",
   "sideEffects": false,
@@ -17,23 +21,37 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
+    },
+    "./project": {
+      "types": "./dist/project/index.d.ts",
+      "import": "./dist/project/index.js"
     }
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
-    "build": "bun ../../scripts/package-docs.ts train && rolldown --config && chmod +x dist/cli.js && tsc -p tsconfig.build.json",
+    "build": "bun ../../scripts/package-docs.ts train && rolldown --config && tsc -p tsconfig.build.json",
     "dev": "bun run --parallel \"dev:*\"",
     "typecheck": "tsc --noEmit && tsc -p tsconfig.tools.json",
     "dev:js": "rolldown --config --watch",
     "dev:types": "tsc -p tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@matchbox-ai/core": "workspace:*",
     "@tensorflow/tfjs-node": "4.22.0",
     "zod": "4.6.3"
   },
   "devDependencies": {
+    "@matchbox-ai/core": "0.0.0",
     "@types/node": "22.20.2",
     "rolldown": "1.2.8",
     "typescript": "7.0.2"
+  },
+  "peerDependencies": {
+    "@matchbox-ai/core": "0.0.0"
+  },
+  "engines": {
+    "bun": ">=1.4.2",
+    "node": ">=24"
   }
 }

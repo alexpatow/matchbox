@@ -1,0 +1,11 @@
+{
+  "$schema": "https://unpkg.com/@changesets/config@4.0.0/schema.json",
+  "baseBranch": "main",
+  "access": "public",
+  "fixed": [["@matchbox-ai/core", "@matchbox-ai/train", "matchbox-ai"]],
+  "privatePackages": {
+    "version": false,
+    "tag": false
+  },
+  "format": "oxfmt"
+}
