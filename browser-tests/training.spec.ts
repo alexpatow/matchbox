@@ -1,11 +1,13 @@
 import { expect, test } from "@playwright/test";
 import { writeFile } from "node:fs/promises";
-test("trained money and parity artifacts run offline with measured browser latency", async ({
+test("trained time, money and parity artifacts run offline with measured browser latency", async ({
   page,
 }, testInfo) => {
   const errors: string[] = [];
   page.on("pageerror", (error) => errors.push(error.message));
   await page.goto("/training");
+  await expect(page.locator("#time-status")).toHaveText("Parsed locally from trained weights.");
+  await expect(page.getByLabel("time output")).toContainText('"seconds": 5400');
   await expect(page.locator("#money-status")).toHaveText("Parsed locally from trained weights.");
   await expect(page.locator("#is-even-status")).toHaveText("Parsed locally from trained weights.");
   await expect(page.getByLabel("money output")).toContainText('"amount": 28.65');
@@ -14,8 +16,11 @@ test("trained money and parity artifacts run offline with measured browser laten
   await expect(page.getByLabel("money output")).toContainText('"amount": 26000');
   await page.getByRole("button", { name: "10001", exact: true }).click();
   await expect(page.getByLabel("is-even output")).toContainText('"even": false');
+  await page.getByRole("button", { name: "tomorrow at 3:30 pm", exact: true }).click();
+  await expect(page.getByLabel("time output")).toContainText('"hour": 15');
+  await expect(page.getByLabel("time output")).toContainText('"minute": 30');
   const timings: Record<string, unknown> = {};
-  for (const name of ["money", "is-even"]) {
+  for (const name of ["time", "money", "is-even"]) {
     await page.getByRole("button", { name: `Measure ${name}`, exact: true }).click();
     const output = page.getByTestId(`${name}-timing`);
     await expect(output).toBeVisible();
@@ -33,6 +38,8 @@ test("trained money and parity artifacts run offline with measured browser laten
   await page.getByRole("button", { name: "$15", exact: true }).click();
   await expect(page.getByLabel("money output")).toContainText('"amount": 15');
   await expect(page.getByLabel("money output")).toContainText('"currency": "USD"');
+  await page.getByRole("button", { name: "next Friday at noon", exact: true }).click();
+  await expect(page.getByLabel("time output")).toContainText('"status": "uncertain"');
   expect(errors).toEqual([]);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(
     true,

@@ -40,6 +40,7 @@
         "@matchbox-ai/core": "workspace:*",
         "class-variance-authority": "0.7.1",
         "clsx": "2.1.1",
+        "lucide-react": "1.45.0",
         "react": "19.3.0",
         "react-dom": "19.3.0",
         "react-markdown": "^10.1.0",
@@ -97,6 +98,18 @@
         "typescript": "7.0.2",
       },
     },
+    "examples/time": {
+      "name": "@matchbox-ai/time-example",
+      "dependencies": {
+        "@matchbox-ai/core": "workspace:*",
+        "zod": "4.6.3",
+      },
+      "devDependencies": {
+        "@matchbox-ai/train": "workspace:*",
+        "@types/bun": "1.4.2",
+        "typescript": "7.0.2",
+      },
+    },
     "packages/cli": {
       "name": "matchbox-ai",
       "version": "0.1.0",
@@ -106,8 +119,8 @@
       "dependencies": {
         "@fontsource-variable/geist": "5.3.0",
         "@inkjs/ui": "^2.0.0",
-        "@matchbox-ai/core": "0.0.0",
-        "@matchbox-ai/train": "0.0.0",
+        "@matchbox-ai/core": "0.1.0",
+        "@matchbox-ai/train": "0.1.0",
         "commander": "^15.0.0",
         "ink": "^7.1.1",
         "open": "^11.0.3",
@@ -155,13 +168,13 @@
         "zod": "4.6.3",
       },
       "devDependencies": {
-        "@matchbox-ai/core": "0.0.0",
+        "@matchbox-ai/core": "0.1.0",
         "@types/node": "22.20.2",
         "rolldown": "1.2.8",
         "typescript": "7.0.2",
       },
       "peerDependencies": {
-        "@matchbox-ai/core": "0.0.0",
+        "@matchbox-ai/core": "0.1.0",
       },
     },
     "tests/fixtures/field-classifier": {
@@ -256,6 +269,8 @@
     "@matchbox-ai/money-example": ["@matchbox-ai/money-example@workspace:examples/money"],
 
     "@matchbox-ai/playground": ["@matchbox-ai/playground@workspace:apps/playground"],
+
+    "@matchbox-ai/time-example": ["@matchbox-ai/time-example@workspace:examples/time"],
 
     "@matchbox-ai/train": ["@matchbox-ai/train@workspace:packages/train"],
 
@@ -766,6 +781,8 @@
     "long": ["long@4.0.0", "", {}, "sha512-XsP+KhQif4bjX1kbuSiySJFNAehNxgLb6hPRGJ9QsUr8ajHkuXGdrHmFUTUUXhDwVX2R5bY4JNZEwbUiMhV+MA=="],
 
     "longest-streak": ["longest-streak@3.1.0", "", {}, "sha512-9Ri+o0JYgehTaVBBDoMqIl8GXtbWg711O3srftcHhZ0dqnETqLaoIK0x17fUw9rFSlK/0NlsKe0Ahhyl5pXE2g=="],
+
+    "lucide-react": ["lucide-react@1.45.0", "", { "peerDependencies": { "react": "^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0" } }, "sha512-yH1ubCAduho9UR7oJhRXIQXogksRILBiTuZC4/bQIGeB9JOkxMlSuEHyyZpo1Z3S0yWJO2KTSUZbjiNvVxeOUw=="],
 
     "magic-string": ["magic-string@0.30.21", "", { "dependencies": { "@jridgewell/sourcemap-codec": "^1.5.5" } }, "sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ=="],
 

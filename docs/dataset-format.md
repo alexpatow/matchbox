@@ -9,6 +9,8 @@ Matchbox dataset format version 1 uses separate local `train.jsonl` and `evals.j
 
 `input` must satisfy the task's string schema. `output` must satisfy its structured output schema. There are no row headers, split labels, IDs, or metadata properties in version 1. Application-specific fields belong inside `output` and must be declared by the task.
 
+The conventional training workflow uses `data/train.jsonl`, `evals/validation.jsonl`, and `evals/test.jsonl`. The two-source validation API below is a lower-level utility, not the complete training configuration.
+
 ## Authoring rules
 
 Write UTF-8 text without a byte-order mark, with LF or CRLF line endings. Empty and whitespace-only lines are ignored. Diagnostics still count those physical lines. Each split must contain at least one example. A final newline is optional.
@@ -49,10 +51,10 @@ The function accepts text and performs no filesystem access, network requests, o
 
 ## Train and eval separation
 
-Both splits are explicit and required. Matchbox does not shuffle, merge, deduplicate, or automatically split them. Keep held-out examples separate from training and synthetic expansion. Authors are responsible for preventing overlap and paraphrase leakage; validation establishes structural correctness, not evaluation independence. Automatic holdout selection and leakage diagnostics can be designed with the training ticket.
+Both splits are explicit and required. Matchbox does not shuffle, merge, deduplicate, or automatically split them. Keep held-out examples separate from training and synthetic expansion. Authors are responsible for preventing overlap and paraphrase leakage; validation establishes structural correctness, not evaluation independence. The training workflow additionally rejects inputs shared across splits after trimming and case folding. The lower-level `parseDatasets` API performs structural validation only.
 
 ## Versioning
 
 The required `formatVersion: 1` in the dataset configuration describes both sources. Keep that configuration under version control alongside the JSONL files and task definition. Raw JSONL files are not self-describing; preserve their configuration when sharing them. No implicit version is assumed. Missing or unsupported versions throw a `RangeError` before rows are read. Invalid rows return validation issues instead.
 
-Breaking changes to row structure or interpretation require a new format version and explicit migration. Do not silently reinterpret existing files. Dataset format versions are independent of package versions and the task metadata's format version. Business-schema changes require revalidation of both datasets against the updated task. Artifact hashes and provenance belong to the build metadata ticket.
+Breaking changes to row structure or interpretation require a new format version and explicit migration. Do not silently reinterpret existing files. Dataset format versions are independent of package versions and the task metadata's format version. Business-schema changes require revalidation of both datasets against the updated task. Build reports include artifact and dataset hashes.

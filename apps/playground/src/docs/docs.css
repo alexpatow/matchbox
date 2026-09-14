@@ -1,3 +1,4 @@
+@import "./typography.css";
 .docs-layout {
   display: grid;
   grid-template-columns: 190px minmax(0, 740px);
@@ -27,54 +28,6 @@
 .docs-layout aside a[aria-current] {
   color: #ececec;
 }
-.doc-content {
-  min-width: 0;
-  font-size: 15px;
-  line-height: 1.8;
-}
-.doc-content h1 {
-  font-size: 42px;
-  margin-bottom: 30px;
-}
-.doc-content h2 {
-  font-size: 24px;
-  letter-spacing: -0.03em;
-  margin: 44px 0 16px;
-}
-.doc-content h3 {
-  font-size: 17px;
-  margin-top: 32px;
-}
-.doc-content pre {
-  line-height: 1.8;
-}
-.doc-content :not(pre) > code {
-  background: #222;
-  padding: 2px 4px;
-  font-size: 0.85em;
-  overflow-wrap: anywhere;
-  color: #c3c3c3;
-}
-.doc-content p,
-.doc-content li {
-  color: #a0a0a0;
-}
-.doc-content .doc-source {
-  margin-top: 64px;
-  padding-top: 20px;
-  border-top: 1px solid var(--border);
-  font-size: 12px;
-}
-.doc-content table {
-  display: block;
-  max-width: 100%;
-  overflow-x: auto;
-  white-space: normal;
-}
-.doc-content th,
-.doc-content td {
-  min-width: 120px;
-}
 @media (max-width: 850px) {
   .docs-layout {
     grid-template-columns: 155px minmax(0, 1fr);
@@ -96,5 +49,50 @@
   }
   .docs-layout aside nav > div {
     flex: 1 1 120px;
+  }
+}
+.docs-search-label {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+#docs-search {
+  width: 100%;
+  padding: 8px 10px;
+  font: inherit;
+  font-size: 13px;
+  margin-bottom: 24px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: inherit;
+  border-radius: 4px;
+}
+.doc-outline {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 16px;
+  font-size: 13px;
+}
+.doc-outline summary {
+  cursor: pointer;
+}
+.doc-outline nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  padding-top: 12px;
+}
+.docs-layout aside nav {
+  max-height: calc(100vh - 64px);
+  overflow-y: auto;
+}
+@media (max-width: 600px) {
+  .docs-layout aside nav {
+    max-height: 220px;
+    display: block;
+    overflow-y: auto;
+    padding-bottom: 12px;
+  }
+  .docs-layout aside nav > div {
+    margin-bottom: 16px;
   }
 }

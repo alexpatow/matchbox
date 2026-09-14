@@ -1,0 +1,1642 @@
+{"input":"1 second","output":{"kind":"duration","seconds":1}}
+{"input":"for 1 second","output":{"kind":"duration","seconds":1}}
+{"input":"in 1 second","output":{"kind":"relative","seconds":1}}
+{"input":"wait for 1 second","output":{"kind":"duration","seconds":1}}
+{"input":"remind me in 1 second","output":{"kind":"relative","seconds":1}}
+{"input":"1 seconds","output":{"kind":"duration","seconds":1}}
+{"input":"for 1 seconds","output":{"kind":"duration","seconds":1}}
+{"input":"in 1 seconds","output":{"kind":"relative","seconds":1}}
+{"input":"wait for 1 seconds","output":{"kind":"duration","seconds":1}}
+{"input":"remind me in 1 seconds","output":{"kind":"relative","seconds":1}}
+{"input":"1 minute","output":{"kind":"duration","seconds":60}}
+{"input":"for 1 minute","output":{"kind":"duration","seconds":60}}
+{"input":"in 1 minute","output":{"kind":"relative","seconds":60}}
+{"input":"wait for 1 minute","output":{"kind":"duration","seconds":60}}
+{"input":"remind me in 1 minute","output":{"kind":"relative","seconds":60}}
+{"input":"1 minutes","output":{"kind":"duration","seconds":60}}
+{"input":"for 1 minutes","output":{"kind":"duration","seconds":60}}
+{"input":"in 1 minutes","output":{"kind":"relative","seconds":60}}
+{"input":"wait for 1 minutes","output":{"kind":"duration","seconds":60}}
+{"input":"remind me in 1 minutes","output":{"kind":"relative","seconds":60}}
+{"input":"1 hour","output":{"kind":"duration","seconds":3600}}
+{"input":"for 1 hour","output":{"kind":"duration","seconds":3600}}
+{"input":"in 1 hour","output":{"kind":"relative","seconds":3600}}
+{"input":"wait for 1 hour","output":{"kind":"duration","seconds":3600}}
+{"input":"remind me in 1 hour","output":{"kind":"relative","seconds":3600}}
+{"input":"1 hours","output":{"kind":"duration","seconds":3600}}
+{"input":"for 1 hours","output":{"kind":"duration","seconds":3600}}
+{"input":"in 1 hours","output":{"kind":"relative","seconds":3600}}
+{"input":"wait for 1 hours","output":{"kind":"duration","seconds":3600}}
+{"input":"remind me in 1 hours","output":{"kind":"relative","seconds":3600}}
+{"input":"1 day","output":{"kind":"duration","seconds":86400}}
+{"input":"for 1 day","output":{"kind":"duration","seconds":86400}}
+{"input":"in 1 day","output":{"kind":"relative","seconds":86400}}
+{"input":"wait for 1 day","output":{"kind":"duration","seconds":86400}}
+{"input":"remind me in 1 day","output":{"kind":"relative","seconds":86400}}
+{"input":"1 days","output":{"kind":"duration","seconds":86400}}
+{"input":"for 1 days","output":{"kind":"duration","seconds":86400}}
+{"input":"in 1 days","output":{"kind":"relative","seconds":86400}}
+{"input":"wait for 1 days","output":{"kind":"duration","seconds":86400}}
+{"input":"remind me in 1 days","output":{"kind":"relative","seconds":86400}}
+{"input":"5 second","output":{"kind":"duration","seconds":5}}
+{"input":"for 5 second","output":{"kind":"duration","seconds":5}}
+{"input":"in 5 second","output":{"kind":"relative","seconds":5}}
+{"input":"wait for 5 second","output":{"kind":"duration","seconds":5}}
+{"input":"remind me in 5 second","output":{"kind":"relative","seconds":5}}
+{"input":"5 seconds","output":{"kind":"duration","seconds":5}}
+{"input":"for 5 seconds","output":{"kind":"duration","seconds":5}}
+{"input":"in 5 seconds","output":{"kind":"relative","seconds":5}}
+{"input":"wait for 5 seconds","output":{"kind":"duration","seconds":5}}
+{"input":"remind me in 5 seconds","output":{"kind":"relative","seconds":5}}
+{"input":"5 minute","output":{"kind":"duration","seconds":300}}
+{"input":"for 5 minute","output":{"kind":"duration","seconds":300}}
+{"input":"in 5 minute","output":{"kind":"relative","seconds":300}}
+{"input":"wait for 5 minute","output":{"kind":"duration","seconds":300}}
+{"input":"remind me in 5 minute","output":{"kind":"relative","seconds":300}}
+{"input":"5 minutes","output":{"kind":"duration","seconds":300}}
+{"input":"for 5 minutes","output":{"kind":"duration","seconds":300}}
+{"input":"in 5 minutes","output":{"kind":"relative","seconds":300}}
+{"input":"wait for 5 minutes","output":{"kind":"duration","seconds":300}}
+{"input":"remind me in 5 minutes","output":{"kind":"relative","seconds":300}}
+{"input":"5 hour","output":{"kind":"duration","seconds":18000}}
+{"input":"for 5 hour","output":{"kind":"duration","seconds":18000}}
+{"input":"in 5 hour","output":{"kind":"relative","seconds":18000}}
+{"input":"wait for 5 hour","output":{"kind":"duration","seconds":18000}}
+{"input":"remind me in 5 hour","output":{"kind":"relative","seconds":18000}}
+{"input":"5 hours","output":{"kind":"duration","seconds":18000}}
+{"input":"for 5 hours","output":{"kind":"duration","seconds":18000}}
+{"input":"in 5 hours","output":{"kind":"relative","seconds":18000}}
+{"input":"wait for 5 hours","output":{"kind":"duration","seconds":18000}}
+{"input":"remind me in 5 hours","output":{"kind":"relative","seconds":18000}}
+{"input":"5 day","output":{"kind":"duration","seconds":432000}}
+{"input":"for 5 day","output":{"kind":"duration","seconds":432000}}
+{"input":"in 5 day","output":{"kind":"relative","seconds":432000}}
+{"input":"wait for 5 day","output":{"kind":"duration","seconds":432000}}
+{"input":"remind me in 5 day","output":{"kind":"relative","seconds":432000}}
+{"input":"5 days","output":{"kind":"duration","seconds":432000}}
+{"input":"for 5 days","output":{"kind":"duration","seconds":432000}}
+{"input":"in 5 days","output":{"kind":"relative","seconds":432000}}
+{"input":"wait for 5 days","output":{"kind":"duration","seconds":432000}}
+{"input":"remind me in 5 days","output":{"kind":"relative","seconds":432000}}
+{"input":"15 second","output":{"kind":"duration","seconds":15}}
+{"input":"for 15 second","output":{"kind":"duration","seconds":15}}
+{"input":"in 15 second","output":{"kind":"relative","seconds":15}}
+{"input":"wait for 15 second","output":{"kind":"duration","seconds":15}}
+{"input":"remind me in 15 second","output":{"kind":"relative","seconds":15}}
+{"input":"15 seconds","output":{"kind":"duration","seconds":15}}
+{"input":"for 15 seconds","output":{"kind":"duration","seconds":15}}
+{"input":"in 15 seconds","output":{"kind":"relative","seconds":15}}
+{"input":"wait for 15 seconds","output":{"kind":"duration","seconds":15}}
+{"input":"remind me in 15 seconds","output":{"kind":"relative","seconds":15}}
+{"input":"15 minute","output":{"kind":"duration","seconds":900}}
+{"input":"for 15 minute","output":{"kind":"duration","seconds":900}}
+{"input":"in 15 minute","output":{"kind":"relative","seconds":900}}
+{"input":"wait for 15 minute","output":{"kind":"duration","seconds":900}}
+{"input":"remind me in 15 minute","output":{"kind":"relative","seconds":900}}
+{"input":"15 minutes","output":{"kind":"duration","seconds":900}}
+{"input":"for 15 minutes","output":{"kind":"duration","seconds":900}}
+{"input":"in 15 minutes","output":{"kind":"relative","seconds":900}}
+{"input":"wait for 15 minutes","output":{"kind":"duration","seconds":900}}
+{"input":"remind me in 15 minutes","output":{"kind":"relative","seconds":900}}
+{"input":"15 hour","output":{"kind":"duration","seconds":54000}}
+{"input":"for 15 hour","output":{"kind":"duration","seconds":54000}}
+{"input":"in 15 hour","output":{"kind":"relative","seconds":54000}}
+{"input":"wait for 15 hour","output":{"kind":"duration","seconds":54000}}
+{"input":"remind me in 15 hour","output":{"kind":"relative","seconds":54000}}
+{"input":"15 hours","output":{"kind":"duration","seconds":54000}}
+{"input":"for 15 hours","output":{"kind":"duration","seconds":54000}}
+{"input":"in 15 hours","output":{"kind":"relative","seconds":54000}}
+{"input":"wait for 15 hours","output":{"kind":"duration","seconds":54000}}
+{"input":"remind me in 15 hours","output":{"kind":"relative","seconds":54000}}
+{"input":"30 second","output":{"kind":"duration","seconds":30}}
+{"input":"for 30 second","output":{"kind":"duration","seconds":30}}
+{"input":"in 30 second","output":{"kind":"relative","seconds":30}}
+{"input":"wait for 30 second","output":{"kind":"duration","seconds":30}}
+{"input":"remind me in 30 second","output":{"kind":"relative","seconds":30}}
+{"input":"30 seconds","output":{"kind":"duration","seconds":30}}
+{"input":"for 30 seconds","output":{"kind":"duration","seconds":30}}
+{"input":"in 30 seconds","output":{"kind":"relative","seconds":30}}
+{"input":"wait for 30 seconds","output":{"kind":"duration","seconds":30}}
+{"input":"remind me in 30 seconds","output":{"kind":"relative","seconds":30}}
+{"input":"30 minute","output":{"kind":"duration","seconds":1800}}
+{"input":"for 30 minute","output":{"kind":"duration","seconds":1800}}
+{"input":"in 30 minute","output":{"kind":"relative","seconds":1800}}
+{"input":"wait for 30 minute","output":{"kind":"duration","seconds":1800}}
+{"input":"remind me in 30 minute","output":{"kind":"relative","seconds":1800}}
+{"input":"30 minutes","output":{"kind":"duration","seconds":1800}}
+{"input":"for 30 minutes","output":{"kind":"duration","seconds":1800}}
+{"input":"in 30 minutes","output":{"kind":"relative","seconds":1800}}
+{"input":"wait for 30 minutes","output":{"kind":"duration","seconds":1800}}
+{"input":"remind me in 30 minutes","output":{"kind":"relative","seconds":1800}}
+{"input":"30 hour","output":{"kind":"duration","seconds":108000}}
+{"input":"for 30 hour","output":{"kind":"duration","seconds":108000}}
+{"input":"in 30 hour","output":{"kind":"relative","seconds":108000}}
+{"input":"wait for 30 hour","output":{"kind":"duration","seconds":108000}}
+{"input":"remind me in 30 hour","output":{"kind":"relative","seconds":108000}}
+{"input":"30 hours","output":{"kind":"duration","seconds":108000}}
+{"input":"for 30 hours","output":{"kind":"duration","seconds":108000}}
+{"input":"in 30 hours","output":{"kind":"relative","seconds":108000}}
+{"input":"wait for 30 hours","output":{"kind":"duration","seconds":108000}}
+{"input":"remind me in 30 hours","output":{"kind":"relative","seconds":108000}}
+{"input":"60 second","output":{"kind":"duration","seconds":60}}
+{"input":"for 60 second","output":{"kind":"duration","seconds":60}}
+{"input":"in 60 second","output":{"kind":"relative","seconds":60}}
+{"input":"wait for 60 second","output":{"kind":"duration","seconds":60}}
+{"input":"remind me in 60 second","output":{"kind":"relative","seconds":60}}
+{"input":"60 seconds","output":{"kind":"duration","seconds":60}}
+{"input":"for 60 seconds","output":{"kind":"duration","seconds":60}}
+{"input":"in 60 seconds","output":{"kind":"relative","seconds":60}}
+{"input":"wait for 60 seconds","output":{"kind":"duration","seconds":60}}
+{"input":"remind me in 60 seconds","output":{"kind":"relative","seconds":60}}
+{"input":"60 minute","output":{"kind":"duration","seconds":3600}}
+{"input":"for 60 minute","output":{"kind":"duration","seconds":3600}}
+{"input":"in 60 minute","output":{"kind":"relative","seconds":3600}}
+{"input":"wait for 60 minute","output":{"kind":"duration","seconds":3600}}
+{"input":"remind me in 60 minute","output":{"kind":"relative","seconds":3600}}
+{"input":"60 minutes","output":{"kind":"duration","seconds":3600}}
+{"input":"for 60 minutes","output":{"kind":"duration","seconds":3600}}
+{"input":"in 60 minutes","output":{"kind":"relative","seconds":3600}}
+{"input":"wait for 60 minutes","output":{"kind":"duration","seconds":3600}}
+{"input":"remind me in 60 minutes","output":{"kind":"relative","seconds":3600}}
+{"input":"60 hour","output":{"kind":"duration","seconds":216000}}
+{"input":"for 60 hour","output":{"kind":"duration","seconds":216000}}
+{"input":"in 60 hour","output":{"kind":"relative","seconds":216000}}
+{"input":"wait for 60 hour","output":{"kind":"duration","seconds":216000}}
+{"input":"remind me in 60 hour","output":{"kind":"relative","seconds":216000}}
+{"input":"60 hours","output":{"kind":"duration","seconds":216000}}
+{"input":"for 60 hours","output":{"kind":"duration","seconds":216000}}
+{"input":"in 60 hours","output":{"kind":"relative","seconds":216000}}
+{"input":"wait for 60 hours","output":{"kind":"duration","seconds":216000}}
+{"input":"remind me in 60 hours","output":{"kind":"relative","seconds":216000}}
+{"input":"1.5 second","output":{"kind":"duration","seconds":1.5}}
+{"input":"for 1.5 second","output":{"kind":"duration","seconds":1.5}}
+{"input":"in 1.5 second","output":{"kind":"relative","seconds":1.5}}
+{"input":"wait for 1.5 second","output":{"kind":"duration","seconds":1.5}}
+{"input":"remind me in 1.5 second","output":{"kind":"relative","seconds":1.5}}
+{"input":"1.5 seconds","output":{"kind":"duration","seconds":1.5}}
+{"input":"for 1.5 seconds","output":{"kind":"duration","seconds":1.5}}
+{"input":"in 1.5 seconds","output":{"kind":"relative","seconds":1.5}}
+{"input":"wait for 1.5 seconds","output":{"kind":"duration","seconds":1.5}}
+{"input":"remind me in 1.5 seconds","output":{"kind":"relative","seconds":1.5}}
+{"input":"1.5 minute","output":{"kind":"duration","seconds":90}}
+{"input":"for 1.5 minute","output":{"kind":"duration","seconds":90}}
+{"input":"in 1.5 minute","output":{"kind":"relative","seconds":90}}
+{"input":"wait for 1.5 minute","output":{"kind":"duration","seconds":90}}
+{"input":"remind me in 1.5 minute","output":{"kind":"relative","seconds":90}}
+{"input":"1.5 minutes","output":{"kind":"duration","seconds":90}}
+{"input":"for 1.5 minutes","output":{"kind":"duration","seconds":90}}
+{"input":"in 1.5 minutes","output":{"kind":"relative","seconds":90}}
+{"input":"wait for 1.5 minutes","output":{"kind":"duration","seconds":90}}
+{"input":"remind me in 1.5 minutes","output":{"kind":"relative","seconds":90}}
+{"input":"1.5 hour","output":{"kind":"duration","seconds":5400}}
+{"input":"for 1.5 hour","output":{"kind":"duration","seconds":5400}}
+{"input":"in 1.5 hour","output":{"kind":"relative","seconds":5400}}
+{"input":"wait for 1.5 hour","output":{"kind":"duration","seconds":5400}}
+{"input":"remind me in 1.5 hour","output":{"kind":"relative","seconds":5400}}
+{"input":"1.5 hours","output":{"kind":"duration","seconds":5400}}
+{"input":"for 1.5 hours","output":{"kind":"duration","seconds":5400}}
+{"input":"in 1.5 hours","output":{"kind":"relative","seconds":5400}}
+{"input":"wait for 1.5 hours","output":{"kind":"duration","seconds":5400}}
+{"input":"remind me in 1.5 hours","output":{"kind":"relative","seconds":5400}}
+{"input":"1.5 day","output":{"kind":"duration","seconds":129600}}
+{"input":"for 1.5 day","output":{"kind":"duration","seconds":129600}}
+{"input":"in 1.5 day","output":{"kind":"relative","seconds":129600}}
+{"input":"wait for 1.5 day","output":{"kind":"duration","seconds":129600}}
+{"input":"remind me in 1.5 day","output":{"kind":"relative","seconds":129600}}
+{"input":"1.5 days","output":{"kind":"duration","seconds":129600}}
+{"input":"for 1.5 days","output":{"kind":"duration","seconds":129600}}
+{"input":"in 1.5 days","output":{"kind":"relative","seconds":129600}}
+{"input":"wait for 1.5 days","output":{"kind":"duration","seconds":129600}}
+{"input":"remind me in 1.5 days","output":{"kind":"relative","seconds":129600}}
+{"input":"a second","output":{"kind":"duration","seconds":1}}
+{"input":"for a second","output":{"kind":"duration","seconds":1}}
+{"input":"in a second","output":{"kind":"relative","seconds":1}}
+{"input":"wait for a second","output":{"kind":"duration","seconds":1}}
+{"input":"remind me in a second","output":{"kind":"relative","seconds":1}}
+{"input":"a seconds","output":{"kind":"duration","seconds":1}}
+{"input":"for a seconds","output":{"kind":"duration","seconds":1}}
+{"input":"in a seconds","output":{"kind":"relative","seconds":1}}
+{"input":"wait for a seconds","output":{"kind":"duration","seconds":1}}
+{"input":"remind me in a seconds","output":{"kind":"relative","seconds":1}}
+{"input":"a minute","output":{"kind":"duration","seconds":60}}
+{"input":"for a minute","output":{"kind":"duration","seconds":60}}
+{"input":"in a minute","output":{"kind":"relative","seconds":60}}
+{"input":"wait for a minute","output":{"kind":"duration","seconds":60}}
+{"input":"remind me in a minute","output":{"kind":"relative","seconds":60}}
+{"input":"a minutes","output":{"kind":"duration","seconds":60}}
+{"input":"for a minutes","output":{"kind":"duration","seconds":60}}
+{"input":"in a minutes","output":{"kind":"relative","seconds":60}}
+{"input":"wait for a minutes","output":{"kind":"duration","seconds":60}}
+{"input":"remind me in a minutes","output":{"kind":"relative","seconds":60}}
+{"input":"a hour","output":{"kind":"duration","seconds":3600}}
+{"input":"for a hour","output":{"kind":"duration","seconds":3600}}
+{"input":"in a hour","output":{"kind":"relative","seconds":3600}}
+{"input":"wait for a hour","output":{"kind":"duration","seconds":3600}}
+{"input":"remind me in a hour","output":{"kind":"relative","seconds":3600}}
+{"input":"a hours","output":{"kind":"duration","seconds":3600}}
+{"input":"for a hours","output":{"kind":"duration","seconds":3600}}
+{"input":"in a hours","output":{"kind":"relative","seconds":3600}}
+{"input":"wait for a hours","output":{"kind":"duration","seconds":3600}}
+{"input":"remind me in a hours","output":{"kind":"relative","seconds":3600}}
+{"input":"a day","output":{"kind":"duration","seconds":86400}}
+{"input":"for a day","output":{"kind":"duration","seconds":86400}}
+{"input":"in a day","output":{"kind":"relative","seconds":86400}}
+{"input":"wait for a day","output":{"kind":"duration","seconds":86400}}
+{"input":"remind me in a day","output":{"kind":"relative","seconds":86400}}
+{"input":"a days","output":{"kind":"duration","seconds":86400}}
+{"input":"for a days","output":{"kind":"duration","seconds":86400}}
+{"input":"in a days","output":{"kind":"relative","seconds":86400}}
+{"input":"wait for a days","output":{"kind":"duration","seconds":86400}}
+{"input":"remind me in a days","output":{"kind":"relative","seconds":86400}}
+{"input":"an second","output":{"kind":"duration","seconds":1}}
+{"input":"for an second","output":{"kind":"duration","seconds":1}}
+{"input":"in an second","output":{"kind":"relative","seconds":1}}
+{"input":"wait for an second","output":{"kind":"duration","seconds":1}}
+{"input":"remind me in an second","output":{"kind":"relative","seconds":1}}
+{"input":"an seconds","output":{"kind":"duration","seconds":1}}
+{"input":"for an seconds","output":{"kind":"duration","seconds":1}}
+{"input":"in an seconds","output":{"kind":"relative","seconds":1}}
+{"input":"wait for an seconds","output":{"kind":"duration","seconds":1}}
+{"input":"remind me in an seconds","output":{"kind":"relative","seconds":1}}
+{"input":"an minute","output":{"kind":"duration","seconds":60}}
+{"input":"for an minute","output":{"kind":"duration","seconds":60}}
+{"input":"in an minute","output":{"kind":"relative","seconds":60}}
+{"input":"wait for an minute","output":{"kind":"duration","seconds":60}}
+{"input":"remind me in an minute","output":{"kind":"relative","seconds":60}}
+{"input":"an minutes","output":{"kind":"duration","seconds":60}}
+{"input":"for an minutes","output":{"kind":"duration","seconds":60}}
+{"input":"in an minutes","output":{"kind":"relative","seconds":60}}
+{"input":"wait for an minutes","output":{"kind":"duration","seconds":60}}
+{"input":"remind me in an minutes","output":{"kind":"relative","seconds":60}}
+{"input":"an hour","output":{"kind":"duration","seconds":3600}}
+{"input":"for an hour","output":{"kind":"duration","seconds":3600}}
+{"input":"in an hour","output":{"kind":"relative","seconds":3600}}
+{"input":"wait for an hour","output":{"kind":"duration","seconds":3600}}
+{"input":"remind me in an hour","output":{"kind":"relative","seconds":3600}}
+{"input":"an hours","output":{"kind":"duration","seconds":3600}}
+{"input":"for an hours","output":{"kind":"duration","seconds":3600}}
+{"input":"in an hours","output":{"kind":"relative","seconds":3600}}
+{"input":"wait for an hours","output":{"kind":"duration","seconds":3600}}
+{"input":"remind me in an hours","output":{"kind":"relative","seconds":3600}}
+{"input":"an day","output":{"kind":"duration","seconds":86400}}
+{"input":"for an day","output":{"kind":"duration","seconds":86400}}
+{"input":"in an day","output":{"kind":"relative","seconds":86400}}
+{"input":"wait for an day","output":{"kind":"duration","seconds":86400}}
+{"input":"remind me in an day","output":{"kind":"relative","seconds":86400}}
+{"input":"an days","output":{"kind":"duration","seconds":86400}}
+{"input":"for an days","output":{"kind":"duration","seconds":86400}}
+{"input":"in an days","output":{"kind":"relative","seconds":86400}}
+{"input":"wait for an days","output":{"kind":"duration","seconds":86400}}
+{"input":"remind me in an days","output":{"kind":"relative","seconds":86400}}
+{"input":"one second","output":{"kind":"duration","seconds":1}}
+{"input":"for one second","output":{"kind":"duration","seconds":1}}
+{"input":"in one second","output":{"kind":"relative","seconds":1}}
+{"input":"wait for one second","output":{"kind":"duration","seconds":1}}
+{"input":"remind me in one second","output":{"kind":"relative","seconds":1}}
+{"input":"one seconds","output":{"kind":"duration","seconds":1}}
+{"input":"for one seconds","output":{"kind":"duration","seconds":1}}
+{"input":"in one seconds","output":{"kind":"relative","seconds":1}}
+{"input":"wait for one seconds","output":{"kind":"duration","seconds":1}}
+{"input":"remind me in one seconds","output":{"kind":"relative","seconds":1}}
+{"input":"one minute","output":{"kind":"duration","seconds":60}}
+{"input":"for one minute","output":{"kind":"duration","seconds":60}}
+{"input":"in one minute","output":{"kind":"relative","seconds":60}}
+{"input":"wait for one minute","output":{"kind":"duration","seconds":60}}
+{"input":"remind me in one minute","output":{"kind":"relative","seconds":60}}
+{"input":"one minutes","output":{"kind":"duration","seconds":60}}
+{"input":"for one minutes","output":{"kind":"duration","seconds":60}}
+{"input":"in one minutes","output":{"kind":"relative","seconds":60}}
+{"input":"wait for one minutes","output":{"kind":"duration","seconds":60}}
+{"input":"remind me in one minutes","output":{"kind":"relative","seconds":60}}
+{"input":"one hour","output":{"kind":"duration","seconds":3600}}
+{"input":"for one hour","output":{"kind":"duration","seconds":3600}}
+{"input":"in one hour","output":{"kind":"relative","seconds":3600}}
+{"input":"wait for one hour","output":{"kind":"duration","seconds":3600}}
+{"input":"remind me in one hour","output":{"kind":"relative","seconds":3600}}
+{"input":"one hours","output":{"kind":"duration","seconds":3600}}
+{"input":"for one hours","output":{"kind":"duration","seconds":3600}}
+{"input":"in one hours","output":{"kind":"relative","seconds":3600}}
+{"input":"wait for one hours","output":{"kind":"duration","seconds":3600}}
+{"input":"remind me in one hours","output":{"kind":"relative","seconds":3600}}
+{"input":"one day","output":{"kind":"duration","seconds":86400}}
+{"input":"for one day","output":{"kind":"duration","seconds":86400}}
+{"input":"in one day","output":{"kind":"relative","seconds":86400}}
+{"input":"wait for one day","output":{"kind":"duration","seconds":86400}}
+{"input":"remind me in one day","output":{"kind":"relative","seconds":86400}}
+{"input":"one days","output":{"kind":"duration","seconds":86400}}
+{"input":"for one days","output":{"kind":"duration","seconds":86400}}
+{"input":"in one days","output":{"kind":"relative","seconds":86400}}
+{"input":"wait for one days","output":{"kind":"duration","seconds":86400}}
+{"input":"remind me in one days","output":{"kind":"relative","seconds":86400}}
+{"input":"two second","output":{"kind":"duration","seconds":2}}
+{"input":"for two second","output":{"kind":"duration","seconds":2}}
+{"input":"in two second","output":{"kind":"relative","seconds":2}}
+{"input":"wait for two second","output":{"kind":"duration","seconds":2}}
+{"input":"remind me in two second","output":{"kind":"relative","seconds":2}}
+{"input":"two seconds","output":{"kind":"duration","seconds":2}}
+{"input":"for two seconds","output":{"kind":"duration","seconds":2}}
+{"input":"in two seconds","output":{"kind":"relative","seconds":2}}
+{"input":"wait for two seconds","output":{"kind":"duration","seconds":2}}
+{"input":"remind me in two seconds","output":{"kind":"relative","seconds":2}}
+{"input":"two minute","output":{"kind":"duration","seconds":120}}
+{"input":"for two minute","output":{"kind":"duration","seconds":120}}
+{"input":"in two minute","output":{"kind":"relative","seconds":120}}
+{"input":"wait for two minute","output":{"kind":"duration","seconds":120}}
+{"input":"remind me in two minute","output":{"kind":"relative","seconds":120}}
+{"input":"two minutes","output":{"kind":"duration","seconds":120}}
+{"input":"for two minutes","output":{"kind":"duration","seconds":120}}
+{"input":"in two minutes","output":{"kind":"relative","seconds":120}}
+{"input":"wait for two minutes","output":{"kind":"duration","seconds":120}}
+{"input":"remind me in two minutes","output":{"kind":"relative","seconds":120}}
+{"input":"two hour","output":{"kind":"duration","seconds":7200}}
+{"input":"for two hour","output":{"kind":"duration","seconds":7200}}
+{"input":"in two hour","output":{"kind":"relative","seconds":7200}}
+{"input":"wait for two hour","output":{"kind":"duration","seconds":7200}}
+{"input":"remind me in two hour","output":{"kind":"relative","seconds":7200}}
+{"input":"two hours","output":{"kind":"duration","seconds":7200}}
+{"input":"for two hours","output":{"kind":"duration","seconds":7200}}
+{"input":"in two hours","output":{"kind":"relative","seconds":7200}}
+{"input":"wait for two hours","output":{"kind":"duration","seconds":7200}}
+{"input":"remind me in two hours","output":{"kind":"relative","seconds":7200}}
+{"input":"two day","output":{"kind":"duration","seconds":172800}}
+{"input":"for two day","output":{"kind":"duration","seconds":172800}}
+{"input":"in two day","output":{"kind":"relative","seconds":172800}}
+{"input":"wait for two day","output":{"kind":"duration","seconds":172800}}
+{"input":"remind me in two day","output":{"kind":"relative","seconds":172800}}
+{"input":"two days","output":{"kind":"duration","seconds":172800}}
+{"input":"for two days","output":{"kind":"duration","seconds":172800}}
+{"input":"in two days","output":{"kind":"relative","seconds":172800}}
+{"input":"wait for two days","output":{"kind":"duration","seconds":172800}}
+{"input":"remind me in two days","output":{"kind":"relative","seconds":172800}}
+{"input":"three second","output":{"kind":"duration","seconds":3}}
+{"input":"for three second","output":{"kind":"duration","seconds":3}}
+{"input":"in three second","output":{"kind":"relative","seconds":3}}
+{"input":"wait for three second","output":{"kind":"duration","seconds":3}}
+{"input":"remind me in three second","output":{"kind":"relative","seconds":3}}
+{"input":"three seconds","output":{"kind":"duration","seconds":3}}
+{"input":"for three seconds","output":{"kind":"duration","seconds":3}}
+{"input":"in three seconds","output":{"kind":"relative","seconds":3}}
+{"input":"wait for three seconds","output":{"kind":"duration","seconds":3}}
+{"input":"remind me in three seconds","output":{"kind":"relative","seconds":3}}
+{"input":"three minute","output":{"kind":"duration","seconds":180}}
+{"input":"for three minute","output":{"kind":"duration","seconds":180}}
+{"input":"in three minute","output":{"kind":"relative","seconds":180}}
+{"input":"wait for three minute","output":{"kind":"duration","seconds":180}}
+{"input":"remind me in three minute","output":{"kind":"relative","seconds":180}}
+{"input":"three minutes","output":{"kind":"duration","seconds":180}}
+{"input":"for three minutes","output":{"kind":"duration","seconds":180}}
+{"input":"in three minutes","output":{"kind":"relative","seconds":180}}
+{"input":"wait for three minutes","output":{"kind":"duration","seconds":180}}
+{"input":"remind me in three minutes","output":{"kind":"relative","seconds":180}}
+{"input":"three hour","output":{"kind":"duration","seconds":10800}}
+{"input":"for three hour","output":{"kind":"duration","seconds":10800}}
+{"input":"in three hour","output":{"kind":"relative","seconds":10800}}
+{"input":"wait for three hour","output":{"kind":"duration","seconds":10800}}
+{"input":"remind me in three hour","output":{"kind":"relative","seconds":10800}}
+{"input":"three hours","output":{"kind":"duration","seconds":10800}}
+{"input":"for three hours","output":{"kind":"duration","seconds":10800}}
+{"input":"in three hours","output":{"kind":"relative","seconds":10800}}
+{"input":"wait for three hours","output":{"kind":"duration","seconds":10800}}
+{"input":"remind me in three hours","output":{"kind":"relative","seconds":10800}}
+{"input":"three day","output":{"kind":"duration","seconds":259200}}
+{"input":"for three day","output":{"kind":"duration","seconds":259200}}
+{"input":"in three day","output":{"kind":"relative","seconds":259200}}
+{"input":"wait for three day","output":{"kind":"duration","seconds":259200}}
+{"input":"remind me in three day","output":{"kind":"relative","seconds":259200}}
+{"input":"three days","output":{"kind":"duration","seconds":259200}}
+{"input":"for three days","output":{"kind":"duration","seconds":259200}}
+{"input":"in three days","output":{"kind":"relative","seconds":259200}}
+{"input":"wait for three days","output":{"kind":"duration","seconds":259200}}
+{"input":"remind me in three days","output":{"kind":"relative","seconds":259200}}
+{"input":"four second","output":{"kind":"duration","seconds":4}}
+{"input":"for four second","output":{"kind":"duration","seconds":4}}
+{"input":"in four second","output":{"kind":"relative","seconds":4}}
+{"input":"wait for four second","output":{"kind":"duration","seconds":4}}
+{"input":"remind me in four second","output":{"kind":"relative","seconds":4}}
+{"input":"four seconds","output":{"kind":"duration","seconds":4}}
+{"input":"for four seconds","output":{"kind":"duration","seconds":4}}
+{"input":"in four seconds","output":{"kind":"relative","seconds":4}}
+{"input":"wait for four seconds","output":{"kind":"duration","seconds":4}}
+{"input":"remind me in four seconds","output":{"kind":"relative","seconds":4}}
+{"input":"four minute","output":{"kind":"duration","seconds":240}}
+{"input":"for four minute","output":{"kind":"duration","seconds":240}}
+{"input":"in four minute","output":{"kind":"relative","seconds":240}}
+{"input":"wait for four minute","output":{"kind":"duration","seconds":240}}
+{"input":"remind me in four minute","output":{"kind":"relative","seconds":240}}
+{"input":"four minutes","output":{"kind":"duration","seconds":240}}
+{"input":"for four minutes","output":{"kind":"duration","seconds":240}}
+{"input":"in four minutes","output":{"kind":"relative","seconds":240}}
+{"input":"wait for four minutes","output":{"kind":"duration","seconds":240}}
+{"input":"remind me in four minutes","output":{"kind":"relative","seconds":240}}
+{"input":"four hour","output":{"kind":"duration","seconds":14400}}
+{"input":"for four hour","output":{"kind":"duration","seconds":14400}}
+{"input":"in four hour","output":{"kind":"relative","seconds":14400}}
+{"input":"wait for four hour","output":{"kind":"duration","seconds":14400}}
+{"input":"remind me in four hour","output":{"kind":"relative","seconds":14400}}
+{"input":"four hours","output":{"kind":"duration","seconds":14400}}
+{"input":"for four hours","output":{"kind":"duration","seconds":14400}}
+{"input":"in four hours","output":{"kind":"relative","seconds":14400}}
+{"input":"wait for four hours","output":{"kind":"duration","seconds":14400}}
+{"input":"remind me in four hours","output":{"kind":"relative","seconds":14400}}
+{"input":"four day","output":{"kind":"duration","seconds":345600}}
+{"input":"for four day","output":{"kind":"duration","seconds":345600}}
+{"input":"in four day","output":{"kind":"relative","seconds":345600}}
+{"input":"wait for four day","output":{"kind":"duration","seconds":345600}}
+{"input":"remind me in four day","output":{"kind":"relative","seconds":345600}}
+{"input":"four days","output":{"kind":"duration","seconds":345600}}
+{"input":"for four days","output":{"kind":"duration","seconds":345600}}
+{"input":"in four days","output":{"kind":"relative","seconds":345600}}
+{"input":"wait for four days","output":{"kind":"duration","seconds":345600}}
+{"input":"remind me in four days","output":{"kind":"relative","seconds":345600}}
+{"input":"five second","output":{"kind":"duration","seconds":5}}
+{"input":"for five second","output":{"kind":"duration","seconds":5}}
+{"input":"in five second","output":{"kind":"relative","seconds":5}}
+{"input":"wait for five second","output":{"kind":"duration","seconds":5}}
+{"input":"remind me in five second","output":{"kind":"relative","seconds":5}}
+{"input":"five seconds","output":{"kind":"duration","seconds":5}}
+{"input":"for five seconds","output":{"kind":"duration","seconds":5}}
+{"input":"in five seconds","output":{"kind":"relative","seconds":5}}
+{"input":"wait for five seconds","output":{"kind":"duration","seconds":5}}
+{"input":"remind me in five seconds","output":{"kind":"relative","seconds":5}}
+{"input":"five minute","output":{"kind":"duration","seconds":300}}
+{"input":"for five minute","output":{"kind":"duration","seconds":300}}
+{"input":"in five minute","output":{"kind":"relative","seconds":300}}
+{"input":"wait for five minute","output":{"kind":"duration","seconds":300}}
+{"input":"remind me in five minute","output":{"kind":"relative","seconds":300}}
+{"input":"five minutes","output":{"kind":"duration","seconds":300}}
+{"input":"for five minutes","output":{"kind":"duration","seconds":300}}
+{"input":"in five minutes","output":{"kind":"relative","seconds":300}}
+{"input":"wait for five minutes","output":{"kind":"duration","seconds":300}}
+{"input":"remind me in five minutes","output":{"kind":"relative","seconds":300}}
+{"input":"five hour","output":{"kind":"duration","seconds":18000}}
+{"input":"for five hour","output":{"kind":"duration","seconds":18000}}
+{"input":"in five hour","output":{"kind":"relative","seconds":18000}}
+{"input":"wait for five hour","output":{"kind":"duration","seconds":18000}}
+{"input":"remind me in five hour","output":{"kind":"relative","seconds":18000}}
+{"input":"five hours","output":{"kind":"duration","seconds":18000}}
+{"input":"for five hours","output":{"kind":"duration","seconds":18000}}
+{"input":"in five hours","output":{"kind":"relative","seconds":18000}}
+{"input":"wait for five hours","output":{"kind":"duration","seconds":18000}}
+{"input":"remind me in five hours","output":{"kind":"relative","seconds":18000}}
+{"input":"five day","output":{"kind":"duration","seconds":432000}}
+{"input":"for five day","output":{"kind":"duration","seconds":432000}}
+{"input":"in five day","output":{"kind":"relative","seconds":432000}}
+{"input":"wait for five day","output":{"kind":"duration","seconds":432000}}
+{"input":"remind me in five day","output":{"kind":"relative","seconds":432000}}
+{"input":"five days","output":{"kind":"duration","seconds":432000}}
+{"input":"for five days","output":{"kind":"duration","seconds":432000}}
+{"input":"in five days","output":{"kind":"relative","seconds":432000}}
+{"input":"wait for five days","output":{"kind":"duration","seconds":432000}}
+{"input":"remind me in five days","output":{"kind":"relative","seconds":432000}}
+{"input":"six second","output":{"kind":"duration","seconds":6}}
+{"input":"for six second","output":{"kind":"duration","seconds":6}}
+{"input":"in six second","output":{"kind":"relative","seconds":6}}
+{"input":"wait for six second","output":{"kind":"duration","seconds":6}}
+{"input":"remind me in six second","output":{"kind":"relative","seconds":6}}
+{"input":"six seconds","output":{"kind":"duration","seconds":6}}
+{"input":"for six seconds","output":{"kind":"duration","seconds":6}}
+{"input":"in six seconds","output":{"kind":"relative","seconds":6}}
+{"input":"wait for six seconds","output":{"kind":"duration","seconds":6}}
+{"input":"remind me in six seconds","output":{"kind":"relative","seconds":6}}
+{"input":"six minute","output":{"kind":"duration","seconds":360}}
+{"input":"for six minute","output":{"kind":"duration","seconds":360}}
+{"input":"in six minute","output":{"kind":"relative","seconds":360}}
+{"input":"wait for six minute","output":{"kind":"duration","seconds":360}}
+{"input":"remind me in six minute","output":{"kind":"relative","seconds":360}}
+{"input":"six minutes","output":{"kind":"duration","seconds":360}}
+{"input":"for six minutes","output":{"kind":"duration","seconds":360}}
+{"input":"in six minutes","output":{"kind":"relative","seconds":360}}
+{"input":"wait for six minutes","output":{"kind":"duration","seconds":360}}
+{"input":"remind me in six minutes","output":{"kind":"relative","seconds":360}}
+{"input":"six hour","output":{"kind":"duration","seconds":21600}}
+{"input":"for six hour","output":{"kind":"duration","seconds":21600}}
+{"input":"in six hour","output":{"kind":"relative","seconds":21600}}
+{"input":"wait for six hour","output":{"kind":"duration","seconds":21600}}
+{"input":"remind me in six hour","output":{"kind":"relative","seconds":21600}}
+{"input":"six hours","output":{"kind":"duration","seconds":21600}}
+{"input":"for six hours","output":{"kind":"duration","seconds":21600}}
+{"input":"in six hours","output":{"kind":"relative","seconds":21600}}
+{"input":"wait for six hours","output":{"kind":"duration","seconds":21600}}
+{"input":"remind me in six hours","output":{"kind":"relative","seconds":21600}}
+{"input":"six day","output":{"kind":"duration","seconds":518400}}
+{"input":"for six day","output":{"kind":"duration","seconds":518400}}
+{"input":"in six day","output":{"kind":"relative","seconds":518400}}
+{"input":"wait for six day","output":{"kind":"duration","seconds":518400}}
+{"input":"remind me in six day","output":{"kind":"relative","seconds":518400}}
+{"input":"six days","output":{"kind":"duration","seconds":518400}}
+{"input":"for six days","output":{"kind":"duration","seconds":518400}}
+{"input":"in six days","output":{"kind":"relative","seconds":518400}}
+{"input":"wait for six days","output":{"kind":"duration","seconds":518400}}
+{"input":"remind me in six days","output":{"kind":"relative","seconds":518400}}
+{"input":"seven second","output":{"kind":"duration","seconds":7}}
+{"input":"for seven second","output":{"kind":"duration","seconds":7}}
+{"input":"in seven second","output":{"kind":"relative","seconds":7}}
+{"input":"wait for seven second","output":{"kind":"duration","seconds":7}}
+{"input":"remind me in seven second","output":{"kind":"relative","seconds":7}}
+{"input":"seven seconds","output":{"kind":"duration","seconds":7}}
+{"input":"for seven seconds","output":{"kind":"duration","seconds":7}}
+{"input":"in seven seconds","output":{"kind":"relative","seconds":7}}
+{"input":"wait for seven seconds","output":{"kind":"duration","seconds":7}}
+{"input":"remind me in seven seconds","output":{"kind":"relative","seconds":7}}
+{"input":"seven minute","output":{"kind":"duration","seconds":420}}
+{"input":"for seven minute","output":{"kind":"duration","seconds":420}}
+{"input":"in seven minute","output":{"kind":"relative","seconds":420}}
+{"input":"wait for seven minute","output":{"kind":"duration","seconds":420}}
+{"input":"remind me in seven minute","output":{"kind":"relative","seconds":420}}
+{"input":"seven minutes","output":{"kind":"duration","seconds":420}}
+{"input":"for seven minutes","output":{"kind":"duration","seconds":420}}
+{"input":"in seven minutes","output":{"kind":"relative","seconds":420}}
+{"input":"wait for seven minutes","output":{"kind":"duration","seconds":420}}
+{"input":"remind me in seven minutes","output":{"kind":"relative","seconds":420}}
+{"input":"seven hour","output":{"kind":"duration","seconds":25200}}
+{"input":"for seven hour","output":{"kind":"duration","seconds":25200}}
+{"input":"in seven hour","output":{"kind":"relative","seconds":25200}}
+{"input":"wait for seven hour","output":{"kind":"duration","seconds":25200}}
+{"input":"remind me in seven hour","output":{"kind":"relative","seconds":25200}}
+{"input":"seven hours","output":{"kind":"duration","seconds":25200}}
+{"input":"for seven hours","output":{"kind":"duration","seconds":25200}}
+{"input":"in seven hours","output":{"kind":"relative","seconds":25200}}
+{"input":"wait for seven hours","output":{"kind":"duration","seconds":25200}}
+{"input":"remind me in seven hours","output":{"kind":"relative","seconds":25200}}
+{"input":"seven day","output":{"kind":"duration","seconds":604800}}
+{"input":"for seven day","output":{"kind":"duration","seconds":604800}}
+{"input":"in seven day","output":{"kind":"relative","seconds":604800}}
+{"input":"wait for seven day","output":{"kind":"duration","seconds":604800}}
+{"input":"remind me in seven day","output":{"kind":"relative","seconds":604800}}
+{"input":"seven days","output":{"kind":"duration","seconds":604800}}
+{"input":"for seven days","output":{"kind":"duration","seconds":604800}}
+{"input":"in seven days","output":{"kind":"relative","seconds":604800}}
+{"input":"wait for seven days","output":{"kind":"duration","seconds":604800}}
+{"input":"remind me in seven days","output":{"kind":"relative","seconds":604800}}
+{"input":"eight second","output":{"kind":"duration","seconds":8}}
+{"input":"for eight second","output":{"kind":"duration","seconds":8}}
+{"input":"in eight second","output":{"kind":"relative","seconds":8}}
+{"input":"wait for eight second","output":{"kind":"duration","seconds":8}}
+{"input":"remind me in eight second","output":{"kind":"relative","seconds":8}}
+{"input":"eight seconds","output":{"kind":"duration","seconds":8}}
+{"input":"for eight seconds","output":{"kind":"duration","seconds":8}}
+{"input":"in eight seconds","output":{"kind":"relative","seconds":8}}
+{"input":"wait for eight seconds","output":{"kind":"duration","seconds":8}}
+{"input":"remind me in eight seconds","output":{"kind":"relative","seconds":8}}
+{"input":"eight minute","output":{"kind":"duration","seconds":480}}
+{"input":"for eight minute","output":{"kind":"duration","seconds":480}}
+{"input":"in eight minute","output":{"kind":"relative","seconds":480}}
+{"input":"wait for eight minute","output":{"kind":"duration","seconds":480}}
+{"input":"remind me in eight minute","output":{"kind":"relative","seconds":480}}
+{"input":"eight minutes","output":{"kind":"duration","seconds":480}}
+{"input":"for eight minutes","output":{"kind":"duration","seconds":480}}
+{"input":"in eight minutes","output":{"kind":"relative","seconds":480}}
+{"input":"wait for eight minutes","output":{"kind":"duration","seconds":480}}
+{"input":"remind me in eight minutes","output":{"kind":"relative","seconds":480}}
+{"input":"eight hour","output":{"kind":"duration","seconds":28800}}
+{"input":"for eight hour","output":{"kind":"duration","seconds":28800}}
+{"input":"in eight hour","output":{"kind":"relative","seconds":28800}}
+{"input":"wait for eight hour","output":{"kind":"duration","seconds":28800}}
+{"input":"remind me in eight hour","output":{"kind":"relative","seconds":28800}}
+{"input":"eight hours","output":{"kind":"duration","seconds":28800}}
+{"input":"for eight hours","output":{"kind":"duration","seconds":28800}}
+{"input":"in eight hours","output":{"kind":"relative","seconds":28800}}
+{"input":"wait for eight hours","output":{"kind":"duration","seconds":28800}}
+{"input":"remind me in eight hours","output":{"kind":"relative","seconds":28800}}
+{"input":"nine second","output":{"kind":"duration","seconds":9}}
+{"input":"for nine second","output":{"kind":"duration","seconds":9}}
+{"input":"in nine second","output":{"kind":"relative","seconds":9}}
+{"input":"wait for nine second","output":{"kind":"duration","seconds":9}}
+{"input":"remind me in nine second","output":{"kind":"relative","seconds":9}}
+{"input":"nine seconds","output":{"kind":"duration","seconds":9}}
+{"input":"for nine seconds","output":{"kind":"duration","seconds":9}}
+{"input":"in nine seconds","output":{"kind":"relative","seconds":9}}
+{"input":"wait for nine seconds","output":{"kind":"duration","seconds":9}}
+{"input":"remind me in nine seconds","output":{"kind":"relative","seconds":9}}
+{"input":"nine minute","output":{"kind":"duration","seconds":540}}
+{"input":"for nine minute","output":{"kind":"duration","seconds":540}}
+{"input":"in nine minute","output":{"kind":"relative","seconds":540}}
+{"input":"wait for nine minute","output":{"kind":"duration","seconds":540}}
+{"input":"remind me in nine minute","output":{"kind":"relative","seconds":540}}
+{"input":"nine minutes","output":{"kind":"duration","seconds":540}}
+{"input":"for nine minutes","output":{"kind":"duration","seconds":540}}
+{"input":"in nine minutes","output":{"kind":"relative","seconds":540}}
+{"input":"wait for nine minutes","output":{"kind":"duration","seconds":540}}
+{"input":"remind me in nine minutes","output":{"kind":"relative","seconds":540}}
+{"input":"nine hour","output":{"kind":"duration","seconds":32400}}
+{"input":"for nine hour","output":{"kind":"duration","seconds":32400}}
+{"input":"in nine hour","output":{"kind":"relative","seconds":32400}}
+{"input":"wait for nine hour","output":{"kind":"duration","seconds":32400}}
+{"input":"remind me in nine hour","output":{"kind":"relative","seconds":32400}}
+{"input":"nine hours","output":{"kind":"duration","seconds":32400}}
+{"input":"for nine hours","output":{"kind":"duration","seconds":32400}}
+{"input":"in nine hours","output":{"kind":"relative","seconds":32400}}
+{"input":"wait for nine hours","output":{"kind":"duration","seconds":32400}}
+{"input":"remind me in nine hours","output":{"kind":"relative","seconds":32400}}
+{"input":"ten second","output":{"kind":"duration","seconds":10}}
+{"input":"for ten second","output":{"kind":"duration","seconds":10}}
+{"input":"in ten second","output":{"kind":"relative","seconds":10}}
+{"input":"wait for ten second","output":{"kind":"duration","seconds":10}}
+{"input":"remind me in ten second","output":{"kind":"relative","seconds":10}}
+{"input":"ten seconds","output":{"kind":"duration","seconds":10}}
+{"input":"for ten seconds","output":{"kind":"duration","seconds":10}}
+{"input":"in ten seconds","output":{"kind":"relative","seconds":10}}
+{"input":"wait for ten seconds","output":{"kind":"duration","seconds":10}}
+{"input":"remind me in ten seconds","output":{"kind":"relative","seconds":10}}
+{"input":"ten minute","output":{"kind":"duration","seconds":600}}
+{"input":"for ten minute","output":{"kind":"duration","seconds":600}}
+{"input":"in ten minute","output":{"kind":"relative","seconds":600}}
+{"input":"wait for ten minute","output":{"kind":"duration","seconds":600}}
+{"input":"remind me in ten minute","output":{"kind":"relative","seconds":600}}
+{"input":"ten minutes","output":{"kind":"duration","seconds":600}}
+{"input":"for ten minutes","output":{"kind":"duration","seconds":600}}
+{"input":"in ten minutes","output":{"kind":"relative","seconds":600}}
+{"input":"wait for ten minutes","output":{"kind":"duration","seconds":600}}
+{"input":"remind me in ten minutes","output":{"kind":"relative","seconds":600}}
+{"input":"ten hour","output":{"kind":"duration","seconds":36000}}
+{"input":"for ten hour","output":{"kind":"duration","seconds":36000}}
+{"input":"in ten hour","output":{"kind":"relative","seconds":36000}}
+{"input":"wait for ten hour","output":{"kind":"duration","seconds":36000}}
+{"input":"remind me in ten hour","output":{"kind":"relative","seconds":36000}}
+{"input":"ten hours","output":{"kind":"duration","seconds":36000}}
+{"input":"for ten hours","output":{"kind":"duration","seconds":36000}}
+{"input":"in ten hours","output":{"kind":"relative","seconds":36000}}
+{"input":"wait for ten hours","output":{"kind":"duration","seconds":36000}}
+{"input":"remind me in ten hours","output":{"kind":"relative","seconds":36000}}
+{"input":"eleven second","output":{"kind":"duration","seconds":11}}
+{"input":"for eleven second","output":{"kind":"duration","seconds":11}}
+{"input":"in eleven second","output":{"kind":"relative","seconds":11}}
+{"input":"wait for eleven second","output":{"kind":"duration","seconds":11}}
+{"input":"remind me in eleven second","output":{"kind":"relative","seconds":11}}
+{"input":"eleven seconds","output":{"kind":"duration","seconds":11}}
+{"input":"for eleven seconds","output":{"kind":"duration","seconds":11}}
+{"input":"in eleven seconds","output":{"kind":"relative","seconds":11}}
+{"input":"wait for eleven seconds","output":{"kind":"duration","seconds":11}}
+{"input":"remind me in eleven seconds","output":{"kind":"relative","seconds":11}}
+{"input":"eleven minute","output":{"kind":"duration","seconds":660}}
+{"input":"for eleven minute","output":{"kind":"duration","seconds":660}}
+{"input":"in eleven minute","output":{"kind":"relative","seconds":660}}
+{"input":"wait for eleven minute","output":{"kind":"duration","seconds":660}}
+{"input":"remind me in eleven minute","output":{"kind":"relative","seconds":660}}
+{"input":"eleven minutes","output":{"kind":"duration","seconds":660}}
+{"input":"for eleven minutes","output":{"kind":"duration","seconds":660}}
+{"input":"in eleven minutes","output":{"kind":"relative","seconds":660}}
+{"input":"wait for eleven minutes","output":{"kind":"duration","seconds":660}}
+{"input":"remind me in eleven minutes","output":{"kind":"relative","seconds":660}}
+{"input":"eleven hour","output":{"kind":"duration","seconds":39600}}
+{"input":"for eleven hour","output":{"kind":"duration","seconds":39600}}
+{"input":"in eleven hour","output":{"kind":"relative","seconds":39600}}
+{"input":"wait for eleven hour","output":{"kind":"duration","seconds":39600}}
+{"input":"remind me in eleven hour","output":{"kind":"relative","seconds":39600}}
+{"input":"eleven hours","output":{"kind":"duration","seconds":39600}}
+{"input":"for eleven hours","output":{"kind":"duration","seconds":39600}}
+{"input":"in eleven hours","output":{"kind":"relative","seconds":39600}}
+{"input":"wait for eleven hours","output":{"kind":"duration","seconds":39600}}
+{"input":"remind me in eleven hours","output":{"kind":"relative","seconds":39600}}
+{"input":"twelve second","output":{"kind":"duration","seconds":12}}
+{"input":"for twelve second","output":{"kind":"duration","seconds":12}}
+{"input":"in twelve second","output":{"kind":"relative","seconds":12}}
+{"input":"wait for twelve second","output":{"kind":"duration","seconds":12}}
+{"input":"remind me in twelve second","output":{"kind":"relative","seconds":12}}
+{"input":"twelve seconds","output":{"kind":"duration","seconds":12}}
+{"input":"for twelve seconds","output":{"kind":"duration","seconds":12}}
+{"input":"in twelve seconds","output":{"kind":"relative","seconds":12}}
+{"input":"wait for twelve seconds","output":{"kind":"duration","seconds":12}}
+{"input":"remind me in twelve seconds","output":{"kind":"relative","seconds":12}}
+{"input":"twelve minute","output":{"kind":"duration","seconds":720}}
+{"input":"for twelve minute","output":{"kind":"duration","seconds":720}}
+{"input":"in twelve minute","output":{"kind":"relative","seconds":720}}
+{"input":"wait for twelve minute","output":{"kind":"duration","seconds":720}}
+{"input":"remind me in twelve minute","output":{"kind":"relative","seconds":720}}
+{"input":"twelve minutes","output":{"kind":"duration","seconds":720}}
+{"input":"for twelve minutes","output":{"kind":"duration","seconds":720}}
+{"input":"in twelve minutes","output":{"kind":"relative","seconds":720}}
+{"input":"wait for twelve minutes","output":{"kind":"duration","seconds":720}}
+{"input":"remind me in twelve minutes","output":{"kind":"relative","seconds":720}}
+{"input":"twelve hour","output":{"kind":"duration","seconds":43200}}
+{"input":"for twelve hour","output":{"kind":"duration","seconds":43200}}
+{"input":"in twelve hour","output":{"kind":"relative","seconds":43200}}
+{"input":"wait for twelve hour","output":{"kind":"duration","seconds":43200}}
+{"input":"remind me in twelve hour","output":{"kind":"relative","seconds":43200}}
+{"input":"twelve hours","output":{"kind":"duration","seconds":43200}}
+{"input":"for twelve hours","output":{"kind":"duration","seconds":43200}}
+{"input":"in twelve hours","output":{"kind":"relative","seconds":43200}}
+{"input":"wait for twelve hours","output":{"kind":"duration","seconds":43200}}
+{"input":"remind me in twelve hours","output":{"kind":"relative","seconds":43200}}
+{"input":"half second","output":{"kind":"duration","seconds":0.5}}
+{"input":"for half second","output":{"kind":"duration","seconds":0.5}}
+{"input":"in half second","output":{"kind":"relative","seconds":0.5}}
+{"input":"wait for half second","output":{"kind":"duration","seconds":0.5}}
+{"input":"remind me in half second","output":{"kind":"relative","seconds":0.5}}
+{"input":"half seconds","output":{"kind":"duration","seconds":0.5}}
+{"input":"for half seconds","output":{"kind":"duration","seconds":0.5}}
+{"input":"in half seconds","output":{"kind":"relative","seconds":0.5}}
+{"input":"wait for half seconds","output":{"kind":"duration","seconds":0.5}}
+{"input":"remind me in half seconds","output":{"kind":"relative","seconds":0.5}}
+{"input":"half minute","output":{"kind":"duration","seconds":30}}
+{"input":"for half minute","output":{"kind":"duration","seconds":30}}
+{"input":"in half minute","output":{"kind":"relative","seconds":30}}
+{"input":"wait for half minute","output":{"kind":"duration","seconds":30}}
+{"input":"remind me in half minute","output":{"kind":"relative","seconds":30}}
+{"input":"half minutes","output":{"kind":"duration","seconds":30}}
+{"input":"for half minutes","output":{"kind":"duration","seconds":30}}
+{"input":"in half minutes","output":{"kind":"relative","seconds":30}}
+{"input":"wait for half minutes","output":{"kind":"duration","seconds":30}}
+{"input":"remind me in half minutes","output":{"kind":"relative","seconds":30}}
+{"input":"half hour","output":{"kind":"duration","seconds":1800}}
+{"input":"for half hour","output":{"kind":"duration","seconds":1800}}
+{"input":"in half hour","output":{"kind":"relative","seconds":1800}}
+{"input":"wait for half hour","output":{"kind":"duration","seconds":1800}}
+{"input":"remind me in half hour","output":{"kind":"relative","seconds":1800}}
+{"input":"half hours","output":{"kind":"duration","seconds":1800}}
+{"input":"for half hours","output":{"kind":"duration","seconds":1800}}
+{"input":"in half hours","output":{"kind":"relative","seconds":1800}}
+{"input":"wait for half hours","output":{"kind":"duration","seconds":1800}}
+{"input":"remind me in half hours","output":{"kind":"relative","seconds":1800}}
+{"input":"half day","output":{"kind":"duration","seconds":43200}}
+{"input":"for half day","output":{"kind":"duration","seconds":43200}}
+{"input":"in half day","output":{"kind":"relative","seconds":43200}}
+{"input":"wait for half day","output":{"kind":"duration","seconds":43200}}
+{"input":"remind me in half day","output":{"kind":"relative","seconds":43200}}
+{"input":"half days","output":{"kind":"duration","seconds":43200}}
+{"input":"for half days","output":{"kind":"duration","seconds":43200}}
+{"input":"in half days","output":{"kind":"relative","seconds":43200}}
+{"input":"wait for half days","output":{"kind":"duration","seconds":43200}}
+{"input":"remind me in half days","output":{"kind":"relative","seconds":43200}}
+{"input":"for 1 hours and 1 minutes","output":{"kind":"duration","seconds":3660}}
+{"input":"in 1 hours and 1 minutes","output":{"kind":"relative","seconds":3660}}
+{"input":"for 1 hours and 5 minutes","output":{"kind":"duration","seconds":3900}}
+{"input":"in 1 hours and 5 minutes","output":{"kind":"relative","seconds":3900}}
+{"input":"for 1 hours and 15 minutes","output":{"kind":"duration","seconds":4500}}
+{"input":"in 1 hours and 15 minutes","output":{"kind":"relative","seconds":4500}}
+{"input":"for 1 hours and 30 minutes","output":{"kind":"duration","seconds":5400}}
+{"input":"in 1 hours and 30 minutes","output":{"kind":"relative","seconds":5400}}
+{"input":"for 1 hours and 60 minutes","output":{"kind":"duration","seconds":7200}}
+{"input":"in 1 hours and 60 minutes","output":{"kind":"relative","seconds":7200}}
+{"input":"for 1 hours and 1.5 minutes","output":{"kind":"duration","seconds":3690}}
+{"input":"in 1 hours and 1.5 minutes","output":{"kind":"relative","seconds":3690}}
+{"input":"for 1 hours and a minutes","output":{"kind":"duration","seconds":3660}}
+{"input":"in 1 hours and a minutes","output":{"kind":"relative","seconds":3660}}
+{"input":"for 1 hours and an minutes","output":{"kind":"duration","seconds":3660}}
+{"input":"in 1 hours and an minutes","output":{"kind":"relative","seconds":3660}}
+{"input":"for 1 hours and one minutes","output":{"kind":"duration","seconds":3660}}
+{"input":"in 1 hours and one minutes","output":{"kind":"relative","seconds":3660}}
+{"input":"for 1 hours and two minutes","output":{"kind":"duration","seconds":3720}}
+{"input":"in 1 hours and two minutes","output":{"kind":"relative","seconds":3720}}
+{"input":"for 5 hours and 1 minutes","output":{"kind":"duration","seconds":18060}}
+{"input":"in 5 hours and 1 minutes","output":{"kind":"relative","seconds":18060}}
+{"input":"for 5 hours and 5 minutes","output":{"kind":"duration","seconds":18300}}
+{"input":"in 5 hours and 5 minutes","output":{"kind":"relative","seconds":18300}}
+{"input":"for 5 hours and 15 minutes","output":{"kind":"duration","seconds":18900}}
+{"input":"in 5 hours and 15 minutes","output":{"kind":"relative","seconds":18900}}
+{"input":"for 5 hours and 30 minutes","output":{"kind":"duration","seconds":19800}}
+{"input":"in 5 hours and 30 minutes","output":{"kind":"relative","seconds":19800}}
+{"input":"for 5 hours and 60 minutes","output":{"kind":"duration","seconds":21600}}
+{"input":"in 5 hours and 60 minutes","output":{"kind":"relative","seconds":21600}}
+{"input":"for 5 hours and 1.5 minutes","output":{"kind":"duration","seconds":18090}}
+{"input":"in 5 hours and 1.5 minutes","output":{"kind":"relative","seconds":18090}}
+{"input":"for 5 hours and a minutes","output":{"kind":"duration","seconds":18060}}
+{"input":"in 5 hours and a minutes","output":{"kind":"relative","seconds":18060}}
+{"input":"for 5 hours and an minutes","output":{"kind":"duration","seconds":18060}}
+{"input":"in 5 hours and an minutes","output":{"kind":"relative","seconds":18060}}
+{"input":"for 5 hours and one minutes","output":{"kind":"duration","seconds":18060}}
+{"input":"in 5 hours and one minutes","output":{"kind":"relative","seconds":18060}}
+{"input":"for 5 hours and two minutes","output":{"kind":"duration","seconds":18120}}
+{"input":"in 5 hours and two minutes","output":{"kind":"relative","seconds":18120}}
+{"input":"for 1.5 hours and 1 minutes","output":{"kind":"duration","seconds":5460}}
+{"input":"in 1.5 hours and 1 minutes","output":{"kind":"relative","seconds":5460}}
+{"input":"for 1.5 hours and 5 minutes","output":{"kind":"duration","seconds":5700}}
+{"input":"in 1.5 hours and 5 minutes","output":{"kind":"relative","seconds":5700}}
+{"input":"for 1.5 hours and 15 minutes","output":{"kind":"duration","seconds":6300}}
+{"input":"in 1.5 hours and 15 minutes","output":{"kind":"relative","seconds":6300}}
+{"input":"for 1.5 hours and 30 minutes","output":{"kind":"duration","seconds":7200}}
+{"input":"in 1.5 hours and 30 minutes","output":{"kind":"relative","seconds":7200}}
+{"input":"for 1.5 hours and 60 minutes","output":{"kind":"duration","seconds":9000}}
+{"input":"in 1.5 hours and 60 minutes","output":{"kind":"relative","seconds":9000}}
+{"input":"for 1.5 hours and 1.5 minutes","output":{"kind":"duration","seconds":5490}}
+{"input":"in 1.5 hours and 1.5 minutes","output":{"kind":"relative","seconds":5490}}
+{"input":"for 1.5 hours and a minutes","output":{"kind":"duration","seconds":5460}}
+{"input":"in 1.5 hours and a minutes","output":{"kind":"relative","seconds":5460}}
+{"input":"for 1.5 hours and an minutes","output":{"kind":"duration","seconds":5460}}
+{"input":"in 1.5 hours and an minutes","output":{"kind":"relative","seconds":5460}}
+{"input":"for 1.5 hours and one minutes","output":{"kind":"duration","seconds":5460}}
+{"input":"in 1.5 hours and one minutes","output":{"kind":"relative","seconds":5460}}
+{"input":"for 1.5 hours and two minutes","output":{"kind":"duration","seconds":5520}}
+{"input":"in 1.5 hours and two minutes","output":{"kind":"relative","seconds":5520}}
+{"input":"for a hours and 1 minutes","output":{"kind":"duration","seconds":3660}}
+{"input":"in a hours and 1 minutes","output":{"kind":"relative","seconds":3660}}
+{"input":"for a hours and 5 minutes","output":{"kind":"duration","seconds":3900}}
+{"input":"in a hours and 5 minutes","output":{"kind":"relative","seconds":3900}}
+{"input":"for a hours and 15 minutes","output":{"kind":"duration","seconds":4500}}
+{"input":"in a hours and 15 minutes","output":{"kind":"relative","seconds":4500}}
+{"input":"for a hours and 30 minutes","output":{"kind":"duration","seconds":5400}}
+{"input":"in a hours and 30 minutes","output":{"kind":"relative","seconds":5400}}
+{"input":"for a hours and 60 minutes","output":{"kind":"duration","seconds":7200}}
+{"input":"in a hours and 60 minutes","output":{"kind":"relative","seconds":7200}}
+{"input":"for a hours and 1.5 minutes","output":{"kind":"duration","seconds":3690}}
+{"input":"in a hours and 1.5 minutes","output":{"kind":"relative","seconds":3690}}
+{"input":"for a hours and a minutes","output":{"kind":"duration","seconds":3660}}
+{"input":"in a hours and a minutes","output":{"kind":"relative","seconds":3660}}
+{"input":"for a hours and an minutes","output":{"kind":"duration","seconds":3660}}
+{"input":"in a hours and an minutes","output":{"kind":"relative","seconds":3660}}
+{"input":"for a hours and one minutes","output":{"kind":"duration","seconds":3660}}
+{"input":"in a hours and one minutes","output":{"kind":"relative","seconds":3660}}
+{"input":"for a hours and two minutes","output":{"kind":"duration","seconds":3720}}
+{"input":"in a hours and two minutes","output":{"kind":"relative","seconds":3720}}
+{"input":"for an hours and 1 minutes","output":{"kind":"duration","seconds":3660}}
+{"input":"in an hours and 1 minutes","output":{"kind":"relative","seconds":3660}}
+{"input":"for an hours and 5 minutes","output":{"kind":"duration","seconds":3900}}
+{"input":"in an hours and 5 minutes","output":{"kind":"relative","seconds":3900}}
+{"input":"for an hours and 15 minutes","output":{"kind":"duration","seconds":4500}}
+{"input":"in an hours and 15 minutes","output":{"kind":"relative","seconds":4500}}
+{"input":"for an hours and 30 minutes","output":{"kind":"duration","seconds":5400}}
+{"input":"in an hours and 30 minutes","output":{"kind":"relative","seconds":5400}}
+{"input":"for an hours and 60 minutes","output":{"kind":"duration","seconds":7200}}
+{"input":"in an hours and 60 minutes","output":{"kind":"relative","seconds":7200}}
+{"input":"for an hours and 1.5 minutes","output":{"kind":"duration","seconds":3690}}
+{"input":"in an hours and 1.5 minutes","output":{"kind":"relative","seconds":3690}}
+{"input":"for an hours and a minutes","output":{"kind":"duration","seconds":3660}}
+{"input":"in an hours and a minutes","output":{"kind":"relative","seconds":3660}}
+{"input":"for an hours and an minutes","output":{"kind":"duration","seconds":3660}}
+{"input":"in an hours and an minutes","output":{"kind":"relative","seconds":3660}}
+{"input":"for an hours and one minutes","output":{"kind":"duration","seconds":3660}}
+{"input":"in an hours and one minutes","output":{"kind":"relative","seconds":3660}}
+{"input":"for an hours and two minutes","output":{"kind":"duration","seconds":3720}}
+{"input":"in an hours and two minutes","output":{"kind":"relative","seconds":3720}}
+{"input":"for one hours and 1 minutes","output":{"kind":"duration","seconds":3660}}
+{"input":"in one hours and 1 minutes","output":{"kind":"relative","seconds":3660}}
+{"input":"for one hours and 5 minutes","output":{"kind":"duration","seconds":3900}}
+{"input":"in one hours and 5 minutes","output":{"kind":"relative","seconds":3900}}
+{"input":"for one hours and 15 minutes","output":{"kind":"duration","seconds":4500}}
+{"input":"in one hours and 15 minutes","output":{"kind":"relative","seconds":4500}}
+{"input":"for one hours and 30 minutes","output":{"kind":"duration","seconds":5400}}
+{"input":"in one hours and 30 minutes","output":{"kind":"relative","seconds":5400}}
+{"input":"for one hours and 60 minutes","output":{"kind":"duration","seconds":7200}}
+{"input":"in one hours and 60 minutes","output":{"kind":"relative","seconds":7200}}
+{"input":"for one hours and 1.5 minutes","output":{"kind":"duration","seconds":3690}}
+{"input":"in one hours and 1.5 minutes","output":{"kind":"relative","seconds":3690}}
+{"input":"for one hours and a minutes","output":{"kind":"duration","seconds":3660}}
+{"input":"in one hours and a minutes","output":{"kind":"relative","seconds":3660}}
+{"input":"for one hours and an minutes","output":{"kind":"duration","seconds":3660}}
+{"input":"in one hours and an minutes","output":{"kind":"relative","seconds":3660}}
+{"input":"for one hours and one minutes","output":{"kind":"duration","seconds":3660}}
+{"input":"in one hours and one minutes","output":{"kind":"relative","seconds":3660}}
+{"input":"for one hours and two minutes","output":{"kind":"duration","seconds":3720}}
+{"input":"in one hours and two minutes","output":{"kind":"relative","seconds":3720}}
+{"input":"for two hours and 1 minutes","output":{"kind":"duration","seconds":7260}}
+{"input":"in two hours and 1 minutes","output":{"kind":"relative","seconds":7260}}
+{"input":"for two hours and 5 minutes","output":{"kind":"duration","seconds":7500}}
+{"input":"in two hours and 5 minutes","output":{"kind":"relative","seconds":7500}}
+{"input":"for two hours and 15 minutes","output":{"kind":"duration","seconds":8100}}
+{"input":"in two hours and 15 minutes","output":{"kind":"relative","seconds":8100}}
+{"input":"for two hours and 30 minutes","output":{"kind":"duration","seconds":9000}}
+{"input":"in two hours and 30 minutes","output":{"kind":"relative","seconds":9000}}
+{"input":"for two hours and 60 minutes","output":{"kind":"duration","seconds":10800}}
+{"input":"in two hours and 60 minutes","output":{"kind":"relative","seconds":10800}}
+{"input":"for two hours and 1.5 minutes","output":{"kind":"duration","seconds":7290}}
+{"input":"in two hours and 1.5 minutes","output":{"kind":"relative","seconds":7290}}
+{"input":"for two hours and a minutes","output":{"kind":"duration","seconds":7260}}
+{"input":"in two hours and a minutes","output":{"kind":"relative","seconds":7260}}
+{"input":"for two hours and an minutes","output":{"kind":"duration","seconds":7260}}
+{"input":"in two hours and an minutes","output":{"kind":"relative","seconds":7260}}
+{"input":"for two hours and one minutes","output":{"kind":"duration","seconds":7260}}
+{"input":"in two hours and one minutes","output":{"kind":"relative","seconds":7260}}
+{"input":"for two hours and two minutes","output":{"kind":"duration","seconds":7320}}
+{"input":"in two hours and two minutes","output":{"kind":"relative","seconds":7320}}
+{"input":"for three hours and 1 minutes","output":{"kind":"duration","seconds":10860}}
+{"input":"in three hours and 1 minutes","output":{"kind":"relative","seconds":10860}}
+{"input":"for three hours and 5 minutes","output":{"kind":"duration","seconds":11100}}
+{"input":"in three hours and 5 minutes","output":{"kind":"relative","seconds":11100}}
+{"input":"for three hours and 15 minutes","output":{"kind":"duration","seconds":11700}}
+{"input":"in three hours and 15 minutes","output":{"kind":"relative","seconds":11700}}
+{"input":"for three hours and 30 minutes","output":{"kind":"duration","seconds":12600}}
+{"input":"in three hours and 30 minutes","output":{"kind":"relative","seconds":12600}}
+{"input":"for three hours and 60 minutes","output":{"kind":"duration","seconds":14400}}
+{"input":"in three hours and 60 minutes","output":{"kind":"relative","seconds":14400}}
+{"input":"for three hours and 1.5 minutes","output":{"kind":"duration","seconds":10890}}
+{"input":"in three hours and 1.5 minutes","output":{"kind":"relative","seconds":10890}}
+{"input":"for three hours and a minutes","output":{"kind":"duration","seconds":10860}}
+{"input":"in three hours and a minutes","output":{"kind":"relative","seconds":10860}}
+{"input":"for three hours and an minutes","output":{"kind":"duration","seconds":10860}}
+{"input":"in three hours and an minutes","output":{"kind":"relative","seconds":10860}}
+{"input":"for three hours and one minutes","output":{"kind":"duration","seconds":10860}}
+{"input":"in three hours and one minutes","output":{"kind":"relative","seconds":10860}}
+{"input":"for three hours and two minutes","output":{"kind":"duration","seconds":10920}}
+{"input":"in three hours and two minutes","output":{"kind":"relative","seconds":10920}}
+{"input":"for four hours and 1 minutes","output":{"kind":"duration","seconds":14460}}
+{"input":"in four hours and 1 minutes","output":{"kind":"relative","seconds":14460}}
+{"input":"for four hours and 5 minutes","output":{"kind":"duration","seconds":14700}}
+{"input":"in four hours and 5 minutes","output":{"kind":"relative","seconds":14700}}
+{"input":"for four hours and 15 minutes","output":{"kind":"duration","seconds":15300}}
+{"input":"in four hours and 15 minutes","output":{"kind":"relative","seconds":15300}}
+{"input":"for four hours and 30 minutes","output":{"kind":"duration","seconds":16200}}
+{"input":"in four hours and 30 minutes","output":{"kind":"relative","seconds":16200}}
+{"input":"for four hours and 60 minutes","output":{"kind":"duration","seconds":18000}}
+{"input":"in four hours and 60 minutes","output":{"kind":"relative","seconds":18000}}
+{"input":"for four hours and 1.5 minutes","output":{"kind":"duration","seconds":14490}}
+{"input":"in four hours and 1.5 minutes","output":{"kind":"relative","seconds":14490}}
+{"input":"for four hours and a minutes","output":{"kind":"duration","seconds":14460}}
+{"input":"in four hours and a minutes","output":{"kind":"relative","seconds":14460}}
+{"input":"for four hours and an minutes","output":{"kind":"duration","seconds":14460}}
+{"input":"in four hours and an minutes","output":{"kind":"relative","seconds":14460}}
+{"input":"for four hours and one minutes","output":{"kind":"duration","seconds":14460}}
+{"input":"in four hours and one minutes","output":{"kind":"relative","seconds":14460}}
+{"input":"for four hours and two minutes","output":{"kind":"duration","seconds":14520}}
+{"input":"in four hours and two minutes","output":{"kind":"relative","seconds":14520}}
+{"input":"for five hours and 1 minutes","output":{"kind":"duration","seconds":18060}}
+{"input":"in five hours and 1 minutes","output":{"kind":"relative","seconds":18060}}
+{"input":"for five hours and 5 minutes","output":{"kind":"duration","seconds":18300}}
+{"input":"in five hours and 5 minutes","output":{"kind":"relative","seconds":18300}}
+{"input":"for five hours and 15 minutes","output":{"kind":"duration","seconds":18900}}
+{"input":"in five hours and 15 minutes","output":{"kind":"relative","seconds":18900}}
+{"input":"for five hours and 30 minutes","output":{"kind":"duration","seconds":19800}}
+{"input":"in five hours and 30 minutes","output":{"kind":"relative","seconds":19800}}
+{"input":"for five hours and 60 minutes","output":{"kind":"duration","seconds":21600}}
+{"input":"in five hours and 60 minutes","output":{"kind":"relative","seconds":21600}}
+{"input":"for five hours and 1.5 minutes","output":{"kind":"duration","seconds":18090}}
+{"input":"in five hours and 1.5 minutes","output":{"kind":"relative","seconds":18090}}
+{"input":"for five hours and a minutes","output":{"kind":"duration","seconds":18060}}
+{"input":"in five hours and a minutes","output":{"kind":"relative","seconds":18060}}
+{"input":"for five hours and an minutes","output":{"kind":"duration","seconds":18060}}
+{"input":"in five hours and an minutes","output":{"kind":"relative","seconds":18060}}
+{"input":"for five hours and one minutes","output":{"kind":"duration","seconds":18060}}
+{"input":"in five hours and one minutes","output":{"kind":"relative","seconds":18060}}
+{"input":"for five hours and two minutes","output":{"kind":"duration","seconds":18120}}
+{"input":"in five hours and two minutes","output":{"kind":"relative","seconds":18120}}
+{"input":"for six hours and 1 minutes","output":{"kind":"duration","seconds":21660}}
+{"input":"in six hours and 1 minutes","output":{"kind":"relative","seconds":21660}}
+{"input":"for six hours and 5 minutes","output":{"kind":"duration","seconds":21900}}
+{"input":"in six hours and 5 minutes","output":{"kind":"relative","seconds":21900}}
+{"input":"for six hours and 15 minutes","output":{"kind":"duration","seconds":22500}}
+{"input":"in six hours and 15 minutes","output":{"kind":"relative","seconds":22500}}
+{"input":"for six hours and 30 minutes","output":{"kind":"duration","seconds":23400}}
+{"input":"in six hours and 30 minutes","output":{"kind":"relative","seconds":23400}}
+{"input":"for six hours and 60 minutes","output":{"kind":"duration","seconds":25200}}
+{"input":"in six hours and 60 minutes","output":{"kind":"relative","seconds":25200}}
+{"input":"for six hours and 1.5 minutes","output":{"kind":"duration","seconds":21690}}
+{"input":"in six hours and 1.5 minutes","output":{"kind":"relative","seconds":21690}}
+{"input":"for six hours and a minutes","output":{"kind":"duration","seconds":21660}}
+{"input":"in six hours and a minutes","output":{"kind":"relative","seconds":21660}}
+{"input":"for six hours and an minutes","output":{"kind":"duration","seconds":21660}}
+{"input":"in six hours and an minutes","output":{"kind":"relative","seconds":21660}}
+{"input":"for six hours and one minutes","output":{"kind":"duration","seconds":21660}}
+{"input":"in six hours and one minutes","output":{"kind":"relative","seconds":21660}}
+{"input":"for six hours and two minutes","output":{"kind":"duration","seconds":21720}}
+{"input":"in six hours and two minutes","output":{"kind":"relative","seconds":21720}}
+{"input":"for seven hours and 1 minutes","output":{"kind":"duration","seconds":25260}}
+{"input":"in seven hours and 1 minutes","output":{"kind":"relative","seconds":25260}}
+{"input":"for seven hours and 5 minutes","output":{"kind":"duration","seconds":25500}}
+{"input":"in seven hours and 5 minutes","output":{"kind":"relative","seconds":25500}}
+{"input":"for seven hours and 15 minutes","output":{"kind":"duration","seconds":26100}}
+{"input":"in seven hours and 15 minutes","output":{"kind":"relative","seconds":26100}}
+{"input":"for seven hours and 30 minutes","output":{"kind":"duration","seconds":27000}}
+{"input":"in seven hours and 30 minutes","output":{"kind":"relative","seconds":27000}}
+{"input":"for seven hours and 60 minutes","output":{"kind":"duration","seconds":28800}}
+{"input":"in seven hours and 60 minutes","output":{"kind":"relative","seconds":28800}}
+{"input":"for seven hours and 1.5 minutes","output":{"kind":"duration","seconds":25290}}
+{"input":"in seven hours and 1.5 minutes","output":{"kind":"relative","seconds":25290}}
+{"input":"for seven hours and a minutes","output":{"kind":"duration","seconds":25260}}
+{"input":"in seven hours and a minutes","output":{"kind":"relative","seconds":25260}}
+{"input":"for seven hours and an minutes","output":{"kind":"duration","seconds":25260}}
+{"input":"in seven hours and an minutes","output":{"kind":"relative","seconds":25260}}
+{"input":"for seven hours and one minutes","output":{"kind":"duration","seconds":25260}}
+{"input":"in seven hours and one minutes","output":{"kind":"relative","seconds":25260}}
+{"input":"for seven hours and two minutes","output":{"kind":"duration","seconds":25320}}
+{"input":"in seven hours and two minutes","output":{"kind":"relative","seconds":25320}}
+{"input":"today at 1 am","output":{"kind":"datetime","dayOffset":0,"hour":1,"minute":0}}
+{"input":"schedule today at 1 am","output":{"kind":"datetime","dayOffset":0,"hour":1,"minute":0}}
+{"input":"remind me today at 1 am","output":{"kind":"datetime","dayOffset":0,"hour":1,"minute":0}}
+{"input":"today at 1:00 am","output":{"kind":"datetime","dayOffset":0,"hour":1,"minute":0}}
+{"input":"schedule today at 1:00 am","output":{"kind":"datetime","dayOffset":0,"hour":1,"minute":0}}
+{"input":"remind me today at 1:00 am","output":{"kind":"datetime","dayOffset":0,"hour":1,"minute":0}}
+{"input":"today at 1:15 am","output":{"kind":"datetime","dayOffset":0,"hour":1,"minute":15}}
+{"input":"schedule today at 1:15 am","output":{"kind":"datetime","dayOffset":0,"hour":1,"minute":15}}
+{"input":"remind me today at 1:15 am","output":{"kind":"datetime","dayOffset":0,"hour":1,"minute":15}}
+{"input":"today at 1:30 am","output":{"kind":"datetime","dayOffset":0,"hour":1,"minute":30}}
+{"input":"schedule today at 1:30 am","output":{"kind":"datetime","dayOffset":0,"hour":1,"minute":30}}
+{"input":"remind me today at 1:30 am","output":{"kind":"datetime","dayOffset":0,"hour":1,"minute":30}}
+{"input":"today at 1:45 am","output":{"kind":"datetime","dayOffset":0,"hour":1,"minute":45}}
+{"input":"schedule today at 1:45 am","output":{"kind":"datetime","dayOffset":0,"hour":1,"minute":45}}
+{"input":"remind me today at 1:45 am","output":{"kind":"datetime","dayOffset":0,"hour":1,"minute":45}}
+{"input":"today at 1 pm","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":0}}
+{"input":"schedule today at 1 pm","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":0}}
+{"input":"remind me today at 1 pm","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":0}}
+{"input":"today at 1:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":0}}
+{"input":"schedule today at 1:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":0}}
+{"input":"remind me today at 1:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":0}}
+{"input":"today at 1:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":15}}
+{"input":"schedule today at 1:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":15}}
+{"input":"remind me today at 1:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":15}}
+{"input":"today at 1:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":30}}
+{"input":"schedule today at 1:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":30}}
+{"input":"remind me today at 1:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":30}}
+{"input":"today at 1:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":45}}
+{"input":"schedule today at 1:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":45}}
+{"input":"remind me today at 1:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":45}}
+{"input":"today at 2 am","output":{"kind":"datetime","dayOffset":0,"hour":2,"minute":0}}
+{"input":"schedule today at 2 am","output":{"kind":"datetime","dayOffset":0,"hour":2,"minute":0}}
+{"input":"remind me today at 2 am","output":{"kind":"datetime","dayOffset":0,"hour":2,"minute":0}}
+{"input":"today at 2:00 am","output":{"kind":"datetime","dayOffset":0,"hour":2,"minute":0}}
+{"input":"schedule today at 2:00 am","output":{"kind":"datetime","dayOffset":0,"hour":2,"minute":0}}
+{"input":"remind me today at 2:00 am","output":{"kind":"datetime","dayOffset":0,"hour":2,"minute":0}}
+{"input":"today at 2:15 am","output":{"kind":"datetime","dayOffset":0,"hour":2,"minute":15}}
+{"input":"schedule today at 2:15 am","output":{"kind":"datetime","dayOffset":0,"hour":2,"minute":15}}
+{"input":"remind me today at 2:15 am","output":{"kind":"datetime","dayOffset":0,"hour":2,"minute":15}}
+{"input":"today at 2:30 am","output":{"kind":"datetime","dayOffset":0,"hour":2,"minute":30}}
+{"input":"schedule today at 2:30 am","output":{"kind":"datetime","dayOffset":0,"hour":2,"minute":30}}
+{"input":"remind me today at 2:30 am","output":{"kind":"datetime","dayOffset":0,"hour":2,"minute":30}}
+{"input":"today at 2:45 am","output":{"kind":"datetime","dayOffset":0,"hour":2,"minute":45}}
+{"input":"schedule today at 2:45 am","output":{"kind":"datetime","dayOffset":0,"hour":2,"minute":45}}
+{"input":"remind me today at 2:45 am","output":{"kind":"datetime","dayOffset":0,"hour":2,"minute":45}}
+{"input":"today at 2 pm","output":{"kind":"datetime","dayOffset":0,"hour":14,"minute":0}}
+{"input":"schedule today at 2 pm","output":{"kind":"datetime","dayOffset":0,"hour":14,"minute":0}}
+{"input":"remind me today at 2 pm","output":{"kind":"datetime","dayOffset":0,"hour":14,"minute":0}}
+{"input":"today at 2:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":14,"minute":0}}
+{"input":"schedule today at 2:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":14,"minute":0}}
+{"input":"remind me today at 2:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":14,"minute":0}}
+{"input":"today at 2:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":14,"minute":15}}
+{"input":"schedule today at 2:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":14,"minute":15}}
+{"input":"remind me today at 2:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":14,"minute":15}}
+{"input":"today at 2:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":14,"minute":30}}
+{"input":"schedule today at 2:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":14,"minute":30}}
+{"input":"remind me today at 2:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":14,"minute":30}}
+{"input":"today at 2:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":14,"minute":45}}
+{"input":"schedule today at 2:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":14,"minute":45}}
+{"input":"remind me today at 2:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":14,"minute":45}}
+{"input":"today at 3 am","output":{"kind":"datetime","dayOffset":0,"hour":3,"minute":0}}
+{"input":"schedule today at 3 am","output":{"kind":"datetime","dayOffset":0,"hour":3,"minute":0}}
+{"input":"remind me today at 3 am","output":{"kind":"datetime","dayOffset":0,"hour":3,"minute":0}}
+{"input":"today at 3:00 am","output":{"kind":"datetime","dayOffset":0,"hour":3,"minute":0}}
+{"input":"schedule today at 3:00 am","output":{"kind":"datetime","dayOffset":0,"hour":3,"minute":0}}
+{"input":"remind me today at 3:00 am","output":{"kind":"datetime","dayOffset":0,"hour":3,"minute":0}}
+{"input":"today at 3:15 am","output":{"kind":"datetime","dayOffset":0,"hour":3,"minute":15}}
+{"input":"schedule today at 3:15 am","output":{"kind":"datetime","dayOffset":0,"hour":3,"minute":15}}
+{"input":"remind me today at 3:15 am","output":{"kind":"datetime","dayOffset":0,"hour":3,"minute":15}}
+{"input":"today at 3:30 am","output":{"kind":"datetime","dayOffset":0,"hour":3,"minute":30}}
+{"input":"schedule today at 3:30 am","output":{"kind":"datetime","dayOffset":0,"hour":3,"minute":30}}
+{"input":"remind me today at 3:30 am","output":{"kind":"datetime","dayOffset":0,"hour":3,"minute":30}}
+{"input":"today at 3:45 am","output":{"kind":"datetime","dayOffset":0,"hour":3,"minute":45}}
+{"input":"schedule today at 3:45 am","output":{"kind":"datetime","dayOffset":0,"hour":3,"minute":45}}
+{"input":"remind me today at 3:45 am","output":{"kind":"datetime","dayOffset":0,"hour":3,"minute":45}}
+{"input":"today at 3 pm","output":{"kind":"datetime","dayOffset":0,"hour":15,"minute":0}}
+{"input":"schedule today at 3 pm","output":{"kind":"datetime","dayOffset":0,"hour":15,"minute":0}}
+{"input":"remind me today at 3 pm","output":{"kind":"datetime","dayOffset":0,"hour":15,"minute":0}}
+{"input":"today at 3:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":15,"minute":0}}
+{"input":"schedule today at 3:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":15,"minute":0}}
+{"input":"remind me today at 3:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":15,"minute":0}}
+{"input":"today at 3:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":15,"minute":15}}
+{"input":"schedule today at 3:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":15,"minute":15}}
+{"input":"remind me today at 3:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":15,"minute":15}}
+{"input":"today at 3:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":15,"minute":30}}
+{"input":"schedule today at 3:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":15,"minute":30}}
+{"input":"remind me today at 3:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":15,"minute":30}}
+{"input":"today at 3:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":15,"minute":45}}
+{"input":"schedule today at 3:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":15,"minute":45}}
+{"input":"remind me today at 3:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":15,"minute":45}}
+{"input":"today at 4 am","output":{"kind":"datetime","dayOffset":0,"hour":4,"minute":0}}
+{"input":"schedule today at 4 am","output":{"kind":"datetime","dayOffset":0,"hour":4,"minute":0}}
+{"input":"remind me today at 4 am","output":{"kind":"datetime","dayOffset":0,"hour":4,"minute":0}}
+{"input":"today at 4:00 am","output":{"kind":"datetime","dayOffset":0,"hour":4,"minute":0}}
+{"input":"schedule today at 4:00 am","output":{"kind":"datetime","dayOffset":0,"hour":4,"minute":0}}
+{"input":"remind me today at 4:00 am","output":{"kind":"datetime","dayOffset":0,"hour":4,"minute":0}}
+{"input":"today at 4:15 am","output":{"kind":"datetime","dayOffset":0,"hour":4,"minute":15}}
+{"input":"schedule today at 4:15 am","output":{"kind":"datetime","dayOffset":0,"hour":4,"minute":15}}
+{"input":"remind me today at 4:15 am","output":{"kind":"datetime","dayOffset":0,"hour":4,"minute":15}}
+{"input":"today at 4:30 am","output":{"kind":"datetime","dayOffset":0,"hour":4,"minute":30}}
+{"input":"schedule today at 4:30 am","output":{"kind":"datetime","dayOffset":0,"hour":4,"minute":30}}
+{"input":"remind me today at 4:30 am","output":{"kind":"datetime","dayOffset":0,"hour":4,"minute":30}}
+{"input":"today at 4:45 am","output":{"kind":"datetime","dayOffset":0,"hour":4,"minute":45}}
+{"input":"schedule today at 4:45 am","output":{"kind":"datetime","dayOffset":0,"hour":4,"minute":45}}
+{"input":"remind me today at 4:45 am","output":{"kind":"datetime","dayOffset":0,"hour":4,"minute":45}}
+{"input":"today at 4 pm","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":0}}
+{"input":"schedule today at 4 pm","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":0}}
+{"input":"remind me today at 4 pm","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":0}}
+{"input":"today at 4:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":0}}
+{"input":"schedule today at 4:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":0}}
+{"input":"remind me today at 4:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":0}}
+{"input":"today at 4:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":15}}
+{"input":"schedule today at 4:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":15}}
+{"input":"remind me today at 4:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":15}}
+{"input":"today at 4:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":30}}
+{"input":"schedule today at 4:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":30}}
+{"input":"remind me today at 4:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":30}}
+{"input":"today at 4:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":45}}
+{"input":"schedule today at 4:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":45}}
+{"input":"remind me today at 4:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":45}}
+{"input":"today at 6 am","output":{"kind":"datetime","dayOffset":0,"hour":6,"minute":0}}
+{"input":"schedule today at 6 am","output":{"kind":"datetime","dayOffset":0,"hour":6,"minute":0}}
+{"input":"remind me today at 6 am","output":{"kind":"datetime","dayOffset":0,"hour":6,"minute":0}}
+{"input":"today at 6:00 am","output":{"kind":"datetime","dayOffset":0,"hour":6,"minute":0}}
+{"input":"schedule today at 6:00 am","output":{"kind":"datetime","dayOffset":0,"hour":6,"minute":0}}
+{"input":"remind me today at 6:00 am","output":{"kind":"datetime","dayOffset":0,"hour":6,"minute":0}}
+{"input":"today at 6:15 am","output":{"kind":"datetime","dayOffset":0,"hour":6,"minute":15}}
+{"input":"schedule today at 6:15 am","output":{"kind":"datetime","dayOffset":0,"hour":6,"minute":15}}
+{"input":"remind me today at 6:15 am","output":{"kind":"datetime","dayOffset":0,"hour":6,"minute":15}}
+{"input":"today at 6:30 am","output":{"kind":"datetime","dayOffset":0,"hour":6,"minute":30}}
+{"input":"schedule today at 6:30 am","output":{"kind":"datetime","dayOffset":0,"hour":6,"minute":30}}
+{"input":"remind me today at 6:30 am","output":{"kind":"datetime","dayOffset":0,"hour":6,"minute":30}}
+{"input":"today at 6:45 am","output":{"kind":"datetime","dayOffset":0,"hour":6,"minute":45}}
+{"input":"schedule today at 6:45 am","output":{"kind":"datetime","dayOffset":0,"hour":6,"minute":45}}
+{"input":"remind me today at 6:45 am","output":{"kind":"datetime","dayOffset":0,"hour":6,"minute":45}}
+{"input":"today at 6 pm","output":{"kind":"datetime","dayOffset":0,"hour":18,"minute":0}}
+{"input":"schedule today at 6 pm","output":{"kind":"datetime","dayOffset":0,"hour":18,"minute":0}}
+{"input":"remind me today at 6 pm","output":{"kind":"datetime","dayOffset":0,"hour":18,"minute":0}}
+{"input":"today at 6:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":18,"minute":0}}
+{"input":"schedule today at 6:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":18,"minute":0}}
+{"input":"remind me today at 6:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":18,"minute":0}}
+{"input":"today at 6:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":18,"minute":15}}
+{"input":"schedule today at 6:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":18,"minute":15}}
+{"input":"remind me today at 6:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":18,"minute":15}}
+{"input":"today at 6:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":18,"minute":30}}
+{"input":"schedule today at 6:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":18,"minute":30}}
+{"input":"remind me today at 6:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":18,"minute":30}}
+{"input":"today at 6:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":18,"minute":45}}
+{"input":"schedule today at 6:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":18,"minute":45}}
+{"input":"remind me today at 6:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":18,"minute":45}}
+{"input":"today at 8 am","output":{"kind":"datetime","dayOffset":0,"hour":8,"minute":0}}
+{"input":"schedule today at 8 am","output":{"kind":"datetime","dayOffset":0,"hour":8,"minute":0}}
+{"input":"remind me today at 8 am","output":{"kind":"datetime","dayOffset":0,"hour":8,"minute":0}}
+{"input":"today at 8:00 am","output":{"kind":"datetime","dayOffset":0,"hour":8,"minute":0}}
+{"input":"schedule today at 8:00 am","output":{"kind":"datetime","dayOffset":0,"hour":8,"minute":0}}
+{"input":"remind me today at 8:00 am","output":{"kind":"datetime","dayOffset":0,"hour":8,"minute":0}}
+{"input":"today at 8:15 am","output":{"kind":"datetime","dayOffset":0,"hour":8,"minute":15}}
+{"input":"schedule today at 8:15 am","output":{"kind":"datetime","dayOffset":0,"hour":8,"minute":15}}
+{"input":"remind me today at 8:15 am","output":{"kind":"datetime","dayOffset":0,"hour":8,"minute":15}}
+{"input":"today at 8:30 am","output":{"kind":"datetime","dayOffset":0,"hour":8,"minute":30}}
+{"input":"schedule today at 8:30 am","output":{"kind":"datetime","dayOffset":0,"hour":8,"minute":30}}
+{"input":"remind me today at 8:30 am","output":{"kind":"datetime","dayOffset":0,"hour":8,"minute":30}}
+{"input":"today at 8:45 am","output":{"kind":"datetime","dayOffset":0,"hour":8,"minute":45}}
+{"input":"schedule today at 8:45 am","output":{"kind":"datetime","dayOffset":0,"hour":8,"minute":45}}
+{"input":"remind me today at 8:45 am","output":{"kind":"datetime","dayOffset":0,"hour":8,"minute":45}}
+{"input":"today at 8 pm","output":{"kind":"datetime","dayOffset":0,"hour":20,"minute":0}}
+{"input":"schedule today at 8 pm","output":{"kind":"datetime","dayOffset":0,"hour":20,"minute":0}}
+{"input":"remind me today at 8 pm","output":{"kind":"datetime","dayOffset":0,"hour":20,"minute":0}}
+{"input":"today at 8:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":20,"minute":0}}
+{"input":"schedule today at 8:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":20,"minute":0}}
+{"input":"remind me today at 8:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":20,"minute":0}}
+{"input":"today at 8:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":20,"minute":15}}
+{"input":"schedule today at 8:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":20,"minute":15}}
+{"input":"remind me today at 8:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":20,"minute":15}}
+{"input":"today at 8:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":20,"minute":30}}
+{"input":"schedule today at 8:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":20,"minute":30}}
+{"input":"remind me today at 8:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":20,"minute":30}}
+{"input":"today at 8:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":20,"minute":45}}
+{"input":"schedule today at 8:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":20,"minute":45}}
+{"input":"remind me today at 8:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":20,"minute":45}}
+{"input":"today at 9 am","output":{"kind":"datetime","dayOffset":0,"hour":9,"minute":0}}
+{"input":"schedule today at 9 am","output":{"kind":"datetime","dayOffset":0,"hour":9,"minute":0}}
+{"input":"remind me today at 9 am","output":{"kind":"datetime","dayOffset":0,"hour":9,"minute":0}}
+{"input":"today at 9:00 am","output":{"kind":"datetime","dayOffset":0,"hour":9,"minute":0}}
+{"input":"schedule today at 9:00 am","output":{"kind":"datetime","dayOffset":0,"hour":9,"minute":0}}
+{"input":"remind me today at 9:00 am","output":{"kind":"datetime","dayOffset":0,"hour":9,"minute":0}}
+{"input":"today at 9:15 am","output":{"kind":"datetime","dayOffset":0,"hour":9,"minute":15}}
+{"input":"schedule today at 9:15 am","output":{"kind":"datetime","dayOffset":0,"hour":9,"minute":15}}
+{"input":"remind me today at 9:15 am","output":{"kind":"datetime","dayOffset":0,"hour":9,"minute":15}}
+{"input":"today at 9:30 am","output":{"kind":"datetime","dayOffset":0,"hour":9,"minute":30}}
+{"input":"schedule today at 9:30 am","output":{"kind":"datetime","dayOffset":0,"hour":9,"minute":30}}
+{"input":"remind me today at 9:30 am","output":{"kind":"datetime","dayOffset":0,"hour":9,"minute":30}}
+{"input":"today at 9:45 am","output":{"kind":"datetime","dayOffset":0,"hour":9,"minute":45}}
+{"input":"schedule today at 9:45 am","output":{"kind":"datetime","dayOffset":0,"hour":9,"minute":45}}
+{"input":"remind me today at 9:45 am","output":{"kind":"datetime","dayOffset":0,"hour":9,"minute":45}}
+{"input":"today at 9 pm","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"schedule today at 9 pm","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"remind me today at 9 pm","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"today at 9:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"schedule today at 9:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"remind me today at 9:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"today at 9:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":15}}
+{"input":"schedule today at 9:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":15}}
+{"input":"remind me today at 9:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":15}}
+{"input":"today at 9:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":30}}
+{"input":"schedule today at 9:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":30}}
+{"input":"remind me today at 9:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":30}}
+{"input":"today at 9:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":45}}
+{"input":"schedule today at 9:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":45}}
+{"input":"remind me today at 9:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":45}}
+{"input":"today at 10 am","output":{"kind":"datetime","dayOffset":0,"hour":10,"minute":0}}
+{"input":"schedule today at 10 am","output":{"kind":"datetime","dayOffset":0,"hour":10,"minute":0}}
+{"input":"remind me today at 10 am","output":{"kind":"datetime","dayOffset":0,"hour":10,"minute":0}}
+{"input":"today at 10:00 am","output":{"kind":"datetime","dayOffset":0,"hour":10,"minute":0}}
+{"input":"schedule today at 10:00 am","output":{"kind":"datetime","dayOffset":0,"hour":10,"minute":0}}
+{"input":"remind me today at 10:00 am","output":{"kind":"datetime","dayOffset":0,"hour":10,"minute":0}}
+{"input":"today at 10:15 am","output":{"kind":"datetime","dayOffset":0,"hour":10,"minute":15}}
+{"input":"schedule today at 10:15 am","output":{"kind":"datetime","dayOffset":0,"hour":10,"minute":15}}
+{"input":"remind me today at 10:15 am","output":{"kind":"datetime","dayOffset":0,"hour":10,"minute":15}}
+{"input":"today at 10:30 am","output":{"kind":"datetime","dayOffset":0,"hour":10,"minute":30}}
+{"input":"schedule today at 10:30 am","output":{"kind":"datetime","dayOffset":0,"hour":10,"minute":30}}
+{"input":"remind me today at 10:30 am","output":{"kind":"datetime","dayOffset":0,"hour":10,"minute":30}}
+{"input":"today at 10:45 am","output":{"kind":"datetime","dayOffset":0,"hour":10,"minute":45}}
+{"input":"schedule today at 10:45 am","output":{"kind":"datetime","dayOffset":0,"hour":10,"minute":45}}
+{"input":"remind me today at 10:45 am","output":{"kind":"datetime","dayOffset":0,"hour":10,"minute":45}}
+{"input":"today at 10 pm","output":{"kind":"datetime","dayOffset":0,"hour":22,"minute":0}}
+{"input":"schedule today at 10 pm","output":{"kind":"datetime","dayOffset":0,"hour":22,"minute":0}}
+{"input":"remind me today at 10 pm","output":{"kind":"datetime","dayOffset":0,"hour":22,"minute":0}}
+{"input":"today at 10:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":22,"minute":0}}
+{"input":"schedule today at 10:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":22,"minute":0}}
+{"input":"remind me today at 10:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":22,"minute":0}}
+{"input":"today at 10:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":22,"minute":15}}
+{"input":"schedule today at 10:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":22,"minute":15}}
+{"input":"remind me today at 10:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":22,"minute":15}}
+{"input":"today at 10:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":22,"minute":30}}
+{"input":"schedule today at 10:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":22,"minute":30}}
+{"input":"remind me today at 10:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":22,"minute":30}}
+{"input":"today at 10:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":22,"minute":45}}
+{"input":"schedule today at 10:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":22,"minute":45}}
+{"input":"remind me today at 10:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":22,"minute":45}}
+{"input":"today at 11 am","output":{"kind":"datetime","dayOffset":0,"hour":11,"minute":0}}
+{"input":"schedule today at 11 am","output":{"kind":"datetime","dayOffset":0,"hour":11,"minute":0}}
+{"input":"remind me today at 11 am","output":{"kind":"datetime","dayOffset":0,"hour":11,"minute":0}}
+{"input":"today at 11:00 am","output":{"kind":"datetime","dayOffset":0,"hour":11,"minute":0}}
+{"input":"schedule today at 11:00 am","output":{"kind":"datetime","dayOffset":0,"hour":11,"minute":0}}
+{"input":"remind me today at 11:00 am","output":{"kind":"datetime","dayOffset":0,"hour":11,"minute":0}}
+{"input":"today at 11:15 am","output":{"kind":"datetime","dayOffset":0,"hour":11,"minute":15}}
+{"input":"schedule today at 11:15 am","output":{"kind":"datetime","dayOffset":0,"hour":11,"minute":15}}
+{"input":"remind me today at 11:15 am","output":{"kind":"datetime","dayOffset":0,"hour":11,"minute":15}}
+{"input":"today at 11:30 am","output":{"kind":"datetime","dayOffset":0,"hour":11,"minute":30}}
+{"input":"schedule today at 11:30 am","output":{"kind":"datetime","dayOffset":0,"hour":11,"minute":30}}
+{"input":"remind me today at 11:30 am","output":{"kind":"datetime","dayOffset":0,"hour":11,"minute":30}}
+{"input":"today at 11:45 am","output":{"kind":"datetime","dayOffset":0,"hour":11,"minute":45}}
+{"input":"schedule today at 11:45 am","output":{"kind":"datetime","dayOffset":0,"hour":11,"minute":45}}
+{"input":"remind me today at 11:45 am","output":{"kind":"datetime","dayOffset":0,"hour":11,"minute":45}}
+{"input":"today at 11 pm","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":0}}
+{"input":"schedule today at 11 pm","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":0}}
+{"input":"remind me today at 11 pm","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":0}}
+{"input":"today at 11:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":0}}
+{"input":"schedule today at 11:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":0}}
+{"input":"remind me today at 11:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":0}}
+{"input":"today at 11:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":15}}
+{"input":"schedule today at 11:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":15}}
+{"input":"remind me today at 11:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":15}}
+{"input":"today at 11:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":30}}
+{"input":"schedule today at 11:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":30}}
+{"input":"remind me today at 11:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":30}}
+{"input":"today at 11:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":45}}
+{"input":"schedule today at 11:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":45}}
+{"input":"remind me today at 11:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":45}}
+{"input":"today at 12 am","output":{"kind":"datetime","dayOffset":0,"hour":0,"minute":0}}
+{"input":"schedule today at 12 am","output":{"kind":"datetime","dayOffset":0,"hour":0,"minute":0}}
+{"input":"remind me today at 12 am","output":{"kind":"datetime","dayOffset":0,"hour":0,"minute":0}}
+{"input":"today at 12:00 am","output":{"kind":"datetime","dayOffset":0,"hour":0,"minute":0}}
+{"input":"schedule today at 12:00 am","output":{"kind":"datetime","dayOffset":0,"hour":0,"minute":0}}
+{"input":"remind me today at 12:00 am","output":{"kind":"datetime","dayOffset":0,"hour":0,"minute":0}}
+{"input":"today at 12:15 am","output":{"kind":"datetime","dayOffset":0,"hour":0,"minute":15}}
+{"input":"schedule today at 12:15 am","output":{"kind":"datetime","dayOffset":0,"hour":0,"minute":15}}
+{"input":"remind me today at 12:15 am","output":{"kind":"datetime","dayOffset":0,"hour":0,"minute":15}}
+{"input":"today at 12:30 am","output":{"kind":"datetime","dayOffset":0,"hour":0,"minute":30}}
+{"input":"schedule today at 12:30 am","output":{"kind":"datetime","dayOffset":0,"hour":0,"minute":30}}
+{"input":"remind me today at 12:30 am","output":{"kind":"datetime","dayOffset":0,"hour":0,"minute":30}}
+{"input":"today at 12:45 am","output":{"kind":"datetime","dayOffset":0,"hour":0,"minute":45}}
+{"input":"schedule today at 12:45 am","output":{"kind":"datetime","dayOffset":0,"hour":0,"minute":45}}
+{"input":"remind me today at 12:45 am","output":{"kind":"datetime","dayOffset":0,"hour":0,"minute":45}}
+{"input":"today at 12 pm","output":{"kind":"datetime","dayOffset":0,"hour":12,"minute":0}}
+{"input":"schedule today at 12 pm","output":{"kind":"datetime","dayOffset":0,"hour":12,"minute":0}}
+{"input":"remind me today at 12 pm","output":{"kind":"datetime","dayOffset":0,"hour":12,"minute":0}}
+{"input":"today at 12:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":12,"minute":0}}
+{"input":"schedule today at 12:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":12,"minute":0}}
+{"input":"remind me today at 12:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":12,"minute":0}}
+{"input":"today at 12:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":12,"minute":15}}
+{"input":"schedule today at 12:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":12,"minute":15}}
+{"input":"remind me today at 12:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":12,"minute":15}}
+{"input":"today at 12:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":12,"minute":30}}
+{"input":"schedule today at 12:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":12,"minute":30}}
+{"input":"remind me today at 12:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":12,"minute":30}}
+{"input":"today at 12:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":12,"minute":45}}
+{"input":"schedule today at 12:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":12,"minute":45}}
+{"input":"remind me today at 12:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":12,"minute":45}}
+{"input":"today at 0:00","output":{"kind":"datetime","dayOffset":0,"hour":0,"minute":0}}
+{"input":"today at 0:15","output":{"kind":"datetime","dayOffset":0,"hour":0,"minute":15}}
+{"input":"today at 0:30","output":{"kind":"datetime","dayOffset":0,"hour":0,"minute":30}}
+{"input":"today at 7:00","output":{"kind":"datetime","dayOffset":0,"hour":7,"minute":0}}
+{"input":"today at 7:15","output":{"kind":"datetime","dayOffset":0,"hour":7,"minute":15}}
+{"input":"today at 7:30","output":{"kind":"datetime","dayOffset":0,"hour":7,"minute":30}}
+{"input":"today at 13:00","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":0}}
+{"input":"today at 13:15","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":15}}
+{"input":"today at 13:30","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":30}}
+{"input":"today at 16:00","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":0}}
+{"input":"today at 16:15","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":15}}
+{"input":"today at 16:30","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":30}}
+{"input":"today at 18:00","output":{"kind":"datetime","dayOffset":0,"hour":18,"minute":0}}
+{"input":"today at 18:15","output":{"kind":"datetime","dayOffset":0,"hour":18,"minute":15}}
+{"input":"today at 18:30","output":{"kind":"datetime","dayOffset":0,"hour":18,"minute":30}}
+{"input":"today at 21:00","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"today at 21:15","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":15}}
+{"input":"today at 21:30","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":30}}
+{"input":"today at 23:00","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":0}}
+{"input":"today at 23:15","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":15}}
+{"input":"today at 23:30","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":30}}
+{"input":"tomorrow at 1 am","output":{"kind":"datetime","dayOffset":1,"hour":1,"minute":0}}
+{"input":"schedule tomorrow at 1 am","output":{"kind":"datetime","dayOffset":1,"hour":1,"minute":0}}
+{"input":"remind me tomorrow at 1 am","output":{"kind":"datetime","dayOffset":1,"hour":1,"minute":0}}
+{"input":"tomorrow at 1:00 am","output":{"kind":"datetime","dayOffset":1,"hour":1,"minute":0}}
+{"input":"schedule tomorrow at 1:00 am","output":{"kind":"datetime","dayOffset":1,"hour":1,"minute":0}}
+{"input":"remind me tomorrow at 1:00 am","output":{"kind":"datetime","dayOffset":1,"hour":1,"minute":0}}
+{"input":"tomorrow at 1:15 am","output":{"kind":"datetime","dayOffset":1,"hour":1,"minute":15}}
+{"input":"schedule tomorrow at 1:15 am","output":{"kind":"datetime","dayOffset":1,"hour":1,"minute":15}}
+{"input":"remind me tomorrow at 1:15 am","output":{"kind":"datetime","dayOffset":1,"hour":1,"minute":15}}
+{"input":"tomorrow at 1:30 am","output":{"kind":"datetime","dayOffset":1,"hour":1,"minute":30}}
+{"input":"schedule tomorrow at 1:30 am","output":{"kind":"datetime","dayOffset":1,"hour":1,"minute":30}}
+{"input":"remind me tomorrow at 1:30 am","output":{"kind":"datetime","dayOffset":1,"hour":1,"minute":30}}
+{"input":"tomorrow at 1:45 am","output":{"kind":"datetime","dayOffset":1,"hour":1,"minute":45}}
+{"input":"schedule tomorrow at 1:45 am","output":{"kind":"datetime","dayOffset":1,"hour":1,"minute":45}}
+{"input":"remind me tomorrow at 1:45 am","output":{"kind":"datetime","dayOffset":1,"hour":1,"minute":45}}
+{"input":"tomorrow at 1 pm","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":0}}
+{"input":"schedule tomorrow at 1 pm","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":0}}
+{"input":"remind me tomorrow at 1 pm","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":0}}
+{"input":"tomorrow at 1:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":0}}
+{"input":"schedule tomorrow at 1:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":0}}
+{"input":"remind me tomorrow at 1:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":0}}
+{"input":"tomorrow at 1:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":15}}
+{"input":"schedule tomorrow at 1:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":15}}
+{"input":"remind me tomorrow at 1:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":15}}
+{"input":"tomorrow at 1:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":30}}
+{"input":"schedule tomorrow at 1:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":30}}
+{"input":"remind me tomorrow at 1:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":30}}
+{"input":"tomorrow at 1:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":45}}
+{"input":"schedule tomorrow at 1:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":45}}
+{"input":"remind me tomorrow at 1:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":45}}
+{"input":"tomorrow at 2 am","output":{"kind":"datetime","dayOffset":1,"hour":2,"minute":0}}
+{"input":"schedule tomorrow at 2 am","output":{"kind":"datetime","dayOffset":1,"hour":2,"minute":0}}
+{"input":"remind me tomorrow at 2 am","output":{"kind":"datetime","dayOffset":1,"hour":2,"minute":0}}
+{"input":"tomorrow at 2:00 am","output":{"kind":"datetime","dayOffset":1,"hour":2,"minute":0}}
+{"input":"schedule tomorrow at 2:00 am","output":{"kind":"datetime","dayOffset":1,"hour":2,"minute":0}}
+{"input":"remind me tomorrow at 2:00 am","output":{"kind":"datetime","dayOffset":1,"hour":2,"minute":0}}
+{"input":"tomorrow at 2:15 am","output":{"kind":"datetime","dayOffset":1,"hour":2,"minute":15}}
+{"input":"schedule tomorrow at 2:15 am","output":{"kind":"datetime","dayOffset":1,"hour":2,"minute":15}}
+{"input":"remind me tomorrow at 2:15 am","output":{"kind":"datetime","dayOffset":1,"hour":2,"minute":15}}
+{"input":"tomorrow at 2:30 am","output":{"kind":"datetime","dayOffset":1,"hour":2,"minute":30}}
+{"input":"schedule tomorrow at 2:30 am","output":{"kind":"datetime","dayOffset":1,"hour":2,"minute":30}}
+{"input":"remind me tomorrow at 2:30 am","output":{"kind":"datetime","dayOffset":1,"hour":2,"minute":30}}
+{"input":"tomorrow at 2:45 am","output":{"kind":"datetime","dayOffset":1,"hour":2,"minute":45}}
+{"input":"schedule tomorrow at 2:45 am","output":{"kind":"datetime","dayOffset":1,"hour":2,"minute":45}}
+{"input":"remind me tomorrow at 2:45 am","output":{"kind":"datetime","dayOffset":1,"hour":2,"minute":45}}
+{"input":"tomorrow at 2 pm","output":{"kind":"datetime","dayOffset":1,"hour":14,"minute":0}}
+{"input":"schedule tomorrow at 2 pm","output":{"kind":"datetime","dayOffset":1,"hour":14,"minute":0}}
+{"input":"remind me tomorrow at 2 pm","output":{"kind":"datetime","dayOffset":1,"hour":14,"minute":0}}
+{"input":"tomorrow at 2:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":14,"minute":0}}
+{"input":"schedule tomorrow at 2:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":14,"minute":0}}
+{"input":"remind me tomorrow at 2:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":14,"minute":0}}
+{"input":"tomorrow at 2:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":14,"minute":15}}
+{"input":"schedule tomorrow at 2:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":14,"minute":15}}
+{"input":"remind me tomorrow at 2:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":14,"minute":15}}
+{"input":"tomorrow at 2:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":14,"minute":30}}
+{"input":"schedule tomorrow at 2:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":14,"minute":30}}
+{"input":"remind me tomorrow at 2:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":14,"minute":30}}
+{"input":"tomorrow at 2:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":14,"minute":45}}
+{"input":"schedule tomorrow at 2:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":14,"minute":45}}
+{"input":"remind me tomorrow at 2:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":14,"minute":45}}
+{"input":"tomorrow at 3 am","output":{"kind":"datetime","dayOffset":1,"hour":3,"minute":0}}
+{"input":"schedule tomorrow at 3 am","output":{"kind":"datetime","dayOffset":1,"hour":3,"minute":0}}
+{"input":"remind me tomorrow at 3 am","output":{"kind":"datetime","dayOffset":1,"hour":3,"minute":0}}
+{"input":"tomorrow at 3:00 am","output":{"kind":"datetime","dayOffset":1,"hour":3,"minute":0}}
+{"input":"schedule tomorrow at 3:00 am","output":{"kind":"datetime","dayOffset":1,"hour":3,"minute":0}}
+{"input":"remind me tomorrow at 3:00 am","output":{"kind":"datetime","dayOffset":1,"hour":3,"minute":0}}
+{"input":"tomorrow at 3:15 am","output":{"kind":"datetime","dayOffset":1,"hour":3,"minute":15}}
+{"input":"schedule tomorrow at 3:15 am","output":{"kind":"datetime","dayOffset":1,"hour":3,"minute":15}}
+{"input":"remind me tomorrow at 3:15 am","output":{"kind":"datetime","dayOffset":1,"hour":3,"minute":15}}
+{"input":"tomorrow at 3:30 am","output":{"kind":"datetime","dayOffset":1,"hour":3,"minute":30}}
+{"input":"schedule tomorrow at 3:30 am","output":{"kind":"datetime","dayOffset":1,"hour":3,"minute":30}}
+{"input":"remind me tomorrow at 3:30 am","output":{"kind":"datetime","dayOffset":1,"hour":3,"minute":30}}
+{"input":"tomorrow at 3:45 am","output":{"kind":"datetime","dayOffset":1,"hour":3,"minute":45}}
+{"input":"schedule tomorrow at 3:45 am","output":{"kind":"datetime","dayOffset":1,"hour":3,"minute":45}}
+{"input":"remind me tomorrow at 3:45 am","output":{"kind":"datetime","dayOffset":1,"hour":3,"minute":45}}
+{"input":"tomorrow at 3 pm","output":{"kind":"datetime","dayOffset":1,"hour":15,"minute":0}}
+{"input":"schedule tomorrow at 3 pm","output":{"kind":"datetime","dayOffset":1,"hour":15,"minute":0}}
+{"input":"remind me tomorrow at 3 pm","output":{"kind":"datetime","dayOffset":1,"hour":15,"minute":0}}
+{"input":"tomorrow at 3:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":15,"minute":0}}
+{"input":"schedule tomorrow at 3:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":15,"minute":0}}
+{"input":"remind me tomorrow at 3:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":15,"minute":0}}
+{"input":"tomorrow at 3:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":15,"minute":15}}
+{"input":"schedule tomorrow at 3:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":15,"minute":15}}
+{"input":"remind me tomorrow at 3:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":15,"minute":15}}
+{"input":"tomorrow at 3:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":15,"minute":30}}
+{"input":"schedule tomorrow at 3:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":15,"minute":30}}
+{"input":"remind me tomorrow at 3:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":15,"minute":30}}
+{"input":"tomorrow at 3:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":15,"minute":45}}
+{"input":"schedule tomorrow at 3:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":15,"minute":45}}
+{"input":"remind me tomorrow at 3:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":15,"minute":45}}
+{"input":"tomorrow at 4 am","output":{"kind":"datetime","dayOffset":1,"hour":4,"minute":0}}
+{"input":"schedule tomorrow at 4 am","output":{"kind":"datetime","dayOffset":1,"hour":4,"minute":0}}
+{"input":"remind me tomorrow at 4 am","output":{"kind":"datetime","dayOffset":1,"hour":4,"minute":0}}
+{"input":"tomorrow at 4:00 am","output":{"kind":"datetime","dayOffset":1,"hour":4,"minute":0}}
+{"input":"schedule tomorrow at 4:00 am","output":{"kind":"datetime","dayOffset":1,"hour":4,"minute":0}}
+{"input":"remind me tomorrow at 4:00 am","output":{"kind":"datetime","dayOffset":1,"hour":4,"minute":0}}
+{"input":"tomorrow at 4:15 am","output":{"kind":"datetime","dayOffset":1,"hour":4,"minute":15}}
+{"input":"schedule tomorrow at 4:15 am","output":{"kind":"datetime","dayOffset":1,"hour":4,"minute":15}}
+{"input":"remind me tomorrow at 4:15 am","output":{"kind":"datetime","dayOffset":1,"hour":4,"minute":15}}
+{"input":"tomorrow at 4:30 am","output":{"kind":"datetime","dayOffset":1,"hour":4,"minute":30}}
+{"input":"schedule tomorrow at 4:30 am","output":{"kind":"datetime","dayOffset":1,"hour":4,"minute":30}}
+{"input":"remind me tomorrow at 4:30 am","output":{"kind":"datetime","dayOffset":1,"hour":4,"minute":30}}
+{"input":"tomorrow at 4:45 am","output":{"kind":"datetime","dayOffset":1,"hour":4,"minute":45}}
+{"input":"schedule tomorrow at 4:45 am","output":{"kind":"datetime","dayOffset":1,"hour":4,"minute":45}}
+{"input":"remind me tomorrow at 4:45 am","output":{"kind":"datetime","dayOffset":1,"hour":4,"minute":45}}
+{"input":"tomorrow at 4 pm","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":0}}
+{"input":"schedule tomorrow at 4 pm","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":0}}
+{"input":"remind me tomorrow at 4 pm","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":0}}
+{"input":"tomorrow at 4:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":0}}
+{"input":"schedule tomorrow at 4:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":0}}
+{"input":"remind me tomorrow at 4:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":0}}
+{"input":"tomorrow at 4:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":15}}
+{"input":"schedule tomorrow at 4:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":15}}
+{"input":"remind me tomorrow at 4:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":15}}
+{"input":"tomorrow at 4:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":30}}
+{"input":"schedule tomorrow at 4:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":30}}
+{"input":"remind me tomorrow at 4:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":30}}
+{"input":"tomorrow at 4:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":45}}
+{"input":"schedule tomorrow at 4:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":45}}
+{"input":"remind me tomorrow at 4:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":45}}
+{"input":"tomorrow at 6 am","output":{"kind":"datetime","dayOffset":1,"hour":6,"minute":0}}
+{"input":"schedule tomorrow at 6 am","output":{"kind":"datetime","dayOffset":1,"hour":6,"minute":0}}
+{"input":"remind me tomorrow at 6 am","output":{"kind":"datetime","dayOffset":1,"hour":6,"minute":0}}
+{"input":"tomorrow at 6:00 am","output":{"kind":"datetime","dayOffset":1,"hour":6,"minute":0}}
+{"input":"schedule tomorrow at 6:00 am","output":{"kind":"datetime","dayOffset":1,"hour":6,"minute":0}}
+{"input":"remind me tomorrow at 6:00 am","output":{"kind":"datetime","dayOffset":1,"hour":6,"minute":0}}
+{"input":"tomorrow at 6:15 am","output":{"kind":"datetime","dayOffset":1,"hour":6,"minute":15}}
+{"input":"schedule tomorrow at 6:15 am","output":{"kind":"datetime","dayOffset":1,"hour":6,"minute":15}}
+{"input":"remind me tomorrow at 6:15 am","output":{"kind":"datetime","dayOffset":1,"hour":6,"minute":15}}
+{"input":"tomorrow at 6:30 am","output":{"kind":"datetime","dayOffset":1,"hour":6,"minute":30}}
+{"input":"schedule tomorrow at 6:30 am","output":{"kind":"datetime","dayOffset":1,"hour":6,"minute":30}}
+{"input":"remind me tomorrow at 6:30 am","output":{"kind":"datetime","dayOffset":1,"hour":6,"minute":30}}
+{"input":"tomorrow at 6:45 am","output":{"kind":"datetime","dayOffset":1,"hour":6,"minute":45}}
+{"input":"schedule tomorrow at 6:45 am","output":{"kind":"datetime","dayOffset":1,"hour":6,"minute":45}}
+{"input":"remind me tomorrow at 6:45 am","output":{"kind":"datetime","dayOffset":1,"hour":6,"minute":45}}
+{"input":"tomorrow at 6 pm","output":{"kind":"datetime","dayOffset":1,"hour":18,"minute":0}}
+{"input":"schedule tomorrow at 6 pm","output":{"kind":"datetime","dayOffset":1,"hour":18,"minute":0}}
+{"input":"remind me tomorrow at 6 pm","output":{"kind":"datetime","dayOffset":1,"hour":18,"minute":0}}
+{"input":"tomorrow at 6:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":18,"minute":0}}
+{"input":"schedule tomorrow at 6:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":18,"minute":0}}
+{"input":"remind me tomorrow at 6:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":18,"minute":0}}
+{"input":"tomorrow at 6:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":18,"minute":15}}
+{"input":"schedule tomorrow at 6:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":18,"minute":15}}
+{"input":"remind me tomorrow at 6:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":18,"minute":15}}
+{"input":"tomorrow at 6:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":18,"minute":30}}
+{"input":"schedule tomorrow at 6:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":18,"minute":30}}
+{"input":"remind me tomorrow at 6:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":18,"minute":30}}
+{"input":"tomorrow at 6:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":18,"minute":45}}
+{"input":"schedule tomorrow at 6:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":18,"minute":45}}
+{"input":"remind me tomorrow at 6:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":18,"minute":45}}
+{"input":"tomorrow at 8 am","output":{"kind":"datetime","dayOffset":1,"hour":8,"minute":0}}
+{"input":"schedule tomorrow at 8 am","output":{"kind":"datetime","dayOffset":1,"hour":8,"minute":0}}
+{"input":"remind me tomorrow at 8 am","output":{"kind":"datetime","dayOffset":1,"hour":8,"minute":0}}
+{"input":"tomorrow at 8:00 am","output":{"kind":"datetime","dayOffset":1,"hour":8,"minute":0}}
+{"input":"schedule tomorrow at 8:00 am","output":{"kind":"datetime","dayOffset":1,"hour":8,"minute":0}}
+{"input":"remind me tomorrow at 8:00 am","output":{"kind":"datetime","dayOffset":1,"hour":8,"minute":0}}
+{"input":"tomorrow at 8:15 am","output":{"kind":"datetime","dayOffset":1,"hour":8,"minute":15}}
+{"input":"schedule tomorrow at 8:15 am","output":{"kind":"datetime","dayOffset":1,"hour":8,"minute":15}}
+{"input":"remind me tomorrow at 8:15 am","output":{"kind":"datetime","dayOffset":1,"hour":8,"minute":15}}
+{"input":"tomorrow at 8:30 am","output":{"kind":"datetime","dayOffset":1,"hour":8,"minute":30}}
+{"input":"schedule tomorrow at 8:30 am","output":{"kind":"datetime","dayOffset":1,"hour":8,"minute":30}}
+{"input":"remind me tomorrow at 8:30 am","output":{"kind":"datetime","dayOffset":1,"hour":8,"minute":30}}
+{"input":"tomorrow at 8:45 am","output":{"kind":"datetime","dayOffset":1,"hour":8,"minute":45}}
+{"input":"schedule tomorrow at 8:45 am","output":{"kind":"datetime","dayOffset":1,"hour":8,"minute":45}}
+{"input":"remind me tomorrow at 8:45 am","output":{"kind":"datetime","dayOffset":1,"hour":8,"minute":45}}
+{"input":"tomorrow at 8 pm","output":{"kind":"datetime","dayOffset":1,"hour":20,"minute":0}}
+{"input":"schedule tomorrow at 8 pm","output":{"kind":"datetime","dayOffset":1,"hour":20,"minute":0}}
+{"input":"remind me tomorrow at 8 pm","output":{"kind":"datetime","dayOffset":1,"hour":20,"minute":0}}
+{"input":"tomorrow at 8:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":20,"minute":0}}
+{"input":"schedule tomorrow at 8:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":20,"minute":0}}
+{"input":"remind me tomorrow at 8:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":20,"minute":0}}
+{"input":"tomorrow at 8:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":20,"minute":15}}
+{"input":"schedule tomorrow at 8:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":20,"minute":15}}
+{"input":"remind me tomorrow at 8:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":20,"minute":15}}
+{"input":"tomorrow at 8:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":20,"minute":30}}
+{"input":"schedule tomorrow at 8:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":20,"minute":30}}
+{"input":"remind me tomorrow at 8:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":20,"minute":30}}
+{"input":"tomorrow at 8:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":20,"minute":45}}
+{"input":"schedule tomorrow at 8:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":20,"minute":45}}
+{"input":"remind me tomorrow at 8:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":20,"minute":45}}
+{"input":"tomorrow at 9 am","output":{"kind":"datetime","dayOffset":1,"hour":9,"minute":0}}
+{"input":"schedule tomorrow at 9 am","output":{"kind":"datetime","dayOffset":1,"hour":9,"minute":0}}
+{"input":"remind me tomorrow at 9 am","output":{"kind":"datetime","dayOffset":1,"hour":9,"minute":0}}
+{"input":"tomorrow at 9:00 am","output":{"kind":"datetime","dayOffset":1,"hour":9,"minute":0}}
+{"input":"schedule tomorrow at 9:00 am","output":{"kind":"datetime","dayOffset":1,"hour":9,"minute":0}}
+{"input":"remind me tomorrow at 9:00 am","output":{"kind":"datetime","dayOffset":1,"hour":9,"minute":0}}
+{"input":"tomorrow at 9:15 am","output":{"kind":"datetime","dayOffset":1,"hour":9,"minute":15}}
+{"input":"schedule tomorrow at 9:15 am","output":{"kind":"datetime","dayOffset":1,"hour":9,"minute":15}}
+{"input":"remind me tomorrow at 9:15 am","output":{"kind":"datetime","dayOffset":1,"hour":9,"minute":15}}
+{"input":"tomorrow at 9:30 am","output":{"kind":"datetime","dayOffset":1,"hour":9,"minute":30}}
+{"input":"schedule tomorrow at 9:30 am","output":{"kind":"datetime","dayOffset":1,"hour":9,"minute":30}}
+{"input":"remind me tomorrow at 9:30 am","output":{"kind":"datetime","dayOffset":1,"hour":9,"minute":30}}
+{"input":"tomorrow at 9:45 am","output":{"kind":"datetime","dayOffset":1,"hour":9,"minute":45}}
+{"input":"schedule tomorrow at 9:45 am","output":{"kind":"datetime","dayOffset":1,"hour":9,"minute":45}}
+{"input":"remind me tomorrow at 9:45 am","output":{"kind":"datetime","dayOffset":1,"hour":9,"minute":45}}
+{"input":"tomorrow at 9 pm","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":0}}
+{"input":"schedule tomorrow at 9 pm","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":0}}
+{"input":"remind me tomorrow at 9 pm","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":0}}
+{"input":"tomorrow at 9:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":0}}
+{"input":"schedule tomorrow at 9:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":0}}
+{"input":"remind me tomorrow at 9:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":0}}
+{"input":"tomorrow at 9:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"schedule tomorrow at 9:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"remind me tomorrow at 9:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"tomorrow at 9:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":30}}
+{"input":"schedule tomorrow at 9:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":30}}
+{"input":"remind me tomorrow at 9:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":30}}
+{"input":"tomorrow at 9:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":45}}
+{"input":"schedule tomorrow at 9:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":45}}
+{"input":"remind me tomorrow at 9:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":45}}
+{"input":"tomorrow at 10 am","output":{"kind":"datetime","dayOffset":1,"hour":10,"minute":0}}
+{"input":"schedule tomorrow at 10 am","output":{"kind":"datetime","dayOffset":1,"hour":10,"minute":0}}
+{"input":"remind me tomorrow at 10 am","output":{"kind":"datetime","dayOffset":1,"hour":10,"minute":0}}
+{"input":"tomorrow at 10:00 am","output":{"kind":"datetime","dayOffset":1,"hour":10,"minute":0}}
+{"input":"schedule tomorrow at 10:00 am","output":{"kind":"datetime","dayOffset":1,"hour":10,"minute":0}}
+{"input":"remind me tomorrow at 10:00 am","output":{"kind":"datetime","dayOffset":1,"hour":10,"minute":0}}
+{"input":"tomorrow at 10:15 am","output":{"kind":"datetime","dayOffset":1,"hour":10,"minute":15}}
+{"input":"schedule tomorrow at 10:15 am","output":{"kind":"datetime","dayOffset":1,"hour":10,"minute":15}}
+{"input":"remind me tomorrow at 10:15 am","output":{"kind":"datetime","dayOffset":1,"hour":10,"minute":15}}
+{"input":"tomorrow at 10:30 am","output":{"kind":"datetime","dayOffset":1,"hour":10,"minute":30}}
+{"input":"schedule tomorrow at 10:30 am","output":{"kind":"datetime","dayOffset":1,"hour":10,"minute":30}}
+{"input":"remind me tomorrow at 10:30 am","output":{"kind":"datetime","dayOffset":1,"hour":10,"minute":30}}
+{"input":"tomorrow at 10:45 am","output":{"kind":"datetime","dayOffset":1,"hour":10,"minute":45}}
+{"input":"schedule tomorrow at 10:45 am","output":{"kind":"datetime","dayOffset":1,"hour":10,"minute":45}}
+{"input":"remind me tomorrow at 10:45 am","output":{"kind":"datetime","dayOffset":1,"hour":10,"minute":45}}
+{"input":"tomorrow at 10 pm","output":{"kind":"datetime","dayOffset":1,"hour":22,"minute":0}}
+{"input":"schedule tomorrow at 10 pm","output":{"kind":"datetime","dayOffset":1,"hour":22,"minute":0}}
+{"input":"remind me tomorrow at 10 pm","output":{"kind":"datetime","dayOffset":1,"hour":22,"minute":0}}
+{"input":"tomorrow at 10:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":22,"minute":0}}
+{"input":"schedule tomorrow at 10:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":22,"minute":0}}
+{"input":"remind me tomorrow at 10:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":22,"minute":0}}
+{"input":"tomorrow at 10:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":22,"minute":15}}
+{"input":"schedule tomorrow at 10:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":22,"minute":15}}
+{"input":"remind me tomorrow at 10:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":22,"minute":15}}
+{"input":"tomorrow at 10:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":22,"minute":30}}
+{"input":"schedule tomorrow at 10:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":22,"minute":30}}
+{"input":"remind me tomorrow at 10:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":22,"minute":30}}
+{"input":"tomorrow at 10:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":22,"minute":45}}
+{"input":"schedule tomorrow at 10:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":22,"minute":45}}
+{"input":"remind me tomorrow at 10:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":22,"minute":45}}
+{"input":"tomorrow at 11 am","output":{"kind":"datetime","dayOffset":1,"hour":11,"minute":0}}
+{"input":"schedule tomorrow at 11 am","output":{"kind":"datetime","dayOffset":1,"hour":11,"minute":0}}
+{"input":"remind me tomorrow at 11 am","output":{"kind":"datetime","dayOffset":1,"hour":11,"minute":0}}
+{"input":"tomorrow at 11:00 am","output":{"kind":"datetime","dayOffset":1,"hour":11,"minute":0}}
+{"input":"schedule tomorrow at 11:00 am","output":{"kind":"datetime","dayOffset":1,"hour":11,"minute":0}}
+{"input":"remind me tomorrow at 11:00 am","output":{"kind":"datetime","dayOffset":1,"hour":11,"minute":0}}
+{"input":"tomorrow at 11:15 am","output":{"kind":"datetime","dayOffset":1,"hour":11,"minute":15}}
+{"input":"schedule tomorrow at 11:15 am","output":{"kind":"datetime","dayOffset":1,"hour":11,"minute":15}}
+{"input":"remind me tomorrow at 11:15 am","output":{"kind":"datetime","dayOffset":1,"hour":11,"minute":15}}
+{"input":"tomorrow at 11:30 am","output":{"kind":"datetime","dayOffset":1,"hour":11,"minute":30}}
+{"input":"schedule tomorrow at 11:30 am","output":{"kind":"datetime","dayOffset":1,"hour":11,"minute":30}}
+{"input":"remind me tomorrow at 11:30 am","output":{"kind":"datetime","dayOffset":1,"hour":11,"minute":30}}
+{"input":"tomorrow at 11:45 am","output":{"kind":"datetime","dayOffset":1,"hour":11,"minute":45}}
+{"input":"schedule tomorrow at 11:45 am","output":{"kind":"datetime","dayOffset":1,"hour":11,"minute":45}}
+{"input":"remind me tomorrow at 11:45 am","output":{"kind":"datetime","dayOffset":1,"hour":11,"minute":45}}
+{"input":"tomorrow at 11 pm","output":{"kind":"datetime","dayOffset":1,"hour":23,"minute":0}}
+{"input":"schedule tomorrow at 11 pm","output":{"kind":"datetime","dayOffset":1,"hour":23,"minute":0}}
+{"input":"remind me tomorrow at 11 pm","output":{"kind":"datetime","dayOffset":1,"hour":23,"minute":0}}
+{"input":"tomorrow at 11:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":23,"minute":0}}
+{"input":"schedule tomorrow at 11:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":23,"minute":0}}
+{"input":"remind me tomorrow at 11:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":23,"minute":0}}
+{"input":"tomorrow at 11:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":23,"minute":15}}
+{"input":"schedule tomorrow at 11:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":23,"minute":15}}
+{"input":"remind me tomorrow at 11:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":23,"minute":15}}
+{"input":"tomorrow at 11:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":23,"minute":30}}
+{"input":"schedule tomorrow at 11:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":23,"minute":30}}
+{"input":"remind me tomorrow at 11:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":23,"minute":30}}
+{"input":"tomorrow at 11:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":23,"minute":45}}
+{"input":"schedule tomorrow at 11:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":23,"minute":45}}
+{"input":"remind me tomorrow at 11:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":23,"minute":45}}
+{"input":"tomorrow at 12 am","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":0}}
+{"input":"schedule tomorrow at 12 am","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":0}}
+{"input":"remind me tomorrow at 12 am","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":0}}
+{"input":"tomorrow at 12:00 am","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":0}}
+{"input":"schedule tomorrow at 12:00 am","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":0}}
+{"input":"remind me tomorrow at 12:00 am","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":0}}
+{"input":"tomorrow at 12:15 am","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":15}}
+{"input":"schedule tomorrow at 12:15 am","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":15}}
+{"input":"remind me tomorrow at 12:15 am","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":15}}
+{"input":"tomorrow at 12:30 am","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":30}}
+{"input":"schedule tomorrow at 12:30 am","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":30}}
+{"input":"remind me tomorrow at 12:30 am","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":30}}
+{"input":"tomorrow at 12:45 am","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":45}}
+{"input":"schedule tomorrow at 12:45 am","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":45}}
+{"input":"remind me tomorrow at 12:45 am","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":45}}
+{"input":"tomorrow at 12 pm","output":{"kind":"datetime","dayOffset":1,"hour":12,"minute":0}}
+{"input":"schedule tomorrow at 12 pm","output":{"kind":"datetime","dayOffset":1,"hour":12,"minute":0}}
+{"input":"remind me tomorrow at 12 pm","output":{"kind":"datetime","dayOffset":1,"hour":12,"minute":0}}
+{"input":"tomorrow at 12:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":12,"minute":0}}
+{"input":"schedule tomorrow at 12:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":12,"minute":0}}
+{"input":"remind me tomorrow at 12:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":12,"minute":0}}
+{"input":"tomorrow at 12:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":12,"minute":15}}
+{"input":"schedule tomorrow at 12:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":12,"minute":15}}
+{"input":"remind me tomorrow at 12:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":12,"minute":15}}
+{"input":"tomorrow at 12:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":12,"minute":30}}
+{"input":"schedule tomorrow at 12:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":12,"minute":30}}
+{"input":"remind me tomorrow at 12:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":12,"minute":30}}
+{"input":"tomorrow at 12:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":12,"minute":45}}
+{"input":"schedule tomorrow at 12:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":12,"minute":45}}
+{"input":"remind me tomorrow at 12:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":12,"minute":45}}
+{"input":"tomorrow at 0:00","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":0}}
+{"input":"tomorrow at 0:15","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":15}}
+{"input":"tomorrow at 0:30","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":30}}
+{"input":"tomorrow at 7:00","output":{"kind":"datetime","dayOffset":1,"hour":7,"minute":0}}
+{"input":"tomorrow at 7:15","output":{"kind":"datetime","dayOffset":1,"hour":7,"minute":15}}
+{"input":"tomorrow at 7:30","output":{"kind":"datetime","dayOffset":1,"hour":7,"minute":30}}
+{"input":"tomorrow at 13:00","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":0}}
+{"input":"tomorrow at 13:15","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":15}}
+{"input":"tomorrow at 13:30","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":30}}
+{"input":"tomorrow at 16:00","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":0}}
+{"input":"tomorrow at 16:15","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":15}}
+{"input":"tomorrow at 16:30","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":30}}
+{"input":"tomorrow at 18:00","output":{"kind":"datetime","dayOffset":1,"hour":18,"minute":0}}
+{"input":"tomorrow at 18:15","output":{"kind":"datetime","dayOffset":1,"hour":18,"minute":15}}
+{"input":"tomorrow at 18:30","output":{"kind":"datetime","dayOffset":1,"hour":18,"minute":30}}
+{"input":"tomorrow at 21:00","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":0}}
+{"input":"tomorrow at 21:15","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"tomorrow at 21:30","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":30}}
+{"input":"tomorrow at 23:00","output":{"kind":"datetime","dayOffset":1,"hour":23,"minute":0}}
+{"input":"tomorrow at 23:15","output":{"kind":"datetime","dayOffset":1,"hour":23,"minute":15}}
+{"input":"tomorrow at 23:30","output":{"kind":"datetime","dayOffset":1,"hour":23,"minute":30}}

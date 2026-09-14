@@ -1,65 +1,48 @@
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import Markdown from "react-markdown";
-import remarkGfm from "remark-gfm";
 import { SiteHeader, SiteFooter } from "@/site";
-import { documents, navigation, documentLink } from "./documents";
+import { documents } from "./documents";
+import { DocsNavigation } from "./docs-navigation";
+import { DocsMarkdown } from "./docs-markdown";
+import { headings } from "./headings";
 export function DocsApp() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   const slug = decodeURI(pathname.slice(6)) || "getting-started";
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    document.title = `${documents[slug]?.match(/^# (.+)/m)?.[1] ?? "Documentation"} · Matchbox`;
-  }, [slug]);
   const source = documents[slug];
+  useEffect(() => {
+    document.title = `${source?.match(/^# (.+)/m)?.[1] ?? "Documentation"} · Matchbox`;
+    if (hash) document.getElementById(decodeURIComponent(hash.slice(1)))?.scrollIntoView();
+    else window.scrollTo(0, 0);
+  }, [slug, hash, source]);
   return (
     <div className="workspace docs-workspace">
       <SiteHeader />
       <div className="docs-layout">
         <aside>
-          <nav aria-label="Documentation">
-            {navigation.map(([group, pages]) => (
-              <div key={group}>
-                <p>{group}</p>
-                {pages.map(([path, title]) => (
-                  <Link
-                    key={path}
-                    to={`/docs/${path}`}
-                    aria-current={slug === path ? "page" : undefined}
-                  >
-                    {title}
-                  </Link>
-                ))}
-              </div>
-            ))}
-          </nav>
+          <DocsNavigation slug={slug} />
         </aside>
         <main className="doc-content">
           {source ? (
             <>
-              <p className="eyebrow">Matchbox documentation</p>
-              <Markdown
-                remarkPlugins={[remarkGfm]}
-                components={{
-                  a: ({ href, children }) => {
-                    const target = documentLink(href, slug);
-                    return target?.startsWith("/docs/") ? (
-                      <Link to={target}>{children}</Link>
-                    ) : (
-                      <a href={target}>{children}</a>
-                    );
-                  },
-                }}
-              >
-                {source}
-              </Markdown>
-              <p className="doc-source">These guides also ship with the Matchbox packages.</p>
+              {headings(source).length > 1 && (
+                <details className="doc-outline">
+                  <summary>On this page</summary>
+                  <nav aria-label="On this page">
+                    {headings(source).map((heading) => (
+                      <Link key={heading.id} to={`#${heading.id}`}>
+                        {heading.title}
+                      </Link>
+                    ))}
+                  </nav>
+                </details>
+              )}
+              <DocsMarkdown source={source} slug={slug} />
             </>
           ) : (
             <>
               <h1>Page not found.</h1>
               <p>
-                <a href="/docs/getting-started">Go to getting started.</a>
+                <Link to="/docs/getting-started">Go to getting started.</Link>
               </p>
             </>
           )}

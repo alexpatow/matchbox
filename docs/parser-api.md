@@ -13,9 +13,6 @@ const task = defineParser({
     minimum: z.number().nonnegative(),
     owner: z.string().nullable().optional(),
   }),
-  fields: {
-    minimum: { type: "money", aliases: ["ARR"] },
-  },
 });
 
 type Output = InferOutput<typeof task>;
@@ -34,7 +31,21 @@ const metadata = task.toJSON();
 const serialized = JSON.stringify(task); // Uses the same metadata representation.
 ```
 
-Validation returns a discriminated `ValidationResult<T>`. Invalid task definitions throw `TypeError` at definition time with a schema path. Invalid example values return issues rather than being silently normalized. There is no `parse(text)` inference method yet.
+Validation returns a discriminated `ValidationResult<T>`. Invalid task definitions throw `TypeError` at definition time with a schema path. Invalid example values return issues rather than being silently normalized. The task definition has no inference method; call `parse` on the generated model instead.
+
+## Arguments and return value
+
+`defineParser(config: ParserConfig<Output>): ParserDefinition<Output>` is exported from `@matchbox-ai/core`.
+
+| Argument | Required | Contract                                              |
+| -------- | -------- | ----------------------------------------------------- |
+| `input`  | Yes.     | `z.ZodString`, with supported constraints.            |
+| `output` | Yes.     | A supported structured Zod schema.                    |
+| `fields` | No.      | `Record<string, FieldMetadata>`; inert metadata only. |
+
+`FieldMetadata` has optional `type: string`, `aliases: readonly string[]`, and `description: string`. Metadata never enables money parsing or other domain behavior.
+
+The result exposes `kind: "parser"`, `input`, `output`, `validateInput(unknown)`, `validateOutput(unknown)`, and `toJSON()`. Validation returns `{ success: true, data }` or `{ success: false, issues }`, where every `ValidationIssue` has `code`, `path`, and `message`. `InferOutput<typeof task>` derives the validated output type. `ParserMetadata` is the detached JSON representation shown below.
 
 ## Supported schemas
 
@@ -70,17 +81,6 @@ The serialized definition contains:
 
 Metadata is captured at definition time. Every `toJSON()` call returns a detached copy. Treat the supplied Zod schemas as immutable after definition; use Zod's schema-building methods to create a new task when its contract changes.
 
-The format version identifies Matchbox's metadata representation, not a model or dataset version. A future loader must reject unsupported versions. This ticket provides serialization only; it does not reconstruct executable validators from JSON.
+The format version identifies Matchbox's metadata representation, not a model or dataset version. Artifact loading rejects unsupported format versions. The generated wrapper imports the authored task to validate model output.
 
 Zod's global metadata registry is intentionally excluded. `.meta()` must not override structural keywords or inject values that are not JSON. Descriptions, aliases, and semantic types belong in the optional `fields` object for now. Those hints are inert, copied JSON. Matchbox does not infer a field-to-output mapping or normalize money/countries from their names.
-
-## Dependency boundary
-
-Zod 4.6.3 is an explicit, pinned core dependency and is external to the Rolldown bundle. The API uses a small isolated portion of Zod Core's schema/check definitions to reject unsupported behavior before JSON conversion. Zod upgrades must run the contract suite, including negative cases.
-
-Validation uses Zod's non-JIT path. The browser smoke check exercises definition, validation, and metadata serialization through the built package. This is the task-authoring API; its dependency size is not a claim about the future generated inference runtime.
-
-## References
-
-- [Zod JSON Schema conversion](https://zod.dev/json-schema) documents representable schemas and conversion controls.
-- [Zod Core](https://zod.dev/packages/core) documents schema and check introspection.

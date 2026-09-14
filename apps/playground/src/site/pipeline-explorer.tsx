@@ -1,34 +1,16 @@
+import { FileCode, FileJson, Folder } from "lucide-react";
 import { useState } from "react";
 import { highlight } from "sugar-high";
-import parser from "../../../../examples/money/matchbox/money/parser.ts?raw";
-import pipeline from "../../../../examples/money/matchbox/money/pipeline.ts?raw";
-const files = [
-  { name: "parser.ts", description: "Your schema defines a strict output contract.", code: parser },
-  {
-    name: "pipeline.ts",
-    description:
-      "The model learns token labels. The authored recipe supplies supervision, and the decoder turns recognized spans into values.",
-    code: pipeline,
-  },
-  {
-    name: "data/train.jsonl",
-    description: "Examples teach the behavior. Keep evaluation examples separate.",
-    code: '{"input":"twenty dollars","output":{"amount":20,"currency":"USD","approximate":false}}',
-  },
-  {
-    name: "app.ts",
-    description:
-      "Import the generated artifact through the Vite plugin. Handle a validated answer or uncertainty.",
-    code: 'import money from "./.matchbox/money/model.matchbox";\n\nconst result = await money.parse("twenty dollars");\n\nif (result.status === "ok") {\n  console.log(result.value);\n} else {\n  // Ask, preview, or fall back.\n  console.log(result.reason);\n}',
-  },
-];
+import { files } from "./pipeline-example";
 export function PipelineExplorer() {
   const [selected, setSelected] = useState(0);
   const file = files[selected]!;
   return (
     <div className="pipeline-explorer">
       <div className="file-tree">
-        <span className="folder-name">⌑ matchbox/money</span>
+        <span className="folder-name">
+          <Folder className="site-icon" aria-hidden="true" /> matchbox/money
+        </span>
         <div role="tablist" aria-label="Example files" aria-orientation="vertical">
           {files.map((entry, index) => (
             <button
@@ -49,7 +31,11 @@ export function PipelineExplorer() {
                 }
               }}
             >
-              <span aria-hidden="true">{index === 2 ? "{}" : "TS"}</span>
+              {/\.jsonl?$/.test(entry.name) ? (
+                <FileJson className="site-icon" aria-hidden="true" />
+              ) : (
+                <FileCode className="site-icon" aria-hidden="true" />
+              )}
               {entry.name}
             </button>
           ))}
@@ -58,7 +44,6 @@ export function PipelineExplorer() {
       <div role="tabpanel" id="file-panel" aria-labelledby={`file-${selected}`} tabIndex={0}>
         <div className="file-caption">
           <span>{file.name}</span>
-          <span>TypeScript → browser</span>
         </div>
         <pre>
           <code dangerouslySetInnerHTML={{ __html: highlight(file.code) }} />

@@ -15,24 +15,48 @@ export const navigation = [
     [
       ["getting-started", "Getting started"],
       ["project-structure", "Project structure"],
-      ["pipelines", "Training pipelines"],
     ],
   ],
   [
-    "Build and ship",
+    "Training",
     [
-      ["evaluation", "Evaluation"],
-      ["runtime-backends", "Browser runtime"],
+      ["training", "Train a model"],
+      ["pipelines", "Choose a pipeline"],
+      ["dataset-format", "Prepare datasets"],
+      ["reference/pipeline", "Pipeline API"],
+      ["reference/supervision", "Tokens & decoders"],
+      ["reference/training", "train API"],
+    ],
+  ],
+  [
+    "Evaluating",
+    [
+      ["evaluation", "Evaluate a model"],
+      ["reference/evaluation", "evaluate API"],
+    ],
+  ],
+  [
+    "Use in your app",
+    [
+      ["reference/runtime", "Parser runtime"],
       ["react", "React integration"],
-      ["cli", "CLI reference"],
+      ["reference/vite", "Vite plugin"],
+    ],
+  ],
+  [
+    "Examples",
+    [
+      ["examples/money", "Money"],
+      ["examples/time", "Date, time & duration"],
     ],
   ],
   [
     "Reference",
     [
-      ["parser-api", "Parser definition"],
-      ["dataset-format", "Datasets"],
-      ["primitives/README", "Training primitives"],
+      ["reference/README", "All exports"],
+      ["parser-api", "defineParser"],
+      ["reference/configuration", "Configuration"],
+      ["cli", "CLI commands & options"],
     ],
   ],
 ] as const;

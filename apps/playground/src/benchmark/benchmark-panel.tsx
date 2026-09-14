@@ -1,3 +1,4 @@
+import { LoaderCircle, Play } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { BenchmarkResults } from "./benchmark-results";
@@ -42,9 +43,11 @@ export function BenchmarkPanel({ run, ready, buttonLabel, testId, featured = fal
             }
           }}
         >
-          <span className="benchmark-icon" aria-hidden="true">
-            {running ? "◌" : "▷"}
-          </span>
+          {running ? (
+            <LoaderCircle className="site-icon benchmark-icon icon-spin" aria-hidden="true" />
+          ) : (
+            <Play className="site-icon benchmark-icon" aria-hidden="true" />
+          )}
           {running ? "Measuring…" : buttonLabel}
         </Button>
       </div>

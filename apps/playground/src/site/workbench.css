@@ -45,7 +45,9 @@
   padding: 25px 16px;
 }
 .folder-name {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   color: #a3a3a3;
   font-size: 12px;
   font-family: "Geist Mono Variable", monospace;
@@ -70,10 +72,9 @@
 .file-tree button:hover {
   color: #eee;
 }
-.file-tree button span {
+.file-tree button .site-icon {
   color: #7d9dba;
-  font-size: 10px;
-  padding-right: 12px;
+  margin-right: 10px;
 }
 .file-tree p {
   font-size: 11px;
@@ -161,9 +162,6 @@
     width: auto;
     font-size: 11px;
     padding: 9px;
-  }
-  .file-tree button span {
-    display: none;
   }
   .file-tree p {
     display: none;

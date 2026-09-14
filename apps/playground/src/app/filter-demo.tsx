@@ -42,11 +42,8 @@ export function FilterDemo() {
   return (
     <section id="demo" className="demo" aria-labelledby="demo-title">
       <div className="section-heading">
-        <h2 id="demo-title">Try a model trained to filter customers.</h2>
-        <p>
-          This example turns a query into validated filters while you type. Inference runs entirely
-          on your device.
-        </p>
+        <h2 id="demo-title">Customer filters</h2>
+        <p>Type a query to filter the table locally.</p>
       </div>
       <section className="query-section" aria-labelledby="query-label">
         <label id="query-label" htmlFor="query">

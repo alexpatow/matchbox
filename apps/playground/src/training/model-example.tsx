@@ -8,11 +8,12 @@ import type { ExampleLoader, TrainingReport } from "./types.js";
 interface Props {
   name: string;
   title: string;
+  inputLabel: string;
   description: string;
   suggestions: string[];
   load: ExampleLoader;
 }
-export function ModelExample({ name, title, description, suggestions, load }: Props) {
+export function ModelExample({ name, title, inputLabel, description, suggestions, load }: Props) {
   const { parse, status, error } = useMatchbox(load);
   const [query, setQuery] = useState(suggestions[0]!);
   const [result, setResult] = useState<ParseResult<unknown> | null>(null);
@@ -61,9 +62,7 @@ export function ModelExample({ name, title, description, suggestions, load }: Pr
           examples
         </p>
       )}
-      <label htmlFor={name}>
-        {name.startsWith("money") ? "Parse a money expression" : "Classify a digit string"}
-      </label>
+      <label htmlFor={name}>{inputLabel}</label>
       <input
         id={name}
         value={query}

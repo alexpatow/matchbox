@@ -1,0 +1,42 @@
+[
+  {
+    "input": "next Friday at noon",
+    "output": null
+  },
+  {
+    "input": "sometime soon",
+    "output": null
+  },
+  {
+    "input": "tomorrow at 25:00",
+    "output": null
+  },
+  {
+    "input": "in -5 minutes",
+    "output": null
+  },
+  {
+    "input": "for 2 months",
+    "output": null
+  },
+  {
+    "input": "today or tomorrow at 3 pm",
+    "output": null
+  },
+  {
+    "input": "in 999 days",
+    "output": null
+  },
+  {
+    "input": "today at 3:75 pm",
+    "output": null
+  },
+  {
+    "input": "for one hour or two hours",
+    "output": null
+  },
+  {
+    "input": "tomorrow at 0 pm",
+    "output": null
+  }
+]
