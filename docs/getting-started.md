@@ -79,4 +79,4 @@ The blank template uses a finite field classifier and empty datasets. Define you
 
 Generated models are ignored by Git. Train before your app build, for example `bunx matchbox-ai train money && npm run build`, or restore a previously evaluated artifact together with its matching schema and decoder.
 
-Continue with [CLI commands](cli.md), [API reference](reference/README.md), or [project configuration](reference/configuration.md).
+Continue with [Training](training.md), [Evaluating](evaluation.md), [CLI commands](cli.md), [API reference](reference/README.md), or [project configuration](reference/configuration.md).

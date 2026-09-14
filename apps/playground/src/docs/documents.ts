@@ -15,8 +15,32 @@ export const navigation = [
     [
       ["getting-started", "Getting started"],
       ["project-structure", "Project structure"],
+    ],
+  ],
+  [
+    "Training",
+    [
+      ["training", "Train a model"],
       ["pipelines", "Choose a pipeline"],
+      ["dataset-format", "Prepare datasets"],
+      ["reference/pipeline", "Pipeline API"],
+      ["reference/supervision", "Tokens & decoders"],
+      ["reference/training", "train API"],
+    ],
+  ],
+  [
+    "Evaluating",
+    [
       ["evaluation", "Evaluate a model"],
+      ["reference/evaluation", "evaluate API"],
+    ],
+  ],
+  [
+    "Use in your app",
+    [
+      ["reference/runtime", "Parser runtime"],
+      ["react", "React integration"],
+      ["reference/vite", "Vite plugin"],
     ],
   ],
   [
@@ -27,21 +51,14 @@ export const navigation = [
     ],
   ],
   [
-    "API reference",
+    "Reference",
     [
       ["reference/README", "All exports"],
       ["parser-api", "defineParser"],
-      ["dataset-format", "parseDatasets"],
-      ["reference/pipeline", "Pipeline API"],
-      ["reference/supervision", "Tokens & decoders"],
-      ["reference/training", "train & evaluate"],
-      ["reference/runtime", "Parser runtime"],
-      ["react", "useMatchbox"],
-      ["reference/vite", "Vite plugin"],
       ["reference/configuration", "Configuration"],
+      ["cli", "CLI commands & options"],
     ],
   ],
-  ["CLI", [["cli", "Commands & options"]]],
 ] as const;
 export function documentLink(href: string | undefined, slug: string) {
   if (!href || /^(https?:|#|\/)/.test(href)) return href;

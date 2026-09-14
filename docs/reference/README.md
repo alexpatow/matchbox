@@ -13,7 +13,8 @@ The examples use these public exports. Each page lists imports, arguments, retur
 | `@matchbox-ai/core/vite`     | `matchbox`                                                                       | [Vite](vite.md)                                     |
 | `@matchbox-ai/train`         | `definePipeline`, `Pipeline`, `wordTokens`, `fieldClassifier`, `tokenClassifier` | [Pipeline API](pipeline.md)                         |
 | `@matchbox-ai/train`         | `SequenceRecipe`, `OutputDecoder`, `tokenize`                                    | [Token supervision](supervision.md)                 |
-| `@matchbox-ai/train`         | `train`, `evaluate`, `TrainingConfig`                                            | [Training API](training.md)                         |
+| `@matchbox-ai/train`         | `train`, `TrainingConfig`                                                        | [Training API](training.md)                         |
+| `@matchbox-ai/train`         | `evaluate`                                                                       | [Evaluation API](evaluation.md)                     |
 | `@matchbox-ai/train/project` | `discover`, `loadConfig`, `loadArtifact`                                         | [Project tooling](configuration.md#project-tooling) |
 | `matchbox-ai`                | Eight CLI commands                                                               | [CLI reference](../cli.md)                          |
 

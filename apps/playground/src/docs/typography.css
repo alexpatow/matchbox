@@ -1,0 +1,75 @@
+.doc-content {
+  min-width: 0;
+  font-size: 15px;
+  line-height: 1.8;
+}
+.doc-content > :where(p, ul, ol, pre, table, blockquote) {
+  margin: 0 0 24px;
+}
+.doc-content h1 {
+  font-size: 42px;
+  margin: 24px 0 30px;
+}
+.doc-content h2 {
+  font-size: 24px;
+  letter-spacing: -0.03em;
+  margin: 44px 0 16px;
+  scroll-margin-top: 24px;
+}
+.doc-content h3 {
+  font-size: 17px;
+  margin: 32px 0 12px;
+  scroll-margin-top: 24px;
+}
+.doc-content pre {
+  line-height: 1.8;
+}
+.doc-content :not(pre) > code {
+  background: #222;
+  padding: 2px 4px;
+  font-size: 0.85em;
+  overflow-wrap: anywhere;
+  color: #c3c3c3;
+}
+.doc-content p,
+.doc-content li {
+  color: #a0a0a0;
+}
+.doc-content ul {
+  list-style: disc;
+  padding-left: 24px;
+}
+.doc-content ol {
+  list-style: decimal;
+  padding-left: 24px;
+}
+.doc-content li + li {
+  margin-top: 8px;
+}
+.doc-content li > :where(p, ul, ol) {
+  margin: 8px 0;
+}
+.doc-content blockquote {
+  padding-left: 20px;
+  border-left: 2px solid var(--border);
+}
+.doc-content blockquote p + p {
+  margin-top: 16px;
+}
+.doc-content table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: normal;
+}
+.doc-content table th,
+.doc-content table td {
+  min-width: 120px;
+  white-space: normal;
+  vertical-align: top;
+  text-align: left;
+}
+.doc-content hr {
+  margin: 32px 0;
+  border-color: var(--border);
+}
