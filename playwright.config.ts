@@ -3,6 +3,8 @@ import { defineConfig, devices } from "@playwright/test";
 export default defineConfig({
   testDir: "./browser-tests",
   fullyParallel: true,
+  // Workbench tests train native models. Avoid competing for the CI runner's CPU.
+  workers: process.env.CI ? 1 : undefined,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
   reporter: "list",
@@ -13,10 +15,13 @@ export default defineConfig({
   ],
   webServer: [
     {
-      command: "bun run build && bun run preview",
+      command:
+        process.env.MATCHBOX_PREBUILT === "1"
+          ? "bun run preview"
+          : "bun run build && bun run preview",
       url: "http://127.0.0.1:4173",
       reuseExistingServer: false,
-      timeout: 180_000,
+      timeout: 360_000,
     },
     {
       command: "bun run --filter @matchbox-ai/benchmarks preview",
