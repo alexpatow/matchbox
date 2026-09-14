@@ -52,11 +52,7 @@
   opacity: 0.45;
 }
 .benchmark-run .benchmark-icon {
-  display: inline-block;
   margin-right: 8px;
-  vertical-align: -1px;
-  font-size: 18px;
-  line-height: 1;
 }
 .benchmark-empty {
   min-height: 148px;

@@ -1,3 +1,4 @@
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { MatchboxArt } from "./matchbox-art";
 export function Hero() {
@@ -17,15 +18,17 @@ export function Hero() {
         </p>
         <div className="hero-actions">
           <Link className="action-link" to="/docs/getting-started">
-            Get started <span aria-hidden="true">↗</span>
+            Get started <ArrowUpRight className="site-icon" aria-hidden="true" />
           </Link>
           <a href="#demo">
-            Try a model <span aria-hidden="true">↓</span>
+            Try a model <ArrowDown className="site-icon" aria-hidden="true" />
           </a>
         </div>
       </div>
       <div className="hero-bottom">
-        <a href="#benchmark">Benchmark your browser ↗</a>
+        <a href="#benchmark">
+          Benchmark your browser <ArrowUpRight className="site-icon" aria-hidden="true" />
+        </a>
         <code>const result = await model.parse(input)</code>
       </div>
     </section>

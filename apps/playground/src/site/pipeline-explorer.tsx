@@ -1,3 +1,4 @@
+import { FileCode, FileJson, Folder } from "lucide-react";
 import { useState } from "react";
 import { highlight } from "sugar-high";
 import parser from "../../../../examples/money/matchbox/money/parser.ts?raw";
@@ -26,7 +27,9 @@ export function PipelineExplorer() {
   return (
     <div className="pipeline-explorer">
       <div className="file-tree">
-        <span className="folder-name">⌑ matchbox/money</span>
+        <span className="folder-name">
+          <Folder className="site-icon" aria-hidden="true" /> matchbox/money
+        </span>
         <div role="tablist" aria-label="Example files" aria-orientation="vertical">
           {files.map((entry, index) => (
             <button
@@ -47,7 +50,11 @@ export function PipelineExplorer() {
                 }
               }}
             >
-              <span aria-hidden="true">{index === 2 ? "{}" : "TS"}</span>
+              {index === 2 ? (
+                <FileJson className="site-icon" aria-hidden="true" />
+              ) : (
+                <FileCode className="site-icon" aria-hidden="true" />
+              )}
               {entry.name}
             </button>
           ))}
