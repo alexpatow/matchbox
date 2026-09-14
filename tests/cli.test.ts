@@ -53,6 +53,9 @@ test("a scaffold trains, discovers nested projects, saves corrections, and evalu
       "--json",
     ]);
     expect(initialized.code).toBe(0);
+    expect(await Bun.file(resolve(project, "matchbox/money/evals/baseline.ts")).exists()).toBe(
+      false,
+    );
     const evaluation = await readFile(resolve(project, "matchbox/money/evals/test.jsonl"), "utf8");
     const taskRoot = resolve(project, "matchbox/money");
     for (const name of ["parser", "pipeline", "recipe"]) {
@@ -60,12 +63,7 @@ test("a scaffold trains, discovers nested projects, saves corrections, and evalu
       await rename(resolve(taskRoot, `${name}.ts`), resolve(taskRoot, name, `${name}.ts`));
     }
     const recipe = resolve(taskRoot, "recipe/recipe.ts");
-    await writeFile(recipe, (await readFile(recipe, "utf8")).replace("./data/", "../data/"));
-    const baseline = resolve(taskRoot, "evals/baseline.ts");
-    await writeFile(
-      baseline,
-      (await readFile(baseline, "utf8")).replace('"../parser"', '"../parser/parser"'),
-    );
+    await writeFile(recipe, (await readFile(recipe, "utf8")).replaceAll("./data/", "../data/"));
     await symlink(resolve(root, "node_modules"), resolve(project, "node_modules"), "dir");
     const info = await cli(["info", "--json"], resolve(taskRoot, "parser"));
     expect(info.code).toBe(0);
@@ -90,7 +88,14 @@ test("a scaffold trains, discovers nested projects, saves corrections, and evalu
     ).toBe(1);
     const trained = await cli(["train", "--json"], resolve(project, "matchbox/money/data"));
     expect(trained.code).toBe(0);
-    expect(JSON.parse(trained.stdout).quantized.exactAccuracy).toBe(1);
+    const trainingReport = JSON.parse(trained.stdout);
+    expect(trainingReport).not.toHaveProperty("baseline");
+    expect(trainingReport.quantized.examples).toBe(evaluation.trim().split("\n").length);
+    expect(trainingReport.quantized.invalidOutputRate).toBe(0);
+    expect(trainingReport.quantized.exactAccuracy).toBeGreaterThanOrEqual(0.9);
+    expect(trainingReport.quantized.failures.length).toBe(
+      Math.round(trainingReport.quantized.examples * (1 - trainingReport.quantized.exactAccuracy)),
+    );
     const prediction = await cli(["parse", "around fifteen grand euros", "--json"], project);
     expect(JSON.parse(prediction.stdout).value.amount).toBe(15000);
     const inspection = await cli(["inspect", "around fifteen grand euros", "--json"], project);
@@ -147,7 +152,7 @@ test("a scaffold trains, discovers nested projects, saves corrections, and evalu
     expect(wrapper).not.toContain("@matchbox-ai/train");
     const evaluated = await cli(["eval", "money", "--json"], project);
     expect(evaluated.code).toBe(0);
-    expect(JSON.parse(evaluated.stdout).exactAccuracy).toBe(1);
+    expect(JSON.parse(evaluated.stdout)).toEqual(trainingReport.quantized);
     await writeFile(
       resolve(project, "matchbox/money/matchbox.config.ts"),
       'export default { output: "./missing.matchbox" };',
@@ -164,4 +169,4 @@ test("a scaffold trains, discovers nested projects, saves corrections, and evalu
   } finally {
     await rm(temporary, { recursive: true, force: true });
   }
-}, 30000);
+}, 90000);

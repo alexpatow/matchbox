@@ -7,8 +7,8 @@ import { customers, matchesFilter, loadFilters, benchmark, type Filter } from "@
 import { CustomerTable } from "./customer-table";
 import { FilterChips } from "./filter-chips";
 const suggestions = [
-  "active customers and Swedish customers and ARR over 50k",
-  "German customers or Swedish customers",
+  "active Swedish customers over 50k ARR",
+  "German or Swedish customers under 50k except churned ones",
   "ARR at least 75k and not churned",
 ];
 export function FilterDemo() {
@@ -58,7 +58,7 @@ export function FilterDemo() {
           autoComplete="off"
         />
         <p id="query-help">
-          Join clauses with “and” or “or”. Dates and implicit joins are not supported yet.
+          Combine status, country alternatives and ARR comparisons. Dates are not supported.
         </p>
         <div className="suggestions">
           {suggestions.map((suggestion) => (
@@ -81,7 +81,7 @@ export function FilterDemo() {
                 : !result
                   ? "Parsing…"
                   : result.status === "ok"
-                    ? `Parsed locally. Confidence score: ${result.confidence.toFixed(2)}.`
+                    ? `Parsed locally. Recognition score: ${result.confidence.toFixed(2)}.`
                     : "Uncertain. Try a supported example. All customers are shown.")}
         </output>
         {result?.status === "ok" && <FilterChips filter={result.value} />}
@@ -101,7 +101,9 @@ export function FilterDemo() {
             {result ? JSON.stringify(result, null, 2) : "Your validated output will appear here."}
           </code>
         </pre>
-        <p>Confidence is an uncalibrated model score.</p>
+        <p>
+          Recognition scores are uncalibrated. A high score does not guarantee the intended query.
+        </p>
       </details>
       <BenchmarkPanel
         run={benchmark}

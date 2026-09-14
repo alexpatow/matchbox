@@ -26,7 +26,10 @@ export function createSequenceParser<Output extends z.ZodType>(
       if (!task.validateInput(input).success || input.length > 512)
         return uncertain("Input does not satisfy the supported input limits.");
       const tokens = predict(input);
-      if (!tokens.length || tokens.some((token) => !vocabulary.has(token.key)))
+      if (
+        !tokens.length ||
+        (model.unknownTokens === "abstain" && tokens.some((token) => !vocabulary.has(token.key)))
+      )
         return uncertain("The model has insufficient training coverage to answer confidently.");
       // Only positions supervised by the recipe contribute to the acceptance score.
       const relevant = model.readout === "last" ? tokens.slice(-1) : tokens;

@@ -1,0 +1,219 @@
+[
+  {
+    "slice": "implicit",
+    "input": "active French customers over 65k ARR",
+    "output": {
+      "and": [
+        {
+          "field": "status",
+          "operator": "eq",
+          "value": "active"
+        },
+        {
+          "field": "country",
+          "operator": "eq",
+          "value": "FR"
+        },
+        {
+          "field": "arr",
+          "operator": "gt",
+          "value": 65000
+        }
+      ]
+    }
+  },
+  {
+    "slice": "implicit",
+    "input": "inactive German customers under 28k ARR",
+    "output": {
+      "and": [
+        {
+          "field": "status",
+          "operator": "eq",
+          "value": "inactive"
+        },
+        {
+          "field": "country",
+          "operator": "eq",
+          "value": "DE"
+        },
+        {
+          "field": "arr",
+          "operator": "lt",
+          "value": 28000
+        }
+      ]
+    }
+  },
+  {
+    "slice": "implicit",
+    "input": "Swedish customers above 37k ARR",
+    "output": {
+      "and": [
+        {
+          "field": "country",
+          "operator": "eq",
+          "value": "SE"
+        },
+        {
+          "field": "arr",
+          "operator": "gt",
+          "value": 37000
+        }
+      ]
+    }
+  },
+  {
+    "slice": "negation",
+    "input": "not active Swedish customers",
+    "output": {
+      "and": [
+        {
+          "field": "status",
+          "operator": "neq",
+          "value": "active"
+        },
+        {
+          "field": "country",
+          "operator": "eq",
+          "value": "SE"
+        }
+      ]
+    }
+  },
+  {
+    "slice": "composition",
+    "input": "German or French customers under 64k except churned ones",
+    "output": {
+      "or": [
+        {
+          "and": [
+            {
+              "field": "country",
+              "operator": "eq",
+              "value": "DE"
+            },
+            {
+              "field": "status",
+              "operator": "neq",
+              "value": "churned"
+            },
+            {
+              "field": "arr",
+              "operator": "lt",
+              "value": 64000
+            }
+          ]
+        },
+        {
+          "and": [
+            {
+              "field": "country",
+              "operator": "eq",
+              "value": "FR"
+            },
+            {
+              "field": "status",
+              "operator": "neq",
+              "value": "churned"
+            },
+            {
+              "field": "arr",
+              "operator": "lt",
+              "value": 64000
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "slice": "composition",
+    "input": "please show active and German customers and ARR at least 38k",
+    "output": {
+      "and": [
+        {
+          "field": "status",
+          "operator": "eq",
+          "value": "active"
+        },
+        {
+          "field": "country",
+          "operator": "eq",
+          "value": "DE"
+        },
+        {
+          "field": "arr",
+          "operator": "gte",
+          "value": 38000
+        }
+      ]
+    }
+  },
+  {
+    "slice": "unfamiliar-context",
+    "input": "give me customers from Sweden",
+    "output": {
+      "field": "country",
+      "operator": "eq",
+      "value": "SE"
+    }
+  },
+  {
+    "slice": "unfamiliar-context",
+    "input": "show accounts with revenue above 43k",
+    "output": {
+      "field": "arr",
+      "operator": "gt",
+      "value": 43000
+    }
+  },
+  {
+    "slice": "unfamiliar-context",
+    "input": "hide the churned customers",
+    "output": {
+      "field": "status",
+      "operator": "neq",
+      "value": "churned"
+    }
+  },
+  {
+    "slice": "unfamiliar-context",
+    "input": "only companies based in Germany",
+    "output": {
+      "field": "country",
+      "operator": "eq",
+      "value": "DE"
+    }
+  },
+  {
+    "slice": "unsupported",
+    "input": "customers with more than 12 employees",
+    "output": null
+  },
+  {
+    "slice": "unsupported",
+    "input": "customers created yesterday",
+    "output": null
+  },
+  {
+    "slice": "contradiction",
+    "input": "active inactive Swedish customers",
+    "output": null
+  },
+  {
+    "slice": "unsupported",
+    "input": "ARR between 28k and 46k",
+    "output": null
+  },
+  {
+    "slice": "unsupported",
+    "input": "customers in Atlantis",
+    "output": null
+  },
+  {
+    "slice": "ambiguous",
+    "input": "German Swedish customers",
+    "output": null
+  }
+]

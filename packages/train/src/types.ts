@@ -2,7 +2,6 @@ export interface TrainingConfig {
   formatVersion?: 1;
   challenges?: string;
   sequence?: { recipe: string; decoder: string };
-  baseline?: string;
   task?: string;
   train?: string;
   validation?: string;

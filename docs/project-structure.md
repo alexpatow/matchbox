@@ -13,7 +13,6 @@ my-app/
       data/train.jsonl
       evals/validation.jsonl
       evals/test.jsonl
-      evals/baseline.ts        # Optional.
       recipe.ts               # Token-classifier supervision.
       decode/
         decode.ts             # Browser-side output construction.
@@ -49,7 +48,7 @@ Parser, pipeline, recipe, and decode modules each use the same convention: `X.ts
 
 `tokenClassifier()` discovers the recipe and decoder by name. The recipe still explicitly defines tokenization, labels, readout, and supervision. The decoder still owns application-specific output construction. File discovery makes no learning or normalization choices.
 
-Keep helpers with the module that owns them. Shared domain code can have its own named folder: the filter example's `countries/` is used by the schema, training recipe, browser decoder, and evaluation baseline. It is ordinary application code, not another framework-discovered entry point.
+Keep helpers with the module that owns them. Shared domain code can have its own named folder: the filter example's `countries/` is used by the schema, training recipe, browser decoder. It is ordinary application code, not another framework-discovered entry point.
 
 Import named authored modules directly, such as `./decode/decode`. Task directories do not need a barrel exporting training and runtime internals together. Applications consume the generated `.matchbox/<task>/model.ts` wrapper.
 

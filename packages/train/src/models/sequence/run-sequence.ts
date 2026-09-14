@@ -48,7 +48,18 @@ export async function runSequence(
     const value = relative(dirname(project.output), path).replaceAll("\\", "/");
     return value.startsWith(".") ? value : `./${value}`;
   };
-  for (const example of project.train) {
+  const rejections = z
+    .array(z.strictObject({ input: z.string(), output: z.null() }))
+    .parse(recipe.rejections ?? []);
+  const training = [...project.train, ...rejections];
+  const heldOut = new Set(
+    [...project.validation, ...project.evaluation].map((row) => row.input.trim().toLowerCase()),
+  );
+  for (const example of training) {
+    if (!task.validateInput(example.input).success)
+      throw new Error(`Invalid training input: ${example.input}`);
+    if (heldOut.has(example.input.trim().toLowerCase()))
+      throw new Error(`Training input overlaps evaluation: ${example.input}`);
     const tokens = tokenize(example.input, recipe.tokenizer);
     const labels = recipe.annotate(example, tokens);
     const value = decode(
@@ -62,7 +73,7 @@ export async function runSequence(
   }
   const started = performance.now();
   const fit = await fitSequence(
-    project.train,
+    training,
     recipe,
     {
       taskMetadata: task.toJSON(),
@@ -80,9 +91,7 @@ export async function runSequence(
       `Sequence model failed validation/size requirements (${validation.exactAccuracy}, ${bytes} bytes). ${JSON.stringify(validation.failures.slice(0, 10))}`,
     );
   const shuffledControl =
-    recipe.readout === "last"
-      ? await fitSequence(project.train, recipe, fit.quantized, [], true)
-      : null;
+    recipe.readout === "last" ? await fitSequence(training, recipe, fit.quantized, [], true) : null;
   const challenges = config.challenges
     ? z
         .array(z.strictObject({ input: z.string(), output: z.null() }))
@@ -103,6 +112,7 @@ export async function runSequence(
     })),
     examples: {
       train: project.train.length,
+      rejections: recipe.rejections?.length ?? 0,
       validation: project.validation.length,
       eval: project.evaluation.length,
     },
@@ -112,6 +122,14 @@ export async function runSequence(
           project.evaluation,
         )
       : null,
+    supervisionSha256: hash(
+      JSON.stringify(
+        training.map((row) => ({
+          ...row,
+          labels: recipe.annotate(row, tokenize(row.input, recipe.tokenizer)),
+        })),
+      ),
+    ),
     supervisedTokens: fit.supervisedTokens,
     loss: fit.history,
     exportParity: fit.parity,
@@ -124,12 +142,9 @@ export async function runSequence(
     float: await evaluateSequence(parser(fit.float), project.evaluation),
     quantized: await evaluateSequence(parser(fit.quantized), project.evaluation),
     challenges: challenges ? await evaluateSequence(parser(fit.quantized), challenges) : null,
-    baseline: project.baseline
-      ? await evaluateSequence(project.baseline, project.evaluation)
-      : null,
     trainingMs: performance.now() - started,
     notes:
-      "Validation gates export. Eval labels do not influence selection. Scores are uncalibrated. Unknown tokens abstain. JSON int8 arrays are portable but not a packed binary format.",
+      "Validation gates export. Eval labels do not influence selection. Scores are uncalibrated. Unknown-token handling follows the explicit training recipe. JSON int8 arrays are portable but not a packed binary format.",
   };
   await packageModel(project.output, fit.quantized, report);
   return { report, output: project.output };

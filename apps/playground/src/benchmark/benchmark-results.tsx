@@ -35,37 +35,6 @@ export function BenchmarkResults({ result, testId }: { result: TimingResult; tes
           </dd>
         </div>
       </dl>
-      {!!result.candidates?.length && (
-        <details className="baseline-comparison">
-          <summary>Compare with a handwritten rule parser</summary>
-          <table>
-            <thead>
-              <tr>
-                <th scope="col">Parser</th>
-                <th scope="col">Typical time</th>
-                <th scope="col">95% finished within</th>
-                <th scope="col">Answers</th>
-              </tr>
-            </thead>
-            <tbody>
-              {[{ ...result, algorithm: "TensorFlow model" }, ...result.candidates].map((row) => (
-                <tr key={row.algorithm}>
-                  <th scope="row">{row.algorithm === "rules" ? "Rule baseline" : row.algorithm}</th>
-                  <td>{milliseconds(row.p50Ms)} ms</td>
-                  <td>{milliseconds(row.p95Ms)} ms</td>
-                  <td>
-                    {row.accepted} / {row.samples}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-          <p>
-            The rule parser uses handwritten patterns instead of learned weights. Both receive the
-            same inputs. These timings compare speed; evals check which answers are correct.
-          </p>
-        </details>
-      )}
     </div>
   );
 }

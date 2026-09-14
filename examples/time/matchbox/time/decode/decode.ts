@@ -3,6 +3,7 @@ import { decodeClock } from "./decode-clock";
 import { quantity } from "./quantity";
 const scales: Record<string, number> = { SECOND: 1, MINUTE: 60, HOUR: 3600, DAY: 86400 };
 const decode: SequenceDecoder = (tokens) => {
+  if (tokens.some((token) => token.label === "REJECT")) return null;
   if (tokens.some((t) => t.label === "TODAY" || t.label === "TOMORROW")) return decodeClock(tokens);
   const modes = tokens.filter((t) => t.label === "DURATION" || t.label === "RELATIVE");
   if (modes.length > 1) return null;

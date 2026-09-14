@@ -58,8 +58,8 @@ export function ModelExample({ name, title, inputLabel, description, suggestions
         <p className="training-metrics">
           {report.parameters.toLocaleString()} parameters · {(report.bytes / 1024).toFixed(1)} KiB ·{" "}
           {report.examples.train.toLocaleString()} training examples ·{" "}
-          {(report.quantized.exactAccuracy * 100).toFixed(0)}% on {report.examples.eval} eval
-          examples
+          {(report.quantized.exactAccuracy * 100).toFixed(0)}% on {report.examples.eval} regression
+          cases
         </p>
       )}
       <label htmlFor={name}>{inputLabel}</label>
@@ -105,7 +105,10 @@ export function ModelExample({ name, title, inputLabel, description, suggestions
         <pre>
           <code>{`import model from "./${name}.matchbox";\nconst result = await model.parse(input);`}</code>
         </pre>
-        <p>Confidence is an uncalibrated model score.</p>
+        <p>
+          Recognition scores are uncalibrated. Regression cases can share training templates; they
+          do not establish generalization.
+        </p>
       </details>
       <BenchmarkPanel
         key={query}

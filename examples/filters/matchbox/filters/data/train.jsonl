@@ -5040,3 +5040,1016 @@
 {"input":"show Indian accounts","output":{"field":"country","operator":"eq","value":"IN"}}
 {"input":"companies from Indian","output":{"field":"country","operator":"eq","value":"IN"}}
 {"input":"country is Indian","output":{"field":"country","operator":"eq","value":"IN"}}
+{"input":"active Swedish customers over 20k ARR","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"},{"field":"arr","operator":"gt","value":20000}]}}
+{"input":"please show active Swedish customers over 20k ARR","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"},{"field":"arr","operator":"gt","value":20000}]}}
+{"input":"active Swedish customers over 40k ARR","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"},{"field":"arr","operator":"gt","value":40000}]}}
+{"input":"please show active Swedish customers over 40k ARR","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"},{"field":"arr","operator":"gt","value":40000}]}}
+{"input":"active Swedish customers over 80k ARR","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"},{"field":"arr","operator":"gt","value":80000}]}}
+{"input":"please show active Swedish customers over 80k ARR","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"},{"field":"arr","operator":"gt","value":80000}]}}
+{"input":"inactive Swedish customers over 20k ARR","output":{"and":[{"field":"status","operator":"eq","value":"inactive"},{"field":"country","operator":"eq","value":"SE"},{"field":"arr","operator":"gt","value":20000}]}}
+{"input":"please show inactive Swedish customers over 20k ARR","output":{"and":[{"field":"status","operator":"eq","value":"inactive"},{"field":"country","operator":"eq","value":"SE"},{"field":"arr","operator":"gt","value":20000}]}}
+{"input":"inactive Swedish customers over 40k ARR","output":{"and":[{"field":"status","operator":"eq","value":"inactive"},{"field":"country","operator":"eq","value":"SE"},{"field":"arr","operator":"gt","value":40000}]}}
+{"input":"please show inactive Swedish customers over 40k ARR","output":{"and":[{"field":"status","operator":"eq","value":"inactive"},{"field":"country","operator":"eq","value":"SE"},{"field":"arr","operator":"gt","value":40000}]}}
+{"input":"inactive Swedish customers over 80k ARR","output":{"and":[{"field":"status","operator":"eq","value":"inactive"},{"field":"country","operator":"eq","value":"SE"},{"field":"arr","operator":"gt","value":80000}]}}
+{"input":"please show inactive Swedish customers over 80k ARR","output":{"and":[{"field":"status","operator":"eq","value":"inactive"},{"field":"country","operator":"eq","value":"SE"},{"field":"arr","operator":"gt","value":80000}]}}
+{"input":"churned Swedish customers over 20k ARR","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"SE"},{"field":"arr","operator":"gt","value":20000}]}}
+{"input":"please show churned Swedish customers over 20k ARR","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"SE"},{"field":"arr","operator":"gt","value":20000}]}}
+{"input":"churned Swedish customers over 40k ARR","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"SE"},{"field":"arr","operator":"gt","value":40000}]}}
+{"input":"please show churned Swedish customers over 40k ARR","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"SE"},{"field":"arr","operator":"gt","value":40000}]}}
+{"input":"churned Swedish customers over 80k ARR","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"SE"},{"field":"arr","operator":"gt","value":80000}]}}
+{"input":"please show churned Swedish customers over 80k ARR","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"SE"},{"field":"arr","operator":"gt","value":80000}]}}
+{"input":"active German customers over 20k ARR","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"},{"field":"arr","operator":"gt","value":20000}]}}
+{"input":"please show active German customers over 20k ARR","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"},{"field":"arr","operator":"gt","value":20000}]}}
+{"input":"active German customers over 40k ARR","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"},{"field":"arr","operator":"gt","value":40000}]}}
+{"input":"please show active German customers over 40k ARR","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"},{"field":"arr","operator":"gt","value":40000}]}}
+{"input":"active German customers over 80k ARR","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"},{"field":"arr","operator":"gt","value":80000}]}}
+{"input":"please show active German customers over 80k ARR","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"},{"field":"arr","operator":"gt","value":80000}]}}
+{"input":"inactive German customers over 20k ARR","output":{"and":[{"field":"status","operator":"eq","value":"inactive"},{"field":"country","operator":"eq","value":"DE"},{"field":"arr","operator":"gt","value":20000}]}}
+{"input":"please show inactive German customers over 20k ARR","output":{"and":[{"field":"status","operator":"eq","value":"inactive"},{"field":"country","operator":"eq","value":"DE"},{"field":"arr","operator":"gt","value":20000}]}}
+{"input":"inactive German customers over 40k ARR","output":{"and":[{"field":"status","operator":"eq","value":"inactive"},{"field":"country","operator":"eq","value":"DE"},{"field":"arr","operator":"gt","value":40000}]}}
+{"input":"please show inactive German customers over 40k ARR","output":{"and":[{"field":"status","operator":"eq","value":"inactive"},{"field":"country","operator":"eq","value":"DE"},{"field":"arr","operator":"gt","value":40000}]}}
+{"input":"inactive German customers over 80k ARR","output":{"and":[{"field":"status","operator":"eq","value":"inactive"},{"field":"country","operator":"eq","value":"DE"},{"field":"arr","operator":"gt","value":80000}]}}
+{"input":"please show inactive German customers over 80k ARR","output":{"and":[{"field":"status","operator":"eq","value":"inactive"},{"field":"country","operator":"eq","value":"DE"},{"field":"arr","operator":"gt","value":80000}]}}
+{"input":"churned German customers over 20k ARR","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"DE"},{"field":"arr","operator":"gt","value":20000}]}}
+{"input":"please show churned German customers over 20k ARR","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"DE"},{"field":"arr","operator":"gt","value":20000}]}}
+{"input":"churned German customers over 40k ARR","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"DE"},{"field":"arr","operator":"gt","value":40000}]}}
+{"input":"please show churned German customers over 40k ARR","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"DE"},{"field":"arr","operator":"gt","value":40000}]}}
+{"input":"churned German customers over 80k ARR","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"DE"},{"field":"arr","operator":"gt","value":80000}]}}
+{"input":"please show churned German customers over 80k ARR","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"DE"},{"field":"arr","operator":"gt","value":80000}]}}
+{"input":"active French customers over 20k ARR","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"FR"},{"field":"arr","operator":"gt","value":20000}]}}
+{"input":"please show active French customers over 20k ARR","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"FR"},{"field":"arr","operator":"gt","value":20000}]}}
+{"input":"active French customers over 40k ARR","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"FR"},{"field":"arr","operator":"gt","value":40000}]}}
+{"input":"please show active French customers over 40k ARR","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"FR"},{"field":"arr","operator":"gt","value":40000}]}}
+{"input":"active French customers over 80k ARR","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"FR"},{"field":"arr","operator":"gt","value":80000}]}}
+{"input":"please show active French customers over 80k ARR","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"FR"},{"field":"arr","operator":"gt","value":80000}]}}
+{"input":"inactive French customers over 20k ARR","output":{"and":[{"field":"status","operator":"eq","value":"inactive"},{"field":"country","operator":"eq","value":"FR"},{"field":"arr","operator":"gt","value":20000}]}}
+{"input":"please show inactive French customers over 20k ARR","output":{"and":[{"field":"status","operator":"eq","value":"inactive"},{"field":"country","operator":"eq","value":"FR"},{"field":"arr","operator":"gt","value":20000}]}}
+{"input":"inactive French customers over 40k ARR","output":{"and":[{"field":"status","operator":"eq","value":"inactive"},{"field":"country","operator":"eq","value":"FR"},{"field":"arr","operator":"gt","value":40000}]}}
+{"input":"please show inactive French customers over 40k ARR","output":{"and":[{"field":"status","operator":"eq","value":"inactive"},{"field":"country","operator":"eq","value":"FR"},{"field":"arr","operator":"gt","value":40000}]}}
+{"input":"inactive French customers over 80k ARR","output":{"and":[{"field":"status","operator":"eq","value":"inactive"},{"field":"country","operator":"eq","value":"FR"},{"field":"arr","operator":"gt","value":80000}]}}
+{"input":"please show inactive French customers over 80k ARR","output":{"and":[{"field":"status","operator":"eq","value":"inactive"},{"field":"country","operator":"eq","value":"FR"},{"field":"arr","operator":"gt","value":80000}]}}
+{"input":"churned French customers over 20k ARR","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"FR"},{"field":"arr","operator":"gt","value":20000}]}}
+{"input":"please show churned French customers over 20k ARR","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"FR"},{"field":"arr","operator":"gt","value":20000}]}}
+{"input":"churned French customers over 40k ARR","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"FR"},{"field":"arr","operator":"gt","value":40000}]}}
+{"input":"please show churned French customers over 40k ARR","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"FR"},{"field":"arr","operator":"gt","value":40000}]}}
+{"input":"churned French customers over 80k ARR","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"FR"},{"field":"arr","operator":"gt","value":80000}]}}
+{"input":"please show churned French customers over 80k ARR","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"FR"},{"field":"arr","operator":"gt","value":80000}]}}
+{"input":"active Norwegian customers over 20k ARR","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"NO"},{"field":"arr","operator":"gt","value":20000}]}}
+{"input":"please show active Norwegian customers over 20k ARR","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"NO"},{"field":"arr","operator":"gt","value":20000}]}}
+{"input":"active Norwegian customers over 40k ARR","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"NO"},{"field":"arr","operator":"gt","value":40000}]}}
+{"input":"please show active Norwegian customers over 40k ARR","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"NO"},{"field":"arr","operator":"gt","value":40000}]}}
+{"input":"active Norwegian customers over 80k ARR","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"NO"},{"field":"arr","operator":"gt","value":80000}]}}
+{"input":"please show active Norwegian customers over 80k ARR","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"NO"},{"field":"arr","operator":"gt","value":80000}]}}
+{"input":"inactive Norwegian customers over 20k ARR","output":{"and":[{"field":"status","operator":"eq","value":"inactive"},{"field":"country","operator":"eq","value":"NO"},{"field":"arr","operator":"gt","value":20000}]}}
+{"input":"please show inactive Norwegian customers over 20k ARR","output":{"and":[{"field":"status","operator":"eq","value":"inactive"},{"field":"country","operator":"eq","value":"NO"},{"field":"arr","operator":"gt","value":20000}]}}
+{"input":"inactive Norwegian customers over 40k ARR","output":{"and":[{"field":"status","operator":"eq","value":"inactive"},{"field":"country","operator":"eq","value":"NO"},{"field":"arr","operator":"gt","value":40000}]}}
+{"input":"please show inactive Norwegian customers over 40k ARR","output":{"and":[{"field":"status","operator":"eq","value":"inactive"},{"field":"country","operator":"eq","value":"NO"},{"field":"arr","operator":"gt","value":40000}]}}
+{"input":"inactive Norwegian customers over 80k ARR","output":{"and":[{"field":"status","operator":"eq","value":"inactive"},{"field":"country","operator":"eq","value":"NO"},{"field":"arr","operator":"gt","value":80000}]}}
+{"input":"please show inactive Norwegian customers over 80k ARR","output":{"and":[{"field":"status","operator":"eq","value":"inactive"},{"field":"country","operator":"eq","value":"NO"},{"field":"arr","operator":"gt","value":80000}]}}
+{"input":"churned Norwegian customers over 20k ARR","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"NO"},{"field":"arr","operator":"gt","value":20000}]}}
+{"input":"please show churned Norwegian customers over 20k ARR","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"NO"},{"field":"arr","operator":"gt","value":20000}]}}
+{"input":"churned Norwegian customers over 40k ARR","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"NO"},{"field":"arr","operator":"gt","value":40000}]}}
+{"input":"please show churned Norwegian customers over 40k ARR","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"NO"},{"field":"arr","operator":"gt","value":40000}]}}
+{"input":"churned Norwegian customers over 80k ARR","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"NO"},{"field":"arr","operator":"gt","value":80000}]}}
+{"input":"please show churned Norwegian customers over 80k ARR","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"NO"},{"field":"arr","operator":"gt","value":80000}]}}
+{"input":"not active customers","output":{"field":"status","operator":"neq","value":"active"}}
+{"input":"exclude active customers","output":{"field":"status","operator":"neq","value":"active"}}
+{"input":"without active customers","output":{"field":"status","operator":"neq","value":"active"}}
+{"input":"not inactive customers","output":{"field":"status","operator":"neq","value":"inactive"}}
+{"input":"exclude inactive customers","output":{"field":"status","operator":"neq","value":"inactive"}}
+{"input":"without inactive customers","output":{"field":"status","operator":"neq","value":"inactive"}}
+{"input":"exclude churned customers","output":{"field":"status","operator":"neq","value":"churned"}}
+{"input":"active please","output":{"field":"status","operator":"eq","value":"active"}}
+{"input":"active?","output":{"field":"status","operator":"eq","value":"active"}}
+{"input":"currently active please","output":{"field":"status","operator":"eq","value":"active"}}
+{"input":"currently active?","output":{"field":"status","operator":"eq","value":"active"}}
+{"input":"companies with inactive status please","output":{"field":"status","operator":"eq","value":"inactive"}}
+{"input":"companies with inactive status?","output":{"field":"status","operator":"eq","value":"inactive"}}
+{"input":"find churned companies please","output":{"field":"status","operator":"eq","value":"churned"}}
+{"input":"find churned companies?","output":{"field":"status","operator":"eq","value":"churned"}}
+{"input":"show not churned accounts please","output":{"field":"status","operator":"neq","value":"churned"}}
+{"input":"show not churned accounts?","output":{"field":"status","operator":"neq","value":"churned"}}
+{"input":"country is Sweden please","output":{"field":"country","operator":"eq","value":"SE"}}
+{"input":"country is Sweden?","output":{"field":"country","operator":"eq","value":"SE"}}
+{"input":"companies based in Germany please","output":{"field":"country","operator":"eq","value":"DE"}}
+{"input":"companies based in Germany?","output":{"field":"country","operator":"eq","value":"DE"}}
+{"input":"accounts from America please","output":{"field":"country","operator":"eq","value":"US"}}
+{"input":"accounts from America?","output":{"field":"country","operator":"eq","value":"US"}}
+{"input":"customers in Norway please","output":{"field":"country","operator":"eq","value":"NO"}}
+{"input":"customers in Norway?","output":{"field":"country","operator":"eq","value":"NO"}}
+{"input":"show accounts with revenue over 500 please","output":{"field":"arr","operator":"gt","value":500}}
+{"input":"show accounts with revenue over 500?","output":{"field":"arr","operator":"gt","value":500}}
+{"input":"customers with ARR more than 100k please","output":{"field":"arr","operator":"gt","value":100000}}
+{"input":"customers with ARR more than 100k?","output":{"field":"arr","operator":"gt","value":100000}}
+{"input":"annual recurring revenue no less than 20000 please","output":{"field":"arr","operator":"gte","value":20000}}
+{"input":"annual recurring revenue no less than 20000?","output":{"field":"arr","operator":"gte","value":20000}}
+{"input":"ARR under 50k please","output":{"field":"arr","operator":"lt","value":50000}}
+{"input":"ARR under 50k?","output":{"field":"arr","operator":"lt","value":50000}}
+{"input":"show accounts with revenue less than 500 please","output":{"field":"arr","operator":"lt","value":500}}
+{"input":"show accounts with revenue less than 500?","output":{"field":"arr","operator":"lt","value":500}}
+{"input":"customers with ARR no more than 100k please","output":{"field":"arr","operator":"lte","value":100000}}
+{"input":"customers with ARR no more than 100k?","output":{"field":"arr","operator":"lte","value":100000}}
+{"input":"annual recurring revenue exactly 20000 please","output":{"field":"arr","operator":"eq","value":20000}}
+{"input":"annual recurring revenue exactly 20000?","output":{"field":"arr","operator":"eq","value":20000}}
+{"input":"ARR over €1.25m please","output":{"field":"arr","operator":"gt","value":1250000}}
+{"input":"ARR over €1.25m?","output":{"field":"arr","operator":"gt","value":1250000}}
+{"input":"annual recurring revenue above $2,500 please","output":{"field":"arr","operator":"gt","value":2500}}
+{"input":"annual recurring revenue above $2,500?","output":{"field":"arr","operator":"gt","value":2500}}
+{"input":"show accounts with revenue greater than €1.25m please","output":{"field":"arr","operator":"gt","value":1250000}}
+{"input":"show accounts with revenue greater than €1.25m?","output":{"field":"arr","operator":"gt","value":1250000}}
+{"input":"ARR > $2,500 please","output":{"field":"arr","operator":"gt","value":2500}}
+{"input":"ARR > $2,500?","output":{"field":"arr","operator":"gt","value":2500}}
+{"input":"customers with ARR at least €1.25m please","output":{"field":"arr","operator":"gte","value":1250000}}
+{"input":"customers with ARR at least €1.25m?","output":{"field":"arr","operator":"gte","value":1250000}}
+{"input":"show accounts with revenue no less than $2,500 please","output":{"field":"arr","operator":"gte","value":2500}}
+{"input":"show accounts with revenue no less than $2,500?","output":{"field":"arr","operator":"gte","value":2500}}
+{"input":"annual recurring revenue >= €1.25m please","output":{"field":"arr","operator":"gte","value":1250000}}
+{"input":"annual recurring revenue >= €1.25m?","output":{"field":"arr","operator":"gte","value":1250000}}
+{"input":"customers with ARR under $2,500 please","output":{"field":"arr","operator":"lt","value":2500}}
+{"input":"customers with ARR under $2,500?","output":{"field":"arr","operator":"lt","value":2500}}
+{"input":"ARR less than €1.25m please","output":{"field":"arr","operator":"lt","value":1250000}}
+{"input":"ARR less than €1.25m?","output":{"field":"arr","operator":"lt","value":1250000}}
+{"input":"annual recurring revenue < $2,500 please","output":{"field":"arr","operator":"lt","value":2500}}
+{"input":"annual recurring revenue < $2,500?","output":{"field":"arr","operator":"lt","value":2500}}
+{"input":"show accounts with revenue at most €1.25m please","output":{"field":"arr","operator":"lte","value":1250000}}
+{"input":"show accounts with revenue at most €1.25m?","output":{"field":"arr","operator":"lte","value":1250000}}
+{"input":"ARR less than or equal to $2,500 please","output":{"field":"arr","operator":"lte","value":2500}}
+{"input":"ARR less than or equal to $2,500?","output":{"field":"arr","operator":"lte","value":2500}}
+{"input":"customers with ARR <= €1.25m please","output":{"field":"arr","operator":"lte","value":1250000}}
+{"input":"customers with ARR <= €1.25m?","output":{"field":"arr","operator":"lte","value":1250000}}
+{"input":"show accounts with revenue exactly $2,500 please","output":{"field":"arr","operator":"eq","value":2500}}
+{"input":"show accounts with revenue exactly $2,500?","output":{"field":"arr","operator":"eq","value":2500}}
+{"input":"annual recurring revenue = €1.25m please","output":{"field":"arr","operator":"eq","value":1250000}}
+{"input":"annual recurring revenue = €1.25m?","output":{"field":"arr","operator":"eq","value":1250000}}
+{"input":"active or ARR over 50k please","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"active or ARR over 50k?","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"active accounts and ARR over 50k please","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"active accounts and ARR over 50k?","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"customers that are active or German customers please","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"}]}}
+{"input":"customers that are active or German customers?","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"}]}}
+{"input":"with status active and German customers please","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"}]}}
+{"input":"with status active and German customers?","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"}]}}
+{"input":"show active accounts or Swedish customers please","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"show active accounts or Swedish customers?","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"companies with active status and Swedish customers please","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"companies with active status and Swedish customers?","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"currently active or ARR over 50k please","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"currently active or ARR over 50k?","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"customers in AW please","output":{"field":"country","operator":"eq","value":"AW"}}
+{"input":"customers in AW?","output":{"field":"country","operator":"eq","value":"AW"}}
+{"input":"Islamic Republic of Afghanistan customers please","output":{"field":"country","operator":"eq","value":"AF"}}
+{"input":"Islamic Republic of Afghanistan customers?","output":{"field":"country","operator":"eq","value":"AF"}}
+{"input":"show AF accounts please","output":{"field":"country","operator":"eq","value":"AF"}}
+{"input":"show AF accounts?","output":{"field":"country","operator":"eq","value":"AF"}}
+{"input":"companies from Republic of Angola please","output":{"field":"country","operator":"eq","value":"AO"}}
+{"input":"companies from Republic of Angola?","output":{"field":"country","operator":"eq","value":"AO"}}
+{"input":"country is AO please","output":{"field":"country","operator":"eq","value":"AO"}}
+{"input":"country is AO?","output":{"field":"country","operator":"eq","value":"AO"}}
+{"input":"customers in AI please","output":{"field":"country","operator":"eq","value":"AI"}}
+{"input":"customers in AI?","output":{"field":"country","operator":"eq","value":"AI"}}
+{"input":"Ålandish customers please","output":{"field":"country","operator":"eq","value":"AX"}}
+{"input":"Ålandish customers?","output":{"field":"country","operator":"eq","value":"AX"}}
+{"input":"show Albania accounts please","output":{"field":"country","operator":"eq","value":"AL"}}
+{"input":"show Albania accounts?","output":{"field":"country","operator":"eq","value":"AL"}}
+{"input":"companies from Albanian please","output":{"field":"country","operator":"eq","value":"AL"}}
+{"input":"companies from Albanian?","output":{"field":"country","operator":"eq","value":"AL"}}
+{"input":"country is Andorra please","output":{"field":"country","operator":"eq","value":"AD"}}
+{"input":"country is Andorra?","output":{"field":"country","operator":"eq","value":"AD"}}
+{"input":"customers in AD please","output":{"field":"country","operator":"eq","value":"AD"}}
+{"input":"customers in AD?","output":{"field":"country","operator":"eq","value":"AD"}}
+{"input":"Emirati customers please","output":{"field":"country","operator":"eq","value":"AE"}}
+{"input":"Emirati customers?","output":{"field":"country","operator":"eq","value":"AE"}}
+{"input":"show Argentina accounts please","output":{"field":"country","operator":"eq","value":"AR"}}
+{"input":"show Argentina accounts?","output":{"field":"country","operator":"eq","value":"AR"}}
+{"input":"companies from Argentine please","output":{"field":"country","operator":"eq","value":"AR"}}
+{"input":"companies from Argentine?","output":{"field":"country","operator":"eq","value":"AR"}}
+{"input":"country is Armenia please","output":{"field":"country","operator":"eq","value":"AM"}}
+{"input":"country is Armenia?","output":{"field":"country","operator":"eq","value":"AM"}}
+{"input":"customers in AM please","output":{"field":"country","operator":"eq","value":"AM"}}
+{"input":"customers in AM?","output":{"field":"country","operator":"eq","value":"AM"}}
+{"input":"American Samoan customers please","output":{"field":"country","operator":"eq","value":"AS"}}
+{"input":"American Samoan customers?","output":{"field":"country","operator":"eq","value":"AS"}}
+{"input":"show Antarctica accounts please","output":{"field":"country","operator":"eq","value":"AQ"}}
+{"input":"show Antarctica accounts?","output":{"field":"country","operator":"eq","value":"AQ"}}
+{"input":"companies from AQ please","output":{"field":"country","operator":"eq","value":"AQ"}}
+{"input":"companies from AQ?","output":{"field":"country","operator":"eq","value":"AQ"}}
+{"input":"country is Territory of the French Southern and Antarctic Lands please","output":{"field":"country","operator":"eq","value":"TF"}}
+{"input":"country is Territory of the French Southern and Antarctic Lands?","output":{"field":"country","operator":"eq","value":"TF"}}
+{"input":"customers in Antiguan, Barbudan please","output":{"field":"country","operator":"eq","value":"AG"}}
+{"input":"customers in Antiguan, Barbudan?","output":{"field":"country","operator":"eq","value":"AG"}}
+{"input":"Australia customers please","output":{"field":"country","operator":"eq","value":"AU"}}
+{"input":"Australia customers?","output":{"field":"country","operator":"eq","value":"AU"}}
+{"input":"show Australian accounts please","output":{"field":"country","operator":"eq","value":"AU"}}
+{"input":"show Australian accounts?","output":{"field":"country","operator":"eq","value":"AU"}}
+{"input":"companies from Austria please","output":{"field":"country","operator":"eq","value":"AT"}}
+{"input":"companies from Austria?","output":{"field":"country","operator":"eq","value":"AT"}}
+{"input":"country is Austrian please","output":{"field":"country","operator":"eq","value":"AT"}}
+{"input":"country is Austrian?","output":{"field":"country","operator":"eq","value":"AT"}}
+{"input":"customers in Republic of Azerbaijan please","output":{"field":"country","operator":"eq","value":"AZ"}}
+{"input":"customers in Republic of Azerbaijan?","output":{"field":"country","operator":"eq","value":"AZ"}}
+{"input":"AZ customers please","output":{"field":"country","operator":"eq","value":"AZ"}}
+{"input":"AZ customers?","output":{"field":"country","operator":"eq","value":"AZ"}}
+{"input":"show Republic of Burundi accounts please","output":{"field":"country","operator":"eq","value":"BI"}}
+{"input":"show Republic of Burundi accounts?","output":{"field":"country","operator":"eq","value":"BI"}}
+{"input":"companies from BI please","output":{"field":"country","operator":"eq","value":"BI"}}
+{"input":"companies from BI?","output":{"field":"country","operator":"eq","value":"BI"}}
+{"input":"country is Kingdom of Belgium please","output":{"field":"country","operator":"eq","value":"BE"}}
+{"input":"country is Kingdom of Belgium?","output":{"field":"country","operator":"eq","value":"BE"}}
+{"input":"customers in Benin please","output":{"field":"country","operator":"eq","value":"BJ"}}
+{"input":"customers in Benin?","output":{"field":"country","operator":"eq","value":"BJ"}}
+{"input":"Beninese customers please","output":{"field":"country","operator":"eq","value":"BJ"}}
+{"input":"Beninese customers?","output":{"field":"country","operator":"eq","value":"BJ"}}
+{"input":"show Burkina Faso accounts please","output":{"field":"country","operator":"eq","value":"BF"}}
+{"input":"show Burkina Faso accounts?","output":{"field":"country","operator":"eq","value":"BF"}}
+{"input":"companies from BF please","output":{"field":"country","operator":"eq","value":"BF"}}
+{"input":"companies from BF?","output":{"field":"country","operator":"eq","value":"BF"}}
+{"input":"country is People's Republic of Bangladesh please","output":{"field":"country","operator":"eq","value":"BD"}}
+{"input":"country is People's Republic of Bangladesh?","output":{"field":"country","operator":"eq","value":"BD"}}
+{"input":"customers in Bulgaria please","output":{"field":"country","operator":"eq","value":"BG"}}
+{"input":"customers in Bulgaria?","output":{"field":"country","operator":"eq","value":"BG"}}
+{"input":"Bulgarian customers please","output":{"field":"country","operator":"eq","value":"BG"}}
+{"input":"Bulgarian customers?","output":{"field":"country","operator":"eq","value":"BG"}}
+{"input":"show Bahrain accounts please","output":{"field":"country","operator":"eq","value":"BH"}}
+{"input":"show Bahrain accounts?","output":{"field":"country","operator":"eq","value":"BH"}}
+{"input":"companies from Bahraini please","output":{"field":"country","operator":"eq","value":"BH"}}
+{"input":"companies from Bahraini?","output":{"field":"country","operator":"eq","value":"BH"}}
+{"input":"country is Bahamas please","output":{"field":"country","operator":"eq","value":"BS"}}
+{"input":"country is Bahamas?","output":{"field":"country","operator":"eq","value":"BS"}}
+{"input":"customers in BS please","output":{"field":"country","operator":"eq","value":"BS"}}
+{"input":"customers in BS?","output":{"field":"country","operator":"eq","value":"BS"}}
+{"input":"Bosnian, Herzegovinian customers please","output":{"field":"country","operator":"eq","value":"BA"}}
+{"input":"Bosnian, Herzegovinian customers?","output":{"field":"country","operator":"eq","value":"BA"}}
+{"input":"show Saint Barthélemy accounts please","output":{"field":"country","operator":"eq","value":"BL"}}
+{"input":"show Saint Barthélemy accounts?","output":{"field":"country","operator":"eq","value":"BL"}}
+{"input":"companies from Saint Barthélemy Islander please","output":{"field":"country","operator":"eq","value":"BL"}}
+{"input":"companies from Saint Barthélemy Islander?","output":{"field":"country","operator":"eq","value":"BL"}}
+{"input":"country is Saint Helena, Ascension and Tristan da Cunha please","output":{"field":"country","operator":"eq","value":"SH"}}
+{"input":"country is Saint Helena, Ascension and Tristan da Cunha?","output":{"field":"country","operator":"eq","value":"SH"}}
+{"input":"customers in Belarus please","output":{"field":"country","operator":"eq","value":"BY"}}
+{"input":"customers in Belarus?","output":{"field":"country","operator":"eq","value":"BY"}}
+{"input":"Belarusian customers please","output":{"field":"country","operator":"eq","value":"BY"}}
+{"input":"Belarusian customers?","output":{"field":"country","operator":"eq","value":"BY"}}
+{"input":"show Belize accounts please","output":{"field":"country","operator":"eq","value":"BZ"}}
+{"input":"show Belize accounts?","output":{"field":"country","operator":"eq","value":"BZ"}}
+{"input":"companies from BZ please","output":{"field":"country","operator":"eq","value":"BZ"}}
+{"input":"companies from BZ?","output":{"field":"country","operator":"eq","value":"BZ"}}
+{"input":"country is Bermudian please","output":{"field":"country","operator":"eq","value":"BM"}}
+{"input":"country is Bermudian?","output":{"field":"country","operator":"eq","value":"BM"}}
+{"input":"customers in Plurinational State of Bolivia please","output":{"field":"country","operator":"eq","value":"BO"}}
+{"input":"customers in Plurinational State of Bolivia?","output":{"field":"country","operator":"eq","value":"BO"}}
+{"input":"BO customers please","output":{"field":"country","operator":"eq","value":"BO"}}
+{"input":"BO customers?","output":{"field":"country","operator":"eq","value":"BO"}}
+{"input":"show Bonaire, Sint Eustatius and Saba accounts please","output":{"field":"country","operator":"eq","value":"BQ"}}
+{"input":"show Bonaire, Sint Eustatius and Saba accounts?","output":{"field":"country","operator":"eq","value":"BQ"}}
+{"input":"companies from Brazil please","output":{"field":"country","operator":"eq","value":"BR"}}
+{"input":"companies from Brazil?","output":{"field":"country","operator":"eq","value":"BR"}}
+{"input":"country is Brazilian please","output":{"field":"country","operator":"eq","value":"BR"}}
+{"input":"country is Brazilian?","output":{"field":"country","operator":"eq","value":"BR"}}
+{"input":"customers in Barbadian please","output":{"field":"country","operator":"eq","value":"BB"}}
+{"input":"customers in Barbadian?","output":{"field":"country","operator":"eq","value":"BB"}}
+{"input":"Brunei customers please","output":{"field":"country","operator":"eq","value":"BN"}}
+{"input":"Brunei customers?","output":{"field":"country","operator":"eq","value":"BN"}}
+{"input":"show Bruneian accounts please","output":{"field":"country","operator":"eq","value":"BN"}}
+{"input":"show Bruneian accounts?","output":{"field":"country","operator":"eq","value":"BN"}}
+{"input":"companies from Bhutan please","output":{"field":"country","operator":"eq","value":"BT"}}
+{"input":"companies from Bhutan?","output":{"field":"country","operator":"eq","value":"BT"}}
+{"input":"country is Bhutanese please","output":{"field":"country","operator":"eq","value":"BT"}}
+{"input":"country is Bhutanese?","output":{"field":"country","operator":"eq","value":"BT"}}
+{"input":"customers in BV please","output":{"field":"country","operator":"eq","value":"BV"}}
+{"input":"customers in BV?","output":{"field":"country","operator":"eq","value":"BV"}}
+{"input":"Republic of Botswana customers please","output":{"field":"country","operator":"eq","value":"BW"}}
+{"input":"Republic of Botswana customers?","output":{"field":"country","operator":"eq","value":"BW"}}
+{"input":"show BW accounts please","output":{"field":"country","operator":"eq","value":"BW"}}
+{"input":"show BW accounts?","output":{"field":"country","operator":"eq","value":"BW"}}
+{"input":"companies from Central African please","output":{"field":"country","operator":"eq","value":"CF"}}
+{"input":"companies from Central African?","output":{"field":"country","operator":"eq","value":"CF"}}
+{"input":"country is Canada please","output":{"field":"country","operator":"eq","value":"CA"}}
+{"input":"country is Canada?","output":{"field":"country","operator":"eq","value":"CA"}}
+{"input":"customers in Cocos (Keeling) Islands please","output":{"field":"country","operator":"eq","value":"CC"}}
+{"input":"customers in Cocos (Keeling) Islands?","output":{"field":"country","operator":"eq","value":"CC"}}
+{"input":"Cocos Islander customers please","output":{"field":"country","operator":"eq","value":"CC"}}
+{"input":"Cocos Islander customers?","output":{"field":"country","operator":"eq","value":"CC"}}
+{"input":"show Switzerland accounts please","output":{"field":"country","operator":"eq","value":"CH"}}
+{"input":"show Switzerland accounts?","output":{"field":"country","operator":"eq","value":"CH"}}
+{"input":"companies from Swiss please","output":{"field":"country","operator":"eq","value":"CH"}}
+{"input":"companies from Swiss?","output":{"field":"country","operator":"eq","value":"CH"}}
+{"input":"country is Chile please","output":{"field":"country","operator":"eq","value":"CL"}}
+{"input":"country is Chile?","output":{"field":"country","operator":"eq","value":"CL"}}
+{"input":"customers in CL please","output":{"field":"country","operator":"eq","value":"CL"}}
+{"input":"customers in CL?","output":{"field":"country","operator":"eq","value":"CL"}}
+{"input":"People's Republic of China customers please","output":{"field":"country","operator":"eq","value":"CN"}}
+{"input":"People's Republic of China customers?","output":{"field":"country","operator":"eq","value":"CN"}}
+{"input":"show CN accounts please","output":{"field":"country","operator":"eq","value":"CN"}}
+{"input":"show CN accounts?","output":{"field":"country","operator":"eq","value":"CN"}}
+{"input":"companies from Republic of Côte d'Ivoire please","output":{"field":"country","operator":"eq","value":"CI"}}
+{"input":"companies from Republic of Côte d'Ivoire?","output":{"field":"country","operator":"eq","value":"CI"}}
+{"input":"country is CI please","output":{"field":"country","operator":"eq","value":"CI"}}
+{"input":"country is CI?","output":{"field":"country","operator":"eq","value":"CI"}}
+{"input":"customers in Cameroonian please","output":{"field":"country","operator":"eq","value":"CM"}}
+{"input":"customers in Cameroonian?","output":{"field":"country","operator":"eq","value":"CM"}}
+{"input":"DR Congo customers please","output":{"field":"country","operator":"eq","value":"CD"}}
+{"input":"DR Congo customers?","output":{"field":"country","operator":"eq","value":"CD"}}
+{"input":"show CD accounts please","output":{"field":"country","operator":"eq","value":"CD"}}
+{"input":"show CD accounts?","output":{"field":"country","operator":"eq","value":"CD"}}
+{"input":"companies from Republic of the Congo please","output":{"field":"country","operator":"eq","value":"CG"}}
+{"input":"companies from Republic of the Congo?","output":{"field":"country","operator":"eq","value":"CG"}}
+{"input":"country is Cook Islands please","output":{"field":"country","operator":"eq","value":"CK"}}
+{"input":"country is Cook Islands?","output":{"field":"country","operator":"eq","value":"CK"}}
+{"input":"customers in Colombia please","output":{"field":"country","operator":"eq","value":"CO"}}
+{"input":"customers in Colombia?","output":{"field":"country","operator":"eq","value":"CO"}}
+{"input":"Colombian customers please","output":{"field":"country","operator":"eq","value":"CO"}}
+{"input":"Colombian customers?","output":{"field":"country","operator":"eq","value":"CO"}}
+{"input":"show Comoros accounts please","output":{"field":"country","operator":"eq","value":"KM"}}
+{"input":"show Comoros accounts?","output":{"field":"country","operator":"eq","value":"KM"}}
+{"input":"companies from Comoran please","output":{"field":"country","operator":"eq","value":"KM"}}
+{"input":"companies from Comoran?","output":{"field":"country","operator":"eq","value":"KM"}}
+{"input":"country is Cape Verde please","output":{"field":"country","operator":"eq","value":"CV"}}
+{"input":"country is Cape Verde?","output":{"field":"country","operator":"eq","value":"CV"}}
+{"input":"customers in CV please","output":{"field":"country","operator":"eq","value":"CV"}}
+{"input":"customers in CV?","output":{"field":"country","operator":"eq","value":"CV"}}
+{"input":"Republic of Costa Rica customers please","output":{"field":"country","operator":"eq","value":"CR"}}
+{"input":"Republic of Costa Rica customers?","output":{"field":"country","operator":"eq","value":"CR"}}
+{"input":"show CR accounts please","output":{"field":"country","operator":"eq","value":"CR"}}
+{"input":"show CR accounts?","output":{"field":"country","operator":"eq","value":"CR"}}
+{"input":"companies from Republic of Cuba please","output":{"field":"country","operator":"eq","value":"CU"}}
+{"input":"companies from Republic of Cuba?","output":{"field":"country","operator":"eq","value":"CU"}}
+{"input":"country is CU please","output":{"field":"country","operator":"eq","value":"CU"}}
+{"input":"country is CU?","output":{"field":"country","operator":"eq","value":"CU"}}
+{"input":"customers in Curaçaoan please","output":{"field":"country","operator":"eq","value":"CW"}}
+{"input":"customers in Curaçaoan?","output":{"field":"country","operator":"eq","value":"CW"}}
+{"input":"Christmas Island customers please","output":{"field":"country","operator":"eq","value":"CX"}}
+{"input":"Christmas Island customers?","output":{"field":"country","operator":"eq","value":"CX"}}
+{"input":"show Christmas Islander accounts please","output":{"field":"country","operator":"eq","value":"CX"}}
+{"input":"show Christmas Islander accounts?","output":{"field":"country","operator":"eq","value":"CX"}}
+{"input":"companies from Cayman Islands please","output":{"field":"country","operator":"eq","value":"KY"}}
+{"input":"companies from Cayman Islands?","output":{"field":"country","operator":"eq","value":"KY"}}
+{"input":"country is KY please","output":{"field":"country","operator":"eq","value":"KY"}}
+{"input":"country is KY?","output":{"field":"country","operator":"eq","value":"KY"}}
+{"input":"customers in Cypriot please","output":{"field":"country","operator":"eq","value":"CY"}}
+{"input":"customers in Cypriot?","output":{"field":"country","operator":"eq","value":"CY"}}
+{"input":"Czechia customers please","output":{"field":"country","operator":"eq","value":"CZ"}}
+{"input":"Czechia customers?","output":{"field":"country","operator":"eq","value":"CZ"}}
+{"input":"show Czech accounts please","output":{"field":"country","operator":"eq","value":"CZ"}}
+{"input":"show Czech accounts?","output":{"field":"country","operator":"eq","value":"CZ"}}
+{"input":"Federal Republic of Germany customers please","output":{"field":"country","operator":"eq","value":"DE"}}
+{"input":"Federal Republic of Germany customers?","output":{"field":"country","operator":"eq","value":"DE"}}
+{"input":"country is DE please","output":{"field":"country","operator":"eq","value":"DE"}}
+{"input":"country is DE?","output":{"field":"country","operator":"eq","value":"DE"}}
+{"input":"customers in DJ please","output":{"field":"country","operator":"eq","value":"DJ"}}
+{"input":"customers in DJ?","output":{"field":"country","operator":"eq","value":"DJ"}}
+{"input":"Commonwealth of Dominica customers please","output":{"field":"country","operator":"eq","value":"DM"}}
+{"input":"Commonwealth of Dominica customers?","output":{"field":"country","operator":"eq","value":"DM"}}
+{"input":"show Denmark accounts please","output":{"field":"country","operator":"eq","value":"DK"}}
+{"input":"show Denmark accounts?","output":{"field":"country","operator":"eq","value":"DK"}}
+{"input":"companies from Danish please","output":{"field":"country","operator":"eq","value":"DK"}}
+{"input":"companies from Danish?","output":{"field":"country","operator":"eq","value":"DK"}}
+{"input":"country is Dominican Republic please","output":{"field":"country","operator":"eq","value":"DO"}}
+{"input":"country is Dominican Republic?","output":{"field":"country","operator":"eq","value":"DO"}}
+{"input":"customers in People's Democratic Republic of Algeria please","output":{"field":"country","operator":"eq","value":"DZ"}}
+{"input":"customers in People's Democratic Republic of Algeria?","output":{"field":"country","operator":"eq","value":"DZ"}}
+{"input":"DZ customers please","output":{"field":"country","operator":"eq","value":"DZ"}}
+{"input":"DZ customers?","output":{"field":"country","operator":"eq","value":"DZ"}}
+{"input":"show Republic of Ecuador accounts please","output":{"field":"country","operator":"eq","value":"EC"}}
+{"input":"show Republic of Ecuador accounts?","output":{"field":"country","operator":"eq","value":"EC"}}
+{"input":"companies from EC please","output":{"field":"country","operator":"eq","value":"EC"}}
+{"input":"companies from EC?","output":{"field":"country","operator":"eq","value":"EC"}}
+{"input":"country is Arab Republic of Egypt please","output":{"field":"country","operator":"eq","value":"EG"}}
+{"input":"country is Arab Republic of Egypt?","output":{"field":"country","operator":"eq","value":"EG"}}
+{"input":"customers in Eritrea please","output":{"field":"country","operator":"eq","value":"ER"}}
+{"input":"customers in Eritrea?","output":{"field":"country","operator":"eq","value":"ER"}}
+{"input":"Eritrean customers please","output":{"field":"country","operator":"eq","value":"ER"}}
+{"input":"Eritrean customers?","output":{"field":"country","operator":"eq","value":"ER"}}
+{"input":"show Western Sahara accounts please","output":{"field":"country","operator":"eq","value":"EH"}}
+{"input":"show Western Sahara accounts?","output":{"field":"country","operator":"eq","value":"EH"}}
+{"input":"companies from Sahrawi please","output":{"field":"country","operator":"eq","value":"EH"}}
+{"input":"companies from Sahrawi?","output":{"field":"country","operator":"eq","value":"EH"}}
+{"input":"country is Spain please","output":{"field":"country","operator":"eq","value":"ES"}}
+{"input":"country is Spain?","output":{"field":"country","operator":"eq","value":"ES"}}
+{"input":"customers in ES please","output":{"field":"country","operator":"eq","value":"ES"}}
+{"input":"customers in ES?","output":{"field":"country","operator":"eq","value":"ES"}}
+{"input":"Republic of Estonia customers please","output":{"field":"country","operator":"eq","value":"EE"}}
+{"input":"Republic of Estonia customers?","output":{"field":"country","operator":"eq","value":"EE"}}
+{"input":"show EE accounts please","output":{"field":"country","operator":"eq","value":"EE"}}
+{"input":"show EE accounts?","output":{"field":"country","operator":"eq","value":"EE"}}
+{"input":"companies from Federal Democratic Republic of Ethiopia please","output":{"field":"country","operator":"eq","value":"ET"}}
+{"input":"companies from Federal Democratic Republic of Ethiopia?","output":{"field":"country","operator":"eq","value":"ET"}}
+{"input":"country is ET please","output":{"field":"country","operator":"eq","value":"ET"}}
+{"input":"country is ET?","output":{"field":"country","operator":"eq","value":"ET"}}
+{"input":"customers in Finnish please","output":{"field":"country","operator":"eq","value":"FI"}}
+{"input":"customers in Finnish?","output":{"field":"country","operator":"eq","value":"FI"}}
+{"input":"Fiji customers please","output":{"field":"country","operator":"eq","value":"FJ"}}
+{"input":"Fiji customers?","output":{"field":"country","operator":"eq","value":"FJ"}}
+{"input":"show Fijian accounts please","output":{"field":"country","operator":"eq","value":"FJ"}}
+{"input":"show Fijian accounts?","output":{"field":"country","operator":"eq","value":"FJ"}}
+{"input":"companies from Falkland Islands please","output":{"field":"country","operator":"eq","value":"FK"}}
+{"input":"companies from Falkland Islands?","output":{"field":"country","operator":"eq","value":"FK"}}
+{"input":"country is FK please","output":{"field":"country","operator":"eq","value":"FK"}}
+{"input":"country is FK?","output":{"field":"country","operator":"eq","value":"FK"}}
+{"input":"customers in FR please","output":{"field":"country","operator":"eq","value":"FR"}}
+{"input":"customers in FR?","output":{"field":"country","operator":"eq","value":"FR"}}
+{"input":"Faroese customers please","output":{"field":"country","operator":"eq","value":"FO"}}
+{"input":"Faroese customers?","output":{"field":"country","operator":"eq","value":"FO"}}
+{"input":"show Micronesia accounts please","output":{"field":"country","operator":"eq","value":"FM"}}
+{"input":"show Micronesia accounts?","output":{"field":"country","operator":"eq","value":"FM"}}
+{"input":"companies from Micronesian please","output":{"field":"country","operator":"eq","value":"FM"}}
+{"input":"companies from Micronesian?","output":{"field":"country","operator":"eq","value":"FM"}}
+{"input":"country is Gabon please","output":{"field":"country","operator":"eq","value":"GA"}}
+{"input":"country is Gabon?","output":{"field":"country","operator":"eq","value":"GA"}}
+{"input":"customers in GA please","output":{"field":"country","operator":"eq","value":"GA"}}
+{"input":"customers in GA?","output":{"field":"country","operator":"eq","value":"GA"}}
+{"input":"United Kingdom of Great Britain and Northern Ireland customers please","output":{"field":"country","operator":"eq","value":"GB"}}
+{"input":"United Kingdom of Great Britain and Northern Ireland customers?","output":{"field":"country","operator":"eq","value":"GB"}}
+{"input":"show UK accounts please","output":{"field":"country","operator":"eq","value":"GB"}}
+{"input":"show UK accounts?","output":{"field":"country","operator":"eq","value":"GB"}}
+{"input":"companies from GB please","output":{"field":"country","operator":"eq","value":"GB"}}
+{"input":"companies from GB?","output":{"field":"country","operator":"eq","value":"GB"}}
+{"input":"country is Georgian please","output":{"field":"country","operator":"eq","value":"GE"}}
+{"input":"country is Georgian?","output":{"field":"country","operator":"eq","value":"GE"}}
+{"input":"customers in Bailiwick of Guernsey please","output":{"field":"country","operator":"eq","value":"GG"}}
+{"input":"customers in Bailiwick of Guernsey?","output":{"field":"country","operator":"eq","value":"GG"}}
+{"input":"Ghana customers please","output":{"field":"country","operator":"eq","value":"GH"}}
+{"input":"Ghana customers?","output":{"field":"country","operator":"eq","value":"GH"}}
+{"input":"show Ghanaian accounts please","output":{"field":"country","operator":"eq","value":"GH"}}
+{"input":"show Ghanaian accounts?","output":{"field":"country","operator":"eq","value":"GH"}}
+{"input":"companies from Gibraltar please","output":{"field":"country","operator":"eq","value":"GI"}}
+{"input":"companies from Gibraltar?","output":{"field":"country","operator":"eq","value":"GI"}}
+{"input":"country is Guinea please","output":{"field":"country","operator":"eq","value":"GN"}}
+{"input":"country is Guinea?","output":{"field":"country","operator":"eq","value":"GN"}}
+{"input":"customers in GN please","output":{"field":"country","operator":"eq","value":"GN"}}
+{"input":"customers in GN?","output":{"field":"country","operator":"eq","value":"GN"}}
+{"input":"Guadeloupian customers please","output":{"field":"country","operator":"eq","value":"GP"}}
+{"input":"Guadeloupian customers?","output":{"field":"country","operator":"eq","value":"GP"}}
+{"input":"show Gambia accounts please","output":{"field":"country","operator":"eq","value":"GM"}}
+{"input":"show Gambia accounts?","output":{"field":"country","operator":"eq","value":"GM"}}
+{"input":"companies from Gambian please","output":{"field":"country","operator":"eq","value":"GM"}}
+{"input":"companies from Gambian?","output":{"field":"country","operator":"eq","value":"GM"}}
+{"input":"country is Guinea-Bissau please","output":{"field":"country","operator":"eq","value":"GW"}}
+{"input":"country is Guinea-Bissau?","output":{"field":"country","operator":"eq","value":"GW"}}
+{"input":"customers in GW please","output":{"field":"country","operator":"eq","value":"GW"}}
+{"input":"customers in GW?","output":{"field":"country","operator":"eq","value":"GW"}}
+{"input":"Republic of Equatorial Guinea customers please","output":{"field":"country","operator":"eq","value":"GQ"}}
+{"input":"Republic of Equatorial Guinea customers?","output":{"field":"country","operator":"eq","value":"GQ"}}
+{"input":"show GQ accounts please","output":{"field":"country","operator":"eq","value":"GQ"}}
+{"input":"show GQ accounts?","output":{"field":"country","operator":"eq","value":"GQ"}}
+{"input":"companies from Hellenic Republic please","output":{"field":"country","operator":"eq","value":"GR"}}
+{"input":"companies from Hellenic Republic?","output":{"field":"country","operator":"eq","value":"GR"}}
+{"input":"country is GR please","output":{"field":"country","operator":"eq","value":"GR"}}
+{"input":"country is GR?","output":{"field":"country","operator":"eq","value":"GR"}}
+{"input":"customers in GD please","output":{"field":"country","operator":"eq","value":"GD"}}
+{"input":"customers in GD?","output":{"field":"country","operator":"eq","value":"GD"}}
+{"input":"Greenlandic customers please","output":{"field":"country","operator":"eq","value":"GL"}}
+{"input":"Greenlandic customers?","output":{"field":"country","operator":"eq","value":"GL"}}
+{"input":"show Guatemala accounts please","output":{"field":"country","operator":"eq","value":"GT"}}
+{"input":"show Guatemala accounts?","output":{"field":"country","operator":"eq","value":"GT"}}
+{"input":"companies from Guatemalan please","output":{"field":"country","operator":"eq","value":"GT"}}
+{"input":"companies from Guatemalan?","output":{"field":"country","operator":"eq","value":"GT"}}
+{"input":"country is French Guiana please","output":{"field":"country","operator":"eq","value":"GF"}}
+{"input":"country is French Guiana?","output":{"field":"country","operator":"eq","value":"GF"}}
+{"input":"customers in GF please","output":{"field":"country","operator":"eq","value":"GF"}}
+{"input":"customers in GF?","output":{"field":"country","operator":"eq","value":"GF"}}
+{"input":"Guamanian customers please","output":{"field":"country","operator":"eq","value":"GU"}}
+{"input":"Guamanian customers?","output":{"field":"country","operator":"eq","value":"GU"}}
+{"input":"show Guyana accounts please","output":{"field":"country","operator":"eq","value":"GY"}}
+{"input":"show Guyana accounts?","output":{"field":"country","operator":"eq","value":"GY"}}
+{"input":"companies from Guyanese please","output":{"field":"country","operator":"eq","value":"GY"}}
+{"input":"companies from Guyanese?","output":{"field":"country","operator":"eq","value":"GY"}}
+{"input":"country is Hong Kong please","output":{"field":"country","operator":"eq","value":"HK"}}
+{"input":"country is Hong Kong?","output":{"field":"country","operator":"eq","value":"HK"}}
+{"input":"customers in HK please","output":{"field":"country","operator":"eq","value":"HK"}}
+{"input":"customers in HK?","output":{"field":"country","operator":"eq","value":"HK"}}
+{"input":"Heard and McDonald Islander customers please","output":{"field":"country","operator":"eq","value":"HM"}}
+{"input":"Heard and McDonald Islander customers?","output":{"field":"country","operator":"eq","value":"HM"}}
+{"input":"show Honduras accounts please","output":{"field":"country","operator":"eq","value":"HN"}}
+{"input":"show Honduras accounts?","output":{"field":"country","operator":"eq","value":"HN"}}
+{"input":"companies from Honduran please","output":{"field":"country","operator":"eq","value":"HN"}}
+{"input":"companies from Honduran?","output":{"field":"country","operator":"eq","value":"HN"}}
+{"input":"country is Croatia please","output":{"field":"country","operator":"eq","value":"HR"}}
+{"input":"country is Croatia?","output":{"field":"country","operator":"eq","value":"HR"}}
+{"input":"customers in HR please","output":{"field":"country","operator":"eq","value":"HR"}}
+{"input":"customers in HR?","output":{"field":"country","operator":"eq","value":"HR"}}
+{"input":"Republic of Haiti customers please","output":{"field":"country","operator":"eq","value":"HT"}}
+{"input":"Republic of Haiti customers?","output":{"field":"country","operator":"eq","value":"HT"}}
+{"input":"show HT accounts please","output":{"field":"country","operator":"eq","value":"HT"}}
+{"input":"show HT accounts?","output":{"field":"country","operator":"eq","value":"HT"}}
+{"input":"companies from Hungarian please","output":{"field":"country","operator":"eq","value":"HU"}}
+{"input":"companies from Hungarian?","output":{"field":"country","operator":"eq","value":"HU"}}
+{"input":"country is Indonesia please","output":{"field":"country","operator":"eq","value":"ID"}}
+{"input":"country is Indonesia?","output":{"field":"country","operator":"eq","value":"ID"}}
+{"input":"customers in ID please","output":{"field":"country","operator":"eq","value":"ID"}}
+{"input":"customers in ID?","output":{"field":"country","operator":"eq","value":"ID"}}
+{"input":"Manx customers please","output":{"field":"country","operator":"eq","value":"IM"}}
+{"input":"Manx customers?","output":{"field":"country","operator":"eq","value":"IM"}}
+{"input":"show India accounts please","output":{"field":"country","operator":"eq","value":"IN"}}
+{"input":"show India accounts?","output":{"field":"country","operator":"eq","value":"IN"}}
+{"input":"companies from IN please","output":{"field":"country","operator":"eq","value":"IN"}}
+{"input":"companies from IN?","output":{"field":"country","operator":"eq","value":"IN"}}
+{"input":"country is IO please","output":{"field":"country","operator":"eq","value":"IO"}}
+{"input":"country is IO?","output":{"field":"country","operator":"eq","value":"IO"}}
+{"input":"customers in Irish please","output":{"field":"country","operator":"eq","value":"IE"}}
+{"input":"customers in Irish?","output":{"field":"country","operator":"eq","value":"IE"}}
+{"input":"Iran customers please","output":{"field":"country","operator":"eq","value":"IR"}}
+{"input":"Iran customers?","output":{"field":"country","operator":"eq","value":"IR"}}
+{"input":"show Iranian accounts please","output":{"field":"country","operator":"eq","value":"IR"}}
+{"input":"show Iranian accounts?","output":{"field":"country","operator":"eq","value":"IR"}}
+{"input":"companies from Iraq please","output":{"field":"country","operator":"eq","value":"IQ"}}
+{"input":"companies from Iraq?","output":{"field":"country","operator":"eq","value":"IQ"}}
+{"input":"country is Iraqi please","output":{"field":"country","operator":"eq","value":"IQ"}}
+{"input":"country is Iraqi?","output":{"field":"country","operator":"eq","value":"IQ"}}
+{"input":"customers in Icelander please","output":{"field":"country","operator":"eq","value":"IS"}}
+{"input":"customers in Icelander?","output":{"field":"country","operator":"eq","value":"IS"}}
+{"input":"Israel customers please","output":{"field":"country","operator":"eq","value":"IL"}}
+{"input":"Israel customers?","output":{"field":"country","operator":"eq","value":"IL"}}
+{"input":"show Israeli accounts please","output":{"field":"country","operator":"eq","value":"IL"}}
+{"input":"show Israeli accounts?","output":{"field":"country","operator":"eq","value":"IL"}}
+{"input":"companies from Italy please","output":{"field":"country","operator":"eq","value":"IT"}}
+{"input":"companies from Italy?","output":{"field":"country","operator":"eq","value":"IT"}}
+{"input":"country is Italian please","output":{"field":"country","operator":"eq","value":"IT"}}
+{"input":"country is Italian?","output":{"field":"country","operator":"eq","value":"IT"}}
+{"input":"customers in Jamaican please","output":{"field":"country","operator":"eq","value":"JM"}}
+{"input":"customers in Jamaican?","output":{"field":"country","operator":"eq","value":"JM"}}
+{"input":"Jersey customers please","output":{"field":"country","operator":"eq","value":"JE"}}
+{"input":"Jersey customers?","output":{"field":"country","operator":"eq","value":"JE"}}
+{"input":"show JE accounts please","output":{"field":"country","operator":"eq","value":"JE"}}
+{"input":"show JE accounts?","output":{"field":"country","operator":"eq","value":"JE"}}
+{"input":"companies from Hashemite Kingdom of Jordan please","output":{"field":"country","operator":"eq","value":"JO"}}
+{"input":"companies from Hashemite Kingdom of Jordan?","output":{"field":"country","operator":"eq","value":"JO"}}
+{"input":"country is JO please","output":{"field":"country","operator":"eq","value":"JO"}}
+{"input":"country is JO?","output":{"field":"country","operator":"eq","value":"JO"}}
+{"input":"customers in JP please","output":{"field":"country","operator":"eq","value":"JP"}}
+{"input":"customers in JP?","output":{"field":"country","operator":"eq","value":"JP"}}
+{"input":"Republic of Kazakhstan customers please","output":{"field":"country","operator":"eq","value":"KZ"}}
+{"input":"Republic of Kazakhstan customers?","output":{"field":"country","operator":"eq","value":"KZ"}}
+{"input":"show KZ accounts please","output":{"field":"country","operator":"eq","value":"KZ"}}
+{"input":"show KZ accounts?","output":{"field":"country","operator":"eq","value":"KZ"}}
+{"input":"companies from Republic of Kenya please","output":{"field":"country","operator":"eq","value":"KE"}}
+{"input":"companies from Republic of Kenya?","output":{"field":"country","operator":"eq","value":"KE"}}
+{"input":"country is KE please","output":{"field":"country","operator":"eq","value":"KE"}}
+{"input":"country is KE?","output":{"field":"country","operator":"eq","value":"KE"}}
+{"input":"customers in Kirghiz please","output":{"field":"country","operator":"eq","value":"KG"}}
+{"input":"customers in Kirghiz?","output":{"field":"country","operator":"eq","value":"KG"}}
+{"input":"Cambodia customers please","output":{"field":"country","operator":"eq","value":"KH"}}
+{"input":"Cambodia customers?","output":{"field":"country","operator":"eq","value":"KH"}}
+{"input":"show Cambodian accounts please","output":{"field":"country","operator":"eq","value":"KH"}}
+{"input":"show Cambodian accounts?","output":{"field":"country","operator":"eq","value":"KH"}}
+{"input":"companies from Kiribati please","output":{"field":"country","operator":"eq","value":"KI"}}
+{"input":"companies from Kiribati?","output":{"field":"country","operator":"eq","value":"KI"}}
+{"input":"country is I-Kiribati please","output":{"field":"country","operator":"eq","value":"KI"}}
+{"input":"country is I-Kiribati?","output":{"field":"country","operator":"eq","value":"KI"}}
+{"input":"customers in Federation of Saint Christopher and Nevis please","output":{"field":"country","operator":"eq","value":"KN"}}
+{"input":"customers in Federation of Saint Christopher and Nevis?","output":{"field":"country","operator":"eq","value":"KN"}}
+{"input":"KN customers please","output":{"field":"country","operator":"eq","value":"KN"}}
+{"input":"KN customers?","output":{"field":"country","operator":"eq","value":"KN"}}
+{"input":"show Republic of Korea accounts please","output":{"field":"country","operator":"eq","value":"KR"}}
+{"input":"show Republic of Korea accounts?","output":{"field":"country","operator":"eq","value":"KR"}}
+{"input":"companies from KR please","output":{"field":"country","operator":"eq","value":"KR"}}
+{"input":"companies from KR?","output":{"field":"country","operator":"eq","value":"KR"}}
+{"input":"country is Republic of Kosovo please","output":{"field":"country","operator":"eq","value":"XK"}}
+{"input":"country is Republic of Kosovo?","output":{"field":"country","operator":"eq","value":"XK"}}
+{"input":"customers in Kuwait please","output":{"field":"country","operator":"eq","value":"KW"}}
+{"input":"customers in Kuwait?","output":{"field":"country","operator":"eq","value":"KW"}}
+{"input":"Kuwaiti customers please","output":{"field":"country","operator":"eq","value":"KW"}}
+{"input":"Kuwaiti customers?","output":{"field":"country","operator":"eq","value":"KW"}}
+{"input":"show Laos accounts please","output":{"field":"country","operator":"eq","value":"LA"}}
+{"input":"show Laos accounts?","output":{"field":"country","operator":"eq","value":"LA"}}
+{"input":"companies from Laotian please","output":{"field":"country","operator":"eq","value":"LA"}}
+{"input":"companies from Laotian?","output":{"field":"country","operator":"eq","value":"LA"}}
+{"input":"country is Lebanon please","output":{"field":"country","operator":"eq","value":"LB"}}
+{"input":"country is Lebanon?","output":{"field":"country","operator":"eq","value":"LB"}}
+{"input":"customers in LB please","output":{"field":"country","operator":"eq","value":"LB"}}
+{"input":"customers in LB?","output":{"field":"country","operator":"eq","value":"LB"}}
+{"input":"Republic of Liberia customers please","output":{"field":"country","operator":"eq","value":"LR"}}
+{"input":"Republic of Liberia customers?","output":{"field":"country","operator":"eq","value":"LR"}}
+{"input":"show LR accounts please","output":{"field":"country","operator":"eq","value":"LR"}}
+{"input":"show LR accounts?","output":{"field":"country","operator":"eq","value":"LR"}}
+{"input":"companies from State of Libya please","output":{"field":"country","operator":"eq","value":"LY"}}
+{"input":"companies from State of Libya?","output":{"field":"country","operator":"eq","value":"LY"}}
+{"input":"country is LY please","output":{"field":"country","operator":"eq","value":"LY"}}
+{"input":"country is LY?","output":{"field":"country","operator":"eq","value":"LY"}}
+{"input":"customers in LC please","output":{"field":"country","operator":"eq","value":"LC"}}
+{"input":"customers in LC?","output":{"field":"country","operator":"eq","value":"LC"}}
+{"input":"Principality of Liechtenstein customers please","output":{"field":"country","operator":"eq","value":"LI"}}
+{"input":"Principality of Liechtenstein customers?","output":{"field":"country","operator":"eq","value":"LI"}}
+{"input":"show LI accounts please","output":{"field":"country","operator":"eq","value":"LI"}}
+{"input":"show LI accounts?","output":{"field":"country","operator":"eq","value":"LI"}}
+{"input":"companies from Democratic Socialist Republic of Sri Lanka please","output":{"field":"country","operator":"eq","value":"LK"}}
+{"input":"companies from Democratic Socialist Republic of Sri Lanka?","output":{"field":"country","operator":"eq","value":"LK"}}
+{"input":"country is LK please","output":{"field":"country","operator":"eq","value":"LK"}}
+{"input":"country is LK?","output":{"field":"country","operator":"eq","value":"LK"}}
+{"input":"customers in Mosotho please","output":{"field":"country","operator":"eq","value":"LS"}}
+{"input":"customers in Mosotho?","output":{"field":"country","operator":"eq","value":"LS"}}
+{"input":"Lithuania customers please","output":{"field":"country","operator":"eq","value":"LT"}}
+{"input":"Lithuania customers?","output":{"field":"country","operator":"eq","value":"LT"}}
+{"input":"show Lithuanian accounts please","output":{"field":"country","operator":"eq","value":"LT"}}
+{"input":"show Lithuanian accounts?","output":{"field":"country","operator":"eq","value":"LT"}}
+{"input":"companies from Luxembourg please","output":{"field":"country","operator":"eq","value":"LU"}}
+{"input":"companies from Luxembourg?","output":{"field":"country","operator":"eq","value":"LU"}}
+{"input":"country is Luxembourger please","output":{"field":"country","operator":"eq","value":"LU"}}
+{"input":"country is Luxembourger?","output":{"field":"country","operator":"eq","value":"LU"}}
+{"input":"customers in Republic of Latvia please","output":{"field":"country","operator":"eq","value":"LV"}}
+{"input":"customers in Republic of Latvia?","output":{"field":"country","operator":"eq","value":"LV"}}
+{"input":"LV customers please","output":{"field":"country","operator":"eq","value":"LV"}}
+{"input":"LV customers?","output":{"field":"country","operator":"eq","value":"LV"}}
+{"input":"show Macao Special Administrative Region of the People's Republic of China accounts please","output":{"field":"country","operator":"eq","value":"MO"}}
+{"input":"show Macao Special Administrative Region of the People's Republic of China accounts?","output":{"field":"country","operator":"eq","value":"MO"}}
+{"input":"companies from MO please","output":{"field":"country","operator":"eq","value":"MO"}}
+{"input":"companies from MO?","output":{"field":"country","operator":"eq","value":"MO"}}
+{"input":"country is Saint Martin Islander please","output":{"field":"country","operator":"eq","value":"MF"}}
+{"input":"country is Saint Martin Islander?","output":{"field":"country","operator":"eq","value":"MF"}}
+{"input":"customers in Kingdom of Morocco please","output":{"field":"country","operator":"eq","value":"MA"}}
+{"input":"customers in Kingdom of Morocco?","output":{"field":"country","operator":"eq","value":"MA"}}
+{"input":"MA customers please","output":{"field":"country","operator":"eq","value":"MA"}}
+{"input":"MA customers?","output":{"field":"country","operator":"eq","value":"MA"}}
+{"input":"show Principality of Monaco accounts please","output":{"field":"country","operator":"eq","value":"MC"}}
+{"input":"show Principality of Monaco accounts?","output":{"field":"country","operator":"eq","value":"MC"}}
+{"input":"companies from MC please","output":{"field":"country","operator":"eq","value":"MC"}}
+{"input":"companies from MC?","output":{"field":"country","operator":"eq","value":"MC"}}
+{"input":"country is Republic of Moldova please","output":{"field":"country","operator":"eq","value":"MD"}}
+{"input":"country is Republic of Moldova?","output":{"field":"country","operator":"eq","value":"MD"}}
+{"input":"customers in Madagascar please","output":{"field":"country","operator":"eq","value":"MG"}}
+{"input":"customers in Madagascar?","output":{"field":"country","operator":"eq","value":"MG"}}
+{"input":"Malagasy customers please","output":{"field":"country","operator":"eq","value":"MG"}}
+{"input":"Malagasy customers?","output":{"field":"country","operator":"eq","value":"MG"}}
+{"input":"show Maldives accounts please","output":{"field":"country","operator":"eq","value":"MV"}}
+{"input":"show Maldives accounts?","output":{"field":"country","operator":"eq","value":"MV"}}
+{"input":"companies from Maldivan please","output":{"field":"country","operator":"eq","value":"MV"}}
+{"input":"companies from Maldivan?","output":{"field":"country","operator":"eq","value":"MV"}}
+{"input":"country is Mexico please","output":{"field":"country","operator":"eq","value":"MX"}}
+{"input":"country is Mexico?","output":{"field":"country","operator":"eq","value":"MX"}}
+{"input":"customers in MX please","output":{"field":"country","operator":"eq","value":"MX"}}
+{"input":"customers in MX?","output":{"field":"country","operator":"eq","value":"MX"}}
+{"input":"Republic of the Marshall Islands customers please","output":{"field":"country","operator":"eq","value":"MH"}}
+{"input":"Republic of the Marshall Islands customers?","output":{"field":"country","operator":"eq","value":"MH"}}
+{"input":"show MH accounts please","output":{"field":"country","operator":"eq","value":"MH"}}
+{"input":"show MH accounts?","output":{"field":"country","operator":"eq","value":"MH"}}
+{"input":"companies from Republic of North Macedonia please","output":{"field":"country","operator":"eq","value":"MK"}}
+{"input":"companies from Republic of North Macedonia?","output":{"field":"country","operator":"eq","value":"MK"}}
+{"input":"country is MK please","output":{"field":"country","operator":"eq","value":"MK"}}
+{"input":"country is MK?","output":{"field":"country","operator":"eq","value":"MK"}}
+{"input":"customers in Malian please","output":{"field":"country","operator":"eq","value":"ML"}}
+{"input":"customers in Malian?","output":{"field":"country","operator":"eq","value":"ML"}}
+{"input":"Malta customers please","output":{"field":"country","operator":"eq","value":"MT"}}
+{"input":"Malta customers?","output":{"field":"country","operator":"eq","value":"MT"}}
+{"input":"show Maltese accounts please","output":{"field":"country","operator":"eq","value":"MT"}}
+{"input":"show Maltese accounts?","output":{"field":"country","operator":"eq","value":"MT"}}
+{"input":"companies from Myanmar please","output":{"field":"country","operator":"eq","value":"MM"}}
+{"input":"companies from Myanmar?","output":{"field":"country","operator":"eq","value":"MM"}}
+{"input":"country is Burmese please","output":{"field":"country","operator":"eq","value":"MM"}}
+{"input":"country is Burmese?","output":{"field":"country","operator":"eq","value":"MM"}}
+{"input":"customers in Montenegrin please","output":{"field":"country","operator":"eq","value":"ME"}}
+{"input":"customers in Montenegrin?","output":{"field":"country","operator":"eq","value":"ME"}}
+{"input":"Mongolia customers please","output":{"field":"country","operator":"eq","value":"MN"}}
+{"input":"Mongolia customers?","output":{"field":"country","operator":"eq","value":"MN"}}
+{"input":"show MN accounts please","output":{"field":"country","operator":"eq","value":"MN"}}
+{"input":"show MN accounts?","output":{"field":"country","operator":"eq","value":"MN"}}
+{"input":"companies from Commonwealth of the Northern Mariana Islands please","output":{"field":"country","operator":"eq","value":"MP"}}
+{"input":"companies from Commonwealth of the Northern Mariana Islands?","output":{"field":"country","operator":"eq","value":"MP"}}
+{"input":"country is Mozambique please","output":{"field":"country","operator":"eq","value":"MZ"}}
+{"input":"country is Mozambique?","output":{"field":"country","operator":"eq","value":"MZ"}}
+{"input":"customers in MZ please","output":{"field":"country","operator":"eq","value":"MZ"}}
+{"input":"customers in MZ?","output":{"field":"country","operator":"eq","value":"MZ"}}
+{"input":"Islamic Republic of Mauritania customers please","output":{"field":"country","operator":"eq","value":"MR"}}
+{"input":"Islamic Republic of Mauritania customers?","output":{"field":"country","operator":"eq","value":"MR"}}
+{"input":"show MR accounts please","output":{"field":"country","operator":"eq","value":"MR"}}
+{"input":"show MR accounts?","output":{"field":"country","operator":"eq","value":"MR"}}
+{"input":"companies from Montserratian please","output":{"field":"country","operator":"eq","value":"MS"}}
+{"input":"companies from Montserratian?","output":{"field":"country","operator":"eq","value":"MS"}}
+{"input":"country is Martinique please","output":{"field":"country","operator":"eq","value":"MQ"}}
+{"input":"country is Martinique?","output":{"field":"country","operator":"eq","value":"MQ"}}
+{"input":"customers in Mauritius please","output":{"field":"country","operator":"eq","value":"MU"}}
+{"input":"customers in Mauritius?","output":{"field":"country","operator":"eq","value":"MU"}}
+{"input":"Mauritian customers please","output":{"field":"country","operator":"eq","value":"MU"}}
+{"input":"Mauritian customers?","output":{"field":"country","operator":"eq","value":"MU"}}
+{"input":"show Malawi accounts please","output":{"field":"country","operator":"eq","value":"MW"}}
+{"input":"show Malawi accounts?","output":{"field":"country","operator":"eq","value":"MW"}}
+{"input":"companies from Malawian please","output":{"field":"country","operator":"eq","value":"MW"}}
+{"input":"companies from Malawian?","output":{"field":"country","operator":"eq","value":"MW"}}
+{"input":"country is Malaysia please","output":{"field":"country","operator":"eq","value":"MY"}}
+{"input":"country is Malaysia?","output":{"field":"country","operator":"eq","value":"MY"}}
+{"input":"customers in Mayotte please","output":{"field":"country","operator":"eq","value":"YT"}}
+{"input":"customers in Mayotte?","output":{"field":"country","operator":"eq","value":"YT"}}
+{"input":"Mahoran customers please","output":{"field":"country","operator":"eq","value":"YT"}}
+{"input":"Mahoran customers?","output":{"field":"country","operator":"eq","value":"YT"}}
+{"input":"show Namibia accounts please","output":{"field":"country","operator":"eq","value":"NA"}}
+{"input":"show Namibia accounts?","output":{"field":"country","operator":"eq","value":"NA"}}
+{"input":"companies from Namibian please","output":{"field":"country","operator":"eq","value":"NA"}}
+{"input":"companies from Namibian?","output":{"field":"country","operator":"eq","value":"NA"}}
+{"input":"country is New Caledonia please","output":{"field":"country","operator":"eq","value":"NC"}}
+{"input":"country is New Caledonia?","output":{"field":"country","operator":"eq","value":"NC"}}
+{"input":"customers in Niger please","output":{"field":"country","operator":"eq","value":"NE"}}
+{"input":"customers in Niger?","output":{"field":"country","operator":"eq","value":"NE"}}
+{"input":"Nigerien customers please","output":{"field":"country","operator":"eq","value":"NE"}}
+{"input":"Nigerien customers?","output":{"field":"country","operator":"eq","value":"NE"}}
+{"input":"show Norfolk Island accounts please","output":{"field":"country","operator":"eq","value":"NF"}}
+{"input":"show Norfolk Island accounts?","output":{"field":"country","operator":"eq","value":"NF"}}
+{"input":"companies from Norfolk Islander please","output":{"field":"country","operator":"eq","value":"NF"}}
+{"input":"companies from Norfolk Islander?","output":{"field":"country","operator":"eq","value":"NF"}}
+{"input":"country is Nigeria please","output":{"field":"country","operator":"eq","value":"NG"}}
+{"input":"country is Nigeria?","output":{"field":"country","operator":"eq","value":"NG"}}
+{"input":"customers in NG please","output":{"field":"country","operator":"eq","value":"NG"}}
+{"input":"customers in NG?","output":{"field":"country","operator":"eq","value":"NG"}}
+{"input":"Republic of Nicaragua customers please","output":{"field":"country","operator":"eq","value":"NI"}}
+{"input":"Republic of Nicaragua customers?","output":{"field":"country","operator":"eq","value":"NI"}}
+{"input":"show NI accounts please","output":{"field":"country","operator":"eq","value":"NI"}}
+{"input":"show NI accounts?","output":{"field":"country","operator":"eq","value":"NI"}}
+{"input":"companies from Niuean please","output":{"field":"country","operator":"eq","value":"NU"}}
+{"input":"companies from Niuean?","output":{"field":"country","operator":"eq","value":"NU"}}
+{"input":"country is Netherlands please","output":{"field":"country","operator":"eq","value":"NL"}}
+{"input":"country is Netherlands?","output":{"field":"country","operator":"eq","value":"NL"}}
+{"input":"show Norway accounts please","output":{"field":"country","operator":"eq","value":"NO"}}
+{"input":"show Norway accounts?","output":{"field":"country","operator":"eq","value":"NO"}}
+{"input":"country is NO please","output":{"field":"country","operator":"eq","value":"NO"}}
+{"input":"country is NO?","output":{"field":"country","operator":"eq","value":"NO"}}
+{"input":"customers in Nepalese please","output":{"field":"country","operator":"eq","value":"NP"}}
+{"input":"customers in Nepalese?","output":{"field":"country","operator":"eq","value":"NP"}}
+{"input":"Nauru customers please","output":{"field":"country","operator":"eq","value":"NR"}}
+{"input":"Nauru customers?","output":{"field":"country","operator":"eq","value":"NR"}}
+{"input":"show Nauruan accounts please","output":{"field":"country","operator":"eq","value":"NR"}}
+{"input":"show Nauruan accounts?","output":{"field":"country","operator":"eq","value":"NR"}}
+{"input":"companies from New Zealand please","output":{"field":"country","operator":"eq","value":"NZ"}}
+{"input":"companies from New Zealand?","output":{"field":"country","operator":"eq","value":"NZ"}}
+{"input":"country is NZ please","output":{"field":"country","operator":"eq","value":"NZ"}}
+{"input":"country is NZ?","output":{"field":"country","operator":"eq","value":"NZ"}}
+{"input":"customers in Omani please","output":{"field":"country","operator":"eq","value":"OM"}}
+{"input":"customers in Omani?","output":{"field":"country","operator":"eq","value":"OM"}}
+{"input":"Pakistan customers please","output":{"field":"country","operator":"eq","value":"PK"}}
+{"input":"Pakistan customers?","output":{"field":"country","operator":"eq","value":"PK"}}
+{"input":"show Pakistani accounts please","output":{"field":"country","operator":"eq","value":"PK"}}
+{"input":"show Pakistani accounts?","output":{"field":"country","operator":"eq","value":"PK"}}
+{"input":"companies from Panama please","output":{"field":"country","operator":"eq","value":"PA"}}
+{"input":"companies from Panama?","output":{"field":"country","operator":"eq","value":"PA"}}
+{"input":"country is Panamanian please","output":{"field":"country","operator":"eq","value":"PA"}}
+{"input":"country is Panamanian?","output":{"field":"country","operator":"eq","value":"PA"}}
+{"input":"customers in Pitcairn Group of Islands please","output":{"field":"country","operator":"eq","value":"PN"}}
+{"input":"customers in Pitcairn Group of Islands?","output":{"field":"country","operator":"eq","value":"PN"}}
+{"input":"PN customers please","output":{"field":"country","operator":"eq","value":"PN"}}
+{"input":"PN customers?","output":{"field":"country","operator":"eq","value":"PN"}}
+{"input":"show Republic of Peru accounts please","output":{"field":"country","operator":"eq","value":"PE"}}
+{"input":"show Republic of Peru accounts?","output":{"field":"country","operator":"eq","value":"PE"}}
+{"input":"companies from PE please","output":{"field":"country","operator":"eq","value":"PE"}}
+{"input":"companies from PE?","output":{"field":"country","operator":"eq","value":"PE"}}
+{"input":"country is Republic of the Philippines please","output":{"field":"country","operator":"eq","value":"PH"}}
+{"input":"country is Republic of the Philippines?","output":{"field":"country","operator":"eq","value":"PH"}}
+{"input":"customers in Palau please","output":{"field":"country","operator":"eq","value":"PW"}}
+{"input":"customers in Palau?","output":{"field":"country","operator":"eq","value":"PW"}}
+{"input":"Palauan customers please","output":{"field":"country","operator":"eq","value":"PW"}}
+{"input":"Palauan customers?","output":{"field":"country","operator":"eq","value":"PW"}}
+{"input":"show Papua New Guinea accounts please","output":{"field":"country","operator":"eq","value":"PG"}}
+{"input":"show Papua New Guinea accounts?","output":{"field":"country","operator":"eq","value":"PG"}}
+{"input":"companies from Papua New Guinean please","output":{"field":"country","operator":"eq","value":"PG"}}
+{"input":"companies from Papua New Guinean?","output":{"field":"country","operator":"eq","value":"PG"}}
+{"input":"country is Poland please","output":{"field":"country","operator":"eq","value":"PL"}}
+{"input":"country is Poland?","output":{"field":"country","operator":"eq","value":"PL"}}
+{"input":"customers in PL please","output":{"field":"country","operator":"eq","value":"PL"}}
+{"input":"customers in PL?","output":{"field":"country","operator":"eq","value":"PL"}}
+{"input":"Commonwealth of Puerto Rico customers please","output":{"field":"country","operator":"eq","value":"PR"}}
+{"input":"Commonwealth of Puerto Rico customers?","output":{"field":"country","operator":"eq","value":"PR"}}
+{"input":"show PR accounts please","output":{"field":"country","operator":"eq","value":"PR"}}
+{"input":"show PR accounts?","output":{"field":"country","operator":"eq","value":"PR"}}
+{"input":"companies from Democratic People's Republic of Korea please","output":{"field":"country","operator":"eq","value":"KP"}}
+{"input":"companies from Democratic People's Republic of Korea?","output":{"field":"country","operator":"eq","value":"KP"}}
+{"input":"country is KP please","output":{"field":"country","operator":"eq","value":"KP"}}
+{"input":"country is KP?","output":{"field":"country","operator":"eq","value":"KP"}}
+{"input":"customers in Portuguese please","output":{"field":"country","operator":"eq","value":"PT"}}
+{"input":"customers in Portuguese?","output":{"field":"country","operator":"eq","value":"PT"}}
+{"input":"Paraguay customers please","output":{"field":"country","operator":"eq","value":"PY"}}
+{"input":"Paraguay customers?","output":{"field":"country","operator":"eq","value":"PY"}}
+{"input":"show Paraguayan accounts please","output":{"field":"country","operator":"eq","value":"PY"}}
+{"input":"show Paraguayan accounts?","output":{"field":"country","operator":"eq","value":"PY"}}
+{"input":"companies from Palestine please","output":{"field":"country","operator":"eq","value":"PS"}}
+{"input":"companies from Palestine?","output":{"field":"country","operator":"eq","value":"PS"}}
+{"input":"country is Palestinian please","output":{"field":"country","operator":"eq","value":"PS"}}
+{"input":"country is Palestinian?","output":{"field":"country","operator":"eq","value":"PS"}}
+{"input":"customers in French Polynesian please","output":{"field":"country","operator":"eq","value":"PF"}}
+{"input":"customers in French Polynesian?","output":{"field":"country","operator":"eq","value":"PF"}}
+{"input":"Qatar customers please","output":{"field":"country","operator":"eq","value":"QA"}}
+{"input":"Qatar customers?","output":{"field":"country","operator":"eq","value":"QA"}}
+{"input":"show Qatari accounts please","output":{"field":"country","operator":"eq","value":"QA"}}
+{"input":"show Qatari accounts?","output":{"field":"country","operator":"eq","value":"QA"}}
+{"input":"companies from Réunion please","output":{"field":"country","operator":"eq","value":"RE"}}
+{"input":"companies from Réunion?","output":{"field":"country","operator":"eq","value":"RE"}}
+{"input":"country is Réunionese please","output":{"field":"country","operator":"eq","value":"RE"}}
+{"input":"country is Réunionese?","output":{"field":"country","operator":"eq","value":"RE"}}
+{"input":"customers in Romanian please","output":{"field":"country","operator":"eq","value":"RO"}}
+{"input":"customers in Romanian?","output":{"field":"country","operator":"eq","value":"RO"}}
+{"input":"Russia customers please","output":{"field":"country","operator":"eq","value":"RU"}}
+{"input":"Russia customers?","output":{"field":"country","operator":"eq","value":"RU"}}
+{"input":"show Russian accounts please","output":{"field":"country","operator":"eq","value":"RU"}}
+{"input":"show Russian accounts?","output":{"field":"country","operator":"eq","value":"RU"}}
+{"input":"companies from Rwanda please","output":{"field":"country","operator":"eq","value":"RW"}}
+{"input":"companies from Rwanda?","output":{"field":"country","operator":"eq","value":"RW"}}
+{"input":"country is Rwandan please","output":{"field":"country","operator":"eq","value":"RW"}}
+{"input":"country is Rwandan?","output":{"field":"country","operator":"eq","value":"RW"}}
+{"input":"customers in Kingdom of Saudi Arabia please","output":{"field":"country","operator":"eq","value":"SA"}}
+{"input":"customers in Kingdom of Saudi Arabia?","output":{"field":"country","operator":"eq","value":"SA"}}
+{"input":"SA customers please","output":{"field":"country","operator":"eq","value":"SA"}}
+{"input":"SA customers?","output":{"field":"country","operator":"eq","value":"SA"}}
+{"input":"show Republic of the Sudan accounts please","output":{"field":"country","operator":"eq","value":"SD"}}
+{"input":"show Republic of the Sudan accounts?","output":{"field":"country","operator":"eq","value":"SD"}}
+{"input":"companies from SD please","output":{"field":"country","operator":"eq","value":"SD"}}
+{"input":"companies from SD?","output":{"field":"country","operator":"eq","value":"SD"}}
+{"input":"country is Republic of Senegal please","output":{"field":"country","operator":"eq","value":"SN"}}
+{"input":"country is Republic of Senegal?","output":{"field":"country","operator":"eq","value":"SN"}}
+{"input":"customers in Singapore please","output":{"field":"country","operator":"eq","value":"SG"}}
+{"input":"customers in Singapore?","output":{"field":"country","operator":"eq","value":"SG"}}
+{"input":"Singaporean customers please","output":{"field":"country","operator":"eq","value":"SG"}}
+{"input":"Singaporean customers?","output":{"field":"country","operator":"eq","value":"SG"}}
+{"input":"show South Georgia accounts please","output":{"field":"country","operator":"eq","value":"GS"}}
+{"input":"show South Georgia accounts?","output":{"field":"country","operator":"eq","value":"GS"}}
+{"input":"companies from South Georgian South Sandwich Islander please","output":{"field":"country","operator":"eq","value":"GS"}}
+{"input":"companies from South Georgian South Sandwich Islander?","output":{"field":"country","operator":"eq","value":"GS"}}
+{"input":"country is Svalbard and Jan Mayen please","output":{"field":"country","operator":"eq","value":"SJ"}}
+{"input":"country is Svalbard and Jan Mayen?","output":{"field":"country","operator":"eq","value":"SJ"}}
+{"input":"customers in Solomon Islands please","output":{"field":"country","operator":"eq","value":"SB"}}
+{"input":"customers in Solomon Islands?","output":{"field":"country","operator":"eq","value":"SB"}}
+{"input":"SB customers please","output":{"field":"country","operator":"eq","value":"SB"}}
+{"input":"SB customers?","output":{"field":"country","operator":"eq","value":"SB"}}
+{"input":"show Republic of Sierra Leone accounts please","output":{"field":"country","operator":"eq","value":"SL"}}
+{"input":"show Republic of Sierra Leone accounts?","output":{"field":"country","operator":"eq","value":"SL"}}
+{"input":"companies from SL please","output":{"field":"country","operator":"eq","value":"SL"}}
+{"input":"companies from SL?","output":{"field":"country","operator":"eq","value":"SL"}}
+{"input":"country is Republic of El Salvador please","output":{"field":"country","operator":"eq","value":"SV"}}
+{"input":"country is Republic of El Salvador?","output":{"field":"country","operator":"eq","value":"SV"}}
+{"input":"customers in San Marino please","output":{"field":"country","operator":"eq","value":"SM"}}
+{"input":"customers in San Marino?","output":{"field":"country","operator":"eq","value":"SM"}}
+{"input":"Sammarinese customers please","output":{"field":"country","operator":"eq","value":"SM"}}
+{"input":"Sammarinese customers?","output":{"field":"country","operator":"eq","value":"SM"}}
+{"input":"show Somalia accounts please","output":{"field":"country","operator":"eq","value":"SO"}}
+{"input":"show Somalia accounts?","output":{"field":"country","operator":"eq","value":"SO"}}
+{"input":"companies from Somali please","output":{"field":"country","operator":"eq","value":"SO"}}
+{"input":"companies from Somali?","output":{"field":"country","operator":"eq","value":"SO"}}
+{"input":"country is Saint Pierre and Miquelon please","output":{"field":"country","operator":"eq","value":"PM"}}
+{"input":"country is Saint Pierre and Miquelon?","output":{"field":"country","operator":"eq","value":"PM"}}
+{"input":"customers in Serbia please","output":{"field":"country","operator":"eq","value":"RS"}}
+{"input":"customers in Serbia?","output":{"field":"country","operator":"eq","value":"RS"}}
+{"input":"Serbian customers please","output":{"field":"country","operator":"eq","value":"RS"}}
+{"input":"Serbian customers?","output":{"field":"country","operator":"eq","value":"RS"}}
+{"input":"show South Sudan accounts please","output":{"field":"country","operator":"eq","value":"SS"}}
+{"input":"show South Sudan accounts?","output":{"field":"country","operator":"eq","value":"SS"}}
+{"input":"companies from South Sudanese please","output":{"field":"country","operator":"eq","value":"SS"}}
+{"input":"companies from South Sudanese?","output":{"field":"country","operator":"eq","value":"SS"}}
+{"input":"country is São Tomé and Príncipe please","output":{"field":"country","operator":"eq","value":"ST"}}
+{"input":"country is São Tomé and Príncipe?","output":{"field":"country","operator":"eq","value":"ST"}}
+{"input":"customers in ST please","output":{"field":"country","operator":"eq","value":"ST"}}
+{"input":"customers in ST?","output":{"field":"country","operator":"eq","value":"ST"}}
+{"input":"Republic of Suriname customers please","output":{"field":"country","operator":"eq","value":"SR"}}
+{"input":"Republic of Suriname customers?","output":{"field":"country","operator":"eq","value":"SR"}}
+{"input":"show SR accounts please","output":{"field":"country","operator":"eq","value":"SR"}}
+{"input":"show SR accounts?","output":{"field":"country","operator":"eq","value":"SR"}}
+{"input":"companies from Slovak Republic please","output":{"field":"country","operator":"eq","value":"SK"}}
+{"input":"companies from Slovak Republic?","output":{"field":"country","operator":"eq","value":"SK"}}
+{"input":"country is SK please","output":{"field":"country","operator":"eq","value":"SK"}}
+{"input":"country is SK?","output":{"field":"country","operator":"eq","value":"SK"}}
+{"input":"customers in Slovene please","output":{"field":"country","operator":"eq","value":"SI"}}
+{"input":"customers in Slovene?","output":{"field":"country","operator":"eq","value":"SI"}}
+{"input":"companies from Sweden please","output":{"field":"country","operator":"eq","value":"SE"}}
+{"input":"companies from Sweden?","output":{"field":"country","operator":"eq","value":"SE"}}
+{"input":"show SE accounts please","output":{"field":"country","operator":"eq","value":"SE"}}
+{"input":"show SE accounts?","output":{"field":"country","operator":"eq","value":"SE"}}
+{"input":"companies from Kingdom of Eswatini please","output":{"field":"country","operator":"eq","value":"SZ"}}
+{"input":"companies from Kingdom of Eswatini?","output":{"field":"country","operator":"eq","value":"SZ"}}
+{"input":"country is SZ please","output":{"field":"country","operator":"eq","value":"SZ"}}
+{"input":"country is SZ?","output":{"field":"country","operator":"eq","value":"SZ"}}
+{"input":"customers in SX please","output":{"field":"country","operator":"eq","value":"SX"}}
+{"input":"customers in SX?","output":{"field":"country","operator":"eq","value":"SX"}}
+{"input":"Republic of Seychelles customers please","output":{"field":"country","operator":"eq","value":"SC"}}
+{"input":"Republic of Seychelles customers?","output":{"field":"country","operator":"eq","value":"SC"}}
+{"input":"show SC accounts please","output":{"field":"country","operator":"eq","value":"SC"}}
+{"input":"show SC accounts?","output":{"field":"country","operator":"eq","value":"SC"}}
+{"input":"companies from Syrian Arab Republic please","output":{"field":"country","operator":"eq","value":"SY"}}
+{"input":"companies from Syrian Arab Republic?","output":{"field":"country","operator":"eq","value":"SY"}}
+{"input":"country is SY please","output":{"field":"country","operator":"eq","value":"SY"}}
+{"input":"country is SY?","output":{"field":"country","operator":"eq","value":"SY"}}
+{"input":"customers in TC please","output":{"field":"country","operator":"eq","value":"TC"}}
+{"input":"customers in TC?","output":{"field":"country","operator":"eq","value":"TC"}}
+{"input":"Republic of Chad customers please","output":{"field":"country","operator":"eq","value":"TD"}}
+{"input":"Republic of Chad customers?","output":{"field":"country","operator":"eq","value":"TD"}}
+{"input":"show TD accounts please","output":{"field":"country","operator":"eq","value":"TD"}}
+{"input":"show TD accounts?","output":{"field":"country","operator":"eq","value":"TD"}}
+{"input":"companies from Togolese Republic please","output":{"field":"country","operator":"eq","value":"TG"}}
+{"input":"companies from Togolese Republic?","output":{"field":"country","operator":"eq","value":"TG"}}
+{"input":"country is TG please","output":{"field":"country","operator":"eq","value":"TG"}}
+{"input":"country is TG?","output":{"field":"country","operator":"eq","value":"TG"}}
+{"input":"customers in Thai please","output":{"field":"country","operator":"eq","value":"TH"}}
+{"input":"customers in Thai?","output":{"field":"country","operator":"eq","value":"TH"}}
+{"input":"Tajikistan customers please","output":{"field":"country","operator":"eq","value":"TJ"}}
+{"input":"Tajikistan customers?","output":{"field":"country","operator":"eq","value":"TJ"}}
+{"input":"show Tadzhik accounts please","output":{"field":"country","operator":"eq","value":"TJ"}}
+{"input":"show Tadzhik accounts?","output":{"field":"country","operator":"eq","value":"TJ"}}
+{"input":"companies from Tokelau please","output":{"field":"country","operator":"eq","value":"TK"}}
+{"input":"companies from Tokelau?","output":{"field":"country","operator":"eq","value":"TK"}}
+{"input":"country is TK please","output":{"field":"country","operator":"eq","value":"TK"}}
+{"input":"country is TK?","output":{"field":"country","operator":"eq","value":"TK"}}
+{"input":"customers in TM please","output":{"field":"country","operator":"eq","value":"TM"}}
+{"input":"customers in TM?","output":{"field":"country","operator":"eq","value":"TM"}}
+{"input":"Democratic Republic of Timor-Leste customers please","output":{"field":"country","operator":"eq","value":"TL"}}
+{"input":"Democratic Republic of Timor-Leste customers?","output":{"field":"country","operator":"eq","value":"TL"}}
+{"input":"show TL accounts please","output":{"field":"country","operator":"eq","value":"TL"}}
+{"input":"show TL accounts?","output":{"field":"country","operator":"eq","value":"TL"}}
+{"input":"companies from Kingdom of Tonga please","output":{"field":"country","operator":"eq","value":"TO"}}
+{"input":"companies from Kingdom of Tonga?","output":{"field":"country","operator":"eq","value":"TO"}}
+{"input":"country is TO please","output":{"field":"country","operator":"eq","value":"TO"}}
+{"input":"country is TO?","output":{"field":"country","operator":"eq","value":"TO"}}
+{"input":"customers in Trinidadian please","output":{"field":"country","operator":"eq","value":"TT"}}
+{"input":"customers in Trinidadian?","output":{"field":"country","operator":"eq","value":"TT"}}
+{"input":"Tunisia customers please","output":{"field":"country","operator":"eq","value":"TN"}}
+{"input":"Tunisia customers?","output":{"field":"country","operator":"eq","value":"TN"}}
+{"input":"show Tunisian accounts please","output":{"field":"country","operator":"eq","value":"TN"}}
+{"input":"show Tunisian accounts?","output":{"field":"country","operator":"eq","value":"TN"}}
+{"input":"companies from Türkiye please","output":{"field":"country","operator":"eq","value":"TR"}}
+{"input":"companies from Türkiye?","output":{"field":"country","operator":"eq","value":"TR"}}
+{"input":"country is Turkish please","output":{"field":"country","operator":"eq","value":"TR"}}
+{"input":"country is Turkish?","output":{"field":"country","operator":"eq","value":"TR"}}
+{"input":"customers in Tuvaluan please","output":{"field":"country","operator":"eq","value":"TV"}}
+{"input":"customers in Tuvaluan?","output":{"field":"country","operator":"eq","value":"TV"}}
+{"input":"Taiwan customers please","output":{"field":"country","operator":"eq","value":"TW"}}
+{"input":"Taiwan customers?","output":{"field":"country","operator":"eq","value":"TW"}}
+{"input":"show Taiwanese accounts please","output":{"field":"country","operator":"eq","value":"TW"}}
+{"input":"show Taiwanese accounts?","output":{"field":"country","operator":"eq","value":"TW"}}
+{"input":"companies from Tanzania please","output":{"field":"country","operator":"eq","value":"TZ"}}
+{"input":"companies from Tanzania?","output":{"field":"country","operator":"eq","value":"TZ"}}
+{"input":"country is Tanzanian please","output":{"field":"country","operator":"eq","value":"TZ"}}
+{"input":"country is Tanzanian?","output":{"field":"country","operator":"eq","value":"TZ"}}
+{"input":"customers in Republic of Uganda please","output":{"field":"country","operator":"eq","value":"UG"}}
+{"input":"customers in Republic of Uganda?","output":{"field":"country","operator":"eq","value":"UG"}}
+{"input":"UG customers please","output":{"field":"country","operator":"eq","value":"UG"}}
+{"input":"UG customers?","output":{"field":"country","operator":"eq","value":"UG"}}
+{"input":"show Ukrainian accounts please","output":{"field":"country","operator":"eq","value":"UA"}}
+{"input":"show Ukrainian accounts?","output":{"field":"country","operator":"eq","value":"UA"}}
+{"input":"companies from United States Minor Outlying Islands please","output":{"field":"country","operator":"eq","value":"UM"}}
+{"input":"companies from United States Minor Outlying Islands?","output":{"field":"country","operator":"eq","value":"UM"}}
+{"input":"country is UM please","output":{"field":"country","operator":"eq","value":"UM"}}
+{"input":"country is UM?","output":{"field":"country","operator":"eq","value":"UM"}}
+{"input":"customers in Uruguayan please","output":{"field":"country","operator":"eq","value":"UY"}}
+{"input":"customers in Uruguayan?","output":{"field":"country","operator":"eq","value":"UY"}}
+{"input":"United States customers please","output":{"field":"country","operator":"eq","value":"US"}}
+{"input":"United States customers?","output":{"field":"country","operator":"eq","value":"US"}}
+{"input":"customers in USA please","output":{"field":"country","operator":"eq","value":"US"}}
+{"input":"customers in USA?","output":{"field":"country","operator":"eq","value":"US"}}
+{"input":"Uzbekistan customers please","output":{"field":"country","operator":"eq","value":"UZ"}}
+{"input":"Uzbekistan customers?","output":{"field":"country","operator":"eq","value":"UZ"}}
+{"input":"show Uzbekistani accounts please","output":{"field":"country","operator":"eq","value":"UZ"}}
+{"input":"show Uzbekistani accounts?","output":{"field":"country","operator":"eq","value":"UZ"}}
+{"input":"companies from Vatican City please","output":{"field":"country","operator":"eq","value":"VA"}}
+{"input":"companies from Vatican City?","output":{"field":"country","operator":"eq","value":"VA"}}
+{"input":"country is Vatican please","output":{"field":"country","operator":"eq","value":"VA"}}
+{"input":"country is Vatican?","output":{"field":"country","operator":"eq","value":"VA"}}
+{"input":"customers in Saint Vincentian please","output":{"field":"country","operator":"eq","value":"VC"}}
+{"input":"customers in Saint Vincentian?","output":{"field":"country","operator":"eq","value":"VC"}}
+{"input":"Venezuela customers please","output":{"field":"country","operator":"eq","value":"VE"}}
+{"input":"Venezuela customers?","output":{"field":"country","operator":"eq","value":"VE"}}
+{"input":"show Venezuelan accounts please","output":{"field":"country","operator":"eq","value":"VE"}}
+{"input":"show Venezuelan accounts?","output":{"field":"country","operator":"eq","value":"VE"}}
+{"input":"companies from British Virgin Islands please","output":{"field":"country","operator":"eq","value":"VG"}}
+{"input":"companies from British Virgin Islands?","output":{"field":"country","operator":"eq","value":"VG"}}
+{"input":"country is VG please","output":{"field":"country","operator":"eq","value":"VG"}}
+{"input":"country is VG?","output":{"field":"country","operator":"eq","value":"VG"}}
+{"input":"customers in VI please","output":{"field":"country","operator":"eq","value":"VI"}}
+{"input":"customers in VI?","output":{"field":"country","operator":"eq","value":"VI"}}
+{"input":"Socialist Republic of Vietnam customers please","output":{"field":"country","operator":"eq","value":"VN"}}
+{"input":"Socialist Republic of Vietnam customers?","output":{"field":"country","operator":"eq","value":"VN"}}
+{"input":"show VN accounts please","output":{"field":"country","operator":"eq","value":"VN"}}
+{"input":"show VN accounts?","output":{"field":"country","operator":"eq","value":"VN"}}
+{"input":"companies from Republic of Vanuatu please","output":{"field":"country","operator":"eq","value":"VU"}}
+{"input":"companies from Republic of Vanuatu?","output":{"field":"country","operator":"eq","value":"VU"}}
+{"input":"country is VU please","output":{"field":"country","operator":"eq","value":"VU"}}
+{"input":"country is VU?","output":{"field":"country","operator":"eq","value":"VU"}}
+{"input":"customers in Wallis and Futuna Islander please","output":{"field":"country","operator":"eq","value":"WF"}}
+{"input":"customers in Wallis and Futuna Islander?","output":{"field":"country","operator":"eq","value":"WF"}}
+{"input":"Samoa customers please","output":{"field":"country","operator":"eq","value":"WS"}}
+{"input":"Samoa customers?","output":{"field":"country","operator":"eq","value":"WS"}}
+{"input":"show Samoan accounts please","output":{"field":"country","operator":"eq","value":"WS"}}
+{"input":"show Samoan accounts?","output":{"field":"country","operator":"eq","value":"WS"}}
+{"input":"companies from Yemen please","output":{"field":"country","operator":"eq","value":"YE"}}
+{"input":"companies from Yemen?","output":{"field":"country","operator":"eq","value":"YE"}}
+{"input":"country is Yemeni please","output":{"field":"country","operator":"eq","value":"YE"}}
+{"input":"country is Yemeni?","output":{"field":"country","operator":"eq","value":"YE"}}
+{"input":"customers in Republic of South Africa please","output":{"field":"country","operator":"eq","value":"ZA"}}
+{"input":"customers in Republic of South Africa?","output":{"field":"country","operator":"eq","value":"ZA"}}
+{"input":"ZA customers please","output":{"field":"country","operator":"eq","value":"ZA"}}
+{"input":"ZA customers?","output":{"field":"country","operator":"eq","value":"ZA"}}
+{"input":"show Republic of Zambia accounts please","output":{"field":"country","operator":"eq","value":"ZM"}}
+{"input":"show Republic of Zambia accounts?","output":{"field":"country","operator":"eq","value":"ZM"}}
+{"input":"companies from ZM please","output":{"field":"country","operator":"eq","value":"ZM"}}
+{"input":"companies from ZM?","output":{"field":"country","operator":"eq","value":"ZM"}}
+{"input":"country is Republic of Zimbabwe please","output":{"field":"country","operator":"eq","value":"ZW"}}
+{"input":"country is Republic of Zimbabwe?","output":{"field":"country","operator":"eq","value":"ZW"}}
+{"input":"customers in French please","output":{"field":"country","operator":"eq","value":"FR"}}
+{"input":"customers in French?","output":{"field":"country","operator":"eq","value":"FR"}}
+{"input":"Indian customers please","output":{"field":"country","operator":"eq","value":"IN"}}
+{"input":"Indian customers?","output":{"field":"country","operator":"eq","value":"IN"}}
+{"input":"please show inactive Swedish customers over 20k ARR please","output":{"and":[{"field":"status","operator":"eq","value":"inactive"},{"field":"country","operator":"eq","value":"SE"},{"field":"arr","operator":"gt","value":20000}]}}
+{"input":"please show inactive Swedish customers over 20k ARR?","output":{"and":[{"field":"status","operator":"eq","value":"inactive"},{"field":"country","operator":"eq","value":"SE"},{"field":"arr","operator":"gt","value":20000}]}}
+{"input":"active German customers over 20k ARR please","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"},{"field":"arr","operator":"gt","value":20000}]}}
+{"input":"active German customers over 20k ARR?","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"DE"},{"field":"arr","operator":"gt","value":20000}]}}
+{"input":"please show inactive German customers over 80k ARR please","output":{"and":[{"field":"status","operator":"eq","value":"inactive"},{"field":"country","operator":"eq","value":"DE"},{"field":"arr","operator":"gt","value":80000}]}}
+{"input":"please show inactive German customers over 80k ARR?","output":{"and":[{"field":"status","operator":"eq","value":"inactive"},{"field":"country","operator":"eq","value":"DE"},{"field":"arr","operator":"gt","value":80000}]}}
+{"input":"active French customers over 80k ARR please","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"FR"},{"field":"arr","operator":"gt","value":80000}]}}
+{"input":"active French customers over 80k ARR?","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"FR"},{"field":"arr","operator":"gt","value":80000}]}}
+{"input":"please show churned French customers over 40k ARR please","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"FR"},{"field":"arr","operator":"gt","value":40000}]}}
+{"input":"please show churned French customers over 40k ARR?","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"FR"},{"field":"arr","operator":"gt","value":40000}]}}
+{"input":"inactive Norwegian customers over 40k ARR please","output":{"and":[{"field":"status","operator":"eq","value":"inactive"},{"field":"country","operator":"eq","value":"NO"},{"field":"arr","operator":"gt","value":40000}]}}
+{"input":"inactive Norwegian customers over 40k ARR?","output":{"and":[{"field":"status","operator":"eq","value":"inactive"},{"field":"country","operator":"eq","value":"NO"},{"field":"arr","operator":"gt","value":40000}]}}
+{"input":"exclude active customers please","output":{"field":"status","operator":"neq","value":"active"}}
+{"input":"exclude active customers?","output":{"field":"status","operator":"neq","value":"active"}}
+{"input":"German or Swedish customers under 40k except churned accounts","output":{"or":[{"and":[{"field":"country","operator":"eq","value":"DE"},{"field":"status","operator":"neq","value":"churned"},{"field":"arr","operator":"lt","value":40000}]},{"and":[{"field":"country","operator":"eq","value":"SE"},{"field":"status","operator":"neq","value":"churned"},{"field":"arr","operator":"lt","value":40000}]}]}}
+{"input":"Swedish customers excluding churned ones","output":{"and":[{"field":"status","operator":"neq","value":"churned"},{"field":"country","operator":"eq","value":"SE"}]}}

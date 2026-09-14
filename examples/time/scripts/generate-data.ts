@@ -1,3 +1,4 @@
+import { augment } from "./augment";
 import { mkdir, writeFile } from "node:fs/promises";
 import { tokenize } from "@matchbox-ai/train";
 type Part = [string, string];
@@ -33,6 +34,14 @@ const amounts = [
   ["ten", 10],
   ["eleven", 11],
   ["twelve", 12],
+  ["thirteen", 13],
+  ["fourteen", 14],
+  ["fifteen", 15],
+  ["sixteen", 16],
+  ["seventeen", 17],
+  ["eighteen", 18],
+  ["nineteen", 19],
+  ["twenty", 20],
   ["half", 0.5],
 ] as const;
 const units = [
@@ -54,6 +63,8 @@ for (const [text, value] of amounts)
       ["in ", "RELATIVE", "relative"],
       ["wait for ", "DURATION", "duration"],
       ["remind me in ", "RELATIVE", "relative"],
+      ["set a timer for ", "DURATION", "duration"],
+      ["a reminder in ", "RELATIVE", "relative"],
     ] as const) {
       const words = prefix.trim().split(" ").filter(Boolean);
       const parts: Part[] = words.map((word, i) => [
@@ -122,6 +133,7 @@ for (const [day, label, dayOffset] of [
         { kind: "datetime", dayOffset, hour, minute: Number(minute) },
       );
 }
+const rejections = augment(rows, spans);
 const root = new URL("../matchbox/time/data/", import.meta.url);
 await mkdir(root, { recursive: true });
 await writeFile(
@@ -130,3 +142,5 @@ await writeFile(
 );
 await writeFile(new URL("train-spans.json", root), JSON.stringify(spans, null, 2) + "\n");
 console.log(`Generated ${rows.length} time examples. Independent evals were not changed.`);
+
+await writeFile(new URL("train-rejections.json", root), JSON.stringify(rejections, null, 2) + "\n");

@@ -23,11 +23,10 @@ Paths resolve relative to the config's directory, normally `matchbox/<task>/`. T
 | `output`        | Path ending in `.matchbox`.            | Project-level `.matchbox/<task>/model.matchbox`.                                             |
 | `minAccuracy`   | Number from 0 to 1.                    | `0.95`, unless set in the pipeline.                                                          |
 | `maxBytes`      | Positive number.                       | `64000`, unless set in the pipeline.                                                         |
-| `baseline`      | Optional module path.                  | `./evals/baseline.ts` if present.                                                            |
 | `challenges`    | Optional JSON path.                    | `./evals/challenges.json` if present.                                                        |
 | `sequence`      | `{ recipe: string, decoder: string }`. | Derived from the token pipeline. This is a legacy configuration route; prefer `pipeline.ts`. |
 
-Unknown properties are rejected. JSON configuration files are not supported. A baseline module default-exports a `MatchboxParser`; challenge JSON is an array of `{ input: string, output: null }` used by sequence reports.
+Unknown properties are rejected. JSON configuration files are not supported. Challenge JSON is an array of `{ input: string, output: null }` used by sequence reports.
 
 ## Project tooling
 

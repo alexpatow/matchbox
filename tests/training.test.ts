@@ -16,7 +16,6 @@ test("packaging is deterministic, held-out labels do not select the model, and f
       decoder: resolve(root, "decode/decode.ts"),
     },
     task: resolve(root, "parser.ts"),
-    baseline: resolve(root, "evals/baseline.ts"),
     train: resolve(root, "data/train.jsonl"),
     validation: resolve(root, "evals/validation.jsonl"),
     eval: evaluationPath,

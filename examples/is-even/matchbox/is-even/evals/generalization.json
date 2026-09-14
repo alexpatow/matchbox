@@ -1,0 +1,52 @@
+[
+  {
+    "slice": "leading-zero",
+    "input": "0000000042",
+    "output": {
+      "even": true
+    }
+  },
+  {
+    "slice": "leading-zero",
+    "input": "0000000071",
+    "output": {
+      "even": false
+    }
+  },
+  {
+    "slice": "long-number",
+    "input": "8273649283749823749823749823749823749832",
+    "output": {
+      "even": true
+    }
+  },
+  {
+    "slice": "long-number",
+    "input": "8273649283749823749823749823749823749837",
+    "output": {
+      "even": false
+    }
+  },
+  {
+    "slice": "boundary",
+    "input": "0",
+    "output": {
+      "even": true
+    }
+  },
+  {
+    "slice": "unsupported",
+    "input": "-4",
+    "output": null
+  },
+  {
+    "slice": "unsupported",
+    "input": "4.0",
+    "output": null
+  },
+  {
+    "slice": "unsupported",
+    "input": "four",
+    "output": null
+  }
+]

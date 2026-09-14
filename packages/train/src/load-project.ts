@@ -5,14 +5,10 @@ import { pathToFileURL } from "node:url";
 import { z } from "zod";
 import { parseDatasets } from "@matchbox-ai/core";
 import type { ParserDefinition } from "@matchbox-ai/core";
-import type { MatchboxParser } from "@matchbox-ai/core/runtime";
 export async function loadProject(path: string) {
   const { config, root } = await loadConfig(path);
   const taskPath = resolve(root, config.task);
   const task: ParserDefinition<z.ZodType> = (await import(pathToFileURL(taskPath).href)).default;
-  const baseline: MatchboxParser<unknown> | null = config.baseline
-    ? (await import(pathToFileURL(resolve(root, config.baseline)).href)).default
-    : null;
   const sources = await Promise.all(
     [config.train, config.validation, config.eval].map(async (source) => ({
       source,
@@ -47,7 +43,6 @@ export async function loadProject(path: string) {
     root,
     config,
     task,
-    baseline,
     taskPath,
     output: resolve(root, config.output),
     sources,

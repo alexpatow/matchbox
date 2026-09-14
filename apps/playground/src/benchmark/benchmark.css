@@ -122,29 +122,6 @@
   color: #e7a292;
   font-size: 13px;
 }
-.baseline-comparison {
-  margin: 0 0 20px;
-  color: #a19b92;
-  font-size: 12px;
-}
-.baseline-comparison summary {
-  padding: 4px 0 10px;
-  cursor: pointer;
-}
-.baseline-comparison table {
-  font-size: 12px;
-  white-space: normal;
-}
-.baseline-comparison th,
-.baseline-comparison td {
-  padding: 12px 8px;
-  border-color: #302a23;
-}
-.baseline-comparison p {
-  color: #858078;
-  font-size: 11px;
-  line-height: 1.7;
-}
 @media (max-width: 600px) {
   .benchmark-panel,
   .benchmark-featured {

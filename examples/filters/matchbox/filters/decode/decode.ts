@@ -1,4 +1,5 @@
 import { compileClauses, type SequenceDecoder } from "@matchbox-ai/core/runtime";
+import { implicit } from "./implicit";
 import { decodeClause } from "./decode-clause.js";
 const decode: SequenceDecoder = (tokens, input) => {
   // Protect boolean words inside country names, such as Trinidad and Tobago.
@@ -14,6 +15,6 @@ const decode: SequenceDecoder = (tokens, input) => {
     const selected = tokens.filter((token) => token.start >= start && token.end <= cursor);
     return { value: decodeClause(selected), confidence: 1 };
   });
-  return result.value;
+  return result.value ?? implicit(tokens);
 };
 export default decode;

@@ -13,11 +13,8 @@ export function decodeClause(tokens: readonly TaggedToken[]): Predicate | null {
     return null;
   const negate = labels.has("NEGATE");
   if (statuses.length === 1 && !amounts.length) {
-    // This initial dataset teaches exclusion of churned status only.
     const value = statuses[0]!.slice(7);
-    return negate && value !== "churned"
-      ? null
-      : { field: "status", operator: negate ? "neq" : "eq", value };
+    return { field: "status", operator: negate ? "neq" : "eq", value };
   }
   if (country !== null && !amounts.length && !negate)
     return { field: "country", operator: "eq", value: country };

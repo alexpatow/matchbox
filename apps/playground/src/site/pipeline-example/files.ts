@@ -27,7 +27,13 @@ export const files = [
     name: "data/train-spans.json",
     description:
       "An excerpt of the training annotations. These labels line up with the tokens “twenty” and “dollars”.",
-    code: '{\n  "twenty dollars": ["AMOUNT", "USD"]\n}',
+    code: '{\n  "twenty dollars": ["AMOUNT", "USD"],\n  "not € 12.50": ["REJECT", "EUR", "AMOUNT"]\n}',
+  },
+  {
+    name: "data/train-rejections.json",
+    description:
+      "An excerpt of negative training rows. Their token annotations must decode to null; evaluation challenges stay separate.",
+    code: '[{ "input": "not € 12.50", "output": null }]',
   },
   {
     name: "decode/decode.ts",

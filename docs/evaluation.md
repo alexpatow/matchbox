@@ -51,12 +51,6 @@ Training includes these in the report's separate `challenges` section. They do n
 
 The programmatic evaluator also accepts expected `null` for abstention cases. This is an evaluation convention, not a change to the task's successful output schema.
 
-## Compare a baseline
-
-An optional `evals/baseline.ts` default-exports a parser with the same `parse(input)` result contract. Training scores it on the same test split and records the result under `baseline`.
-
-Compare the learned model against a reasonable deterministic implementation. Report dataset size and coverage alongside accuracy. A small synthetic fixture does not establish general language understanding.
-
 ## Measure browser speed
 
 Use **Measure browser speed** in the workbench or the benchmark controls on the examples page. They run inference through TensorFlow.js CPU on the current device, including output validation.
@@ -64,3 +58,13 @@ Use **Measure browser speed** in the workbench or the benchmark controls on the 
 These measurements exclude model loading and UI rendering. Record the input, sample count, browser, and device with the result. The workbench uses 100 timed runs after 20 warmups; the website demo uses 300 timed runs after 20 warmups. Repeated-input latency is separate from held-out accuracy.
 
 See the [evaluation API](reference/evaluation.md) for exact metric fields and return types.
+
+## Repository example audit
+
+After `bun run train`, run `bun run eval:examples`. It writes `.matchbox/example-evaluation.json` with all predictions that disagree with expected outputs, slice metrics, false accepts, source hashes, and token-sequence overlap with training. Each example owns a frozen `evals/generalization.json` file. Treat those files as audit data; create new development fixtures when fixing failures and obtain a fresh independent evaluation before claiming improvement.
+
+A held-out string can still be identical to training at the model's input representation. Word tokenization maps all numbers to `<number>`. Changing 15 to 90 tests deterministic copying and arithmetic, not learned numerical generalization. Report accuracy on feature-novel inputs separately.
+
+The audit evaluates model outputs against the task’s expected results. Positive coverage, accuracy among accepted answers, and false acceptance of negative examples matter alongside exact match. A high abstention rate can hide an ineffective parser. Threshold curves are diagnostics, not permission to pick a threshold on test data.
+
+See [the measured example audit](example-evaluation.md) for current results and limitations.

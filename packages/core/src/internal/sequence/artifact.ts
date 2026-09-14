@@ -18,6 +18,7 @@ const schema = z.strictObject({
   vocabulary: z.array(z.string()).min(1).max(10000),
   labels: z.array(z.string()).min(2).max(64),
   radius: z.number().int().min(0).max(4),
+  unknownTokens: z.enum(["abstain", "predict"]).default("abstain"),
   threshold: z.number().min(0).max(1),
   precision: z.enum(["float32", "int8"]),
   weights: z.tuple([matrix, matrix, matrix, matrix, matrix]),
