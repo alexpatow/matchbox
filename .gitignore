@@ -23,3 +23,4 @@ packages/cli/docs/
 packages/*/LICENSE
 packages/*/THIRD-PARTY-NOTICES.md
 .changeset/publish/
+.vercel/
