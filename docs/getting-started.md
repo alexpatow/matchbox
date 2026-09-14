@@ -2,26 +2,20 @@
 
 Matchbox is a TypeScript framework for building small models that run in the browser. Start with the money example inside your existing application, train it locally, and import the result.
 
-## Build the local toolchain
+The CLI requires Bun 1.4.2 or newer and Node 24 or newer for the local training toolchain.
 
-Use Bun 1.4.2 and Node 24. From your Matchbox checkout:
+## Add Matchbox to your app
 
-```sh
-bun install
-bun run build:packages
-```
-
-The command lives in @matchbox-ai/cli. Authored pipelines import @matchbox-ai/train; application code imports @matchbox-ai/core. Scaffolding adds all three dependencies, with the CLI and training package in devDependencies.
-
-Add the example to an existing React or Next.js project using the built CLI:
+Once the first release is published, run this inside your existing React or Next.js app:
 
 ```sh
-bun packages/cli/dist/cli.js init money --template money --directory /path/to/your-app
-cd /path/to/your-app
-bunx matchbox dev money
+bunx matchbox-ai init money --template money
+bunx matchbox-ai dev money
 ```
 
-The current development scaffold packs local Matchbox packages into `vendor/matchbox/` archives. `init` automatically installs these with your app’s package manager, so Next.js does not need access to external package symlinks. These are snapshots of the toolchain used at setup. Keep these local development archives with the app until registry packages are available. It preserves your app's dev/build scripts and framework configuration. Run your app's dev server separately. Follow the printed next command for your package manager; the commands above use Bun. Pass `--skip-install` to defer installation.
+The CLI installs `@matchbox-ai/core` as an application dependency and `@matchbox-ai/train` and `matchbox-ai` as development dependencies, using your package manager. It preserves existing scripts and framework configuration. Run your app's dev server separately. Use `--skip-install` to defer installation.
+
+When developing Matchbox itself, run `bun install` and `bun run build:packages` in this repository. Run `bun run matchbox init money --template money --directory /path/to/app --skip-install` to inspect a scaffold before the packages are published. It writes registry versions; it does not vendor a copy of the checkout.
 
 ## Train in the workbench
 
@@ -30,8 +24,8 @@ Choose **Train model**. Once training finishes, try `$15` or `around twenty six 
 The same operations are available in the terminal:
 
 ```sh
-bunx matchbox train money
-bunx matchbox eval money
+bunx matchbox-ai train money
+bunx matchbox-ai eval money
 ```
 
 ## Understand the authored task
@@ -54,7 +48,7 @@ matchbox/money/
 
 The parser defines valid output. The pipeline explicitly selects a token model. The recipe supplies supervised token labels; the decoder normalizes recognized spans. New training examples may need new token annotations. Read the generated task README before extending it.
 
-Use `matchbox init my-task --template blank` to author another task. The blank starter explicitly uses word features and finite field classification; replace that pipeline if it does not suit your task. Schemas do not automatically select numeric encodings or transformations.
+Use `matchbox-ai init my-task --template blank` to author another task. The blank starter explicitly uses word features and finite field classification; replace that pipeline if it does not suit your task. Schemas do not automatically select numeric encodings or transformations.
 
 ## Import into React or Next.js
 

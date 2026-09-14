@@ -4,9 +4,9 @@ This self-contained example is authored under matchbox/is-even/. parser.ts defin
 
 ```sh
 cd examples/is-even
-bunx matchbox train is-even
-bunx matchbox eval is-even
-bunx matchbox dev is-even
+bunx matchbox-ai train is-even
+bunx matchbox-ai eval is-even
+bunx matchbox-ai dev is-even
 ```
 
 Generated artifacts are written to .matchbox/is-even/model.matchbox, with a typed wrapper and report.json. The shared browser demo lives in apps/playground.

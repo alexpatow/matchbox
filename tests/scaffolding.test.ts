@@ -23,7 +23,7 @@ for (const framework of ["vite", "next"])
         "matchbox:train": "custom train",
       },
       dependencies: { [framework]: "1.0.0", zod: "4.6.3", "@matchbox-ai/core": "workspace:*" },
-      devDependencies: { "@matchbox-ai/train": "workspace:*", "@matchbox-ai/cli": "workspace:*" },
+      devDependencies: { "@matchbox-ai/train": "workspace:*", "matchbox-ai": "workspace:*" },
     };
     try {
       await writeFile(resolve(directory, "package.json"), JSON.stringify(manifest));

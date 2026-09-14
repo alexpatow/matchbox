@@ -1,18 +1,29 @@
 {
-  "name": "@matchbox-ai/cli",
+  "name": "matchbox-ai",
   "version": "0.0.0",
-  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexpatow/matchbox.git",
+    "directory": "packages/cli"
+  },
   "bin": {
-    "matchbox": "./dist/cli.js"
+    "matchbox-ai": "./dist/cli.js"
   },
   "files": [
     "dist",
     "README.md",
     "templates",
     "docs",
-    "workbench"
+    "workbench",
+    "LICENSE",
+    "THIRD-PARTY-NOTICES.md",
+    "CHANGELOG.md"
   ],
   "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "bun ../../scripts/package-docs.ts cli && bun ../../scripts/package-templates.ts && rolldown --config && chmod +x dist/cli.js && tsc -p tsconfig.build.json",
     "dev": "bun run --parallel \"dev:*\"",
@@ -23,6 +34,8 @@
   "dependencies": {
     "@fontsource-variable/geist": "5.3.0",
     "@inkjs/ui": "^2.0.0",
+    "@matchbox-ai/core": "0.0.0",
+    "@matchbox-ai/train": "0.0.0",
     "commander": "^15.0.0",
     "ink": "^7.1.1",
     "open": "^11.0.3",
@@ -33,16 +46,14 @@
     "zod": "4.6.3"
   },
   "devDependencies": {
-    "@matchbox-ai/core": "workspace:*",
-    "@matchbox-ai/train": "workspace:*",
     "@types/node": "22.20.2",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
     "rolldown": "1.2.8",
     "typescript": "7.0.2"
   },
-  "peerDependencies": {
-    "@matchbox-ai/core": "0.0.0",
-    "@matchbox-ai/train": "0.0.0"
+  "engines": {
+    "bun": ">=1.4.2",
+    "node": ">=24"
   }
 }

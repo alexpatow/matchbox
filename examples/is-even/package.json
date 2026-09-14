@@ -4,9 +4,9 @@
   "type": "module",
   "scripts": {
     "generate": "bun scripts/generate-data.ts",
-    "train": "matchbox train is-even",
+    "train": "matchbox-ai train is-even",
     "typecheck": "tsc --noEmit",
-    "eval": "matchbox eval is-even"
+    "eval": "matchbox-ai eval is-even"
   },
   "dependencies": {
     "@matchbox-ai/core": "workspace:*",

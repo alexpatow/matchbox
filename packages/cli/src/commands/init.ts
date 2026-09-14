@@ -3,7 +3,6 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { packageRoot, templateFiles } from "./scaffold-files.js";
 import { integrationGuide } from "./integration-guide.js";
-import { localDependency } from "./local-dependency.js";
 import { commandText, installDependencies, packageManager } from "./install.js";
 import { choose, terminal } from "./terminal.js";
 export async function initialize(
@@ -18,7 +17,7 @@ export async function initialize(
   const manifest = JSON.parse(
     await readFile(manifestPath, "utf8").catch(() => {
       throw new Error(
-        `No package.json in ${root}. Create your React or Next.js app first, then run matchbox init inside it.`,
+        `No package.json in ${root}. Create your React or Next.js app first, then run matchbox-ai init inside it.`,
       );
     }),
   );
@@ -44,7 +43,7 @@ export async function initialize(
     fileURLToPath(import.meta.resolve("@matchbox-ai/train")),
     "@matchbox-ai/train",
   );
-  const cli = await packageRoot(fileURLToPath(import.meta.url), "@matchbox-ai/cli");
+  const cli = await packageRoot(fileURLToPath(import.meta.url), "matchbox-ai");
   const prefix = `matchbox/${name}`;
   if (
     await access(resolve(root, prefix)).then(
@@ -61,33 +60,24 @@ export async function initialize(
   files["README.md"] = integrationGuide(name, template, framework, manager);
   manifest.dependencies ??= {};
   manifest.devDependencies ??= {};
-  // Install local package snapshots inside the app, so bundlers need no external symlink access.
-  const coreDependency =
-    dependencies["@matchbox-ai/core"] ?? (await localDependency(core, root, "core"));
-  if (!dependencies["@matchbox-ai/core"])
-    manifest.dependencies["@matchbox-ai/core"] = coreDependency;
+  for (const [name, path, development] of [
+    ["@matchbox-ai/core", core, false],
+    ["@matchbox-ai/train", train, true],
+    ["matchbox-ai", cli, true],
+  ] as const) {
+    if (dependencies[name]) continue;
+    const { version } = JSON.parse(await readFile(resolve(path, "package.json"), "utf8"));
+    (development ? manifest.devDependencies : manifest.dependencies)[name] = version;
+  }
   if (!dependencies.zod) manifest.dependencies.zod = "4.6.3";
-  if (!dependencies["@matchbox-ai/train"])
-    manifest.devDependencies["@matchbox-ai/train"] = await localDependency(train, root, "train");
-  const trainDependency =
-    manifest.devDependencies["@matchbox-ai/train"] ?? dependencies["@matchbox-ai/train"];
-  if (!dependencies["@matchbox-ai/cli"])
-    manifest.devDependencies["@matchbox-ai/cli"] = await localDependency(cli, root, "cli");
-  if (manager === "bun") {
-    // Bun needs an explicit override to resolve peers from unpublished tarballs.
-    manifest.overrides = {
-      "@matchbox-ai/core": coreDependency,
-      "@matchbox-ai/train": trainDependency,
-      ...manifest.overrides,
-    };
+  if (manager === "bun")
     manifest.trustedDependencies = [
       ...new Set([...(manifest.trustedDependencies ?? []), "@tensorflow/tfjs-node"]),
     ];
-  }
   manifest.scripts = {
-    "matchbox:dev": "matchbox dev",
-    "matchbox:train": "matchbox train",
-    "matchbox:eval": "matchbox eval",
+    "matchbox:dev": "matchbox-ai dev",
+    "matchbox:train": "matchbox-ai train",
+    "matchbox:eval": "matchbox-ai eval",
     ...manifest.scripts,
   };
   const ignorePath = resolve(root, ".gitignore");
@@ -109,7 +99,7 @@ export async function initialize(
   if (!skipInstall) await installDependencies(root, manager);
   const next = [
     ...(skipInstall ? [commandText(manager, "install")] : []),
-    commandText(manager, "execute-local", ["matchbox", "dev", name]),
+    commandText(manager, "execute-local", ["matchbox-ai", "dev", name]),
   ];
   const result = {
     directory: root,

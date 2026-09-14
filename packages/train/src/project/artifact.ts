@@ -11,7 +11,7 @@ export async function loadArtifact(configPath: string) {
   const { config, root } = await loadConfig(configPath);
   const output = resolve(root, config.output);
   const text = await readFile(output, "utf8").catch(() => {
-    throw new Error(`No readable model at ${output}. Run matchbox train first.`);
+    throw new Error(`No readable model at ${output}. Run matchbox-ai train first.`);
   });
   const artifact = readArtifact(JSON.parse(text));
   const task: ParserDefinition<z.ZodType> = (

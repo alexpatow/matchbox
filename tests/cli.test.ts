@@ -1,4 +1,5 @@
 import { expect, test } from "bun:test";
+import manifest from "../packages/cli/package.json";
 import { mkdtemp, mkdir, readFile, rm, symlink, unlink, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { resolve } from "node:path";
@@ -17,10 +18,10 @@ async function cli(args: string[], cwd = root) {
   return { code, stdout, stderr };
 }
 test("CLI help, validation, and piped input are predictable", async () => {
-  expect((await cli(["--help"])).stdout).toContain("matchbox inspect");
+  expect((await cli(["--help"])).stdout).toContain("matchbox-ai inspect");
   expect((await cli(["train", "--bogus"])).code).toBe(1);
   expect((await cli(["parse"])).stderr).toContain("Usage:");
-  expect((await cli(["--version"])).stdout).toContain("0.0.0");
+  expect((await cli(["--version"])).stdout).toContain(manifest.version);
 });
 test("a scaffold trains, discovers nested projects, saves corrections, and evaluates without training files", async () => {
   const temporary = await mkdtemp(resolve(tmpdir(), "matchbox-cli-"));

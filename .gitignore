@@ -19,3 +19,7 @@ packages/train/docs/
 packages/cli/templates/money/
 
 packages/cli/docs/
+
+packages/*/LICENSE
+packages/*/THIRD-PARTY-NOTICES.md
+.changeset/publish/

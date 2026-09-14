@@ -34,10 +34,13 @@ export async function overview() {
     names.length
       ? [
           `Tasks: ${names.join(", ")}`,
-          `Open the workbench: matchbox dev ${names[0]}`,
+          `Open the workbench: matchbox-ai dev ${names[0]}`,
           "Use matchbox --help for commands.",
         ]
-      : ["Add a task from your app directory: matchbox init", "Use matchbox --help for commands."],
+      : [
+          "Add a task from your app directory: matchbox-ai init",
+          "Use matchbox --help for commands.",
+        ],
   );
   view.stop();
 }

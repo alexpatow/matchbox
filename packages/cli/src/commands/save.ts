@@ -47,7 +47,7 @@ export async function saveExample(path: string, input: string, output: unknown) 
     action: index < 0 ? "added" : "updated",
     example,
     next: config.sequence
-      ? `Saved output. Update token supervision in ${resolve(root, config.sequence.recipe)} for this input, then run matchbox train.`
-      : "Run matchbox train to include this correction.",
+      ? `Saved output. Update token supervision in ${resolve(root, config.sequence.recipe)} for this input, then run matchbox-ai train.`
+      : "Run matchbox-ai train to include this correction.",
   };
 }

@@ -1,4 +1,5 @@
 import { Command, Option } from "commander";
+import manifest from "../../package.json";
 export interface Arguments {
   command?: string;
   target?: string;
@@ -13,9 +14,9 @@ export interface Arguments {
   rest: string[];
 }
 export function program() {
-  const cli = new Command("matchbox")
+  const cli = new Command("matchbox-ai")
     .description("Build small models for the browser.")
-    .version("0.0.0", "-v, --version")
+    .version(manifest.version, "-v, --version")
     .showHelpAfterError()
     .exitOverride();
   const commands = {
@@ -54,7 +55,7 @@ export function program() {
   }
   cli.addHelpText(
     "after",
-    "\nExamples:\n  matchbox init money --template money\n  matchbox dev money\n  matchbox inspect money 'twenty dollars'\n\nYour app keeps its own dev server. Matchbox writes artifacts to .matchbox/.",
+    "\nExamples:\n  matchbox-ai init money --template money\n  matchbox-ai dev money\n  matchbox-ai inspect money 'twenty dollars'\n\nYour app keeps its own dev server. Matchbox writes artifacts to .matchbox/.",
   );
   return cli;
 }

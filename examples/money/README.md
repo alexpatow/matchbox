@@ -4,9 +4,9 @@ This self-contained example is authored under matchbox/money/. parser.ts defines
 
 ```sh
 cd examples/money
-bunx matchbox train money
-bunx matchbox eval money
-bunx matchbox dev money
+bunx matchbox-ai train money
+bunx matchbox-ai eval money
+bunx matchbox-ai dev money
 ```
 
 Generated artifacts are written to .matchbox/money/model.matchbox, with a typed wrapper and report.json. The shared browser demo lives in apps/playground.

@@ -4,9 +4,9 @@
   "type": "module",
   "scripts": {
     "generate": "bun scripts/generate-data.ts",
-    "train": "matchbox train money",
+    "train": "matchbox-ai train money",
     "typecheck": "tsc --noEmit",
-    "eval": "matchbox eval money"
+    "eval": "matchbox-ai eval money"
   },
   "dependencies": {
     "@matchbox-ai/core": "workspace:*",

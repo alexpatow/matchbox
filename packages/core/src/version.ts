@@ -1,2 +1,3 @@
-/** Bootstrap export used to verify package consumption before the parser API lands. */
-export const version = "0.0.0";
+import manifest from "../package.json";
+
+export const version = manifest.version;

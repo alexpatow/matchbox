@@ -38,16 +38,16 @@ export default definePipeline({
 The [money example](examples/money/README.md) demonstrates learned token recognition, explicit supervision, and application-owned normalization. The CLI adds this task to an existing React or Next.js application without replacing its scripts or framework configuration.
 
 ```sh
-matchbox train money
-matchbox eval money
-matchbox dev money
+matchbox-ai train money
+matchbox-ai eval money
+matchbox-ai dev money
 ```
 
 Import the generated .matchbox/money/model.ts wrapper and call await parser.parse(input). React integration lives at @matchbox-ai/core/react. The runtime loads serialized TensorFlow models and returns validated outputs or uncertainty.
 
 ## Repository
 
-packages/core contains the browser-facing framework and packages/train contains training primitives and orchestration. packages/cli contains the matchbox command and browser workbench. Self-contained examples live under examples/. apps/playground hosts the React demo; apps/benchmarks measures browser inference.
+packages/core contains the browser-facing framework and packages/train contains training primitives and orchestration. packages/cli contains the matchbox-ai command and browser workbench. Self-contained examples live under examples/. apps/playground hosts the React demo; apps/benchmarks measures browser inference.
 
 Read the [docs index](docs/README.md), [project conventions](docs/project-structure.md), [primitives](docs/primitives/README.md), and [example comparison](examples/README.md). Public docs ship with all three packages for coding agents. The [Matchbox skill](skills/matchbox/SKILL.md) describes the development workflow. [Third-party notices](THIRD-PARTY-NOTICES.md) preserve source attribution.
 

@@ -21,7 +21,7 @@ describe("built package contract", () => {
     }
     expect(
       await Bun.file(
-        new URL(`../packages/cli/${cliManifest.bin.matchbox}`, import.meta.url),
+        new URL(`../packages/cli/${cliManifest.bin["matchbox-ai"]}`, import.meta.url),
       ).exists(),
     ).toBe(true);
   });

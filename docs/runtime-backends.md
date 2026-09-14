@@ -13,6 +13,6 @@ TensorFlow loads lazily on the first parse. A parser retains its loaded model an
 
 Direct creation is available through @matchbox-ai/core/runtime. Inference selects TensorFlow's process-wide CPU backend. Browser apps that separately use TensorFlow should isolate unrelated backend use in another worker. Native training runs through the training toolchain and is kept out of browser entry points.
 
-Artifact format 2 includes the serialized TensorFlow model. Regenerate artifacts produced by earlier versions with matchbox train. apps/benchmarks measures loading and warm inference of the shipped runtime. Cold timing includes lazy TensorFlow loading after the benchmark page itself has loaded. Mobile browser-test profiles emulate device settings on desktop hardware, not physical-phone performance.
+Artifact format 2 includes the serialized TensorFlow model. Regenerate artifacts produced by earlier versions with matchbox-ai train. apps/benchmarks measures loading and warm inference of the shipped runtime. Cold timing includes lazy TensorFlow loading after the benchmark page itself has loaded. Mobile browser-test profiles emulate device settings on desktop hardware, not physical-phone performance.
 
 Call `await parser.load()` to initialize before the first parse, for example before going offline. The React hook waits for this initialization before reporting `ready`.

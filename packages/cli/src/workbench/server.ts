@@ -28,7 +28,7 @@ export async function serveWorkbench(path: string, port: number) {
     state.stale = modelTime > 0 && (await modifiedAt(taskRoot)) > modelTime;
   }
   await refresh();
-  const packagePath = await packageRoot(fileURLToPath(import.meta.url), "@matchbox-ai/cli");
+  const packagePath = await packageRoot(fileURLToPath(import.meta.url), "matchbox-ai");
   const server = await createServer({
     configFile: false,
     cacheDir: resolve(taskRoot, "../../.matchbox/.workbench-cache"),

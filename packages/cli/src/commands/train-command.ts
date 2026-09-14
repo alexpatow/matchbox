@@ -27,7 +27,7 @@ export async function trainCommand(path: string, json = false, verbose = false) 
         );
         metrics(result.report.quantized);
         console.log(
-          `  Size          ${result.report.bytes.toLocaleString()} bytes\n  Artifact      ${result.output}\n  Import        ${result.output!.replace(/\.matchbox$/, ".ts")}\n\nOpen matchbox dev to try it in your browser.`,
+          `  Size          ${result.report.bytes.toLocaleString()} bytes\n  Artifact      ${result.output}\n  Import        ${result.output!.replace(/\.matchbox$/, ".ts")}\n\nOpen matchbox-ai dev to try it in your browser.`,
         );
       }
     }

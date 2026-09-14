@@ -49,7 +49,7 @@ for (const scenario of ["npm", "pnpm", "yarn", "failure", "skip"])
           dependencies: { "@matchbox-ai/core": "workspace:*", zod: "4.6.3" },
           devDependencies: {
             "@matchbox-ai/train": "workspace:*",
-            "@matchbox-ai/cli": "workspace:*",
+            "matchbox-ai": "workspace:*",
           },
         }),
       );

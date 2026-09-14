@@ -1,11 +1,19 @@
 {
   "name": "@matchbox-ai/train",
   "version": "0.0.0",
-  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexpatow/matchbox.git",
+    "directory": "packages/train"
+  },
   "files": [
     "dist",
     "README.md",
-    "docs"
+    "docs",
+    "LICENSE",
+    "THIRD-PARTY-NOTICES.md",
+    "CHANGELOG.md"
   ],
   "type": "module",
   "sideEffects": false,
@@ -19,6 +27,9 @@
       "import": "./dist/project/index.js"
     }
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "bun ../../scripts/package-docs.ts train && rolldown --config && tsc -p tsconfig.build.json",
     "dev": "bun run --parallel \"dev:*\"",
@@ -31,12 +42,16 @@
     "zod": "4.6.3"
   },
   "devDependencies": {
-    "@matchbox-ai/core": "workspace:*",
+    "@matchbox-ai/core": "0.0.0",
     "@types/node": "22.20.2",
     "rolldown": "1.2.8",
     "typescript": "7.0.2"
   },
   "peerDependencies": {
     "@matchbox-ai/core": "0.0.0"
+  },
+  "engines": {
+    "bun": ">=1.4.2",
+    "node": ">=24"
   }
 }
