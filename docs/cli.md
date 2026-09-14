@@ -30,13 +30,13 @@ bunx matchbox-ai init [name] --template money
 bunx matchbox-ai init intent --template blank --directory ./my-app
 ```
 
-| Option               | Default             | Behavior                                     |
-| -------------------- | ------------------- | -------------------------------------------- |
-| `[name]`             | Interactive prompt. | Names the task directory.                    |
-| `--template <name>`  | Interactive choice. | `money` or `blank`; specify in scripts.      |
-| `--directory <path>` | Current directory.  | Existing application with a `package.json`.  |
-| `--skip-install`     | False.              | Write files without installing dependencies. |
-| `--json`             | False.              | Print scaffold results as JSON.              |
+| Option               | Default                                              | Behavior                                                       |
+| -------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
+| `[name]`             | `money` for the money template; `my-task` for blank. | Names the task directory. Pass a name to override the default. |
+| `--template <name>`  | Interactive choice.                                  | `money` or `blank`; specify in scripts.                        |
+| `--directory <path>` | Current directory.                                   | Existing application with a `package.json`.                    |
+| `--skip-install`     | False.                                               | Write files without installing dependencies.                   |
+| `--json`             | False.                                               | Print scaffold results as JSON.                                |
 
 Adds `matchbox/<name>/`, ignores `.matchbox/`, and adds missing `matchbox:dev`, `matchbox:train`, and `matchbox:eval` scripts. Existing task directories are never overwritten. Framework config stays unchanged.
 
