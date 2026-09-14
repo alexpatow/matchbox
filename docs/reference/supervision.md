@@ -2,6 +2,12 @@
 
 Use a token pipeline when the model should identify parts of the input and application code should assemble the result.
 
+## Why separate modules?
+
+The current token pipeline takes paths to default-exported recipe and decoder modules. The training process loads the recipe; the generated browser wrapper imports the decoder directly. This keeps training annotations and training dependencies out of the application bundle.
+
+The recipe file is an authoring convention of the current API, not a requirement of machine learning. The decoder is an application-owned runtime dependency. Keep its imports browser-safe, including any number-conversion helpers. The [money example](../examples/money.md) exposes these files separately so you can inspect both learned recognition and authored arithmetic.
+
 ## SequenceRecipe
 
 ```ts

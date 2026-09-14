@@ -1,26 +1,7 @@
 import { FileCode, FileJson, Folder } from "lucide-react";
 import { useState } from "react";
 import { highlight } from "sugar-high";
-import parser from "../../../../examples/money/matchbox/money/parser.ts?raw";
-import pipeline from "../../../../examples/money/matchbox/money/pipeline.ts?raw";
-const files = [
-  { name: "parser.ts", description: "Defines valid output.", code: parser },
-  {
-    name: "pipeline.ts",
-    description: "Learns token labels; the decoder converts recognized spans to values.",
-    code: pipeline,
-  },
-  {
-    name: "data/train.jsonl",
-    description: "Training examples, with separate token annotations.",
-    code: '{"input":"twenty dollars","output":{"amount":20,"currency":"USD","approximate":false}}',
-  },
-  {
-    name: "app.ts",
-    description: "Import the generated TypeScript module.",
-    code: 'import money from "./.matchbox/money/model";\n\nconst result = await money.parse("twenty dollars");\n\nif (result.status === "ok") {\n  console.log(result.value);\n} else {\n  // Ask, preview, or fall back.\n  console.log(result.reason);\n}',
-  },
-];
+import { files } from "./pipeline-example";
 export function PipelineExplorer() {
   const [selected, setSelected] = useState(0);
   const file = files[selected]!;
@@ -50,7 +31,7 @@ export function PipelineExplorer() {
                 }
               }}
             >
-              {index === 2 ? (
+              {/\.jsonl?$/.test(entry.name) ? (
                 <FileJson className="site-icon" aria-hidden="true" />
               ) : (
                 <FileCode className="site-icon" aria-hidden="true" />
