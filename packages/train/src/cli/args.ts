@@ -5,6 +5,7 @@ export interface Arguments {
   config?: string;
   directory?: string;
   template?: string;
+  skipInstall?: boolean;
   port?: string;
   open?: boolean;
   json?: boolean;
@@ -34,6 +35,7 @@ export function program() {
       command
         .argument("[name]", "Task name.")
         .option("--directory <path>", "Existing application directory.")
+        .option("--skip-install", "Write the scaffold without installing dependencies.")
         .addOption(
           new Option("--template <name>", "Explicit starter pipeline.").choices(["money", "blank"]),
         );

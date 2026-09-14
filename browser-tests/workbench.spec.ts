@@ -20,6 +20,7 @@ test("scaffolded workbench trains, predicts locally, evaluates, and protects hel
   await exec("bun", [
     cli,
     "init",
+    "--skip-install",
     "money",
     "--template",
     "money",

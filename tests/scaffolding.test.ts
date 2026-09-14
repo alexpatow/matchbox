@@ -30,7 +30,10 @@ for (const framework of ["vite", "next"])
       const config = resolve(directory, `${framework}.config.ts`);
       await writeFile(config, "export default {};\n");
       await writeFile(resolve(directory, ".gitignore"), "keep-this\n");
-      const result = await run(["init", "intent", "--template", "blank", "--json"], directory);
+      const result = await run(
+        ["init", "--skip-install", "intent", "--template", "blank", "--json"],
+        directory,
+      );
       expect(result.code).toBe(0);
       const after = JSON.parse(await readFile(resolve(directory, "package.json"), "utf8"));
       expect(after.scripts).toMatchObject(manifest.scripts);
@@ -43,9 +46,14 @@ for (const framework of ["vite", "next"])
       expect(await readFile(resolve(directory, "matchbox/intent/data/train.jsonl"), "utf8")).toBe(
         "",
       );
-      expect((await run(["init", "intent", "--template", "blank", "--json"], directory)).code).toBe(
-        1,
-      );
+      expect(
+        (
+          await run(
+            ["init", "--skip-install", "intent", "--template", "blank", "--json"],
+            directory,
+          )
+        ).code,
+      ).toBe(1);
       expect(await readFile(config, "utf8")).toBe("export default {};\n");
     } finally {
       await rm(directory, { recursive: true, force: true });
@@ -55,7 +63,10 @@ test("empty directory and bare command never create an application", async () =>
   const directory = await mkdtemp(resolve(tmpdir(), "matchbox-empty-"));
   try {
     expect((await run([], directory)).code).toBe(0);
-    const result = await run(["init", "--template", "money", "--json"], directory);
+    const result = await run(
+      ["init", "--skip-install", "--template", "money", "--json"],
+      directory,
+    );
     expect(result.code).toBe(1);
     expect(result.stderr).toContain("Create your React or Next.js app first");
     expect(await Bun.file(resolve(directory, "package.json")).exists()).toBe(false);

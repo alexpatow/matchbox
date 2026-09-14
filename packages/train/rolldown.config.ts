@@ -6,6 +6,7 @@ export default defineConfig({
     /^@matchbox-ai\/core(?:\/|$)/,
     /^zod(?:\/|$)/,
     /^@tensorflow\//,
+    /^package-manager-detector(?:\/|$)/,
     "commander",
     "ink",
     "@inkjs/ui",

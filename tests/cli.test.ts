@@ -33,6 +33,7 @@ test("a scaffold trains, discovers nested projects, saves corrections, and evalu
     );
     const initialized = await cli([
       "init",
+      "--skip-install",
       "money",
       "--directory",
       project,
@@ -43,7 +44,18 @@ test("a scaffold trains, discovers nested projects, saves corrections, and evalu
     expect(initialized.code).toBe(0);
     const evaluation = await readFile(resolve(project, "matchbox/money/evals/test.jsonl"), "utf8");
     expect(
-      (await cli(["init", "money", "--directory", project, "--template", "money", "--json"])).code,
+      (
+        await cli([
+          "init",
+          "--skip-install",
+          "money",
+          "--directory",
+          project,
+          "--template",
+          "money",
+          "--json",
+        ])
+      ).code,
     ).toBe(1);
     await symlink(resolve(root, "node_modules"), resolve(project, "node_modules"), "dir");
     const trained = await cli(["train", "--json"], resolve(project, "matchbox/money/data"));
@@ -75,7 +87,18 @@ test("a scaffold trains, discovers nested projects, saves corrections, and evalu
     );
     const beforeSecondTask = await readFile(resolve(project, "matchbox/money/pipeline.ts"), "utf8");
     expect(
-      (await cli(["init", "other", "--directory", project, "--template", "money", "--json"])).code,
+      (
+        await cli([
+          "init",
+          "--skip-install",
+          "other",
+          "--directory",
+          project,
+          "--template",
+          "money",
+          "--json",
+        ])
+      ).code,
     ).toBe(0);
     expect(await readFile(resolve(project, "matchbox/money/pipeline.ts"), "utf8")).toBe(
       beforeSecondTask,

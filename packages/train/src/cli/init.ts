@@ -4,12 +4,14 @@ import { fileURLToPath } from "node:url";
 import { packageRoot, templateFiles } from "./scaffold-files.js";
 import { integrationGuide } from "./integration-guide.js";
 import { localDependency } from "./local-dependency.js";
+import { commandText, installDependencies, packageManager } from "./install.js";
 import { choose, terminal } from "./terminal.js";
 export async function initialize(
   name?: string,
   json = false,
   directory = process.cwd(),
   selected?: string,
+  skipInstall = false,
 ) {
   const root = resolve(directory);
   const manifestPath = resolve(root, "package.json");
@@ -20,6 +22,7 @@ export async function initialize(
       );
     }),
   );
+  const manager = await packageManager(root);
   const template =
     selected ??
     (process.stdin.isTTY && !json
@@ -51,7 +54,7 @@ export async function initialize(
   );
   const dependencies = { ...manifest.devDependencies, ...manifest.dependencies };
   const framework = dependencies.next ? "Next.js" : dependencies.vite ? "React/Vite" : "JavaScript";
-  files["README.md"] = integrationGuide(name, template, framework);
+  files["README.md"] = integrationGuide(name, template, framework, manager);
   manifest.dependencies ??= {};
   manifest.devDependencies ??= {};
   // Install local package snapshots inside the app, so bundlers need no external symlink access.
@@ -62,13 +65,13 @@ export async function initialize(
   if (!dependencies.zod) manifest.dependencies.zod = "4.6.3";
   if (!dependencies["@matchbox-ai/train"])
     manifest.devDependencies["@matchbox-ai/train"] = await localDependency(train, root, "train");
-  manifest.overrides = {
-    "@matchbox-ai/core": coreDependency,
-    ...manifest.overrides,
-  };
-  manifest.trustedDependencies = [
-    ...new Set([...(manifest.trustedDependencies ?? []), "@tensorflow/tfjs-node"]),
-  ];
+  if (manager === "bun") {
+    // Bun needs an explicit override to resolve peers from unpublished tarballs.
+    manifest.overrides = { "@matchbox-ai/core": coreDependency, ...manifest.overrides };
+    manifest.trustedDependencies = [
+      ...new Set([...(manifest.trustedDependencies ?? []), "@tensorflow/tfjs-node"]),
+    ];
+  }
   manifest.scripts = {
     "matchbox:dev": "matchbox dev",
     "matchbox:train": "matchbox train",
@@ -91,12 +94,18 @@ export async function initialize(
       ignorePath,
       ignore + (ignore && !ignore.endsWith("\n") ? "\n" : "") + ".matchbox/\n",
     );
-  const next = ["bun install", `bunx matchbox dev ${name}`];
+  if (!skipInstall) await installDependencies(root, manager);
+  const next = [
+    ...(skipInstall ? [commandText(manager, "install")] : []),
+    commandText(manager, "execute-local", ["matchbox", "dev", name]),
+  ];
   const result = {
     directory: root,
     task: name,
     template,
     framework,
+    packageManager: manager,
+    installed: !skipInstall,
     files: Object.keys(files).map((file) => `${prefix}/${file}`),
     next,
   };

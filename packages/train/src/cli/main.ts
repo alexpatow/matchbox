@@ -5,7 +5,7 @@ try {
   const args = argumentsFor(process.argv.slice(2));
   if (args.command === "init") {
     const { initialize } = await import("./init.js");
-    await initialize(args.rest[0], args.json, args.directory, args.template);
+    await initialize(args.rest[0], args.json, args.directory, args.template, args.skipInstall);
   } else if (args.command === "dev") {
     const { develop } = await import("./dev.js");
     await develop(args.config ?? args.target, args.port, args.open);

@@ -10,7 +10,9 @@ matchbox init money --template money
 matchbox init intent --template blank
 ```
 
-Interactive setup offers the money example or a blank task. In scripts, specify `--template`. `--directory <path>` selects an existing application directory containing package.json. Matchbox preserves existing scripts, adds `matchbox:dev`, `matchbox:train`, and `matchbox:eval` if absent, and ignores `.matchbox/`. It refuses to replace an existing task directory. It does not install dependencies automatically.
+Interactive setup offers the money example or a blank task. In scripts, specify `--template`. `--directory <path>` selects an existing application directory containing package.json. Matchbox preserves existing scripts, adds `matchbox:dev`, `matchbox:train`, and `matchbox:eval` if absent, and ignores `.matchbox/`. It refuses to replace an existing task directory. It installs dependencies automatically using the app’s package-manager declaration or lockfile, including workspace ancestors. With neither, it uses the invoking package manager, then Bun as a fallback. Use `--skip-install` to handle installation yourself. Installer logs go to stderr so `--json` stays machine-readable. If installation fails, the scaffold remains and the CLI prints the command to retry.
+
+Package-manager build-script policies still apply. With pnpm, run `pnpm approve-builds` and select `@tensorflow/tfjs-node` before training.
 
 The money template has an explicit token model, supervision, and decoder. The blank template has an editable label schema, an explicit word-feature classifier, and empty datasets. Write examples and independent evals before training it. Names do not select learning strategies.
 

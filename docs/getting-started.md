@@ -16,11 +16,10 @@ Add the example to an existing React or Next.js project using the built CLI:
 ```sh
 bun packages/train/dist/cli.js init money --template money --directory /path/to/your-app
 cd /path/to/your-app
-bun install
 bunx matchbox dev money
 ```
 
-The current development scaffold packs local Matchbox packages into `vendor/matchbox/` archives. Bun installs these inside your app, so Next.js does not need access to external package symlinks. These are snapshots of the toolchain used at setup. Keep these local development archives with the app until registry packages are available. It preserves your app's dev/build scripts and framework configuration. Run your app's dev server separately.
+The current development scaffold packs local Matchbox packages into `vendor/matchbox/` archives. `init` automatically installs these with your app’s package manager, so Next.js does not need access to external package symlinks. These are snapshots of the toolchain used at setup. Keep these local development archives with the app until registry packages are available. It preserves your app's dev/build scripts and framework configuration. Run your app's dev server separately. Follow the printed next command for your package manager; the commands above use Bun. Pass `--skip-install` to defer installation.
 
 ## Train in the workbench
 
