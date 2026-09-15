@@ -1,5 +1,13 @@
 # matchbox-ai
 
+## 0.2.1
+
+### Patch Changes
+
+- Updated dependencies [3351f13]
+  - @matchbox-ai/train@0.2.1
+  - @matchbox-ai/core@0.2.1
+
 ## 0.2.0
 
 ### Minor Changes
