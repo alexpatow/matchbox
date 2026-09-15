@@ -27,3 +27,6 @@ packages/*/THIRD-PARTY-NOTICES.md
 target/
 packages/train/native/
 packages/core/wasm/
+packages/train/prebuilds/
+.native-smoke/
+.packed-smoke/

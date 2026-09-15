@@ -1,0 +1,52 @@
+name: Native builds
+on:
+  workflow_call:
+permissions:
+  contents: read
+jobs:
+  targets:
+    runs-on: ubuntu-22.04
+    outputs:
+      matrix: ${{ steps.targets.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v7
+      - id: targets
+        run: echo "matrix=$(jq -c '{include:.}' scripts/native-targets.json)" >> "$GITHUB_OUTPUT"
+  build:
+    needs: targets
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.targets.outputs.matrix) }}
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          package-manager-cache: false
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            target
+          key: native-${{ matrix.id }}-${{ hashFiles('Cargo.lock', 'rust-toolchain.toml') }}
+      - if: endsWith(matrix.id, 'musl')
+        run: sudo apt-get update && sudo apt-get install -y musl-tools
+      - run: node scripts/build-native.ts ${{ matrix.id }}
+      - name: Install loader without lifecycle scripts
+        run: npm install --prefix .native-smoke --ignore-scripts --no-audit --no-fund node-gyp-build@4.8.4
+      - name: Verify native training
+        if: ${{ !endsWith(matrix.id, 'musl') }}
+        run: node scripts/smoke-native.cjs
+        env:
+          NODE_PATH: ${{ github.workspace }}/.native-smoke/node_modules
+      - name: Verify musl training in Alpine
+        if: endsWith(matrix.id, 'musl')
+        run: docker run --rm -v "$PWD:/work" -w /work -e NODE_PATH=/work/.native-smoke/node_modules node:24-alpine node scripts/smoke-native.cjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: native-${{ matrix.id }}
+          path: packages/train/prebuilds/
+          if-no-files-found: error

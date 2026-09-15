@@ -14,10 +14,10 @@ The repository root, apps, and examples remain private. Packages use the MIT lic
 
 1. Run `bun run changeset` alongside a package change and commit its Markdown file.
 2. Merge the feature PR. GitHub Actions creates or updates a Version Packages PR with versions, changelogs, dependency ranges, and the Bun lockfile.
-3. Merge the version PR when the release is ready. The release workflow runs the full checks and browser tests, packs the packages, and publishes the verified archives to npm. Changesets creates package tags and GitHub releases.
+3. Merge the version PR when the release is ready. The release workflow builds every native target, tests installed package archives on each target, runs the full checks and browser tests, then packs and publishes to npm. Changesets creates package tags and GitHub releases.
 4. Retry a failed publication with Run workflow on `release.yml` from main. Changesets checks the registry and skips already published versions.
 
-The packages use a fixed version group while their APIs evolve. Internal dependency ranges are updated by Changesets. Run `bun run changeset status` to inspect the next release. Run `bun run release:pack` after building to inspect publishable archives without publishing.
+The packages use a fixed version group while their APIs evolve. Internal dependency ranges are updated by Changesets. Run `bun run changeset status` to inspect the next release. Run `bun run release:pack` after collecting all native artifacts to inspect publishable archives without publishing. A local build contains only the current platform; the release guard rejects incomplete distributions.
 
 ## npm and GitHub setup
 

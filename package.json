@@ -32,7 +32,7 @@
     "build:apps": "bun run --filter @matchbox-ai/playground build && bun run --filter @matchbox-ai/benchmarks build",
     "changeset": "changeset",
     "version-packages": "changeset version && bun install --lockfile-only && bun run format",
-    "release:pack": "changeset pack --out-dir .changeset/publish",
+    "release:pack": "node scripts/verify-prebuilds.ts && changeset pack --out-dir .changeset/publish",
     "release": "changeset publish",
     "eval:examples": "bun scripts/evaluate-examples.ts",
     "build:rust": "bun scripts/build-rust.ts",
