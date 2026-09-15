@@ -32,7 +32,11 @@ describe("built package contract", () => {
       expect(dependency in trainManifest.dependencies).toBe(false);
       expect(dependency in cliManifest.dependencies).toBe(true);
     }
-    expect("@tensorflow/tfjs-node" in cliManifest.dependencies).toBe(false);
+    for (const pkg of [manifest, trainManifest, cliManifest]) {
+      expect(Object.keys(pkg.dependencies).some((name) => name.startsWith("@tensorflow/"))).toBe(
+        false,
+      );
+    }
     for (const file of [
       "workbench/index.html",
       "templates/blank/matchbox/task/parser.ts",

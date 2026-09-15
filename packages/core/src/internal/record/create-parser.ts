@@ -3,7 +3,7 @@ import type { ParserDefinition } from "../../parser/index.js";
 import type { MatchboxParser } from "../../runtime/types.js";
 import { readRecordArtifact } from "./artifact.js";
 import { recordTokens } from "./features.js";
-import type { tensorPredictor } from "../../runtime/tensorflow/index.js";
+import type { recordPredictor as tensorPredictor } from "../../runtime/burn/record.js";
 export function createRecordParser<Output extends z.ZodType>(
   artifact: unknown,
   task: ParserDefinition<Output>,

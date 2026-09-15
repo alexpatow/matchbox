@@ -2280,6 +2280,1084 @@
 {"input":"tomorrow at 23:00","output":{"kind":"datetime","dayOffset":1,"hour":23,"minute":0}}
 {"input":"tomorrow at 23:15","output":{"kind":"datetime","dayOffset":1,"hour":23,"minute":15}}
 {"input":"tomorrow at 23:30","output":{"kind":"datetime","dayOffset":1,"hour":23,"minute":30}}
+{"input":"please note 1 second","output":{"kind":"duration","seconds":1}}
+{"input":"start 1 second","output":{"kind":"duration","seconds":1}}
+{"input":"we will meet 1 second","output":{"kind":"duration","seconds":1}}
+{"input":"please start 1 second","output":{"kind":"duration","seconds":1}}
+{"input":"your appointment is 1 second","output":{"kind":"duration","seconds":1}}
+{"input":"our timer is set 1 second","output":{"kind":"duration","seconds":1}}
+{"input":"the reminder is 1 second","output":{"kind":"duration","seconds":1}}
+{"input":"can you notify us 1 second","output":{"kind":"duration","seconds":1}}
+{"input":"please notify me 1 second","output":{"kind":"duration","seconds":1}}
+{"input":"the meeting is 1 second","output":{"kind":"duration","seconds":1}}
+{"input":"please note in 1 minutes","output":{"kind":"relative","seconds":60}}
+{"input":"start in 1 minutes","output":{"kind":"relative","seconds":60}}
+{"input":"we will meet in 1 minutes","output":{"kind":"relative","seconds":60}}
+{"input":"please start in 1 minutes","output":{"kind":"relative","seconds":60}}
+{"input":"your appointment is in 1 minutes","output":{"kind":"relative","seconds":60}}
+{"input":"our timer is set in 1 minutes","output":{"kind":"relative","seconds":60}}
+{"input":"the reminder is in 1 minutes","output":{"kind":"relative","seconds":60}}
+{"input":"can you notify us in 1 minutes","output":{"kind":"relative","seconds":60}}
+{"input":"please notify me in 1 minutes","output":{"kind":"relative","seconds":60}}
+{"input":"the meeting is in 1 minutes","output":{"kind":"relative","seconds":60}}
+{"input":"please note remind me in 1 day","output":{"kind":"relative","seconds":86400}}
+{"input":"start remind me in 1 day","output":{"kind":"relative","seconds":86400}}
+{"input":"we will meet remind me in 1 day","output":{"kind":"relative","seconds":86400}}
+{"input":"please start remind me in 1 day","output":{"kind":"relative","seconds":86400}}
+{"input":"your appointment is remind me in 1 day","output":{"kind":"relative","seconds":86400}}
+{"input":"our timer is set remind me in 1 day","output":{"kind":"relative","seconds":86400}}
+{"input":"the reminder is remind me in 1 day","output":{"kind":"relative","seconds":86400}}
+{"input":"can you notify us remind me in 1 day","output":{"kind":"relative","seconds":86400}}
+{"input":"please notify me remind me in 1 day","output":{"kind":"relative","seconds":86400}}
+{"input":"the meeting is remind me in 1 day","output":{"kind":"relative","seconds":86400}}
+{"input":"please note a reminder in 5 seconds","output":{"kind":"relative","seconds":5}}
+{"input":"start a reminder in 5 seconds","output":{"kind":"relative","seconds":5}}
+{"input":"we will meet a reminder in 5 seconds","output":{"kind":"relative","seconds":5}}
+{"input":"please start a reminder in 5 seconds","output":{"kind":"relative","seconds":5}}
+{"input":"your appointment is a reminder in 5 seconds","output":{"kind":"relative","seconds":5}}
+{"input":"our timer is set a reminder in 5 seconds","output":{"kind":"relative","seconds":5}}
+{"input":"the reminder is a reminder in 5 seconds","output":{"kind":"relative","seconds":5}}
+{"input":"can you notify us a reminder in 5 seconds","output":{"kind":"relative","seconds":5}}
+{"input":"please notify me a reminder in 5 seconds","output":{"kind":"relative","seconds":5}}
+{"input":"the meeting is a reminder in 5 seconds","output":{"kind":"relative","seconds":5}}
+{"input":"please note for 5 hours","output":{"kind":"duration","seconds":18000}}
+{"input":"start for 5 hours","output":{"kind":"duration","seconds":18000}}
+{"input":"we will meet for 5 hours","output":{"kind":"duration","seconds":18000}}
+{"input":"please start for 5 hours","output":{"kind":"duration","seconds":18000}}
+{"input":"your appointment is for 5 hours","output":{"kind":"duration","seconds":18000}}
+{"input":"our timer is set for 5 hours","output":{"kind":"duration","seconds":18000}}
+{"input":"the reminder is for 5 hours","output":{"kind":"duration","seconds":18000}}
+{"input":"can you notify us for 5 hours","output":{"kind":"duration","seconds":18000}}
+{"input":"please notify me for 5 hours","output":{"kind":"duration","seconds":18000}}
+{"input":"the meeting is for 5 hours","output":{"kind":"duration","seconds":18000}}
+{"input":"please note wait for 15 second","output":{"kind":"duration","seconds":15}}
+{"input":"start wait for 15 second","output":{"kind":"duration","seconds":15}}
+{"input":"we will meet wait for 15 second","output":{"kind":"duration","seconds":15}}
+{"input":"please start wait for 15 second","output":{"kind":"duration","seconds":15}}
+{"input":"your appointment is wait for 15 second","output":{"kind":"duration","seconds":15}}
+{"input":"our timer is set wait for 15 second","output":{"kind":"duration","seconds":15}}
+{"input":"the reminder is wait for 15 second","output":{"kind":"duration","seconds":15}}
+{"input":"can you notify us wait for 15 second","output":{"kind":"duration","seconds":15}}
+{"input":"please notify me wait for 15 second","output":{"kind":"duration","seconds":15}}
+{"input":"the meeting is wait for 15 second","output":{"kind":"duration","seconds":15}}
+{"input":"please note set a timer for 15 minutes","output":{"kind":"duration","seconds":900}}
+{"input":"start set a timer for 15 minutes","output":{"kind":"duration","seconds":900}}
+{"input":"we will meet set a timer for 15 minutes","output":{"kind":"duration","seconds":900}}
+{"input":"please start set a timer for 15 minutes","output":{"kind":"duration","seconds":900}}
+{"input":"your appointment is set a timer for 15 minutes","output":{"kind":"duration","seconds":900}}
+{"input":"our timer is set set a timer for 15 minutes","output":{"kind":"duration","seconds":900}}
+{"input":"the reminder is set a timer for 15 minutes","output":{"kind":"duration","seconds":900}}
+{"input":"can you notify us set a timer for 15 minutes","output":{"kind":"duration","seconds":900}}
+{"input":"please notify me set a timer for 15 minutes","output":{"kind":"duration","seconds":900}}
+{"input":"the meeting is set a timer for 15 minutes","output":{"kind":"duration","seconds":900}}
+{"input":"please note 30 seconds","output":{"kind":"duration","seconds":30}}
+{"input":"start 30 seconds","output":{"kind":"duration","seconds":30}}
+{"input":"we will meet 30 seconds","output":{"kind":"duration","seconds":30}}
+{"input":"please start 30 seconds","output":{"kind":"duration","seconds":30}}
+{"input":"your appointment is 30 seconds","output":{"kind":"duration","seconds":30}}
+{"input":"our timer is set 30 seconds","output":{"kind":"duration","seconds":30}}
+{"input":"the reminder is 30 seconds","output":{"kind":"duration","seconds":30}}
+{"input":"can you notify us 30 seconds","output":{"kind":"duration","seconds":30}}
+{"input":"please notify me 30 seconds","output":{"kind":"duration","seconds":30}}
+{"input":"the meeting is 30 seconds","output":{"kind":"duration","seconds":30}}
+{"input":"please note in 30 hour","output":{"kind":"relative","seconds":108000}}
+{"input":"start in 30 hour","output":{"kind":"relative","seconds":108000}}
+{"input":"we will meet in 30 hour","output":{"kind":"relative","seconds":108000}}
+{"input":"please start in 30 hour","output":{"kind":"relative","seconds":108000}}
+{"input":"your appointment is in 30 hour","output":{"kind":"relative","seconds":108000}}
+{"input":"our timer is set in 30 hour","output":{"kind":"relative","seconds":108000}}
+{"input":"the reminder is in 30 hour","output":{"kind":"relative","seconds":108000}}
+{"input":"can you notify us in 30 hour","output":{"kind":"relative","seconds":108000}}
+{"input":"please notify me in 30 hour","output":{"kind":"relative","seconds":108000}}
+{"input":"the meeting is in 30 hour","output":{"kind":"relative","seconds":108000}}
+{"input":"please note remind me in 60 seconds","output":{"kind":"relative","seconds":60}}
+{"input":"start remind me in 60 seconds","output":{"kind":"relative","seconds":60}}
+{"input":"we will meet remind me in 60 seconds","output":{"kind":"relative","seconds":60}}
+{"input":"please start remind me in 60 seconds","output":{"kind":"relative","seconds":60}}
+{"input":"your appointment is remind me in 60 seconds","output":{"kind":"relative","seconds":60}}
+{"input":"our timer is set remind me in 60 seconds","output":{"kind":"relative","seconds":60}}
+{"input":"the reminder is remind me in 60 seconds","output":{"kind":"relative","seconds":60}}
+{"input":"can you notify us remind me in 60 seconds","output":{"kind":"relative","seconds":60}}
+{"input":"please notify me remind me in 60 seconds","output":{"kind":"relative","seconds":60}}
+{"input":"the meeting is remind me in 60 seconds","output":{"kind":"relative","seconds":60}}
+{"input":"please note a reminder in 60 hour","output":{"kind":"relative","seconds":216000}}
+{"input":"start a reminder in 60 hour","output":{"kind":"relative","seconds":216000}}
+{"input":"we will meet a reminder in 60 hour","output":{"kind":"relative","seconds":216000}}
+{"input":"please start a reminder in 60 hour","output":{"kind":"relative","seconds":216000}}
+{"input":"your appointment is a reminder in 60 hour","output":{"kind":"relative","seconds":216000}}
+{"input":"our timer is set a reminder in 60 hour","output":{"kind":"relative","seconds":216000}}
+{"input":"the reminder is a reminder in 60 hour","output":{"kind":"relative","seconds":216000}}
+{"input":"can you notify us a reminder in 60 hour","output":{"kind":"relative","seconds":216000}}
+{"input":"please notify me a reminder in 60 hour","output":{"kind":"relative","seconds":216000}}
+{"input":"the meeting is a reminder in 60 hour","output":{"kind":"relative","seconds":216000}}
+{"input":"please note for 1.5 minute","output":{"kind":"duration","seconds":90}}
+{"input":"start for 1.5 minute","output":{"kind":"duration","seconds":90}}
+{"input":"we will meet for 1.5 minute","output":{"kind":"duration","seconds":90}}
+{"input":"please start for 1.5 minute","output":{"kind":"duration","seconds":90}}
+{"input":"your appointment is for 1.5 minute","output":{"kind":"duration","seconds":90}}
+{"input":"our timer is set for 1.5 minute","output":{"kind":"duration","seconds":90}}
+{"input":"the reminder is for 1.5 minute","output":{"kind":"duration","seconds":90}}
+{"input":"can you notify us for 1.5 minute","output":{"kind":"duration","seconds":90}}
+{"input":"please notify me for 1.5 minute","output":{"kind":"duration","seconds":90}}
+{"input":"the meeting is for 1.5 minute","output":{"kind":"duration","seconds":90}}
+{"input":"please note wait for 1.5 hours","output":{"kind":"duration","seconds":5400}}
+{"input":"start wait for 1.5 hours","output":{"kind":"duration","seconds":5400}}
+{"input":"we will meet wait for 1.5 hours","output":{"kind":"duration","seconds":5400}}
+{"input":"please start wait for 1.5 hours","output":{"kind":"duration","seconds":5400}}
+{"input":"your appointment is wait for 1.5 hours","output":{"kind":"duration","seconds":5400}}
+{"input":"our timer is set wait for 1.5 hours","output":{"kind":"duration","seconds":5400}}
+{"input":"the reminder is wait for 1.5 hours","output":{"kind":"duration","seconds":5400}}
+{"input":"can you notify us wait for 1.5 hours","output":{"kind":"duration","seconds":5400}}
+{"input":"please notify me wait for 1.5 hours","output":{"kind":"duration","seconds":5400}}
+{"input":"the meeting is wait for 1.5 hours","output":{"kind":"duration","seconds":5400}}
+{"input":"please note set a timer for a second","output":{"kind":"duration","seconds":1}}
+{"input":"start set a timer for a second","output":{"kind":"duration","seconds":1}}
+{"input":"we will meet set a timer for a second","output":{"kind":"duration","seconds":1}}
+{"input":"please start set a timer for a second","output":{"kind":"duration","seconds":1}}
+{"input":"your appointment is set a timer for a second","output":{"kind":"duration","seconds":1}}
+{"input":"our timer is set set a timer for a second","output":{"kind":"duration","seconds":1}}
+{"input":"the reminder is set a timer for a second","output":{"kind":"duration","seconds":1}}
+{"input":"can you notify us set a timer for a second","output":{"kind":"duration","seconds":1}}
+{"input":"please notify me set a timer for a second","output":{"kind":"duration","seconds":1}}
+{"input":"the meeting is set a timer for a second","output":{"kind":"duration","seconds":1}}
+{"input":"please note a hour","output":{"kind":"duration","seconds":3600}}
+{"input":"start a hour","output":{"kind":"duration","seconds":3600}}
+{"input":"we will meet a hour","output":{"kind":"duration","seconds":3600}}
+{"input":"please start a hour","output":{"kind":"duration","seconds":3600}}
+{"input":"your appointment is a hour","output":{"kind":"duration","seconds":3600}}
+{"input":"our timer is set a hour","output":{"kind":"duration","seconds":3600}}
+{"input":"the reminder is a hour","output":{"kind":"duration","seconds":3600}}
+{"input":"can you notify us a hour","output":{"kind":"duration","seconds":3600}}
+{"input":"please notify me a hour","output":{"kind":"duration","seconds":3600}}
+{"input":"the meeting is a hour","output":{"kind":"duration","seconds":3600}}
+{"input":"please note in a days","output":{"kind":"relative","seconds":86400}}
+{"input":"start in a days","output":{"kind":"relative","seconds":86400}}
+{"input":"we will meet in a days","output":{"kind":"relative","seconds":86400}}
+{"input":"please start in a days","output":{"kind":"relative","seconds":86400}}
+{"input":"your appointment is in a days","output":{"kind":"relative","seconds":86400}}
+{"input":"our timer is set in a days","output":{"kind":"relative","seconds":86400}}
+{"input":"the reminder is in a days","output":{"kind":"relative","seconds":86400}}
+{"input":"can you notify us in a days","output":{"kind":"relative","seconds":86400}}
+{"input":"please notify me in a days","output":{"kind":"relative","seconds":86400}}
+{"input":"the meeting is in a days","output":{"kind":"relative","seconds":86400}}
+{"input":"please note remind me in an minute","output":{"kind":"relative","seconds":60}}
+{"input":"start remind me in an minute","output":{"kind":"relative","seconds":60}}
+{"input":"we will meet remind me in an minute","output":{"kind":"relative","seconds":60}}
+{"input":"please start remind me in an minute","output":{"kind":"relative","seconds":60}}
+{"input":"your appointment is remind me in an minute","output":{"kind":"relative","seconds":60}}
+{"input":"our timer is set remind me in an minute","output":{"kind":"relative","seconds":60}}
+{"input":"the reminder is remind me in an minute","output":{"kind":"relative","seconds":60}}
+{"input":"can you notify us remind me in an minute","output":{"kind":"relative","seconds":60}}
+{"input":"please notify me remind me in an minute","output":{"kind":"relative","seconds":60}}
+{"input":"the meeting is remind me in an minute","output":{"kind":"relative","seconds":60}}
+{"input":"please note a reminder in an hours","output":{"kind":"relative","seconds":3600}}
+{"input":"start a reminder in an hours","output":{"kind":"relative","seconds":3600}}
+{"input":"we will meet a reminder in an hours","output":{"kind":"relative","seconds":3600}}
+{"input":"please start a reminder in an hours","output":{"kind":"relative","seconds":3600}}
+{"input":"your appointment is a reminder in an hours","output":{"kind":"relative","seconds":3600}}
+{"input":"our timer is set a reminder in an hours","output":{"kind":"relative","seconds":3600}}
+{"input":"the reminder is a reminder in an hours","output":{"kind":"relative","seconds":3600}}
+{"input":"can you notify us a reminder in an hours","output":{"kind":"relative","seconds":3600}}
+{"input":"please notify me a reminder in an hours","output":{"kind":"relative","seconds":3600}}
+{"input":"the meeting is a reminder in an hours","output":{"kind":"relative","seconds":3600}}
+{"input":"please note for one seconds","output":{"kind":"duration","seconds":1}}
+{"input":"start for one seconds","output":{"kind":"duration","seconds":1}}
+{"input":"we will meet for one seconds","output":{"kind":"duration","seconds":1}}
+{"input":"please start for one seconds","output":{"kind":"duration","seconds":1}}
+{"input":"your appointment is for one seconds","output":{"kind":"duration","seconds":1}}
+{"input":"our timer is set for one seconds","output":{"kind":"duration","seconds":1}}
+{"input":"the reminder is for one seconds","output":{"kind":"duration","seconds":1}}
+{"input":"can you notify us for one seconds","output":{"kind":"duration","seconds":1}}
+{"input":"please notify me for one seconds","output":{"kind":"duration","seconds":1}}
+{"input":"the meeting is for one seconds","output":{"kind":"duration","seconds":1}}
+{"input":"please note wait for one hour","output":{"kind":"duration","seconds":3600}}
+{"input":"start wait for one hour","output":{"kind":"duration","seconds":3600}}
+{"input":"we will meet wait for one hour","output":{"kind":"duration","seconds":3600}}
+{"input":"please start wait for one hour","output":{"kind":"duration","seconds":3600}}
+{"input":"your appointment is wait for one hour","output":{"kind":"duration","seconds":3600}}
+{"input":"our timer is set wait for one hour","output":{"kind":"duration","seconds":3600}}
+{"input":"the reminder is wait for one hour","output":{"kind":"duration","seconds":3600}}
+{"input":"can you notify us wait for one hour","output":{"kind":"duration","seconds":3600}}
+{"input":"please notify me wait for one hour","output":{"kind":"duration","seconds":3600}}
+{"input":"the meeting is wait for one hour","output":{"kind":"duration","seconds":3600}}
+{"input":"please note set a timer for one days","output":{"kind":"duration","seconds":86400}}
+{"input":"start set a timer for one days","output":{"kind":"duration","seconds":86400}}
+{"input":"we will meet set a timer for one days","output":{"kind":"duration","seconds":86400}}
+{"input":"please start set a timer for one days","output":{"kind":"duration","seconds":86400}}
+{"input":"your appointment is set a timer for one days","output":{"kind":"duration","seconds":86400}}
+{"input":"our timer is set set a timer for one days","output":{"kind":"duration","seconds":86400}}
+{"input":"the reminder is set a timer for one days","output":{"kind":"duration","seconds":86400}}
+{"input":"can you notify us set a timer for one days","output":{"kind":"duration","seconds":86400}}
+{"input":"please notify me set a timer for one days","output":{"kind":"duration","seconds":86400}}
+{"input":"the meeting is set a timer for one days","output":{"kind":"duration","seconds":86400}}
+{"input":"please note two minutes","output":{"kind":"duration","seconds":120}}
+{"input":"start two minutes","output":{"kind":"duration","seconds":120}}
+{"input":"we will meet two minutes","output":{"kind":"duration","seconds":120}}
+{"input":"please start two minutes","output":{"kind":"duration","seconds":120}}
+{"input":"your appointment is two minutes","output":{"kind":"duration","seconds":120}}
+{"input":"our timer is set two minutes","output":{"kind":"duration","seconds":120}}
+{"input":"the reminder is two minutes","output":{"kind":"duration","seconds":120}}
+{"input":"can you notify us two minutes","output":{"kind":"duration","seconds":120}}
+{"input":"please notify me two minutes","output":{"kind":"duration","seconds":120}}
+{"input":"the meeting is two minutes","output":{"kind":"duration","seconds":120}}
+{"input":"please note in two day","output":{"kind":"relative","seconds":172800}}
+{"input":"start in two day","output":{"kind":"relative","seconds":172800}}
+{"input":"we will meet in two day","output":{"kind":"relative","seconds":172800}}
+{"input":"please start in two day","output":{"kind":"relative","seconds":172800}}
+{"input":"your appointment is in two day","output":{"kind":"relative","seconds":172800}}
+{"input":"our timer is set in two day","output":{"kind":"relative","seconds":172800}}
+{"input":"the reminder is in two day","output":{"kind":"relative","seconds":172800}}
+{"input":"can you notify us in two day","output":{"kind":"relative","seconds":172800}}
+{"input":"please notify me in two day","output":{"kind":"relative","seconds":172800}}
+{"input":"the meeting is in two day","output":{"kind":"relative","seconds":172800}}
+{"input":"please note remind me in three seconds","output":{"kind":"relative","seconds":3}}
+{"input":"start remind me in three seconds","output":{"kind":"relative","seconds":3}}
+{"input":"we will meet remind me in three seconds","output":{"kind":"relative","seconds":3}}
+{"input":"please start remind me in three seconds","output":{"kind":"relative","seconds":3}}
+{"input":"your appointment is remind me in three seconds","output":{"kind":"relative","seconds":3}}
+{"input":"our timer is set remind me in three seconds","output":{"kind":"relative","seconds":3}}
+{"input":"the reminder is remind me in three seconds","output":{"kind":"relative","seconds":3}}
+{"input":"can you notify us remind me in three seconds","output":{"kind":"relative","seconds":3}}
+{"input":"please notify me remind me in three seconds","output":{"kind":"relative","seconds":3}}
+{"input":"the meeting is remind me in three seconds","output":{"kind":"relative","seconds":3}}
+{"input":"please note a reminder in three hour","output":{"kind":"relative","seconds":10800}}
+{"input":"start a reminder in three hour","output":{"kind":"relative","seconds":10800}}
+{"input":"we will meet a reminder in three hour","output":{"kind":"relative","seconds":10800}}
+{"input":"please start a reminder in three hour","output":{"kind":"relative","seconds":10800}}
+{"input":"your appointment is a reminder in three hour","output":{"kind":"relative","seconds":10800}}
+{"input":"our timer is set a reminder in three hour","output":{"kind":"relative","seconds":10800}}
+{"input":"the reminder is a reminder in three hour","output":{"kind":"relative","seconds":10800}}
+{"input":"can you notify us a reminder in three hour","output":{"kind":"relative","seconds":10800}}
+{"input":"please notify me a reminder in three hour","output":{"kind":"relative","seconds":10800}}
+{"input":"the meeting is a reminder in three hour","output":{"kind":"relative","seconds":10800}}
+{"input":"please note for four second","output":{"kind":"duration","seconds":4}}
+{"input":"start for four second","output":{"kind":"duration","seconds":4}}
+{"input":"we will meet for four second","output":{"kind":"duration","seconds":4}}
+{"input":"please start for four second","output":{"kind":"duration","seconds":4}}
+{"input":"your appointment is for four second","output":{"kind":"duration","seconds":4}}
+{"input":"our timer is set for four second","output":{"kind":"duration","seconds":4}}
+{"input":"the reminder is for four second","output":{"kind":"duration","seconds":4}}
+{"input":"can you notify us for four second","output":{"kind":"duration","seconds":4}}
+{"input":"please notify me for four second","output":{"kind":"duration","seconds":4}}
+{"input":"the meeting is for four second","output":{"kind":"duration","seconds":4}}
+{"input":"please note wait for four minutes","output":{"kind":"duration","seconds":240}}
+{"input":"start wait for four minutes","output":{"kind":"duration","seconds":240}}
+{"input":"we will meet wait for four minutes","output":{"kind":"duration","seconds":240}}
+{"input":"please start wait for four minutes","output":{"kind":"duration","seconds":240}}
+{"input":"your appointment is wait for four minutes","output":{"kind":"duration","seconds":240}}
+{"input":"our timer is set wait for four minutes","output":{"kind":"duration","seconds":240}}
+{"input":"the reminder is wait for four minutes","output":{"kind":"duration","seconds":240}}
+{"input":"can you notify us wait for four minutes","output":{"kind":"duration","seconds":240}}
+{"input":"please notify me wait for four minutes","output":{"kind":"duration","seconds":240}}
+{"input":"the meeting is wait for four minutes","output":{"kind":"duration","seconds":240}}
+{"input":"please note set a timer for four day","output":{"kind":"duration","seconds":345600}}
+{"input":"start set a timer for four day","output":{"kind":"duration","seconds":345600}}
+{"input":"we will meet set a timer for four day","output":{"kind":"duration","seconds":345600}}
+{"input":"please start set a timer for four day","output":{"kind":"duration","seconds":345600}}
+{"input":"your appointment is set a timer for four day","output":{"kind":"duration","seconds":345600}}
+{"input":"our timer is set set a timer for four day","output":{"kind":"duration","seconds":345600}}
+{"input":"the reminder is set a timer for four day","output":{"kind":"duration","seconds":345600}}
+{"input":"can you notify us set a timer for four day","output":{"kind":"duration","seconds":345600}}
+{"input":"please notify me set a timer for four day","output":{"kind":"duration","seconds":345600}}
+{"input":"the meeting is set a timer for four day","output":{"kind":"duration","seconds":345600}}
+{"input":"please note five minute","output":{"kind":"duration","seconds":300}}
+{"input":"start five minute","output":{"kind":"duration","seconds":300}}
+{"input":"we will meet five minute","output":{"kind":"duration","seconds":300}}
+{"input":"please start five minute","output":{"kind":"duration","seconds":300}}
+{"input":"your appointment is five minute","output":{"kind":"duration","seconds":300}}
+{"input":"our timer is set five minute","output":{"kind":"duration","seconds":300}}
+{"input":"the reminder is five minute","output":{"kind":"duration","seconds":300}}
+{"input":"can you notify us five minute","output":{"kind":"duration","seconds":300}}
+{"input":"please notify me five minute","output":{"kind":"duration","seconds":300}}
+{"input":"the meeting is five minute","output":{"kind":"duration","seconds":300}}
+{"input":"please note in five hours","output":{"kind":"relative","seconds":18000}}
+{"input":"start in five hours","output":{"kind":"relative","seconds":18000}}
+{"input":"we will meet in five hours","output":{"kind":"relative","seconds":18000}}
+{"input":"please start in five hours","output":{"kind":"relative","seconds":18000}}
+{"input":"your appointment is in five hours","output":{"kind":"relative","seconds":18000}}
+{"input":"our timer is set in five hours","output":{"kind":"relative","seconds":18000}}
+{"input":"the reminder is in five hours","output":{"kind":"relative","seconds":18000}}
+{"input":"can you notify us in five hours","output":{"kind":"relative","seconds":18000}}
+{"input":"please notify me in five hours","output":{"kind":"relative","seconds":18000}}
+{"input":"the meeting is in five hours","output":{"kind":"relative","seconds":18000}}
+{"input":"please note remind me in six second","output":{"kind":"relative","seconds":6}}
+{"input":"start remind me in six second","output":{"kind":"relative","seconds":6}}
+{"input":"we will meet remind me in six second","output":{"kind":"relative","seconds":6}}
+{"input":"please start remind me in six second","output":{"kind":"relative","seconds":6}}
+{"input":"your appointment is remind me in six second","output":{"kind":"relative","seconds":6}}
+{"input":"our timer is set remind me in six second","output":{"kind":"relative","seconds":6}}
+{"input":"the reminder is remind me in six second","output":{"kind":"relative","seconds":6}}
+{"input":"can you notify us remind me in six second","output":{"kind":"relative","seconds":6}}
+{"input":"please notify me remind me in six second","output":{"kind":"relative","seconds":6}}
+{"input":"the meeting is remind me in six second","output":{"kind":"relative","seconds":6}}
+{"input":"please note a reminder in six minutes","output":{"kind":"relative","seconds":360}}
+{"input":"start a reminder in six minutes","output":{"kind":"relative","seconds":360}}
+{"input":"we will meet a reminder in six minutes","output":{"kind":"relative","seconds":360}}
+{"input":"please start a reminder in six minutes","output":{"kind":"relative","seconds":360}}
+{"input":"your appointment is a reminder in six minutes","output":{"kind":"relative","seconds":360}}
+{"input":"our timer is set a reminder in six minutes","output":{"kind":"relative","seconds":360}}
+{"input":"the reminder is a reminder in six minutes","output":{"kind":"relative","seconds":360}}
+{"input":"can you notify us a reminder in six minutes","output":{"kind":"relative","seconds":360}}
+{"input":"please notify me a reminder in six minutes","output":{"kind":"relative","seconds":360}}
+{"input":"the meeting is a reminder in six minutes","output":{"kind":"relative","seconds":360}}
+{"input":"please note for six days","output":{"kind":"duration","seconds":518400}}
+{"input":"start for six days","output":{"kind":"duration","seconds":518400}}
+{"input":"we will meet for six days","output":{"kind":"duration","seconds":518400}}
+{"input":"please start for six days","output":{"kind":"duration","seconds":518400}}
+{"input":"your appointment is for six days","output":{"kind":"duration","seconds":518400}}
+{"input":"our timer is set for six days","output":{"kind":"duration","seconds":518400}}
+{"input":"the reminder is for six days","output":{"kind":"duration","seconds":518400}}
+{"input":"can you notify us for six days","output":{"kind":"duration","seconds":518400}}
+{"input":"please notify me for six days","output":{"kind":"duration","seconds":518400}}
+{"input":"the meeting is for six days","output":{"kind":"duration","seconds":518400}}
+{"input":"please note wait for seven minute","output":{"kind":"duration","seconds":420}}
+{"input":"start wait for seven minute","output":{"kind":"duration","seconds":420}}
+{"input":"we will meet wait for seven minute","output":{"kind":"duration","seconds":420}}
+{"input":"please start wait for seven minute","output":{"kind":"duration","seconds":420}}
+{"input":"your appointment is wait for seven minute","output":{"kind":"duration","seconds":420}}
+{"input":"our timer is set wait for seven minute","output":{"kind":"duration","seconds":420}}
+{"input":"the reminder is wait for seven minute","output":{"kind":"duration","seconds":420}}
+{"input":"can you notify us wait for seven minute","output":{"kind":"duration","seconds":420}}
+{"input":"please notify me wait for seven minute","output":{"kind":"duration","seconds":420}}
+{"input":"the meeting is wait for seven minute","output":{"kind":"duration","seconds":420}}
+{"input":"please note set a timer for seven hours","output":{"kind":"duration","seconds":25200}}
+{"input":"start set a timer for seven hours","output":{"kind":"duration","seconds":25200}}
+{"input":"we will meet set a timer for seven hours","output":{"kind":"duration","seconds":25200}}
+{"input":"please start set a timer for seven hours","output":{"kind":"duration","seconds":25200}}
+{"input":"your appointment is set a timer for seven hours","output":{"kind":"duration","seconds":25200}}
+{"input":"our timer is set set a timer for seven hours","output":{"kind":"duration","seconds":25200}}
+{"input":"the reminder is set a timer for seven hours","output":{"kind":"duration","seconds":25200}}
+{"input":"can you notify us set a timer for seven hours","output":{"kind":"duration","seconds":25200}}
+{"input":"please notify me set a timer for seven hours","output":{"kind":"duration","seconds":25200}}
+{"input":"the meeting is set a timer for seven hours","output":{"kind":"duration","seconds":25200}}
+{"input":"please note eight seconds","output":{"kind":"duration","seconds":8}}
+{"input":"start eight seconds","output":{"kind":"duration","seconds":8}}
+{"input":"we will meet eight seconds","output":{"kind":"duration","seconds":8}}
+{"input":"please start eight seconds","output":{"kind":"duration","seconds":8}}
+{"input":"your appointment is eight seconds","output":{"kind":"duration","seconds":8}}
+{"input":"our timer is set eight seconds","output":{"kind":"duration","seconds":8}}
+{"input":"the reminder is eight seconds","output":{"kind":"duration","seconds":8}}
+{"input":"can you notify us eight seconds","output":{"kind":"duration","seconds":8}}
+{"input":"please notify me eight seconds","output":{"kind":"duration","seconds":8}}
+{"input":"the meeting is eight seconds","output":{"kind":"duration","seconds":8}}
+{"input":"please note in eight hour","output":{"kind":"relative","seconds":28800}}
+{"input":"start in eight hour","output":{"kind":"relative","seconds":28800}}
+{"input":"we will meet in eight hour","output":{"kind":"relative","seconds":28800}}
+{"input":"please start in eight hour","output":{"kind":"relative","seconds":28800}}
+{"input":"your appointment is in eight hour","output":{"kind":"relative","seconds":28800}}
+{"input":"our timer is set in eight hour","output":{"kind":"relative","seconds":28800}}
+{"input":"the reminder is in eight hour","output":{"kind":"relative","seconds":28800}}
+{"input":"can you notify us in eight hour","output":{"kind":"relative","seconds":28800}}
+{"input":"please notify me in eight hour","output":{"kind":"relative","seconds":28800}}
+{"input":"the meeting is in eight hour","output":{"kind":"relative","seconds":28800}}
+{"input":"please note remind me in nine seconds","output":{"kind":"relative","seconds":9}}
+{"input":"start remind me in nine seconds","output":{"kind":"relative","seconds":9}}
+{"input":"we will meet remind me in nine seconds","output":{"kind":"relative","seconds":9}}
+{"input":"please start remind me in nine seconds","output":{"kind":"relative","seconds":9}}
+{"input":"your appointment is remind me in nine seconds","output":{"kind":"relative","seconds":9}}
+{"input":"our timer is set remind me in nine seconds","output":{"kind":"relative","seconds":9}}
+{"input":"the reminder is remind me in nine seconds","output":{"kind":"relative","seconds":9}}
+{"input":"can you notify us remind me in nine seconds","output":{"kind":"relative","seconds":9}}
+{"input":"please notify me remind me in nine seconds","output":{"kind":"relative","seconds":9}}
+{"input":"the meeting is remind me in nine seconds","output":{"kind":"relative","seconds":9}}
+{"input":"please note a reminder in nine hour","output":{"kind":"relative","seconds":32400}}
+{"input":"start a reminder in nine hour","output":{"kind":"relative","seconds":32400}}
+{"input":"we will meet a reminder in nine hour","output":{"kind":"relative","seconds":32400}}
+{"input":"please start a reminder in nine hour","output":{"kind":"relative","seconds":32400}}
+{"input":"your appointment is a reminder in nine hour","output":{"kind":"relative","seconds":32400}}
+{"input":"our timer is set a reminder in nine hour","output":{"kind":"relative","seconds":32400}}
+{"input":"the reminder is a reminder in nine hour","output":{"kind":"relative","seconds":32400}}
+{"input":"can you notify us a reminder in nine hour","output":{"kind":"relative","seconds":32400}}
+{"input":"please notify me a reminder in nine hour","output":{"kind":"relative","seconds":32400}}
+{"input":"the meeting is a reminder in nine hour","output":{"kind":"relative","seconds":32400}}
+{"input":"please note for ten minute","output":{"kind":"duration","seconds":600}}
+{"input":"start for ten minute","output":{"kind":"duration","seconds":600}}
+{"input":"we will meet for ten minute","output":{"kind":"duration","seconds":600}}
+{"input":"please start for ten minute","output":{"kind":"duration","seconds":600}}
+{"input":"your appointment is for ten minute","output":{"kind":"duration","seconds":600}}
+{"input":"our timer is set for ten minute","output":{"kind":"duration","seconds":600}}
+{"input":"the reminder is for ten minute","output":{"kind":"duration","seconds":600}}
+{"input":"can you notify us for ten minute","output":{"kind":"duration","seconds":600}}
+{"input":"please notify me for ten minute","output":{"kind":"duration","seconds":600}}
+{"input":"the meeting is for ten minute","output":{"kind":"duration","seconds":600}}
+{"input":"please note wait for ten hours","output":{"kind":"duration","seconds":36000}}
+{"input":"start wait for ten hours","output":{"kind":"duration","seconds":36000}}
+{"input":"we will meet wait for ten hours","output":{"kind":"duration","seconds":36000}}
+{"input":"please start wait for ten hours","output":{"kind":"duration","seconds":36000}}
+{"input":"your appointment is wait for ten hours","output":{"kind":"duration","seconds":36000}}
+{"input":"our timer is set wait for ten hours","output":{"kind":"duration","seconds":36000}}
+{"input":"the reminder is wait for ten hours","output":{"kind":"duration","seconds":36000}}
+{"input":"can you notify us wait for ten hours","output":{"kind":"duration","seconds":36000}}
+{"input":"please notify me wait for ten hours","output":{"kind":"duration","seconds":36000}}
+{"input":"the meeting is wait for ten hours","output":{"kind":"duration","seconds":36000}}
+{"input":"please note set a timer for eleven minute","output":{"kind":"duration","seconds":660}}
+{"input":"start set a timer for eleven minute","output":{"kind":"duration","seconds":660}}
+{"input":"we will meet set a timer for eleven minute","output":{"kind":"duration","seconds":660}}
+{"input":"please start set a timer for eleven minute","output":{"kind":"duration","seconds":660}}
+{"input":"your appointment is set a timer for eleven minute","output":{"kind":"duration","seconds":660}}
+{"input":"our timer is set set a timer for eleven minute","output":{"kind":"duration","seconds":660}}
+{"input":"the reminder is set a timer for eleven minute","output":{"kind":"duration","seconds":660}}
+{"input":"can you notify us set a timer for eleven minute","output":{"kind":"duration","seconds":660}}
+{"input":"please notify me set a timer for eleven minute","output":{"kind":"duration","seconds":660}}
+{"input":"the meeting is set a timer for eleven minute","output":{"kind":"duration","seconds":660}}
+{"input":"please note twelve second","output":{"kind":"duration","seconds":12}}
+{"input":"start twelve second","output":{"kind":"duration","seconds":12}}
+{"input":"we will meet twelve second","output":{"kind":"duration","seconds":12}}
+{"input":"please start twelve second","output":{"kind":"duration","seconds":12}}
+{"input":"your appointment is twelve second","output":{"kind":"duration","seconds":12}}
+{"input":"our timer is set twelve second","output":{"kind":"duration","seconds":12}}
+{"input":"the reminder is twelve second","output":{"kind":"duration","seconds":12}}
+{"input":"can you notify us twelve second","output":{"kind":"duration","seconds":12}}
+{"input":"please notify me twelve second","output":{"kind":"duration","seconds":12}}
+{"input":"the meeting is twelve second","output":{"kind":"duration","seconds":12}}
+{"input":"please note in twelve minutes","output":{"kind":"relative","seconds":720}}
+{"input":"start in twelve minutes","output":{"kind":"relative","seconds":720}}
+{"input":"we will meet in twelve minutes","output":{"kind":"relative","seconds":720}}
+{"input":"please start in twelve minutes","output":{"kind":"relative","seconds":720}}
+{"input":"your appointment is in twelve minutes","output":{"kind":"relative","seconds":720}}
+{"input":"our timer is set in twelve minutes","output":{"kind":"relative","seconds":720}}
+{"input":"the reminder is in twelve minutes","output":{"kind":"relative","seconds":720}}
+{"input":"can you notify us in twelve minutes","output":{"kind":"relative","seconds":720}}
+{"input":"please notify me in twelve minutes","output":{"kind":"relative","seconds":720}}
+{"input":"the meeting is in twelve minutes","output":{"kind":"relative","seconds":720}}
+{"input":"please note remind me in thirteen second","output":{"kind":"relative","seconds":13}}
+{"input":"start remind me in thirteen second","output":{"kind":"relative","seconds":13}}
+{"input":"we will meet remind me in thirteen second","output":{"kind":"relative","seconds":13}}
+{"input":"please start remind me in thirteen second","output":{"kind":"relative","seconds":13}}
+{"input":"your appointment is remind me in thirteen second","output":{"kind":"relative","seconds":13}}
+{"input":"our timer is set remind me in thirteen second","output":{"kind":"relative","seconds":13}}
+{"input":"the reminder is remind me in thirteen second","output":{"kind":"relative","seconds":13}}
+{"input":"can you notify us remind me in thirteen second","output":{"kind":"relative","seconds":13}}
+{"input":"please notify me remind me in thirteen second","output":{"kind":"relative","seconds":13}}
+{"input":"the meeting is remind me in thirteen second","output":{"kind":"relative","seconds":13}}
+{"input":"please note a reminder in thirteen minutes","output":{"kind":"relative","seconds":780}}
+{"input":"start a reminder in thirteen minutes","output":{"kind":"relative","seconds":780}}
+{"input":"we will meet a reminder in thirteen minutes","output":{"kind":"relative","seconds":780}}
+{"input":"please start a reminder in thirteen minutes","output":{"kind":"relative","seconds":780}}
+{"input":"your appointment is a reminder in thirteen minutes","output":{"kind":"relative","seconds":780}}
+{"input":"our timer is set a reminder in thirteen minutes","output":{"kind":"relative","seconds":780}}
+{"input":"the reminder is a reminder in thirteen minutes","output":{"kind":"relative","seconds":780}}
+{"input":"can you notify us a reminder in thirteen minutes","output":{"kind":"relative","seconds":780}}
+{"input":"please notify me a reminder in thirteen minutes","output":{"kind":"relative","seconds":780}}
+{"input":"the meeting is a reminder in thirteen minutes","output":{"kind":"relative","seconds":780}}
+{"input":"please note for fourteen seconds","output":{"kind":"duration","seconds":14}}
+{"input":"start for fourteen seconds","output":{"kind":"duration","seconds":14}}
+{"input":"we will meet for fourteen seconds","output":{"kind":"duration","seconds":14}}
+{"input":"please start for fourteen seconds","output":{"kind":"duration","seconds":14}}
+{"input":"your appointment is for fourteen seconds","output":{"kind":"duration","seconds":14}}
+{"input":"our timer is set for fourteen seconds","output":{"kind":"duration","seconds":14}}
+{"input":"the reminder is for fourteen seconds","output":{"kind":"duration","seconds":14}}
+{"input":"can you notify us for fourteen seconds","output":{"kind":"duration","seconds":14}}
+{"input":"please notify me for fourteen seconds","output":{"kind":"duration","seconds":14}}
+{"input":"the meeting is for fourteen seconds","output":{"kind":"duration","seconds":14}}
+{"input":"please note wait for fourteen hour","output":{"kind":"duration","seconds":50400}}
+{"input":"start wait for fourteen hour","output":{"kind":"duration","seconds":50400}}
+{"input":"we will meet wait for fourteen hour","output":{"kind":"duration","seconds":50400}}
+{"input":"please start wait for fourteen hour","output":{"kind":"duration","seconds":50400}}
+{"input":"your appointment is wait for fourteen hour","output":{"kind":"duration","seconds":50400}}
+{"input":"our timer is set wait for fourteen hour","output":{"kind":"duration","seconds":50400}}
+{"input":"the reminder is wait for fourteen hour","output":{"kind":"duration","seconds":50400}}
+{"input":"can you notify us wait for fourteen hour","output":{"kind":"duration","seconds":50400}}
+{"input":"please notify me wait for fourteen hour","output":{"kind":"duration","seconds":50400}}
+{"input":"the meeting is wait for fourteen hour","output":{"kind":"duration","seconds":50400}}
+{"input":"please note set a timer for fifteen seconds","output":{"kind":"duration","seconds":15}}
+{"input":"start set a timer for fifteen seconds","output":{"kind":"duration","seconds":15}}
+{"input":"we will meet set a timer for fifteen seconds","output":{"kind":"duration","seconds":15}}
+{"input":"please start set a timer for fifteen seconds","output":{"kind":"duration","seconds":15}}
+{"input":"your appointment is set a timer for fifteen seconds","output":{"kind":"duration","seconds":15}}
+{"input":"our timer is set set a timer for fifteen seconds","output":{"kind":"duration","seconds":15}}
+{"input":"the reminder is set a timer for fifteen seconds","output":{"kind":"duration","seconds":15}}
+{"input":"can you notify us set a timer for fifteen seconds","output":{"kind":"duration","seconds":15}}
+{"input":"please notify me set a timer for fifteen seconds","output":{"kind":"duration","seconds":15}}
+{"input":"the meeting is set a timer for fifteen seconds","output":{"kind":"duration","seconds":15}}
+{"input":"please note fifteen hours","output":{"kind":"duration","seconds":54000}}
+{"input":"start fifteen hours","output":{"kind":"duration","seconds":54000}}
+{"input":"we will meet fifteen hours","output":{"kind":"duration","seconds":54000}}
+{"input":"please start fifteen hours","output":{"kind":"duration","seconds":54000}}
+{"input":"your appointment is fifteen hours","output":{"kind":"duration","seconds":54000}}
+{"input":"our timer is set fifteen hours","output":{"kind":"duration","seconds":54000}}
+{"input":"the reminder is fifteen hours","output":{"kind":"duration","seconds":54000}}
+{"input":"can you notify us fifteen hours","output":{"kind":"duration","seconds":54000}}
+{"input":"please notify me fifteen hours","output":{"kind":"duration","seconds":54000}}
+{"input":"the meeting is fifteen hours","output":{"kind":"duration","seconds":54000}}
+{"input":"please note in sixteen minute","output":{"kind":"relative","seconds":960}}
+{"input":"start in sixteen minute","output":{"kind":"relative","seconds":960}}
+{"input":"we will meet in sixteen minute","output":{"kind":"relative","seconds":960}}
+{"input":"please start in sixteen minute","output":{"kind":"relative","seconds":960}}
+{"input":"your appointment is in sixteen minute","output":{"kind":"relative","seconds":960}}
+{"input":"our timer is set in sixteen minute","output":{"kind":"relative","seconds":960}}
+{"input":"the reminder is in sixteen minute","output":{"kind":"relative","seconds":960}}
+{"input":"can you notify us in sixteen minute","output":{"kind":"relative","seconds":960}}
+{"input":"please notify me in sixteen minute","output":{"kind":"relative","seconds":960}}
+{"input":"the meeting is in sixteen minute","output":{"kind":"relative","seconds":960}}
+{"input":"please note remind me in sixteen hours","output":{"kind":"relative","seconds":57600}}
+{"input":"start remind me in sixteen hours","output":{"kind":"relative","seconds":57600}}
+{"input":"we will meet remind me in sixteen hours","output":{"kind":"relative","seconds":57600}}
+{"input":"please start remind me in sixteen hours","output":{"kind":"relative","seconds":57600}}
+{"input":"your appointment is remind me in sixteen hours","output":{"kind":"relative","seconds":57600}}
+{"input":"our timer is set remind me in sixteen hours","output":{"kind":"relative","seconds":57600}}
+{"input":"the reminder is remind me in sixteen hours","output":{"kind":"relative","seconds":57600}}
+{"input":"can you notify us remind me in sixteen hours","output":{"kind":"relative","seconds":57600}}
+{"input":"please notify me remind me in sixteen hours","output":{"kind":"relative","seconds":57600}}
+{"input":"the meeting is remind me in sixteen hours","output":{"kind":"relative","seconds":57600}}
+{"input":"please note a reminder in seventeen minute","output":{"kind":"relative","seconds":1020}}
+{"input":"start a reminder in seventeen minute","output":{"kind":"relative","seconds":1020}}
+{"input":"we will meet a reminder in seventeen minute","output":{"kind":"relative","seconds":1020}}
+{"input":"please start a reminder in seventeen minute","output":{"kind":"relative","seconds":1020}}
+{"input":"your appointment is a reminder in seventeen minute","output":{"kind":"relative","seconds":1020}}
+{"input":"our timer is set a reminder in seventeen minute","output":{"kind":"relative","seconds":1020}}
+{"input":"the reminder is a reminder in seventeen minute","output":{"kind":"relative","seconds":1020}}
+{"input":"can you notify us a reminder in seventeen minute","output":{"kind":"relative","seconds":1020}}
+{"input":"please notify me a reminder in seventeen minute","output":{"kind":"relative","seconds":1020}}
+{"input":"the meeting is a reminder in seventeen minute","output":{"kind":"relative","seconds":1020}}
+{"input":"please note for eighteen second","output":{"kind":"duration","seconds":18}}
+{"input":"start for eighteen second","output":{"kind":"duration","seconds":18}}
+{"input":"we will meet for eighteen second","output":{"kind":"duration","seconds":18}}
+{"input":"please start for eighteen second","output":{"kind":"duration","seconds":18}}
+{"input":"your appointment is for eighteen second","output":{"kind":"duration","seconds":18}}
+{"input":"our timer is set for eighteen second","output":{"kind":"duration","seconds":18}}
+{"input":"the reminder is for eighteen second","output":{"kind":"duration","seconds":18}}
+{"input":"can you notify us for eighteen second","output":{"kind":"duration","seconds":18}}
+{"input":"please notify me for eighteen second","output":{"kind":"duration","seconds":18}}
+{"input":"the meeting is for eighteen second","output":{"kind":"duration","seconds":18}}
+{"input":"please note wait for eighteen minutes","output":{"kind":"duration","seconds":1080}}
+{"input":"start wait for eighteen minutes","output":{"kind":"duration","seconds":1080}}
+{"input":"we will meet wait for eighteen minutes","output":{"kind":"duration","seconds":1080}}
+{"input":"please start wait for eighteen minutes","output":{"kind":"duration","seconds":1080}}
+{"input":"your appointment is wait for eighteen minutes","output":{"kind":"duration","seconds":1080}}
+{"input":"our timer is set wait for eighteen minutes","output":{"kind":"duration","seconds":1080}}
+{"input":"the reminder is wait for eighteen minutes","output":{"kind":"duration","seconds":1080}}
+{"input":"can you notify us wait for eighteen minutes","output":{"kind":"duration","seconds":1080}}
+{"input":"please notify me wait for eighteen minutes","output":{"kind":"duration","seconds":1080}}
+{"input":"the meeting is wait for eighteen minutes","output":{"kind":"duration","seconds":1080}}
+{"input":"please note set a timer for nineteen second","output":{"kind":"duration","seconds":19}}
+{"input":"start set a timer for nineteen second","output":{"kind":"duration","seconds":19}}
+{"input":"we will meet set a timer for nineteen second","output":{"kind":"duration","seconds":19}}
+{"input":"please start set a timer for nineteen second","output":{"kind":"duration","seconds":19}}
+{"input":"your appointment is set a timer for nineteen second","output":{"kind":"duration","seconds":19}}
+{"input":"our timer is set set a timer for nineteen second","output":{"kind":"duration","seconds":19}}
+{"input":"the reminder is set a timer for nineteen second","output":{"kind":"duration","seconds":19}}
+{"input":"can you notify us set a timer for nineteen second","output":{"kind":"duration","seconds":19}}
+{"input":"please notify me set a timer for nineteen second","output":{"kind":"duration","seconds":19}}
+{"input":"the meeting is set a timer for nineteen second","output":{"kind":"duration","seconds":19}}
+{"input":"please note nineteen hour","output":{"kind":"duration","seconds":68400}}
+{"input":"start nineteen hour","output":{"kind":"duration","seconds":68400}}
+{"input":"we will meet nineteen hour","output":{"kind":"duration","seconds":68400}}
+{"input":"please start nineteen hour","output":{"kind":"duration","seconds":68400}}
+{"input":"your appointment is nineteen hour","output":{"kind":"duration","seconds":68400}}
+{"input":"our timer is set nineteen hour","output":{"kind":"duration","seconds":68400}}
+{"input":"the reminder is nineteen hour","output":{"kind":"duration","seconds":68400}}
+{"input":"can you notify us nineteen hour","output":{"kind":"duration","seconds":68400}}
+{"input":"please notify me nineteen hour","output":{"kind":"duration","seconds":68400}}
+{"input":"the meeting is nineteen hour","output":{"kind":"duration","seconds":68400}}
+{"input":"please note in twenty seconds","output":{"kind":"relative","seconds":20}}
+{"input":"start in twenty seconds","output":{"kind":"relative","seconds":20}}
+{"input":"we will meet in twenty seconds","output":{"kind":"relative","seconds":20}}
+{"input":"please start in twenty seconds","output":{"kind":"relative","seconds":20}}
+{"input":"your appointment is in twenty seconds","output":{"kind":"relative","seconds":20}}
+{"input":"our timer is set in twenty seconds","output":{"kind":"relative","seconds":20}}
+{"input":"the reminder is in twenty seconds","output":{"kind":"relative","seconds":20}}
+{"input":"can you notify us in twenty seconds","output":{"kind":"relative","seconds":20}}
+{"input":"please notify me in twenty seconds","output":{"kind":"relative","seconds":20}}
+{"input":"the meeting is in twenty seconds","output":{"kind":"relative","seconds":20}}
+{"input":"please note remind me in twenty hour","output":{"kind":"relative","seconds":72000}}
+{"input":"start remind me in twenty hour","output":{"kind":"relative","seconds":72000}}
+{"input":"we will meet remind me in twenty hour","output":{"kind":"relative","seconds":72000}}
+{"input":"please start remind me in twenty hour","output":{"kind":"relative","seconds":72000}}
+{"input":"your appointment is remind me in twenty hour","output":{"kind":"relative","seconds":72000}}
+{"input":"our timer is set remind me in twenty hour","output":{"kind":"relative","seconds":72000}}
+{"input":"the reminder is remind me in twenty hour","output":{"kind":"relative","seconds":72000}}
+{"input":"can you notify us remind me in twenty hour","output":{"kind":"relative","seconds":72000}}
+{"input":"please notify me remind me in twenty hour","output":{"kind":"relative","seconds":72000}}
+{"input":"the meeting is remind me in twenty hour","output":{"kind":"relative","seconds":72000}}
+{"input":"please note a reminder in half seconds","output":{"kind":"relative","seconds":0.5}}
+{"input":"start a reminder in half seconds","output":{"kind":"relative","seconds":0.5}}
+{"input":"we will meet a reminder in half seconds","output":{"kind":"relative","seconds":0.5}}
+{"input":"please start a reminder in half seconds","output":{"kind":"relative","seconds":0.5}}
+{"input":"your appointment is a reminder in half seconds","output":{"kind":"relative","seconds":0.5}}
+{"input":"our timer is set a reminder in half seconds","output":{"kind":"relative","seconds":0.5}}
+{"input":"the reminder is a reminder in half seconds","output":{"kind":"relative","seconds":0.5}}
+{"input":"can you notify us a reminder in half seconds","output":{"kind":"relative","seconds":0.5}}
+{"input":"please notify me a reminder in half seconds","output":{"kind":"relative","seconds":0.5}}
+{"input":"the meeting is a reminder in half seconds","output":{"kind":"relative","seconds":0.5}}
+{"input":"please note for half hours","output":{"kind":"duration","seconds":1800}}
+{"input":"start for half hours","output":{"kind":"duration","seconds":1800}}
+{"input":"we will meet for half hours","output":{"kind":"duration","seconds":1800}}
+{"input":"please start for half hours","output":{"kind":"duration","seconds":1800}}
+{"input":"your appointment is for half hours","output":{"kind":"duration","seconds":1800}}
+{"input":"our timer is set for half hours","output":{"kind":"duration","seconds":1800}}
+{"input":"the reminder is for half hours","output":{"kind":"duration","seconds":1800}}
+{"input":"can you notify us for half hours","output":{"kind":"duration","seconds":1800}}
+{"input":"please notify me for half hours","output":{"kind":"duration","seconds":1800}}
+{"input":"the meeting is for half hours","output":{"kind":"duration","seconds":1800}}
+{"input":"please note in 1 hours and 5 minutes","output":{"kind":"relative","seconds":3900}}
+{"input":"start in 1 hours and 5 minutes","output":{"kind":"relative","seconds":3900}}
+{"input":"we will meet in 1 hours and 5 minutes","output":{"kind":"relative","seconds":3900}}
+{"input":"please start in 1 hours and 5 minutes","output":{"kind":"relative","seconds":3900}}
+{"input":"your appointment is in 1 hours and 5 minutes","output":{"kind":"relative","seconds":3900}}
+{"input":"our timer is set in 1 hours and 5 minutes","output":{"kind":"relative","seconds":3900}}
+{"input":"the reminder is in 1 hours and 5 minutes","output":{"kind":"relative","seconds":3900}}
+{"input":"can you notify us in 1 hours and 5 minutes","output":{"kind":"relative","seconds":3900}}
+{"input":"please notify me in 1 hours and 5 minutes","output":{"kind":"relative","seconds":3900}}
+{"input":"the meeting is in 1 hours and 5 minutes","output":{"kind":"relative","seconds":3900}}
+{"input":"please note for 5 hours and 30 minutes","output":{"kind":"duration","seconds":19800}}
+{"input":"start for 5 hours and 30 minutes","output":{"kind":"duration","seconds":19800}}
+{"input":"we will meet for 5 hours and 30 minutes","output":{"kind":"duration","seconds":19800}}
+{"input":"please start for 5 hours and 30 minutes","output":{"kind":"duration","seconds":19800}}
+{"input":"your appointment is for 5 hours and 30 minutes","output":{"kind":"duration","seconds":19800}}
+{"input":"our timer is set for 5 hours and 30 minutes","output":{"kind":"duration","seconds":19800}}
+{"input":"the reminder is for 5 hours and 30 minutes","output":{"kind":"duration","seconds":19800}}
+{"input":"can you notify us for 5 hours and 30 minutes","output":{"kind":"duration","seconds":19800}}
+{"input":"please notify me for 5 hours and 30 minutes","output":{"kind":"duration","seconds":19800}}
+{"input":"the meeting is for 5 hours and 30 minutes","output":{"kind":"duration","seconds":19800}}
+{"input":"please note in 1.5 hours and 60 minutes","output":{"kind":"relative","seconds":9000}}
+{"input":"start in 1.5 hours and 60 minutes","output":{"kind":"relative","seconds":9000}}
+{"input":"we will meet in 1.5 hours and 60 minutes","output":{"kind":"relative","seconds":9000}}
+{"input":"please start in 1.5 hours and 60 minutes","output":{"kind":"relative","seconds":9000}}
+{"input":"your appointment is in 1.5 hours and 60 minutes","output":{"kind":"relative","seconds":9000}}
+{"input":"our timer is set in 1.5 hours and 60 minutes","output":{"kind":"relative","seconds":9000}}
+{"input":"the reminder is in 1.5 hours and 60 minutes","output":{"kind":"relative","seconds":9000}}
+{"input":"can you notify us in 1.5 hours and 60 minutes","output":{"kind":"relative","seconds":9000}}
+{"input":"please notify me in 1.5 hours and 60 minutes","output":{"kind":"relative","seconds":9000}}
+{"input":"the meeting is in 1.5 hours and 60 minutes","output":{"kind":"relative","seconds":9000}}
+{"input":"please note for a hours and a minutes","output":{"kind":"duration","seconds":3660}}
+{"input":"start for a hours and a minutes","output":{"kind":"duration","seconds":3660}}
+{"input":"we will meet for a hours and a minutes","output":{"kind":"duration","seconds":3660}}
+{"input":"please start for a hours and a minutes","output":{"kind":"duration","seconds":3660}}
+{"input":"your appointment is for a hours and a minutes","output":{"kind":"duration","seconds":3660}}
+{"input":"our timer is set for a hours and a minutes","output":{"kind":"duration","seconds":3660}}
+{"input":"the reminder is for a hours and a minutes","output":{"kind":"duration","seconds":3660}}
+{"input":"can you notify us for a hours and a minutes","output":{"kind":"duration","seconds":3660}}
+{"input":"please notify me for a hours and a minutes","output":{"kind":"duration","seconds":3660}}
+{"input":"the meeting is for a hours and a minutes","output":{"kind":"duration","seconds":3660}}
+{"input":"please note in an hours and an minutes","output":{"kind":"relative","seconds":3660}}
+{"input":"start in an hours and an minutes","output":{"kind":"relative","seconds":3660}}
+{"input":"we will meet in an hours and an minutes","output":{"kind":"relative","seconds":3660}}
+{"input":"please start in an hours and an minutes","output":{"kind":"relative","seconds":3660}}
+{"input":"your appointment is in an hours and an minutes","output":{"kind":"relative","seconds":3660}}
+{"input":"our timer is set in an hours and an minutes","output":{"kind":"relative","seconds":3660}}
+{"input":"the reminder is in an hours and an minutes","output":{"kind":"relative","seconds":3660}}
+{"input":"can you notify us in an hours and an minutes","output":{"kind":"relative","seconds":3660}}
+{"input":"please notify me in an hours and an minutes","output":{"kind":"relative","seconds":3660}}
+{"input":"the meeting is in an hours and an minutes","output":{"kind":"relative","seconds":3660}}
+{"input":"please note for one hours and two minutes","output":{"kind":"duration","seconds":3720}}
+{"input":"start for one hours and two minutes","output":{"kind":"duration","seconds":3720}}
+{"input":"we will meet for one hours and two minutes","output":{"kind":"duration","seconds":3720}}
+{"input":"please start for one hours and two minutes","output":{"kind":"duration","seconds":3720}}
+{"input":"your appointment is for one hours and two minutes","output":{"kind":"duration","seconds":3720}}
+{"input":"our timer is set for one hours and two minutes","output":{"kind":"duration","seconds":3720}}
+{"input":"the reminder is for one hours and two minutes","output":{"kind":"duration","seconds":3720}}
+{"input":"can you notify us for one hours and two minutes","output":{"kind":"duration","seconds":3720}}
+{"input":"please notify me for one hours and two minutes","output":{"kind":"duration","seconds":3720}}
+{"input":"the meeting is for one hours and two minutes","output":{"kind":"duration","seconds":3720}}
+{"input":"please note in three hours and 1 minutes","output":{"kind":"relative","seconds":10860}}
+{"input":"start in three hours and 1 minutes","output":{"kind":"relative","seconds":10860}}
+{"input":"we will meet in three hours and 1 minutes","output":{"kind":"relative","seconds":10860}}
+{"input":"please start in three hours and 1 minutes","output":{"kind":"relative","seconds":10860}}
+{"input":"your appointment is in three hours and 1 minutes","output":{"kind":"relative","seconds":10860}}
+{"input":"our timer is set in three hours and 1 minutes","output":{"kind":"relative","seconds":10860}}
+{"input":"the reminder is in three hours and 1 minutes","output":{"kind":"relative","seconds":10860}}
+{"input":"can you notify us in three hours and 1 minutes","output":{"kind":"relative","seconds":10860}}
+{"input":"please notify me in three hours and 1 minutes","output":{"kind":"relative","seconds":10860}}
+{"input":"the meeting is in three hours and 1 minutes","output":{"kind":"relative","seconds":10860}}
+{"input":"please note for four hours and 15 minutes","output":{"kind":"duration","seconds":15300}}
+{"input":"start for four hours and 15 minutes","output":{"kind":"duration","seconds":15300}}
+{"input":"we will meet for four hours and 15 minutes","output":{"kind":"duration","seconds":15300}}
+{"input":"please start for four hours and 15 minutes","output":{"kind":"duration","seconds":15300}}
+{"input":"your appointment is for four hours and 15 minutes","output":{"kind":"duration","seconds":15300}}
+{"input":"our timer is set for four hours and 15 minutes","output":{"kind":"duration","seconds":15300}}
+{"input":"the reminder is for four hours and 15 minutes","output":{"kind":"duration","seconds":15300}}
+{"input":"can you notify us for four hours and 15 minutes","output":{"kind":"duration","seconds":15300}}
+{"input":"please notify me for four hours and 15 minutes","output":{"kind":"duration","seconds":15300}}
+{"input":"the meeting is for four hours and 15 minutes","output":{"kind":"duration","seconds":15300}}
+{"input":"please note in five hours and 30 minutes","output":{"kind":"relative","seconds":19800}}
+{"input":"start in five hours and 30 minutes","output":{"kind":"relative","seconds":19800}}
+{"input":"we will meet in five hours and 30 minutes","output":{"kind":"relative","seconds":19800}}
+{"input":"please start in five hours and 30 minutes","output":{"kind":"relative","seconds":19800}}
+{"input":"your appointment is in five hours and 30 minutes","output":{"kind":"relative","seconds":19800}}
+{"input":"our timer is set in five hours and 30 minutes","output":{"kind":"relative","seconds":19800}}
+{"input":"the reminder is in five hours and 30 minutes","output":{"kind":"relative","seconds":19800}}
+{"input":"can you notify us in five hours and 30 minutes","output":{"kind":"relative","seconds":19800}}
+{"input":"please notify me in five hours and 30 minutes","output":{"kind":"relative","seconds":19800}}
+{"input":"the meeting is in five hours and 30 minutes","output":{"kind":"relative","seconds":19800}}
+{"input":"please note for six hours and 1.5 minutes","output":{"kind":"duration","seconds":21690}}
+{"input":"start for six hours and 1.5 minutes","output":{"kind":"duration","seconds":21690}}
+{"input":"we will meet for six hours and 1.5 minutes","output":{"kind":"duration","seconds":21690}}
+{"input":"please start for six hours and 1.5 minutes","output":{"kind":"duration","seconds":21690}}
+{"input":"your appointment is for six hours and 1.5 minutes","output":{"kind":"duration","seconds":21690}}
+{"input":"our timer is set for six hours and 1.5 minutes","output":{"kind":"duration","seconds":21690}}
+{"input":"the reminder is for six hours and 1.5 minutes","output":{"kind":"duration","seconds":21690}}
+{"input":"can you notify us for six hours and 1.5 minutes","output":{"kind":"duration","seconds":21690}}
+{"input":"please notify me for six hours and 1.5 minutes","output":{"kind":"duration","seconds":21690}}
+{"input":"the meeting is for six hours and 1.5 minutes","output":{"kind":"duration","seconds":21690}}
+{"input":"please note in seven hours and a minutes","output":{"kind":"relative","seconds":25260}}
+{"input":"start in seven hours and a minutes","output":{"kind":"relative","seconds":25260}}
+{"input":"we will meet in seven hours and a minutes","output":{"kind":"relative","seconds":25260}}
+{"input":"please start in seven hours and a minutes","output":{"kind":"relative","seconds":25260}}
+{"input":"your appointment is in seven hours and a minutes","output":{"kind":"relative","seconds":25260}}
+{"input":"our timer is set in seven hours and a minutes","output":{"kind":"relative","seconds":25260}}
+{"input":"the reminder is in seven hours and a minutes","output":{"kind":"relative","seconds":25260}}
+{"input":"can you notify us in seven hours and a minutes","output":{"kind":"relative","seconds":25260}}
+{"input":"please notify me in seven hours and a minutes","output":{"kind":"relative","seconds":25260}}
+{"input":"the meeting is in seven hours and a minutes","output":{"kind":"relative","seconds":25260}}
+{"input":"please note schedule today at 1 pm","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":0}}
+{"input":"start schedule today at 1 pm","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":0}}
+{"input":"we will meet schedule today at 1 pm","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":0}}
+{"input":"please start schedule today at 1 pm","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":0}}
+{"input":"your appointment is schedule today at 1 pm","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":0}}
+{"input":"our timer is set schedule today at 1 pm","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":0}}
+{"input":"the reminder is schedule today at 1 pm","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":0}}
+{"input":"can you notify us schedule today at 1 pm","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":0}}
+{"input":"please notify me schedule today at 1 pm","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":0}}
+{"input":"the meeting is schedule today at 1 pm","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":0}}
+{"input":"please note today at 2:30 am","output":{"kind":"datetime","dayOffset":0,"hour":2,"minute":30}}
+{"input":"start today at 2:30 am","output":{"kind":"datetime","dayOffset":0,"hour":2,"minute":30}}
+{"input":"we will meet today at 2:30 am","output":{"kind":"datetime","dayOffset":0,"hour":2,"minute":30}}
+{"input":"please start today at 2:30 am","output":{"kind":"datetime","dayOffset":0,"hour":2,"minute":30}}
+{"input":"your appointment is today at 2:30 am","output":{"kind":"datetime","dayOffset":0,"hour":2,"minute":30}}
+{"input":"our timer is set today at 2:30 am","output":{"kind":"datetime","dayOffset":0,"hour":2,"minute":30}}
+{"input":"the reminder is today at 2:30 am","output":{"kind":"datetime","dayOffset":0,"hour":2,"minute":30}}
+{"input":"can you notify us today at 2:30 am","output":{"kind":"datetime","dayOffset":0,"hour":2,"minute":30}}
+{"input":"please notify me today at 2:30 am","output":{"kind":"datetime","dayOffset":0,"hour":2,"minute":30}}
+{"input":"the meeting is today at 2:30 am","output":{"kind":"datetime","dayOffset":0,"hour":2,"minute":30}}
+{"input":"please note remind me today at 3 am","output":{"kind":"datetime","dayOffset":0,"hour":3,"minute":0}}
+{"input":"start remind me today at 3 am","output":{"kind":"datetime","dayOffset":0,"hour":3,"minute":0}}
+{"input":"we will meet remind me today at 3 am","output":{"kind":"datetime","dayOffset":0,"hour":3,"minute":0}}
+{"input":"please start remind me today at 3 am","output":{"kind":"datetime","dayOffset":0,"hour":3,"minute":0}}
+{"input":"your appointment is remind me today at 3 am","output":{"kind":"datetime","dayOffset":0,"hour":3,"minute":0}}
+{"input":"our timer is set remind me today at 3 am","output":{"kind":"datetime","dayOffset":0,"hour":3,"minute":0}}
+{"input":"the reminder is remind me today at 3 am","output":{"kind":"datetime","dayOffset":0,"hour":3,"minute":0}}
+{"input":"can you notify us remind me today at 3 am","output":{"kind":"datetime","dayOffset":0,"hour":3,"minute":0}}
+{"input":"please notify me remind me today at 3 am","output":{"kind":"datetime","dayOffset":0,"hour":3,"minute":0}}
+{"input":"the meeting is remind me today at 3 am","output":{"kind":"datetime","dayOffset":0,"hour":3,"minute":0}}
+{"input":"please note schedule today at 3:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":15,"minute":30}}
+{"input":"start schedule today at 3:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":15,"minute":30}}
+{"input":"we will meet schedule today at 3:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":15,"minute":30}}
+{"input":"please start schedule today at 3:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":15,"minute":30}}
+{"input":"your appointment is schedule today at 3:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":15,"minute":30}}
+{"input":"our timer is set schedule today at 3:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":15,"minute":30}}
+{"input":"the reminder is schedule today at 3:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":15,"minute":30}}
+{"input":"can you notify us schedule today at 3:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":15,"minute":30}}
+{"input":"please notify me schedule today at 3:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":15,"minute":30}}
+{"input":"the meeting is schedule today at 3:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":15,"minute":30}}
+{"input":"please note today at 4:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":0}}
+{"input":"start today at 4:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":0}}
+{"input":"we will meet today at 4:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":0}}
+{"input":"please start today at 4:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":0}}
+{"input":"your appointment is today at 4:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":0}}
+{"input":"our timer is set today at 4:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":0}}
+{"input":"the reminder is today at 4:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":0}}
+{"input":"can you notify us today at 4:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":0}}
+{"input":"please notify me today at 4:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":0}}
+{"input":"the meeting is today at 4:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":0}}
+{"input":"please note remind me today at 6:30 am","output":{"kind":"datetime","dayOffset":0,"hour":6,"minute":30}}
+{"input":"start remind me today at 6:30 am","output":{"kind":"datetime","dayOffset":0,"hour":6,"minute":30}}
+{"input":"we will meet remind me today at 6:30 am","output":{"kind":"datetime","dayOffset":0,"hour":6,"minute":30}}
+{"input":"please start remind me today at 6:30 am","output":{"kind":"datetime","dayOffset":0,"hour":6,"minute":30}}
+{"input":"your appointment is remind me today at 6:30 am","output":{"kind":"datetime","dayOffset":0,"hour":6,"minute":30}}
+{"input":"our timer is set remind me today at 6:30 am","output":{"kind":"datetime","dayOffset":0,"hour":6,"minute":30}}
+{"input":"the reminder is remind me today at 6:30 am","output":{"kind":"datetime","dayOffset":0,"hour":6,"minute":30}}
+{"input":"can you notify us remind me today at 6:30 am","output":{"kind":"datetime","dayOffset":0,"hour":6,"minute":30}}
+{"input":"please notify me remind me today at 6:30 am","output":{"kind":"datetime","dayOffset":0,"hour":6,"minute":30}}
+{"input":"the meeting is remind me today at 6:30 am","output":{"kind":"datetime","dayOffset":0,"hour":6,"minute":30}}
+{"input":"please note schedule today at 8:00 am","output":{"kind":"datetime","dayOffset":0,"hour":8,"minute":0}}
+{"input":"start schedule today at 8:00 am","output":{"kind":"datetime","dayOffset":0,"hour":8,"minute":0}}
+{"input":"we will meet schedule today at 8:00 am","output":{"kind":"datetime","dayOffset":0,"hour":8,"minute":0}}
+{"input":"please start schedule today at 8:00 am","output":{"kind":"datetime","dayOffset":0,"hour":8,"minute":0}}
+{"input":"your appointment is schedule today at 8:00 am","output":{"kind":"datetime","dayOffset":0,"hour":8,"minute":0}}
+{"input":"our timer is set schedule today at 8:00 am","output":{"kind":"datetime","dayOffset":0,"hour":8,"minute":0}}
+{"input":"the reminder is schedule today at 8:00 am","output":{"kind":"datetime","dayOffset":0,"hour":8,"minute":0}}
+{"input":"can you notify us schedule today at 8:00 am","output":{"kind":"datetime","dayOffset":0,"hour":8,"minute":0}}
+{"input":"please notify me schedule today at 8:00 am","output":{"kind":"datetime","dayOffset":0,"hour":8,"minute":0}}
+{"input":"the meeting is schedule today at 8:00 am","output":{"kind":"datetime","dayOffset":0,"hour":8,"minute":0}}
+{"input":"please note today at 8:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":20,"minute":45}}
+{"input":"start today at 8:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":20,"minute":45}}
+{"input":"we will meet today at 8:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":20,"minute":45}}
+{"input":"please start today at 8:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":20,"minute":45}}
+{"input":"your appointment is today at 8:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":20,"minute":45}}
+{"input":"our timer is set today at 8:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":20,"minute":45}}
+{"input":"the reminder is today at 8:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":20,"minute":45}}
+{"input":"can you notify us today at 8:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":20,"minute":45}}
+{"input":"please notify me today at 8:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":20,"minute":45}}
+{"input":"the meeting is today at 8:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":20,"minute":45}}
+{"input":"please note remind me today at 9:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"start remind me today at 9:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"we will meet remind me today at 9:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"please start remind me today at 9:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"your appointment is remind me today at 9:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"our timer is set remind me today at 9:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"the reminder is remind me today at 9:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"can you notify us remind me today at 9:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"please notify me remind me today at 9:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"the meeting is remind me today at 9:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"please note schedule today at 10:45 am","output":{"kind":"datetime","dayOffset":0,"hour":10,"minute":45}}
+{"input":"start schedule today at 10:45 am","output":{"kind":"datetime","dayOffset":0,"hour":10,"minute":45}}
+{"input":"we will meet schedule today at 10:45 am","output":{"kind":"datetime","dayOffset":0,"hour":10,"minute":45}}
+{"input":"please start schedule today at 10:45 am","output":{"kind":"datetime","dayOffset":0,"hour":10,"minute":45}}
+{"input":"your appointment is schedule today at 10:45 am","output":{"kind":"datetime","dayOffset":0,"hour":10,"minute":45}}
+{"input":"our timer is set schedule today at 10:45 am","output":{"kind":"datetime","dayOffset":0,"hour":10,"minute":45}}
+{"input":"the reminder is schedule today at 10:45 am","output":{"kind":"datetime","dayOffset":0,"hour":10,"minute":45}}
+{"input":"can you notify us schedule today at 10:45 am","output":{"kind":"datetime","dayOffset":0,"hour":10,"minute":45}}
+{"input":"please notify me schedule today at 10:45 am","output":{"kind":"datetime","dayOffset":0,"hour":10,"minute":45}}
+{"input":"the meeting is schedule today at 10:45 am","output":{"kind":"datetime","dayOffset":0,"hour":10,"minute":45}}
+{"input":"please note today at 11:15 am","output":{"kind":"datetime","dayOffset":0,"hour":11,"minute":15}}
+{"input":"start today at 11:15 am","output":{"kind":"datetime","dayOffset":0,"hour":11,"minute":15}}
+{"input":"we will meet today at 11:15 am","output":{"kind":"datetime","dayOffset":0,"hour":11,"minute":15}}
+{"input":"please start today at 11:15 am","output":{"kind":"datetime","dayOffset":0,"hour":11,"minute":15}}
+{"input":"your appointment is today at 11:15 am","output":{"kind":"datetime","dayOffset":0,"hour":11,"minute":15}}
+{"input":"our timer is set today at 11:15 am","output":{"kind":"datetime","dayOffset":0,"hour":11,"minute":15}}
+{"input":"the reminder is today at 11:15 am","output":{"kind":"datetime","dayOffset":0,"hour":11,"minute":15}}
+{"input":"can you notify us today at 11:15 am","output":{"kind":"datetime","dayOffset":0,"hour":11,"minute":15}}
+{"input":"please notify me today at 11:15 am","output":{"kind":"datetime","dayOffset":0,"hour":11,"minute":15}}
+{"input":"the meeting is today at 11:15 am","output":{"kind":"datetime","dayOffset":0,"hour":11,"minute":15}}
+{"input":"please note remind me today at 11:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":45}}
+{"input":"start remind me today at 11:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":45}}
+{"input":"we will meet remind me today at 11:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":45}}
+{"input":"please start remind me today at 11:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":45}}
+{"input":"your appointment is remind me today at 11:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":45}}
+{"input":"our timer is set remind me today at 11:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":45}}
+{"input":"the reminder is remind me today at 11:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":45}}
+{"input":"can you notify us remind me today at 11:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":45}}
+{"input":"please notify me remind me today at 11:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":45}}
+{"input":"the meeting is remind me today at 11:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":45}}
+{"input":"please note schedule today at 12:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":12,"minute":15}}
+{"input":"start schedule today at 12:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":12,"minute":15}}
+{"input":"we will meet schedule today at 12:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":12,"minute":15}}
+{"input":"please start schedule today at 12:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":12,"minute":15}}
+{"input":"your appointment is schedule today at 12:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":12,"minute":15}}
+{"input":"our timer is set schedule today at 12:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":12,"minute":15}}
+{"input":"the reminder is schedule today at 12:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":12,"minute":15}}
+{"input":"can you notify us schedule today at 12:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":12,"minute":15}}
+{"input":"please notify me schedule today at 12:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":12,"minute":15}}
+{"input":"the meeting is schedule today at 12:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":12,"minute":15}}
+{"input":"please note today at 21:00","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"start today at 21:00","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"we will meet today at 21:00","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"please start today at 21:00","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"your appointment is today at 21:00","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"our timer is set today at 21:00","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"the reminder is today at 21:00","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"can you notify us today at 21:00","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"please notify me today at 21:00","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"the meeting is today at 21:00","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"please note remind me tomorrow at 1 pm","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":0}}
+{"input":"start remind me tomorrow at 1 pm","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":0}}
+{"input":"we will meet remind me tomorrow at 1 pm","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":0}}
+{"input":"please start remind me tomorrow at 1 pm","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":0}}
+{"input":"your appointment is remind me tomorrow at 1 pm","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":0}}
+{"input":"our timer is set remind me tomorrow at 1 pm","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":0}}
+{"input":"the reminder is remind me tomorrow at 1 pm","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":0}}
+{"input":"can you notify us remind me tomorrow at 1 pm","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":0}}
+{"input":"please notify me remind me tomorrow at 1 pm","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":0}}
+{"input":"the meeting is remind me tomorrow at 1 pm","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":0}}
+{"input":"please note schedule tomorrow at 2:30 am","output":{"kind":"datetime","dayOffset":1,"hour":2,"minute":30}}
+{"input":"start schedule tomorrow at 2:30 am","output":{"kind":"datetime","dayOffset":1,"hour":2,"minute":30}}
+{"input":"we will meet schedule tomorrow at 2:30 am","output":{"kind":"datetime","dayOffset":1,"hour":2,"minute":30}}
+{"input":"please start schedule tomorrow at 2:30 am","output":{"kind":"datetime","dayOffset":1,"hour":2,"minute":30}}
+{"input":"your appointment is schedule tomorrow at 2:30 am","output":{"kind":"datetime","dayOffset":1,"hour":2,"minute":30}}
+{"input":"our timer is set schedule tomorrow at 2:30 am","output":{"kind":"datetime","dayOffset":1,"hour":2,"minute":30}}
+{"input":"the reminder is schedule tomorrow at 2:30 am","output":{"kind":"datetime","dayOffset":1,"hour":2,"minute":30}}
+{"input":"can you notify us schedule tomorrow at 2:30 am","output":{"kind":"datetime","dayOffset":1,"hour":2,"minute":30}}
+{"input":"please notify me schedule tomorrow at 2:30 am","output":{"kind":"datetime","dayOffset":1,"hour":2,"minute":30}}
+{"input":"the meeting is schedule tomorrow at 2:30 am","output":{"kind":"datetime","dayOffset":1,"hour":2,"minute":30}}
+{"input":"please note tomorrow at 3:00 am","output":{"kind":"datetime","dayOffset":1,"hour":3,"minute":0}}
+{"input":"start tomorrow at 3:00 am","output":{"kind":"datetime","dayOffset":1,"hour":3,"minute":0}}
+{"input":"we will meet tomorrow at 3:00 am","output":{"kind":"datetime","dayOffset":1,"hour":3,"minute":0}}
+{"input":"please start tomorrow at 3:00 am","output":{"kind":"datetime","dayOffset":1,"hour":3,"minute":0}}
+{"input":"your appointment is tomorrow at 3:00 am","output":{"kind":"datetime","dayOffset":1,"hour":3,"minute":0}}
+{"input":"our timer is set tomorrow at 3:00 am","output":{"kind":"datetime","dayOffset":1,"hour":3,"minute":0}}
+{"input":"the reminder is tomorrow at 3:00 am","output":{"kind":"datetime","dayOffset":1,"hour":3,"minute":0}}
+{"input":"can you notify us tomorrow at 3:00 am","output":{"kind":"datetime","dayOffset":1,"hour":3,"minute":0}}
+{"input":"please notify me tomorrow at 3:00 am","output":{"kind":"datetime","dayOffset":1,"hour":3,"minute":0}}
+{"input":"the meeting is tomorrow at 3:00 am","output":{"kind":"datetime","dayOffset":1,"hour":3,"minute":0}}
+{"input":"please note remind me tomorrow at 3:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":15,"minute":30}}
+{"input":"start remind me tomorrow at 3:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":15,"minute":30}}
+{"input":"we will meet remind me tomorrow at 3:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":15,"minute":30}}
+{"input":"please start remind me tomorrow at 3:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":15,"minute":30}}
+{"input":"your appointment is remind me tomorrow at 3:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":15,"minute":30}}
+{"input":"our timer is set remind me tomorrow at 3:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":15,"minute":30}}
+{"input":"the reminder is remind me tomorrow at 3:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":15,"minute":30}}
+{"input":"can you notify us remind me tomorrow at 3:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":15,"minute":30}}
+{"input":"please notify me remind me tomorrow at 3:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":15,"minute":30}}
+{"input":"the meeting is remind me tomorrow at 3:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":15,"minute":30}}
+{"input":"please note schedule tomorrow at 4:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":0}}
+{"input":"start schedule tomorrow at 4:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":0}}
+{"input":"we will meet schedule tomorrow at 4:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":0}}
+{"input":"please start schedule tomorrow at 4:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":0}}
+{"input":"your appointment is schedule tomorrow at 4:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":0}}
+{"input":"our timer is set schedule tomorrow at 4:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":0}}
+{"input":"the reminder is schedule tomorrow at 4:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":0}}
+{"input":"can you notify us schedule tomorrow at 4:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":0}}
+{"input":"please notify me schedule tomorrow at 4:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":0}}
+{"input":"the meeting is schedule tomorrow at 4:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":0}}
+{"input":"please note tomorrow at 6:45 am","output":{"kind":"datetime","dayOffset":1,"hour":6,"minute":45}}
+{"input":"start tomorrow at 6:45 am","output":{"kind":"datetime","dayOffset":1,"hour":6,"minute":45}}
+{"input":"we will meet tomorrow at 6:45 am","output":{"kind":"datetime","dayOffset":1,"hour":6,"minute":45}}
+{"input":"please start tomorrow at 6:45 am","output":{"kind":"datetime","dayOffset":1,"hour":6,"minute":45}}
+{"input":"your appointment is tomorrow at 6:45 am","output":{"kind":"datetime","dayOffset":1,"hour":6,"minute":45}}
+{"input":"our timer is set tomorrow at 6:45 am","output":{"kind":"datetime","dayOffset":1,"hour":6,"minute":45}}
+{"input":"the reminder is tomorrow at 6:45 am","output":{"kind":"datetime","dayOffset":1,"hour":6,"minute":45}}
+{"input":"can you notify us tomorrow at 6:45 am","output":{"kind":"datetime","dayOffset":1,"hour":6,"minute":45}}
+{"input":"please notify me tomorrow at 6:45 am","output":{"kind":"datetime","dayOffset":1,"hour":6,"minute":45}}
+{"input":"the meeting is tomorrow at 6:45 am","output":{"kind":"datetime","dayOffset":1,"hour":6,"minute":45}}
+{"input":"please note remind me tomorrow at 8:00 am","output":{"kind":"datetime","dayOffset":1,"hour":8,"minute":0}}
+{"input":"start remind me tomorrow at 8:00 am","output":{"kind":"datetime","dayOffset":1,"hour":8,"minute":0}}
+{"input":"we will meet remind me tomorrow at 8:00 am","output":{"kind":"datetime","dayOffset":1,"hour":8,"minute":0}}
+{"input":"please start remind me tomorrow at 8:00 am","output":{"kind":"datetime","dayOffset":1,"hour":8,"minute":0}}
+{"input":"your appointment is remind me tomorrow at 8:00 am","output":{"kind":"datetime","dayOffset":1,"hour":8,"minute":0}}
+{"input":"our timer is set remind me tomorrow at 8:00 am","output":{"kind":"datetime","dayOffset":1,"hour":8,"minute":0}}
+{"input":"the reminder is remind me tomorrow at 8:00 am","output":{"kind":"datetime","dayOffset":1,"hour":8,"minute":0}}
+{"input":"can you notify us remind me tomorrow at 8:00 am","output":{"kind":"datetime","dayOffset":1,"hour":8,"minute":0}}
+{"input":"please notify me remind me tomorrow at 8:00 am","output":{"kind":"datetime","dayOffset":1,"hour":8,"minute":0}}
+{"input":"the meeting is remind me tomorrow at 8:00 am","output":{"kind":"datetime","dayOffset":1,"hour":8,"minute":0}}
+{"input":"please note schedule tomorrow at 8:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":20,"minute":45}}
+{"input":"start schedule tomorrow at 8:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":20,"minute":45}}
+{"input":"we will meet schedule tomorrow at 8:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":20,"minute":45}}
+{"input":"please start schedule tomorrow at 8:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":20,"minute":45}}
+{"input":"your appointment is schedule tomorrow at 8:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":20,"minute":45}}
+{"input":"our timer is set schedule tomorrow at 8:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":20,"minute":45}}
+{"input":"the reminder is schedule tomorrow at 8:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":20,"minute":45}}
+{"input":"can you notify us schedule tomorrow at 8:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":20,"minute":45}}
+{"input":"please notify me schedule tomorrow at 8:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":20,"minute":45}}
+{"input":"the meeting is schedule tomorrow at 8:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":20,"minute":45}}
+{"input":"please note tomorrow at 9:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"start tomorrow at 9:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"we will meet tomorrow at 9:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"please start tomorrow at 9:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"your appointment is tomorrow at 9:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"our timer is set tomorrow at 9:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"the reminder is tomorrow at 9:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"can you notify us tomorrow at 9:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"please notify me tomorrow at 9:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"the meeting is tomorrow at 9:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"please note remind me tomorrow at 10:45 am","output":{"kind":"datetime","dayOffset":1,"hour":10,"minute":45}}
+{"input":"start remind me tomorrow at 10:45 am","output":{"kind":"datetime","dayOffset":1,"hour":10,"minute":45}}
+{"input":"we will meet remind me tomorrow at 10:45 am","output":{"kind":"datetime","dayOffset":1,"hour":10,"minute":45}}
+{"input":"please start remind me tomorrow at 10:45 am","output":{"kind":"datetime","dayOffset":1,"hour":10,"minute":45}}
+{"input":"your appointment is remind me tomorrow at 10:45 am","output":{"kind":"datetime","dayOffset":1,"hour":10,"minute":45}}
+{"input":"our timer is set remind me tomorrow at 10:45 am","output":{"kind":"datetime","dayOffset":1,"hour":10,"minute":45}}
+{"input":"the reminder is remind me tomorrow at 10:45 am","output":{"kind":"datetime","dayOffset":1,"hour":10,"minute":45}}
+{"input":"can you notify us remind me tomorrow at 10:45 am","output":{"kind":"datetime","dayOffset":1,"hour":10,"minute":45}}
+{"input":"please notify me remind me tomorrow at 10:45 am","output":{"kind":"datetime","dayOffset":1,"hour":10,"minute":45}}
+{"input":"the meeting is remind me tomorrow at 10:45 am","output":{"kind":"datetime","dayOffset":1,"hour":10,"minute":45}}
+{"input":"please note schedule tomorrow at 11:15 am","output":{"kind":"datetime","dayOffset":1,"hour":11,"minute":15}}
+{"input":"start schedule tomorrow at 11:15 am","output":{"kind":"datetime","dayOffset":1,"hour":11,"minute":15}}
+{"input":"we will meet schedule tomorrow at 11:15 am","output":{"kind":"datetime","dayOffset":1,"hour":11,"minute":15}}
+{"input":"please start schedule tomorrow at 11:15 am","output":{"kind":"datetime","dayOffset":1,"hour":11,"minute":15}}
+{"input":"your appointment is schedule tomorrow at 11:15 am","output":{"kind":"datetime","dayOffset":1,"hour":11,"minute":15}}
+{"input":"our timer is set schedule tomorrow at 11:15 am","output":{"kind":"datetime","dayOffset":1,"hour":11,"minute":15}}
+{"input":"the reminder is schedule tomorrow at 11:15 am","output":{"kind":"datetime","dayOffset":1,"hour":11,"minute":15}}
+{"input":"can you notify us schedule tomorrow at 11:15 am","output":{"kind":"datetime","dayOffset":1,"hour":11,"minute":15}}
+{"input":"please notify me schedule tomorrow at 11:15 am","output":{"kind":"datetime","dayOffset":1,"hour":11,"minute":15}}
+{"input":"the meeting is schedule tomorrow at 11:15 am","output":{"kind":"datetime","dayOffset":1,"hour":11,"minute":15}}
+{"input":"please note tomorrow at 12 am","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":0}}
+{"input":"start tomorrow at 12 am","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":0}}
+{"input":"we will meet tomorrow at 12 am","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":0}}
+{"input":"please start tomorrow at 12 am","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":0}}
+{"input":"your appointment is tomorrow at 12 am","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":0}}
+{"input":"our timer is set tomorrow at 12 am","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":0}}
+{"input":"the reminder is tomorrow at 12 am","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":0}}
+{"input":"can you notify us tomorrow at 12 am","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":0}}
+{"input":"please notify me tomorrow at 12 am","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":0}}
+{"input":"the meeting is tomorrow at 12 am","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":0}}
+{"input":"please note remind me tomorrow at 12:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":12,"minute":15}}
+{"input":"start remind me tomorrow at 12:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":12,"minute":15}}
+{"input":"we will meet remind me tomorrow at 12:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":12,"minute":15}}
+{"input":"please start remind me tomorrow at 12:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":12,"minute":15}}
+{"input":"your appointment is remind me tomorrow at 12:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":12,"minute":15}}
+{"input":"our timer is set remind me tomorrow at 12:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":12,"minute":15}}
+{"input":"the reminder is remind me tomorrow at 12:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":12,"minute":15}}
+{"input":"can you notify us remind me tomorrow at 12:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":12,"minute":15}}
+{"input":"please notify me remind me tomorrow at 12:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":12,"minute":15}}
+{"input":"the meeting is remind me tomorrow at 12:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":12,"minute":15}}
+{"input":"please note tomorrow at 21:15","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"start tomorrow at 21:15","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"we will meet tomorrow at 21:15","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"please start tomorrow at 21:15","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"your appointment is tomorrow at 21:15","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"our timer is set tomorrow at 21:15","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"the reminder is tomorrow at 21:15","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"can you notify us tomorrow at 21:15","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"please notify me tomorrow at 21:15","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"the meeting is tomorrow at 21:15","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"for three minutes and 1 seconds","output":{"kind":"duration","seconds":181}}
+{"input":"set a timer for three minutes and 1 seconds","output":{"kind":"duration","seconds":181}}
+{"input":"in three minutes and 1 seconds","output":{"kind":"relative","seconds":181}}
+{"input":"for three minutes and 5 seconds","output":{"kind":"duration","seconds":185}}
+{"input":"set a timer for three minutes and 5 seconds","output":{"kind":"duration","seconds":185}}
+{"input":"in three minutes and 5 seconds","output":{"kind":"relative","seconds":185}}
+{"input":"for three minutes and 15 seconds","output":{"kind":"duration","seconds":195}}
+{"input":"set a timer for three minutes and 15 seconds","output":{"kind":"duration","seconds":195}}
+{"input":"in three minutes and 15 seconds","output":{"kind":"relative","seconds":195}}
+{"input":"for three minutes and 30 seconds","output":{"kind":"duration","seconds":210}}
+{"input":"set a timer for three minutes and 30 seconds","output":{"kind":"duration","seconds":210}}
+{"input":"in three minutes and 30 seconds","output":{"kind":"relative","seconds":210}}
+{"input":"for seven minutes and 1 seconds","output":{"kind":"duration","seconds":421}}
+{"input":"set a timer for seven minutes and 1 seconds","output":{"kind":"duration","seconds":421}}
+{"input":"in seven minutes and 1 seconds","output":{"kind":"relative","seconds":421}}
+{"input":"for seven minutes and 5 seconds","output":{"kind":"duration","seconds":425}}
+{"input":"set a timer for seven minutes and 5 seconds","output":{"kind":"duration","seconds":425}}
+{"input":"in seven minutes and 5 seconds","output":{"kind":"relative","seconds":425}}
+{"input":"for seven minutes and 15 seconds","output":{"kind":"duration","seconds":435}}
+{"input":"set a timer for seven minutes and 15 seconds","output":{"kind":"duration","seconds":435}}
+{"input":"in seven minutes and 15 seconds","output":{"kind":"relative","seconds":435}}
+{"input":"for seven minutes and 30 seconds","output":{"kind":"duration","seconds":450}}
+{"input":"set a timer for seven minutes and 30 seconds","output":{"kind":"duration","seconds":450}}
+{"input":"in seven minutes and 30 seconds","output":{"kind":"relative","seconds":450}}
+{"input":"for eleven minutes and 1 seconds","output":{"kind":"duration","seconds":661}}
+{"input":"set a timer for eleven minutes and 1 seconds","output":{"kind":"duration","seconds":661}}
+{"input":"in eleven minutes and 1 seconds","output":{"kind":"relative","seconds":661}}
+{"input":"for eleven minutes and 5 seconds","output":{"kind":"duration","seconds":665}}
+{"input":"set a timer for eleven minutes and 5 seconds","output":{"kind":"duration","seconds":665}}
+{"input":"in eleven minutes and 5 seconds","output":{"kind":"relative","seconds":665}}
+{"input":"for eleven minutes and 15 seconds","output":{"kind":"duration","seconds":675}}
+{"input":"set a timer for eleven minutes and 15 seconds","output":{"kind":"duration","seconds":675}}
+{"input":"in eleven minutes and 15 seconds","output":{"kind":"relative","seconds":675}}
+{"input":"for eleven minutes and 30 seconds","output":{"kind":"duration","seconds":690}}
+{"input":"set a timer for eleven minutes and 30 seconds","output":{"kind":"duration","seconds":690}}
+{"input":"in eleven minutes and 30 seconds","output":{"kind":"relative","seconds":690}}
+{"input":"for sixteen minutes and 1 seconds","output":{"kind":"duration","seconds":961}}
+{"input":"set a timer for sixteen minutes and 1 seconds","output":{"kind":"duration","seconds":961}}
+{"input":"in sixteen minutes and 1 seconds","output":{"kind":"relative","seconds":961}}
+{"input":"for sixteen minutes and 5 seconds","output":{"kind":"duration","seconds":965}}
+{"input":"set a timer for sixteen minutes and 5 seconds","output":{"kind":"duration","seconds":965}}
+{"input":"in sixteen minutes and 5 seconds","output":{"kind":"relative","seconds":965}}
+{"input":"for sixteen minutes and 15 seconds","output":{"kind":"duration","seconds":975}}
+{"input":"set a timer for sixteen minutes and 15 seconds","output":{"kind":"duration","seconds":975}}
+{"input":"in sixteen minutes and 15 seconds","output":{"kind":"relative","seconds":975}}
+{"input":"for sixteen minutes and 30 seconds","output":{"kind":"duration","seconds":990}}
+{"input":"set a timer for sixteen minutes and 30 seconds","output":{"kind":"duration","seconds":990}}
+{"input":"in sixteen minutes and 30 seconds","output":{"kind":"relative","seconds":990}}
+{"input":"for 19 minutes and 1 seconds","output":{"kind":"duration","seconds":1141}}
+{"input":"set a timer for 19 minutes and 1 seconds","output":{"kind":"duration","seconds":1141}}
+{"input":"in 19 minutes and 1 seconds","output":{"kind":"relative","seconds":1141}}
+{"input":"for 19 minutes and 5 seconds","output":{"kind":"duration","seconds":1145}}
+{"input":"set a timer for 19 minutes and 5 seconds","output":{"kind":"duration","seconds":1145}}
+{"input":"in 19 minutes and 5 seconds","output":{"kind":"relative","seconds":1145}}
+{"input":"for 19 minutes and 15 seconds","output":{"kind":"duration","seconds":1155}}
+{"input":"set a timer for 19 minutes and 15 seconds","output":{"kind":"duration","seconds":1155}}
+{"input":"in 19 minutes and 15 seconds","output":{"kind":"relative","seconds":1155}}
+{"input":"for 19 minutes and 30 seconds","output":{"kind":"duration","seconds":1170}}
+{"input":"set a timer for 19 minutes and 30 seconds","output":{"kind":"duration","seconds":1170}}
+{"input":"in 19 minutes and 30 seconds","output":{"kind":"relative","seconds":1170}}
+{"input":"in one days and two hours","output":{"kind":"relative","seconds":93600}}
+{"input":"for one days and two hours","output":{"kind":"duration","seconds":93600}}
+{"input":"in one days and six hours","output":{"kind":"relative","seconds":108000}}
+{"input":"for one days and six hours","output":{"kind":"duration","seconds":108000}}
+{"input":"in one days and nine hours","output":{"kind":"relative","seconds":118800}}
+{"input":"for one days and nine hours","output":{"kind":"duration","seconds":118800}}
+{"input":"in three days and two hours","output":{"kind":"relative","seconds":266400}}
+{"input":"for three days and two hours","output":{"kind":"duration","seconds":266400}}
+{"input":"in three days and six hours","output":{"kind":"relative","seconds":280800}}
+{"input":"for three days and six hours","output":{"kind":"duration","seconds":280800}}
+{"input":"in three days and nine hours","output":{"kind":"relative","seconds":291600}}
+{"input":"for three days and nine hours","output":{"kind":"duration","seconds":291600}}
+{"input":"in five days and two hours","output":{"kind":"relative","seconds":439200}}
+{"input":"for five days and two hours","output":{"kind":"duration","seconds":439200}}
+{"input":"in five days and six hours","output":{"kind":"relative","seconds":453600}}
+{"input":"for five days and six hours","output":{"kind":"duration","seconds":453600}}
+{"input":"in five days and nine hours","output":{"kind":"relative","seconds":464400}}
+{"input":"for five days and nine hours","output":{"kind":"duration","seconds":464400}}
 {"input":"please 1 second","output":{"kind":"duration","seconds":1}}
 {"input":"1 second please","output":{"kind":"duration","seconds":1}}
 {"input":"1 second?","output":{"kind":"duration","seconds":1}}
@@ -4108,3 +5186,863 @@
 {"input":"tomorrow at 23:15 please","output":{"kind":"datetime","dayOffset":1,"hour":23,"minute":15}}
 {"input":"tomorrow at 23:15?","output":{"kind":"datetime","dayOffset":1,"hour":23,"minute":15}}
 {"input":"tomorrow at 23:15.","output":{"kind":"datetime","dayOffset":1,"hour":23,"minute":15}}
+{"input":"please please start 1 second","output":{"kind":"duration","seconds":1}}
+{"input":"please start 1 second please","output":{"kind":"duration","seconds":1}}
+{"input":"please start 1 second?","output":{"kind":"duration","seconds":1}}
+{"input":"please start 1 second.","output":{"kind":"duration","seconds":1}}
+{"input":"please please notify me 1 second","output":{"kind":"duration","seconds":1}}
+{"input":"please notify me 1 second please","output":{"kind":"duration","seconds":1}}
+{"input":"please notify me 1 second?","output":{"kind":"duration","seconds":1}}
+{"input":"please notify me 1 second.","output":{"kind":"duration","seconds":1}}
+{"input":"please please start in 1 minutes","output":{"kind":"relative","seconds":60}}
+{"input":"please start in 1 minutes please","output":{"kind":"relative","seconds":60}}
+{"input":"please start in 1 minutes?","output":{"kind":"relative","seconds":60}}
+{"input":"please start in 1 minutes.","output":{"kind":"relative","seconds":60}}
+{"input":"please please notify me in 1 minutes","output":{"kind":"relative","seconds":60}}
+{"input":"please notify me in 1 minutes please","output":{"kind":"relative","seconds":60}}
+{"input":"please notify me in 1 minutes?","output":{"kind":"relative","seconds":60}}
+{"input":"please notify me in 1 minutes.","output":{"kind":"relative","seconds":60}}
+{"input":"please please start remind me in 1 day","output":{"kind":"relative","seconds":86400}}
+{"input":"please start remind me in 1 day please","output":{"kind":"relative","seconds":86400}}
+{"input":"please start remind me in 1 day?","output":{"kind":"relative","seconds":86400}}
+{"input":"please start remind me in 1 day.","output":{"kind":"relative","seconds":86400}}
+{"input":"please please notify me remind me in 1 day","output":{"kind":"relative","seconds":86400}}
+{"input":"please notify me remind me in 1 day please","output":{"kind":"relative","seconds":86400}}
+{"input":"please notify me remind me in 1 day?","output":{"kind":"relative","seconds":86400}}
+{"input":"please notify me remind me in 1 day.","output":{"kind":"relative","seconds":86400}}
+{"input":"please please start a reminder in 5 seconds","output":{"kind":"relative","seconds":5}}
+{"input":"please start a reminder in 5 seconds please","output":{"kind":"relative","seconds":5}}
+{"input":"please start a reminder in 5 seconds?","output":{"kind":"relative","seconds":5}}
+{"input":"please start a reminder in 5 seconds.","output":{"kind":"relative","seconds":5}}
+{"input":"please please notify me a reminder in 5 seconds","output":{"kind":"relative","seconds":5}}
+{"input":"please notify me a reminder in 5 seconds please","output":{"kind":"relative","seconds":5}}
+{"input":"please notify me a reminder in 5 seconds?","output":{"kind":"relative","seconds":5}}
+{"input":"please notify me a reminder in 5 seconds.","output":{"kind":"relative","seconds":5}}
+{"input":"please please start for 5 hours","output":{"kind":"duration","seconds":18000}}
+{"input":"please start for 5 hours please","output":{"kind":"duration","seconds":18000}}
+{"input":"please start for 5 hours?","output":{"kind":"duration","seconds":18000}}
+{"input":"please start for 5 hours.","output":{"kind":"duration","seconds":18000}}
+{"input":"please please notify me for 5 hours","output":{"kind":"duration","seconds":18000}}
+{"input":"please notify me for 5 hours please","output":{"kind":"duration","seconds":18000}}
+{"input":"please notify me for 5 hours?","output":{"kind":"duration","seconds":18000}}
+{"input":"please notify me for 5 hours.","output":{"kind":"duration","seconds":18000}}
+{"input":"please please start wait for 15 second","output":{"kind":"duration","seconds":15}}
+{"input":"please start wait for 15 second please","output":{"kind":"duration","seconds":15}}
+{"input":"please start wait for 15 second?","output":{"kind":"duration","seconds":15}}
+{"input":"please start wait for 15 second.","output":{"kind":"duration","seconds":15}}
+{"input":"please please notify me wait for 15 second","output":{"kind":"duration","seconds":15}}
+{"input":"please notify me wait for 15 second please","output":{"kind":"duration","seconds":15}}
+{"input":"please notify me wait for 15 second?","output":{"kind":"duration","seconds":15}}
+{"input":"please notify me wait for 15 second.","output":{"kind":"duration","seconds":15}}
+{"input":"please please start set a timer for 15 minutes","output":{"kind":"duration","seconds":900}}
+{"input":"please start set a timer for 15 minutes please","output":{"kind":"duration","seconds":900}}
+{"input":"please start set a timer for 15 minutes?","output":{"kind":"duration","seconds":900}}
+{"input":"please start set a timer for 15 minutes.","output":{"kind":"duration","seconds":900}}
+{"input":"please please notify me set a timer for 15 minutes","output":{"kind":"duration","seconds":900}}
+{"input":"please notify me set a timer for 15 minutes please","output":{"kind":"duration","seconds":900}}
+{"input":"please notify me set a timer for 15 minutes?","output":{"kind":"duration","seconds":900}}
+{"input":"please notify me set a timer for 15 minutes.","output":{"kind":"duration","seconds":900}}
+{"input":"please please start 30 seconds","output":{"kind":"duration","seconds":30}}
+{"input":"please start 30 seconds please","output":{"kind":"duration","seconds":30}}
+{"input":"please start 30 seconds?","output":{"kind":"duration","seconds":30}}
+{"input":"please start 30 seconds.","output":{"kind":"duration","seconds":30}}
+{"input":"please please notify me 30 seconds","output":{"kind":"duration","seconds":30}}
+{"input":"please notify me 30 seconds please","output":{"kind":"duration","seconds":30}}
+{"input":"please notify me 30 seconds?","output":{"kind":"duration","seconds":30}}
+{"input":"please notify me 30 seconds.","output":{"kind":"duration","seconds":30}}
+{"input":"please please start in 30 hour","output":{"kind":"relative","seconds":108000}}
+{"input":"please start in 30 hour please","output":{"kind":"relative","seconds":108000}}
+{"input":"please start in 30 hour?","output":{"kind":"relative","seconds":108000}}
+{"input":"please start in 30 hour.","output":{"kind":"relative","seconds":108000}}
+{"input":"please please notify me in 30 hour","output":{"kind":"relative","seconds":108000}}
+{"input":"please notify me in 30 hour please","output":{"kind":"relative","seconds":108000}}
+{"input":"please notify me in 30 hour?","output":{"kind":"relative","seconds":108000}}
+{"input":"please notify me in 30 hour.","output":{"kind":"relative","seconds":108000}}
+{"input":"please please start remind me in 60 seconds","output":{"kind":"relative","seconds":60}}
+{"input":"please start remind me in 60 seconds please","output":{"kind":"relative","seconds":60}}
+{"input":"please start remind me in 60 seconds?","output":{"kind":"relative","seconds":60}}
+{"input":"please start remind me in 60 seconds.","output":{"kind":"relative","seconds":60}}
+{"input":"please please notify me remind me in 60 seconds","output":{"kind":"relative","seconds":60}}
+{"input":"please notify me remind me in 60 seconds please","output":{"kind":"relative","seconds":60}}
+{"input":"please notify me remind me in 60 seconds?","output":{"kind":"relative","seconds":60}}
+{"input":"please notify me remind me in 60 seconds.","output":{"kind":"relative","seconds":60}}
+{"input":"please please start a reminder in 60 hour","output":{"kind":"relative","seconds":216000}}
+{"input":"please start a reminder in 60 hour please","output":{"kind":"relative","seconds":216000}}
+{"input":"please start a reminder in 60 hour?","output":{"kind":"relative","seconds":216000}}
+{"input":"please start a reminder in 60 hour.","output":{"kind":"relative","seconds":216000}}
+{"input":"please please notify me a reminder in 60 hour","output":{"kind":"relative","seconds":216000}}
+{"input":"please notify me a reminder in 60 hour please","output":{"kind":"relative","seconds":216000}}
+{"input":"please notify me a reminder in 60 hour?","output":{"kind":"relative","seconds":216000}}
+{"input":"please notify me a reminder in 60 hour.","output":{"kind":"relative","seconds":216000}}
+{"input":"please please start for 1.5 minute","output":{"kind":"duration","seconds":90}}
+{"input":"please start for 1.5 minute please","output":{"kind":"duration","seconds":90}}
+{"input":"please start for 1.5 minute?","output":{"kind":"duration","seconds":90}}
+{"input":"please start for 1.5 minute.","output":{"kind":"duration","seconds":90}}
+{"input":"please please notify me for 1.5 minute","output":{"kind":"duration","seconds":90}}
+{"input":"please notify me for 1.5 minute please","output":{"kind":"duration","seconds":90}}
+{"input":"please notify me for 1.5 minute?","output":{"kind":"duration","seconds":90}}
+{"input":"please notify me for 1.5 minute.","output":{"kind":"duration","seconds":90}}
+{"input":"please please start wait for 1.5 hours","output":{"kind":"duration","seconds":5400}}
+{"input":"please start wait for 1.5 hours please","output":{"kind":"duration","seconds":5400}}
+{"input":"please start wait for 1.5 hours?","output":{"kind":"duration","seconds":5400}}
+{"input":"please start wait for 1.5 hours.","output":{"kind":"duration","seconds":5400}}
+{"input":"please please notify me wait for 1.5 hours","output":{"kind":"duration","seconds":5400}}
+{"input":"please notify me wait for 1.5 hours please","output":{"kind":"duration","seconds":5400}}
+{"input":"please notify me wait for 1.5 hours?","output":{"kind":"duration","seconds":5400}}
+{"input":"please notify me wait for 1.5 hours.","output":{"kind":"duration","seconds":5400}}
+{"input":"please please start set a timer for a second","output":{"kind":"duration","seconds":1}}
+{"input":"please start set a timer for a second please","output":{"kind":"duration","seconds":1}}
+{"input":"please start set a timer for a second?","output":{"kind":"duration","seconds":1}}
+{"input":"please start set a timer for a second.","output":{"kind":"duration","seconds":1}}
+{"input":"please please notify me set a timer for a second","output":{"kind":"duration","seconds":1}}
+{"input":"please notify me set a timer for a second please","output":{"kind":"duration","seconds":1}}
+{"input":"please notify me set a timer for a second?","output":{"kind":"duration","seconds":1}}
+{"input":"please notify me set a timer for a second.","output":{"kind":"duration","seconds":1}}
+{"input":"please please start a hour","output":{"kind":"duration","seconds":3600}}
+{"input":"please start a hour please","output":{"kind":"duration","seconds":3600}}
+{"input":"please start a hour?","output":{"kind":"duration","seconds":3600}}
+{"input":"please start a hour.","output":{"kind":"duration","seconds":3600}}
+{"input":"please please notify me a hour","output":{"kind":"duration","seconds":3600}}
+{"input":"please notify me a hour please","output":{"kind":"duration","seconds":3600}}
+{"input":"please notify me a hour?","output":{"kind":"duration","seconds":3600}}
+{"input":"please notify me a hour.","output":{"kind":"duration","seconds":3600}}
+{"input":"please please start in a days","output":{"kind":"relative","seconds":86400}}
+{"input":"please start in a days please","output":{"kind":"relative","seconds":86400}}
+{"input":"please start in a days?","output":{"kind":"relative","seconds":86400}}
+{"input":"please start in a days.","output":{"kind":"relative","seconds":86400}}
+{"input":"please please notify me in a days","output":{"kind":"relative","seconds":86400}}
+{"input":"please notify me in a days please","output":{"kind":"relative","seconds":86400}}
+{"input":"please notify me in a days?","output":{"kind":"relative","seconds":86400}}
+{"input":"please notify me in a days.","output":{"kind":"relative","seconds":86400}}
+{"input":"please please start remind me in an minute","output":{"kind":"relative","seconds":60}}
+{"input":"please start remind me in an minute please","output":{"kind":"relative","seconds":60}}
+{"input":"please start remind me in an minute?","output":{"kind":"relative","seconds":60}}
+{"input":"please start remind me in an minute.","output":{"kind":"relative","seconds":60}}
+{"input":"please please notify me remind me in an minute","output":{"kind":"relative","seconds":60}}
+{"input":"please notify me remind me in an minute please","output":{"kind":"relative","seconds":60}}
+{"input":"please notify me remind me in an minute?","output":{"kind":"relative","seconds":60}}
+{"input":"please notify me remind me in an minute.","output":{"kind":"relative","seconds":60}}
+{"input":"please please start a reminder in an hours","output":{"kind":"relative","seconds":3600}}
+{"input":"please start a reminder in an hours please","output":{"kind":"relative","seconds":3600}}
+{"input":"please start a reminder in an hours?","output":{"kind":"relative","seconds":3600}}
+{"input":"please start a reminder in an hours.","output":{"kind":"relative","seconds":3600}}
+{"input":"please please notify me a reminder in an hours","output":{"kind":"relative","seconds":3600}}
+{"input":"please notify me a reminder in an hours please","output":{"kind":"relative","seconds":3600}}
+{"input":"please notify me a reminder in an hours?","output":{"kind":"relative","seconds":3600}}
+{"input":"please notify me a reminder in an hours.","output":{"kind":"relative","seconds":3600}}
+{"input":"please please start for one seconds","output":{"kind":"duration","seconds":1}}
+{"input":"please start for one seconds please","output":{"kind":"duration","seconds":1}}
+{"input":"please start for one seconds?","output":{"kind":"duration","seconds":1}}
+{"input":"please start for one seconds.","output":{"kind":"duration","seconds":1}}
+{"input":"please please notify me for one seconds","output":{"kind":"duration","seconds":1}}
+{"input":"please notify me for one seconds please","output":{"kind":"duration","seconds":1}}
+{"input":"please notify me for one seconds?","output":{"kind":"duration","seconds":1}}
+{"input":"please notify me for one seconds.","output":{"kind":"duration","seconds":1}}
+{"input":"please please start wait for one hour","output":{"kind":"duration","seconds":3600}}
+{"input":"please start wait for one hour please","output":{"kind":"duration","seconds":3600}}
+{"input":"please start wait for one hour?","output":{"kind":"duration","seconds":3600}}
+{"input":"please start wait for one hour.","output":{"kind":"duration","seconds":3600}}
+{"input":"please please notify me wait for one hour","output":{"kind":"duration","seconds":3600}}
+{"input":"please notify me wait for one hour please","output":{"kind":"duration","seconds":3600}}
+{"input":"please notify me wait for one hour?","output":{"kind":"duration","seconds":3600}}
+{"input":"please notify me wait for one hour.","output":{"kind":"duration","seconds":3600}}
+{"input":"please please start set a timer for one days","output":{"kind":"duration","seconds":86400}}
+{"input":"please start set a timer for one days please","output":{"kind":"duration","seconds":86400}}
+{"input":"please start set a timer for one days?","output":{"kind":"duration","seconds":86400}}
+{"input":"please start set a timer for one days.","output":{"kind":"duration","seconds":86400}}
+{"input":"please please notify me set a timer for one days","output":{"kind":"duration","seconds":86400}}
+{"input":"please notify me set a timer for one days please","output":{"kind":"duration","seconds":86400}}
+{"input":"please notify me set a timer for one days?","output":{"kind":"duration","seconds":86400}}
+{"input":"please notify me set a timer for one days.","output":{"kind":"duration","seconds":86400}}
+{"input":"please please start two minutes","output":{"kind":"duration","seconds":120}}
+{"input":"please start two minutes please","output":{"kind":"duration","seconds":120}}
+{"input":"please start two minutes?","output":{"kind":"duration","seconds":120}}
+{"input":"please start two minutes.","output":{"kind":"duration","seconds":120}}
+{"input":"please please notify me two minutes","output":{"kind":"duration","seconds":120}}
+{"input":"please notify me two minutes please","output":{"kind":"duration","seconds":120}}
+{"input":"please notify me two minutes?","output":{"kind":"duration","seconds":120}}
+{"input":"please notify me two minutes.","output":{"kind":"duration","seconds":120}}
+{"input":"please please start in two day","output":{"kind":"relative","seconds":172800}}
+{"input":"please start in two day please","output":{"kind":"relative","seconds":172800}}
+{"input":"please start in two day?","output":{"kind":"relative","seconds":172800}}
+{"input":"please start in two day.","output":{"kind":"relative","seconds":172800}}
+{"input":"please please notify me in two day","output":{"kind":"relative","seconds":172800}}
+{"input":"please notify me in two day please","output":{"kind":"relative","seconds":172800}}
+{"input":"please notify me in two day?","output":{"kind":"relative","seconds":172800}}
+{"input":"please notify me in two day.","output":{"kind":"relative","seconds":172800}}
+{"input":"please please start remind me in three seconds","output":{"kind":"relative","seconds":3}}
+{"input":"please start remind me in three seconds please","output":{"kind":"relative","seconds":3}}
+{"input":"please start remind me in three seconds?","output":{"kind":"relative","seconds":3}}
+{"input":"please start remind me in three seconds.","output":{"kind":"relative","seconds":3}}
+{"input":"please please notify me remind me in three seconds","output":{"kind":"relative","seconds":3}}
+{"input":"please notify me remind me in three seconds please","output":{"kind":"relative","seconds":3}}
+{"input":"please notify me remind me in three seconds?","output":{"kind":"relative","seconds":3}}
+{"input":"please notify me remind me in three seconds.","output":{"kind":"relative","seconds":3}}
+{"input":"please please start a reminder in three hour","output":{"kind":"relative","seconds":10800}}
+{"input":"please start a reminder in three hour please","output":{"kind":"relative","seconds":10800}}
+{"input":"please start a reminder in three hour?","output":{"kind":"relative","seconds":10800}}
+{"input":"please start a reminder in three hour.","output":{"kind":"relative","seconds":10800}}
+{"input":"please please notify me a reminder in three hour","output":{"kind":"relative","seconds":10800}}
+{"input":"please notify me a reminder in three hour please","output":{"kind":"relative","seconds":10800}}
+{"input":"please notify me a reminder in three hour?","output":{"kind":"relative","seconds":10800}}
+{"input":"please notify me a reminder in three hour.","output":{"kind":"relative","seconds":10800}}
+{"input":"please please start for four second","output":{"kind":"duration","seconds":4}}
+{"input":"please start for four second please","output":{"kind":"duration","seconds":4}}
+{"input":"please start for four second?","output":{"kind":"duration","seconds":4}}
+{"input":"please start for four second.","output":{"kind":"duration","seconds":4}}
+{"input":"please please notify me for four second","output":{"kind":"duration","seconds":4}}
+{"input":"please notify me for four second please","output":{"kind":"duration","seconds":4}}
+{"input":"please notify me for four second?","output":{"kind":"duration","seconds":4}}
+{"input":"please notify me for four second.","output":{"kind":"duration","seconds":4}}
+{"input":"please please start wait for four minutes","output":{"kind":"duration","seconds":240}}
+{"input":"please start wait for four minutes please","output":{"kind":"duration","seconds":240}}
+{"input":"please start wait for four minutes?","output":{"kind":"duration","seconds":240}}
+{"input":"please start wait for four minutes.","output":{"kind":"duration","seconds":240}}
+{"input":"please please notify me wait for four minutes","output":{"kind":"duration","seconds":240}}
+{"input":"please notify me wait for four minutes please","output":{"kind":"duration","seconds":240}}
+{"input":"please notify me wait for four minutes?","output":{"kind":"duration","seconds":240}}
+{"input":"please notify me wait for four minutes.","output":{"kind":"duration","seconds":240}}
+{"input":"please please start set a timer for four day","output":{"kind":"duration","seconds":345600}}
+{"input":"please start set a timer for four day please","output":{"kind":"duration","seconds":345600}}
+{"input":"please start set a timer for four day?","output":{"kind":"duration","seconds":345600}}
+{"input":"please start set a timer for four day.","output":{"kind":"duration","seconds":345600}}
+{"input":"please please notify me set a timer for four day","output":{"kind":"duration","seconds":345600}}
+{"input":"please notify me set a timer for four day please","output":{"kind":"duration","seconds":345600}}
+{"input":"please notify me set a timer for four day?","output":{"kind":"duration","seconds":345600}}
+{"input":"please notify me set a timer for four day.","output":{"kind":"duration","seconds":345600}}
+{"input":"please please start five minute","output":{"kind":"duration","seconds":300}}
+{"input":"please start five minute please","output":{"kind":"duration","seconds":300}}
+{"input":"please start five minute?","output":{"kind":"duration","seconds":300}}
+{"input":"please start five minute.","output":{"kind":"duration","seconds":300}}
+{"input":"please please notify me five minute","output":{"kind":"duration","seconds":300}}
+{"input":"please notify me five minute please","output":{"kind":"duration","seconds":300}}
+{"input":"please notify me five minute?","output":{"kind":"duration","seconds":300}}
+{"input":"please notify me five minute.","output":{"kind":"duration","seconds":300}}
+{"input":"please please start in five hours","output":{"kind":"relative","seconds":18000}}
+{"input":"please start in five hours please","output":{"kind":"relative","seconds":18000}}
+{"input":"please start in five hours?","output":{"kind":"relative","seconds":18000}}
+{"input":"please start in five hours.","output":{"kind":"relative","seconds":18000}}
+{"input":"please please notify me in five hours","output":{"kind":"relative","seconds":18000}}
+{"input":"please notify me in five hours please","output":{"kind":"relative","seconds":18000}}
+{"input":"please notify me in five hours?","output":{"kind":"relative","seconds":18000}}
+{"input":"please notify me in five hours.","output":{"kind":"relative","seconds":18000}}
+{"input":"please please start remind me in six second","output":{"kind":"relative","seconds":6}}
+{"input":"please start remind me in six second please","output":{"kind":"relative","seconds":6}}
+{"input":"please start remind me in six second?","output":{"kind":"relative","seconds":6}}
+{"input":"please start remind me in six second.","output":{"kind":"relative","seconds":6}}
+{"input":"please please notify me remind me in six second","output":{"kind":"relative","seconds":6}}
+{"input":"please notify me remind me in six second please","output":{"kind":"relative","seconds":6}}
+{"input":"please notify me remind me in six second?","output":{"kind":"relative","seconds":6}}
+{"input":"please notify me remind me in six second.","output":{"kind":"relative","seconds":6}}
+{"input":"please please start a reminder in six minutes","output":{"kind":"relative","seconds":360}}
+{"input":"please start a reminder in six minutes please","output":{"kind":"relative","seconds":360}}
+{"input":"please start a reminder in six minutes?","output":{"kind":"relative","seconds":360}}
+{"input":"please start a reminder in six minutes.","output":{"kind":"relative","seconds":360}}
+{"input":"please please notify me a reminder in six minutes","output":{"kind":"relative","seconds":360}}
+{"input":"please notify me a reminder in six minutes please","output":{"kind":"relative","seconds":360}}
+{"input":"please notify me a reminder in six minutes?","output":{"kind":"relative","seconds":360}}
+{"input":"please notify me a reminder in six minutes.","output":{"kind":"relative","seconds":360}}
+{"input":"please please start for six days","output":{"kind":"duration","seconds":518400}}
+{"input":"please start for six days please","output":{"kind":"duration","seconds":518400}}
+{"input":"please start for six days?","output":{"kind":"duration","seconds":518400}}
+{"input":"please start for six days.","output":{"kind":"duration","seconds":518400}}
+{"input":"please please notify me for six days","output":{"kind":"duration","seconds":518400}}
+{"input":"please notify me for six days please","output":{"kind":"duration","seconds":518400}}
+{"input":"please notify me for six days?","output":{"kind":"duration","seconds":518400}}
+{"input":"please notify me for six days.","output":{"kind":"duration","seconds":518400}}
+{"input":"please please start wait for seven minute","output":{"kind":"duration","seconds":420}}
+{"input":"please start wait for seven minute please","output":{"kind":"duration","seconds":420}}
+{"input":"please start wait for seven minute?","output":{"kind":"duration","seconds":420}}
+{"input":"please start wait for seven minute.","output":{"kind":"duration","seconds":420}}
+{"input":"please please notify me wait for seven minute","output":{"kind":"duration","seconds":420}}
+{"input":"please notify me wait for seven minute please","output":{"kind":"duration","seconds":420}}
+{"input":"please notify me wait for seven minute?","output":{"kind":"duration","seconds":420}}
+{"input":"please notify me wait for seven minute.","output":{"kind":"duration","seconds":420}}
+{"input":"please please start set a timer for seven hours","output":{"kind":"duration","seconds":25200}}
+{"input":"please start set a timer for seven hours please","output":{"kind":"duration","seconds":25200}}
+{"input":"please start set a timer for seven hours?","output":{"kind":"duration","seconds":25200}}
+{"input":"please start set a timer for seven hours.","output":{"kind":"duration","seconds":25200}}
+{"input":"please please notify me set a timer for seven hours","output":{"kind":"duration","seconds":25200}}
+{"input":"please notify me set a timer for seven hours please","output":{"kind":"duration","seconds":25200}}
+{"input":"please notify me set a timer for seven hours?","output":{"kind":"duration","seconds":25200}}
+{"input":"please notify me set a timer for seven hours.","output":{"kind":"duration","seconds":25200}}
+{"input":"please please start eight seconds","output":{"kind":"duration","seconds":8}}
+{"input":"please start eight seconds please","output":{"kind":"duration","seconds":8}}
+{"input":"please start eight seconds?","output":{"kind":"duration","seconds":8}}
+{"input":"please start eight seconds.","output":{"kind":"duration","seconds":8}}
+{"input":"please please notify me eight seconds","output":{"kind":"duration","seconds":8}}
+{"input":"please notify me eight seconds please","output":{"kind":"duration","seconds":8}}
+{"input":"please notify me eight seconds?","output":{"kind":"duration","seconds":8}}
+{"input":"please notify me eight seconds.","output":{"kind":"duration","seconds":8}}
+{"input":"please please start in eight hour","output":{"kind":"relative","seconds":28800}}
+{"input":"please start in eight hour please","output":{"kind":"relative","seconds":28800}}
+{"input":"please start in eight hour?","output":{"kind":"relative","seconds":28800}}
+{"input":"please start in eight hour.","output":{"kind":"relative","seconds":28800}}
+{"input":"please please notify me in eight hour","output":{"kind":"relative","seconds":28800}}
+{"input":"please notify me in eight hour please","output":{"kind":"relative","seconds":28800}}
+{"input":"please notify me in eight hour?","output":{"kind":"relative","seconds":28800}}
+{"input":"please notify me in eight hour.","output":{"kind":"relative","seconds":28800}}
+{"input":"please please start remind me in nine seconds","output":{"kind":"relative","seconds":9}}
+{"input":"please start remind me in nine seconds please","output":{"kind":"relative","seconds":9}}
+{"input":"please start remind me in nine seconds?","output":{"kind":"relative","seconds":9}}
+{"input":"please start remind me in nine seconds.","output":{"kind":"relative","seconds":9}}
+{"input":"please please notify me remind me in nine seconds","output":{"kind":"relative","seconds":9}}
+{"input":"please notify me remind me in nine seconds please","output":{"kind":"relative","seconds":9}}
+{"input":"please notify me remind me in nine seconds?","output":{"kind":"relative","seconds":9}}
+{"input":"please notify me remind me in nine seconds.","output":{"kind":"relative","seconds":9}}
+{"input":"please please start a reminder in nine hour","output":{"kind":"relative","seconds":32400}}
+{"input":"please start a reminder in nine hour please","output":{"kind":"relative","seconds":32400}}
+{"input":"please start a reminder in nine hour?","output":{"kind":"relative","seconds":32400}}
+{"input":"please start a reminder in nine hour.","output":{"kind":"relative","seconds":32400}}
+{"input":"please please notify me a reminder in nine hour","output":{"kind":"relative","seconds":32400}}
+{"input":"please notify me a reminder in nine hour please","output":{"kind":"relative","seconds":32400}}
+{"input":"please notify me a reminder in nine hour?","output":{"kind":"relative","seconds":32400}}
+{"input":"please notify me a reminder in nine hour.","output":{"kind":"relative","seconds":32400}}
+{"input":"please please start for ten minute","output":{"kind":"duration","seconds":600}}
+{"input":"please start for ten minute please","output":{"kind":"duration","seconds":600}}
+{"input":"please start for ten minute?","output":{"kind":"duration","seconds":600}}
+{"input":"please start for ten minute.","output":{"kind":"duration","seconds":600}}
+{"input":"please please notify me for ten minute","output":{"kind":"duration","seconds":600}}
+{"input":"please notify me for ten minute please","output":{"kind":"duration","seconds":600}}
+{"input":"please notify me for ten minute?","output":{"kind":"duration","seconds":600}}
+{"input":"please notify me for ten minute.","output":{"kind":"duration","seconds":600}}
+{"input":"please please start wait for ten hours","output":{"kind":"duration","seconds":36000}}
+{"input":"please start wait for ten hours please","output":{"kind":"duration","seconds":36000}}
+{"input":"please start wait for ten hours?","output":{"kind":"duration","seconds":36000}}
+{"input":"please start wait for ten hours.","output":{"kind":"duration","seconds":36000}}
+{"input":"please please notify me wait for ten hours","output":{"kind":"duration","seconds":36000}}
+{"input":"please notify me wait for ten hours please","output":{"kind":"duration","seconds":36000}}
+{"input":"please notify me wait for ten hours?","output":{"kind":"duration","seconds":36000}}
+{"input":"please notify me wait for ten hours.","output":{"kind":"duration","seconds":36000}}
+{"input":"please please start set a timer for eleven minute","output":{"kind":"duration","seconds":660}}
+{"input":"please start set a timer for eleven minute please","output":{"kind":"duration","seconds":660}}
+{"input":"please start set a timer for eleven minute?","output":{"kind":"duration","seconds":660}}
+{"input":"please start set a timer for eleven minute.","output":{"kind":"duration","seconds":660}}
+{"input":"please please notify me set a timer for eleven minute","output":{"kind":"duration","seconds":660}}
+{"input":"please notify me set a timer for eleven minute please","output":{"kind":"duration","seconds":660}}
+{"input":"please notify me set a timer for eleven minute?","output":{"kind":"duration","seconds":660}}
+{"input":"please notify me set a timer for eleven minute.","output":{"kind":"duration","seconds":660}}
+{"input":"please please start twelve second","output":{"kind":"duration","seconds":12}}
+{"input":"please start twelve second please","output":{"kind":"duration","seconds":12}}
+{"input":"please start twelve second?","output":{"kind":"duration","seconds":12}}
+{"input":"please start twelve second.","output":{"kind":"duration","seconds":12}}
+{"input":"please please notify me twelve second","output":{"kind":"duration","seconds":12}}
+{"input":"please notify me twelve second please","output":{"kind":"duration","seconds":12}}
+{"input":"please notify me twelve second?","output":{"kind":"duration","seconds":12}}
+{"input":"please notify me twelve second.","output":{"kind":"duration","seconds":12}}
+{"input":"please please start in twelve minutes","output":{"kind":"relative","seconds":720}}
+{"input":"please start in twelve minutes please","output":{"kind":"relative","seconds":720}}
+{"input":"please start in twelve minutes?","output":{"kind":"relative","seconds":720}}
+{"input":"please start in twelve minutes.","output":{"kind":"relative","seconds":720}}
+{"input":"please please notify me in twelve minutes","output":{"kind":"relative","seconds":720}}
+{"input":"please notify me in twelve minutes please","output":{"kind":"relative","seconds":720}}
+{"input":"please notify me in twelve minutes?","output":{"kind":"relative","seconds":720}}
+{"input":"please notify me in twelve minutes.","output":{"kind":"relative","seconds":720}}
+{"input":"please please start remind me in thirteen second","output":{"kind":"relative","seconds":13}}
+{"input":"please start remind me in thirteen second please","output":{"kind":"relative","seconds":13}}
+{"input":"please start remind me in thirteen second?","output":{"kind":"relative","seconds":13}}
+{"input":"please start remind me in thirteen second.","output":{"kind":"relative","seconds":13}}
+{"input":"please please notify me remind me in thirteen second","output":{"kind":"relative","seconds":13}}
+{"input":"please notify me remind me in thirteen second please","output":{"kind":"relative","seconds":13}}
+{"input":"please notify me remind me in thirteen second?","output":{"kind":"relative","seconds":13}}
+{"input":"please notify me remind me in thirteen second.","output":{"kind":"relative","seconds":13}}
+{"input":"please please start a reminder in thirteen minutes","output":{"kind":"relative","seconds":780}}
+{"input":"please start a reminder in thirteen minutes please","output":{"kind":"relative","seconds":780}}
+{"input":"please start a reminder in thirteen minutes?","output":{"kind":"relative","seconds":780}}
+{"input":"please start a reminder in thirteen minutes.","output":{"kind":"relative","seconds":780}}
+{"input":"please please notify me a reminder in thirteen minutes","output":{"kind":"relative","seconds":780}}
+{"input":"please notify me a reminder in thirteen minutes please","output":{"kind":"relative","seconds":780}}
+{"input":"please notify me a reminder in thirteen minutes?","output":{"kind":"relative","seconds":780}}
+{"input":"please notify me a reminder in thirteen minutes.","output":{"kind":"relative","seconds":780}}
+{"input":"please please start for fourteen seconds","output":{"kind":"duration","seconds":14}}
+{"input":"please start for fourteen seconds please","output":{"kind":"duration","seconds":14}}
+{"input":"please start for fourteen seconds?","output":{"kind":"duration","seconds":14}}
+{"input":"please start for fourteen seconds.","output":{"kind":"duration","seconds":14}}
+{"input":"please please notify me for fourteen seconds","output":{"kind":"duration","seconds":14}}
+{"input":"please notify me for fourteen seconds please","output":{"kind":"duration","seconds":14}}
+{"input":"please notify me for fourteen seconds?","output":{"kind":"duration","seconds":14}}
+{"input":"please notify me for fourteen seconds.","output":{"kind":"duration","seconds":14}}
+{"input":"please please start wait for fourteen hour","output":{"kind":"duration","seconds":50400}}
+{"input":"please start wait for fourteen hour please","output":{"kind":"duration","seconds":50400}}
+{"input":"please start wait for fourteen hour?","output":{"kind":"duration","seconds":50400}}
+{"input":"please start wait for fourteen hour.","output":{"kind":"duration","seconds":50400}}
+{"input":"please please notify me wait for fourteen hour","output":{"kind":"duration","seconds":50400}}
+{"input":"please notify me wait for fourteen hour please","output":{"kind":"duration","seconds":50400}}
+{"input":"please notify me wait for fourteen hour?","output":{"kind":"duration","seconds":50400}}
+{"input":"please notify me wait for fourteen hour.","output":{"kind":"duration","seconds":50400}}
+{"input":"please please start set a timer for fifteen seconds","output":{"kind":"duration","seconds":15}}
+{"input":"please start set a timer for fifteen seconds please","output":{"kind":"duration","seconds":15}}
+{"input":"please start set a timer for fifteen seconds?","output":{"kind":"duration","seconds":15}}
+{"input":"please start set a timer for fifteen seconds.","output":{"kind":"duration","seconds":15}}
+{"input":"please please notify me set a timer for fifteen seconds","output":{"kind":"duration","seconds":15}}
+{"input":"please notify me set a timer for fifteen seconds please","output":{"kind":"duration","seconds":15}}
+{"input":"please notify me set a timer for fifteen seconds?","output":{"kind":"duration","seconds":15}}
+{"input":"please notify me set a timer for fifteen seconds.","output":{"kind":"duration","seconds":15}}
+{"input":"please please start fifteen hours","output":{"kind":"duration","seconds":54000}}
+{"input":"please start fifteen hours please","output":{"kind":"duration","seconds":54000}}
+{"input":"please start fifteen hours?","output":{"kind":"duration","seconds":54000}}
+{"input":"please start fifteen hours.","output":{"kind":"duration","seconds":54000}}
+{"input":"please please notify me fifteen hours","output":{"kind":"duration","seconds":54000}}
+{"input":"please notify me fifteen hours please","output":{"kind":"duration","seconds":54000}}
+{"input":"please notify me fifteen hours?","output":{"kind":"duration","seconds":54000}}
+{"input":"please notify me fifteen hours.","output":{"kind":"duration","seconds":54000}}
+{"input":"please please start in sixteen minute","output":{"kind":"relative","seconds":960}}
+{"input":"please start in sixteen minute please","output":{"kind":"relative","seconds":960}}
+{"input":"please start in sixteen minute?","output":{"kind":"relative","seconds":960}}
+{"input":"please start in sixteen minute.","output":{"kind":"relative","seconds":960}}
+{"input":"please please notify me in sixteen minute","output":{"kind":"relative","seconds":960}}
+{"input":"please notify me in sixteen minute please","output":{"kind":"relative","seconds":960}}
+{"input":"please notify me in sixteen minute?","output":{"kind":"relative","seconds":960}}
+{"input":"please notify me in sixteen minute.","output":{"kind":"relative","seconds":960}}
+{"input":"please please start remind me in sixteen hours","output":{"kind":"relative","seconds":57600}}
+{"input":"please start remind me in sixteen hours please","output":{"kind":"relative","seconds":57600}}
+{"input":"please start remind me in sixteen hours?","output":{"kind":"relative","seconds":57600}}
+{"input":"please start remind me in sixteen hours.","output":{"kind":"relative","seconds":57600}}
+{"input":"please please notify me remind me in sixteen hours","output":{"kind":"relative","seconds":57600}}
+{"input":"please notify me remind me in sixteen hours please","output":{"kind":"relative","seconds":57600}}
+{"input":"please notify me remind me in sixteen hours?","output":{"kind":"relative","seconds":57600}}
+{"input":"please notify me remind me in sixteen hours.","output":{"kind":"relative","seconds":57600}}
+{"input":"please please start a reminder in seventeen minute","output":{"kind":"relative","seconds":1020}}
+{"input":"please start a reminder in seventeen minute please","output":{"kind":"relative","seconds":1020}}
+{"input":"please start a reminder in seventeen minute?","output":{"kind":"relative","seconds":1020}}
+{"input":"please start a reminder in seventeen minute.","output":{"kind":"relative","seconds":1020}}
+{"input":"please please notify me a reminder in seventeen minute","output":{"kind":"relative","seconds":1020}}
+{"input":"please notify me a reminder in seventeen minute please","output":{"kind":"relative","seconds":1020}}
+{"input":"please notify me a reminder in seventeen minute?","output":{"kind":"relative","seconds":1020}}
+{"input":"please notify me a reminder in seventeen minute.","output":{"kind":"relative","seconds":1020}}
+{"input":"please please start for eighteen second","output":{"kind":"duration","seconds":18}}
+{"input":"please start for eighteen second please","output":{"kind":"duration","seconds":18}}
+{"input":"please start for eighteen second?","output":{"kind":"duration","seconds":18}}
+{"input":"please start for eighteen second.","output":{"kind":"duration","seconds":18}}
+{"input":"please please notify me for eighteen second","output":{"kind":"duration","seconds":18}}
+{"input":"please notify me for eighteen second please","output":{"kind":"duration","seconds":18}}
+{"input":"please notify me for eighteen second?","output":{"kind":"duration","seconds":18}}
+{"input":"please notify me for eighteen second.","output":{"kind":"duration","seconds":18}}
+{"input":"please please start wait for eighteen minutes","output":{"kind":"duration","seconds":1080}}
+{"input":"please start wait for eighteen minutes please","output":{"kind":"duration","seconds":1080}}
+{"input":"please start wait for eighteen minutes?","output":{"kind":"duration","seconds":1080}}
+{"input":"please start wait for eighteen minutes.","output":{"kind":"duration","seconds":1080}}
+{"input":"please please notify me wait for eighteen minutes","output":{"kind":"duration","seconds":1080}}
+{"input":"please notify me wait for eighteen minutes please","output":{"kind":"duration","seconds":1080}}
+{"input":"please notify me wait for eighteen minutes?","output":{"kind":"duration","seconds":1080}}
+{"input":"please notify me wait for eighteen minutes.","output":{"kind":"duration","seconds":1080}}
+{"input":"please please start set a timer for nineteen second","output":{"kind":"duration","seconds":19}}
+{"input":"please start set a timer for nineteen second please","output":{"kind":"duration","seconds":19}}
+{"input":"please start set a timer for nineteen second?","output":{"kind":"duration","seconds":19}}
+{"input":"please start set a timer for nineteen second.","output":{"kind":"duration","seconds":19}}
+{"input":"please please notify me set a timer for nineteen second","output":{"kind":"duration","seconds":19}}
+{"input":"please notify me set a timer for nineteen second please","output":{"kind":"duration","seconds":19}}
+{"input":"please notify me set a timer for nineteen second?","output":{"kind":"duration","seconds":19}}
+{"input":"please notify me set a timer for nineteen second.","output":{"kind":"duration","seconds":19}}
+{"input":"please please start nineteen hour","output":{"kind":"duration","seconds":68400}}
+{"input":"please start nineteen hour please","output":{"kind":"duration","seconds":68400}}
+{"input":"please start nineteen hour?","output":{"kind":"duration","seconds":68400}}
+{"input":"please start nineteen hour.","output":{"kind":"duration","seconds":68400}}
+{"input":"please please notify me nineteen hour","output":{"kind":"duration","seconds":68400}}
+{"input":"please notify me nineteen hour please","output":{"kind":"duration","seconds":68400}}
+{"input":"please notify me nineteen hour?","output":{"kind":"duration","seconds":68400}}
+{"input":"please notify me nineteen hour.","output":{"kind":"duration","seconds":68400}}
+{"input":"please please start in twenty seconds","output":{"kind":"relative","seconds":20}}
+{"input":"please start in twenty seconds please","output":{"kind":"relative","seconds":20}}
+{"input":"please start in twenty seconds?","output":{"kind":"relative","seconds":20}}
+{"input":"please start in twenty seconds.","output":{"kind":"relative","seconds":20}}
+{"input":"please please notify me in twenty seconds","output":{"kind":"relative","seconds":20}}
+{"input":"please notify me in twenty seconds please","output":{"kind":"relative","seconds":20}}
+{"input":"please notify me in twenty seconds?","output":{"kind":"relative","seconds":20}}
+{"input":"please notify me in twenty seconds.","output":{"kind":"relative","seconds":20}}
+{"input":"please please start remind me in twenty hour","output":{"kind":"relative","seconds":72000}}
+{"input":"please start remind me in twenty hour please","output":{"kind":"relative","seconds":72000}}
+{"input":"please start remind me in twenty hour?","output":{"kind":"relative","seconds":72000}}
+{"input":"please start remind me in twenty hour.","output":{"kind":"relative","seconds":72000}}
+{"input":"please please notify me remind me in twenty hour","output":{"kind":"relative","seconds":72000}}
+{"input":"please notify me remind me in twenty hour please","output":{"kind":"relative","seconds":72000}}
+{"input":"please notify me remind me in twenty hour?","output":{"kind":"relative","seconds":72000}}
+{"input":"please notify me remind me in twenty hour.","output":{"kind":"relative","seconds":72000}}
+{"input":"please please start a reminder in half seconds","output":{"kind":"relative","seconds":0.5}}
+{"input":"please start a reminder in half seconds please","output":{"kind":"relative","seconds":0.5}}
+{"input":"please start a reminder in half seconds?","output":{"kind":"relative","seconds":0.5}}
+{"input":"please start a reminder in half seconds.","output":{"kind":"relative","seconds":0.5}}
+{"input":"please please notify me a reminder in half seconds","output":{"kind":"relative","seconds":0.5}}
+{"input":"please notify me a reminder in half seconds please","output":{"kind":"relative","seconds":0.5}}
+{"input":"please notify me a reminder in half seconds?","output":{"kind":"relative","seconds":0.5}}
+{"input":"please notify me a reminder in half seconds.","output":{"kind":"relative","seconds":0.5}}
+{"input":"please please start for half hours","output":{"kind":"duration","seconds":1800}}
+{"input":"please start for half hours please","output":{"kind":"duration","seconds":1800}}
+{"input":"please start for half hours?","output":{"kind":"duration","seconds":1800}}
+{"input":"please start for half hours.","output":{"kind":"duration","seconds":1800}}
+{"input":"please please notify me for half hours","output":{"kind":"duration","seconds":1800}}
+{"input":"please notify me for half hours please","output":{"kind":"duration","seconds":1800}}
+{"input":"please notify me for half hours?","output":{"kind":"duration","seconds":1800}}
+{"input":"please notify me for half hours.","output":{"kind":"duration","seconds":1800}}
+{"input":"please please start in 1 hours and 5 minutes","output":{"kind":"relative","seconds":3900}}
+{"input":"please start in 1 hours and 5 minutes please","output":{"kind":"relative","seconds":3900}}
+{"input":"please start in 1 hours and 5 minutes?","output":{"kind":"relative","seconds":3900}}
+{"input":"please start in 1 hours and 5 minutes.","output":{"kind":"relative","seconds":3900}}
+{"input":"please please notify me in 1 hours and 5 minutes","output":{"kind":"relative","seconds":3900}}
+{"input":"please notify me in 1 hours and 5 minutes please","output":{"kind":"relative","seconds":3900}}
+{"input":"please notify me in 1 hours and 5 minutes?","output":{"kind":"relative","seconds":3900}}
+{"input":"please notify me in 1 hours and 5 minutes.","output":{"kind":"relative","seconds":3900}}
+{"input":"please please start for 5 hours and 30 minutes","output":{"kind":"duration","seconds":19800}}
+{"input":"please start for 5 hours and 30 minutes please","output":{"kind":"duration","seconds":19800}}
+{"input":"please start for 5 hours and 30 minutes?","output":{"kind":"duration","seconds":19800}}
+{"input":"please start for 5 hours and 30 minutes.","output":{"kind":"duration","seconds":19800}}
+{"input":"please please notify me for 5 hours and 30 minutes","output":{"kind":"duration","seconds":19800}}
+{"input":"please notify me for 5 hours and 30 minutes please","output":{"kind":"duration","seconds":19800}}
+{"input":"please notify me for 5 hours and 30 minutes?","output":{"kind":"duration","seconds":19800}}
+{"input":"please notify me for 5 hours and 30 minutes.","output":{"kind":"duration","seconds":19800}}
+{"input":"please please start in 1.5 hours and 60 minutes","output":{"kind":"relative","seconds":9000}}
+{"input":"please start in 1.5 hours and 60 minutes please","output":{"kind":"relative","seconds":9000}}
+{"input":"please start in 1.5 hours and 60 minutes?","output":{"kind":"relative","seconds":9000}}
+{"input":"please start in 1.5 hours and 60 minutes.","output":{"kind":"relative","seconds":9000}}
+{"input":"please please notify me in 1.5 hours and 60 minutes","output":{"kind":"relative","seconds":9000}}
+{"input":"please notify me in 1.5 hours and 60 minutes please","output":{"kind":"relative","seconds":9000}}
+{"input":"please notify me in 1.5 hours and 60 minutes?","output":{"kind":"relative","seconds":9000}}
+{"input":"please notify me in 1.5 hours and 60 minutes.","output":{"kind":"relative","seconds":9000}}
+{"input":"please please start for a hours and a minutes","output":{"kind":"duration","seconds":3660}}
+{"input":"please start for a hours and a minutes please","output":{"kind":"duration","seconds":3660}}
+{"input":"please start for a hours and a minutes?","output":{"kind":"duration","seconds":3660}}
+{"input":"please start for a hours and a minutes.","output":{"kind":"duration","seconds":3660}}
+{"input":"please please notify me for a hours and a minutes","output":{"kind":"duration","seconds":3660}}
+{"input":"please notify me for a hours and a minutes please","output":{"kind":"duration","seconds":3660}}
+{"input":"please notify me for a hours and a minutes?","output":{"kind":"duration","seconds":3660}}
+{"input":"please notify me for a hours and a minutes.","output":{"kind":"duration","seconds":3660}}
+{"input":"please please start in an hours and an minutes","output":{"kind":"relative","seconds":3660}}
+{"input":"please start in an hours and an minutes please","output":{"kind":"relative","seconds":3660}}
+{"input":"please start in an hours and an minutes?","output":{"kind":"relative","seconds":3660}}
+{"input":"please start in an hours and an minutes.","output":{"kind":"relative","seconds":3660}}
+{"input":"please please notify me in an hours and an minutes","output":{"kind":"relative","seconds":3660}}
+{"input":"please notify me in an hours and an minutes please","output":{"kind":"relative","seconds":3660}}
+{"input":"please notify me in an hours and an minutes?","output":{"kind":"relative","seconds":3660}}
+{"input":"please notify me in an hours and an minutes.","output":{"kind":"relative","seconds":3660}}
+{"input":"please please start for one hours and two minutes","output":{"kind":"duration","seconds":3720}}
+{"input":"please start for one hours and two minutes please","output":{"kind":"duration","seconds":3720}}
+{"input":"please start for one hours and two minutes?","output":{"kind":"duration","seconds":3720}}
+{"input":"please start for one hours and two minutes.","output":{"kind":"duration","seconds":3720}}
+{"input":"please please notify me for one hours and two minutes","output":{"kind":"duration","seconds":3720}}
+{"input":"please notify me for one hours and two minutes please","output":{"kind":"duration","seconds":3720}}
+{"input":"please notify me for one hours and two minutes?","output":{"kind":"duration","seconds":3720}}
+{"input":"please notify me for one hours and two minutes.","output":{"kind":"duration","seconds":3720}}
+{"input":"please please start in three hours and 1 minutes","output":{"kind":"relative","seconds":10860}}
+{"input":"please start in three hours and 1 minutes please","output":{"kind":"relative","seconds":10860}}
+{"input":"please start in three hours and 1 minutes?","output":{"kind":"relative","seconds":10860}}
+{"input":"please start in three hours and 1 minutes.","output":{"kind":"relative","seconds":10860}}
+{"input":"please please notify me in three hours and 1 minutes","output":{"kind":"relative","seconds":10860}}
+{"input":"please notify me in three hours and 1 minutes please","output":{"kind":"relative","seconds":10860}}
+{"input":"please notify me in three hours and 1 minutes?","output":{"kind":"relative","seconds":10860}}
+{"input":"please notify me in three hours and 1 minutes.","output":{"kind":"relative","seconds":10860}}
+{"input":"please please start for four hours and 15 minutes","output":{"kind":"duration","seconds":15300}}
+{"input":"please start for four hours and 15 minutes please","output":{"kind":"duration","seconds":15300}}
+{"input":"please start for four hours and 15 minutes?","output":{"kind":"duration","seconds":15300}}
+{"input":"please start for four hours and 15 minutes.","output":{"kind":"duration","seconds":15300}}
+{"input":"please please notify me for four hours and 15 minutes","output":{"kind":"duration","seconds":15300}}
+{"input":"please notify me for four hours and 15 minutes please","output":{"kind":"duration","seconds":15300}}
+{"input":"please notify me for four hours and 15 minutes?","output":{"kind":"duration","seconds":15300}}
+{"input":"please notify me for four hours and 15 minutes.","output":{"kind":"duration","seconds":15300}}
+{"input":"please please start in five hours and 30 minutes","output":{"kind":"relative","seconds":19800}}
+{"input":"please start in five hours and 30 minutes please","output":{"kind":"relative","seconds":19800}}
+{"input":"please start in five hours and 30 minutes?","output":{"kind":"relative","seconds":19800}}
+{"input":"please start in five hours and 30 minutes.","output":{"kind":"relative","seconds":19800}}
+{"input":"please please notify me in five hours and 30 minutes","output":{"kind":"relative","seconds":19800}}
+{"input":"please notify me in five hours and 30 minutes please","output":{"kind":"relative","seconds":19800}}
+{"input":"please notify me in five hours and 30 minutes?","output":{"kind":"relative","seconds":19800}}
+{"input":"please notify me in five hours and 30 minutes.","output":{"kind":"relative","seconds":19800}}
+{"input":"please please start for six hours and 1.5 minutes","output":{"kind":"duration","seconds":21690}}
+{"input":"please start for six hours and 1.5 minutes please","output":{"kind":"duration","seconds":21690}}
+{"input":"please start for six hours and 1.5 minutes?","output":{"kind":"duration","seconds":21690}}
+{"input":"please start for six hours and 1.5 minutes.","output":{"kind":"duration","seconds":21690}}
+{"input":"please please notify me for six hours and 1.5 minutes","output":{"kind":"duration","seconds":21690}}
+{"input":"please notify me for six hours and 1.5 minutes please","output":{"kind":"duration","seconds":21690}}
+{"input":"please notify me for six hours and 1.5 minutes?","output":{"kind":"duration","seconds":21690}}
+{"input":"please notify me for six hours and 1.5 minutes.","output":{"kind":"duration","seconds":21690}}
+{"input":"please please start in seven hours and a minutes","output":{"kind":"relative","seconds":25260}}
+{"input":"please start in seven hours and a minutes please","output":{"kind":"relative","seconds":25260}}
+{"input":"please start in seven hours and a minutes?","output":{"kind":"relative","seconds":25260}}
+{"input":"please start in seven hours and a minutes.","output":{"kind":"relative","seconds":25260}}
+{"input":"please please notify me in seven hours and a minutes","output":{"kind":"relative","seconds":25260}}
+{"input":"please notify me in seven hours and a minutes please","output":{"kind":"relative","seconds":25260}}
+{"input":"please notify me in seven hours and a minutes?","output":{"kind":"relative","seconds":25260}}
+{"input":"please notify me in seven hours and a minutes.","output":{"kind":"relative","seconds":25260}}
+{"input":"please please start schedule today at 1 pm","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":0}}
+{"input":"please start schedule today at 1 pm please","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":0}}
+{"input":"please start schedule today at 1 pm?","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":0}}
+{"input":"please start schedule today at 1 pm.","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":0}}
+{"input":"please please notify me schedule today at 1 pm","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":0}}
+{"input":"please notify me schedule today at 1 pm please","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":0}}
+{"input":"please notify me schedule today at 1 pm?","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":0}}
+{"input":"please notify me schedule today at 1 pm.","output":{"kind":"datetime","dayOffset":0,"hour":13,"minute":0}}
+{"input":"please please start today at 2:30 am","output":{"kind":"datetime","dayOffset":0,"hour":2,"minute":30}}
+{"input":"please start today at 2:30 am please","output":{"kind":"datetime","dayOffset":0,"hour":2,"minute":30}}
+{"input":"please start today at 2:30 am?","output":{"kind":"datetime","dayOffset":0,"hour":2,"minute":30}}
+{"input":"please start today at 2:30 am.","output":{"kind":"datetime","dayOffset":0,"hour":2,"minute":30}}
+{"input":"please please notify me today at 2:30 am","output":{"kind":"datetime","dayOffset":0,"hour":2,"minute":30}}
+{"input":"please notify me today at 2:30 am please","output":{"kind":"datetime","dayOffset":0,"hour":2,"minute":30}}
+{"input":"please notify me today at 2:30 am?","output":{"kind":"datetime","dayOffset":0,"hour":2,"minute":30}}
+{"input":"please notify me today at 2:30 am.","output":{"kind":"datetime","dayOffset":0,"hour":2,"minute":30}}
+{"input":"please please start remind me today at 3 am","output":{"kind":"datetime","dayOffset":0,"hour":3,"minute":0}}
+{"input":"please start remind me today at 3 am please","output":{"kind":"datetime","dayOffset":0,"hour":3,"minute":0}}
+{"input":"please start remind me today at 3 am?","output":{"kind":"datetime","dayOffset":0,"hour":3,"minute":0}}
+{"input":"please start remind me today at 3 am.","output":{"kind":"datetime","dayOffset":0,"hour":3,"minute":0}}
+{"input":"please please notify me remind me today at 3 am","output":{"kind":"datetime","dayOffset":0,"hour":3,"minute":0}}
+{"input":"please notify me remind me today at 3 am please","output":{"kind":"datetime","dayOffset":0,"hour":3,"minute":0}}
+{"input":"please notify me remind me today at 3 am?","output":{"kind":"datetime","dayOffset":0,"hour":3,"minute":0}}
+{"input":"please notify me remind me today at 3 am.","output":{"kind":"datetime","dayOffset":0,"hour":3,"minute":0}}
+{"input":"please please start schedule today at 3:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":15,"minute":30}}
+{"input":"please start schedule today at 3:30 pm please","output":{"kind":"datetime","dayOffset":0,"hour":15,"minute":30}}
+{"input":"please start schedule today at 3:30 pm?","output":{"kind":"datetime","dayOffset":0,"hour":15,"minute":30}}
+{"input":"please start schedule today at 3:30 pm.","output":{"kind":"datetime","dayOffset":0,"hour":15,"minute":30}}
+{"input":"please please notify me schedule today at 3:30 pm","output":{"kind":"datetime","dayOffset":0,"hour":15,"minute":30}}
+{"input":"please notify me schedule today at 3:30 pm please","output":{"kind":"datetime","dayOffset":0,"hour":15,"minute":30}}
+{"input":"please notify me schedule today at 3:30 pm?","output":{"kind":"datetime","dayOffset":0,"hour":15,"minute":30}}
+{"input":"please notify me schedule today at 3:30 pm.","output":{"kind":"datetime","dayOffset":0,"hour":15,"minute":30}}
+{"input":"please please start today at 4:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":0}}
+{"input":"please start today at 4:00 pm please","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":0}}
+{"input":"please start today at 4:00 pm?","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":0}}
+{"input":"please start today at 4:00 pm.","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":0}}
+{"input":"please please notify me today at 4:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":0}}
+{"input":"please notify me today at 4:00 pm please","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":0}}
+{"input":"please notify me today at 4:00 pm?","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":0}}
+{"input":"please notify me today at 4:00 pm.","output":{"kind":"datetime","dayOffset":0,"hour":16,"minute":0}}
+{"input":"please please start remind me today at 6:30 am","output":{"kind":"datetime","dayOffset":0,"hour":6,"minute":30}}
+{"input":"please start remind me today at 6:30 am please","output":{"kind":"datetime","dayOffset":0,"hour":6,"minute":30}}
+{"input":"please start remind me today at 6:30 am?","output":{"kind":"datetime","dayOffset":0,"hour":6,"minute":30}}
+{"input":"please start remind me today at 6:30 am.","output":{"kind":"datetime","dayOffset":0,"hour":6,"minute":30}}
+{"input":"please please notify me remind me today at 6:30 am","output":{"kind":"datetime","dayOffset":0,"hour":6,"minute":30}}
+{"input":"please notify me remind me today at 6:30 am please","output":{"kind":"datetime","dayOffset":0,"hour":6,"minute":30}}
+{"input":"please notify me remind me today at 6:30 am?","output":{"kind":"datetime","dayOffset":0,"hour":6,"minute":30}}
+{"input":"please notify me remind me today at 6:30 am.","output":{"kind":"datetime","dayOffset":0,"hour":6,"minute":30}}
+{"input":"please please start schedule today at 8:00 am","output":{"kind":"datetime","dayOffset":0,"hour":8,"minute":0}}
+{"input":"please start schedule today at 8:00 am please","output":{"kind":"datetime","dayOffset":0,"hour":8,"minute":0}}
+{"input":"please start schedule today at 8:00 am?","output":{"kind":"datetime","dayOffset":0,"hour":8,"minute":0}}
+{"input":"please start schedule today at 8:00 am.","output":{"kind":"datetime","dayOffset":0,"hour":8,"minute":0}}
+{"input":"please please notify me schedule today at 8:00 am","output":{"kind":"datetime","dayOffset":0,"hour":8,"minute":0}}
+{"input":"please notify me schedule today at 8:00 am please","output":{"kind":"datetime","dayOffset":0,"hour":8,"minute":0}}
+{"input":"please notify me schedule today at 8:00 am?","output":{"kind":"datetime","dayOffset":0,"hour":8,"minute":0}}
+{"input":"please notify me schedule today at 8:00 am.","output":{"kind":"datetime","dayOffset":0,"hour":8,"minute":0}}
+{"input":"please please start today at 8:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":20,"minute":45}}
+{"input":"please start today at 8:45 pm please","output":{"kind":"datetime","dayOffset":0,"hour":20,"minute":45}}
+{"input":"please start today at 8:45 pm?","output":{"kind":"datetime","dayOffset":0,"hour":20,"minute":45}}
+{"input":"please start today at 8:45 pm.","output":{"kind":"datetime","dayOffset":0,"hour":20,"minute":45}}
+{"input":"please please notify me today at 8:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":20,"minute":45}}
+{"input":"please notify me today at 8:45 pm please","output":{"kind":"datetime","dayOffset":0,"hour":20,"minute":45}}
+{"input":"please notify me today at 8:45 pm?","output":{"kind":"datetime","dayOffset":0,"hour":20,"minute":45}}
+{"input":"please notify me today at 8:45 pm.","output":{"kind":"datetime","dayOffset":0,"hour":20,"minute":45}}
+{"input":"please please start remind me today at 9:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"please start remind me today at 9:00 pm please","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"please start remind me today at 9:00 pm?","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"please start remind me today at 9:00 pm.","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"please please notify me remind me today at 9:00 pm","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"please notify me remind me today at 9:00 pm please","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"please notify me remind me today at 9:00 pm?","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"please notify me remind me today at 9:00 pm.","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"please please start schedule today at 10:45 am","output":{"kind":"datetime","dayOffset":0,"hour":10,"minute":45}}
+{"input":"please start schedule today at 10:45 am please","output":{"kind":"datetime","dayOffset":0,"hour":10,"minute":45}}
+{"input":"please start schedule today at 10:45 am?","output":{"kind":"datetime","dayOffset":0,"hour":10,"minute":45}}
+{"input":"please start schedule today at 10:45 am.","output":{"kind":"datetime","dayOffset":0,"hour":10,"minute":45}}
+{"input":"please please notify me schedule today at 10:45 am","output":{"kind":"datetime","dayOffset":0,"hour":10,"minute":45}}
+{"input":"please notify me schedule today at 10:45 am please","output":{"kind":"datetime","dayOffset":0,"hour":10,"minute":45}}
+{"input":"please notify me schedule today at 10:45 am?","output":{"kind":"datetime","dayOffset":0,"hour":10,"minute":45}}
+{"input":"please notify me schedule today at 10:45 am.","output":{"kind":"datetime","dayOffset":0,"hour":10,"minute":45}}
+{"input":"please please start today at 11:15 am","output":{"kind":"datetime","dayOffset":0,"hour":11,"minute":15}}
+{"input":"please start today at 11:15 am please","output":{"kind":"datetime","dayOffset":0,"hour":11,"minute":15}}
+{"input":"please start today at 11:15 am?","output":{"kind":"datetime","dayOffset":0,"hour":11,"minute":15}}
+{"input":"please start today at 11:15 am.","output":{"kind":"datetime","dayOffset":0,"hour":11,"minute":15}}
+{"input":"please please notify me today at 11:15 am","output":{"kind":"datetime","dayOffset":0,"hour":11,"minute":15}}
+{"input":"please notify me today at 11:15 am please","output":{"kind":"datetime","dayOffset":0,"hour":11,"minute":15}}
+{"input":"please notify me today at 11:15 am?","output":{"kind":"datetime","dayOffset":0,"hour":11,"minute":15}}
+{"input":"please notify me today at 11:15 am.","output":{"kind":"datetime","dayOffset":0,"hour":11,"minute":15}}
+{"input":"please please start remind me today at 11:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":45}}
+{"input":"please start remind me today at 11:45 pm please","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":45}}
+{"input":"please start remind me today at 11:45 pm?","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":45}}
+{"input":"please start remind me today at 11:45 pm.","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":45}}
+{"input":"please please notify me remind me today at 11:45 pm","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":45}}
+{"input":"please notify me remind me today at 11:45 pm please","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":45}}
+{"input":"please notify me remind me today at 11:45 pm?","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":45}}
+{"input":"please notify me remind me today at 11:45 pm.","output":{"kind":"datetime","dayOffset":0,"hour":23,"minute":45}}
+{"input":"please please start schedule today at 12:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":12,"minute":15}}
+{"input":"please start schedule today at 12:15 pm please","output":{"kind":"datetime","dayOffset":0,"hour":12,"minute":15}}
+{"input":"please start schedule today at 12:15 pm?","output":{"kind":"datetime","dayOffset":0,"hour":12,"minute":15}}
+{"input":"please start schedule today at 12:15 pm.","output":{"kind":"datetime","dayOffset":0,"hour":12,"minute":15}}
+{"input":"please please notify me schedule today at 12:15 pm","output":{"kind":"datetime","dayOffset":0,"hour":12,"minute":15}}
+{"input":"please notify me schedule today at 12:15 pm please","output":{"kind":"datetime","dayOffset":0,"hour":12,"minute":15}}
+{"input":"please notify me schedule today at 12:15 pm?","output":{"kind":"datetime","dayOffset":0,"hour":12,"minute":15}}
+{"input":"please notify me schedule today at 12:15 pm.","output":{"kind":"datetime","dayOffset":0,"hour":12,"minute":15}}
+{"input":"please please start today at 21:00","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"please start today at 21:00 please","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"please start today at 21:00?","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"please start today at 21:00.","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"please please notify me today at 21:00","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"please notify me today at 21:00 please","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"please notify me today at 21:00?","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"please notify me today at 21:00.","output":{"kind":"datetime","dayOffset":0,"hour":21,"minute":0}}
+{"input":"please please start remind me tomorrow at 1 pm","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":0}}
+{"input":"please start remind me tomorrow at 1 pm please","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":0}}
+{"input":"please start remind me tomorrow at 1 pm?","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":0}}
+{"input":"please start remind me tomorrow at 1 pm.","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":0}}
+{"input":"please please notify me remind me tomorrow at 1 pm","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":0}}
+{"input":"please notify me remind me tomorrow at 1 pm please","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":0}}
+{"input":"please notify me remind me tomorrow at 1 pm?","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":0}}
+{"input":"please notify me remind me tomorrow at 1 pm.","output":{"kind":"datetime","dayOffset":1,"hour":13,"minute":0}}
+{"input":"please please start schedule tomorrow at 2:30 am","output":{"kind":"datetime","dayOffset":1,"hour":2,"minute":30}}
+{"input":"please start schedule tomorrow at 2:30 am please","output":{"kind":"datetime","dayOffset":1,"hour":2,"minute":30}}
+{"input":"please start schedule tomorrow at 2:30 am?","output":{"kind":"datetime","dayOffset":1,"hour":2,"minute":30}}
+{"input":"please start schedule tomorrow at 2:30 am.","output":{"kind":"datetime","dayOffset":1,"hour":2,"minute":30}}
+{"input":"please please notify me schedule tomorrow at 2:30 am","output":{"kind":"datetime","dayOffset":1,"hour":2,"minute":30}}
+{"input":"please notify me schedule tomorrow at 2:30 am please","output":{"kind":"datetime","dayOffset":1,"hour":2,"minute":30}}
+{"input":"please notify me schedule tomorrow at 2:30 am?","output":{"kind":"datetime","dayOffset":1,"hour":2,"minute":30}}
+{"input":"please notify me schedule tomorrow at 2:30 am.","output":{"kind":"datetime","dayOffset":1,"hour":2,"minute":30}}
+{"input":"please please start tomorrow at 3:00 am","output":{"kind":"datetime","dayOffset":1,"hour":3,"minute":0}}
+{"input":"please start tomorrow at 3:00 am please","output":{"kind":"datetime","dayOffset":1,"hour":3,"minute":0}}
+{"input":"please start tomorrow at 3:00 am?","output":{"kind":"datetime","dayOffset":1,"hour":3,"minute":0}}
+{"input":"please start tomorrow at 3:00 am.","output":{"kind":"datetime","dayOffset":1,"hour":3,"minute":0}}
+{"input":"please please notify me tomorrow at 3:00 am","output":{"kind":"datetime","dayOffset":1,"hour":3,"minute":0}}
+{"input":"please notify me tomorrow at 3:00 am please","output":{"kind":"datetime","dayOffset":1,"hour":3,"minute":0}}
+{"input":"please notify me tomorrow at 3:00 am?","output":{"kind":"datetime","dayOffset":1,"hour":3,"minute":0}}
+{"input":"please notify me tomorrow at 3:00 am.","output":{"kind":"datetime","dayOffset":1,"hour":3,"minute":0}}
+{"input":"please please start remind me tomorrow at 3:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":15,"minute":30}}
+{"input":"please start remind me tomorrow at 3:30 pm please","output":{"kind":"datetime","dayOffset":1,"hour":15,"minute":30}}
+{"input":"please start remind me tomorrow at 3:30 pm?","output":{"kind":"datetime","dayOffset":1,"hour":15,"minute":30}}
+{"input":"please start remind me tomorrow at 3:30 pm.","output":{"kind":"datetime","dayOffset":1,"hour":15,"minute":30}}
+{"input":"please please notify me remind me tomorrow at 3:30 pm","output":{"kind":"datetime","dayOffset":1,"hour":15,"minute":30}}
+{"input":"please notify me remind me tomorrow at 3:30 pm please","output":{"kind":"datetime","dayOffset":1,"hour":15,"minute":30}}
+{"input":"please notify me remind me tomorrow at 3:30 pm?","output":{"kind":"datetime","dayOffset":1,"hour":15,"minute":30}}
+{"input":"please notify me remind me tomorrow at 3:30 pm.","output":{"kind":"datetime","dayOffset":1,"hour":15,"minute":30}}
+{"input":"please please start schedule tomorrow at 4:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":0}}
+{"input":"please start schedule tomorrow at 4:00 pm please","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":0}}
+{"input":"please start schedule tomorrow at 4:00 pm?","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":0}}
+{"input":"please start schedule tomorrow at 4:00 pm.","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":0}}
+{"input":"please please notify me schedule tomorrow at 4:00 pm","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":0}}
+{"input":"please notify me schedule tomorrow at 4:00 pm please","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":0}}
+{"input":"please notify me schedule tomorrow at 4:00 pm?","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":0}}
+{"input":"please notify me schedule tomorrow at 4:00 pm.","output":{"kind":"datetime","dayOffset":1,"hour":16,"minute":0}}
+{"input":"please please start tomorrow at 6:45 am","output":{"kind":"datetime","dayOffset":1,"hour":6,"minute":45}}
+{"input":"please start tomorrow at 6:45 am please","output":{"kind":"datetime","dayOffset":1,"hour":6,"minute":45}}
+{"input":"please start tomorrow at 6:45 am?","output":{"kind":"datetime","dayOffset":1,"hour":6,"minute":45}}
+{"input":"please start tomorrow at 6:45 am.","output":{"kind":"datetime","dayOffset":1,"hour":6,"minute":45}}
+{"input":"please please notify me tomorrow at 6:45 am","output":{"kind":"datetime","dayOffset":1,"hour":6,"minute":45}}
+{"input":"please notify me tomorrow at 6:45 am please","output":{"kind":"datetime","dayOffset":1,"hour":6,"minute":45}}
+{"input":"please notify me tomorrow at 6:45 am?","output":{"kind":"datetime","dayOffset":1,"hour":6,"minute":45}}
+{"input":"please notify me tomorrow at 6:45 am.","output":{"kind":"datetime","dayOffset":1,"hour":6,"minute":45}}
+{"input":"please please start remind me tomorrow at 8:00 am","output":{"kind":"datetime","dayOffset":1,"hour":8,"minute":0}}
+{"input":"please start remind me tomorrow at 8:00 am please","output":{"kind":"datetime","dayOffset":1,"hour":8,"minute":0}}
+{"input":"please start remind me tomorrow at 8:00 am?","output":{"kind":"datetime","dayOffset":1,"hour":8,"minute":0}}
+{"input":"please start remind me tomorrow at 8:00 am.","output":{"kind":"datetime","dayOffset":1,"hour":8,"minute":0}}
+{"input":"please please notify me remind me tomorrow at 8:00 am","output":{"kind":"datetime","dayOffset":1,"hour":8,"minute":0}}
+{"input":"please notify me remind me tomorrow at 8:00 am please","output":{"kind":"datetime","dayOffset":1,"hour":8,"minute":0}}
+{"input":"please notify me remind me tomorrow at 8:00 am?","output":{"kind":"datetime","dayOffset":1,"hour":8,"minute":0}}
+{"input":"please notify me remind me tomorrow at 8:00 am.","output":{"kind":"datetime","dayOffset":1,"hour":8,"minute":0}}
+{"input":"please please start schedule tomorrow at 8:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":20,"minute":45}}
+{"input":"please start schedule tomorrow at 8:45 pm please","output":{"kind":"datetime","dayOffset":1,"hour":20,"minute":45}}
+{"input":"please start schedule tomorrow at 8:45 pm?","output":{"kind":"datetime","dayOffset":1,"hour":20,"minute":45}}
+{"input":"please start schedule tomorrow at 8:45 pm.","output":{"kind":"datetime","dayOffset":1,"hour":20,"minute":45}}
+{"input":"please please notify me schedule tomorrow at 8:45 pm","output":{"kind":"datetime","dayOffset":1,"hour":20,"minute":45}}
+{"input":"please notify me schedule tomorrow at 8:45 pm please","output":{"kind":"datetime","dayOffset":1,"hour":20,"minute":45}}
+{"input":"please notify me schedule tomorrow at 8:45 pm?","output":{"kind":"datetime","dayOffset":1,"hour":20,"minute":45}}
+{"input":"please notify me schedule tomorrow at 8:45 pm.","output":{"kind":"datetime","dayOffset":1,"hour":20,"minute":45}}
+{"input":"please please start tomorrow at 9:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"please start tomorrow at 9:15 pm please","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"please start tomorrow at 9:15 pm?","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"please start tomorrow at 9:15 pm.","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"please please notify me tomorrow at 9:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"please notify me tomorrow at 9:15 pm please","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"please notify me tomorrow at 9:15 pm?","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"please notify me tomorrow at 9:15 pm.","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"please please start remind me tomorrow at 10:45 am","output":{"kind":"datetime","dayOffset":1,"hour":10,"minute":45}}
+{"input":"please start remind me tomorrow at 10:45 am please","output":{"kind":"datetime","dayOffset":1,"hour":10,"minute":45}}
+{"input":"please start remind me tomorrow at 10:45 am?","output":{"kind":"datetime","dayOffset":1,"hour":10,"minute":45}}
+{"input":"please start remind me tomorrow at 10:45 am.","output":{"kind":"datetime","dayOffset":1,"hour":10,"minute":45}}
+{"input":"please please notify me remind me tomorrow at 10:45 am","output":{"kind":"datetime","dayOffset":1,"hour":10,"minute":45}}
+{"input":"please notify me remind me tomorrow at 10:45 am please","output":{"kind":"datetime","dayOffset":1,"hour":10,"minute":45}}
+{"input":"please notify me remind me tomorrow at 10:45 am?","output":{"kind":"datetime","dayOffset":1,"hour":10,"minute":45}}
+{"input":"please notify me remind me tomorrow at 10:45 am.","output":{"kind":"datetime","dayOffset":1,"hour":10,"minute":45}}
+{"input":"please please start schedule tomorrow at 11:15 am","output":{"kind":"datetime","dayOffset":1,"hour":11,"minute":15}}
+{"input":"please start schedule tomorrow at 11:15 am please","output":{"kind":"datetime","dayOffset":1,"hour":11,"minute":15}}
+{"input":"please start schedule tomorrow at 11:15 am?","output":{"kind":"datetime","dayOffset":1,"hour":11,"minute":15}}
+{"input":"please start schedule tomorrow at 11:15 am.","output":{"kind":"datetime","dayOffset":1,"hour":11,"minute":15}}
+{"input":"please please notify me schedule tomorrow at 11:15 am","output":{"kind":"datetime","dayOffset":1,"hour":11,"minute":15}}
+{"input":"please notify me schedule tomorrow at 11:15 am please","output":{"kind":"datetime","dayOffset":1,"hour":11,"minute":15}}
+{"input":"please notify me schedule tomorrow at 11:15 am?","output":{"kind":"datetime","dayOffset":1,"hour":11,"minute":15}}
+{"input":"please notify me schedule tomorrow at 11:15 am.","output":{"kind":"datetime","dayOffset":1,"hour":11,"minute":15}}
+{"input":"please please start tomorrow at 12 am","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":0}}
+{"input":"please start tomorrow at 12 am please","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":0}}
+{"input":"please start tomorrow at 12 am?","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":0}}
+{"input":"please start tomorrow at 12 am.","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":0}}
+{"input":"please please notify me tomorrow at 12 am","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":0}}
+{"input":"please notify me tomorrow at 12 am please","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":0}}
+{"input":"please notify me tomorrow at 12 am?","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":0}}
+{"input":"please notify me tomorrow at 12 am.","output":{"kind":"datetime","dayOffset":1,"hour":0,"minute":0}}
+{"input":"please please start remind me tomorrow at 12:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":12,"minute":15}}
+{"input":"please start remind me tomorrow at 12:15 pm please","output":{"kind":"datetime","dayOffset":1,"hour":12,"minute":15}}
+{"input":"please start remind me tomorrow at 12:15 pm?","output":{"kind":"datetime","dayOffset":1,"hour":12,"minute":15}}
+{"input":"please start remind me tomorrow at 12:15 pm.","output":{"kind":"datetime","dayOffset":1,"hour":12,"minute":15}}
+{"input":"please please notify me remind me tomorrow at 12:15 pm","output":{"kind":"datetime","dayOffset":1,"hour":12,"minute":15}}
+{"input":"please notify me remind me tomorrow at 12:15 pm please","output":{"kind":"datetime","dayOffset":1,"hour":12,"minute":15}}
+{"input":"please notify me remind me tomorrow at 12:15 pm?","output":{"kind":"datetime","dayOffset":1,"hour":12,"minute":15}}
+{"input":"please notify me remind me tomorrow at 12:15 pm.","output":{"kind":"datetime","dayOffset":1,"hour":12,"minute":15}}
+{"input":"please please start tomorrow at 21:15","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"please start tomorrow at 21:15 please","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"please start tomorrow at 21:15?","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"please start tomorrow at 21:15.","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"please please notify me tomorrow at 21:15","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"please notify me tomorrow at 21:15 please","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"please notify me tomorrow at 21:15?","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"please notify me tomorrow at 21:15.","output":{"kind":"datetime","dayOffset":1,"hour":21,"minute":15}}
+{"input":"please for three minutes and 5 seconds","output":{"kind":"duration","seconds":185}}
+{"input":"for three minutes and 5 seconds please","output":{"kind":"duration","seconds":185}}
+{"input":"for three minutes and 5 seconds?","output":{"kind":"duration","seconds":185}}
+{"input":"for three minutes and 5 seconds.","output":{"kind":"duration","seconds":185}}
+{"input":"please in three minutes and 15 seconds","output":{"kind":"relative","seconds":195}}
+{"input":"in three minutes and 15 seconds please","output":{"kind":"relative","seconds":195}}
+{"input":"in three minutes and 15 seconds?","output":{"kind":"relative","seconds":195}}
+{"input":"in three minutes and 15 seconds.","output":{"kind":"relative","seconds":195}}
+{"input":"please set a timer for seven minutes and 1 seconds","output":{"kind":"duration","seconds":421}}
+{"input":"set a timer for seven minutes and 1 seconds please","output":{"kind":"duration","seconds":421}}
+{"input":"set a timer for seven minutes and 1 seconds?","output":{"kind":"duration","seconds":421}}
+{"input":"set a timer for seven minutes and 1 seconds.","output":{"kind":"duration","seconds":421}}
+{"input":"please for seven minutes and 15 seconds","output":{"kind":"duration","seconds":435}}
+{"input":"for seven minutes and 15 seconds please","output":{"kind":"duration","seconds":435}}
+{"input":"for seven minutes and 15 seconds?","output":{"kind":"duration","seconds":435}}
+{"input":"for seven minutes and 15 seconds.","output":{"kind":"duration","seconds":435}}
+{"input":"please in seven minutes and 30 seconds","output":{"kind":"relative","seconds":450}}
+{"input":"in seven minutes and 30 seconds please","output":{"kind":"relative","seconds":450}}
+{"input":"in seven minutes and 30 seconds?","output":{"kind":"relative","seconds":450}}
+{"input":"in seven minutes and 30 seconds.","output":{"kind":"relative","seconds":450}}
+{"input":"please set a timer for eleven minutes and 5 seconds","output":{"kind":"duration","seconds":665}}
+{"input":"set a timer for eleven minutes and 5 seconds please","output":{"kind":"duration","seconds":665}}
+{"input":"set a timer for eleven minutes and 5 seconds?","output":{"kind":"duration","seconds":665}}
+{"input":"set a timer for eleven minutes and 5 seconds.","output":{"kind":"duration","seconds":665}}
+{"input":"please for eleven minutes and 30 seconds","output":{"kind":"duration","seconds":690}}
+{"input":"for eleven minutes and 30 seconds please","output":{"kind":"duration","seconds":690}}
+{"input":"for eleven minutes and 30 seconds?","output":{"kind":"duration","seconds":690}}
+{"input":"for eleven minutes and 30 seconds.","output":{"kind":"duration","seconds":690}}
+{"input":"please in sixteen minutes and 1 seconds","output":{"kind":"relative","seconds":961}}
+{"input":"in sixteen minutes and 1 seconds please","output":{"kind":"relative","seconds":961}}
+{"input":"in sixteen minutes and 1 seconds?","output":{"kind":"relative","seconds":961}}
+{"input":"in sixteen minutes and 1 seconds.","output":{"kind":"relative","seconds":961}}
+{"input":"please set a timer for sixteen minutes and 15 seconds","output":{"kind":"duration","seconds":975}}
+{"input":"set a timer for sixteen minutes and 15 seconds please","output":{"kind":"duration","seconds":975}}
+{"input":"set a timer for sixteen minutes and 15 seconds?","output":{"kind":"duration","seconds":975}}
+{"input":"set a timer for sixteen minutes and 15 seconds.","output":{"kind":"duration","seconds":975}}
+{"input":"please for 19 minutes and 1 seconds","output":{"kind":"duration","seconds":1141}}
+{"input":"for 19 minutes and 1 seconds please","output":{"kind":"duration","seconds":1141}}
+{"input":"for 19 minutes and 1 seconds?","output":{"kind":"duration","seconds":1141}}
+{"input":"for 19 minutes and 1 seconds.","output":{"kind":"duration","seconds":1141}}
+{"input":"please in 19 minutes and 5 seconds","output":{"kind":"relative","seconds":1145}}
+{"input":"in 19 minutes and 5 seconds please","output":{"kind":"relative","seconds":1145}}
+{"input":"in 19 minutes and 5 seconds?","output":{"kind":"relative","seconds":1145}}
+{"input":"in 19 minutes and 5 seconds.","output":{"kind":"relative","seconds":1145}}
+{"input":"please set a timer for 19 minutes and 30 seconds","output":{"kind":"duration","seconds":1170}}
+{"input":"set a timer for 19 minutes and 30 seconds please","output":{"kind":"duration","seconds":1170}}
+{"input":"set a timer for 19 minutes and 30 seconds?","output":{"kind":"duration","seconds":1170}}
+{"input":"set a timer for 19 minutes and 30 seconds.","output":{"kind":"duration","seconds":1170}}
+{"input":"please for one days and six hours","output":{"kind":"duration","seconds":108000}}
+{"input":"for one days and six hours please","output":{"kind":"duration","seconds":108000}}
+{"input":"for one days and six hours?","output":{"kind":"duration","seconds":108000}}
+{"input":"for one days and six hours.","output":{"kind":"duration","seconds":108000}}
+{"input":"please in three days and six hours","output":{"kind":"relative","seconds":280800}}
+{"input":"in three days and six hours please","output":{"kind":"relative","seconds":280800}}
+{"input":"in three days and six hours?","output":{"kind":"relative","seconds":280800}}
+{"input":"in three days and six hours.","output":{"kind":"relative","seconds":280800}}
+{"input":"please for five days and two hours","output":{"kind":"duration","seconds":439200}}
+{"input":"for five days and two hours please","output":{"kind":"duration","seconds":439200}}
+{"input":"for five days and two hours?","output":{"kind":"duration","seconds":439200}}
+{"input":"for five days and two hours.","output":{"kind":"duration","seconds":439200}}

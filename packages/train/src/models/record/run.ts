@@ -33,21 +33,21 @@ export async function runRecord(
       parser.dispose();
     }
   };
-  const validation = await evaluate(fit.quantized, project.validation);
-  const bytes = Buffer.byteLength(JSON.stringify(fit.quantized));
+  const validation = await evaluate(fit.model, project.validation);
+  const bytes = Buffer.byteLength(JSON.stringify(fit.model));
   if (validation.exactAccuracy < project.config.minAccuracy || bytes > project.config.maxBytes) {
     throw new Error(
       `Record model failed validation/size requirements (${validation.exactAccuracy}, ${bytes} bytes). ${JSON.stringify(validation.failures.slice(0, 10))}`,
     );
   }
   const report = {
-    formatVersion: 1,
-    architecture: fit.quantized.architecture,
-    backend: "TensorFlow native CPU",
+    formatVersion: 2,
+    architecture: fit.model.architecture,
+    backend: "Burn native CPU",
     seed: 42,
-    artifactSha256: createHash("sha256").update(JSON.stringify(fit.quantized)).digest("hex"),
+    artifactSha256: createHash("sha256").update(JSON.stringify(fit.model)).digest("hex"),
     bytes,
-    parameters: fit.quantized.weights.reduce((sum, weight) => sum + weight.values.length, 0),
+    parameters: fit.parameters,
     datasetSha256: project.sources.map((source) => ({
       source: source.source,
       sha256: createHash("sha256").update(source.text).digest("hex"),
@@ -60,14 +60,11 @@ export async function runRecord(
     loss: fit.history,
     exportParity: fit.parity,
     validation,
-    quantized: await evaluate(fit.quantized),
-    float: await evaluate(fit.float),
-    untrained: await evaluate(fit.untrained),
-    untrainedUngated: await evaluate({ ...fit.untrained, threshold: 0 }),
+    evaluation: await evaluate(fit.model),
     trainingMs: performance.now() - start,
     notes:
       "Each field classifies values present in training data. Vocabulary and value domains are fitted only on training. There are no number dictionaries, aliases, normalization rules, or span annotations. Unknown tokens abstain. Bag-of-words ignores order. Confidence is uncalibrated. This model cannot emit unseen numeric values.",
   };
-  await packageModel(project.output, fit.quantized, report);
+  await packageModel(project.output, fit.model, report);
   return { report, output: project.output };
 }

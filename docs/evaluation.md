@@ -53,7 +53,7 @@ The programmatic evaluator also accepts expected `null` for abstention cases. Th
 
 ## Measure browser speed
 
-Use **Measure browser speed** in the workbench or the benchmark controls on the examples page. They run inference through TensorFlow.js CPU on the current device, including output validation.
+Use **Measure browser speed** in the workbench or the benchmark controls on the examples page. They run inference through Burn WASM CPU on the current device, including output validation.
 
 These measurements exclude model loading and UI rendering. Record the input, sample count, browser, and device with the result. The workbench uses 100 timed runs after 20 warmups; the website demo uses 300 timed runs after 20 warmups. Repeated-input latency is separate from held-out accuracy.
 

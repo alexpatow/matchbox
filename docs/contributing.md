@@ -1,0 +1,43 @@
+# Contributing
+
+Matchbox uses a shared Rust engine for native training and browser inference, with TypeScript authoring and application APIs.
+
+## Project structure
+
+```text
+Cargo.toml                         # The Rust workspace owns the shared dependency versions.
+crates/
+  matchbox-engine/src/             # Burn model, training and record serialization.
+  matchbox-node/src/               # Node-API training adapter and native parity checks.
+  matchbox-wasm/src/               # Browser inference adapter.
+packages/
+  core/src/runtime/burn/           # Loading, typed prediction and disposal.
+  train/src/native/                # TypeScript calls into the native addon.
+  cli/                            # Existing commands and workbench.
+scripts/
+  build-rust.ts                   # Builds the native addon and browser WASM module.
+  copy-rust.ts                    # Copies binaries into npm package output.
+```
+
+TypeScript continues to own task schemas, tokenization, authored supervision, decoding and validation. Burn owns the embedding network, autodiff, Adam, model records and execution. The adapters share the same model implementation. They do not implement a separate inference engine.
+
+A contributor compiles the native addon and WASM runtime once. Training produces model data, without compiling Rust for each task. Consumer distribution will require prebuilt native binaries for supported platforms; this branch only packages the build host's binary.
+
+## Local development
+
+Install Bun and Rust through rustup or Homebrew. The repository discovers Rust tools from PATH, Homebrew rustup and the Cargo bin directory without changing your shell configuration. The checked-in toolchain file pins Rust and requests the WASM target.
+
+```sh
+bun install --frozen-lockfile
+bun run setup:rust
+bun run dev
+bun run check
+MATCHBOX_PREBUILT=1 bun run test:browser
+bun run eval:examples
+```
+
+`bun run setup:rust` is a one-time contributor setup for the pinned wasm-bindgen CLI. Subsequent `bun run dev`, builds and checks locate the installed tools automatically. Consumers will use prebuilt packages once native distribution is implemented.
+
+Generated native binaries, WASM output, Cargo build output and model artifacts are ignored by Git. `Cargo.lock` pins Rust dependencies. `bun run check` includes Rust formatting, Clippy and engine tests.
+
+Native binaries currently target the build host. Do not publish until platform distribution is implemented.

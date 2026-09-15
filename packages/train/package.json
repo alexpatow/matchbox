@@ -17,6 +17,9 @@
   ],
   "type": "module",
   "sideEffects": false,
+  "imports": {
+    "#native": "./dist/matchbox.node"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -31,14 +34,13 @@
     "access": "public"
   },
   "scripts": {
-    "build": "bun ../../scripts/package-docs.ts train && rolldown --config && tsc -p tsconfig.build.json",
+    "build": "bun ../../scripts/package-docs.ts train && rolldown --config && tsc -p tsconfig.build.json && bun ../../scripts/copy-rust.ts train",
     "dev": "bun run --parallel \"dev:*\"",
     "typecheck": "tsc --noEmit && tsc -p tsconfig.tools.json",
     "dev:js": "rolldown --config --watch",
     "dev:types": "tsc -p tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@tensorflow/tfjs-node": "4.22.0",
     "zod": "4.6.3"
   },
   "devDependencies": {

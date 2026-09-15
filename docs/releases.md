@@ -5,7 +5,7 @@ Changesets versions and publishes three packages together:
 | Package              | Purpose                                      |
 | -------------------- | -------------------------------------------- |
 | `@matchbox-ai/core`  | Task contracts and browser runtime.          |
-| `@matchbox-ai/train` | Pipeline authoring and TensorFlow training.  |
+| `@matchbox-ai/train` | Pipeline authoring and Burn training.        |
 | `matchbox-ai`        | The CLI, scaffolding, and browser workbench. |
 
 The repository root, apps, and examples remain private. Packages use the MIT license. Initial versions are 0.0.0; the initial changeset proposes 0.1.0.

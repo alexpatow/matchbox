@@ -19,7 +19,7 @@ test("the framework story leads into working documentation", async ({ page }, te
     const row = footprint.locator(".model-sizes > div").filter({ hasText: label });
     await expect(row.locator(".model-size")).toHaveText(`${(artifact.size / 1024).toFixed(1)} KiB`);
   }
-  await expect(footprint).toContainText("TensorFlow.js");
+  await expect(footprint).toContainText("Burn WebAssembly");
   await expect(
     page.getByRole("heading", { name: "Why not run a small LLM in Chrome?" }),
   ).toBeVisible();

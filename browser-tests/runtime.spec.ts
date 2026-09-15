@@ -1,6 +1,7 @@
 import type { ParseResult } from "@matchbox-ai/core/runtime";
 declare global {
   interface Window {
+    benchmarkRecord(): Promise<ParseResult<unknown>>;
     benchmarkRuntime(): Promise<{
       runtime: string;
       coldFirstParseMs: number;
@@ -15,12 +16,13 @@ declare global {
 import { expect, test } from "@playwright/test";
 import { readFile, writeFile } from "node:fs/promises";
 
-test("TensorFlow models run in the browser and remain available offline", async ({
-  page,
-}, info) => {
+test("Burn models run in the browser and remain available offline", async ({ page }, info) => {
+  const wasmResponse = page.waitForResponse((response) => response.url().endsWith(".wasm"));
   await page.goto("http://127.0.0.1:4174");
   await page.waitForFunction(() => typeof window.benchmarkRuntime === "function");
   const result = await page.evaluate(() => window.benchmarkRuntime());
+  expect((await wasmResponse).ok()).toBe(true);
+  expect(result.runtime).toBe("burn-wasm-cpu");
   expect(result.results.length).toBeGreaterThan(0);
   const root = new URL("../examples/money/", import.meta.url);
   const report = JSON.parse(await readFile(new URL(".matchbox/money/report.json", root), "utf8"));
@@ -31,17 +33,23 @@ test("TensorFlow models run in the browser and remain available offline", async 
   expect(result.results).toHaveLength(rows.length);
   // Browser execution must match exported-model evaluation, including honest abstentions.
   result.results.forEach((prediction, i) => {
-    const failure = report.quantized.failures.find(
+    const failure = report.evaluation.failures.find(
       (row: { input: string }) => row.input === rows[i].input,
     );
     expect(prediction.value).toEqual(failure ? failure.actual : rows[i].output);
     expect(prediction.status).toBe(prediction.value === null ? "uncertain" : "ok");
   });
+  const record = await page.evaluate(() => window.benchmarkRecord());
+  expect(record).toMatchObject({
+    status: "ok",
+    value: { amount: 15000, currency: "EUR", approximate: true },
+  });
   await page.route("**/*", (route) => route.abort());
   const offline = await page.evaluate(() => window.benchmarkRuntime());
   expect(offline.results).toEqual(result.results);
+  expect(await page.evaluate(() => window.benchmarkRecord())).toEqual(record);
   await writeFile(
-    info.outputPath("tensorflow-runtime.json"),
+    info.outputPath("burn-runtime.json"),
     JSON.stringify({ project: info.project.name, ...result }, null, 2),
   );
 });

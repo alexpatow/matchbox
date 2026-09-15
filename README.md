@@ -6,7 +6,7 @@ Matchbox is a TypeScript framework for building small, task-specific models and 
 
 Small models could predict what to prefetch, prioritize speculative work, classify content, or turn natural language into structured data. Replacing brittle parsing rules is one use case. The current authoring API focuses on parsers, with working filter, money, and parity examples.
 
-For these examples, developers author a parser contract, an explicit training pipeline, examples, and independent evals. Matchbox trains through native TensorFlow, evaluates, packages weights, and exposes a typed browser-local parse API. The current examples demonstrate controlled tasks; they do not establish broad language understanding.
+For these examples, developers author a parser contract, an explicit training pipeline, examples, and independent evals. Matchbox trains through native Burn, evaluates, packages weights, and exposes a typed browser-local parse API. The current examples demonstrate controlled tasks; they do not establish broad language understanding.
 
 ## Start locally
 
@@ -47,7 +47,7 @@ matchbox-ai eval money
 matchbox-ai dev money
 ```
 
-Import the generated .matchbox/money/model.ts wrapper and call await parser.parse(input). React integration lives at @matchbox-ai/core/react. The runtime loads serialized TensorFlow models and returns validated outputs or uncertainty.
+Import the generated .matchbox/money/model.ts wrapper and call await parser.parse(input). React integration lives at @matchbox-ai/core/react. The runtime loads serialized Burn models and returns validated outputs or uncertainty.
 
 ## Repository
 

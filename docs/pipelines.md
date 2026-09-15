@@ -3,9 +3,8 @@
 The parser defines valid input and output. The pipeline defines how the model learns. Matchbox requires `pipeline.ts` or `pipeline/pipeline.ts` for conventional tasks; the scaffold writes it visibly.
 
 ```ts
-import { definePipeline, wordTokens, fieldClassifier } from "@matchbox-ai/train";
+import { definePipeline, fieldClassifier } from "@matchbox-ai/train";
 export default definePipeline({
-  input: wordTokens(),
   prediction: fieldClassifier(),
   acceptance: { minAccuracy: 0.95, maxBytes: 64000 },
 });
@@ -27,4 +26,4 @@ Matchbox discovers `recipe.ts` or `recipe/recipe.ts`, and `decode.ts` or `decode
 
 These are two existing, evaluated presets. Decimal codecs, arbitrary graphs, automatic architecture search, and hidden domain normalizers are not implemented. New primitives should demonstrate their limitations and held-out behavior before becoming defaults.
 
-Programmatic training uses await train("money", { onProgress }) from @matchbox-ai/train and follows the same validation and packaging path as the CLI. Importing the authoring helpers does not initialize native TensorFlow; training loads it when invoked.
+Programmatic training uses await train("money", { onProgress }) from @matchbox-ai/train and follows the same validation and packaging path as the CLI. Importing the authoring helpers does not initialize native Burn; training loads it when invoked.

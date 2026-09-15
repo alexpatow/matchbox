@@ -88,18 +88,15 @@ export async function runSequence(
       decoderModule: modulePath(resolve(root, sequence.decoder)),
     },
     project.validation.map((row) => row.input),
-    false,
     progress,
   );
-  const validation = await evaluateSequence(parser(fit.quantized), project.validation);
-  const bytes = Buffer.byteLength(JSON.stringify(fit.quantized));
+  const validation = await evaluateSequence(parser(fit.model), project.validation);
+  const bytes = Buffer.byteLength(JSON.stringify(fit.model));
   if (validation.exactAccuracy < config.minAccuracy || bytes > config.maxBytes) {
     throw new Error(
       `Sequence model failed validation/size requirements (${validation.exactAccuracy}, ${bytes} bytes). ${JSON.stringify(validation.failures.slice(0, 10))}`,
     );
   }
-  const shuffledControl =
-    recipe.readout === "last" ? await fitSequence(training, recipe, fit.quantized, [], true) : null;
   const challenges = config.challenges
     ? z
         .array(z.strictObject({ input: z.string(), output: z.null() }))
@@ -107,13 +104,13 @@ export async function runSequence(
         .parse(JSON.parse(await readFile(resolve(root, config.challenges), "utf8")))
     : null;
   const report = {
-    formatVersion: 1,
-    architecture: fit.quantized.architecture,
-    backend: "TensorFlow native CPU",
+    formatVersion: 2,
+    architecture: fit.model.architecture,
+    backend: "Burn native CPU",
     seed: 42,
-    artifactSha256: hash(JSON.stringify(fit.quantized)),
+    artifactSha256: hash(JSON.stringify(fit.model)),
     bytes,
-    parameters: fit.quantized.weights.reduce((sum, weight) => sum + weight.values.length, 0),
+    parameters: fit.parameters,
     datasetSha256: project.sources.map((source) => ({
       source: source.source,
       sha256: hash(source.text),
@@ -124,12 +121,6 @@ export async function runSequence(
       validation: project.validation.length,
       eval: project.evaluation.length,
     },
-    shuffledLabelsUngated: shuffledControl
-      ? await evaluateSequence(
-          parser({ ...shuffledControl.quantized, threshold: 0 }),
-          project.evaluation,
-        )
-      : null,
     supervisionSha256: hash(
       JSON.stringify(
         training.map((row) => ({
@@ -142,18 +133,12 @@ export async function runSequence(
     loss: fit.history,
     exportParity: fit.parity,
     validation,
-    untrainedUngated: await evaluateSequence(
-      parser({ ...fit.untrained, threshold: 0 }),
-      project.evaluation,
-    ),
-    untrained: await evaluateSequence(parser(fit.untrained), project.evaluation),
-    float: await evaluateSequence(parser(fit.float), project.evaluation),
-    quantized: await evaluateSequence(parser(fit.quantized), project.evaluation),
-    challenges: challenges ? await evaluateSequence(parser(fit.quantized), challenges) : null,
+    evaluation: await evaluateSequence(parser(fit.model), project.evaluation),
+    challenges: challenges ? await evaluateSequence(parser(fit.model), challenges) : null,
     trainingMs: performance.now() - started,
     notes:
-      "Validation gates export. Eval labels do not influence selection. Scores are uncalibrated. Unknown-token handling follows the explicit training recipe. JSON int8 arrays are portable but not a packed binary format.",
+      "Float32 weights in a Burn binary record, base64-encoded in the artifact. Validation gates export. Eval labels do not influence selection. Scores are uncalibrated.",
   };
-  await packageModel(project.output, fit.quantized, report);
+  await packageModel(project.output, fit.model, report);
   return { report, output: project.output };
 }

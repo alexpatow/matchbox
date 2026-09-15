@@ -3,7 +3,7 @@ import { mkdtemp, mkdir, writeFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { resolve } from "node:path";
 import { discover } from "../packages/train/src/project/index.js";
-import { definePipeline, fieldClassifier, tokenClassifier, wordTokens } from "@matchbox-ai/train";
+import { definePipeline, fieldClassifier, tokenClassifier } from "@matchbox-ai/train";
 
 test("named tasks resolve from nested directories and ambiguity never selects silently", async () => {
   const root = await mkdtemp(resolve(tmpdir(), "matchbox-discovery-"));
@@ -23,15 +23,20 @@ test("named tasks resolve from nested directories and ambiguity never selects si
   }
 });
 
-test("pipeline definitions make encoder and supervision choices explicit", () => {
+test("pipeline strategies require only meaningful authoring choices", () => {
+  expect(definePipeline({ prediction: fieldClassifier() }).prediction.kind).toBe(
+    "field-classifier",
+  );
   expect(
-    definePipeline({ input: wordTokens(), prediction: fieldClassifier() }).prediction.kind,
-  ).toBe("field-classifier");
-  expect(() => definePipeline({ prediction: fieldClassifier() })).toThrow("explicit input encoder");
+    definePipeline({
+      prediction: tokenClassifier({ recipe: "./custom.ts", decode: "./output.ts" }),
+    }).prediction,
+  ).toEqual({ kind: "token-classifier", recipe: "./custom.ts", decode: "./output.ts" });
   expect(() =>
     definePipeline({
-      input: wordTokens(),
-      prediction: tokenClassifier({ recipe: "./recipe.ts", decode: "./decode.ts" }),
+      // @ts-expect-error The old single-choice encoder setting is no longer supported.
+      input: { kind: "words" },
+      prediction: fieldClassifier(),
     }),
-  ).toThrow("recipe owns tokenization");
+  ).toThrow();
 });

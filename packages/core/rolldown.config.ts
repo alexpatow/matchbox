@@ -6,9 +6,11 @@ export default defineConfig([
       "runtime/index": "src/runtime/index.ts",
       "react/index": "src/react/index.ts",
       "internal/index": "src/internal/index.ts",
+      "load-browser": "src/runtime/burn/load-browser.ts",
+      "load-node": "src/runtime/burn/load-node.ts",
     },
     platform: "browser",
-    external: [/^zod(?:\/|$)/, /^@tensorflow\//, /^react(?:\/|$)/],
+    external: ["#wasm", "node:fs/promises", /^zod(?:\/|$)/, /^react(?:\/|$)/],
     output: { dir: "dist", format: "esm", sourcemap: true },
   },
   {
@@ -16,7 +18,7 @@ export default defineConfig([
       "vite/index": "src/vite/index.ts",
     },
     platform: "node",
-    external: [/^zod(?:\/|$)/, /^@tensorflow\//, /^react(?:\/|$)/],
+    external: [/^zod(?:\/|$)/, /^react(?:\/|$)/],
     output: { dir: "dist", format: "esm", sourcemap: true },
   },
 ]);

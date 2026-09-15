@@ -1,0 +1,12 @@
+{"input":"please wait for 13 minutes","output":{"kind":"duration","seconds":780}}
+{"input":"notify me in 46 seconds","output":{"kind":"relative","seconds":46}}
+{"input":"our appointment is tomorrow at 10:35","output":{"kind":"datetime","dayOffset":1,"hour":10,"minute":35}}
+{"input":"for twelve minutes and 8 seconds","output":{"kind":"duration","seconds":728}}
+{"input":"in 1.25 hours","output":{"kind":"relative","seconds":4500}}
+{"input":"today at 9:42 am please","output":{"kind":"datetime","dayOffset":0,"hour":9,"minute":42}}
+{"input":"please remind us in 37 minutes","output":{"kind":"relative","seconds":2220}}
+{"input":"the timer is for 53 seconds","output":{"kind":"duration","seconds":53}}
+{"input":"for 6 months","output":null}
+{"input":"in minus 12 minutes","output":null}
+{"input":"tomorrow at 26:11","output":null}
+{"input":"for 5 hours or 18 minutes","output":null}

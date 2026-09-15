@@ -25,13 +25,13 @@ export async function trainCommand(path: string, json = false, verbose = false) 
       if (json) {
         print(result.report, true);
       } else {
-        const passed = result.report.quantized.exactAccuracy >= config.minAccuracy;
+        const passed = result.report.evaluation.exactAccuracy >= config.minAccuracy;
         console.log(
           passed
             ? "\nModel packaged. Test accuracy meets the threshold."
             : "\nModel packaged after validation. Independent test accuracy is below the threshold.",
         );
-        metrics(result.report.quantized);
+        metrics(result.report.evaluation);
         console.log(
           `  Size          ${result.report.bytes.toLocaleString()} bytes\n  Artifact      ${result.output}\n  Import        ${result.output!.replace(/\.matchbox$/, ".ts")}\n\nOpen matchbox-ai dev to try it in your browser.`,
         );

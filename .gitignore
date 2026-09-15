@@ -24,3 +24,6 @@ packages/*/LICENSE
 packages/*/THIRD-PARTY-NOTICES.md
 .changeset/publish/
 .vercel/
+target/
+packages/train/native/
+packages/core/wasm/

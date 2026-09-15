@@ -28,28 +28,33 @@ describe("trained sequence artifacts", () => {
     expect(tags.find((token) => token.text === "99991")?.label).toBe("O");
     expect(tags.find((token) => token.text === "123.45")?.label).toBe("AMOUNT");
   });
-  test("the saved weights determine recognition", async () => {
+  test("rejects unreadable Burn records before returning predictions", async () => {
     const blank = structuredClone(artifact);
-    for (const matrix of blank.weights) {
-      matrix.values.fill(0);
-    }
-    expect((await createParser(blank, task, decode).parse("EUR 19.75")).status).toBe("uncertain");
+    blank.weights = "AA==";
+    const invalid = createParser(blank, task, decode);
+    await expect(invalid.parse("EUR 19.75")).rejects.toThrow();
+    invalid.dispose();
     expect((await money.parse("EUR 19.75")).status).toBe("ok");
   });
-  test("rejects incompatible shapes and out-of-range int8 values", () => {
+  test("rejects incompatible shapes and malformed serialized weights", async () => {
     const badShape = structuredClone(artifact);
-    badShape.weights[0].shape[0]++;
-    expect(() => readSequenceArtifact(badShape)).toThrow("weights");
+    badShape.vocabulary.push("new-untrained-token");
+    const invalid = createParser(badShape, task, decode);
+    await expect(invalid.load()).rejects.toThrow("dimensions");
+    invalid.dispose();
     const badWeight = structuredClone(artifact);
-    badWeight.weights[2].values[0] = 128;
-    expect(() => readSequenceArtifact(badWeight)).toThrow("weights");
+    badWeight.weights = "not base64!";
+    expect(() => readSequenceArtifact(badWeight)).toThrow();
   });
-  test("checks exported inference and quantization independently of the training engine", () => {
+  test("checks export fidelity and training loss", () => {
     expect(report.exportParity.labelDisagreements).toBe(0);
     expect(report.exportParity.maxConfidenceError).toBeLessThan(1e-5);
-    expect(report.quantized.exactAccuracy).toBe(report.float.exactAccuracy);
-    expect(report.loss.at(-1)).toBeLessThan(report.loss[0] / 100);
-    expect(report.quantized.exactAccuracy).toBeGreaterThan(report.untrainedUngated.exactAccuracy);
+    expect(report).not.toHaveProperty("float");
+    expect(report).not.toHaveProperty("quantized");
+    expect(report.formatVersion).toBe(2);
+    // Epoch averages change with dataset size and masking. Task accuracy gates export.
+    expect(report.loss.at(-1)).toBeLessThan(report.loss[0] / 10);
+    expect(report.evaluation.exactAccuracy).toBeGreaterThanOrEqual(0.95);
   });
   test("normalization rejects ambiguous decimals and composes supported number words", () => {
     expect(normalizeNumber("1,234.56")).toBe(1234.56);

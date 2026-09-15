@@ -4,7 +4,6 @@ import type { SequenceRecipe } from "./types.js";
 export function prepareSupervision(
   examples: readonly DatasetExample<unknown>[],
   recipe: SequenceRecipe,
-  shuffleLabels = false,
 ) {
   const vocabulary = [
     ...new Set(
@@ -55,14 +54,6 @@ export function prepareSupervision(
     const other = Math.floor(random() * (index + 1));
     [inputs[index], inputs[other]] = [inputs[other]!, inputs[index]!];
     [labels[index], labels[other]] = [labels[other]!, labels[index]!];
-  }
-  if (shuffleLabels) {
-    let state = 173;
-    for (let index = labels.length - 1; index > 0; index--) {
-      state = (Math.imul(state, 1664525) + 1013904223) >>> 0;
-      const other = state % (index + 1);
-      [labels[index], labels[other]] = [labels[other]!, labels[index]!];
-    }
   }
   return { vocabulary, radius, dropout, inputs, labels };
 }

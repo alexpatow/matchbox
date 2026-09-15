@@ -40,7 +40,7 @@ bunx matchbox-ai init intent --template blank --directory ./my-app
 
 Adds `matchbox/<name>/`, ignores `.matchbox/`, and adds missing `matchbox:dev`, `matchbox:train`, and `matchbox:eval` scripts. Existing task directories are never overwritten. Framework config stays unchanged.
 
-Installs core as an application dependency and train/CLI as development dependencies. Package-manager selection uses the app declaration or lockfile (including workspace ancestors), then the invoking package manager, then Bun. Failed installation preserves the scaffold and prints a retry command. With pnpm, approve `@tensorflow/tfjs-node` using `pnpm approve-builds`.
+Installs core as an application dependency and train/CLI as development dependencies. Package-manager selection uses the app declaration or lockfile (including workspace ancestors), then the invoking package manager, then Bun. Failed installation preserves the scaffold and prints a retry command.
 
 The blank template requires examples and evals before training. The money template includes token supervision and an application-owned decoder. No time template ships in 0.1.0; the time example is available in the repository.
 

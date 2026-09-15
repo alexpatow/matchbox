@@ -41,9 +41,6 @@ export async function serveWorkbench(path: string, port: number) {
         "react/jsx-runtime",
         "react-dom/client",
         "zod",
-        "@matchbox-ai/core > @tensorflow/tfjs-core",
-        "@matchbox-ai/core > @tensorflow/tfjs-layers",
-        "@matchbox-ai/core > @tensorflow/tfjs-backend-cpu",
       ],
     },
     resolve: { dedupe: ["react", "react-dom"] },
@@ -71,7 +68,7 @@ export async function serveWorkbench(path: string, port: number) {
         },
         load(id) {
           if (id.startsWith("\0/__matchbox/model.ts")) {
-            return `export { default } from ${JSON.stringify(output.replace(/\.matchbox$/, ".ts") + `?v=${state.revision}`)};`;
+            return `export { default } from ${JSON.stringify(output.replace(/\.matchbox$/, ".ts") + new URL(id.slice(1), "http://localhost").search)};`;
           }
         },
         configureServer(server) {

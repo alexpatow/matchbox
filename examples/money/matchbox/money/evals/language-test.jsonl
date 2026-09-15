@@ -1,0 +1,12 @@
+{"input":"please log the expense of 73 dollars","output":{"amount":73,"currency":"USD","approximate":false}}
+{"input":"the balance comes to 82 euros","output":{"amount":82,"currency":"EUR","approximate":false}}
+{"input":"a payment of 41 pounds please","output":{"amount":41,"currency":"GBP","approximate":false}}
+{"input":"we owe about sixteen grand euros","output":{"amount":16000,"currency":"EUR","approximate":true}}
+{"input":"invoice 718 totals SEK 54","output":{"amount":54,"currency":"SEK","approximate":false}}
+{"input":"the total is $ 19.75","output":{"amount":19.75,"currency":"USD","approximate":false}}
+{"input":"a payment between 31 and 49 pounds","output":null}
+{"input":"we owe minus twenty euros","output":null}
+{"input":"approximately minus 71 kronor","output":null}
+{"input":"from 16 to 28 dollars","output":null}
+{"input":"at most 81 euros please","output":null}
+{"input":"17 dollars or 21 pounds","output":null}

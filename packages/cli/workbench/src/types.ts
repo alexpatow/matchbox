@@ -8,5 +8,5 @@ export interface Metrics {
 export interface Operation {
   command: string;
   ok: boolean;
-  result: Partial<Metrics> & { quantized?: Metrics; bytes?: number; next?: string };
+  result: Partial<Metrics> & { evaluation?: Metrics; bytes?: number; next?: string };
 }

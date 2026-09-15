@@ -5,7 +5,7 @@ export default defineConfig({
   external: [
     /^@matchbox-ai\/(core|train)(?:\/|$)/,
     /^zod(?:\/|$)/,
-    /^@tensorflow\//,
+
     /^package-manager-detector(?:\/|$)/,
     "commander",
     "ink",

@@ -82,11 +82,6 @@ export async function initialize(
   if (!dependencies.zod) {
     manifest.dependencies.zod = "4.6.3";
   }
-  if (manager === "bun") {
-    manifest.trustedDependencies = [
-      ...new Set([...(manifest.trustedDependencies ?? []), "@tensorflow/tfjs-node"]),
-    ];
-  }
   manifest.scripts = {
     "matchbox:dev": "matchbox-ai dev",
     "matchbox:train": "matchbox-ai train",

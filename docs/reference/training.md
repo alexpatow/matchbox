@@ -15,9 +15,9 @@ const result = await train("money", {
 
 `train(target: string, options?: { onProgress?: (epoch: number, loss: number) => void })` resolves a task and returns a promise for `{ report, output }`. `output` is the packaged artifact path.
 
-It validates the datasets and supervision, trains with native TensorFlow, checks validation accuracy and artifact size, then packages. Configuration, annotation, schema, validation-gate, or size failures reject the promise. A low independent test score is reported after selection and does not undo a model that passed validation. Run CLI `eval` as a separate test gate.
+It validates the datasets and supervision, trains with native Burn, checks validation accuracy and artifact size, then packages. Configuration, annotation, schema, validation-gate, or size failures reject the promise. A low independent test score is reported after selection and does not undo a model that passed validation. Run CLI `eval` as a separate test gate.
 
-The report contains `architecture`, `backend`, `seed`, `bytes`, `parameters`, `artifactSha256`, `datasetSha256`, split counts in `examples`, `loss`, `exportParity`, `trainingMs`, and evaluation results for `validation`, `quantized`, `float`, `untrained`, and `untrainedUngated`. Sequence reports additionally include `supervisedTokens`, `challenges`, and an optional shuffled-label control. These are measured build results, not browser latency.
+Report format 2 contains `architecture`, `backend`, `seed`, `bytes`, `parameters`, `artifactSha256`, `datasetSha256`, split counts in `examples`, `loss`, `exportParity`, `trainingMs`, and evaluation results for `validation` and `evaluation`. Sequence reports additionally include `supervisedTokens` and `challenges`. These are measured build results, not browser latency.
 
 ## TrainingConfig
 

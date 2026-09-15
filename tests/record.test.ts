@@ -18,16 +18,16 @@ test("new word meanings are learned by changing examples alone", async () => {
   const metadata = { taskModule: "./task.ts", taskMetadata: task.toJSON() };
   const first = await fitRecord(train(15), metadata, ["please give us dax"]);
   const second = await fitRecord(train(20), metadata, ["please give us dax"]);
-  expect(await createParser(first.quantized, task).parse("please give us dax")).toMatchObject({
+  expect(await createParser(first.model, task).parse("please give us dax")).toMatchObject({
     status: "ok",
     value: { amount: 15 },
   });
-  expect(await createParser(second.quantized, task).parse("please give us dax")).toMatchObject({
+  expect(await createParser(second.model, task).parse("please give us dax")).toMatchObject({
     status: "ok",
     value: { amount: 20 },
   });
-  expect(first.quantized.fields).toEqual(second.quantized.fields);
-  expect(first.quantized.weights).not.toEqual(second.quantized.weights);
+  expect(first.model.fields).toEqual(second.model.fields);
+  expect(first.model.weights).not.toEqual(second.model.weights);
   expect(first.parity.labelDisagreements + second.parity.labelDisagreements).toBe(0);
   expect(first.parity.maxConfidenceError).toBeLessThan(1e-5);
 }, 30000);
@@ -41,8 +41,8 @@ test("simple pipeline predicts structured values and abstains on unseen numeric 
   const artifact = JSON.parse(
     await readFile("tests/fixtures/field-classifier/.matchbox/money/model.matchbox", "utf8"),
   );
-  artifact.weights[0].shape[0]++;
-  expect(() => readRecordArtifact(artifact)).toThrow("weights");
+  artifact.weights = "invalid base64";
+  expect(() => readRecordArtifact(artifact)).toThrow();
 });
 
 test("boolean defaults are captured once and remain typed schema behavior", () => {

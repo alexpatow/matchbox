@@ -1,3 +1,4 @@
+import { language } from "./language";
 import { augment } from "./augment";
 import { mkdir, writeFile } from "node:fs/promises";
 import { tokenize } from "@matchbox-ai/train";
@@ -124,7 +125,7 @@ for (const [code, symbol, name] of currencies) {
     }
   }
 }
-const rejections = augment(rows, spans);
+const rejections = [...language(rows, spans), ...augment(rows, spans)];
 const root = new URL("../matchbox/money/data/", import.meta.url);
 await mkdir(root, { recursive: true });
 await writeFile(
