@@ -1,6 +1,6 @@
 {
   "name": "@matchbox-ai/train",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -47,13 +47,13 @@
     "zod": "4.6.3"
   },
   "devDependencies": {
-    "@matchbox-ai/core": "0.2.1",
+    "@matchbox-ai/core": "0.2.2",
     "@types/node": "22.20.2",
     "rolldown": "1.2.8",
     "typescript": "7.0.2"
   },
   "peerDependencies": {
-    "@matchbox-ai/core": "0.2.1"
+    "@matchbox-ai/core": "0.2.2"
   },
   "engines": {
     "bun": ">=1.4.2",
