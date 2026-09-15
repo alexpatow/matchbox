@@ -41,3 +41,17 @@ bun run eval:examples
 Generated native binaries, WASM output, Cargo build output and model artifacts are ignored by Git. `Cargo.lock` pins Rust dependencies. `bun run check` includes Rust formatting, Clippy and engine tests.
 
 See [native package distribution](native-packages.md) for platform coverage and release verification.
+
+## Diagnose sequence exports
+
+To inspect native/WASM prediction differences with an installed consumer's binaries, run:
+
+```sh
+bun scripts/diagnose-sequence-export.ts \
+  /path/to/application \
+  /path/to/application/matchbox/task \
+  /path/to/dataset \
+  .matchbox/export-diagnostic
+```
+
+The dataset directory must contain `train.jsonl` and `validation.jsonl`. An optional final integer limits training records. The runner refuses an existing output directory and saves weights and fit metadata before comparing predictions. Reports include checked tokens, differing labels and confidence drift without source text. This contributor tool uses framework internals; it does not package an application model. Generated files stay ignored.
