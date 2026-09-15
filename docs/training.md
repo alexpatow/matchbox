@@ -32,7 +32,7 @@ You can also open `bunx matchbox-ai dev money` and choose **Train model**. Both 
 
 1. Matchbox validates task configuration, datasets, and any token annotations.
 2. The selected strategy fits vocabulary, output domains, and weights from training data.
-3. TensorFlow trains the network locally. Matchbox checks the exported model against the native model.
+3. Burn trains the network locally. Matchbox checks the exported model against the native model.
 4. Validation accuracy and model size gate packaging.
 5. The independent test split is scored and included in the report.
 

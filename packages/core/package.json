@@ -58,9 +58,6 @@
     "dev:types": "tsc -p tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@tensorflow/tfjs-backend-cpu": "4.22.0",
-    "@tensorflow/tfjs-core": "4.22.0",
-    "@tensorflow/tfjs-layers": "4.22.0",
     "zod": "4.6.3"
   },
   "devDependencies": {

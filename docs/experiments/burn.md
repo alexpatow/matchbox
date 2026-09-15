@@ -1,6 +1,6 @@
 # Burn experiment
 
-This branch tests a Rust engine behind the existing TypeScript parser and training interfaces. It is an experiment, not a release candidate. All four sequence examples train with Burn and run through Burn in WebAssembly. The structured record classifier still uses TensorFlow.
+This branch tests a Rust engine behind the existing TypeScript parser and training interfaces. It is an experiment, not a release candidate. All four sequence examples train with Burn and run through Burn in WebAssembly. The structured-record classifier also trains and runs through Burn; TensorFlow dependencies have been removed.
 
 ## Project structure
 
@@ -67,4 +67,4 @@ This experiment uses float32 records. The existing report's `quantized` field co
 
 The native addon needs a platform distribution strategy before release. Cross-platform reproducibility and native installation on other operating systems remain unverified. Deployment environments need Rust build tooling or prebuilt packages. The release workflow has not been converted for this experiment, and this branch must not be published.
 
-The record classifier has not been ported. TensorFlow therefore remains a dependency, loaded only on that path. This branch proves the shared native-training and browser-inference boundary for sequence models; it does not establish better generalization or justify a complete migration by itself.
+The record classifier is now ported. Its fixture passes 20/20 regression cases, and native/WASM parity, independent field learning, disposal and offline browser execution are covered. Both model kinds require version 3 artifacts. The table above records the initial sequence migration before subsequent accuracy work.

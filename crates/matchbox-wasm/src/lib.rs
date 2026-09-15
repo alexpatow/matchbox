@@ -22,3 +22,5 @@ impl Predictor {
             .map_err(|error| JsError::new(&error))
     }
 }
+
+pub mod record;

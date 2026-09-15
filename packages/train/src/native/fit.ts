@@ -10,7 +10,7 @@ export function predict(
   weights: Uint8Array,
   inputs: number[][],
 ): number[] {
-  const native = require("./matchbox.node") as {
+  const native = require("#native") as {
     predict(config: string, weights: Buffer, inputs: Int32Array): number[];
   };
   return native.predict(
@@ -25,7 +25,7 @@ export function fit(
   labels: number[],
   progress?: (epoch: number, loss: number) => void,
 ): Promise<NativeResult> {
-  const native = require("./matchbox.node") as {
+  const native = require("#native") as {
     fit(
       config: string,
       inputs: Int32Array,

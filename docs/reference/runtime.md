@@ -35,7 +35,7 @@ parser.dispose();
 
 Returns `MatchboxParser<z.output<Output>>` plus required `load(): Promise<void>` and `dispose(): void`. Most applications should import the generated module instead of calling this factory.
 
-`load` caches initialization and uses TensorFlow.js CPU. Failed initialization can be retried. `dispose` releases weights; calls after disposal reject. The React hook does not dispose shared module instances on unmount.
+`load` caches initialization and uses Burn WASM CPU. Failed initialization can be retried. `dispose` releases weights; calls after disposal reject. The React hook does not dispose shared module instances on unmount.
 
 Malformed artifacts, schema mismatches, and a missing token decoder throw during parser creation. No runtime network API or API key is required. Your bundler may fetch the model's static chunks during loading.
 

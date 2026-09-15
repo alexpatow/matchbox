@@ -1,5 +1,5 @@
 import { verifyExport } from "./verify-export.js";
-import * as tf from "@tensorflow/tfjs-node";
+import { fitNativeRecord } from "../../native/index.js";
 import { recordFeatures, recordTokens, readRecordArtifact } from "@matchbox-ai/core/internal";
 import type { RecordArtifact } from "@matchbox-ai/core/internal";
 import type { DatasetExample, ParserMetadata } from "@matchbox-ai/core";
@@ -32,7 +32,6 @@ export async function fitRecord(
     return { name, values };
   });
   const vocabulary = [...new Set(examples.flatMap((row) => recordTokens(row.input)))].sort();
-  const outputs = fields.reduce((sum, field) => sum + field.values.length, 0);
   if (
     fields.length > 32 ||
     fields.some((field) => field.values.length > 256) ||
@@ -42,105 +41,43 @@ export async function fitRecord(
       "Default trainer capacity exceeded. Use a custom pipeline for larger output domains.",
     );
   }
-  await tf.setBackend("tensorflow");
-  await tf.ready();
-  const model = tf.sequential({
-    layers: [
-      tf.layers.dense({
-        inputShape: [vocabulary.length],
-        units: 32,
-        activation: "tanh",
-        kernelInitializer: tf.initializers.glorotUniform({ seed: 42 }),
-      }),
-      tf.layers.dense({
-        units: outputs,
-        kernelInitializer: tf.initializers.glorotUniform({ seed: 43 }),
-      }),
-    ],
-  });
-  const optimizer = tf.train.adam(0.02);
-  model.compile({
-    optimizer,
-    loss: (gold, logits) =>
-      tf.tidy(() => {
-        let offset = 0;
-        const losses = fields.map((field) => {
-          const count = field.values.length;
-          const target = tf.slice(gold, [0, offset], [-1, count]);
-          const scores = tf.slice(logits, [0, offset], [-1, count]);
-          offset += count;
-          return tf.neg(tf.sum(tf.mul(target, tf.logSoftmax(scores)), 1));
-        });
-        return tf.mean(tf.addN(losses));
-      }),
-  });
-  const x = tf.tensor2d(examples.map((row) => recordFeatures(row.input, vocabulary)));
-  const y = tf.tensor2d(
-    examples.map((row) =>
-      fields.flatMap((field) =>
-        field.values.map((value) =>
-          value === (row.output as Record<string, unknown>)[field.name] ? 1 : 0,
+  const config = {
+    vocabularySize: vocabulary.length,
+    fields: fields.map((field) => field.values.length),
+  };
+  const result = await fitNativeRecord(
+    config,
+    examples.map((row) => recordFeatures(row.input, vocabulary)),
+    examples.flatMap((row) =>
+      fields.map((field) =>
+        field.values.indexOf(
+          (row.output as Record<string, string | number | boolean | null>)[field.name]!,
         ),
       ),
     ),
+    progress,
   );
-  function exported(precision: "int8" | "float32"): RecordArtifact {
-    const weights = model.getWeights().map((tensor, index) => {
-      const values = Array.from(tensor.dataSync());
-      const scale =
-        precision === "int8"
-          ? values.reduce((max, value) => Math.max(max, Math.abs(value)), 0) / 127 || 1
-          : 1;
-      return {
-        name: model.weights[index]!.originalName,
-        shape: tensor.shape,
-        values: precision === "int8" ? values.map((value) => Math.round(value / scale)) : values,
-        scale,
-      };
-    }) as RecordArtifact["weights"];
-    return readRecordArtifact({
-      formatVersion: 2,
+  const artifact = (weights: Uint8Array): RecordArtifact =>
+    readRecordArtifact({
+      formatVersion: 3,
+      engine: "burn-0.21",
       kind: "record-parser",
       architecture: "bag-of-words-mlp",
       ...metadata,
-      modelTopology: JSON.parse(model.toJSON() as string),
       decoderModule: null,
       fields,
       vocabulary,
       threshold: 0.75,
-      precision,
-      weights,
+      precision: "float32",
+      weights: Buffer.from(weights).toString("base64"),
     });
-  }
-  const untrained = exported("float32");
-  const history: number[] = [];
-  try {
-    await model.fit(x, y, {
-      epochs: 100,
-      batchSize: 128,
-      shuffle: false,
-      verbose: 0,
-      callbacks: {
-        onEpochEnd(epoch, logs) {
-          history.push(Number(logs?.loss));
-          progress?.(epoch + 1, Number(logs?.loss));
-        },
-      },
-    });
-    const float = exported("float32"),
-      quantized = exported("int8");
-    const parity = await verifyExport(model, float, probes);
-    return {
-      float,
-      quantized,
-      untrained,
-      history,
-      parity,
-    };
-  } finally {
-    x.dispose();
-    y.dispose();
-    model.dispose();
-    optimizer.dispose();
-  }
+  const float = artifact(result.weights);
+  const parity = await verifyExport(result.weights, float, probes);
+  return {
+    float,
+    quantized: float,
+    untrained: artifact(result.untrained),
+    history: result.loss,
+    parity,
+  };
 }

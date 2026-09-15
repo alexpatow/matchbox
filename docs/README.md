@@ -11,4 +11,4 @@ Start with [Getting started](getting-started.md) to add a task, train a model, a
 - [Example results](example-evaluation.md) reports harder cases, coverage, and remaining failures.
 - [Money](examples/money.md) and [time](examples/time.md) show token recognition with explicit application-owned decoding.
 
-Matchbox currently accepts string inputs. Core owns validation and browser integration; train owns build-time orchestration; TensorFlow owns training and execution.
+Matchbox currently accepts string inputs. Core owns validation and browser integration; train owns build-time orchestration; Burn owns training and execution.

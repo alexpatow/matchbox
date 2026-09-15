@@ -1,14 +1,8 @@
 import { z } from "zod";
 const value = z.union([z.string(), z.number(), z.boolean(), z.null()]);
-const matrix = z.strictObject({
-  name: z.string().min(1),
-  shape: z.array(z.number().int().positive()).min(1).max(2),
-  values: z.array(z.number()).max(1000000),
-  scale: z.number().positive(),
-});
 const schema = z.strictObject({
-  formatVersion: z.literal(2),
-  modelTopology: z.record(z.string(), z.unknown()),
+  formatVersion: z.literal(3),
+  engine: z.literal("burn-0.21"),
   kind: z.literal("record-parser"),
   architecture: z.literal("bag-of-words-mlp"),
   taskModule: z.string(),
@@ -28,25 +22,16 @@ const schema = z.strictObject({
     .min(1)
     .max(32),
   threshold: z.number().min(0).max(1),
-  precision: z.enum(["float32", "int8"]),
-  weights: z.tuple([matrix, matrix, matrix, matrix]),
+  precision: z.literal("float32"),
+  weights: z
+    .string()
+    .min(4)
+    .max(10_000_000)
+    .regex(/^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/),
 });
 export type RecordArtifact = z.infer<typeof schema>;
 export function readRecordArtifact(input: unknown): RecordArtifact {
   const model = schema.parse(input, { jitless: true });
-  const units = model.weights[1].values.length;
-  const outputs = model.fields.reduce((sum, field) => sum + field.values.length, 0);
-  const shapes = [[model.vocabulary.length, units], [units], [units, outputs], [outputs]];
-  model.weights.forEach((weight, index) => {
-    if (
-      JSON.stringify(weight.shape) !== JSON.stringify(shapes[index]) ||
-      weight.values.length !== weight.shape.reduce((a, b) => a * b, 1) ||
-      (model.precision === "int8" &&
-        weight.values.some((value) => !Number.isInteger(value) || Math.abs(value) > 127))
-    ) {
-      throw new Error("Invalid Matchbox record weights.");
-    }
-  });
   if (
     new Set(model.vocabulary).size !== model.vocabulary.length ||
     new Set(model.fields.map((field) => field.name)).size !== model.fields.length ||
@@ -56,9 +41,6 @@ export function readRecordArtifact(input: unknown): RecordArtifact {
     )
   ) {
     throw new Error("Duplicate record vocabulary, fields, or values.");
-  }
-  if (new Set(model.weights.map((weight) => weight.name)).size !== model.weights.length) {
-    throw new Error("Duplicate TensorFlow weight names.");
   }
   return model;
 }

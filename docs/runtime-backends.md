@@ -1,18 +1,15 @@
-# Browser runtime
+# Runtime execution
 
-```ts
-import { matchbox } from "@matchbox-ai/core/vite";
-export default { plugins: [matchbox()] };
-```
+Matchbox uses Burn for native training and browser inference. The Rust workspace contains the shared model implementation, a Node-API adapter for training, and a WebAssembly adapter for inference. There is no public backend selector or handwritten JavaScript evaluator.
 
-Matchbox uses TensorFlow.js CPU for browser inference. There is no runtime selector or handwritten JS evaluator. Artifacts carry TensorFlow model topology and named weights; the runtime loads them with loadLayersModel and executes model.predict. Matchbox adapts input features and output predictions, validates results, and supports abstention.
+Both sequence parsers and structured-record classifiers export float32 Burn records. TypeScript handles input features, authored output transformations, validation and abstention. Native/WASM prediction checks verify serialization fidelity before export completes.
 
-Native TensorFlow trains the model. Before export completes, the toolchain captures native predictions and compares them with the serialized model loaded on TensorFlow.js CPU. This checks export fidelity without maintaining a second inference engine.
+The runtime loads lazily on the first parse. A parser retains its loaded model and exposes dispose(). Shared generated modules live for the application lifetime; the Vite plugin disposes them on HMR. Explicitly created instances should be disposed by their owner. React hooks do not dispose shared model modules when one component unmounts.
 
-TensorFlow loads lazily on the first parse. A parser retains its loaded model and exposes dispose(). Shared generated modules live for the application lifetime; the Vite plugin disposes them on HMR. Explicitly created instances should be disposed by their owner. React hooks do not dispose shared model modules when one component unmounts.
+Direct creation is available through @matchbox-ai/core/runtime. Imports are SSR-safe; browser loading uses a separate WASM asset. Node inference reads that asset from the installed package. Training dependencies stay out of browser entry points.
 
-Direct creation is available through @matchbox-ai/core/runtime. Inference selects TensorFlow's process-wide CPU backend. Browser apps that separately use TensorFlow should isolate unrelated backend use in another worker. Native training runs through the training toolchain and is kept out of browser entry points.
+Artifact format 3 contains a base64-encoded Burn record. Regenerate earlier artifacts with matchbox-ai train. The legacy quantized report field currently evaluates the same float32 artifact; this branch does not implement quantization.
 
-Artifact format 2 includes the serialized TensorFlow model. Regenerate artifacts produced by earlier versions with matchbox-ai train. apps/benchmarks measures loading and warm inference of the shipped runtime. Cold timing includes lazy TensorFlow loading after the benchmark page itself has loaded. Mobile browser-test profiles emulate device settings on desktop hardware, not physical-phone performance.
+The native addon currently packages only the build host's platform. This experiment must not be published until native distribution is implemented. Repository contributors should follow [the experiment setup](experiments/burn.md).
 
-Call `await parser.load()` to initialize before the first parse, for example before going offline. The React hook waits for this initialization before reporting `ready`.
+apps/benchmarks measures loading and warm inference of the shipped runtime. Cold timing includes lazy WASM loading after the benchmark page itself has loaded. Mobile browser-test profiles emulate device settings on desktop hardware, not physical-phone performance.

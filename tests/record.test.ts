@@ -41,8 +41,8 @@ test("simple pipeline predicts structured values and abstains on unseen numeric 
   const artifact = JSON.parse(
     await readFile("tests/fixtures/field-classifier/.matchbox/money/model.matchbox", "utf8"),
   );
-  artifact.weights[0].shape[0]++;
-  expect(() => readRecordArtifact(artifact)).toThrow("weights");
+  artifact.weights = "invalid base64";
+  expect(() => readRecordArtifact(artifact)).toThrow();
 });
 
 test("boolean defaults are captured once and remain typed schema behavior", () => {

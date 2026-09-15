@@ -43,11 +43,13 @@ export async function runRecord(
   const report = {
     formatVersion: 1,
     architecture: fit.quantized.architecture,
-    backend: "TensorFlow native CPU",
+    backend: "Burn native CPU",
     seed: 42,
     artifactSha256: createHash("sha256").update(JSON.stringify(fit.quantized)).digest("hex"),
     bytes,
-    parameters: fit.quantized.weights.reduce((sum, weight) => sum + weight.values.length, 0),
+    parameters:
+      (fit.float.vocabulary.length + 1) * 32 +
+      33 * fit.float.fields.reduce((sum, field) => sum + field.values.length, 0),
     datasetSha256: project.sources.map((source) => ({
       source: source.source,
       sha256: createHash("sha256").update(source.text).digest("hex"),

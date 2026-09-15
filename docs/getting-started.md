@@ -1,6 +1,6 @@
 # Getting started
 
-Train the included money parser, try it locally, and call it from your app. You need an existing JavaScript project with a `package.json`, Bun 1.4.2+, and Node.js 24+ for native TensorFlow training. No API key is required.
+Train the included money parser, try it locally, and call it from your app. You need an existing JavaScript project with a `package.json`, Bun 1.4.2+, and Node.js 24+ for native Burn training. No API key is required.
 
 ## 1. Add a task
 
@@ -24,7 +24,7 @@ matchbox/money/
   evals/test.jsonl          # Measure the selected model.
 ```
 
-Your framework config and dev server stay as they are. With pnpm, approve `@tensorflow/tfjs-node` using `pnpm approve-builds` before training.
+Your framework config and dev server stay as they are.
 
 ## 2. Train and try it
 

@@ -27,4 +27,4 @@ Matchbox discovers `recipe.ts` or `recipe/recipe.ts`, and `decode.ts` or `decode
 
 These are two existing, evaluated presets. Decimal codecs, arbitrary graphs, automatic architecture search, and hidden domain normalizers are not implemented. New primitives should demonstrate their limitations and held-out behavior before becoming defaults.
 
-Programmatic training uses await train("money", { onProgress }) from @matchbox-ai/train and follows the same validation and packaging path as the CLI. Importing the authoring helpers does not initialize native TensorFlow; training loads it when invoked.
+Programmatic training uses await train("money", { onProgress }) from @matchbox-ai/train and follows the same validation and packaging path as the CLI. Importing the authoring helpers does not initialize native Burn; training loads it when invoked.

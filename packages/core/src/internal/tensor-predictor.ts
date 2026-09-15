@@ -5,6 +5,6 @@ export async function tensorPredictor(artifact: RecordArtifact | SequenceArtifac
     const { burnPredictor } = await import("../runtime/burn/index.js");
     return burnPredictor(artifact);
   }
-  const runtime = await import("../runtime/tensorflow/index.js");
-  return runtime.tensorPredictor(artifact);
+  const runtime = await import("../runtime/burn/record.js");
+  return runtime.recordPredictor(artifact);
 }

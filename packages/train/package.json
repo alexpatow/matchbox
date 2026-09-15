@@ -17,6 +17,9 @@
   ],
   "type": "module",
   "sideEffects": false,
+  "imports": {
+    "#native": "./dist/matchbox.node"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -38,7 +41,6 @@
     "dev:types": "tsc -p tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@tensorflow/tfjs-node": "4.22.0",
     "zod": "4.6.3"
   },
   "devDependencies": {

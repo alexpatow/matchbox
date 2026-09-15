@@ -1,14 +1,9 @@
 import { Predictor } from "../../../wasm/matchbox_wasm.js";
-import { load } from "#wasm";
+import { initialize } from "./initialize.js";
 import { tokenize, windows } from "../../internal/sequence/index.js";
 import type { SequenceArtifact } from "../../internal/sequence/index.js";
-let loading: Promise<void> | undefined;
 export async function burnPredictor(model: SequenceArtifact) {
-  loading ??= load().catch((error: unknown) => {
-    loading = undefined;
-    throw error;
-  });
-  await loading;
+  await initialize();
   const config = { vocabularySize: model.vocabulary.length + 2, labelCount: model.labels.length };
   const bytes = Uint8Array.from(atob(model.weights), (character) => character.charCodeAt(0));
   const predictor = new Predictor(JSON.stringify(config), bytes);

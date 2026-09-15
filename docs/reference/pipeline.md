@@ -6,7 +6,7 @@ import { definePipeline, wordTokens, fieldClassifier, tokenClassifier } from "@m
 
 ## definePipeline
 
-`definePipeline(pipeline: Pipeline): Pipeline` validates a declaration and returns it. Invalid declarations throw a Zod validation error. It does not train or load TensorFlow.
+`definePipeline(pipeline: Pipeline): Pipeline` validates a declaration and returns it. Invalid declarations throw a Zod validation error. It does not train or load Burn.
 
 | Property                 | Type                                   | Required               | Behavior                                           |
 | ------------------------ | -------------------------------------- | ---------------------- | -------------------------------------------------- |

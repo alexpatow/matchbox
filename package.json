@@ -44,7 +44,6 @@
     "@matchbox-ai/core": "workspace:*",
     "@matchbox-ai/train": "workspace:*",
     "@playwright/test": "1.63.0",
-    "@tensorflow/tfjs-core": "4.22.0",
     "@types/bun": "1.4.2",
     "matchbox-ai": "workspace:*",
     "oxfmt": "0.67.0",
@@ -57,7 +56,5 @@
     "node": ">=24"
   },
   "packageManager": "bun@1.4.2",
-  "trustedDependencies": [
-    "@tensorflow/tfjs-node"
-  ]
+  "trustedDependencies": []
 }

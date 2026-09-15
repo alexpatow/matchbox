@@ -1,6 +1,7 @@
 import type { ParseResult } from "@matchbox-ai/core/runtime";
 declare global {
   interface Window {
+    benchmarkRecord(): Promise<ParseResult<unknown>>;
     benchmarkRuntime(): Promise<{
       runtime: string;
       coldFirstParseMs: number;
@@ -38,9 +39,15 @@ test("Burn models run in the browser and remain available offline", async ({ pag
     expect(prediction.value).toEqual(failure ? failure.actual : rows[i].output);
     expect(prediction.status).toBe(prediction.value === null ? "uncertain" : "ok");
   });
+  const record = await page.evaluate(() => window.benchmarkRecord());
+  expect(record).toMatchObject({
+    status: "ok",
+    value: { amount: 15000, currency: "EUR", approximate: true },
+  });
   await page.route("**/*", (route) => route.abort());
   const offline = await page.evaluate(() => window.benchmarkRuntime());
   expect(offline.results).toEqual(result.results);
+  expect(await page.evaluate(() => window.benchmarkRecord())).toEqual(record);
   await writeFile(
     info.outputPath("burn-runtime.json"),
     JSON.stringify({ project: info.project.name, ...result }, null, 2),

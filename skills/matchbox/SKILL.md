@@ -14,12 +14,12 @@ Read the installed package docs/README.md first, then project-structure.md, pipe
 5. Fit preprocessing only on training data. Put data generators in project-level scripts/ and preserve validation/test fixtures. Add meaningful held-out compositions and negative cases independently of model fitting.
 6. Use the CLI from matchbox-ai or programmatic train from @matchbox-ai/train to apply validation gates, measure results, and package weights. Report failures honestly. Never fabricate benchmark figures.
 7. Distinguish uncertain interpretation from invalid user input. Confidence is currently uncalibrated; inspect diagnostics before attributing uncertainty to one cause.
-8. Import generated artifacts in the app and use @matchbox-ai/core/react when needed. Keep @matchbox-ai/train and native TensorFlow outside browser code.
-9. Let TensorFlow serialize, load, and execute models. Do not implement custom inference kernels or a backend-selection framework. Verify native-to-browser export parity and benchmark the shipped TensorFlow runtime. Label emulated mobile measurements accurately.
+8. Import generated artifacts in the app and use @matchbox-ai/core/react when needed. Keep @matchbox-ai/train and native Burn outside browser code.
+9. Let Burn serialize, load, and execute models. Do not implement custom inference kernels or a backend-selection framework. Verify native-to-browser export parity and benchmark the shipped Burn runtime. Label emulated mobile measurements accurately.
 
 Scope changes to existing, documented primitives. Propose a new primitive separately with its contract, limitations, and evaluation evidence. Preserve authored code and tests when reorganizing folders.
 
-Matchbox owns authoring, workflows, evals, packaging, validation, and typed results. TensorFlow owns model execution. A schema must never silently select numeric encodings or domain normalizers.
+Matchbox owns authoring, workflows, evals, packaging, validation, and typed results. Burn owns model execution. A schema must never silently select numeric encodings or domain normalizers.
 
 ## Task layout
 

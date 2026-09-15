@@ -57,10 +57,6 @@ export function createParser<Output extends z.ZodType>(
     },
     async parse(input) {
       const parser = await load();
-      if (model.kind === "record-parser") {
-        const { prepareCpu } = await import("./tensorflow/index.js");
-        await prepareCpu();
-      }
       if (disposed) {
         throw new Error("The parser has been disposed.");
       }

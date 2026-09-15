@@ -10,7 +10,7 @@ export default defineConfig([
       "load-node": "src/runtime/burn/load-node.ts",
     },
     platform: "browser",
-    external: ["#wasm", "node:fs/promises", /^zod(?:\/|$)/, /^@tensorflow\//, /^react(?:\/|$)/],
+    external: ["#wasm", "node:fs/promises", /^zod(?:\/|$)/, /^react(?:\/|$)/],
     output: { dir: "dist", format: "esm", sourcemap: true },
   },
   {
@@ -18,7 +18,7 @@ export default defineConfig([
       "vite/index": "src/vite/index.ts",
     },
     platform: "node",
-    external: [/^zod(?:\/|$)/, /^@tensorflow\//, /^react(?:\/|$)/],
+    external: [/^zod(?:\/|$)/, /^react(?:\/|$)/],
     output: { dir: "dist", format: "esm", sourcemap: true },
   },
 ]);

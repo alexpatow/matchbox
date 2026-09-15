@@ -1,3 +1,4 @@
+import { benchmarkRecord } from "./record";
 import { createParser } from "@matchbox-ai/core/runtime";
 import decode from "../../../examples/money/matchbox/money/decode/decode";
 import task from "../../../examples/money/matchbox/money/parser";
@@ -44,9 +45,11 @@ async function benchmark() {
 declare global {
   interface Window {
     benchmarkRuntime: typeof benchmark;
+    benchmarkRecord: typeof benchmarkRecord;
   }
 }
 window.benchmarkRuntime = benchmark;
+window.benchmarkRecord = benchmarkRecord;
 document.querySelector("#run")!.addEventListener("click", async () => {
   const output = document.querySelector("#result")!;
   output.textContent = "Measuring…";
