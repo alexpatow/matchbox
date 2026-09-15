@@ -12,7 +12,11 @@ export function ModelLab({
   busy: boolean;
   run: (command: string, data?: object) => Promise<void>;
 }) {
-  const [parser, setParser] = useState<MatchboxParser<unknown> | null>(null);
+  const [loaded, setLoaded] = useState<{
+    revision: number;
+    parser: MatchboxParser<unknown>;
+  } | null>(null);
+  const parser = ready && loaded?.revision === revision ? loaded.parser : null;
   const [input, setInput] = useState("");
   const [result, setResult] = useState<ParseResult<unknown> | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -29,7 +33,7 @@ export function ModelLab({
         model = module.default;
         await model!.load?.();
         if (current) {
-          setParser(model!);
+          setLoaded({ revision, parser: model! });
         } else {
           model?.dispose?.();
         }
