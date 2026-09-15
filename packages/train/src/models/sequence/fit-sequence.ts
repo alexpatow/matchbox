@@ -1,3 +1,4 @@
+import { sequenceParity } from "./export-parity.js";
 import { prepareSupervision } from "./prepare-supervision.js";
 import { fit, predict } from "../../native/index.js";
 import { tensorPredictor, tokenize, windows } from "@matchbox-ai/core/internal";
@@ -37,8 +38,7 @@ export async function fitSequence(
   const model = artifact(result.weights);
   const checked = [...examples.slice(0, 16).map((row) => row.input), ...probes];
   const portable = await tensorPredictor(model);
-  let maxConfidenceError = 0;
-  let labelDisagreements = 0;
+  const parity = sequenceParity(model.threshold);
   try {
     for (const input of checked) {
       const tokens = tokenize(input, recipe.tokenizer);
@@ -53,23 +53,17 @@ export async function fitSequence(
       portable.sequence(input).forEach((token, index) => {
         const row = scores.slice(index * recipe.labels.length, (index + 1) * recipe.labels.length);
         const confidence = Math.max(...row);
-        maxConfidenceError = Math.max(maxConfidenceError, Math.abs(confidence - token.confidence));
-        if (recipe.labels[row.indexOf(confidence)] !== token.label) {
-          labelDisagreements++;
-        }
+        parity.add({ label: recipe.labels[row.indexOf(confidence)]!, confidence }, token);
       });
     }
   } finally {
     portable.dispose();
   }
-  if (labelDisagreements || maxConfidenceError > 1e-5) {
-    throw new Error("Burn native and WASM predictions disagree.");
-  }
   return {
     model,
     parameters: result.parameters,
     history: result.loss,
-    parity: { examples: checked.length, maxConfidenceError, labelDisagreements },
+    parity: { examples: checked.length, ...parity.report() },
     supervisedTokens: inputs.length,
   };
 }

@@ -1,8 +1,12 @@
 # Matchbox
 
-## Burn experiment
+## Documentation
 
-On `codex/burn-experiment`, the user has authorized replacing all model internals with Burn while preserving the TypeScript interface. This experiment supersedes the Burn-specific requirements below for all models. Both sequence and record classifiers use Burn. Rust code lives in the root Cargo workspace under `crates/`: the shared engine, thin Node bindings, and thin WASM bindings. Burn owns tensors, gradients, optimization and serialization. Keep TypeScript-authored supervision, decoders and Zod validation in TypeScript. Do not add a public backend selector. Run Rust formatting, Clippy and tests in addition to the Bun and browser checks. Generated native binaries, WASM and weights stay out of Git. Do not publish the experiment.
+Keep repository documentation focused on product behavior, public contracts, contributor workflows and reproducible evidence. Keep session handoffs, personal paths, internal PR status and run-by-run decision narratives outside the repository.
+
+## Rust engine
+
+Both sequence and record classifiers use Burn. Rust code lives in the root Cargo workspace under `crates/`: the shared engine, thin Node bindings, and thin WASM bindings. Keep TypeScript-authored supervision, decoders and Zod validation in TypeScript. Run Rust formatting, Clippy and tests in addition to the Bun and browser checks. Generated native binaries, WASM and weights stay out of Git.
 
 ## Scope
 
