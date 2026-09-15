@@ -26,7 +26,9 @@ if (!selected) {
 const env = { ...process.env };
 if (selected.id.endsWith("musl")) {
   env.RUSTFLAGS = `${env.RUSTFLAGS ?? ""} -C target-feature=-crt-static`;
-  env[`CARGO_TARGET_${selected.target.toUpperCase().replaceAll("-", "_")}_LINKER`] = "musl-gcc";
+  env[`CARGO_TARGET_${selected.target.toUpperCase().replaceAll("-", "_")}_LINKER`] = musl
+    ? "cc"
+    : "musl-gcc";
 }
 execFileSync("rustup", ["target", "add", selected.target], { stdio: "inherit", env });
 execFileSync(
@@ -45,5 +47,13 @@ const output = resolve(
   selected.file,
 );
 mkdirSync(dirname(output), { recursive: true });
-copyFileSync(resolve("target", selected.target, "release", libraries[selected.platform]!), output);
+copyFileSync(
+  resolve(
+    process.env.CARGO_TARGET_DIR ?? "target",
+    selected.target,
+    "release",
+    libraries[selected.platform]!,
+  ),
+  output,
+);
 console.log(`Prepared ${selected.id}: ${output}`);

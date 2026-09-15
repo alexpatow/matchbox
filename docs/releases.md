@@ -8,7 +8,7 @@ Changesets versions and publishes three packages together:
 | `@matchbox-ai/train` | Pipeline authoring and Burn training.        |
 | `matchbox-ai`        | The CLI, scaffolding, and browser workbench. |
 
-The repository root, apps, and examples remain private. Packages use the MIT license. Initial versions are 0.0.0; the initial changeset proposes 0.1.0.
+The repository root, apps, and examples remain private. Packages use the MIT license. Changesets maintains versions and internal dependency ranges.
 
 ## Normal workflow
 
@@ -31,19 +31,9 @@ For each npm package, configure a GitHub trusted publisher with:
 - Environment: leave blank.
 - Allowed action: enable direct `npm publish`.
 
-The workflow uses Node 24 and npm OIDC authentication. No npm token is stored in GitHub. Only the publish job receives `id-token: write`; build and validation run separately. The repository is currently private, so provenance is disabled for it. The workflow enables provenance if the repository becomes public.
+The workflow uses Node 24 and npm OIDC authentication. No npm token is stored in GitHub. Only the publish job receives `id-token: write`; build and validation run separately. The workflow enables provenance for public repositories.
 
-Trusted publisher settings are configured per existing npm package. If the names have not been published yet, bootstrap the first version from the merged Version Packages commit using an authenticated npm account with access to the names:
-
-```sh
-bun install --frozen-lockfile
-bun run check
-bun run test:browser
-npm login
-bun run release
-```
-
-Complete npm's authentication prompts, then configure the three trusted publishers for subsequent releases. Do not run `release` from a feature branch or publish version 0.0.0. Setting up this workflow does not itself claim npm names or configure their trusted publishers.
+Trusted publisher settings are configured for the three existing npm packages. Bundled native binaries do not introduce additional package names or trusted publishers. Ordinary feature work does not publish packages.
 
 The CLI declares its training and runtime dependencies so `bunx matchbox-ai init` can work before the app has any Matchbox packages installed. Scaffolding writes registry versions from the running release, preserving dependencies already present in the app.
 

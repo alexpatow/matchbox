@@ -1,4 +1,4 @@
-import { readFileSync, statSync } from "node:fs";
+import { readFileSync, statSync, existsSync } from "node:fs";
 import { resolve } from "node:path";
 const targets = JSON.parse(
   readFileSync(new URL("./native-targets.json", import.meta.url), "utf8"),
@@ -10,6 +10,11 @@ const targets = JSON.parse(
 const root = resolve(process.argv[2] ?? "packages/train");
 for (const target of targets) {
   const path = resolve(root, "prebuilds", `${target.platform}-${target.arch}`, target.file);
+  if (!existsSync(path)) {
+    throw new Error(
+      `Missing prebuild: ${path}. Collect the complete native CI artifacts before packing a release.`,
+    );
+  }
   if (statSync(path).size === 0) {
     throw new Error(`Empty prebuild: ${path}`);
   }
