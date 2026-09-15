@@ -4,7 +4,7 @@ use crate::{
     training::TrainingResult,
 };
 use burn::{
-    module::AutodiffModule,
+    module::{AutodiffModule, Module},
     nn::loss::CrossEntropyLossConfig,
     optim::{AdamConfig, GradientsParams, Optimizer},
     tensor::{Int, Tensor, TensorData, backend::Backend},
@@ -64,6 +64,7 @@ pub fn train(
         progress(epoch + 1, total / rows as f32);
     }
     Ok(TrainingResult {
+        parameters: model.num_params(),
         weights: model.valid().save()?,
         untrained,
         loss: history,

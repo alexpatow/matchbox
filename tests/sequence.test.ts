@@ -49,10 +49,12 @@ describe("trained sequence artifacts", () => {
   test("checks native to WASM inference parity and learning against untrained weights", () => {
     expect(report.exportParity.labelDisagreements).toBe(0);
     expect(report.exportParity.maxConfidenceError).toBeLessThan(1e-5);
-    expect(report.quantized.exactAccuracy).toBe(report.float.exactAccuracy);
+    expect(report).not.toHaveProperty("float");
+    expect(report).not.toHaveProperty("quantized");
+    expect(report.formatVersion).toBe(2);
     // Epoch averages change with dataset size and masking. Task accuracy gates export.
     expect(report.loss.at(-1)).toBeLessThan(report.loss[0] / 10);
-    expect(report.quantized.exactAccuracy).toBeGreaterThan(report.untrainedUngated.exactAccuracy);
+    expect(report.evaluation.exactAccuracy).toBeGreaterThan(report.untrainedUngated.exactAccuracy);
   });
   test("normalization rejects ambiguous decimals and composes supported number words", () => {
     expect(normalizeNumber("1,234.56")).toBe(1234.56);

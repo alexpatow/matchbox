@@ -1,12 +1,13 @@
 use crate::model::{Cpu, Model, ModelConfig, inputs, validate_inputs};
 use burn::{
-    module::AutodiffModule,
+    module::{AutodiffModule, Module},
     nn::loss::CrossEntropyLossConfig,
     optim::{AdamConfig, GradientsParams, Optimizer},
     tensor::{Tensor, TensorData, backend::Backend},
 };
 
 pub struct TrainingResult {
+    pub parameters: usize,
     pub weights: Vec<u8>,
     pub untrained: Vec<u8>,
     pub loss: Vec<f32>,
@@ -50,6 +51,7 @@ pub fn train(
         progress(epoch + 1, total / labels.len() as f32);
     }
     Ok(TrainingResult {
+        parameters: model.num_params(),
         weights: model.valid().save()?,
         untrained,
         loss: history,

@@ -71,11 +71,11 @@ export async function fitRecord(
       precision: "float32",
       weights: Buffer.from(weights).toString("base64"),
     });
-  const float = artifact(result.weights);
-  const parity = await verifyExport(result.weights, float, probes);
+  const model = artifact(result.weights);
+  const parity = await verifyExport(result.weights, model, probes);
   return {
-    float,
-    quantized: float,
+    model,
+    parameters: result.parameters,
     untrained: artifact(result.untrained),
     history: result.loss,
     parity,

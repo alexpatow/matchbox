@@ -1,6 +1,6 @@
 export { definePipeline } from "./pipeline/index.js";
 export type { Pipeline } from "./pipeline/index.js";
-export { wordTokens, tokenize } from "./encoders/index.js";
+export { tokenize } from "./encoders/index.js";
 export { fieldClassifier, tokenClassifier } from "./models/index.js";
 export type { OutputDecoder } from "./codecs/index.js";
 export { train } from "./train.js";

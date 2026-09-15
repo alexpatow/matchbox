@@ -78,7 +78,7 @@ export function ModelExample({ name, title, inputLabel, description, suggestions
         <p className="training-metrics">
           {report.parameters.toLocaleString()} parameters · {(report.bytes / 1024).toFixed(1)} KiB ·{" "}
           {report.examples.train.toLocaleString()} training examples ·{" "}
-          {(report.quantized.exactAccuracy * 100).toFixed(0)}% on {report.examples.eval} regression
+          {(report.evaluation.exactAccuracy * 100).toFixed(0)}% on {report.examples.eval} regression
           cases
         </p>
       )}

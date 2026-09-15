@@ -3,9 +3,8 @@
 The parser defines valid input and output. The pipeline defines how the model learns. Matchbox requires `pipeline.ts` or `pipeline/pipeline.ts` for conventional tasks; the scaffold writes it visibly.
 
 ```ts
-import { definePipeline, wordTokens, fieldClassifier } from "@matchbox-ai/train";
+import { definePipeline, fieldClassifier } from "@matchbox-ai/train";
 export default definePipeline({
-  input: wordTokens(),
   prediction: fieldClassifier(),
   acceptance: { minAccuracy: 0.95, maxBytes: 64000 },
 });

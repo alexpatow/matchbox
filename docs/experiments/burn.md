@@ -65,7 +65,7 @@ Validation passed 112 TypeScript tests, two Rust tests and 18 browser tests. Bro
 
 The sequence artifact format is version 3 and requires retraining version 2 TensorFlow sequence artifacts. The public parser API is unchanged.
 
-This experiment uses float32 records. The existing report's `quantized` field contains the same float32 model for interface compatibility; it does not represent quantization. Artifact sizes must not be presented as an equivalent int8 comparison.
+This experiment uses float32 records. Report format 2 exposes one `evaluation` for the trained artifact. It does not claim quantization. Artifact sizes must not be presented as an equivalent int8 comparison.
 
 The native addon needs a platform distribution strategy before release. Cross-platform reproducibility and native installation on other operating systems remain unverified. Deployment environments need Rust build tooling or prebuilt packages. The release workflow has not been converted for this experiment, and this branch must not be published.
 

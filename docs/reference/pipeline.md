@@ -1,33 +1,27 @@
 # Pipeline API
 
 ```ts
-import { definePipeline, wordTokens, fieldClassifier, tokenClassifier } from "@matchbox-ai/train";
+import { definePipeline, fieldClassifier, tokenClassifier } from "@matchbox-ai/train";
 ```
 
 ## definePipeline
 
 `definePipeline(pipeline: Pipeline): Pipeline` validates a declaration and returns it. Invalid declarations throw a Zod validation error. It does not train or load Burn.
 
-| Property                 | Type                                   | Required               | Behavior                                           |
-| ------------------------ | -------------------------------------- | ---------------------- | -------------------------------------------------- |
-| `input`                  | `{ kind: "words" }`                    | For field classifiers. | Chooses word features. Omit for token classifiers. |
-| `prediction`             | Field or token classifier declaration. | Yes.                   | Chooses one of the two implemented strategies.     |
-| `acceptance.minAccuracy` | Number from 0 to 1.                    | No.                    | Minimum validation exact accuracy for export.      |
-| `acceptance.maxBytes`    | Positive number.                       | No.                    | Maximum serialized model size in bytes.            |
+| Property                 | Type                                   | Required | Behavior                                       |
+| ------------------------ | -------------------------------------- | -------- | ---------------------------------------------- |
+| `prediction`             | Field or token classifier declaration. | Yes.     | Chooses one of the two implemented strategies. |
+| `acceptance.minAccuracy` | Number from 0 to 1.                    | No.      | Minimum validation exact accuracy for export.  |
+| `acceptance.maxBytes`    | Positive number.                       | No.      | Maximum serialized model size in bytes.        |
 
 Unknown properties are rejected. See [configuration](configuration.md) for resolved defaults and overrides.
 
-## wordTokens
-
-`wordTokens(): { kind: "words" }` declares the field classifier's literal word features. Features are fitted from training data only. Word order is discarded; unfamiliar vocabulary can cause uncertainty.
-
 ## fieldClassifier
 
-`fieldClassifier(): { kind: "field-classifier" }` declares independent categorical predictions over values observed in training outputs.
+`fieldClassifier(): { kind: "field-classifier" }` declares independent categorical predictions over values observed in training outputs. It uses literal word features fitted from training data only. Word order is discarded; unfamiliar vocabulary can cause uncertainty.
 
 ```ts
 export default definePipeline({
-  input: wordTokens(),
   prediction: fieldClassifier(),
   acceptance: { minAccuracy: 0.95 },
 });

@@ -5,7 +5,6 @@ import { z } from "zod";
 import { findEntry, resolveModule } from "./entry.js";
 import { pipelineSchema } from "../pipeline/index.js";
 export const configSchema = z.strictObject({
-  formatVersion: z.literal(1).default(1),
   task: z.string().default("./parser"),
   train: z.string().default("./data/train.jsonl"),
   validation: z.string().default("./evals/validation.jsonl"),

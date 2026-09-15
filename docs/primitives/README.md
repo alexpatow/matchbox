@@ -5,7 +5,6 @@ Import these from @matchbox-ai/train:
 | Primitive       | Contract                                                                                |
 | --------------- | --------------------------------------------------------------------------------------- |
 | definePipeline  | Validates an explicit pipeline declaration and acceptance thresholds.                   |
-| wordTokens      | Selects literal word features for field classification.                                 |
 | fieldClassifier | Selects independent categorical output heads over training values.                      |
 | tokenClassifier | Selects the sequence trainer with conventionally discovered recipe and decoder modules. |
 | tokenize        | Shares the portable tokenizer with annotation generators.                               |

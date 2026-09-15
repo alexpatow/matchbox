@@ -2,7 +2,7 @@ import type { Operation, Metrics } from "./index";
 export function OperationReport({ report }: { report: Operation }) {
   let metrics: Metrics | null | undefined = null;
   if (report.command === "train") {
-    metrics = report.result.quantized;
+    metrics = report.result.evaluation;
   } else if (report.command === "eval") {
     metrics = report.result as Metrics;
   }

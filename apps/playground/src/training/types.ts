@@ -3,7 +3,7 @@ export interface TrainingReport {
   parameters: number;
   bytes: number;
   examples: { train: number; eval: number };
-  quantized: { exactAccuracy: number };
+  evaluation: { exactAccuracy: number };
   untrainedUngated: { exactAccuracy: number };
   loss: number[];
 }

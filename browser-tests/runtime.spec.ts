@@ -33,7 +33,7 @@ test("Burn models run in the browser and remain available offline", async ({ pag
   expect(result.results).toHaveLength(rows.length);
   // Browser execution must match exported-model evaluation, including honest abstentions.
   result.results.forEach((prediction, i) => {
-    const failure = report.quantized.failures.find(
+    const failure = report.evaluation.failures.find(
       (row: { input: string }) => row.input === rows[i].input,
     );
     expect(prediction.value).toEqual(failure ? failure.actual : rows[i].output);

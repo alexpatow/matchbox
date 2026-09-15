@@ -1,5 +1,6 @@
 import { createRequire } from "node:module";
 interface NativeResult {
+  parameters: number;
   weights: Uint8Array;
   untrained: Uint8Array;
   loss: number[];

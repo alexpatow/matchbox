@@ -91,11 +91,13 @@ test("a scaffold trains, discovers nested projects, saves corrections, and evalu
     expect(trained.code).toBe(0);
     const trainingReport = JSON.parse(trained.stdout);
     expect(trainingReport).not.toHaveProperty("baseline");
-    expect(trainingReport.quantized.examples).toBe(evaluation.trim().split("\n").length);
-    expect(trainingReport.quantized.invalidOutputRate).toBe(0);
-    expect(trainingReport.quantized.exactAccuracy).toBeGreaterThanOrEqual(0.9);
-    expect(trainingReport.quantized.failures.length).toBe(
-      Math.round(trainingReport.quantized.examples * (1 - trainingReport.quantized.exactAccuracy)),
+    expect(trainingReport.evaluation.examples).toBe(evaluation.trim().split("\n").length);
+    expect(trainingReport.evaluation.invalidOutputRate).toBe(0);
+    expect(trainingReport.evaluation.exactAccuracy).toBeGreaterThanOrEqual(0.9);
+    expect(trainingReport.evaluation.failures.length).toBe(
+      Math.round(
+        trainingReport.evaluation.examples * (1 - trainingReport.evaluation.exactAccuracy),
+      ),
     );
     const prediction = await cli(["parse", "around fifteen grand euros", "--json"], project);
     expect(JSON.parse(prediction.stdout).value.amount).toBe(15000);
@@ -153,7 +155,7 @@ test("a scaffold trains, discovers nested projects, saves corrections, and evalu
     expect(wrapper).not.toContain("@matchbox-ai/train");
     const evaluated = await cli(["eval", "money", "--json"], project);
     expect(evaluated.code).toBe(0);
-    expect(JSON.parse(evaluated.stdout)).toEqual(trainingReport.quantized);
+    expect(JSON.parse(evaluated.stdout)).toEqual(trainingReport.evaluation);
     await writeFile(
       resolve(project, "matchbox/money/matchbox.config.ts"),
       'export default { output: "./missing.matchbox" };',

@@ -7,7 +7,7 @@ interface Native {
     inputs: Float32Array,
     labels: Int32Array,
     progress: (error: Error | null, values: number[]) => void,
-  ): Promise<{ weights: Uint8Array; untrained: Uint8Array; loss: number[] }>;
+  ): Promise<{ parameters: number; weights: Uint8Array; untrained: Uint8Array; loss: number[] }>;
   predictRecord(config: string, weights: Buffer, inputs: Float32Array): number[];
 }
 export function fitNativeRecord(

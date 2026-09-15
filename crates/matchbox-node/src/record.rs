@@ -34,6 +34,7 @@ impl Task for RecordTask {
     }
     fn resolve(&mut self, _env: Env, value: Self::Output) -> Result<Self::JsValue> {
         Ok(FitResult {
+            parameters: value.parameters as u32,
             weights: value.weights.into(),
             untrained: value.untrained.into(),
             loss: value.loss.into_iter().map(f64::from).collect(),

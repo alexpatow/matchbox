@@ -33,7 +33,7 @@ jobs:
             ~/.cargo/git
             target
           key: burn-${{ runner.os }}-${{ hashFiles('Cargo.lock', 'rust-toolchain.toml') }}
-      - run: cargo install wasm-bindgen-cli --version 0.2.108 --locked
+      - run: bun run setup:rust
       - run: bun run check
       - run: bunx playwright install --with-deps chromium
       - run: bun run test:browser

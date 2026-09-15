@@ -8,7 +8,7 @@ The runtime loads lazily on the first parse. A parser retains its loaded model a
 
 Direct creation is available through @matchbox-ai/core/runtime. Imports are SSR-safe; browser loading uses a separate WASM asset. Node inference reads that asset from the installed package. Training dependencies stay out of browser entry points.
 
-Artifact format 3 contains a base64-encoded Burn record. Regenerate earlier artifacts with matchbox-ai train. The legacy quantized report field currently evaluates the same float32 artifact; this branch does not implement quantization.
+Artifact format 3 contains a base64-encoded Burn record. Regenerate earlier artifacts with matchbox-ai train. The report evaluates the trained artifact once under `evaluation`. This branch does not implement quantization.
 
 The native addon currently packages only the build host's platform. This experiment must not be published until native distribution is implemented. Repository contributors should follow [the experiment setup](experiments/burn.md).
 

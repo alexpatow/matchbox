@@ -22,10 +22,6 @@ impl ModelConfig {
         }
         Ok(())
     }
-
-    pub fn parameters(&self) -> usize {
-        self.vocabulary_size * 8 + 24 * 16 + 16 + 16 * self.label_count + self.label_count
-    }
 }
 
 #[derive(Module, Debug)]

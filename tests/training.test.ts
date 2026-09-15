@@ -10,7 +10,6 @@ test("packaging is deterministic, held-out labels do not select the model, and f
   const configPath = resolve(temporary, "matchbox.config.ts");
   const evaluationPath = resolve(temporary, "evals.jsonl");
   const config = {
-    formatVersion: 1,
     sequence: {
       recipe: resolve(root, "recipe.ts"),
       decoder: resolve(root, "decode/decode.ts"),
@@ -60,7 +59,7 @@ test("packaging is deterministic, held-out labels do not select the model, and f
     expect((await train()).code).toBe(0);
     expect(await readFile(output, "utf8")).toBe(original);
     const report = JSON.parse(await readFile(resolve(temporary, "report.json"), "utf8"));
-    expect(report.quantized.exactAccuracy).toBeLessThan(1);
+    expect(report.evaluation.exactAccuracy).toBeLessThan(1);
     await writeFile(configPath, `export default ${JSON.stringify({ ...config, maxBytes: 1 })};`);
     const failed = await train();
     expect(failed.code).toBe(1);

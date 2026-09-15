@@ -39,9 +39,9 @@ export async function fitSequence(
     precision: "float32",
     weights: Buffer.from(weights).toString("base64"),
   });
-  const float = artifact(result.weights);
+  const model = artifact(result.weights);
   const checked = [...examples.slice(0, 16).map((row) => row.input), ...probes];
-  const portable = await tensorPredictor(float);
+  const portable = await tensorPredictor(model);
   let maxConfidenceError = 0;
   let labelDisagreements = 0;
   try {
@@ -73,8 +73,8 @@ export async function fitSequence(
   // This experiment uses Burn's full-precision recorder; no quantization is claimed.
   return {
     untrained: artifact(result.untrained),
-    float,
-    quantized: float,
+    model,
+    parameters: result.parameters,
     history: result.loss,
     parity: { examples: checked.length, maxConfidenceError, labelDisagreements },
     supervisedTokens: inputs.length,

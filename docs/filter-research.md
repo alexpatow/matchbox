@@ -1,6 +1,6 @@
 # Historical filter proof findings
 
-This is a historical report for the retired linear prototype. See [the current example audit](example-evaluation.md) for TensorFlow results and current limitations.
+This is a historical report for the retired linear prototype. See [the current example audit](example-evaluation.md) for current Burn results and limitations.
 
 This document records BOO-46 before the TensorFlow migration. BOO-47 removes these handwritten trainers and routes filters through the shared neural training path. Current results and limitations are in the [neural training guide](neural-training.md).
 
