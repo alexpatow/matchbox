@@ -94,12 +94,12 @@ jobs:
           bun-version: 1.4.2
       - run: bun install --frozen-lockfile
       - run: bun run setup:rust
+      - run: bun run check
       - uses: actions/download-artifact@v4
         with:
           pattern: native-*
           path: packages/train/prebuilds
           merge-multiple: true
-      - run: bun run check
       - run: node scripts/verify-prebuilds.ts
       - run: bunx playwright install --with-deps chromium
       - run: bun run test:browser
