@@ -6,9 +6,11 @@ export default defineConfig([
       "runtime/index": "src/runtime/index.ts",
       "react/index": "src/react/index.ts",
       "internal/index": "src/internal/index.ts",
+      "load-browser": "src/runtime/burn/load-browser.ts",
+      "load-node": "src/runtime/burn/load-node.ts",
     },
     platform: "browser",
-    external: [/^zod(?:\/|$)/, /^@tensorflow\//, /^react(?:\/|$)/],
+    external: ["#wasm", "node:fs/promises", /^zod(?:\/|$)/, /^@tensorflow\//, /^react(?:\/|$)/],
     output: { dir: "dist", format: "esm", sourcemap: true },
   },
   {

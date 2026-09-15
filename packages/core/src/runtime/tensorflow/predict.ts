@@ -3,8 +3,6 @@ import { loadLayersModel } from "@tensorflow/tfjs-layers";
 import "@tensorflow/tfjs-backend-cpu";
 import { recordFeatures } from "../../internal/record/index.js";
 import type { RecordArtifact } from "../../internal/record/index.js";
-import { tokenize, windows } from "../../internal/sequence/index.js";
-import type { SequenceArtifact } from "../../internal/sequence/index.js";
 
 export async function prepareCpu() {
   if (tf.getBackend() !== "cpu") {
@@ -12,7 +10,7 @@ export async function prepareCpu() {
   }
   await tf.ready();
 }
-export async function tensorPredictor(artifact: RecordArtifact | SequenceArtifact) {
+export async function tensorPredictor(artifact: RecordArtifact) {
   await prepareCpu();
   const values = Float32Array.from(
     artifact.weights.flatMap((weight) => weight.values.map((value) => value * weight.scale)),
@@ -59,30 +57,8 @@ export async function tensorPredictor(artifact: RecordArtifact | SequenceArtifac
       confidence: Math.min(...fields.map((field) => field.confidence)),
     };
   };
-  const sequence = (input: string) => {
-    check();
-    const sequenceArtifact = artifact as SequenceArtifact;
-    const tokens = tokenize(input, sequenceArtifact.tokenizer);
-    if (!tokens.length) {
-      return [];
-    }
-    return tf.tidy(() => {
-      const ids = tf.tensor2d(
-        windows(tokens, artifact.vocabulary, sequenceArtifact.radius),
-        undefined,
-        "int32",
-      );
-      const probabilities = (model.predict(ids) as tf.Tensor).arraySync() as number[][];
-      return tokens.map((token, index) => {
-        const scores = probabilities[index]!;
-        const confidence = Math.max(...scores);
-        return {
-          ...token,
-          label: sequenceArtifact.labels[scores.indexOf(confidence)]!,
-          confidence,
-        };
-      });
-    });
+  const sequence = (_input: string): never => {
+    throw new Error("A record model cannot predict sequence labels.");
   };
   return { record, sequence, dispose: () => model.dispose() };
 }

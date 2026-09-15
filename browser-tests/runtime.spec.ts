@@ -15,12 +15,13 @@ declare global {
 import { expect, test } from "@playwright/test";
 import { readFile, writeFile } from "node:fs/promises";
 
-test("TensorFlow models run in the browser and remain available offline", async ({
-  page,
-}, info) => {
+test("Burn models run in the browser and remain available offline", async ({ page }, info) => {
+  const wasmResponse = page.waitForResponse((response) => response.url().endsWith(".wasm"));
   await page.goto("http://127.0.0.1:4174");
   await page.waitForFunction(() => typeof window.benchmarkRuntime === "function");
   const result = await page.evaluate(() => window.benchmarkRuntime());
+  expect((await wasmResponse).ok()).toBe(true);
+  expect(result.runtime).toBe("burn-wasm-cpu");
   expect(result.results.length).toBeGreaterThan(0);
   const root = new URL("../examples/money/", import.meta.url);
   const report = JSON.parse(await readFile(new URL(".matchbox/money/report.json", root), "utf8"));
@@ -41,7 +42,7 @@ test("TensorFlow models run in the browser and remain available offline", async 
   const offline = await page.evaluate(() => window.benchmarkRuntime());
   expect(offline.results).toEqual(result.results);
   await writeFile(
-    info.outputPath("tensorflow-runtime.json"),
+    info.outputPath("burn-runtime.json"),
     JSON.stringify({ project: info.project.name, ...result }, null, 2),
   );
 });

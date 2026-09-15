@@ -26,7 +26,7 @@ async function benchmark() {
     }
     timings.sort((a, b) => a - b);
     return {
-      runtime: "tensorflow-cpu",
+      runtime: "burn-wasm-cpu",
       coldFirstParseMs,
       samples: timings.length,
       p50Ms: timings[149],

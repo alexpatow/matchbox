@@ -47,9 +47,9 @@ export function ModelFootprint() {
       </dl>
       <p className="footprint-note">
         Sizes come from this build’s training reports. Each uncompressed <code>.matchbox</code>{" "}
-        artifact includes weights, model structure and vocabulary. TensorFlow.js, Matchbox runtime
-        and application decoders add to the download. These figures are neither total page size nor
-        in-memory usage. 1 KiB = 1,024 bytes.
+        artifact includes weights, model structure and vocabulary. Burn WebAssembly, Matchbox
+        runtime and application decoders add to the download. These figures are neither total page
+        size nor in-memory usage. 1 KiB = 1,024 bytes.
       </p>
       <p className="footprint-note">
         Small models still make mistakes.{" "}

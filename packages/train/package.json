@@ -31,7 +31,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "bun ../../scripts/package-docs.ts train && rolldown --config && tsc -p tsconfig.build.json",
+    "build": "bun ../../scripts/package-docs.ts train && rolldown --config && tsc -p tsconfig.build.json && bun ../../scripts/copy-rust.ts train",
     "dev": "bun run --parallel \"dev:*\"",
     "typecheck": "tsc --noEmit && tsc -p tsconfig.tools.json",
     "dev:js": "rolldown --config --watch",

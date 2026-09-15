@@ -27,7 +27,8 @@ export function BrowserLlm() {
           <h3>Matchbox learns one job from your data.</h3>
           <p>
             Train for a known input and output contract, then ship the model with your app. The
-            current examples execute on TensorFlow.js CPU, with no prompt or text generation loop.
+            current examples execute on Burn through WebAssembly on CPU, with no prompt or text
+            generation loop.
           </p>
           <p>
             You own the examples, evals and output transformations. Coverage is limited by what you

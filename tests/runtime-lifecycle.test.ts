@@ -10,7 +10,7 @@ import { tensorPredictor } from "../packages/core/src/runtime/tensorflow/index.j
 import * as tf from "@tensorflow/tfjs-core";
 
 for (const kind of ["money-simple", "money-pipeline"] as const) {
-  test(`TensorFlow model execution returns correct accepted outputs on ${kind} regression examples and releases tensors`, async () => {
+  test(`Model execution returns correct accepted outputs on ${kind} regression examples and handles disposal`, async () => {
     const previous = tf.getBackend();
     const artifact = JSON.parse(
       await readFile(

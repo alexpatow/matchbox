@@ -6,7 +6,7 @@ import { createRecordParser } from "../internal/record/index.js";
 import { createSequenceParser } from "../internal/sequence/index.js";
 import type { SequenceDecoder } from "../internal/sequence/index.js";
 
-/** TensorFlow loads on first parse or explicit load. Call dispose when the parser is no longer needed. */
+/** The model runtime loads on first parse or explicit load. Call dispose when the parser is no longer needed. */
 export function createParser<Output extends z.ZodType>(
   value: unknown,
   task: ParserDefinition<Output>,
@@ -23,7 +23,7 @@ export function createParser<Output extends z.ZodType>(
   let release: (() => void) | undefined;
   let loading: Promise<MatchboxParser<z.output<Output>>> | undefined;
   const initialize = async () => {
-    const { tensorPredictor } = await import("./tensorflow/index.js");
+    const { tensorPredictor } = await import("../internal/tensor-predictor.js");
     if (disposed) {
       throw new Error("The parser has been disposed.");
     }
@@ -57,8 +57,10 @@ export function createParser<Output extends z.ZodType>(
     },
     async parse(input) {
       const parser = await load();
-      const { prepareCpu } = await import("./tensorflow/index.js");
-      await prepareCpu();
+      if (model.kind === "record-parser") {
+        const { prepareCpu } = await import("./tensorflow/index.js");
+        await prepareCpu();
+      }
       if (disposed) {
         throw new Error("The parser has been disposed.");
       }

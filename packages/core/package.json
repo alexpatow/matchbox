@@ -18,6 +18,13 @@
   ],
   "type": "module",
   "sideEffects": false,
+  "imports": {
+    "#wasm": {
+      "types": "./dist/runtime/burn/load-browser.d.ts",
+      "node": "./dist/load-node.js",
+      "default": "./dist/load-browser.js"
+    }
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -44,7 +51,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "bun ../../scripts/package-docs.ts core && rolldown --config && tsc -p tsconfig.build.json",
+    "build": "bun ../../scripts/package-docs.ts core && rolldown --config && tsc -p tsconfig.build.json && bun ../../scripts/copy-rust.ts core",
     "dev": "bun run --parallel \"dev:*\"",
     "typecheck": "tsc --noEmit && tsc -p tsconfig.tools.json",
     "dev:js": "rolldown --config --watch",

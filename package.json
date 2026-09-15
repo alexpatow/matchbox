@@ -19,13 +19,13 @@
     "typecheck": "bun run train && tsc --noEmit && bun run --filter \"*\" typecheck",
     "test": "bun run train && bun test ./tests",
     "test:browser": "playwright test",
-    "check": "bun run lint && bun run format:check && bun run train && bun run check:prepared",
+    "check": "bun run check:rust && bun run lint && bun run format:check && bun run train && bun run check:prepared",
     "preview": "bun run --filter @matchbox-ai/playground preview",
     "matchbox": "bun packages/cli/src/main.ts",
     "train": "bun run build:packages && bun run train:filters && bun run train:neural",
     "eval": "bun run matchbox eval examples/filters",
     "research": "bun run train && bun examples/filters/scripts/challenges.ts",
-    "build:packages": "bun run build:core && bun run --filter @matchbox-ai/train build && bun run --filter matchbox-ai build",
+    "build:packages": "bun run build:rust && bun run build:core && bun run --filter @matchbox-ai/train build && bun run --filter matchbox-ai build",
     "train:filters": "bun run matchbox train examples/filters",
     "train:neural": "bun run matchbox train examples/is-even && bun run matchbox train examples/money && bun run matchbox train examples/time && bun run matchbox train tests/fixtures/field-classifier",
     "check:prepared": "tsc --noEmit && bun run --filter \"*\" typecheck && bun test ./tests && bun run build:apps",
@@ -34,7 +34,9 @@
     "version-packages": "changeset version && bun install --lockfile-only && bun run format",
     "release:pack": "changeset pack --out-dir .changeset/publish",
     "release": "changeset publish",
-    "eval:examples": "bun scripts/evaluate-examples.ts"
+    "eval:examples": "bun scripts/evaluate-examples.ts",
+    "build:rust": "bun scripts/build-rust.ts",
+    "check:rust": "cargo fmt --all --check && cargo clippy --workspace --all-targets -- -D warnings && cargo test -p matchbox-engine --features training"
   },
   "devDependencies": {
     "@changesets/cli": "3.0.2",

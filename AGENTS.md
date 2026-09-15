@@ -1,5 +1,9 @@
 # Matchbox
 
+## Burn experiment
+
+On `codex/burn-experiment`, the user has authorized replacing sequence-model internals with Burn while preserving the TypeScript interface. This experiment supersedes the TensorFlow-specific requirements below for sequence models. The record classifier remains unported. Rust code lives in the root Cargo workspace under `crates/`: the shared engine, thin Node bindings, and thin WASM bindings. Burn owns tensors, gradients, optimization and serialization. Keep TypeScript-authored supervision, decoders and Zod validation in TypeScript. Do not add a public backend selector. Run Rust formatting, Clippy and tests in addition to the Bun and browser checks. Generated native binaries, WASM and weights stay out of Git. Do not publish the experiment.
+
 ## Scope
 
 Build the smallest credible examples-to-browser proof. The README describes the thesis; Linear tracks the tickets. Keep changes within the active ticket. Do not ship fake inference or fabricated benchmark results.

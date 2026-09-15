@@ -2,13 +2,13 @@ import type { z } from "zod";
 import type { ParserDefinition } from "../../parser/index.js";
 import type { MatchboxParser } from "../../runtime/types.js";
 import { readSequenceArtifact } from "./artifact.js";
-import type { tensorPredictor } from "../../runtime/tensorflow/index.js";
+import type { TaggedToken } from "./types.js";
 import type { SequenceDecoder } from "./types.js";
 export function createSequenceParser<Output extends z.ZodType>(
   artifact: unknown,
   task: ParserDefinition<Output>,
   decode: SequenceDecoder,
-  predictor: Awaited<ReturnType<typeof tensorPredictor>>["sequence"],
+  predictor: (input: string) => TaggedToken[],
 ): MatchboxParser<z.output<Output>> {
   const model = readSequenceArtifact(artifact);
   if (JSON.stringify(model.taskMetadata) !== JSON.stringify(task.toJSON())) {

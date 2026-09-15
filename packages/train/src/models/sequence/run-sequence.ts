@@ -109,11 +109,11 @@ export async function runSequence(
   const report = {
     formatVersion: 1,
     architecture: fit.quantized.architecture,
-    backend: "TensorFlow native CPU",
+    backend: "Burn native CPU (experimental)",
     seed: 42,
     artifactSha256: hash(JSON.stringify(fit.quantized)),
     bytes,
-    parameters: fit.quantized.weights.reduce((sum, weight) => sum + weight.values.length, 0),
+    parameters: (fit.float.vocabulary.length + 2) * 8 + 24 * 16 + 16 + 17 * fit.float.labels.length,
     datasetSha256: project.sources.map((source) => ({
       source: source.source,
       sha256: hash(source.text),
@@ -152,7 +152,7 @@ export async function runSequence(
     challenges: challenges ? await evaluateSequence(parser(fit.quantized), challenges) : null,
     trainingMs: performance.now() - started,
     notes:
-      "Validation gates export. Eval labels do not influence selection. Scores are uncalibrated. Unknown-token handling follows the explicit training recipe. JSON int8 arrays are portable but not a packed binary format.",
+      "Experimental Burn engine. Float32 weights in a Burn binary record, base64-encoded in the artifact. The quantized report field is retained for interface compatibility and uses the same float32 model; no quantization is applied. Validation gates export. Eval labels do not influence selection. Scores are uncalibrated.",
   };
   await packageModel(project.output, fit.quantized, report);
   return { report, output: project.output };
