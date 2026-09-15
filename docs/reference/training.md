@@ -24,3 +24,5 @@ Report format 2 contains `architecture`, `backend`, `seed`, `bytes`, `parameters
 `TrainingConfig` is the optional task configuration type. See [every field and default](configuration.md).
 
 Use [evaluate](evaluation.md) to score an existing parser without training it.
+
+For sequence models, `exportParity` records the checked token count, maximum absolute confidence difference, a `0.0001` numerical tolerance, label disagreements and acceptance disagreements. Export fails on any label disagreement, any crossing of the model acceptance threshold, or confidence drift above that tolerance. This tolerance does not lower model confidence requirements.
