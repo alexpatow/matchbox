@@ -1,0 +1,84 @@
+name: Packed native packages
+on:
+  workflow_call:
+permissions:
+  contents: read
+jobs:
+  assemble:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    outputs:
+      matrix: ${{ steps.targets.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          package-manager-cache: false
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.2
+      - run: bun install --frozen-lockfile
+      - run: bun run setup:rust
+      - run: bun run build:packages
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: native-*
+          path: packages/train/prebuilds
+          merge-multiple: true
+      - run: node scripts/verify-prebuilds.ts
+      - name: Pack release contents without publishing
+        run: |
+          mkdir -p archives
+          npm pack ./packages/core ./packages/train ./packages/cli --ignore-scripts --pack-destination archives
+      - id: targets
+        run: echo "matrix=$(jq -c '{include:.}' scripts/native-targets.json)" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: packed-packages
+          path: archives/*.tgz
+          if-no-files-found: error
+  install:
+    needs: assemble
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.assemble.outputs.matrix) }}
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 15
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          package-manager-cache: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: packed-packages
+          path: archives
+      - name: Install with lifecycle scripts disabled
+        if: ${{ !endsWith(matrix.id, 'musl') }}
+        run: |
+          node scripts/prepare-consumer.mjs
+          cd .packed-smoke
+          npm install --ignore-scripts --no-audit --no-fund ../archives/*.tgz
+      - name: Verify all binaries are included
+        if: ${{ !endsWith(matrix.id, 'musl') }}
+        run: node scripts/verify-prebuilds.ts .packed-smoke/node_modules/@matchbox-ai/train
+      - name: Train and infer from the installed package
+        if: ${{ !endsWith(matrix.id, 'musl') }}
+        run: node scripts/smoke-package.mjs
+      - uses: oven-sh/setup-bun@v2
+        if: ${{ !endsWith(matrix.id, 'musl') && matrix.id != 'win32-arm64' }}
+        with:
+          bun-version: 1.4.2
+      - name: Verify Bun consumption
+        if: ${{ !endsWith(matrix.id, 'musl') && matrix.id != 'win32-arm64' }}
+        run: bun scripts/smoke-package.mjs
+      - name: Install and train in Alpine
+        if: endsWith(matrix.id, 'musl')
+        run: >-
+          docker run --rm -v "$PWD:/work" -w /work node:24-alpine sh -c
+          'node scripts/prepare-consumer.mjs && cd .packed-smoke && npm install --ignore-scripts --no-audit --no-fund ../archives/*.tgz && cd .. && node scripts/verify-prebuilds.ts .packed-smoke/node_modules/@matchbox-ai/train && node scripts/smoke-package.mjs'

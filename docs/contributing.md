@@ -21,7 +21,7 @@ scripts/
 
 TypeScript continues to own task schemas, tokenization, authored supervision, decoding and validation. Burn owns the embedding network, autodiff, Adam, model records and execution. The adapters share the same model implementation. They do not implement a separate inference engine.
 
-A contributor compiles the native addon and WASM runtime once. Training produces model data, without compiling Rust for each task. Consumer distribution will require prebuilt native binaries for supported platforms; this branch only packages the build host's binary.
+A contributor compiles the native addon and WASM runtime once. Training produces model data, without compiling Rust for each task. Published packages bundle native binaries for the supported platforms.
 
 ## Local development
 
@@ -36,8 +36,8 @@ MATCHBOX_PREBUILT=1 bun run test:browser
 bun run eval:examples
 ```
 
-`bun run setup:rust` is a one-time contributor setup for the pinned wasm-bindgen CLI. Subsequent `bun run dev`, builds and checks locate the installed tools automatically. Consumers will use prebuilt packages once native distribution is implemented.
+`bun run setup:rust` is a one-time contributor setup for the pinned wasm-bindgen CLI. Subsequent `bun run dev`, builds and checks locate the installed tools automatically. Package consumers use bundled prebuilds and do not need Rust.
 
 Generated native binaries, WASM output, Cargo build output and model artifacts are ignored by Git. `Cargo.lock` pins Rust dependencies. `bun run check` includes Rust formatting, Clippy and engine tests.
 
-Native binaries currently target the build host. Do not publish until platform distribution is implemented.
+See [native package distribution](native-packages.md) for platform coverage and release verification.

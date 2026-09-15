@@ -13,6 +13,11 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  native:
+    uses: ./.github/workflows/native.yml
+  packed:
+    needs: native
+    uses: ./.github/workflows/packed-native.yml
   check:
     runs-on: ubuntu-latest
     timeout-minutes: 20
