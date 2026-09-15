@@ -1,0 +1,12 @@
+{"input":"list active accounts","output":{"field":"status","operator":"eq","value":"active"}}
+{"input":"can you show German customers","output":{"field":"country","operator":"eq","value":"DE"}}
+{"input":"all customers based in France","output":{"field":"country","operator":"eq","value":"FR"}}
+{"input":"please exclude inactive companies","output":{"field":"status","operator":"neq","value":"inactive"}}
+{"input":"find Swedish accounts below 37k ARR","output":{"and":[{"field":"country","operator":"eq","value":"SE"},{"field":"arr","operator":"lt","value":37000}]}}
+{"input":"show active customers over 83k","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":83000}]}}
+{"input":"list customers with ARR above 46k","output":{"field":"arr","operator":"gt","value":46000}}
+{"input":"all Norwegian accounts","output":{"field":"country","operator":"eq","value":"NO"}}
+{"input":"sort customers by ARR","output":null}
+{"input":"customers with an unknown custom attribute","output":null}
+{"input":"please delete inactive customers","output":null}
+{"input":"ARR over bananas","output":null}

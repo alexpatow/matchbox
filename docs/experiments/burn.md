@@ -42,6 +42,8 @@ Generated native binaries, WASM output, Cargo build output and model artifacts a
 
 ## Measurements
 
+The following table records the initial sequence migration. See [the subsequent language experiment](language.md) for current accuracy comparisons. The shared runtime after adding record inference is 689,531 bytes, or 183,093 bytes with gzip, excluding JavaScript glue.
+
 These are local measurements from the experiment, not production guarantees. Model bytes include JSON metadata, vocabulary and a base64-encoded float32 Burn record. The shared runtime is additional.
 
 | Example | Parameters | Artifact bytes | Regression exact match | Frozen audit exact match |

@@ -6053,3 +6053,1286 @@
 {"input":"exclude active customers?","output":{"field":"status","operator":"neq","value":"active"}}
 {"input":"German or Swedish customers under 40k except churned accounts","output":{"or":[{"and":[{"field":"country","operator":"eq","value":"DE"},{"field":"status","operator":"neq","value":"churned"},{"field":"arr","operator":"lt","value":40000}]},{"and":[{"field":"country","operator":"eq","value":"SE"},{"field":"status","operator":"neq","value":"churned"},{"field":"arr","operator":"lt","value":40000}]}]}}
 {"input":"Swedish customers excluding churned ones","output":{"and":[{"field":"status","operator":"neq","value":"churned"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"churned Swedish customers over 40k ARR please","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"SE"},{"field":"arr","operator":"gt","value":40000}]}}
+{"input":"churned Swedish customers over 40k ARR?","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"SE"},{"field":"arr","operator":"gt","value":40000}]}}
+{"input":"active French customers over 20k ARR please","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"FR"},{"field":"arr","operator":"gt","value":20000}]}}
+{"input":"active French customers over 20k ARR?","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"FR"},{"field":"arr","operator":"gt","value":20000}]}}
+{"input":"active Norwegian customers over 80k ARR please","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"NO"},{"field":"arr","operator":"gt","value":80000}]}}
+{"input":"active Norwegian customers over 80k ARR?","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"NO"},{"field":"arr","operator":"gt","value":80000}]}}
+{"input":"exclude inactive customers please","output":{"field":"status","operator":"neq","value":"inactive"}}
+{"input":"exclude inactive customers?","output":{"field":"status","operator":"neq","value":"inactive"}}
+{"input":"please list active","output":{"field":"status","operator":"eq","value":"active"}}
+{"input":"show all active","output":{"field":"status","operator":"eq","value":"active"}}
+{"input":"can you find active","output":{"field":"status","operator":"eq","value":"active"}}
+{"input":"give me active","output":{"field":"status","operator":"eq","value":"active"}}
+{"input":"could you list active","output":{"field":"status","operator":"eq","value":"active"}}
+{"input":"please list find inactive companies","output":{"field":"status","operator":"eq","value":"inactive"}}
+{"input":"show all find inactive companies","output":{"field":"status","operator":"eq","value":"inactive"}}
+{"input":"can you find find inactive companies","output":{"field":"status","operator":"eq","value":"inactive"}}
+{"input":"give me find inactive companies","output":{"field":"status","operator":"eq","value":"inactive"}}
+{"input":"could you list find inactive companies","output":{"field":"status","operator":"eq","value":"inactive"}}
+{"input":"please list accounts except churned","output":{"field":"status","operator":"neq","value":"churned"}}
+{"input":"show all accounts except churned","output":{"field":"status","operator":"neq","value":"churned"}}
+{"input":"can you find accounts except churned","output":{"field":"status","operator":"neq","value":"churned"}}
+{"input":"give me accounts except churned","output":{"field":"status","operator":"neq","value":"churned"}}
+{"input":"could you list accounts except churned","output":{"field":"status","operator":"neq","value":"churned"}}
+{"input":"please list German companies","output":{"field":"country","operator":"eq","value":"DE"}}
+{"input":"show all German companies","output":{"field":"country","operator":"eq","value":"DE"}}
+{"input":"can you find German companies","output":{"field":"country","operator":"eq","value":"DE"}}
+{"input":"give me German companies","output":{"field":"country","operator":"eq","value":"DE"}}
+{"input":"could you list German companies","output":{"field":"country","operator":"eq","value":"DE"}}
+{"input":"please list America customers","output":{"field":"country","operator":"eq","value":"US"}}
+{"input":"show all America customers","output":{"field":"country","operator":"eq","value":"US"}}
+{"input":"can you find America customers","output":{"field":"country","operator":"eq","value":"US"}}
+{"input":"give me America customers","output":{"field":"country","operator":"eq","value":"US"}}
+{"input":"could you list America customers","output":{"field":"country","operator":"eq","value":"US"}}
+{"input":"please list annual recurring revenue greater than 20000","output":{"field":"arr","operator":"gt","value":20000}}
+{"input":"show all annual recurring revenue greater than 20000","output":{"field":"arr","operator":"gt","value":20000}}
+{"input":"can you find annual recurring revenue greater than 20000","output":{"field":"arr","operator":"gt","value":20000}}
+{"input":"give me annual recurring revenue greater than 20000","output":{"field":"arr","operator":"gt","value":20000}}
+{"input":"could you list annual recurring revenue greater than 20000","output":{"field":"arr","operator":"gt","value":20000}}
+{"input":"please list customers with ARR >= 100k","output":{"field":"arr","operator":"gte","value":100000}}
+{"input":"show all customers with ARR >= 100k","output":{"field":"arr","operator":"gte","value":100000}}
+{"input":"can you find customers with ARR >= 100k","output":{"field":"arr","operator":"gte","value":100000}}
+{"input":"give me customers with ARR >= 100k","output":{"field":"arr","operator":"gte","value":100000}}
+{"input":"could you list customers with ARR >= 100k","output":{"field":"arr","operator":"gte","value":100000}}
+{"input":"please list ARR less than or equal to 50k","output":{"field":"arr","operator":"lte","value":50000}}
+{"input":"show all ARR less than or equal to 50k","output":{"field":"arr","operator":"lte","value":50000}}
+{"input":"can you find ARR less than or equal to 50k","output":{"field":"arr","operator":"lte","value":50000}}
+{"input":"give me ARR less than or equal to 50k","output":{"field":"arr","operator":"lte","value":50000}}
+{"input":"could you list ARR less than or equal to 50k","output":{"field":"arr","operator":"lte","value":50000}}
+{"input":"please list customers with ARR over €1.25m","output":{"field":"arr","operator":"gt","value":1250000}}
+{"input":"show all customers with ARR over €1.25m","output":{"field":"arr","operator":"gt","value":1250000}}
+{"input":"can you find customers with ARR over €1.25m","output":{"field":"arr","operator":"gt","value":1250000}}
+{"input":"give me customers with ARR over €1.25m","output":{"field":"arr","operator":"gt","value":1250000}}
+{"input":"could you list customers with ARR over €1.25m","output":{"field":"arr","operator":"gt","value":1250000}}
+{"input":"please list customers with ARR more than $2,500","output":{"field":"arr","operator":"gt","value":2500}}
+{"input":"show all customers with ARR more than $2,500","output":{"field":"arr","operator":"gt","value":2500}}
+{"input":"can you find customers with ARR more than $2,500","output":{"field":"arr","operator":"gt","value":2500}}
+{"input":"give me customers with ARR more than $2,500","output":{"field":"arr","operator":"gt","value":2500}}
+{"input":"could you list customers with ARR more than $2,500","output":{"field":"arr","operator":"gt","value":2500}}
+{"input":"please list ARR greater than or equal to €1.25m","output":{"field":"arr","operator":"gte","value":1250000}}
+{"input":"show all ARR greater than or equal to €1.25m","output":{"field":"arr","operator":"gte","value":1250000}}
+{"input":"can you find ARR greater than or equal to €1.25m","output":{"field":"arr","operator":"gte","value":1250000}}
+{"input":"give me ARR greater than or equal to €1.25m","output":{"field":"arr","operator":"gte","value":1250000}}
+{"input":"could you list ARR greater than or equal to €1.25m","output":{"field":"arr","operator":"gte","value":1250000}}
+{"input":"please list ARR below $2,500","output":{"field":"arr","operator":"lt","value":2500}}
+{"input":"show all ARR below $2,500","output":{"field":"arr","operator":"lt","value":2500}}
+{"input":"can you find ARR below $2,500","output":{"field":"arr","operator":"lt","value":2500}}
+{"input":"give me ARR below $2,500","output":{"field":"arr","operator":"lt","value":2500}}
+{"input":"could you list ARR below $2,500","output":{"field":"arr","operator":"lt","value":2500}}
+{"input":"please list annual recurring revenue at most €1.25m","output":{"field":"arr","operator":"lte","value":1250000}}
+{"input":"show all annual recurring revenue at most €1.25m","output":{"field":"arr","operator":"lte","value":1250000}}
+{"input":"can you find annual recurring revenue at most €1.25m","output":{"field":"arr","operator":"lte","value":1250000}}
+{"input":"give me annual recurring revenue at most €1.25m","output":{"field":"arr","operator":"lte","value":1250000}}
+{"input":"could you list annual recurring revenue at most €1.25m","output":{"field":"arr","operator":"lte","value":1250000}}
+{"input":"please list annual recurring revenue <= $2,500","output":{"field":"arr","operator":"lte","value":2500}}
+{"input":"show all annual recurring revenue <= $2,500","output":{"field":"arr","operator":"lte","value":2500}}
+{"input":"can you find annual recurring revenue <= $2,500","output":{"field":"arr","operator":"lte","value":2500}}
+{"input":"give me annual recurring revenue <= $2,500","output":{"field":"arr","operator":"lte","value":2500}}
+{"input":"could you list annual recurring revenue <= $2,500","output":{"field":"arr","operator":"lte","value":2500}}
+{"input":"please list customers with ARR = €1.25m","output":{"field":"arr","operator":"eq","value":1250000}}
+{"input":"show all customers with ARR = €1.25m","output":{"field":"arr","operator":"eq","value":1250000}}
+{"input":"can you find customers with ARR = €1.25m","output":{"field":"arr","operator":"eq","value":1250000}}
+{"input":"give me customers with ARR = €1.25m","output":{"field":"arr","operator":"eq","value":1250000}}
+{"input":"could you list customers with ARR = €1.25m","output":{"field":"arr","operator":"eq","value":1250000}}
+{"input":"please list active accounts or ARR over 50k","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"show all active accounts or ARR over 50k","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"can you find active accounts or ARR over 50k","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"give me active accounts or ARR over 50k","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"could you list active accounts or ARR over 50k","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"please list with status active and Swedish customers","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"show all with status active and Swedish customers","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"can you find with status active and Swedish customers","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"give me with status active and Swedish customers","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"could you list with status active and Swedish customers","output":{"and":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"please list companies with active status or Swedish customers","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"show all companies with active status or Swedish customers","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"can you find companies with active status or Swedish customers","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"give me companies with active status or Swedish customers","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"could you list companies with active status or Swedish customers","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"please list customers in AW","output":{"field":"country","operator":"eq","value":"AW"}}
+{"input":"show all customers in AW","output":{"field":"country","operator":"eq","value":"AW"}}
+{"input":"can you find customers in AW","output":{"field":"country","operator":"eq","value":"AW"}}
+{"input":"give me customers in AW","output":{"field":"country","operator":"eq","value":"AW"}}
+{"input":"could you list customers in AW","output":{"field":"country","operator":"eq","value":"AW"}}
+{"input":"please list country is AF","output":{"field":"country","operator":"eq","value":"AF"}}
+{"input":"show all country is AF","output":{"field":"country","operator":"eq","value":"AF"}}
+{"input":"can you find country is AF","output":{"field":"country","operator":"eq","value":"AF"}}
+{"input":"give me country is AF","output":{"field":"country","operator":"eq","value":"AF"}}
+{"input":"could you list country is AF","output":{"field":"country","operator":"eq","value":"AF"}}
+{"input":"please list companies from Anguilla","output":{"field":"country","operator":"eq","value":"AI"}}
+{"input":"show all companies from Anguilla","output":{"field":"country","operator":"eq","value":"AI"}}
+{"input":"can you find companies from Anguilla","output":{"field":"country","operator":"eq","value":"AI"}}
+{"input":"give me companies from Anguilla","output":{"field":"country","operator":"eq","value":"AI"}}
+{"input":"could you list companies from Anguilla","output":{"field":"country","operator":"eq","value":"AI"}}
+{"input":"please list AX customers","output":{"field":"country","operator":"eq","value":"AX"}}
+{"input":"show all AX customers","output":{"field":"country","operator":"eq","value":"AX"}}
+{"input":"can you find AX customers","output":{"field":"country","operator":"eq","value":"AX"}}
+{"input":"give me AX customers","output":{"field":"country","operator":"eq","value":"AX"}}
+{"input":"could you list AX customers","output":{"field":"country","operator":"eq","value":"AX"}}
+{"input":"please list customers in Andorra","output":{"field":"country","operator":"eq","value":"AD"}}
+{"input":"show all customers in Andorra","output":{"field":"country","operator":"eq","value":"AD"}}
+{"input":"can you find customers in Andorra","output":{"field":"country","operator":"eq","value":"AD"}}
+{"input":"give me customers in Andorra","output":{"field":"country","operator":"eq","value":"AD"}}
+{"input":"could you list customers in Andorra","output":{"field":"country","operator":"eq","value":"AD"}}
+{"input":"please list country is United Arab Emirates","output":{"field":"country","operator":"eq","value":"AE"}}
+{"input":"show all country is United Arab Emirates","output":{"field":"country","operator":"eq","value":"AE"}}
+{"input":"can you find country is United Arab Emirates","output":{"field":"country","operator":"eq","value":"AE"}}
+{"input":"give me country is United Arab Emirates","output":{"field":"country","operator":"eq","value":"AE"}}
+{"input":"could you list country is United Arab Emirates","output":{"field":"country","operator":"eq","value":"AE"}}
+{"input":"please list companies from Argentine","output":{"field":"country","operator":"eq","value":"AR"}}
+{"input":"show all companies from Argentine","output":{"field":"country","operator":"eq","value":"AR"}}
+{"input":"can you find companies from Argentine","output":{"field":"country","operator":"eq","value":"AR"}}
+{"input":"give me companies from Argentine","output":{"field":"country","operator":"eq","value":"AR"}}
+{"input":"could you list companies from Argentine","output":{"field":"country","operator":"eq","value":"AR"}}
+{"input":"please list AM customers","output":{"field":"country","operator":"eq","value":"AM"}}
+{"input":"show all AM customers","output":{"field":"country","operator":"eq","value":"AM"}}
+{"input":"can you find AM customers","output":{"field":"country","operator":"eq","value":"AM"}}
+{"input":"give me AM customers","output":{"field":"country","operator":"eq","value":"AM"}}
+{"input":"could you list AM customers","output":{"field":"country","operator":"eq","value":"AM"}}
+{"input":"please list customers in Antarctican","output":{"field":"country","operator":"eq","value":"AQ"}}
+{"input":"show all customers in Antarctican","output":{"field":"country","operator":"eq","value":"AQ"}}
+{"input":"can you find customers in Antarctican","output":{"field":"country","operator":"eq","value":"AQ"}}
+{"input":"give me customers in Antarctican","output":{"field":"country","operator":"eq","value":"AQ"}}
+{"input":"could you list customers in Antarctican","output":{"field":"country","operator":"eq","value":"AQ"}}
+{"input":"please list country is TF","output":{"field":"country","operator":"eq","value":"TF"}}
+{"input":"show all country is TF","output":{"field":"country","operator":"eq","value":"TF"}}
+{"input":"can you find country is TF","output":{"field":"country","operator":"eq","value":"TF"}}
+{"input":"give me country is TF","output":{"field":"country","operator":"eq","value":"TF"}}
+{"input":"could you list country is TF","output":{"field":"country","operator":"eq","value":"TF"}}
+{"input":"please list companies from Commonwealth of Australia","output":{"field":"country","operator":"eq","value":"AU"}}
+{"input":"show all companies from Commonwealth of Australia","output":{"field":"country","operator":"eq","value":"AU"}}
+{"input":"can you find companies from Commonwealth of Australia","output":{"field":"country","operator":"eq","value":"AU"}}
+{"input":"give me companies from Commonwealth of Australia","output":{"field":"country","operator":"eq","value":"AU"}}
+{"input":"could you list companies from Commonwealth of Australia","output":{"field":"country","operator":"eq","value":"AU"}}
+{"input":"please list Austrian customers","output":{"field":"country","operator":"eq","value":"AT"}}
+{"input":"show all Austrian customers","output":{"field":"country","operator":"eq","value":"AT"}}
+{"input":"can you find Austrian customers","output":{"field":"country","operator":"eq","value":"AT"}}
+{"input":"give me Austrian customers","output":{"field":"country","operator":"eq","value":"AT"}}
+{"input":"could you list Austrian customers","output":{"field":"country","operator":"eq","value":"AT"}}
+{"input":"please list customers in AZ","output":{"field":"country","operator":"eq","value":"AZ"}}
+{"input":"show all customers in AZ","output":{"field":"country","operator":"eq","value":"AZ"}}
+{"input":"can you find customers in AZ","output":{"field":"country","operator":"eq","value":"AZ"}}
+{"input":"give me customers in AZ","output":{"field":"country","operator":"eq","value":"AZ"}}
+{"input":"could you list customers in AZ","output":{"field":"country","operator":"eq","value":"AZ"}}
+{"input":"please list country is BI","output":{"field":"country","operator":"eq","value":"BI"}}
+{"input":"show all country is BI","output":{"field":"country","operator":"eq","value":"BI"}}
+{"input":"can you find country is BI","output":{"field":"country","operator":"eq","value":"BI"}}
+{"input":"give me country is BI","output":{"field":"country","operator":"eq","value":"BI"}}
+{"input":"could you list country is BI","output":{"field":"country","operator":"eq","value":"BI"}}
+{"input":"please list companies from Benin","output":{"field":"country","operator":"eq","value":"BJ"}}
+{"input":"show all companies from Benin","output":{"field":"country","operator":"eq","value":"BJ"}}
+{"input":"can you find companies from Benin","output":{"field":"country","operator":"eq","value":"BJ"}}
+{"input":"give me companies from Benin","output":{"field":"country","operator":"eq","value":"BJ"}}
+{"input":"could you list companies from Benin","output":{"field":"country","operator":"eq","value":"BJ"}}
+{"input":"please list Burkinabe customers","output":{"field":"country","operator":"eq","value":"BF"}}
+{"input":"show all Burkinabe customers","output":{"field":"country","operator":"eq","value":"BF"}}
+{"input":"can you find Burkinabe customers","output":{"field":"country","operator":"eq","value":"BF"}}
+{"input":"give me Burkinabe customers","output":{"field":"country","operator":"eq","value":"BF"}}
+{"input":"could you list Burkinabe customers","output":{"field":"country","operator":"eq","value":"BF"}}
+{"input":"please list customers in BD","output":{"field":"country","operator":"eq","value":"BD"}}
+{"input":"show all customers in BD","output":{"field":"country","operator":"eq","value":"BD"}}
+{"input":"can you find customers in BD","output":{"field":"country","operator":"eq","value":"BD"}}
+{"input":"give me customers in BD","output":{"field":"country","operator":"eq","value":"BD"}}
+{"input":"could you list customers in BD","output":{"field":"country","operator":"eq","value":"BD"}}
+{"input":"please list country is BG","output":{"field":"country","operator":"eq","value":"BG"}}
+{"input":"show all country is BG","output":{"field":"country","operator":"eq","value":"BG"}}
+{"input":"can you find country is BG","output":{"field":"country","operator":"eq","value":"BG"}}
+{"input":"give me country is BG","output":{"field":"country","operator":"eq","value":"BG"}}
+{"input":"could you list country is BG","output":{"field":"country","operator":"eq","value":"BG"}}
+{"input":"please list companies from Bahamas","output":{"field":"country","operator":"eq","value":"BS"}}
+{"input":"show all companies from Bahamas","output":{"field":"country","operator":"eq","value":"BS"}}
+{"input":"can you find companies from Bahamas","output":{"field":"country","operator":"eq","value":"BS"}}
+{"input":"give me companies from Bahamas","output":{"field":"country","operator":"eq","value":"BS"}}
+{"input":"could you list companies from Bahamas","output":{"field":"country","operator":"eq","value":"BS"}}
+{"input":"please list Bosnian, Herzegovinian customers","output":{"field":"country","operator":"eq","value":"BA"}}
+{"input":"show all Bosnian, Herzegovinian customers","output":{"field":"country","operator":"eq","value":"BA"}}
+{"input":"can you find Bosnian, Herzegovinian customers","output":{"field":"country","operator":"eq","value":"BA"}}
+{"input":"give me Bosnian, Herzegovinian customers","output":{"field":"country","operator":"eq","value":"BA"}}
+{"input":"could you list Bosnian, Herzegovinian customers","output":{"field":"country","operator":"eq","value":"BA"}}
+{"input":"please list customers in BL","output":{"field":"country","operator":"eq","value":"BL"}}
+{"input":"show all customers in BL","output":{"field":"country","operator":"eq","value":"BL"}}
+{"input":"can you find customers in BL","output":{"field":"country","operator":"eq","value":"BL"}}
+{"input":"give me customers in BL","output":{"field":"country","operator":"eq","value":"BL"}}
+{"input":"could you list customers in BL","output":{"field":"country","operator":"eq","value":"BL"}}
+{"input":"please list country is Belarus","output":{"field":"country","operator":"eq","value":"BY"}}
+{"input":"show all country is Belarus","output":{"field":"country","operator":"eq","value":"BY"}}
+{"input":"can you find country is Belarus","output":{"field":"country","operator":"eq","value":"BY"}}
+{"input":"give me country is Belarus","output":{"field":"country","operator":"eq","value":"BY"}}
+{"input":"could you list country is Belarus","output":{"field":"country","operator":"eq","value":"BY"}}
+{"input":"please list companies from Belizean","output":{"field":"country","operator":"eq","value":"BZ"}}
+{"input":"show all companies from Belizean","output":{"field":"country","operator":"eq","value":"BZ"}}
+{"input":"can you find companies from Belizean","output":{"field":"country","operator":"eq","value":"BZ"}}
+{"input":"give me companies from Belizean","output":{"field":"country","operator":"eq","value":"BZ"}}
+{"input":"could you list companies from Belizean","output":{"field":"country","operator":"eq","value":"BZ"}}
+{"input":"please list Bolivia customers","output":{"field":"country","operator":"eq","value":"BO"}}
+{"input":"show all Bolivia customers","output":{"field":"country","operator":"eq","value":"BO"}}
+{"input":"can you find Bolivia customers","output":{"field":"country","operator":"eq","value":"BO"}}
+{"input":"give me Bolivia customers","output":{"field":"country","operator":"eq","value":"BO"}}
+{"input":"could you list Bolivia customers","output":{"field":"country","operator":"eq","value":"BO"}}
+{"input":"please list customers in Bonaire, Sint Eustatius and Saba","output":{"field":"country","operator":"eq","value":"BQ"}}
+{"input":"show all customers in Bonaire, Sint Eustatius and Saba","output":{"field":"country","operator":"eq","value":"BQ"}}
+{"input":"can you find customers in Bonaire, Sint Eustatius and Saba","output":{"field":"country","operator":"eq","value":"BQ"}}
+{"input":"give me customers in Bonaire, Sint Eustatius and Saba","output":{"field":"country","operator":"eq","value":"BQ"}}
+{"input":"could you list customers in Bonaire, Sint Eustatius and Saba","output":{"field":"country","operator":"eq","value":"BQ"}}
+{"input":"please list country is Brazilian","output":{"field":"country","operator":"eq","value":"BR"}}
+{"input":"show all country is Brazilian","output":{"field":"country","operator":"eq","value":"BR"}}
+{"input":"can you find country is Brazilian","output":{"field":"country","operator":"eq","value":"BR"}}
+{"input":"give me country is Brazilian","output":{"field":"country","operator":"eq","value":"BR"}}
+{"input":"could you list country is Brazilian","output":{"field":"country","operator":"eq","value":"BR"}}
+{"input":"please list companies from Brunei","output":{"field":"country","operator":"eq","value":"BN"}}
+{"input":"show all companies from Brunei","output":{"field":"country","operator":"eq","value":"BN"}}
+{"input":"can you find companies from Brunei","output":{"field":"country","operator":"eq","value":"BN"}}
+{"input":"give me companies from Brunei","output":{"field":"country","operator":"eq","value":"BN"}}
+{"input":"could you list companies from Brunei","output":{"field":"country","operator":"eq","value":"BN"}}
+{"input":"please list Kingdom of Bhutan customers","output":{"field":"country","operator":"eq","value":"BT"}}
+{"input":"show all Kingdom of Bhutan customers","output":{"field":"country","operator":"eq","value":"BT"}}
+{"input":"can you find Kingdom of Bhutan customers","output":{"field":"country","operator":"eq","value":"BT"}}
+{"input":"give me Kingdom of Bhutan customers","output":{"field":"country","operator":"eq","value":"BT"}}
+{"input":"could you list Kingdom of Bhutan customers","output":{"field":"country","operator":"eq","value":"BT"}}
+{"input":"please list customers in Botswana","output":{"field":"country","operator":"eq","value":"BW"}}
+{"input":"show all customers in Botswana","output":{"field":"country","operator":"eq","value":"BW"}}
+{"input":"can you find customers in Botswana","output":{"field":"country","operator":"eq","value":"BW"}}
+{"input":"give me customers in Botswana","output":{"field":"country","operator":"eq","value":"BW"}}
+{"input":"could you list customers in Botswana","output":{"field":"country","operator":"eq","value":"BW"}}
+{"input":"please list country is Central African Republic","output":{"field":"country","operator":"eq","value":"CF"}}
+{"input":"show all country is Central African Republic","output":{"field":"country","operator":"eq","value":"CF"}}
+{"input":"can you find country is Central African Republic","output":{"field":"country","operator":"eq","value":"CF"}}
+{"input":"give me country is Central African Republic","output":{"field":"country","operator":"eq","value":"CF"}}
+{"input":"could you list country is Central African Republic","output":{"field":"country","operator":"eq","value":"CF"}}
+{"input":"please list companies from CA","output":{"field":"country","operator":"eq","value":"CA"}}
+{"input":"show all companies from CA","output":{"field":"country","operator":"eq","value":"CA"}}
+{"input":"can you find companies from CA","output":{"field":"country","operator":"eq","value":"CA"}}
+{"input":"give me companies from CA","output":{"field":"country","operator":"eq","value":"CA"}}
+{"input":"could you list companies from CA","output":{"field":"country","operator":"eq","value":"CA"}}
+{"input":"please list Switzerland customers","output":{"field":"country","operator":"eq","value":"CH"}}
+{"input":"show all Switzerland customers","output":{"field":"country","operator":"eq","value":"CH"}}
+{"input":"can you find Switzerland customers","output":{"field":"country","operator":"eq","value":"CH"}}
+{"input":"give me Switzerland customers","output":{"field":"country","operator":"eq","value":"CH"}}
+{"input":"could you list Switzerland customers","output":{"field":"country","operator":"eq","value":"CH"}}
+{"input":"please list customers in Republic of Chile","output":{"field":"country","operator":"eq","value":"CL"}}
+{"input":"show all customers in Republic of Chile","output":{"field":"country","operator":"eq","value":"CL"}}
+{"input":"can you find customers in Republic of Chile","output":{"field":"country","operator":"eq","value":"CL"}}
+{"input":"give me customers in Republic of Chile","output":{"field":"country","operator":"eq","value":"CL"}}
+{"input":"could you list customers in Republic of Chile","output":{"field":"country","operator":"eq","value":"CL"}}
+{"input":"please list country is People's Republic of China","output":{"field":"country","operator":"eq","value":"CN"}}
+{"input":"show all country is People's Republic of China","output":{"field":"country","operator":"eq","value":"CN"}}
+{"input":"can you find country is People's Republic of China","output":{"field":"country","operator":"eq","value":"CN"}}
+{"input":"give me country is People's Republic of China","output":{"field":"country","operator":"eq","value":"CN"}}
+{"input":"could you list country is People's Republic of China","output":{"field":"country","operator":"eq","value":"CN"}}
+{"input":"please list companies from Ivorian","output":{"field":"country","operator":"eq","value":"CI"}}
+{"input":"show all companies from Ivorian","output":{"field":"country","operator":"eq","value":"CI"}}
+{"input":"can you find companies from Ivorian","output":{"field":"country","operator":"eq","value":"CI"}}
+{"input":"give me companies from Ivorian","output":{"field":"country","operator":"eq","value":"CI"}}
+{"input":"could you list companies from Ivorian","output":{"field":"country","operator":"eq","value":"CI"}}
+{"input":"please list CM customers","output":{"field":"country","operator":"eq","value":"CM"}}
+{"input":"show all CM customers","output":{"field":"country","operator":"eq","value":"CM"}}
+{"input":"can you find CM customers","output":{"field":"country","operator":"eq","value":"CM"}}
+{"input":"give me CM customers","output":{"field":"country","operator":"eq","value":"CM"}}
+{"input":"could you list CM customers","output":{"field":"country","operator":"eq","value":"CM"}}
+{"input":"please list customers in Republic of the Congo","output":{"field":"country","operator":"eq","value":"CG"}}
+{"input":"show all customers in Republic of the Congo","output":{"field":"country","operator":"eq","value":"CG"}}
+{"input":"can you find customers in Republic of the Congo","output":{"field":"country","operator":"eq","value":"CG"}}
+{"input":"give me customers in Republic of the Congo","output":{"field":"country","operator":"eq","value":"CG"}}
+{"input":"could you list customers in Republic of the Congo","output":{"field":"country","operator":"eq","value":"CG"}}
+{"input":"please list country is CK","output":{"field":"country","operator":"eq","value":"CK"}}
+{"input":"show all country is CK","output":{"field":"country","operator":"eq","value":"CK"}}
+{"input":"can you find country is CK","output":{"field":"country","operator":"eq","value":"CK"}}
+{"input":"give me country is CK","output":{"field":"country","operator":"eq","value":"CK"}}
+{"input":"could you list country is CK","output":{"field":"country","operator":"eq","value":"CK"}}
+{"input":"please list companies from Comoros","output":{"field":"country","operator":"eq","value":"KM"}}
+{"input":"show all companies from Comoros","output":{"field":"country","operator":"eq","value":"KM"}}
+{"input":"can you find companies from Comoros","output":{"field":"country","operator":"eq","value":"KM"}}
+{"input":"give me companies from Comoros","output":{"field":"country","operator":"eq","value":"KM"}}
+{"input":"could you list companies from Comoros","output":{"field":"country","operator":"eq","value":"KM"}}
+{"input":"please list Republic of Cabo Verde customers","output":{"field":"country","operator":"eq","value":"CV"}}
+{"input":"show all Republic of Cabo Verde customers","output":{"field":"country","operator":"eq","value":"CV"}}
+{"input":"can you find Republic of Cabo Verde customers","output":{"field":"country","operator":"eq","value":"CV"}}
+{"input":"give me Republic of Cabo Verde customers","output":{"field":"country","operator":"eq","value":"CV"}}
+{"input":"could you list Republic of Cabo Verde customers","output":{"field":"country","operator":"eq","value":"CV"}}
+{"input":"please list customers in Costa Rican","output":{"field":"country","operator":"eq","value":"CR"}}
+{"input":"show all customers in Costa Rican","output":{"field":"country","operator":"eq","value":"CR"}}
+{"input":"can you find customers in Costa Rican","output":{"field":"country","operator":"eq","value":"CR"}}
+{"input":"give me customers in Costa Rican","output":{"field":"country","operator":"eq","value":"CR"}}
+{"input":"could you list customers in Costa Rican","output":{"field":"country","operator":"eq","value":"CR"}}
+{"input":"please list country is Cuban","output":{"field":"country","operator":"eq","value":"CU"}}
+{"input":"show all country is Cuban","output":{"field":"country","operator":"eq","value":"CU"}}
+{"input":"can you find country is Cuban","output":{"field":"country","operator":"eq","value":"CU"}}
+{"input":"give me country is Cuban","output":{"field":"country","operator":"eq","value":"CU"}}
+{"input":"could you list country is Cuban","output":{"field":"country","operator":"eq","value":"CU"}}
+{"input":"please list companies from CW","output":{"field":"country","operator":"eq","value":"CW"}}
+{"input":"show all companies from CW","output":{"field":"country","operator":"eq","value":"CW"}}
+{"input":"can you find companies from CW","output":{"field":"country","operator":"eq","value":"CW"}}
+{"input":"give me companies from CW","output":{"field":"country","operator":"eq","value":"CW"}}
+{"input":"could you list companies from CW","output":{"field":"country","operator":"eq","value":"CW"}}
+{"input":"please list Cayman Islands customers","output":{"field":"country","operator":"eq","value":"KY"}}
+{"input":"show all Cayman Islands customers","output":{"field":"country","operator":"eq","value":"KY"}}
+{"input":"can you find Cayman Islands customers","output":{"field":"country","operator":"eq","value":"KY"}}
+{"input":"give me Cayman Islands customers","output":{"field":"country","operator":"eq","value":"KY"}}
+{"input":"could you list Cayman Islands customers","output":{"field":"country","operator":"eq","value":"KY"}}
+{"input":"please list customers in Cypriot","output":{"field":"country","operator":"eq","value":"CY"}}
+{"input":"show all customers in Cypriot","output":{"field":"country","operator":"eq","value":"CY"}}
+{"input":"can you find customers in Cypriot","output":{"field":"country","operator":"eq","value":"CY"}}
+{"input":"give me customers in Cypriot","output":{"field":"country","operator":"eq","value":"CY"}}
+{"input":"could you list customers in Cypriot","output":{"field":"country","operator":"eq","value":"CY"}}
+{"input":"please list country is Czech","output":{"field":"country","operator":"eq","value":"CZ"}}
+{"input":"show all country is Czech","output":{"field":"country","operator":"eq","value":"CZ"}}
+{"input":"can you find country is Czech","output":{"field":"country","operator":"eq","value":"CZ"}}
+{"input":"give me country is Czech","output":{"field":"country","operator":"eq","value":"CZ"}}
+{"input":"could you list country is Czech","output":{"field":"country","operator":"eq","value":"CZ"}}
+{"input":"please list companies from Djibouti","output":{"field":"country","operator":"eq","value":"DJ"}}
+{"input":"show all companies from Djibouti","output":{"field":"country","operator":"eq","value":"DJ"}}
+{"input":"can you find companies from Djibouti","output":{"field":"country","operator":"eq","value":"DJ"}}
+{"input":"give me companies from Djibouti","output":{"field":"country","operator":"eq","value":"DJ"}}
+{"input":"could you list companies from Djibouti","output":{"field":"country","operator":"eq","value":"DJ"}}
+{"input":"please list DM customers","output":{"field":"country","operator":"eq","value":"DM"}}
+{"input":"show all DM customers","output":{"field":"country","operator":"eq","value":"DM"}}
+{"input":"can you find DM customers","output":{"field":"country","operator":"eq","value":"DM"}}
+{"input":"give me DM customers","output":{"field":"country","operator":"eq","value":"DM"}}
+{"input":"could you list DM customers","output":{"field":"country","operator":"eq","value":"DM"}}
+{"input":"please list customers in Dominican Republic","output":{"field":"country","operator":"eq","value":"DO"}}
+{"input":"show all customers in Dominican Republic","output":{"field":"country","operator":"eq","value":"DO"}}
+{"input":"can you find customers in Dominican Republic","output":{"field":"country","operator":"eq","value":"DO"}}
+{"input":"give me customers in Dominican Republic","output":{"field":"country","operator":"eq","value":"DO"}}
+{"input":"could you list customers in Dominican Republic","output":{"field":"country","operator":"eq","value":"DO"}}
+{"input":"please list country is Algerian","output":{"field":"country","operator":"eq","value":"DZ"}}
+{"input":"show all country is Algerian","output":{"field":"country","operator":"eq","value":"DZ"}}
+{"input":"can you find country is Algerian","output":{"field":"country","operator":"eq","value":"DZ"}}
+{"input":"give me country is Algerian","output":{"field":"country","operator":"eq","value":"DZ"}}
+{"input":"could you list country is Algerian","output":{"field":"country","operator":"eq","value":"DZ"}}
+{"input":"please list companies from EC","output":{"field":"country","operator":"eq","value":"EC"}}
+{"input":"show all companies from EC","output":{"field":"country","operator":"eq","value":"EC"}}
+{"input":"can you find companies from EC","output":{"field":"country","operator":"eq","value":"EC"}}
+{"input":"give me companies from EC","output":{"field":"country","operator":"eq","value":"EC"}}
+{"input":"could you list companies from EC","output":{"field":"country","operator":"eq","value":"EC"}}
+{"input":"please list Eritrea customers","output":{"field":"country","operator":"eq","value":"ER"}}
+{"input":"show all Eritrea customers","output":{"field":"country","operator":"eq","value":"ER"}}
+{"input":"can you find Eritrea customers","output":{"field":"country","operator":"eq","value":"ER"}}
+{"input":"give me Eritrea customers","output":{"field":"country","operator":"eq","value":"ER"}}
+{"input":"could you list Eritrea customers","output":{"field":"country","operator":"eq","value":"ER"}}
+{"input":"please list customers in Sahrawi Arab Democratic Republic","output":{"field":"country","operator":"eq","value":"EH"}}
+{"input":"show all customers in Sahrawi Arab Democratic Republic","output":{"field":"country","operator":"eq","value":"EH"}}
+{"input":"can you find customers in Sahrawi Arab Democratic Republic","output":{"field":"country","operator":"eq","value":"EH"}}
+{"input":"give me customers in Sahrawi Arab Democratic Republic","output":{"field":"country","operator":"eq","value":"EH"}}
+{"input":"could you list customers in Sahrawi Arab Democratic Republic","output":{"field":"country","operator":"eq","value":"EH"}}
+{"input":"please list country is Kingdom of Spain","output":{"field":"country","operator":"eq","value":"ES"}}
+{"input":"show all country is Kingdom of Spain","output":{"field":"country","operator":"eq","value":"ES"}}
+{"input":"can you find country is Kingdom of Spain","output":{"field":"country","operator":"eq","value":"ES"}}
+{"input":"give me country is Kingdom of Spain","output":{"field":"country","operator":"eq","value":"ES"}}
+{"input":"could you list country is Kingdom of Spain","output":{"field":"country","operator":"eq","value":"ES"}}
+{"input":"please list companies from Estonian","output":{"field":"country","operator":"eq","value":"EE"}}
+{"input":"show all companies from Estonian","output":{"field":"country","operator":"eq","value":"EE"}}
+{"input":"can you find companies from Estonian","output":{"field":"country","operator":"eq","value":"EE"}}
+{"input":"give me companies from Estonian","output":{"field":"country","operator":"eq","value":"EE"}}
+{"input":"could you list companies from Estonian","output":{"field":"country","operator":"eq","value":"EE"}}
+{"input":"please list ET customers","output":{"field":"country","operator":"eq","value":"ET"}}
+{"input":"show all ET customers","output":{"field":"country","operator":"eq","value":"ET"}}
+{"input":"can you find ET customers","output":{"field":"country","operator":"eq","value":"ET"}}
+{"input":"give me ET customers","output":{"field":"country","operator":"eq","value":"ET"}}
+{"input":"could you list ET customers","output":{"field":"country","operator":"eq","value":"ET"}}
+{"input":"please list customers in Fiji","output":{"field":"country","operator":"eq","value":"FJ"}}
+{"input":"show all customers in Fiji","output":{"field":"country","operator":"eq","value":"FJ"}}
+{"input":"can you find customers in Fiji","output":{"field":"country","operator":"eq","value":"FJ"}}
+{"input":"give me customers in Fiji","output":{"field":"country","operator":"eq","value":"FJ"}}
+{"input":"could you list customers in Fiji","output":{"field":"country","operator":"eq","value":"FJ"}}
+{"input":"please list country is Falkland Islands","output":{"field":"country","operator":"eq","value":"FK"}}
+{"input":"show all country is Falkland Islands","output":{"field":"country","operator":"eq","value":"FK"}}
+{"input":"can you find country is Falkland Islands","output":{"field":"country","operator":"eq","value":"FK"}}
+{"input":"give me country is Falkland Islands","output":{"field":"country","operator":"eq","value":"FK"}}
+{"input":"could you list country is Falkland Islands","output":{"field":"country","operator":"eq","value":"FK"}}
+{"input":"please list companies from FR","output":{"field":"country","operator":"eq","value":"FR"}}
+{"input":"show all companies from FR","output":{"field":"country","operator":"eq","value":"FR"}}
+{"input":"can you find companies from FR","output":{"field":"country","operator":"eq","value":"FR"}}
+{"input":"give me companies from FR","output":{"field":"country","operator":"eq","value":"FR"}}
+{"input":"could you list companies from FR","output":{"field":"country","operator":"eq","value":"FR"}}
+{"input":"please list Federated States of Micronesia customers","output":{"field":"country","operator":"eq","value":"FM"}}
+{"input":"show all Federated States of Micronesia customers","output":{"field":"country","operator":"eq","value":"FM"}}
+{"input":"can you find Federated States of Micronesia customers","output":{"field":"country","operator":"eq","value":"FM"}}
+{"input":"give me Federated States of Micronesia customers","output":{"field":"country","operator":"eq","value":"FM"}}
+{"input":"could you list Federated States of Micronesia customers","output":{"field":"country","operator":"eq","value":"FM"}}
+{"input":"please list customers in Gabonese","output":{"field":"country","operator":"eq","value":"GA"}}
+{"input":"show all customers in Gabonese","output":{"field":"country","operator":"eq","value":"GA"}}
+{"input":"can you find customers in Gabonese","output":{"field":"country","operator":"eq","value":"GA"}}
+{"input":"give me customers in Gabonese","output":{"field":"country","operator":"eq","value":"GA"}}
+{"input":"could you list customers in Gabonese","output":{"field":"country","operator":"eq","value":"GA"}}
+{"input":"please list country is British","output":{"field":"country","operator":"eq","value":"GB"}}
+{"input":"show all country is British","output":{"field":"country","operator":"eq","value":"GB"}}
+{"input":"can you find country is British","output":{"field":"country","operator":"eq","value":"GB"}}
+{"input":"give me country is British","output":{"field":"country","operator":"eq","value":"GB"}}
+{"input":"could you list country is British","output":{"field":"country","operator":"eq","value":"GB"}}
+{"input":"please list companies from Georgian","output":{"field":"country","operator":"eq","value":"GE"}}
+{"input":"show all companies from Georgian","output":{"field":"country","operator":"eq","value":"GE"}}
+{"input":"can you find companies from Georgian","output":{"field":"country","operator":"eq","value":"GE"}}
+{"input":"give me companies from Georgian","output":{"field":"country","operator":"eq","value":"GE"}}
+{"input":"could you list companies from Georgian","output":{"field":"country","operator":"eq","value":"GE"}}
+{"input":"please list Ghana customers","output":{"field":"country","operator":"eq","value":"GH"}}
+{"input":"show all Ghana customers","output":{"field":"country","operator":"eq","value":"GH"}}
+{"input":"can you find Ghana customers","output":{"field":"country","operator":"eq","value":"GH"}}
+{"input":"give me Ghana customers","output":{"field":"country","operator":"eq","value":"GH"}}
+{"input":"could you list Ghana customers","output":{"field":"country","operator":"eq","value":"GH"}}
+{"input":"please list customers in GI","output":{"field":"country","operator":"eq","value":"GI"}}
+{"input":"show all customers in GI","output":{"field":"country","operator":"eq","value":"GI"}}
+{"input":"can you find customers in GI","output":{"field":"country","operator":"eq","value":"GI"}}
+{"input":"give me customers in GI","output":{"field":"country","operator":"eq","value":"GI"}}
+{"input":"could you list customers in GI","output":{"field":"country","operator":"eq","value":"GI"}}
+{"input":"please list country is GN","output":{"field":"country","operator":"eq","value":"GN"}}
+{"input":"show all country is GN","output":{"field":"country","operator":"eq","value":"GN"}}
+{"input":"can you find country is GN","output":{"field":"country","operator":"eq","value":"GN"}}
+{"input":"give me country is GN","output":{"field":"country","operator":"eq","value":"GN"}}
+{"input":"could you list country is GN","output":{"field":"country","operator":"eq","value":"GN"}}
+{"input":"please list companies from Republic of the Gambia","output":{"field":"country","operator":"eq","value":"GM"}}
+{"input":"show all companies from Republic of the Gambia","output":{"field":"country","operator":"eq","value":"GM"}}
+{"input":"can you find companies from Republic of the Gambia","output":{"field":"country","operator":"eq","value":"GM"}}
+{"input":"give me companies from Republic of the Gambia","output":{"field":"country","operator":"eq","value":"GM"}}
+{"input":"could you list companies from Republic of the Gambia","output":{"field":"country","operator":"eq","value":"GM"}}
+{"input":"please list Guinea-Bissauan customers","output":{"field":"country","operator":"eq","value":"GW"}}
+{"input":"show all Guinea-Bissauan customers","output":{"field":"country","operator":"eq","value":"GW"}}
+{"input":"can you find Guinea-Bissauan customers","output":{"field":"country","operator":"eq","value":"GW"}}
+{"input":"give me Guinea-Bissauan customers","output":{"field":"country","operator":"eq","value":"GW"}}
+{"input":"could you list Guinea-Bissauan customers","output":{"field":"country","operator":"eq","value":"GW"}}
+{"input":"please list customers in GQ","output":{"field":"country","operator":"eq","value":"GQ"}}
+{"input":"show all customers in GQ","output":{"field":"country","operator":"eq","value":"GQ"}}
+{"input":"can you find customers in GQ","output":{"field":"country","operator":"eq","value":"GQ"}}
+{"input":"give me customers in GQ","output":{"field":"country","operator":"eq","value":"GQ"}}
+{"input":"could you list customers in GQ","output":{"field":"country","operator":"eq","value":"GQ"}}
+{"input":"please list country is GR","output":{"field":"country","operator":"eq","value":"GR"}}
+{"input":"show all country is GR","output":{"field":"country","operator":"eq","value":"GR"}}
+{"input":"can you find country is GR","output":{"field":"country","operator":"eq","value":"GR"}}
+{"input":"give me country is GR","output":{"field":"country","operator":"eq","value":"GR"}}
+{"input":"could you list country is GR","output":{"field":"country","operator":"eq","value":"GR"}}
+{"input":"please list companies from Greenlandic","output":{"field":"country","operator":"eq","value":"GL"}}
+{"input":"show all companies from Greenlandic","output":{"field":"country","operator":"eq","value":"GL"}}
+{"input":"can you find companies from Greenlandic","output":{"field":"country","operator":"eq","value":"GL"}}
+{"input":"give me companies from Greenlandic","output":{"field":"country","operator":"eq","value":"GL"}}
+{"input":"could you list companies from Greenlandic","output":{"field":"country","operator":"eq","value":"GL"}}
+{"input":"please list GT customers","output":{"field":"country","operator":"eq","value":"GT"}}
+{"input":"show all GT customers","output":{"field":"country","operator":"eq","value":"GT"}}
+{"input":"can you find GT customers","output":{"field":"country","operator":"eq","value":"GT"}}
+{"input":"give me GT customers","output":{"field":"country","operator":"eq","value":"GT"}}
+{"input":"could you list GT customers","output":{"field":"country","operator":"eq","value":"GT"}}
+{"input":"please list customers in Guam","output":{"field":"country","operator":"eq","value":"GU"}}
+{"input":"show all customers in Guam","output":{"field":"country","operator":"eq","value":"GU"}}
+{"input":"can you find customers in Guam","output":{"field":"country","operator":"eq","value":"GU"}}
+{"input":"give me customers in Guam","output":{"field":"country","operator":"eq","value":"GU"}}
+{"input":"could you list customers in Guam","output":{"field":"country","operator":"eq","value":"GU"}}
+{"input":"please list country is Co-operative Republic of Guyana","output":{"field":"country","operator":"eq","value":"GY"}}
+{"input":"show all country is Co-operative Republic of Guyana","output":{"field":"country","operator":"eq","value":"GY"}}
+{"input":"can you find country is Co-operative Republic of Guyana","output":{"field":"country","operator":"eq","value":"GY"}}
+{"input":"give me country is Co-operative Republic of Guyana","output":{"field":"country","operator":"eq","value":"GY"}}
+{"input":"could you list country is Co-operative Republic of Guyana","output":{"field":"country","operator":"eq","value":"GY"}}
+{"input":"please list companies from Hong Konger","output":{"field":"country","operator":"eq","value":"HK"}}
+{"input":"show all companies from Hong Konger","output":{"field":"country","operator":"eq","value":"HK"}}
+{"input":"can you find companies from Hong Konger","output":{"field":"country","operator":"eq","value":"HK"}}
+{"input":"give me companies from Hong Konger","output":{"field":"country","operator":"eq","value":"HK"}}
+{"input":"could you list companies from Hong Konger","output":{"field":"country","operator":"eq","value":"HK"}}
+{"input":"please list Honduras customers","output":{"field":"country","operator":"eq","value":"HN"}}
+{"input":"show all Honduras customers","output":{"field":"country","operator":"eq","value":"HN"}}
+{"input":"can you find Honduras customers","output":{"field":"country","operator":"eq","value":"HN"}}
+{"input":"give me Honduras customers","output":{"field":"country","operator":"eq","value":"HN"}}
+{"input":"could you list Honduras customers","output":{"field":"country","operator":"eq","value":"HN"}}
+{"input":"please list customers in Republic of Croatia","output":{"field":"country","operator":"eq","value":"HR"}}
+{"input":"show all customers in Republic of Croatia","output":{"field":"country","operator":"eq","value":"HR"}}
+{"input":"can you find customers in Republic of Croatia","output":{"field":"country","operator":"eq","value":"HR"}}
+{"input":"give me customers in Republic of Croatia","output":{"field":"country","operator":"eq","value":"HR"}}
+{"input":"could you list customers in Republic of Croatia","output":{"field":"country","operator":"eq","value":"HR"}}
+{"input":"please list country is Republic of Haiti","output":{"field":"country","operator":"eq","value":"HT"}}
+{"input":"show all country is Republic of Haiti","output":{"field":"country","operator":"eq","value":"HT"}}
+{"input":"can you find country is Republic of Haiti","output":{"field":"country","operator":"eq","value":"HT"}}
+{"input":"give me country is Republic of Haiti","output":{"field":"country","operator":"eq","value":"HT"}}
+{"input":"could you list country is Republic of Haiti","output":{"field":"country","operator":"eq","value":"HT"}}
+{"input":"please list companies from HU","output":{"field":"country","operator":"eq","value":"HU"}}
+{"input":"show all companies from HU","output":{"field":"country","operator":"eq","value":"HU"}}
+{"input":"can you find companies from HU","output":{"field":"country","operator":"eq","value":"HU"}}
+{"input":"give me companies from HU","output":{"field":"country","operator":"eq","value":"HU"}}
+{"input":"could you list companies from HU","output":{"field":"country","operator":"eq","value":"HU"}}
+{"input":"please list Isle of Man customers","output":{"field":"country","operator":"eq","value":"IM"}}
+{"input":"show all Isle of Man customers","output":{"field":"country","operator":"eq","value":"IM"}}
+{"input":"can you find Isle of Man customers","output":{"field":"country","operator":"eq","value":"IM"}}
+{"input":"give me Isle of Man customers","output":{"field":"country","operator":"eq","value":"IM"}}
+{"input":"could you list Isle of Man customers","output":{"field":"country","operator":"eq","value":"IM"}}
+{"input":"please list customers in IN","output":{"field":"country","operator":"eq","value":"IN"}}
+{"input":"show all customers in IN","output":{"field":"country","operator":"eq","value":"IN"}}
+{"input":"can you find customers in IN","output":{"field":"country","operator":"eq","value":"IN"}}
+{"input":"give me customers in IN","output":{"field":"country","operator":"eq","value":"IN"}}
+{"input":"could you list customers in IN","output":{"field":"country","operator":"eq","value":"IN"}}
+{"input":"please list country is Republic of Ireland","output":{"field":"country","operator":"eq","value":"IE"}}
+{"input":"show all country is Republic of Ireland","output":{"field":"country","operator":"eq","value":"IE"}}
+{"input":"can you find country is Republic of Ireland","output":{"field":"country","operator":"eq","value":"IE"}}
+{"input":"give me country is Republic of Ireland","output":{"field":"country","operator":"eq","value":"IE"}}
+{"input":"could you list country is Republic of Ireland","output":{"field":"country","operator":"eq","value":"IE"}}
+{"input":"please list companies from Iranian","output":{"field":"country","operator":"eq","value":"IR"}}
+{"input":"show all companies from Iranian","output":{"field":"country","operator":"eq","value":"IR"}}
+{"input":"can you find companies from Iranian","output":{"field":"country","operator":"eq","value":"IR"}}
+{"input":"give me companies from Iranian","output":{"field":"country","operator":"eq","value":"IR"}}
+{"input":"could you list companies from Iranian","output":{"field":"country","operator":"eq","value":"IR"}}
+{"input":"please list IQ customers","output":{"field":"country","operator":"eq","value":"IQ"}}
+{"input":"show all IQ customers","output":{"field":"country","operator":"eq","value":"IQ"}}
+{"input":"can you find IQ customers","output":{"field":"country","operator":"eq","value":"IQ"}}
+{"input":"give me IQ customers","output":{"field":"country","operator":"eq","value":"IQ"}}
+{"input":"could you list IQ customers","output":{"field":"country","operator":"eq","value":"IQ"}}
+{"input":"please list customers in State of Israel","output":{"field":"country","operator":"eq","value":"IL"}}
+{"input":"show all customers in State of Israel","output":{"field":"country","operator":"eq","value":"IL"}}
+{"input":"can you find customers in State of Israel","output":{"field":"country","operator":"eq","value":"IL"}}
+{"input":"give me customers in State of Israel","output":{"field":"country","operator":"eq","value":"IL"}}
+{"input":"could you list customers in State of Israel","output":{"field":"country","operator":"eq","value":"IL"}}
+{"input":"please list country is Italian Republic","output":{"field":"country","operator":"eq","value":"IT"}}
+{"input":"show all country is Italian Republic","output":{"field":"country","operator":"eq","value":"IT"}}
+{"input":"can you find country is Italian Republic","output":{"field":"country","operator":"eq","value":"IT"}}
+{"input":"give me country is Italian Republic","output":{"field":"country","operator":"eq","value":"IT"}}
+{"input":"could you list country is Italian Republic","output":{"field":"country","operator":"eq","value":"IT"}}
+{"input":"please list companies from JM","output":{"field":"country","operator":"eq","value":"JM"}}
+{"input":"show all companies from JM","output":{"field":"country","operator":"eq","value":"JM"}}
+{"input":"can you find companies from JM","output":{"field":"country","operator":"eq","value":"JM"}}
+{"input":"give me companies from JM","output":{"field":"country","operator":"eq","value":"JM"}}
+{"input":"could you list companies from JM","output":{"field":"country","operator":"eq","value":"JM"}}
+{"input":"please list Hashemite Kingdom of Jordan customers","output":{"field":"country","operator":"eq","value":"JO"}}
+{"input":"show all Hashemite Kingdom of Jordan customers","output":{"field":"country","operator":"eq","value":"JO"}}
+{"input":"can you find Hashemite Kingdom of Jordan customers","output":{"field":"country","operator":"eq","value":"JO"}}
+{"input":"give me Hashemite Kingdom of Jordan customers","output":{"field":"country","operator":"eq","value":"JO"}}
+{"input":"could you list Hashemite Kingdom of Jordan customers","output":{"field":"country","operator":"eq","value":"JO"}}
+{"input":"please list customers in JP","output":{"field":"country","operator":"eq","value":"JP"}}
+{"input":"show all customers in JP","output":{"field":"country","operator":"eq","value":"JP"}}
+{"input":"can you find customers in JP","output":{"field":"country","operator":"eq","value":"JP"}}
+{"input":"give me customers in JP","output":{"field":"country","operator":"eq","value":"JP"}}
+{"input":"could you list customers in JP","output":{"field":"country","operator":"eq","value":"JP"}}
+{"input":"please list country is KZ","output":{"field":"country","operator":"eq","value":"KZ"}}
+{"input":"show all country is KZ","output":{"field":"country","operator":"eq","value":"KZ"}}
+{"input":"can you find country is KZ","output":{"field":"country","operator":"eq","value":"KZ"}}
+{"input":"give me country is KZ","output":{"field":"country","operator":"eq","value":"KZ"}}
+{"input":"could you list country is KZ","output":{"field":"country","operator":"eq","value":"KZ"}}
+{"input":"please list companies from Kyrgyzstan","output":{"field":"country","operator":"eq","value":"KG"}}
+{"input":"show all companies from Kyrgyzstan","output":{"field":"country","operator":"eq","value":"KG"}}
+{"input":"can you find companies from Kyrgyzstan","output":{"field":"country","operator":"eq","value":"KG"}}
+{"input":"give me companies from Kyrgyzstan","output":{"field":"country","operator":"eq","value":"KG"}}
+{"input":"could you list companies from Kyrgyzstan","output":{"field":"country","operator":"eq","value":"KG"}}
+{"input":"please list Kingdom of Cambodia customers","output":{"field":"country","operator":"eq","value":"KH"}}
+{"input":"show all Kingdom of Cambodia customers","output":{"field":"country","operator":"eq","value":"KH"}}
+{"input":"can you find Kingdom of Cambodia customers","output":{"field":"country","operator":"eq","value":"KH"}}
+{"input":"give me Kingdom of Cambodia customers","output":{"field":"country","operator":"eq","value":"KH"}}
+{"input":"could you list Kingdom of Cambodia customers","output":{"field":"country","operator":"eq","value":"KH"}}
+{"input":"please list customers in I-Kiribati","output":{"field":"country","operator":"eq","value":"KI"}}
+{"input":"show all customers in I-Kiribati","output":{"field":"country","operator":"eq","value":"KI"}}
+{"input":"can you find customers in I-Kiribati","output":{"field":"country","operator":"eq","value":"KI"}}
+{"input":"give me customers in I-Kiribati","output":{"field":"country","operator":"eq","value":"KI"}}
+{"input":"could you list customers in I-Kiribati","output":{"field":"country","operator":"eq","value":"KI"}}
+{"input":"please list country is Kittitian or Nevisian","output":{"field":"country","operator":"eq","value":"KN"}}
+{"input":"show all country is Kittitian or Nevisian","output":{"field":"country","operator":"eq","value":"KN"}}
+{"input":"can you find country is Kittitian or Nevisian","output":{"field":"country","operator":"eq","value":"KN"}}
+{"input":"give me country is Kittitian or Nevisian","output":{"field":"country","operator":"eq","value":"KN"}}
+{"input":"could you list country is Kittitian or Nevisian","output":{"field":"country","operator":"eq","value":"KN"}}
+{"input":"please list companies from KR","output":{"field":"country","operator":"eq","value":"KR"}}
+{"input":"show all companies from KR","output":{"field":"country","operator":"eq","value":"KR"}}
+{"input":"can you find companies from KR","output":{"field":"country","operator":"eq","value":"KR"}}
+{"input":"give me companies from KR","output":{"field":"country","operator":"eq","value":"KR"}}
+{"input":"could you list companies from KR","output":{"field":"country","operator":"eq","value":"KR"}}
+{"input":"please list Kuwait customers","output":{"field":"country","operator":"eq","value":"KW"}}
+{"input":"show all Kuwait customers","output":{"field":"country","operator":"eq","value":"KW"}}
+{"input":"can you find Kuwait customers","output":{"field":"country","operator":"eq","value":"KW"}}
+{"input":"give me Kuwait customers","output":{"field":"country","operator":"eq","value":"KW"}}
+{"input":"could you list Kuwait customers","output":{"field":"country","operator":"eq","value":"KW"}}
+{"input":"please list customers in Lao People's Democratic Republic","output":{"field":"country","operator":"eq","value":"LA"}}
+{"input":"show all customers in Lao People's Democratic Republic","output":{"field":"country","operator":"eq","value":"LA"}}
+{"input":"can you find customers in Lao People's Democratic Republic","output":{"field":"country","operator":"eq","value":"LA"}}
+{"input":"give me customers in Lao People's Democratic Republic","output":{"field":"country","operator":"eq","value":"LA"}}
+{"input":"could you list customers in Lao People's Democratic Republic","output":{"field":"country","operator":"eq","value":"LA"}}
+{"input":"please list country is Lebanese Republic","output":{"field":"country","operator":"eq","value":"LB"}}
+{"input":"show all country is Lebanese Republic","output":{"field":"country","operator":"eq","value":"LB"}}
+{"input":"can you find country is Lebanese Republic","output":{"field":"country","operator":"eq","value":"LB"}}
+{"input":"give me country is Lebanese Republic","output":{"field":"country","operator":"eq","value":"LB"}}
+{"input":"could you list country is Lebanese Republic","output":{"field":"country","operator":"eq","value":"LB"}}
+{"input":"please list companies from Liberian","output":{"field":"country","operator":"eq","value":"LR"}}
+{"input":"show all companies from Liberian","output":{"field":"country","operator":"eq","value":"LR"}}
+{"input":"can you find companies from Liberian","output":{"field":"country","operator":"eq","value":"LR"}}
+{"input":"give me companies from Liberian","output":{"field":"country","operator":"eq","value":"LR"}}
+{"input":"could you list companies from Liberian","output":{"field":"country","operator":"eq","value":"LR"}}
+{"input":"please list LY customers","output":{"field":"country","operator":"eq","value":"LY"}}
+{"input":"show all LY customers","output":{"field":"country","operator":"eq","value":"LY"}}
+{"input":"can you find LY customers","output":{"field":"country","operator":"eq","value":"LY"}}
+{"input":"give me LY customers","output":{"field":"country","operator":"eq","value":"LY"}}
+{"input":"could you list LY customers","output":{"field":"country","operator":"eq","value":"LY"}}
+{"input":"please list customers in Principality of Liechtenstein","output":{"field":"country","operator":"eq","value":"LI"}}
+{"input":"show all customers in Principality of Liechtenstein","output":{"field":"country","operator":"eq","value":"LI"}}
+{"input":"can you find customers in Principality of Liechtenstein","output":{"field":"country","operator":"eq","value":"LI"}}
+{"input":"give me customers in Principality of Liechtenstein","output":{"field":"country","operator":"eq","value":"LI"}}
+{"input":"could you list customers in Principality of Liechtenstein","output":{"field":"country","operator":"eq","value":"LI"}}
+{"input":"please list country is Democratic Socialist Republic of Sri Lanka","output":{"field":"country","operator":"eq","value":"LK"}}
+{"input":"show all country is Democratic Socialist Republic of Sri Lanka","output":{"field":"country","operator":"eq","value":"LK"}}
+{"input":"can you find country is Democratic Socialist Republic of Sri Lanka","output":{"field":"country","operator":"eq","value":"LK"}}
+{"input":"give me country is Democratic Socialist Republic of Sri Lanka","output":{"field":"country","operator":"eq","value":"LK"}}
+{"input":"could you list country is Democratic Socialist Republic of Sri Lanka","output":{"field":"country","operator":"eq","value":"LK"}}
+{"input":"please list companies from Mosotho","output":{"field":"country","operator":"eq","value":"LS"}}
+{"input":"show all companies from Mosotho","output":{"field":"country","operator":"eq","value":"LS"}}
+{"input":"can you find companies from Mosotho","output":{"field":"country","operator":"eq","value":"LS"}}
+{"input":"give me companies from Mosotho","output":{"field":"country","operator":"eq","value":"LS"}}
+{"input":"could you list companies from Mosotho","output":{"field":"country","operator":"eq","value":"LS"}}
+{"input":"please list LT customers","output":{"field":"country","operator":"eq","value":"LT"}}
+{"input":"show all LT customers","output":{"field":"country","operator":"eq","value":"LT"}}
+{"input":"can you find LT customers","output":{"field":"country","operator":"eq","value":"LT"}}
+{"input":"give me LT customers","output":{"field":"country","operator":"eq","value":"LT"}}
+{"input":"could you list LT customers","output":{"field":"country","operator":"eq","value":"LT"}}
+{"input":"please list customers in Latvia","output":{"field":"country","operator":"eq","value":"LV"}}
+{"input":"show all customers in Latvia","output":{"field":"country","operator":"eq","value":"LV"}}
+{"input":"can you find customers in Latvia","output":{"field":"country","operator":"eq","value":"LV"}}
+{"input":"give me customers in Latvia","output":{"field":"country","operator":"eq","value":"LV"}}
+{"input":"could you list customers in Latvia","output":{"field":"country","operator":"eq","value":"LV"}}
+{"input":"please list country is Macau","output":{"field":"country","operator":"eq","value":"MO"}}
+{"input":"show all country is Macau","output":{"field":"country","operator":"eq","value":"MO"}}
+{"input":"can you find country is Macau","output":{"field":"country","operator":"eq","value":"MO"}}
+{"input":"give me country is Macau","output":{"field":"country","operator":"eq","value":"MO"}}
+{"input":"could you list country is Macau","output":{"field":"country","operator":"eq","value":"MO"}}
+{"input":"please list companies from Saint Martin Islander","output":{"field":"country","operator":"eq","value":"MF"}}
+{"input":"show all companies from Saint Martin Islander","output":{"field":"country","operator":"eq","value":"MF"}}
+{"input":"can you find companies from Saint Martin Islander","output":{"field":"country","operator":"eq","value":"MF"}}
+{"input":"give me companies from Saint Martin Islander","output":{"field":"country","operator":"eq","value":"MF"}}
+{"input":"could you list companies from Saint Martin Islander","output":{"field":"country","operator":"eq","value":"MF"}}
+{"input":"please list MA customers","output":{"field":"country","operator":"eq","value":"MA"}}
+{"input":"show all MA customers","output":{"field":"country","operator":"eq","value":"MA"}}
+{"input":"can you find MA customers","output":{"field":"country","operator":"eq","value":"MA"}}
+{"input":"give me MA customers","output":{"field":"country","operator":"eq","value":"MA"}}
+{"input":"could you list MA customers","output":{"field":"country","operator":"eq","value":"MA"}}
+{"input":"please list customers in Moldova","output":{"field":"country","operator":"eq","value":"MD"}}
+{"input":"show all customers in Moldova","output":{"field":"country","operator":"eq","value":"MD"}}
+{"input":"can you find customers in Moldova","output":{"field":"country","operator":"eq","value":"MD"}}
+{"input":"give me customers in Moldova","output":{"field":"country","operator":"eq","value":"MD"}}
+{"input":"could you list customers in Moldova","output":{"field":"country","operator":"eq","value":"MD"}}
+{"input":"please list country is Madagascar","output":{"field":"country","operator":"eq","value":"MG"}}
+{"input":"show all country is Madagascar","output":{"field":"country","operator":"eq","value":"MG"}}
+{"input":"can you find country is Madagascar","output":{"field":"country","operator":"eq","value":"MG"}}
+{"input":"give me country is Madagascar","output":{"field":"country","operator":"eq","value":"MG"}}
+{"input":"could you list country is Madagascar","output":{"field":"country","operator":"eq","value":"MG"}}
+{"input":"please list companies from Republic of the Maldives","output":{"field":"country","operator":"eq","value":"MV"}}
+{"input":"show all companies from Republic of the Maldives","output":{"field":"country","operator":"eq","value":"MV"}}
+{"input":"can you find companies from Republic of the Maldives","output":{"field":"country","operator":"eq","value":"MV"}}
+{"input":"give me companies from Republic of the Maldives","output":{"field":"country","operator":"eq","value":"MV"}}
+{"input":"could you list companies from Republic of the Maldives","output":{"field":"country","operator":"eq","value":"MV"}}
+{"input":"please list Mexican customers","output":{"field":"country","operator":"eq","value":"MX"}}
+{"input":"show all Mexican customers","output":{"field":"country","operator":"eq","value":"MX"}}
+{"input":"can you find Mexican customers","output":{"field":"country","operator":"eq","value":"MX"}}
+{"input":"give me Mexican customers","output":{"field":"country","operator":"eq","value":"MX"}}
+{"input":"could you list Mexican customers","output":{"field":"country","operator":"eq","value":"MX"}}
+{"input":"please list customers in MH","output":{"field":"country","operator":"eq","value":"MH"}}
+{"input":"show all customers in MH","output":{"field":"country","operator":"eq","value":"MH"}}
+{"input":"can you find customers in MH","output":{"field":"country","operator":"eq","value":"MH"}}
+{"input":"give me customers in MH","output":{"field":"country","operator":"eq","value":"MH"}}
+{"input":"could you list customers in MH","output":{"field":"country","operator":"eq","value":"MH"}}
+{"input":"please list country is MK","output":{"field":"country","operator":"eq","value":"MK"}}
+{"input":"show all country is MK","output":{"field":"country","operator":"eq","value":"MK"}}
+{"input":"can you find country is MK","output":{"field":"country","operator":"eq","value":"MK"}}
+{"input":"give me country is MK","output":{"field":"country","operator":"eq","value":"MK"}}
+{"input":"could you list country is MK","output":{"field":"country","operator":"eq","value":"MK"}}
+{"input":"please list companies from Malta","output":{"field":"country","operator":"eq","value":"MT"}}
+{"input":"show all companies from Malta","output":{"field":"country","operator":"eq","value":"MT"}}
+{"input":"can you find companies from Malta","output":{"field":"country","operator":"eq","value":"MT"}}
+{"input":"give me companies from Malta","output":{"field":"country","operator":"eq","value":"MT"}}
+{"input":"could you list companies from Malta","output":{"field":"country","operator":"eq","value":"MT"}}
+{"input":"please list Republic of the Union of Myanmar customers","output":{"field":"country","operator":"eq","value":"MM"}}
+{"input":"show all Republic of the Union of Myanmar customers","output":{"field":"country","operator":"eq","value":"MM"}}
+{"input":"can you find Republic of the Union of Myanmar customers","output":{"field":"country","operator":"eq","value":"MM"}}
+{"input":"give me Republic of the Union of Myanmar customers","output":{"field":"country","operator":"eq","value":"MM"}}
+{"input":"could you list Republic of the Union of Myanmar customers","output":{"field":"country","operator":"eq","value":"MM"}}
+{"input":"please list customers in ME","output":{"field":"country","operator":"eq","value":"ME"}}
+{"input":"show all customers in ME","output":{"field":"country","operator":"eq","value":"ME"}}
+{"input":"can you find customers in ME","output":{"field":"country","operator":"eq","value":"ME"}}
+{"input":"give me customers in ME","output":{"field":"country","operator":"eq","value":"ME"}}
+{"input":"could you list customers in ME","output":{"field":"country","operator":"eq","value":"ME"}}
+{"input":"please list country is Northern Mariana Islands","output":{"field":"country","operator":"eq","value":"MP"}}
+{"input":"show all country is Northern Mariana Islands","output":{"field":"country","operator":"eq","value":"MP"}}
+{"input":"can you find country is Northern Mariana Islands","output":{"field":"country","operator":"eq","value":"MP"}}
+{"input":"give me country is Northern Mariana Islands","output":{"field":"country","operator":"eq","value":"MP"}}
+{"input":"could you list country is Northern Mariana Islands","output":{"field":"country","operator":"eq","value":"MP"}}
+{"input":"please list companies from Mozambican","output":{"field":"country","operator":"eq","value":"MZ"}}
+{"input":"show all companies from Mozambican","output":{"field":"country","operator":"eq","value":"MZ"}}
+{"input":"can you find companies from Mozambican","output":{"field":"country","operator":"eq","value":"MZ"}}
+{"input":"give me companies from Mozambican","output":{"field":"country","operator":"eq","value":"MZ"}}
+{"input":"could you list companies from Mozambican","output":{"field":"country","operator":"eq","value":"MZ"}}
+{"input":"please list MR customers","output":{"field":"country","operator":"eq","value":"MR"}}
+{"input":"show all MR customers","output":{"field":"country","operator":"eq","value":"MR"}}
+{"input":"can you find MR customers","output":{"field":"country","operator":"eq","value":"MR"}}
+{"input":"give me MR customers","output":{"field":"country","operator":"eq","value":"MR"}}
+{"input":"could you list MR customers","output":{"field":"country","operator":"eq","value":"MR"}}
+{"input":"please list customers in Martinican","output":{"field":"country","operator":"eq","value":"MQ"}}
+{"input":"show all customers in Martinican","output":{"field":"country","operator":"eq","value":"MQ"}}
+{"input":"can you find customers in Martinican","output":{"field":"country","operator":"eq","value":"MQ"}}
+{"input":"give me customers in Martinican","output":{"field":"country","operator":"eq","value":"MQ"}}
+{"input":"could you list customers in Martinican","output":{"field":"country","operator":"eq","value":"MQ"}}
+{"input":"please list country is Mauritian","output":{"field":"country","operator":"eq","value":"MU"}}
+{"input":"show all country is Mauritian","output":{"field":"country","operator":"eq","value":"MU"}}
+{"input":"can you find country is Mauritian","output":{"field":"country","operator":"eq","value":"MU"}}
+{"input":"give me country is Mauritian","output":{"field":"country","operator":"eq","value":"MU"}}
+{"input":"could you list country is Mauritian","output":{"field":"country","operator":"eq","value":"MU"}}
+{"input":"please list companies from MW","output":{"field":"country","operator":"eq","value":"MW"}}
+{"input":"show all companies from MW","output":{"field":"country","operator":"eq","value":"MW"}}
+{"input":"can you find companies from MW","output":{"field":"country","operator":"eq","value":"MW"}}
+{"input":"give me companies from MW","output":{"field":"country","operator":"eq","value":"MW"}}
+{"input":"could you list companies from MW","output":{"field":"country","operator":"eq","value":"MW"}}
+{"input":"please list Department of Mayotte customers","output":{"field":"country","operator":"eq","value":"YT"}}
+{"input":"show all Department of Mayotte customers","output":{"field":"country","operator":"eq","value":"YT"}}
+{"input":"can you find Department of Mayotte customers","output":{"field":"country","operator":"eq","value":"YT"}}
+{"input":"give me Department of Mayotte customers","output":{"field":"country","operator":"eq","value":"YT"}}
+{"input":"could you list Department of Mayotte customers","output":{"field":"country","operator":"eq","value":"YT"}}
+{"input":"please list customers in Namibian","output":{"field":"country","operator":"eq","value":"NA"}}
+{"input":"show all customers in Namibian","output":{"field":"country","operator":"eq","value":"NA"}}
+{"input":"can you find customers in Namibian","output":{"field":"country","operator":"eq","value":"NA"}}
+{"input":"give me customers in Namibian","output":{"field":"country","operator":"eq","value":"NA"}}
+{"input":"could you list customers in Namibian","output":{"field":"country","operator":"eq","value":"NA"}}
+{"input":"please list country is NC","output":{"field":"country","operator":"eq","value":"NC"}}
+{"input":"show all country is NC","output":{"field":"country","operator":"eq","value":"NC"}}
+{"input":"can you find country is NC","output":{"field":"country","operator":"eq","value":"NC"}}
+{"input":"give me country is NC","output":{"field":"country","operator":"eq","value":"NC"}}
+{"input":"could you list country is NC","output":{"field":"country","operator":"eq","value":"NC"}}
+{"input":"please list companies from Norfolk Island","output":{"field":"country","operator":"eq","value":"NF"}}
+{"input":"show all companies from Norfolk Island","output":{"field":"country","operator":"eq","value":"NF"}}
+{"input":"can you find companies from Norfolk Island","output":{"field":"country","operator":"eq","value":"NF"}}
+{"input":"give me companies from Norfolk Island","output":{"field":"country","operator":"eq","value":"NF"}}
+{"input":"could you list companies from Norfolk Island","output":{"field":"country","operator":"eq","value":"NF"}}
+{"input":"please list Federal Republic of Nigeria customers","output":{"field":"country","operator":"eq","value":"NG"}}
+{"input":"show all Federal Republic of Nigeria customers","output":{"field":"country","operator":"eq","value":"NG"}}
+{"input":"can you find Federal Republic of Nigeria customers","output":{"field":"country","operator":"eq","value":"NG"}}
+{"input":"give me Federal Republic of Nigeria customers","output":{"field":"country","operator":"eq","value":"NG"}}
+{"input":"could you list Federal Republic of Nigeria customers","output":{"field":"country","operator":"eq","value":"NG"}}
+{"input":"please list customers in Nicaraguan","output":{"field":"country","operator":"eq","value":"NI"}}
+{"input":"show all customers in Nicaraguan","output":{"field":"country","operator":"eq","value":"NI"}}
+{"input":"can you find customers in Nicaraguan","output":{"field":"country","operator":"eq","value":"NI"}}
+{"input":"give me customers in Nicaraguan","output":{"field":"country","operator":"eq","value":"NI"}}
+{"input":"could you list customers in Nicaraguan","output":{"field":"country","operator":"eq","value":"NI"}}
+{"input":"please list country is NU","output":{"field":"country","operator":"eq","value":"NU"}}
+{"input":"show all country is NU","output":{"field":"country","operator":"eq","value":"NU"}}
+{"input":"can you find country is NU","output":{"field":"country","operator":"eq","value":"NU"}}
+{"input":"give me country is NU","output":{"field":"country","operator":"eq","value":"NU"}}
+{"input":"could you list country is NU","output":{"field":"country","operator":"eq","value":"NU"}}
+{"input":"please list NO customers","output":{"field":"country","operator":"eq","value":"NO"}}
+{"input":"show all NO customers","output":{"field":"country","operator":"eq","value":"NO"}}
+{"input":"can you find NO customers","output":{"field":"country","operator":"eq","value":"NO"}}
+{"input":"give me NO customers","output":{"field":"country","operator":"eq","value":"NO"}}
+{"input":"could you list NO customers","output":{"field":"country","operator":"eq","value":"NO"}}
+{"input":"please list customers in Nauru","output":{"field":"country","operator":"eq","value":"NR"}}
+{"input":"show all customers in Nauru","output":{"field":"country","operator":"eq","value":"NR"}}
+{"input":"can you find customers in Nauru","output":{"field":"country","operator":"eq","value":"NR"}}
+{"input":"give me customers in Nauru","output":{"field":"country","operator":"eq","value":"NR"}}
+{"input":"could you list customers in Nauru","output":{"field":"country","operator":"eq","value":"NR"}}
+{"input":"please list country is New Zealand","output":{"field":"country","operator":"eq","value":"NZ"}}
+{"input":"show all country is New Zealand","output":{"field":"country","operator":"eq","value":"NZ"}}
+{"input":"can you find country is New Zealand","output":{"field":"country","operator":"eq","value":"NZ"}}
+{"input":"give me country is New Zealand","output":{"field":"country","operator":"eq","value":"NZ"}}
+{"input":"could you list country is New Zealand","output":{"field":"country","operator":"eq","value":"NZ"}}
+{"input":"please list companies from Omani","output":{"field":"country","operator":"eq","value":"OM"}}
+{"input":"show all companies from Omani","output":{"field":"country","operator":"eq","value":"OM"}}
+{"input":"can you find companies from Omani","output":{"field":"country","operator":"eq","value":"OM"}}
+{"input":"give me companies from Omani","output":{"field":"country","operator":"eq","value":"OM"}}
+{"input":"could you list companies from Omani","output":{"field":"country","operator":"eq","value":"OM"}}
+{"input":"please list PK customers","output":{"field":"country","operator":"eq","value":"PK"}}
+{"input":"show all PK customers","output":{"field":"country","operator":"eq","value":"PK"}}
+{"input":"can you find PK customers","output":{"field":"country","operator":"eq","value":"PK"}}
+{"input":"give me PK customers","output":{"field":"country","operator":"eq","value":"PK"}}
+{"input":"could you list PK customers","output":{"field":"country","operator":"eq","value":"PK"}}
+{"input":"please list customers in Pitcairn Islands","output":{"field":"country","operator":"eq","value":"PN"}}
+{"input":"show all customers in Pitcairn Islands","output":{"field":"country","operator":"eq","value":"PN"}}
+{"input":"can you find customers in Pitcairn Islands","output":{"field":"country","operator":"eq","value":"PN"}}
+{"input":"give me customers in Pitcairn Islands","output":{"field":"country","operator":"eq","value":"PN"}}
+{"input":"could you list customers in Pitcairn Islands","output":{"field":"country","operator":"eq","value":"PN"}}
+{"input":"please list country is Peru","output":{"field":"country","operator":"eq","value":"PE"}}
+{"input":"show all country is Peru","output":{"field":"country","operator":"eq","value":"PE"}}
+{"input":"can you find country is Peru","output":{"field":"country","operator":"eq","value":"PE"}}
+{"input":"give me country is Peru","output":{"field":"country","operator":"eq","value":"PE"}}
+{"input":"could you list country is Peru","output":{"field":"country","operator":"eq","value":"PE"}}
+{"input":"please list companies from Republic of the Philippines","output":{"field":"country","operator":"eq","value":"PH"}}
+{"input":"show all companies from Republic of the Philippines","output":{"field":"country","operator":"eq","value":"PH"}}
+{"input":"can you find companies from Republic of the Philippines","output":{"field":"country","operator":"eq","value":"PH"}}
+{"input":"give me companies from Republic of the Philippines","output":{"field":"country","operator":"eq","value":"PH"}}
+{"input":"could you list companies from Republic of the Philippines","output":{"field":"country","operator":"eq","value":"PH"}}
+{"input":"please list Palauan customers","output":{"field":"country","operator":"eq","value":"PW"}}
+{"input":"show all Palauan customers","output":{"field":"country","operator":"eq","value":"PW"}}
+{"input":"can you find Palauan customers","output":{"field":"country","operator":"eq","value":"PW"}}
+{"input":"give me Palauan customers","output":{"field":"country","operator":"eq","value":"PW"}}
+{"input":"could you list Palauan customers","output":{"field":"country","operator":"eq","value":"PW"}}
+{"input":"please list customers in PG","output":{"field":"country","operator":"eq","value":"PG"}}
+{"input":"show all customers in PG","output":{"field":"country","operator":"eq","value":"PG"}}
+{"input":"can you find customers in PG","output":{"field":"country","operator":"eq","value":"PG"}}
+{"input":"give me customers in PG","output":{"field":"country","operator":"eq","value":"PG"}}
+{"input":"could you list customers in PG","output":{"field":"country","operator":"eq","value":"PG"}}
+{"input":"please list country is PL","output":{"field":"country","operator":"eq","value":"PL"}}
+{"input":"show all country is PL","output":{"field":"country","operator":"eq","value":"PL"}}
+{"input":"can you find country is PL","output":{"field":"country","operator":"eq","value":"PL"}}
+{"input":"give me country is PL","output":{"field":"country","operator":"eq","value":"PL"}}
+{"input":"could you list country is PL","output":{"field":"country","operator":"eq","value":"PL"}}
+{"input":"please list companies from North Korea","output":{"field":"country","operator":"eq","value":"KP"}}
+{"input":"show all companies from North Korea","output":{"field":"country","operator":"eq","value":"KP"}}
+{"input":"can you find companies from North Korea","output":{"field":"country","operator":"eq","value":"KP"}}
+{"input":"give me companies from North Korea","output":{"field":"country","operator":"eq","value":"KP"}}
+{"input":"could you list companies from North Korea","output":{"field":"country","operator":"eq","value":"KP"}}
+{"input":"please list Portuguese Republic customers","output":{"field":"country","operator":"eq","value":"PT"}}
+{"input":"show all Portuguese Republic customers","output":{"field":"country","operator":"eq","value":"PT"}}
+{"input":"can you find Portuguese Republic customers","output":{"field":"country","operator":"eq","value":"PT"}}
+{"input":"give me Portuguese Republic customers","output":{"field":"country","operator":"eq","value":"PT"}}
+{"input":"could you list Portuguese Republic customers","output":{"field":"country","operator":"eq","value":"PT"}}
+{"input":"please list customers in Paraguayan","output":{"field":"country","operator":"eq","value":"PY"}}
+{"input":"show all customers in Paraguayan","output":{"field":"country","operator":"eq","value":"PY"}}
+{"input":"can you find customers in Paraguayan","output":{"field":"country","operator":"eq","value":"PY"}}
+{"input":"give me customers in Paraguayan","output":{"field":"country","operator":"eq","value":"PY"}}
+{"input":"could you list customers in Paraguayan","output":{"field":"country","operator":"eq","value":"PY"}}
+{"input":"please list country is Palestinian","output":{"field":"country","operator":"eq","value":"PS"}}
+{"input":"show all country is Palestinian","output":{"field":"country","operator":"eq","value":"PS"}}
+{"input":"can you find country is Palestinian","output":{"field":"country","operator":"eq","value":"PS"}}
+{"input":"give me country is Palestinian","output":{"field":"country","operator":"eq","value":"PS"}}
+{"input":"could you list country is Palestinian","output":{"field":"country","operator":"eq","value":"PS"}}
+{"input":"please list companies from Qatar","output":{"field":"country","operator":"eq","value":"QA"}}
+{"input":"show all companies from Qatar","output":{"field":"country","operator":"eq","value":"QA"}}
+{"input":"can you find companies from Qatar","output":{"field":"country","operator":"eq","value":"QA"}}
+{"input":"give me companies from Qatar","output":{"field":"country","operator":"eq","value":"QA"}}
+{"input":"could you list companies from Qatar","output":{"field":"country","operator":"eq","value":"QA"}}
+{"input":"please list Réunion Island customers","output":{"field":"country","operator":"eq","value":"RE"}}
+{"input":"show all Réunion Island customers","output":{"field":"country","operator":"eq","value":"RE"}}
+{"input":"can you find Réunion Island customers","output":{"field":"country","operator":"eq","value":"RE"}}
+{"input":"give me Réunion Island customers","output":{"field":"country","operator":"eq","value":"RE"}}
+{"input":"could you list Réunion Island customers","output":{"field":"country","operator":"eq","value":"RE"}}
+{"input":"please list customers in RO","output":{"field":"country","operator":"eq","value":"RO"}}
+{"input":"show all customers in RO","output":{"field":"country","operator":"eq","value":"RO"}}
+{"input":"can you find customers in RO","output":{"field":"country","operator":"eq","value":"RO"}}
+{"input":"give me customers in RO","output":{"field":"country","operator":"eq","value":"RO"}}
+{"input":"could you list customers in RO","output":{"field":"country","operator":"eq","value":"RO"}}
+{"input":"please list country is RU","output":{"field":"country","operator":"eq","value":"RU"}}
+{"input":"show all country is RU","output":{"field":"country","operator":"eq","value":"RU"}}
+{"input":"can you find country is RU","output":{"field":"country","operator":"eq","value":"RU"}}
+{"input":"give me country is RU","output":{"field":"country","operator":"eq","value":"RU"}}
+{"input":"could you list country is RU","output":{"field":"country","operator":"eq","value":"RU"}}
+{"input":"please list companies from Saudi Arabia","output":{"field":"country","operator":"eq","value":"SA"}}
+{"input":"show all companies from Saudi Arabia","output":{"field":"country","operator":"eq","value":"SA"}}
+{"input":"can you find companies from Saudi Arabia","output":{"field":"country","operator":"eq","value":"SA"}}
+{"input":"give me companies from Saudi Arabia","output":{"field":"country","operator":"eq","value":"SA"}}
+{"input":"could you list companies from Saudi Arabia","output":{"field":"country","operator":"eq","value":"SA"}}
+{"input":"please list Republic of the Sudan customers","output":{"field":"country","operator":"eq","value":"SD"}}
+{"input":"show all Republic of the Sudan customers","output":{"field":"country","operator":"eq","value":"SD"}}
+{"input":"can you find Republic of the Sudan customers","output":{"field":"country","operator":"eq","value":"SD"}}
+{"input":"give me Republic of the Sudan customers","output":{"field":"country","operator":"eq","value":"SD"}}
+{"input":"could you list Republic of the Sudan customers","output":{"field":"country","operator":"eq","value":"SD"}}
+{"input":"please list customers in Senegalese","output":{"field":"country","operator":"eq","value":"SN"}}
+{"input":"show all customers in Senegalese","output":{"field":"country","operator":"eq","value":"SN"}}
+{"input":"can you find customers in Senegalese","output":{"field":"country","operator":"eq","value":"SN"}}
+{"input":"give me customers in Senegalese","output":{"field":"country","operator":"eq","value":"SN"}}
+{"input":"could you list customers in Senegalese","output":{"field":"country","operator":"eq","value":"SN"}}
+{"input":"please list country is Singaporean","output":{"field":"country","operator":"eq","value":"SG"}}
+{"input":"show all country is Singaporean","output":{"field":"country","operator":"eq","value":"SG"}}
+{"input":"can you find country is Singaporean","output":{"field":"country","operator":"eq","value":"SG"}}
+{"input":"give me country is Singaporean","output":{"field":"country","operator":"eq","value":"SG"}}
+{"input":"could you list country is Singaporean","output":{"field":"country","operator":"eq","value":"SG"}}
+{"input":"please list companies from GS","output":{"field":"country","operator":"eq","value":"GS"}}
+{"input":"show all companies from GS","output":{"field":"country","operator":"eq","value":"GS"}}
+{"input":"can you find companies from GS","output":{"field":"country","operator":"eq","value":"GS"}}
+{"input":"give me companies from GS","output":{"field":"country","operator":"eq","value":"GS"}}
+{"input":"could you list companies from GS","output":{"field":"country","operator":"eq","value":"GS"}}
+{"input":"please list Solomon Islander customers","output":{"field":"country","operator":"eq","value":"SB"}}
+{"input":"show all Solomon Islander customers","output":{"field":"country","operator":"eq","value":"SB"}}
+{"input":"can you find Solomon Islander customers","output":{"field":"country","operator":"eq","value":"SB"}}
+{"input":"give me Solomon Islander customers","output":{"field":"country","operator":"eq","value":"SB"}}
+{"input":"could you list Solomon Islander customers","output":{"field":"country","operator":"eq","value":"SB"}}
+{"input":"please list customers in SL","output":{"field":"country","operator":"eq","value":"SL"}}
+{"input":"show all customers in SL","output":{"field":"country","operator":"eq","value":"SL"}}
+{"input":"can you find customers in SL","output":{"field":"country","operator":"eq","value":"SL"}}
+{"input":"give me customers in SL","output":{"field":"country","operator":"eq","value":"SL"}}
+{"input":"could you list customers in SL","output":{"field":"country","operator":"eq","value":"SL"}}
+{"input":"please list country is SV","output":{"field":"country","operator":"eq","value":"SV"}}
+{"input":"show all country is SV","output":{"field":"country","operator":"eq","value":"SV"}}
+{"input":"can you find country is SV","output":{"field":"country","operator":"eq","value":"SV"}}
+{"input":"give me country is SV","output":{"field":"country","operator":"eq","value":"SV"}}
+{"input":"could you list country is SV","output":{"field":"country","operator":"eq","value":"SV"}}
+{"input":"please list companies from Somalia","output":{"field":"country","operator":"eq","value":"SO"}}
+{"input":"show all companies from Somalia","output":{"field":"country","operator":"eq","value":"SO"}}
+{"input":"can you find companies from Somalia","output":{"field":"country","operator":"eq","value":"SO"}}
+{"input":"give me companies from Somalia","output":{"field":"country","operator":"eq","value":"SO"}}
+{"input":"could you list companies from Somalia","output":{"field":"country","operator":"eq","value":"SO"}}
+{"input":"please list Saint-Pierrais, Miquelonnais customers","output":{"field":"country","operator":"eq","value":"PM"}}
+{"input":"show all Saint-Pierrais, Miquelonnais customers","output":{"field":"country","operator":"eq","value":"PM"}}
+{"input":"can you find Saint-Pierrais, Miquelonnais customers","output":{"field":"country","operator":"eq","value":"PM"}}
+{"input":"give me Saint-Pierrais, Miquelonnais customers","output":{"field":"country","operator":"eq","value":"PM"}}
+{"input":"could you list Saint-Pierrais, Miquelonnais customers","output":{"field":"country","operator":"eq","value":"PM"}}
+{"input":"please list customers in RS","output":{"field":"country","operator":"eq","value":"RS"}}
+{"input":"show all customers in RS","output":{"field":"country","operator":"eq","value":"RS"}}
+{"input":"can you find customers in RS","output":{"field":"country","operator":"eq","value":"RS"}}
+{"input":"give me customers in RS","output":{"field":"country","operator":"eq","value":"RS"}}
+{"input":"could you list customers in RS","output":{"field":"country","operator":"eq","value":"RS"}}
+{"input":"please list country is SS","output":{"field":"country","operator":"eq","value":"SS"}}
+{"input":"show all country is SS","output":{"field":"country","operator":"eq","value":"SS"}}
+{"input":"can you find country is SS","output":{"field":"country","operator":"eq","value":"SS"}}
+{"input":"give me country is SS","output":{"field":"country","operator":"eq","value":"SS"}}
+{"input":"could you list country is SS","output":{"field":"country","operator":"eq","value":"SS"}}
+{"input":"please list companies from Suriname","output":{"field":"country","operator":"eq","value":"SR"}}
+{"input":"show all companies from Suriname","output":{"field":"country","operator":"eq","value":"SR"}}
+{"input":"can you find companies from Suriname","output":{"field":"country","operator":"eq","value":"SR"}}
+{"input":"give me companies from Suriname","output":{"field":"country","operator":"eq","value":"SR"}}
+{"input":"could you list companies from Suriname","output":{"field":"country","operator":"eq","value":"SR"}}
+{"input":"please list Slovak Republic customers","output":{"field":"country","operator":"eq","value":"SK"}}
+{"input":"show all Slovak Republic customers","output":{"field":"country","operator":"eq","value":"SK"}}
+{"input":"can you find Slovak Republic customers","output":{"field":"country","operator":"eq","value":"SK"}}
+{"input":"give me Slovak Republic customers","output":{"field":"country","operator":"eq","value":"SK"}}
+{"input":"could you list Slovak Republic customers","output":{"field":"country","operator":"eq","value":"SK"}}
+{"input":"please list customers in Slovene","output":{"field":"country","operator":"eq","value":"SI"}}
+{"input":"show all customers in Slovene","output":{"field":"country","operator":"eq","value":"SI"}}
+{"input":"can you find customers in Slovene","output":{"field":"country","operator":"eq","value":"SI"}}
+{"input":"give me customers in Slovene","output":{"field":"country","operator":"eq","value":"SI"}}
+{"input":"could you list customers in Slovene","output":{"field":"country","operator":"eq","value":"SI"}}
+{"input":"please list country is SE","output":{"field":"country","operator":"eq","value":"SE"}}
+{"input":"show all country is SE","output":{"field":"country","operator":"eq","value":"SE"}}
+{"input":"can you find country is SE","output":{"field":"country","operator":"eq","value":"SE"}}
+{"input":"give me country is SE","output":{"field":"country","operator":"eq","value":"SE"}}
+{"input":"could you list country is SE","output":{"field":"country","operator":"eq","value":"SE"}}
+{"input":"please list companies from Sint Maarten","output":{"field":"country","operator":"eq","value":"SX"}}
+{"input":"show all companies from Sint Maarten","output":{"field":"country","operator":"eq","value":"SX"}}
+{"input":"can you find companies from Sint Maarten","output":{"field":"country","operator":"eq","value":"SX"}}
+{"input":"give me companies from Sint Maarten","output":{"field":"country","operator":"eq","value":"SX"}}
+{"input":"could you list companies from Sint Maarten","output":{"field":"country","operator":"eq","value":"SX"}}
+{"input":"please list Seychellois customers","output":{"field":"country","operator":"eq","value":"SC"}}
+{"input":"show all Seychellois customers","output":{"field":"country","operator":"eq","value":"SC"}}
+{"input":"can you find Seychellois customers","output":{"field":"country","operator":"eq","value":"SC"}}
+{"input":"give me Seychellois customers","output":{"field":"country","operator":"eq","value":"SC"}}
+{"input":"could you list Seychellois customers","output":{"field":"country","operator":"eq","value":"SC"}}
+{"input":"please list customers in SY","output":{"field":"country","operator":"eq","value":"SY"}}
+{"input":"show all customers in SY","output":{"field":"country","operator":"eq","value":"SY"}}
+{"input":"can you find customers in SY","output":{"field":"country","operator":"eq","value":"SY"}}
+{"input":"give me customers in SY","output":{"field":"country","operator":"eq","value":"SY"}}
+{"input":"could you list customers in SY","output":{"field":"country","operator":"eq","value":"SY"}}
+{"input":"please list country is Chad","output":{"field":"country","operator":"eq","value":"TD"}}
+{"input":"show all country is Chad","output":{"field":"country","operator":"eq","value":"TD"}}
+{"input":"can you find country is Chad","output":{"field":"country","operator":"eq","value":"TD"}}
+{"input":"give me country is Chad","output":{"field":"country","operator":"eq","value":"TD"}}
+{"input":"could you list country is Chad","output":{"field":"country","operator":"eq","value":"TD"}}
+{"input":"please list companies from Togolese Republic","output":{"field":"country","operator":"eq","value":"TG"}}
+{"input":"show all companies from Togolese Republic","output":{"field":"country","operator":"eq","value":"TG"}}
+{"input":"can you find companies from Togolese Republic","output":{"field":"country","operator":"eq","value":"TG"}}
+{"input":"give me companies from Togolese Republic","output":{"field":"country","operator":"eq","value":"TG"}}
+{"input":"could you list companies from Togolese Republic","output":{"field":"country","operator":"eq","value":"TG"}}
+{"input":"please list Thai customers","output":{"field":"country","operator":"eq","value":"TH"}}
+{"input":"show all Thai customers","output":{"field":"country","operator":"eq","value":"TH"}}
+{"input":"can you find Thai customers","output":{"field":"country","operator":"eq","value":"TH"}}
+{"input":"give me Thai customers","output":{"field":"country","operator":"eq","value":"TH"}}
+{"input":"could you list Thai customers","output":{"field":"country","operator":"eq","value":"TH"}}
+{"input":"please list customers in TJ","output":{"field":"country","operator":"eq","value":"TJ"}}
+{"input":"show all customers in TJ","output":{"field":"country","operator":"eq","value":"TJ"}}
+{"input":"can you find customers in TJ","output":{"field":"country","operator":"eq","value":"TJ"}}
+{"input":"give me customers in TJ","output":{"field":"country","operator":"eq","value":"TJ"}}
+{"input":"could you list customers in TJ","output":{"field":"country","operator":"eq","value":"TJ"}}
+{"input":"please list country is Turkmenistan","output":{"field":"country","operator":"eq","value":"TM"}}
+{"input":"show all country is Turkmenistan","output":{"field":"country","operator":"eq","value":"TM"}}
+{"input":"can you find country is Turkmenistan","output":{"field":"country","operator":"eq","value":"TM"}}
+{"input":"give me country is Turkmenistan","output":{"field":"country","operator":"eq","value":"TM"}}
+{"input":"could you list country is Turkmenistan","output":{"field":"country","operator":"eq","value":"TM"}}
+{"input":"please list companies from East Timorese","output":{"field":"country","operator":"eq","value":"TL"}}
+{"input":"show all companies from East Timorese","output":{"field":"country","operator":"eq","value":"TL"}}
+{"input":"can you find companies from East Timorese","output":{"field":"country","operator":"eq","value":"TL"}}
+{"input":"give me companies from East Timorese","output":{"field":"country","operator":"eq","value":"TL"}}
+{"input":"could you list companies from East Timorese","output":{"field":"country","operator":"eq","value":"TL"}}
+{"input":"please list TO customers","output":{"field":"country","operator":"eq","value":"TO"}}
+{"input":"show all TO customers","output":{"field":"country","operator":"eq","value":"TO"}}
+{"input":"can you find TO customers","output":{"field":"country","operator":"eq","value":"TO"}}
+{"input":"give me TO customers","output":{"field":"country","operator":"eq","value":"TO"}}
+{"input":"could you list TO customers","output":{"field":"country","operator":"eq","value":"TO"}}
+{"input":"please list customers in Tunisia","output":{"field":"country","operator":"eq","value":"TN"}}
+{"input":"show all customers in Tunisia","output":{"field":"country","operator":"eq","value":"TN"}}
+{"input":"can you find customers in Tunisia","output":{"field":"country","operator":"eq","value":"TN"}}
+{"input":"give me customers in Tunisia","output":{"field":"country","operator":"eq","value":"TN"}}
+{"input":"could you list customers in Tunisia","output":{"field":"country","operator":"eq","value":"TN"}}
+{"input":"please list country is Türkiye","output":{"field":"country","operator":"eq","value":"TR"}}
+{"input":"show all country is Türkiye","output":{"field":"country","operator":"eq","value":"TR"}}
+{"input":"can you find country is Türkiye","output":{"field":"country","operator":"eq","value":"TR"}}
+{"input":"give me country is Türkiye","output":{"field":"country","operator":"eq","value":"TR"}}
+{"input":"could you list country is Türkiye","output":{"field":"country","operator":"eq","value":"TR"}}
+{"input":"please list companies from Tuvaluan","output":{"field":"country","operator":"eq","value":"TV"}}
+{"input":"show all companies from Tuvaluan","output":{"field":"country","operator":"eq","value":"TV"}}
+{"input":"can you find companies from Tuvaluan","output":{"field":"country","operator":"eq","value":"TV"}}
+{"input":"give me companies from Tuvaluan","output":{"field":"country","operator":"eq","value":"TV"}}
+{"input":"could you list companies from Tuvaluan","output":{"field":"country","operator":"eq","value":"TV"}}
+{"input":"please list TW customers","output":{"field":"country","operator":"eq","value":"TW"}}
+{"input":"show all TW customers","output":{"field":"country","operator":"eq","value":"TW"}}
+{"input":"can you find TW customers","output":{"field":"country","operator":"eq","value":"TW"}}
+{"input":"give me TW customers","output":{"field":"country","operator":"eq","value":"TW"}}
+{"input":"could you list TW customers","output":{"field":"country","operator":"eq","value":"TW"}}
+{"input":"please list customers in Uganda","output":{"field":"country","operator":"eq","value":"UG"}}
+{"input":"show all customers in Uganda","output":{"field":"country","operator":"eq","value":"UG"}}
+{"input":"can you find customers in Uganda","output":{"field":"country","operator":"eq","value":"UG"}}
+{"input":"give me customers in Uganda","output":{"field":"country","operator":"eq","value":"UG"}}
+{"input":"could you list customers in Uganda","output":{"field":"country","operator":"eq","value":"UG"}}
+{"input":"please list country is Ukraine","output":{"field":"country","operator":"eq","value":"UA"}}
+{"input":"show all country is Ukraine","output":{"field":"country","operator":"eq","value":"UA"}}
+{"input":"can you find country is Ukraine","output":{"field":"country","operator":"eq","value":"UA"}}
+{"input":"give me country is Ukraine","output":{"field":"country","operator":"eq","value":"UA"}}
+{"input":"could you list country is Ukraine","output":{"field":"country","operator":"eq","value":"UA"}}
+{"input":"please list companies from UM","output":{"field":"country","operator":"eq","value":"UM"}}
+{"input":"show all companies from UM","output":{"field":"country","operator":"eq","value":"UM"}}
+{"input":"can you find companies from UM","output":{"field":"country","operator":"eq","value":"UM"}}
+{"input":"give me companies from UM","output":{"field":"country","operator":"eq","value":"UM"}}
+{"input":"could you list companies from UM","output":{"field":"country","operator":"eq","value":"UM"}}
+{"input":"please list United States customers","output":{"field":"country","operator":"eq","value":"US"}}
+{"input":"show all United States customers","output":{"field":"country","operator":"eq","value":"US"}}
+{"input":"can you find United States customers","output":{"field":"country","operator":"eq","value":"US"}}
+{"input":"give me United States customers","output":{"field":"country","operator":"eq","value":"US"}}
+{"input":"could you list United States customers","output":{"field":"country","operator":"eq","value":"US"}}
+{"input":"please list country is Uzbekistan","output":{"field":"country","operator":"eq","value":"UZ"}}
+{"input":"show all country is Uzbekistan","output":{"field":"country","operator":"eq","value":"UZ"}}
+{"input":"can you find country is Uzbekistan","output":{"field":"country","operator":"eq","value":"UZ"}}
+{"input":"give me country is Uzbekistan","output":{"field":"country","operator":"eq","value":"UZ"}}
+{"input":"could you list country is Uzbekistan","output":{"field":"country","operator":"eq","value":"UZ"}}
+{"input":"please list companies from Vatican City State","output":{"field":"country","operator":"eq","value":"VA"}}
+{"input":"show all companies from Vatican City State","output":{"field":"country","operator":"eq","value":"VA"}}
+{"input":"can you find companies from Vatican City State","output":{"field":"country","operator":"eq","value":"VA"}}
+{"input":"give me companies from Vatican City State","output":{"field":"country","operator":"eq","value":"VA"}}
+{"input":"could you list companies from Vatican City State","output":{"field":"country","operator":"eq","value":"VA"}}
+{"input":"please list VC customers","output":{"field":"country","operator":"eq","value":"VC"}}
+{"input":"show all VC customers","output":{"field":"country","operator":"eq","value":"VC"}}
+{"input":"can you find VC customers","output":{"field":"country","operator":"eq","value":"VC"}}
+{"input":"give me VC customers","output":{"field":"country","operator":"eq","value":"VC"}}
+{"input":"could you list VC customers","output":{"field":"country","operator":"eq","value":"VC"}}
+{"input":"please list customers in British Virgin Islands","output":{"field":"country","operator":"eq","value":"VG"}}
+{"input":"show all customers in British Virgin Islands","output":{"field":"country","operator":"eq","value":"VG"}}
+{"input":"can you find customers in British Virgin Islands","output":{"field":"country","operator":"eq","value":"VG"}}
+{"input":"give me customers in British Virgin Islands","output":{"field":"country","operator":"eq","value":"VG"}}
+{"input":"could you list customers in British Virgin Islands","output":{"field":"country","operator":"eq","value":"VG"}}
+{"input":"please list country is Virgin Islands of the United States","output":{"field":"country","operator":"eq","value":"VI"}}
+{"input":"show all country is Virgin Islands of the United States","output":{"field":"country","operator":"eq","value":"VI"}}
+{"input":"can you find country is Virgin Islands of the United States","output":{"field":"country","operator":"eq","value":"VI"}}
+{"input":"give me country is Virgin Islands of the United States","output":{"field":"country","operator":"eq","value":"VI"}}
+{"input":"could you list country is Virgin Islands of the United States","output":{"field":"country","operator":"eq","value":"VI"}}
+{"input":"please list companies from VN","output":{"field":"country","operator":"eq","value":"VN"}}
+{"input":"show all companies from VN","output":{"field":"country","operator":"eq","value":"VN"}}
+{"input":"can you find companies from VN","output":{"field":"country","operator":"eq","value":"VN"}}
+{"input":"give me companies from VN","output":{"field":"country","operator":"eq","value":"VN"}}
+{"input":"could you list companies from VN","output":{"field":"country","operator":"eq","value":"VN"}}
+{"input":"please list Wallis and Futuna customers","output":{"field":"country","operator":"eq","value":"WF"}}
+{"input":"show all Wallis and Futuna customers","output":{"field":"country","operator":"eq","value":"WF"}}
+{"input":"can you find Wallis and Futuna customers","output":{"field":"country","operator":"eq","value":"WF"}}
+{"input":"give me Wallis and Futuna customers","output":{"field":"country","operator":"eq","value":"WF"}}
+{"input":"could you list Wallis and Futuna customers","output":{"field":"country","operator":"eq","value":"WF"}}
+{"input":"please list customers in Independent State of Samoa","output":{"field":"country","operator":"eq","value":"WS"}}
+{"input":"show all customers in Independent State of Samoa","output":{"field":"country","operator":"eq","value":"WS"}}
+{"input":"can you find customers in Independent State of Samoa","output":{"field":"country","operator":"eq","value":"WS"}}
+{"input":"give me customers in Independent State of Samoa","output":{"field":"country","operator":"eq","value":"WS"}}
+{"input":"could you list customers in Independent State of Samoa","output":{"field":"country","operator":"eq","value":"WS"}}
+{"input":"please list country is Republic of Yemen","output":{"field":"country","operator":"eq","value":"YE"}}
+{"input":"show all country is Republic of Yemen","output":{"field":"country","operator":"eq","value":"YE"}}
+{"input":"can you find country is Republic of Yemen","output":{"field":"country","operator":"eq","value":"YE"}}
+{"input":"give me country is Republic of Yemen","output":{"field":"country","operator":"eq","value":"YE"}}
+{"input":"could you list country is Republic of Yemen","output":{"field":"country","operator":"eq","value":"YE"}}
+{"input":"please list companies from South African","output":{"field":"country","operator":"eq","value":"ZA"}}
+{"input":"show all companies from South African","output":{"field":"country","operator":"eq","value":"ZA"}}
+{"input":"can you find companies from South African","output":{"field":"country","operator":"eq","value":"ZA"}}
+{"input":"give me companies from South African","output":{"field":"country","operator":"eq","value":"ZA"}}
+{"input":"could you list companies from South African","output":{"field":"country","operator":"eq","value":"ZA"}}
+{"input":"please list ZM customers","output":{"field":"country","operator":"eq","value":"ZM"}}
+{"input":"show all ZM customers","output":{"field":"country","operator":"eq","value":"ZM"}}
+{"input":"can you find ZM customers","output":{"field":"country","operator":"eq","value":"ZM"}}
+{"input":"give me ZM customers","output":{"field":"country","operator":"eq","value":"ZM"}}
+{"input":"could you list ZM customers","output":{"field":"country","operator":"eq","value":"ZM"}}
+{"input":"please list customers in French","output":{"field":"country","operator":"eq","value":"FR"}}
+{"input":"show all customers in French","output":{"field":"country","operator":"eq","value":"FR"}}
+{"input":"can you find customers in French","output":{"field":"country","operator":"eq","value":"FR"}}
+{"input":"give me customers in French","output":{"field":"country","operator":"eq","value":"FR"}}
+{"input":"could you list customers in French","output":{"field":"country","operator":"eq","value":"FR"}}
+{"input":"please list churned Swedish customers over 40k ARR","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"SE"},{"field":"arr","operator":"gt","value":40000}]}}
+{"input":"show all churned Swedish customers over 40k ARR","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"SE"},{"field":"arr","operator":"gt","value":40000}]}}
+{"input":"can you find churned Swedish customers over 40k ARR","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"SE"},{"field":"arr","operator":"gt","value":40000}]}}
+{"input":"give me churned Swedish customers over 40k ARR","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"SE"},{"field":"arr","operator":"gt","value":40000}]}}
+{"input":"could you list churned Swedish customers over 40k ARR","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"SE"},{"field":"arr","operator":"gt","value":40000}]}}
+{"input":"please list churned French customers over 80k ARR","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"FR"},{"field":"arr","operator":"gt","value":80000}]}}
+{"input":"show all churned French customers over 80k ARR","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"FR"},{"field":"arr","operator":"gt","value":80000}]}}
+{"input":"can you find churned French customers over 80k ARR","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"FR"},{"field":"arr","operator":"gt","value":80000}]}}
+{"input":"give me churned French customers over 80k ARR","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"FR"},{"field":"arr","operator":"gt","value":80000}]}}
+{"input":"could you list churned French customers over 80k ARR","output":{"and":[{"field":"status","operator":"eq","value":"churned"},{"field":"country","operator":"eq","value":"FR"},{"field":"arr","operator":"gt","value":80000}]}}
+{"input":"please list currently active please","output":{"field":"status","operator":"eq","value":"active"}}
+{"input":"show all currently active please","output":{"field":"status","operator":"eq","value":"active"}}
+{"input":"can you find currently active please","output":{"field":"status","operator":"eq","value":"active"}}
+{"input":"give me currently active please","output":{"field":"status","operator":"eq","value":"active"}}
+{"input":"could you list currently active please","output":{"field":"status","operator":"eq","value":"active"}}
+{"input":"please list ARR under 50k?","output":{"field":"arr","operator":"lt","value":50000}}
+{"input":"show all ARR under 50k?","output":{"field":"arr","operator":"lt","value":50000}}
+{"input":"can you find ARR under 50k?","output":{"field":"arr","operator":"lt","value":50000}}
+{"input":"give me ARR under 50k?","output":{"field":"arr","operator":"lt","value":50000}}
+{"input":"could you list ARR under 50k?","output":{"field":"arr","operator":"lt","value":50000}}
+{"input":"please list annual recurring revenue < $2,500 please","output":{"field":"arr","operator":"lt","value":2500}}
+{"input":"show all annual recurring revenue < $2,500 please","output":{"field":"arr","operator":"lt","value":2500}}
+{"input":"can you find annual recurring revenue < $2,500 please","output":{"field":"arr","operator":"lt","value":2500}}
+{"input":"give me annual recurring revenue < $2,500 please","output":{"field":"arr","operator":"lt","value":2500}}
+{"input":"could you list annual recurring revenue < $2,500 please","output":{"field":"arr","operator":"lt","value":2500}}
+{"input":"please list currently active or ARR over 50k?","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"show all currently active or ARR over 50k?","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"can you find currently active or ARR over 50k?","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"give me currently active or ARR over 50k?","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"could you list currently active or ARR over 50k?","output":{"or":[{"field":"status","operator":"eq","value":"active"},{"field":"arr","operator":"gt","value":50000}]}}
+{"input":"please list Emirati customers please","output":{"field":"country","operator":"eq","value":"AE"}}
+{"input":"show all Emirati customers please","output":{"field":"country","operator":"eq","value":"AE"}}
+{"input":"can you find Emirati customers please","output":{"field":"country","operator":"eq","value":"AE"}}
+{"input":"give me Emirati customers please","output":{"field":"country","operator":"eq","value":"AE"}}
+{"input":"could you list Emirati customers please","output":{"field":"country","operator":"eq","value":"AE"}}
+{"input":"please list companies from Austria?","output":{"field":"country","operator":"eq","value":"AT"}}
+{"input":"show all companies from Austria?","output":{"field":"country","operator":"eq","value":"AT"}}
+{"input":"can you find companies from Austria?","output":{"field":"country","operator":"eq","value":"AT"}}
+{"input":"give me companies from Austria?","output":{"field":"country","operator":"eq","value":"AT"}}
+{"input":"could you list companies from Austria?","output":{"field":"country","operator":"eq","value":"AT"}}
+{"input":"please list customers in Bulgaria please","output":{"field":"country","operator":"eq","value":"BG"}}
+{"input":"show all customers in Bulgaria please","output":{"field":"country","operator":"eq","value":"BG"}}
+{"input":"can you find customers in Bulgaria please","output":{"field":"country","operator":"eq","value":"BG"}}
+{"input":"give me customers in Bulgaria please","output":{"field":"country","operator":"eq","value":"BG"}}
+{"input":"could you list customers in Bulgaria please","output":{"field":"country","operator":"eq","value":"BG"}}
+{"input":"please list Belarusian customers?","output":{"field":"country","operator":"eq","value":"BY"}}
+{"input":"show all Belarusian customers?","output":{"field":"country","operator":"eq","value":"BY"}}
+{"input":"can you find Belarusian customers?","output":{"field":"country","operator":"eq","value":"BY"}}
+{"input":"give me Belarusian customers?","output":{"field":"country","operator":"eq","value":"BY"}}
+{"input":"could you list Belarusian customers?","output":{"field":"country","operator":"eq","value":"BY"}}
+{"input":"please list country is Bhutanese please","output":{"field":"country","operator":"eq","value":"BT"}}
+{"input":"show all country is Bhutanese please","output":{"field":"country","operator":"eq","value":"BT"}}
+{"input":"can you find country is Bhutanese please","output":{"field":"country","operator":"eq","value":"BT"}}
+{"input":"give me country is Bhutanese please","output":{"field":"country","operator":"eq","value":"BT"}}
+{"input":"could you list country is Bhutanese please","output":{"field":"country","operator":"eq","value":"BT"}}
+{"input":"please list customers in CL?","output":{"field":"country","operator":"eq","value":"CL"}}
+{"input":"show all customers in CL?","output":{"field":"country","operator":"eq","value":"CL"}}
+{"input":"can you find customers in CL?","output":{"field":"country","operator":"eq","value":"CL"}}
+{"input":"give me customers in CL?","output":{"field":"country","operator":"eq","value":"CL"}}
+{"input":"could you list customers in CL?","output":{"field":"country","operator":"eq","value":"CL"}}
+{"input":"please list companies from Comoran please","output":{"field":"country","operator":"eq","value":"KM"}}
+{"input":"show all companies from Comoran please","output":{"field":"country","operator":"eq","value":"KM"}}
+{"input":"can you find companies from Comoran please","output":{"field":"country","operator":"eq","value":"KM"}}
+{"input":"give me companies from Comoran please","output":{"field":"country","operator":"eq","value":"KM"}}
+{"input":"could you list companies from Comoran please","output":{"field":"country","operator":"eq","value":"KM"}}
+{"input":"please list country is KY?","output":{"field":"country","operator":"eq","value":"KY"}}
+{"input":"show all country is KY?","output":{"field":"country","operator":"eq","value":"KY"}}
+{"input":"can you find country is KY?","output":{"field":"country","operator":"eq","value":"KY"}}
+{"input":"give me country is KY?","output":{"field":"country","operator":"eq","value":"KY"}}
+{"input":"could you list country is KY?","output":{"field":"country","operator":"eq","value":"KY"}}
+{"input":"please list DZ customers please","output":{"field":"country","operator":"eq","value":"DZ"}}
+{"input":"show all DZ customers please","output":{"field":"country","operator":"eq","value":"DZ"}}
+{"input":"can you find DZ customers please","output":{"field":"country","operator":"eq","value":"DZ"}}
+{"input":"give me DZ customers please","output":{"field":"country","operator":"eq","value":"DZ"}}
+{"input":"could you list DZ customers please","output":{"field":"country","operator":"eq","value":"DZ"}}
+{"input":"please list companies from Federal Democratic Republic of Ethiopia?","output":{"field":"country","operator":"eq","value":"ET"}}
+{"input":"show all companies from Federal Democratic Republic of Ethiopia?","output":{"field":"country","operator":"eq","value":"ET"}}
+{"input":"can you find companies from Federal Democratic Republic of Ethiopia?","output":{"field":"country","operator":"eq","value":"ET"}}
+{"input":"give me companies from Federal Democratic Republic of Ethiopia?","output":{"field":"country","operator":"eq","value":"ET"}}
+{"input":"could you list companies from Federal Democratic Republic of Ethiopia?","output":{"field":"country","operator":"eq","value":"ET"}}
+{"input":"please list customers in GA please","output":{"field":"country","operator":"eq","value":"GA"}}
+{"input":"show all customers in GA please","output":{"field":"country","operator":"eq","value":"GA"}}
+{"input":"can you find customers in GA please","output":{"field":"country","operator":"eq","value":"GA"}}
+{"input":"give me customers in GA please","output":{"field":"country","operator":"eq","value":"GA"}}
+{"input":"could you list customers in GA please","output":{"field":"country","operator":"eq","value":"GA"}}
+{"input":"please list Guadeloupian customers?","output":{"field":"country","operator":"eq","value":"GP"}}
+{"input":"show all Guadeloupian customers?","output":{"field":"country","operator":"eq","value":"GP"}}
+{"input":"can you find Guadeloupian customers?","output":{"field":"country","operator":"eq","value":"GP"}}
+{"input":"give me Guadeloupian customers?","output":{"field":"country","operator":"eq","value":"GP"}}
+{"input":"could you list Guadeloupian customers?","output":{"field":"country","operator":"eq","value":"GP"}}
+{"input":"please list country is French Guiana please","output":{"field":"country","operator":"eq","value":"GF"}}
+{"input":"show all country is French Guiana please","output":{"field":"country","operator":"eq","value":"GF"}}
+{"input":"can you find country is French Guiana please","output":{"field":"country","operator":"eq","value":"GF"}}
+{"input":"give me country is French Guiana please","output":{"field":"country","operator":"eq","value":"GF"}}
+{"input":"could you list country is French Guiana please","output":{"field":"country","operator":"eq","value":"GF"}}
+{"input":"please list customers in HR?","output":{"field":"country","operator":"eq","value":"HR"}}
+{"input":"show all customers in HR?","output":{"field":"country","operator":"eq","value":"HR"}}
+{"input":"can you find customers in HR?","output":{"field":"country","operator":"eq","value":"HR"}}
+{"input":"give me customers in HR?","output":{"field":"country","operator":"eq","value":"HR"}}
+{"input":"could you list customers in HR?","output":{"field":"country","operator":"eq","value":"HR"}}
+{"input":"please list companies from Iraq please","output":{"field":"country","operator":"eq","value":"IQ"}}
+{"input":"show all companies from Iraq please","output":{"field":"country","operator":"eq","value":"IQ"}}
+{"input":"can you find companies from Iraq please","output":{"field":"country","operator":"eq","value":"IQ"}}
+{"input":"give me companies from Iraq please","output":{"field":"country","operator":"eq","value":"IQ"}}
+{"input":"could you list companies from Iraq please","output":{"field":"country","operator":"eq","value":"IQ"}}
+{"input":"please list country is JO?","output":{"field":"country","operator":"eq","value":"JO"}}
+{"input":"show all country is JO?","output":{"field":"country","operator":"eq","value":"JO"}}
+{"input":"can you find country is JO?","output":{"field":"country","operator":"eq","value":"JO"}}
+{"input":"give me country is JO?","output":{"field":"country","operator":"eq","value":"JO"}}
+{"input":"could you list country is JO?","output":{"field":"country","operator":"eq","value":"JO"}}
+{"input":"please list KN customers please","output":{"field":"country","operator":"eq","value":"KN"}}
+{"input":"show all KN customers please","output":{"field":"country","operator":"eq","value":"KN"}}
+{"input":"can you find KN customers please","output":{"field":"country","operator":"eq","value":"KN"}}
+{"input":"give me KN customers please","output":{"field":"country","operator":"eq","value":"KN"}}
+{"input":"could you list KN customers please","output":{"field":"country","operator":"eq","value":"KN"}}
+{"input":"please list companies from State of Libya?","output":{"field":"country","operator":"eq","value":"LY"}}
+{"input":"show all companies from State of Libya?","output":{"field":"country","operator":"eq","value":"LY"}}
+{"input":"can you find companies from State of Libya?","output":{"field":"country","operator":"eq","value":"LY"}}
+{"input":"give me companies from State of Libya?","output":{"field":"country","operator":"eq","value":"LY"}}
+{"input":"could you list companies from State of Libya?","output":{"field":"country","operator":"eq","value":"LY"}}
+{"input":"please list customers in Republic of Latvia please","output":{"field":"country","operator":"eq","value":"LV"}}
+{"input":"show all customers in Republic of Latvia please","output":{"field":"country","operator":"eq","value":"LV"}}
+{"input":"can you find customers in Republic of Latvia please","output":{"field":"country","operator":"eq","value":"LV"}}
+{"input":"give me customers in Republic of Latvia please","output":{"field":"country","operator":"eq","value":"LV"}}
+{"input":"could you list customers in Republic of Latvia please","output":{"field":"country","operator":"eq","value":"LV"}}
+{"input":"please list Malagasy customers?","output":{"field":"country","operator":"eq","value":"MG"}}
+{"input":"show all Malagasy customers?","output":{"field":"country","operator":"eq","value":"MG"}}
+{"input":"can you find Malagasy customers?","output":{"field":"country","operator":"eq","value":"MG"}}
+{"input":"give me Malagasy customers?","output":{"field":"country","operator":"eq","value":"MG"}}
+{"input":"could you list Malagasy customers?","output":{"field":"country","operator":"eq","value":"MG"}}
+{"input":"please list country is Burmese please","output":{"field":"country","operator":"eq","value":"MM"}}
+{"input":"show all country is Burmese please","output":{"field":"country","operator":"eq","value":"MM"}}
+{"input":"can you find country is Burmese please","output":{"field":"country","operator":"eq","value":"MM"}}
+{"input":"give me country is Burmese please","output":{"field":"country","operator":"eq","value":"MM"}}
+{"input":"could you list country is Burmese please","output":{"field":"country","operator":"eq","value":"MM"}}
+{"input":"please list customers in Mauritius?","output":{"field":"country","operator":"eq","value":"MU"}}
+{"input":"show all customers in Mauritius?","output":{"field":"country","operator":"eq","value":"MU"}}
+{"input":"can you find customers in Mauritius?","output":{"field":"country","operator":"eq","value":"MU"}}
+{"input":"give me customers in Mauritius?","output":{"field":"country","operator":"eq","value":"MU"}}
+{"input":"could you list customers in Mauritius?","output":{"field":"country","operator":"eq","value":"MU"}}
+{"input":"please list companies from Norfolk Islander please","output":{"field":"country","operator":"eq","value":"NF"}}
+{"input":"show all companies from Norfolk Islander please","output":{"field":"country","operator":"eq","value":"NF"}}
+{"input":"can you find companies from Norfolk Islander please","output":{"field":"country","operator":"eq","value":"NF"}}
+{"input":"give me companies from Norfolk Islander please","output":{"field":"country","operator":"eq","value":"NF"}}
+{"input":"could you list companies from Norfolk Islander please","output":{"field":"country","operator":"eq","value":"NF"}}
+{"input":"please list companies from New Zealand?","output":{"field":"country","operator":"eq","value":"NZ"}}
+{"input":"show all companies from New Zealand?","output":{"field":"country","operator":"eq","value":"NZ"}}
+{"input":"can you find companies from New Zealand?","output":{"field":"country","operator":"eq","value":"NZ"}}
+{"input":"give me companies from New Zealand?","output":{"field":"country","operator":"eq","value":"NZ"}}
+{"input":"could you list companies from New Zealand?","output":{"field":"country","operator":"eq","value":"NZ"}}
+{"input":"please list customers in Palau please","output":{"field":"country","operator":"eq","value":"PW"}}
+{"input":"show all customers in Palau please","output":{"field":"country","operator":"eq","value":"PW"}}
+{"input":"can you find customers in Palau please","output":{"field":"country","operator":"eq","value":"PW"}}
+{"input":"give me customers in Palau please","output":{"field":"country","operator":"eq","value":"PW"}}
+{"input":"could you list customers in Palau please","output":{"field":"country","operator":"eq","value":"PW"}}
+{"input":"please list Paraguay customers?","output":{"field":"country","operator":"eq","value":"PY"}}
+{"input":"show all Paraguay customers?","output":{"field":"country","operator":"eq","value":"PY"}}
+{"input":"can you find Paraguay customers?","output":{"field":"country","operator":"eq","value":"PY"}}
+{"input":"give me Paraguay customers?","output":{"field":"country","operator":"eq","value":"PY"}}
+{"input":"could you list Paraguay customers?","output":{"field":"country","operator":"eq","value":"PY"}}
+{"input":"please list country is Rwandan please","output":{"field":"country","operator":"eq","value":"RW"}}
+{"input":"show all country is Rwandan please","output":{"field":"country","operator":"eq","value":"RW"}}
+{"input":"can you find country is Rwandan please","output":{"field":"country","operator":"eq","value":"RW"}}
+{"input":"give me country is Rwandan please","output":{"field":"country","operator":"eq","value":"RW"}}
+{"input":"could you list country is Rwandan please","output":{"field":"country","operator":"eq","value":"RW"}}
+{"input":"please list customers in Solomon Islands?","output":{"field":"country","operator":"eq","value":"SB"}}
+{"input":"show all customers in Solomon Islands?","output":{"field":"country","operator":"eq","value":"SB"}}
+{"input":"can you find customers in Solomon Islands?","output":{"field":"country","operator":"eq","value":"SB"}}
+{"input":"give me customers in Solomon Islands?","output":{"field":"country","operator":"eq","value":"SB"}}
+{"input":"could you list customers in Solomon Islands?","output":{"field":"country","operator":"eq","value":"SB"}}
+{"input":"please list companies from South Sudanese please","output":{"field":"country","operator":"eq","value":"SS"}}
+{"input":"show all companies from South Sudanese please","output":{"field":"country","operator":"eq","value":"SS"}}
+{"input":"can you find companies from South Sudanese please","output":{"field":"country","operator":"eq","value":"SS"}}
+{"input":"give me companies from South Sudanese please","output":{"field":"country","operator":"eq","value":"SS"}}
+{"input":"could you list companies from South Sudanese please","output":{"field":"country","operator":"eq","value":"SS"}}
+{"input":"please list country is SZ?","output":{"field":"country","operator":"eq","value":"SZ"}}
+{"input":"show all country is SZ?","output":{"field":"country","operator":"eq","value":"SZ"}}
+{"input":"can you find country is SZ?","output":{"field":"country","operator":"eq","value":"SZ"}}
+{"input":"give me country is SZ?","output":{"field":"country","operator":"eq","value":"SZ"}}
+{"input":"could you list country is SZ?","output":{"field":"country","operator":"eq","value":"SZ"}}
+{"input":"please list Tajikistan customers please","output":{"field":"country","operator":"eq","value":"TJ"}}
+{"input":"show all Tajikistan customers please","output":{"field":"country","operator":"eq","value":"TJ"}}
+{"input":"can you find Tajikistan customers please","output":{"field":"country","operator":"eq","value":"TJ"}}
+{"input":"give me Tajikistan customers please","output":{"field":"country","operator":"eq","value":"TJ"}}
+{"input":"could you list Tajikistan customers please","output":{"field":"country","operator":"eq","value":"TJ"}}
+{"input":"please list companies from Türkiye?","output":{"field":"country","operator":"eq","value":"TR"}}
+{"input":"show all companies from Türkiye?","output":{"field":"country","operator":"eq","value":"TR"}}
+{"input":"can you find companies from Türkiye?","output":{"field":"country","operator":"eq","value":"TR"}}
+{"input":"give me companies from Türkiye?","output":{"field":"country","operator":"eq","value":"TR"}}
+{"input":"could you list companies from Türkiye?","output":{"field":"country","operator":"eq","value":"TR"}}
+{"input":"please list customers in Uruguayan please","output":{"field":"country","operator":"eq","value":"UY"}}
+{"input":"show all customers in Uruguayan please","output":{"field":"country","operator":"eq","value":"UY"}}
+{"input":"can you find customers in Uruguayan please","output":{"field":"country","operator":"eq","value":"UY"}}
+{"input":"give me customers in Uruguayan please","output":{"field":"country","operator":"eq","value":"UY"}}
+{"input":"could you list customers in Uruguayan please","output":{"field":"country","operator":"eq","value":"UY"}}
+{"input":"please list country is VG?","output":{"field":"country","operator":"eq","value":"VG"}}
+{"input":"show all country is VG?","output":{"field":"country","operator":"eq","value":"VG"}}
+{"input":"can you find country is VG?","output":{"field":"country","operator":"eq","value":"VG"}}
+{"input":"give me country is VG?","output":{"field":"country","operator":"eq","value":"VG"}}
+{"input":"could you list country is VG?","output":{"field":"country","operator":"eq","value":"VG"}}
+{"input":"please list ZA customers please","output":{"field":"country","operator":"eq","value":"ZA"}}
+{"input":"show all ZA customers please","output":{"field":"country","operator":"eq","value":"ZA"}}
+{"input":"can you find ZA customers please","output":{"field":"country","operator":"eq","value":"ZA"}}
+{"input":"give me ZA customers please","output":{"field":"country","operator":"eq","value":"ZA"}}
+{"input":"could you list ZA customers please","output":{"field":"country","operator":"eq","value":"ZA"}}
+{"input":"please list Swedish customers excluding churned ones","output":{"and":[{"field":"status","operator":"neq","value":"churned"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"show all Swedish customers excluding churned ones","output":{"and":[{"field":"status","operator":"neq","value":"churned"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"can you find Swedish customers excluding churned ones","output":{"and":[{"field":"status","operator":"neq","value":"churned"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"give me Swedish customers excluding churned ones","output":{"and":[{"field":"status","operator":"neq","value":"churned"},{"field":"country","operator":"eq","value":"SE"}]}}
+{"input":"could you list Swedish customers excluding churned ones","output":{"and":[{"field":"status","operator":"neq","value":"churned"},{"field":"country","operator":"eq","value":"SE"}]}}

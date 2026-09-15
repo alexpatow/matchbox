@@ -1,0 +1,12 @@
+{"input":"could you list inactive accounts please","output":{"field":"status","operator":"eq","value":"inactive"}}
+{"input":"show me all companies based in Norway","output":{"field":"country","operator":"eq","value":"NO"}}
+{"input":"list French customers with ARR above 93k","output":{"and":[{"field":"country","operator":"eq","value":"FR"},{"field":"arr","operator":"gt","value":93000}]}}
+{"input":"please show all active accounts","output":{"field":"status","operator":"eq","value":"active"}}
+{"input":"can you list customers under 61k ARR","output":{"field":"arr","operator":"lt","value":61000}}
+{"input":"all German accounts please","output":{"field":"country","operator":"eq","value":"DE"}}
+{"input":"list customers without churned ones","output":{"field":"status","operator":"neq","value":"churned"}}
+{"input":"please show companies from Sweden","output":{"field":"country","operator":"eq","value":"SE"}}
+{"input":"please sort accounts by revenue","output":null}
+{"input":"customers with an undefined custom field","output":null}
+{"input":"remove all active customers permanently","output":null}
+{"input":"ARR less than potatoes","output":null}

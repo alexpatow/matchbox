@@ -1,109 +1,62 @@
 # Example evaluation
 
-This audit measures model accuracy, coverage, rejection behavior and browser performance. It exposes remaining semantic errors, including a misclassified time unit and an incorrectly accepted negative money amount.
+The Burn models improved after expanding the training examples. The decoders and model architecture stayed unchanged. See [the language experiment](experiments/language.md) for before/after results, rejected candidates, overlap accounting and the evaluation limitations.
 
-## Harder scenarios
+## Current audit
 
-The customer demo now includes `German or Swedish customers under 50k except churned ones`. It requires sharing ARR and status restrictions across two country alternatives. The model recognizes field/value/operator tokens; the application decoder constructs that boolean structure. The compiler contributes the compositional behavior.
+The frozen synthetic audit is now regression evidence: its earlier failures were known before this work. It is not a user-traffic sample or an independent measure of production accuracy. No audit rows were added to training or used for candidate selection.
 
-Money includes `invoice 31415 totals € 28.65` and `in 2026 we paid USD 59.20`. The model labels invoice/year numbers as neutral and the payment as an amount. The decoder converts the recognized amount.
+Exact match includes correct abstentions. Accepted accuracy measures the outputs returned to the application. These results contain no schema-invalid outputs, but that alone does not establish semantic correctness.
 
-Parity remains a training sanity check. Use deterministic arithmetic in an application.
-
-## Frozen synthetic audit
-
-Measured on 14 September 2026. These are small hand-authored synthetic suites, not user traffic or an externally authored benchmark. They were kept out of training and model selection. The model was then frozen; the failures below were not added to training. Existing validation/test fixtures were used during development and are described as regressions.
-
-Exact match includes correct abstentions on negative inputs. Accepted accuracy measures the outputs that would reach an application. None failed output schema validation; semantic mistakes still occurred.
-
-| Example | Model exact | Accepted accuracy | False accepts on negatives |
+| Example | Exact match | Accepted accuracy | False accepts on negatives |
 | ------- | ----------- | ----------------- | -------------------------- |
 | is-even | 8/8         | 5/5               | 0/3                        |
-| money   | 19/20       | 12/13             | 1/8                        |
-| time    | 15/20       | 7/8               | 0/8                        |
-| filters | 13/16       | 7/7               | 0/6                        |
+| Money   | 18/20       | 10/10             | 0/8                        |
+| Time    | 19/20       | 11/11             | 0/8                        |
+| Filters | 14/16       | 8/8               | 0/6                        |
 
-## Feature overlap
+Money still falsely accepts `budget above 58 euros` in the separate language-development suite. Zero false accepts on this audit does not mean all unsupported inputs are handled correctly. Confidence remains an uncalibrated recognition score.
 
-All word-mode numbers become `<number>`. A new amount can therefore produce an input sequence already used in training. Such a case checks copying and normalization rather than a newly learned interpretation.
+## Remaining failures
 
-| Example | Original regression inputs equivalent to training | Audit inputs equivalent to training | Neural exact on feature-novel audit inputs |
-| ------- | ------------------------------------------------- | ----------------------------------- | ------------------------------------------ |
-| is-even | 0/100                                             | 1/8                                 | 7/7                                        |
-| money   | 13/27                                             | 1/20                                | 18/19                                      |
-| time    | 12/12                                             | 3/20                                | 12/17                                      |
-| filters | 0/282                                             | 1/16                                | 12/15                                      |
+The audit still produces abstentions for:
 
-A whole-sequence novelty check is still generous to these models. Their receptive field is only three tokens, so a new whole input can consist entirely of familiar local windows. Filter labels are supplied by a training lexicon, and the decoder uses a shared country reference. The task does not establish learned geographical knowledge.
+- `payment received: 29 euros`.
+- `our subscription costs 21 euros monthly`.
+- `in two days and four hours`.
+- `hide the churned customers`.
+- `only companies based in Germany`.
 
-## Observed failures
+The separate language test also exposes `show me all companies based in Norway`. These inputs are legitimate requests; the model does not yet cover them reliably.
 
-- `a price of minus seventeen euros`: It returns `{"amount":17,"currency":"EUR","approximate":true}`. The recognition score is 0.9982.
-- `set a timer for eleven minutes and 9 seconds`: It returns `{"kind":"duration","seconds":39609}`. The recognition score is 0.8302.
-- `could you remind me in 28 minutes`: It abstains. The recognition score is 0.8950.
-- `start the timer for 43 seconds`: It abstains. The recognition score is 0.8017.
-- `the meeting is tomorrow at 8 pm`: It abstains. The recognition score is 0.8950.
-- `we will meet today at 14:26`: It abstains. The recognition score is 0.7104.
-- `give me customers from Sweden`: It abstains. The recognition score is 0.0000.
-- `hide the churned customers`: It abstains. The recognition score is 0.0000.
-- `only companies based in Germany`: It abstains. The recognition score is 0.0000.
+## What the examples establish
 
-The money error accepts an unsupported negative amount as positive money. The time error confuses minutes with hours. Both outputs satisfy their schemas. Raising the money threshold to 0.99 still accepts the wrong answer while reducing accepted coverage to 8/20. Confidence is not calibrated correctness, and a threshold alone does not solve this problem.
+Filters share ARR and status restrictions across country alternatives through the application decoder. Money learns to distinguish invoice/year numbers from payment amounts. Time now has training examples for minutes-plus-seconds compositions. Parity remains a training sanity check; use deterministic arithmetic in an application.
 
-The money development regression suite also retains two abstentions: `we paid around 91 euros` and `the budget is about 63 thousand kronor`. The result is 25/27, not a rounded claim of perfect parsing. `send 15 euros to Alice` was moved from negative challenges into the positive regression file because the previous annotation was wrong.
+Word-mode numeric inputs share a token, so a novel amount can be feature-equivalent to training. The language report excludes those overlaps from its novelty comparison, including matches to rejection training. Even a novel full sentence can consist of familiar three-token windows. Country normalization still uses an application-owned reference. These examples do not establish broad language understanding or learned geographical knowledge.
 
-## Training changes and ownership
+## Artifact cost
 
-Money and time now include explicit negative training rows and courtesy/punctuation contexts. Their recipes opt into 0.01 token masking, which supervises the unknown embedding instead of rejecting every unfamiliar token at the vocabulary boundary. Filters and parity retain the closed-vocabulary policy. Unknown-token support can help unfamiliar names while also permitting unknown semantic cues to be overlooked, as the money failure shows.
+These figures include metadata, vocabulary and base64-encoded float32 Burn records. They exclude the shared runtime and application decoders. No int8 quantization is applied in this experiment.
 
-Masking at 0.05 and 0.15 produced regressions during development. A 16-dimensional embedding with a 32-unit hidden layer did not resolve the money failures and exceeded the filter artifact budget. The shipped network retains an 8-dimensional embedding, a 16-unit hidden layer, and a three-token window. Training uses deterministic minibatch ordering, Adam at 0.005, and 55 epochs. The broader comparison is not an AutoML result or a multi-seed study.
+| Example | Parameters | Artifact bytes |
+| ------- | ---------: | -------------: |
+| is-even |        530 |          3,898 |
+| Money   |      1,458 |          9,875 |
+| Time    |      1,255 |          8,993 |
+| Filters |      7,728 |         58,352 |
 
-The model predicts labels. Application code still owns English number conversion, unit arithmetic, currency normalization and filter grammar. Rejection labels are also application-owned. No domain dictionary was added to the framework runtime.
+The shared WASM binary is 689,531 bytes, or 183,093 bytes with gzip, excluding JavaScript glue and the app itself. The website reads artifact sizes from each build's training reports.
+
+Browser tests verify record and sequence inference with networking blocked, and record cold initialization and warm latency separately. Desktop mobile emulation is not physical-phone performance. Browser timer granularity limits sub-millisecond comparisons.
 
 ## Reproduce
 
 ```sh
-bun install
 bun run train
+bun scripts/evaluate-language.ts test
 bun run eval:examples
 bun run test:browser
 ```
 
-The audit writes `.matchbox/example-evaluation.json` with every prediction, failure, score, slice, threshold comparison and source hash. Generated model artifacts remain ignored. Generators write training data only; keep `evals/generalization.json` frozen. Future training informed by these failures requires a new independent audit before claiming generalization gains.
-
-| Example | Artifact SHA-256                                                   | Audit source SHA-256                                               |
-| ------- | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| is-even | `91fc70e15ff99d2eb3f0d05316ff3c39f62c169b12a14d4b123489fe6cb1312b` | `93cff9748ccc3ce575274f04dec41861ac59f7bcdd42d35bbcfe86f026774177` |
-| money   | `3a16db15e1117dca72ff07d5c79cf97ee439815614030a1152c4c1d65124aef1` | `c8b46c03eee72e24e8a297771cb8c7b026c9f3de31c2ea1822e681c87458e234` |
-| time    | `b1c93782abda06d7a7da0b4510471cc140a734df66f8de2669601999d70f5997` | `9735ba19d8feb772fa074a0cbee03cb7d8b6fb009bdb734d0128a0836739487f` |
-| filters | `7a084cd990871108cd907e5cfbd71e7bf84dedbd763d8061c8650c5da4a635ce` | `5c47c1e8b9cca57c904a21523a7f975ced84cbc418af12afd4e38ea2e3f0203c` |
-
-## Artifact cost
-
-These sizes include model topology, vocabulary, metadata and JSON int8 weight arrays. TensorFlow expands weights to floating point for execution. They exclude the shared TensorFlow runtime and application decoder, so they are not the total download cost.
-
-| Example | Parameters | Artifact bytes | Artifact gzip bytes |
-| ------- | ---------- | -------------- | ------------------- |
-| is-even | 530        | 4,477          | 1,807               |
-| money   | 1,178      | 7,230          | 2,989               |
-| time    | 1,159      | 7,654          | 3,002               |
-| filters | 7,680      | 41,260         | 12,859              |
-
-The playground's shared TensorFlow JavaScript chunk is 507,669 bytes minified, or 138,264 bytes with gzip, in addition to the artifacts above. This excludes other application code and decoders. Browser benchmarks measure initialization and warm inference separately; warm sub-millisecond timings do not include downloading or parsing the shared runtime.
-
-## Browser measurements
-
-One Playwright run on an Apple M2, with desktop Chromium and a Pixel 7 viewport emulated on the same host, produced the following money-runtime measurements. These are local measurements, not mobile hardware results. Each warm measurement uses 20 warmups and 300 timed calls across the 27 regression inputs, including their two abstentions.
-
-| Browser profile           | First parse including model initialization | Warm p50 | Warm p95 |
-| ------------------------- | ------------------------------------------ | -------- | -------- |
-| Desktop Chromium          | 64.8 ms                                    | 0.1 ms   | 0.3 ms   |
-| Mobile Chromium emulation | 45.3 ms                                    | 0.1 ms   | 0.3 ms   |
-
-First-parse timing begins after the benchmark page's static modules have loaded. It includes JSON parsing, parser creation, TensorFlow initialization and inference, but excludes the page and module downloads. Browser timer granularity limits the precision of warm measurements.
-
-The filter benchmark's three fixed regression queries measured 0.2 ms p50 and 0.7 ms p95 on desktop. These timings do not measure the full generalization suite. The browser tests also verified matching exported outputs and continued inference with networking blocked.
-
-## Next evaluation
-
-Use successive, independently held-out batches of application language. Track how much coverage improves through new examples while the decoder remains stable. Measure positive coverage, incorrect accepted answers, artifact size, latency and the amount of authored code needed to support new phrasing. The remaining unit and sign errors are concrete targets for further training research.
+Reports include artifact hashes, case hashes, exact-match failures and feature-overlap counts. [The recorded language results](experiments/language-results.json) retain the before/after comparison. Future quality claims need independently authored application examples and larger samples.

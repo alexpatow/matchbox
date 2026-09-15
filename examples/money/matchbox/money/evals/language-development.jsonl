@@ -1,0 +1,12 @@
+{"input":"please record 46 euros","output":{"amount":46,"currency":"EUR","approximate":false}}
+{"input":"our expense totals 27 dollars","output":{"amount":27,"currency":"USD","approximate":false}}
+{"input":"a refund of 63 pounds","output":{"amount":63,"currency":"GBP","approximate":false}}
+{"input":"nearly twelve grand euros","output":{"amount":12000,"currency":"EUR","approximate":true}}
+{"input":"we owe SEK 38","output":{"amount":38,"currency":"SEK","approximate":false}}
+{"input":"invoice 657 totals $ 91","output":{"amount":91,"currency":"USD","approximate":false}}
+{"input":"between 18 and 29 euros","output":null}
+{"input":"minus fourteen pounds","output":null}
+{"input":"either 11 dollars or 19 euros","output":null}
+{"input":"budget above 58 euros","output":null}
+{"input":"around minus 33 dollars","output":null}
+{"input":"at least 48 kronor","output":null}

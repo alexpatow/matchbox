@@ -1,0 +1,563 @@
+{
+  "provenance": "Synthetic development and language-test cases authored before augmentation. A money candidate was revised after full regression failures; test scores are follow-up evidence, not a pristine external holdout. Old audit failures were already known. Novel-only metrics exclude both positive and negative training feature matches.",
+  "beforeDevelopment": [
+    {
+      "name": "money",
+      "artifactSha256": "398ecdb656b83e8a53698b90e6a52a713c07c03520eacb90705b177e00bd8ffe",
+      "caseSha256": "8f0b9f5cfa2bfbb202d27579c13c822f1962f64a428771ff5c9f42c3d72480c9",
+      "examples": 12,
+      "exactAccuracy": 0.5833333333333334,
+      "falseAccepts": 4,
+      "featureEquivalent": ["invoice 657 totals $ 91", "between 18 and 29 euros"],
+      "novelOnly": {
+        "examples": 10,
+        "exactAccuracy": 0.6
+      },
+      "failures": [
+        {
+          "input": "please record 46 euros",
+          "expected": {
+            "amount": 46,
+            "currency": "EUR",
+            "approximate": false
+          },
+          "actual": null
+        },
+        {
+          "input": "between 18 and 29 euros",
+          "expected": null,
+          "actual": {
+            "amount": 29,
+            "currency": "EUR",
+            "approximate": false
+          }
+        },
+        {
+          "input": "minus fourteen pounds",
+          "expected": null,
+          "actual": {
+            "amount": 14,
+            "currency": "GBP",
+            "approximate": false
+          }
+        },
+        {
+          "input": "budget above 58 euros",
+          "expected": null,
+          "actual": {
+            "amount": 58,
+            "currency": "EUR",
+            "approximate": false
+          }
+        },
+        {
+          "input": "at least 48 kronor",
+          "expected": null,
+          "actual": {
+            "amount": 48,
+            "currency": "SEK",
+            "approximate": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "time",
+      "artifactSha256": "9578f9d8165a9deed6a3013279612c4195888fe2866e5dbffce2b7bb9b557219",
+      "caseSha256": "d0c0d22b10a8707ab48b3983a6973ef104447ed49427026ed01575ed2581e0c8",
+      "examples": 12,
+      "exactAccuracy": 0.8333333333333334,
+      "falseAccepts": 0,
+      "featureEquivalent": [
+        "please wait for 13 minutes",
+        "in 1.25 hours",
+        "in minus 12 minutes",
+        "tomorrow at 26:11",
+        "for 5 hours or 18 minutes"
+      ],
+      "novelOnly": {
+        "examples": 7,
+        "exactAccuracy": 0.7142857142857143
+      },
+      "failures": [
+        {
+          "input": "our appointment is tomorrow at 10:35",
+          "expected": {
+            "kind": "datetime",
+            "dayOffset": 1,
+            "hour": 10,
+            "minute": 35
+          },
+          "actual": null
+        },
+        {
+          "input": "the timer is for 53 seconds",
+          "expected": {
+            "kind": "duration",
+            "seconds": 53
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "name": "filters",
+      "artifactSha256": "9ab44c22227803d59b963b7f47167d6d8dca95ecb599384367eb7652c03002c2",
+      "caseSha256": "7b3dcb7b5898d40594322fef3c98e4a5f06622d6764d8e77191390cbd9543c6d",
+      "examples": 12,
+      "exactAccuracy": 0.5833333333333334,
+      "falseAccepts": 0,
+      "featureEquivalent": [],
+      "novelOnly": {
+        "examples": 12,
+        "exactAccuracy": 0.5833333333333334
+      },
+      "failures": [
+        {
+          "input": "list active accounts",
+          "expected": {
+            "field": "status",
+            "operator": "eq",
+            "value": "active"
+          },
+          "actual": null
+        },
+        {
+          "input": "can you show German customers",
+          "expected": {
+            "field": "country",
+            "operator": "eq",
+            "value": "DE"
+          },
+          "actual": null
+        },
+        {
+          "input": "all customers based in France",
+          "expected": {
+            "field": "country",
+            "operator": "eq",
+            "value": "FR"
+          },
+          "actual": null
+        },
+        {
+          "input": "list customers with ARR above 46k",
+          "expected": {
+            "field": "arr",
+            "operator": "gt",
+            "value": 46000
+          },
+          "actual": null
+        },
+        {
+          "input": "all Norwegian accounts",
+          "expected": {
+            "field": "country",
+            "operator": "eq",
+            "value": "NO"
+          },
+          "actual": null
+        }
+      ]
+    }
+  ],
+  "afterDevelopment": [
+    {
+      "name": "money",
+      "artifactSha256": "d5512beccd0587ce014ef9cd6d568785c7c5a9ec53b23a9e7be04a42d5cdedf0",
+      "caseSha256": "8f0b9f5cfa2bfbb202d27579c13c822f1962f64a428771ff5c9f42c3d72480c9",
+      "examples": 12,
+      "exactAccuracy": 0.9166666666666666,
+      "falseAccepts": 1,
+      "featureEquivalent": ["invoice 657 totals $ 91", "between 18 and 29 euros"],
+      "novelOnly": {
+        "examples": 10,
+        "exactAccuracy": 0.9
+      },
+      "failures": [
+        {
+          "input": "budget above 58 euros",
+          "expected": null,
+          "actual": {
+            "amount": 58,
+            "currency": "EUR",
+            "approximate": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "time",
+      "artifactSha256": "9ca9bf0202856d724def332137d65cb0c0d9d1e34043ba0aa22e4fd46f48d56b",
+      "caseSha256": "d0c0d22b10a8707ab48b3983a6973ef104447ed49427026ed01575ed2581e0c8",
+      "examples": 12,
+      "exactAccuracy": 1,
+      "falseAccepts": 0,
+      "featureEquivalent": [
+        "please wait for 13 minutes",
+        "in 1.25 hours",
+        "in minus 12 minutes",
+        "tomorrow at 26:11",
+        "for 5 hours or 18 minutes"
+      ],
+      "novelOnly": {
+        "examples": 7,
+        "exactAccuracy": 1
+      },
+      "failures": []
+    },
+    {
+      "name": "filters",
+      "artifactSha256": "b3433ee639c23382e663344acb5563b5ae091e2f6660d7bf2754f6f7b304a219",
+      "caseSha256": "7b3dcb7b5898d40594322fef3c98e4a5f06622d6764d8e77191390cbd9543c6d",
+      "examples": 12,
+      "exactAccuracy": 1,
+      "falseAccepts": 0,
+      "featureEquivalent": [],
+      "novelOnly": {
+        "examples": 12,
+        "exactAccuracy": 1
+      },
+      "failures": []
+    }
+  ],
+  "beforeTest": [
+    {
+      "name": "money",
+      "artifactSha256": "398ecdb656b83e8a53698b90e6a52a713c07c03520eacb90705b177e00bd8ffe",
+      "caseSha256": "21463aad45c9584858acca629aeee7d96f300bd8937268cbb17b9552bff695a0",
+      "examples": 12,
+      "exactAccuracy": 0.5833333333333334,
+      "falseAccepts": 4,
+      "featureEquivalent": ["invoice 718 totals SEK 54", "from 16 to 28 dollars"],
+      "novelOnly": {
+        "examples": 10,
+        "exactAccuracy": 0.6
+      },
+      "failures": [
+        {
+          "input": "the balance comes to 82 euros",
+          "expected": {
+            "amount": 82,
+            "currency": "EUR",
+            "approximate": false
+          },
+          "actual": null
+        },
+        {
+          "input": "a payment between 31 and 49 pounds",
+          "expected": null,
+          "actual": {
+            "amount": 49,
+            "currency": "GBP",
+            "approximate": false
+          }
+        },
+        {
+          "input": "approximately minus 71 kronor",
+          "expected": null,
+          "actual": {
+            "amount": 71,
+            "currency": "SEK",
+            "approximate": false
+          }
+        },
+        {
+          "input": "from 16 to 28 dollars",
+          "expected": null,
+          "actual": {
+            "amount": 28,
+            "currency": "USD",
+            "approximate": false
+          }
+        },
+        {
+          "input": "at most 81 euros please",
+          "expected": null,
+          "actual": {
+            "amount": 81,
+            "currency": "EUR",
+            "approximate": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "time",
+      "artifactSha256": "9578f9d8165a9deed6a3013279612c4195888fe2866e5dbffce2b7bb9b557219",
+      "caseSha256": "ba60a69928392d1ba8d0f3f7b961135791b157f00d35bd08504deacfdef66ade",
+      "examples": 12,
+      "exactAccuracy": 0.75,
+      "falseAccepts": 0,
+      "featureEquivalent": [
+        "please wait for 0.25 hours",
+        "the reminder is in 41 minutes",
+        "tomorrow at 6:37 pm please",
+        "in minus 38 seconds",
+        "tomorrow at 27:19",
+        "for 3 days or 22 minutes"
+      ],
+      "novelOnly": {
+        "examples": 6,
+        "exactAccuracy": 0.5
+      },
+      "failures": [
+        {
+          "input": "our appointment is today at 16:43 please",
+          "expected": {
+            "kind": "datetime",
+            "dayOffset": 0,
+            "hour": 16,
+            "minute": 43
+          },
+          "actual": null
+        },
+        {
+          "input": "set a timer for fourteen minutes and 23 seconds",
+          "expected": {
+            "kind": "duration",
+            "seconds": 863
+          },
+          "actual": null
+        },
+        {
+          "input": "the timer is for 67 seconds please",
+          "expected": {
+            "kind": "duration",
+            "seconds": 67
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "name": "filters",
+      "artifactSha256": "9ab44c22227803d59b963b7f47167d6d8dca95ecb599384367eb7652c03002c2",
+      "caseSha256": "f4974e1ae31abf497acb0fe4b66033f81ba94fe26fde429d7c620d56ba778b4b",
+      "examples": 12,
+      "exactAccuracy": 0.4166666666666667,
+      "falseAccepts": 0,
+      "featureEquivalent": [],
+      "novelOnly": {
+        "examples": 12,
+        "exactAccuracy": 0.4166666666666667
+      },
+      "failures": [
+        {
+          "input": "could you list inactive accounts please",
+          "expected": {
+            "field": "status",
+            "operator": "eq",
+            "value": "inactive"
+          },
+          "actual": null
+        },
+        {
+          "input": "show me all companies based in Norway",
+          "expected": {
+            "field": "country",
+            "operator": "eq",
+            "value": "NO"
+          },
+          "actual": null
+        },
+        {
+          "input": "list French customers with ARR above 93k",
+          "expected": {
+            "and": [
+              {
+                "field": "country",
+                "operator": "eq",
+                "value": "FR"
+              },
+              {
+                "field": "arr",
+                "operator": "gt",
+                "value": 93000
+              }
+            ]
+          },
+          "actual": null
+        },
+        {
+          "input": "please show all active accounts",
+          "expected": {
+            "field": "status",
+            "operator": "eq",
+            "value": "active"
+          },
+          "actual": null
+        },
+        {
+          "input": "can you list customers under 61k ARR",
+          "expected": {
+            "field": "arr",
+            "operator": "lt",
+            "value": 61000
+          },
+          "actual": null
+        },
+        {
+          "input": "all German accounts please",
+          "expected": {
+            "field": "country",
+            "operator": "eq",
+            "value": "DE"
+          },
+          "actual": null
+        },
+        {
+          "input": "list customers without churned ones",
+          "expected": {
+            "field": "status",
+            "operator": "neq",
+            "value": "churned"
+          },
+          "actual": null
+        }
+      ]
+    }
+  ],
+  "afterTest": [
+    {
+      "name": "money",
+      "artifactSha256": "d5512beccd0587ce014ef9cd6d568785c7c5a9ec53b23a9e7be04a42d5cdedf0",
+      "caseSha256": "21463aad45c9584858acca629aeee7d96f300bd8937268cbb17b9552bff695a0",
+      "examples": 12,
+      "exactAccuracy": 1,
+      "falseAccepts": 0,
+      "featureEquivalent": ["invoice 718 totals SEK 54", "from 16 to 28 dollars"],
+      "novelOnly": {
+        "examples": 10,
+        "exactAccuracy": 1
+      },
+      "failures": []
+    },
+    {
+      "name": "time",
+      "artifactSha256": "9ca9bf0202856d724def332137d65cb0c0d9d1e34043ba0aa22e4fd46f48d56b",
+      "caseSha256": "ba60a69928392d1ba8d0f3f7b961135791b157f00d35bd08504deacfdef66ade",
+      "examples": 12,
+      "exactAccuracy": 1,
+      "falseAccepts": 0,
+      "featureEquivalent": [
+        "please wait for 0.25 hours",
+        "the reminder is in 41 minutes",
+        "tomorrow at 6:37 pm please",
+        "in minus 38 seconds",
+        "tomorrow at 27:19",
+        "for 3 days or 22 minutes"
+      ],
+      "novelOnly": {
+        "examples": 6,
+        "exactAccuracy": 1
+      },
+      "failures": []
+    },
+    {
+      "name": "filters",
+      "artifactSha256": "b3433ee639c23382e663344acb5563b5ae091e2f6660d7bf2754f6f7b304a219",
+      "caseSha256": "f4974e1ae31abf497acb0fe4b66033f81ba94fe26fde429d7c620d56ba778b4b",
+      "examples": 12,
+      "exactAccuracy": 0.9166666666666666,
+      "falseAccepts": 0,
+      "featureEquivalent": [],
+      "novelOnly": {
+        "examples": 12,
+        "exactAccuracy": 0.9166666666666666
+      },
+      "failures": [
+        {
+          "input": "show me all companies based in Norway",
+          "expected": {
+            "field": "country",
+            "operator": "eq",
+            "value": "NO"
+          },
+          "actual": null
+        }
+      ]
+    }
+  ],
+  "audit": [
+    {
+      "name": "is-even",
+      "artifactSha256": "c659fbf61017dc88037e8314335c4e73622006c3549620f23ca459bc4098cb6f",
+      "caseSha256": "93cff9748ccc3ce575274f04dec41861ac59f7bcdd42d35bbcfe86f026774177",
+      "exactAccuracy": 1,
+      "falseAccepts": 0,
+      "failures": []
+    },
+    {
+      "name": "money",
+      "artifactSha256": "d5512beccd0587ce014ef9cd6d568785c7c5a9ec53b23a9e7be04a42d5cdedf0",
+      "caseSha256": "c8b46c03eee72e24e8a297771cb8c7b026c9f3de31c2ea1822e681c87458e234",
+      "exactAccuracy": 0.9,
+      "falseAccepts": 0,
+      "failures": [
+        {
+          "input": "payment received: 29 euros",
+          "expected": {
+            "amount": 29,
+            "currency": "EUR",
+            "approximate": false
+          },
+          "actual": null
+        },
+        {
+          "input": "our subscription costs 21 euros monthly",
+          "expected": {
+            "amount": 21,
+            "currency": "EUR",
+            "approximate": false
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "name": "time",
+      "artifactSha256": "9ca9bf0202856d724def332137d65cb0c0d9d1e34043ba0aa22e4fd46f48d56b",
+      "caseSha256": "9735ba19d8feb772fa074a0cbee03cb7d8b6fb009bdb734d0128a0836739487f",
+      "exactAccuracy": 0.95,
+      "falseAccepts": 0,
+      "failures": [
+        {
+          "input": "in two days and four hours",
+          "expected": {
+            "kind": "relative",
+            "seconds": 187200
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "name": "filters",
+      "artifactSha256": "b3433ee639c23382e663344acb5563b5ae091e2f6660d7bf2754f6f7b304a219",
+      "caseSha256": "5c47c1e8b9cca57c904a21523a7f975ced84cbc418af12afd4e38ea2e3f0203c",
+      "exactAccuracy": 0.875,
+      "falseAccepts": 0,
+      "failures": [
+        {
+          "input": "hide the churned customers",
+          "expected": {
+            "field": "status",
+            "operator": "neq",
+            "value": "churned"
+          },
+          "actual": null
+        },
+        {
+          "input": "only companies based in Germany",
+          "expected": {
+            "field": "country",
+            "operator": "eq",
+            "value": "DE"
+          },
+          "actual": null
+        }
+      ]
+    }
+  ]
+}

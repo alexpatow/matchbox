@@ -58,4 +58,19 @@ for (const row of [...rows]
   add(`${row.input} please`, row.output);
   add(`${row.input}?`, row.output);
 }
+
+// Teach neutral query framing from training rows; do not change held-out examples.
+for (const row of [...rows]
+  .filter((row) => !/^(please|show|can|give|could)/.test(row.input))
+  .filter((_, i) => i % 19 === 0)) {
+  for (const prefix of [
+    "please list ",
+    "show all ",
+    "can you find ",
+    "give me ",
+    "could you list ",
+  ]) {
+    add(prefix + row.input, row.output);
+  }
+}
 await writeFile(path, rows.map((row) => JSON.stringify(row)).join("\n") + "\n");
