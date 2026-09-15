@@ -36,7 +36,8 @@
     "release": "changeset publish",
     "eval:examples": "bun scripts/evaluate-examples.ts",
     "build:rust": "bun scripts/build-rust.ts",
-    "check:rust": "cargo fmt --all --check && cargo clippy --workspace --all-targets -- -D warnings && cargo test -p matchbox-engine --features training"
+    "check:rust": "bun scripts/rust.ts cargo fmt --all --check && bun scripts/rust.ts cargo clippy --workspace --all-targets -- -D warnings && bun scripts/rust.ts cargo test -p matchbox-engine --features training",
+    "setup:rust": "bun scripts/rust.ts rustup show && bun scripts/rust.ts cargo install wasm-bindgen-cli --version 0.2.108 --locked"
   },
   "devDependencies": {
     "@changesets/cli": "3.0.2",

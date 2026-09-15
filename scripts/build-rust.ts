@@ -1,11 +1,6 @@
 import { copyFile, mkdir } from "node:fs/promises";
 import { resolve } from "node:path";
-async function run(args: string[]) {
-  const child = Bun.spawn(args, { stdout: "inherit", stderr: "inherit" });
-  if (await child.exited) {
-    throw new Error(`Rust build failed: ${args.join(" ")}`);
-  }
-}
+import { runRust as run } from "./rust";
 await run(["cargo", "build", "--locked", "--release", "-p", "matchbox-node"]);
 await run([
   "cargo",

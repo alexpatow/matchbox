@@ -25,22 +25,18 @@ A contributor compiles the native addon and WASM runtime once. Training produces
 
 ## Running the experiment
 
-Install Bun, a Rust toolchain manager, and the matching wasm-bindgen CLI. The checked-in toolchain file pins Rust and requests the WASM target.
+Install Bun and Rust through rustup or Homebrew. The repository discovers Rust tools from PATH, Homebrew rustup and the Cargo bin directory without changing your shell configuration. The checked-in toolchain file pins Rust and requests the WASM target.
 
 ```sh
-rustup show
-cargo install wasm-bindgen-cli --version 0.2.108 --locked
 bun install --frozen-lockfile
+bun run setup:rust
+bun run dev
 bun run check
 MATCHBOX_PREBUILT=1 bun run test:browser
 bun run eval:examples
 ```
 
-For Homebrew's keg-only rustup, add its bin directory to the current shell's PATH. The wasm-bindgen executable installed by Cargo also needs its bin directory on PATH.
-
-```sh
-export PATH="$(brew --prefix rustup)/bin:$HOME/.cargo/bin:$PATH"
-```
+`bun run setup:rust` is a one-time contributor setup for the pinned wasm-bindgen CLI. Subsequent `bun run dev`, builds and checks locate the installed tools automatically. Consumers will use prebuilt packages once native distribution is implemented.
 
 Generated native binaries, WASM output, Cargo build output and model artifacts are ignored by Git. `Cargo.lock` pins Rust dependencies. `bun run check` includes Rust formatting, Clippy and engine tests.
 
