@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import { stat } from "node:fs/promises";
 
 test("the framework story leads into working documentation", async ({ page }, testInfo) => {
   await page.goto("/");
@@ -7,6 +8,22 @@ test("the framework story leads into working documentation", async ({ page }, te
     "href",
     "https://x.com/shuding",
   );
+  const footprint = page.getByRole("region", { name: "A model measured in kilobytes." });
+  for (const [task, label] of [
+    ["filters", "Customer filters"],
+    ["money", "Money"],
+    ["time", "Date, time & duration"],
+    ["is-even", "Parity (training sanity check)"],
+  ] as const) {
+    const artifact = await stat(`examples/${task}/.matchbox/${task}/model.matchbox`);
+    const row = footprint.locator(".model-sizes > div").filter({ hasText: label });
+    await expect(row.locator(".model-size")).toHaveText(`${(artifact.size / 1024).toFixed(1)} KiB`);
+  }
+  await expect(footprint).toContainText("TensorFlow.js");
+  await expect(
+    page.getByRole("heading", { name: "Why not run a small LLM in Chrome?" }),
+  ).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.screenshot({ path: testInfo.outputPath("homepage.png"), fullPage: true });
   const origin = await page.evaluate(() => performance.timeOrigin);
   await page.getByRole("link", { name: "Get started" }).click();
