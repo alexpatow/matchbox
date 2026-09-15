@@ -90,7 +90,7 @@ pub fn inputs<B: Backend>(values: Vec<i32>, device: &B::Device) -> Tensor<B, 2, 
 }
 
 pub fn validate_inputs(config: &ModelConfig, values: &[i32]) -> Result<(), String> {
-    if values.is_empty() || !values.len().is_multiple_of(3) || values.len() > 3_000_000 {
+    if values.is_empty() || !values.len().is_multiple_of(3) {
         return Err("Expected a nonempty batch of three-token windows".into());
     }
     if values
@@ -107,6 +107,9 @@ pub fn predict(
     config: &ModelConfig,
     values: Vec<i32>,
 ) -> Result<Vec<f32>, String> {
+    if values.len() > 3_000_000 {
+        return Err("Prediction batch exceeds 1,000,000 three-token windows".into());
+    }
     validate_inputs(config, &values)?;
     let scores = activation::softmax(model.forward(inputs(values, &Default::default())), 1)
         .into_data()
