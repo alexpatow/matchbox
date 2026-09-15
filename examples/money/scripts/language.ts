@@ -21,6 +21,10 @@ export function language(rows: Row[], spans: Record<string, string[]>) {
     const labels = spans[row.input]!;
     for (const prefix of [
       "record this payment of ",
+      "payment received ",
+      "the subscription costs ",
+      "paid ",
+      "the total charge is ",
       "this expense totals ",
       "the payment comes to ",
       "record a refund of ",
@@ -40,10 +44,17 @@ export function language(rows: Row[], spans: Record<string, string[]>) {
       "between ",
       "either ",
       "from ",
+      "budget above ",
+      "budget below ",
+      "a minimum of ",
+      "a maximum of ",
     ]) {
       const cue = tokenize(prefix, "words").map(() => "REJECT");
       add(prefix + row.input, [...cue, ...labels], null);
       add("approximately " + prefix + row.input, ["APPROX", ...cue, ...labels], null);
+    }
+    for (const suffix of [" monthly", " annually", " received", " paid"]) {
+      add(row.input + suffix, [...labels, ...tokenize(suffix, "words").map(() => "O")], row.output);
     }
     const prefix = "nearly ";
     add(prefix + row.input, ["APPROX", ...labels], { ...row.output, approximate: true });

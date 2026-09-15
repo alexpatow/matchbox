@@ -110,8 +110,7 @@ export function ModelExample({ name, title, inputLabel, description, suggestions
         {report && (
           <p>
             Training loss fell from {report.loss[0]?.toFixed(4)} to {report.loss.at(-1)?.toFixed(6)}
-            . Before training, ungated exact accuracy was{" "}
-            {(report.untrainedUngated.exactAccuracy * 100).toFixed(0)}%.
+            .
           </p>
         )}
         <pre>

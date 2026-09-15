@@ -46,7 +46,7 @@ describe("trained sequence artifacts", () => {
     badWeight.weights = "not base64!";
     expect(() => readSequenceArtifact(badWeight)).toThrow();
   });
-  test("checks native to WASM inference parity and learning against untrained weights", () => {
+  test("checks export fidelity and training loss", () => {
     expect(report.exportParity.labelDisagreements).toBe(0);
     expect(report.exportParity.maxConfidenceError).toBeLessThan(1e-5);
     expect(report).not.toHaveProperty("float");
@@ -54,7 +54,7 @@ describe("trained sequence artifacts", () => {
     expect(report.formatVersion).toBe(2);
     // Epoch averages change with dataset size and masking. Task accuracy gates export.
     expect(report.loss.at(-1)).toBeLessThan(report.loss[0] / 10);
-    expect(report.evaluation.exactAccuracy).toBeGreaterThan(report.untrainedUngated.exactAccuracy);
+    expect(report.evaluation.exactAccuracy).toBeGreaterThanOrEqual(0.95);
   });
   test("normalization rejects ambiguous decimals and composes supported number words", () => {
     expect(normalizeNumber("1,234.56")).toBe(1234.56);

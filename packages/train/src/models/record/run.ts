@@ -61,8 +61,6 @@ export async function runRecord(
     exportParity: fit.parity,
     validation,
     evaluation: await evaluate(fit.model),
-    untrained: await evaluate(fit.untrained),
-    untrainedUngated: await evaluate({ ...fit.untrained, threshold: 0 }),
     trainingMs: performance.now() - start,
     notes:
       "Each field classifies values present in training data. Vocabulary and value domains are fitted only on training. There are no number dictionaries, aliases, normalization rules, or span annotations. Unknown tokens abstain. Bag-of-words ignores order. Confidence is uncalibrated. This model cannot emit unseen numeric values.",

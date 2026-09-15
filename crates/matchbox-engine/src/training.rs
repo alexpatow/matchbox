@@ -9,7 +9,6 @@ use burn::{
 pub struct TrainingResult {
     pub parameters: usize,
     pub weights: Vec<u8>,
-    pub untrained: Vec<u8>,
     pub loss: Vec<f32>,
 }
 
@@ -32,7 +31,6 @@ pub fn train(
     let device = Default::default();
     Train::seed(&device, 42);
     let mut model = Model::<Train>::new(&config, &device);
-    let untrained = model.valid().save()?;
     let mut optimizer = AdamConfig::new().init();
     let objective = CrossEntropyLossConfig::new().init(&device);
     let mut history = Vec::new();
@@ -53,7 +51,6 @@ pub fn train(
     Ok(TrainingResult {
         parameters: model.num_params(),
         weights: model.valid().save()?,
-        untrained,
         loss: history,
     })
 }

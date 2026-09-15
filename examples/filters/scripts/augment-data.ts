@@ -1,3 +1,4 @@
+import { countries, countryCodes } from "../matchbox/filters/countries/countries";
 import { readFile, writeFile } from "node:fs/promises";
 // Add supported utterances. This script never reads or writes evaluation cases.
 const path = new URL("../matchbox/filters/data/train.jsonl", import.meta.url);
@@ -33,7 +34,9 @@ for (const [name, code] of [
   }
 }
 for (const status of ["active", "inactive", "churned"]) {
-  for (const prefix of ["not", "exclude", "without"]) {
+  for (const prefix of ["not", "exclude", "without", "hide", "omit"]) {
+    add(`${prefix} all ${status} accounts`, { field: "status", operator: "neq", value: status });
+    add(`${prefix} the ${status} accounts`, { field: "status", operator: "neq", value: status });
     add(`${prefix} ${status} customers`, { field: "status", operator: "neq", value: status });
   }
 }
@@ -71,6 +74,17 @@ for (const row of [...rows]
     "could you list ",
   ]) {
     add(prefix + row.input, row.output);
+  }
+}
+for (const code of countryCodes) {
+  const name = countries[code].aliases[0]!;
+  for (const prefix of [
+    "companies based in ",
+    "list companies from ",
+    "only companies from ",
+    "find accounts located in ",
+  ]) {
+    add(prefix + name, { field: "country", operator: "eq", value: code });
   }
 }
 await writeFile(path, rows.map((row) => JSON.stringify(row)).join("\n") + "\n");

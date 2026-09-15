@@ -8,8 +8,8 @@ The runtime loads lazily on the first parse. A parser retains its loaded model a
 
 Direct creation is available through @matchbox-ai/core/runtime. Imports are SSR-safe; browser loading uses a separate WASM asset. Node inference reads that asset from the installed package. Training dependencies stay out of browser entry points.
 
-Artifact format 3 contains a base64-encoded Burn record. Regenerate earlier artifacts with matchbox-ai train. The report evaluates the trained artifact once under `evaluation`. This branch does not implement quantization.
+Artifact format 3 contains a base64-encoded Burn record. Regenerate earlier artifacts with matchbox-ai train. The report evaluates the trained artifact once under `evaluation`. Quantization is not implemented.
 
-The native addon currently packages only the build host's platform. This experiment must not be published until native distribution is implemented. Repository contributors should follow [the experiment setup](experiments/burn.md).
+The native addon currently packages only the build host's platform. Platform distribution is required before publishing. Repository contributors should follow [contributor setup](contributing.md).
 
 apps/benchmarks measures loading and warm inference of the shipped runtime. Cold timing includes lazy WASM loading after the benchmark page itself has loaded. Mobile browser-test profiles emulate device settings on desktop hardware, not physical-phone performance.

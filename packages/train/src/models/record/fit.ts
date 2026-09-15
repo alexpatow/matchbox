@@ -76,7 +76,6 @@ export async function fitRecord(
   return {
     model,
     parameters: result.parameters,
-    untrained: artifact(result.untrained),
     history: result.loss,
     parity,
   };

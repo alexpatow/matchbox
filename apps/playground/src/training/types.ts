@@ -4,7 +4,6 @@ export interface TrainingReport {
   bytes: number;
   examples: { train: number; eval: number };
   evaluation: { exactAccuracy: number };
-  untrainedUngated: { exactAccuracy: number };
   loss: number[];
 }
 export type ExampleLoader = () => Promise<{

@@ -1,62 +1,47 @@
 # Example evaluation
 
-The Burn models improved after expanding the training examples. The decoders and model architecture stayed unchanged. See [the language experiment](experiments/language.md) for before/after results, rejected candidates, overlap accounting and the evaluation limitations.
+The examples are evaluated against expected structured outputs and rejection cases. Timing in the demo measures execution speed on your device, independently of these accuracy checks.
 
-## Current audit
+## Current results
 
-The frozen synthetic audit is now regression evidence: its earlier failures were known before this work. It is not a user-traffic sample or an independent measure of production accuracy. No audit rows were added to training or used for candidate selection.
+These small, synthetic suites are regression evidence. Known failures informed training coverage and candidate selection. The evaluation fixtures were preserved, but their scores are not independent estimates of performance on user traffic. Exact match includes correct abstentions.
 
-Exact match includes correct abstentions. Accepted accuracy measures the outputs returned to the application. These results contain no schema-invalid outputs, but that alone does not establish semantic correctness.
+| Example | Audit exact match | Language test   | False accepts on audit negatives |
+| ------- | ----------------- | --------------- | -------------------------------- |
+| is-even | 8/8               | Not applicable. | 0/3                              |
+| Money   | 19/20             | 12/12           | 0/8                              |
+| Time    | 20/20             | 12/12           | 0/8                              |
+| Filters | 16/16             | 11/12           | 0/6                              |
 
-| Example | Exact match | Accepted accuracy | False accepts on negatives |
-| ------- | ----------- | ----------------- | -------------------------- |
-| is-even | 8/8         | 5/5               | 0/3                        |
-| Money   | 18/20       | 10/10             | 0/8                        |
-| Time    | 19/20       | 11/11             | 0/8                        |
-| Filters | 14/16       | 8/8               | 0/6                        |
+All three language-development suites pass 12/12. No language-test negative case is falsely accepted. Confidence remains uncalibrated.
 
-Money still falsely accepts `budget above 58 euros` in the separate language-development suite. Zero false accepts on this audit does not mean all unsupported inputs are handled correctly. Confidence remains an uncalibrated recognition score.
+Money still abstains on “Henrik paid 19 dollars yesterday”. Filters still abstain on “show me all companies based in Norway” in the language test. These are valid requests with incomplete model coverage.
 
-## Remaining failures
+## Training coverage
 
-The audit still produces abstentions for:
+Money training includes payment framing, subscriptions and bounds that must be rejected rather than returned as exact amounts. Time includes mixed day/hour expressions and sentence framing. Filters include country/location phrasing and exclusion supervision. These are authored training examples; runtime decoders and the model architecture were unchanged.
 
-- `payment received: 29 euros`.
-- `our subscription costs 21 euros monthly`.
-- `in two days and four hours`.
-- `hide the churned customers`.
-- `only companies based in Germany`.
+Two money and six time language-test inputs match training token sequences after numeric normalization. Novel quantities are not necessarily novel model inputs. Even a new full sentence can consist of familiar three-token windows. Country normalization uses an application-owned reference.
 
-The separate language test also exposes `show me all companies based in Norway`. These inputs are legitimate requests; the model does not yet cover them reliably.
+## Model size
 
-## What the examples establish
-
-Filters share ARR and status restrictions across country alternatives through the application decoder. Money learns to distinguish invoice/year numbers from payment amounts. Time now has training examples for minutes-plus-seconds compositions. Parity remains a training sanity check; use deterministic arithmetic in an application.
-
-Word-mode numeric inputs share a token, so a novel amount can be feature-equivalent to training. The language report excludes those overlaps from its novelty comparison, including matches to rejection training. Even a novel full sentence can consist of familiar three-token windows. Country normalization still uses an application-owned reference. These examples do not establish broad language understanding or learned geographical knowledge.
-
-## Artifact cost
-
-These figures include metadata, vocabulary and base64-encoded float32 Burn records. They exclude the shared runtime and application decoders. No int8 quantization is applied in this experiment.
+Sizes include metadata, vocabulary and float32 model records. The shared WASM runtime and application decoders are additional downloads. The website reads these figures from the current build.
 
 | Example | Parameters | Artifact bytes |
 | ------- | ---------: | -------------: |
-| is-even |        530 |          3,898 |
-| Money   |      1,458 |          9,875 |
-| Time    |      1,255 |          8,993 |
-| Filters |      7,728 |         58,352 |
-
-The shared WASM binary is 689,531 bytes, or 183,093 bytes with gzip, excluding JavaScript glue and the app itself. The website reads artifact sizes from each build's training reports.
-
-Browser tests verify record and sequence inference with networking blocked, and record cold initialization and warm latency separately. Desktop mobile emulation is not physical-phone performance. Browser timer granularity limits sub-millisecond comparisons.
+| is-even |        530 |           3898 |
+| money   |       1530 |          10351 |
+| time    |       1287 |           9188 |
+| filters |       7760 |          58555 |
 
 ## Reproduce
 
 ```sh
 bun run train
+bun scripts/evaluate-language.ts development
 bun scripts/evaluate-language.ts test
 bun run eval:examples
 bun run test:browser
 ```
 
-Reports include artifact hashes, case hashes, exact-match failures and feature-overlap counts. [The recorded language results](experiments/language-results.json) retain the before/after comparison. Future quality claims need independently authored application examples and larger samples.
+[Current results](example-results.json) include case and artifact hashes, failures and feature-overlap counts. The evaluation scripts write fresh reports into the ignored .matchbox directory.

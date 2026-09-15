@@ -1,0 +1,280 @@
+{
+  "provenance": "Synthetic regression fixtures. Known failures informed training coverage and candidate selection. These are not independent production accuracy estimates. Evaluation fixtures were preserved.",
+  "examples": [
+    {
+      "name": "is-even",
+      "parameters": 530,
+      "bytes": 3898,
+      "artifactSha256": "c659fbf61017dc88037e8314335c4e73622006c3549620f23ca459bc4098cb6f",
+      "caseSha256": "93cff9748ccc3ce575274f04dec41861ac59f7bcdd42d35bbcfe86f026774177",
+      "evaluation": {
+        "examples": 8,
+        "invalidOutputRate": 0,
+        "exactAccuracy": 1,
+        "accepted": 5,
+        "acceptedAccuracy": 1,
+        "abstentionRate": 0.375,
+        "correctAbstentions": 3,
+        "failures": [],
+        "negatives": 3,
+        "falseAccepts": 0
+      }
+    },
+    {
+      "name": "money",
+      "parameters": 1530,
+      "bytes": 10351,
+      "artifactSha256": "8aab74105bda77422fb3ab10a67adb96fe589142bf21d3bfb244cce0aaba2db4",
+      "caseSha256": "c8b46c03eee72e24e8a297771cb8c7b026c9f3de31c2ea1822e681c87458e234",
+      "evaluation": {
+        "examples": 20,
+        "invalidOutputRate": 0,
+        "exactAccuracy": 0.95,
+        "accepted": 11,
+        "acceptedAccuracy": 1,
+        "abstentionRate": 0.44999999999999996,
+        "correctAbstentions": 8,
+        "failures": [
+          {
+            "input": "Henrik paid 19 dollars yesterday",
+            "expected": {
+              "amount": 19,
+              "currency": "USD",
+              "approximate": false
+            },
+            "actual": null
+          }
+        ],
+        "negatives": 8,
+        "falseAccepts": 0
+      },
+      "language": {
+        "name": "money",
+        "split": "test",
+        "artifactSha256": "8aab74105bda77422fb3ab10a67adb96fe589142bf21d3bfb244cce0aaba2db4",
+        "caseSha256": "21463aad45c9584858acca629aeee7d96f300bd8937268cbb17b9552bff695a0",
+        "featureEquivalent": ["invoice 718 totals SEK 54", "from 16 to 28 dollars"],
+        "novelOnly": {
+          "examples": 10,
+          "invalidOutputRate": 0,
+          "exactAccuracy": 1,
+          "accepted": 5,
+          "acceptedAccuracy": 1,
+          "abstentionRate": 0.5,
+          "correctAbstentions": 5,
+          "failures": []
+        },
+        "examples": 12,
+        "invalidOutputRate": 0,
+        "exactAccuracy": 1,
+        "accepted": 6,
+        "acceptedAccuracy": 1,
+        "abstentionRate": 0.5,
+        "correctAbstentions": 6,
+        "failures": [],
+        "falseAccepts": 0
+      },
+      "development": {
+        "name": "money",
+        "split": "development",
+        "artifactSha256": "8aab74105bda77422fb3ab10a67adb96fe589142bf21d3bfb244cce0aaba2db4",
+        "caseSha256": "8f0b9f5cfa2bfbb202d27579c13c822f1962f64a428771ff5c9f42c3d72480c9",
+        "featureEquivalent": ["invoice 657 totals $ 91", "between 18 and 29 euros"],
+        "novelOnly": {
+          "examples": 10,
+          "invalidOutputRate": 0,
+          "exactAccuracy": 1,
+          "accepted": 5,
+          "acceptedAccuracy": 1,
+          "abstentionRate": 0.5,
+          "correctAbstentions": 5,
+          "failures": []
+        },
+        "examples": 12,
+        "invalidOutputRate": 0,
+        "exactAccuracy": 1,
+        "accepted": 6,
+        "acceptedAccuracy": 1,
+        "abstentionRate": 0.5,
+        "correctAbstentions": 6,
+        "failures": [],
+        "falseAccepts": 0
+      }
+    },
+    {
+      "name": "time",
+      "parameters": 1287,
+      "bytes": 9188,
+      "artifactSha256": "1aca94d5192cd70ddca6dca6e0a3a1a38b1d8c0e0cd8849b5cbaf1942da1d2e5",
+      "caseSha256": "9735ba19d8feb772fa074a0cbee03cb7d8b6fb009bdb734d0128a0836739487f",
+      "evaluation": {
+        "examples": 20,
+        "invalidOutputRate": 0,
+        "exactAccuracy": 1,
+        "accepted": 12,
+        "acceptedAccuracy": 1,
+        "abstentionRate": 0.4,
+        "correctAbstentions": 8,
+        "failures": [],
+        "negatives": 8,
+        "falseAccepts": 0
+      },
+      "language": {
+        "name": "time",
+        "split": "test",
+        "artifactSha256": "1aca94d5192cd70ddca6dca6e0a3a1a38b1d8c0e0cd8849b5cbaf1942da1d2e5",
+        "caseSha256": "ba60a69928392d1ba8d0f3f7b961135791b157f00d35bd08504deacfdef66ade",
+        "featureEquivalent": [
+          "please wait for 0.25 hours",
+          "the reminder is in 41 minutes",
+          "tomorrow at 6:37 pm please",
+          "in minus 38 seconds",
+          "tomorrow at 27:19",
+          "for 3 days or 22 minutes"
+        ],
+        "novelOnly": {
+          "examples": 6,
+          "invalidOutputRate": 0,
+          "exactAccuracy": 1,
+          "accepted": 5,
+          "acceptedAccuracy": 1,
+          "abstentionRate": 0.16666666666666663,
+          "correctAbstentions": 1,
+          "failures": []
+        },
+        "examples": 12,
+        "invalidOutputRate": 0,
+        "exactAccuracy": 1,
+        "accepted": 8,
+        "acceptedAccuracy": 1,
+        "abstentionRate": 0.33333333333333337,
+        "correctAbstentions": 4,
+        "failures": [],
+        "falseAccepts": 0
+      },
+      "development": {
+        "name": "time",
+        "split": "development",
+        "artifactSha256": "1aca94d5192cd70ddca6dca6e0a3a1a38b1d8c0e0cd8849b5cbaf1942da1d2e5",
+        "caseSha256": "d0c0d22b10a8707ab48b3983a6973ef104447ed49427026ed01575ed2581e0c8",
+        "featureEquivalent": [
+          "please wait for 13 minutes",
+          "in 1.25 hours",
+          "in minus 12 minutes",
+          "tomorrow at 26:11",
+          "for 5 hours or 18 minutes"
+        ],
+        "novelOnly": {
+          "examples": 7,
+          "invalidOutputRate": 0,
+          "exactAccuracy": 1,
+          "accepted": 6,
+          "acceptedAccuracy": 1,
+          "abstentionRate": 0.1428571428571429,
+          "correctAbstentions": 1,
+          "failures": []
+        },
+        "examples": 12,
+        "invalidOutputRate": 0,
+        "exactAccuracy": 1,
+        "accepted": 8,
+        "acceptedAccuracy": 1,
+        "abstentionRate": 0.33333333333333337,
+        "correctAbstentions": 4,
+        "failures": [],
+        "falseAccepts": 0
+      }
+    },
+    {
+      "name": "filters",
+      "parameters": 7760,
+      "bytes": 58555,
+      "artifactSha256": "489334acf5e497fd07e51bdc4ff04313e3f094342c5eca92e15df056bb00b321",
+      "caseSha256": "5c47c1e8b9cca57c904a21523a7f975ced84cbc418af12afd4e38ea2e3f0203c",
+      "evaluation": {
+        "examples": 16,
+        "invalidOutputRate": 0,
+        "exactAccuracy": 1,
+        "accepted": 10,
+        "acceptedAccuracy": 1,
+        "abstentionRate": 0.375,
+        "correctAbstentions": 6,
+        "failures": [],
+        "negatives": 6,
+        "falseAccepts": 0
+      },
+      "language": {
+        "name": "filters",
+        "split": "test",
+        "artifactSha256": "489334acf5e497fd07e51bdc4ff04313e3f094342c5eca92e15df056bb00b321",
+        "caseSha256": "f4974e1ae31abf497acb0fe4b66033f81ba94fe26fde429d7c620d56ba778b4b",
+        "featureEquivalent": [],
+        "novelOnly": {
+          "examples": 12,
+          "invalidOutputRate": 0,
+          "exactAccuracy": 0.9166666666666666,
+          "accepted": 7,
+          "acceptedAccuracy": 1,
+          "abstentionRate": 0.41666666666666663,
+          "correctAbstentions": 4,
+          "failures": [
+            {
+              "input": "show me all companies based in Norway",
+              "expected": {
+                "field": "country",
+                "operator": "eq",
+                "value": "NO"
+              },
+              "actual": null
+            }
+          ]
+        },
+        "examples": 12,
+        "invalidOutputRate": 0,
+        "exactAccuracy": 0.9166666666666666,
+        "accepted": 7,
+        "acceptedAccuracy": 1,
+        "abstentionRate": 0.41666666666666663,
+        "correctAbstentions": 4,
+        "failures": [
+          {
+            "input": "show me all companies based in Norway",
+            "expected": {
+              "field": "country",
+              "operator": "eq",
+              "value": "NO"
+            },
+            "actual": null
+          }
+        ],
+        "falseAccepts": 0
+      },
+      "development": {
+        "name": "filters",
+        "split": "development",
+        "artifactSha256": "489334acf5e497fd07e51bdc4ff04313e3f094342c5eca92e15df056bb00b321",
+        "caseSha256": "7b3dcb7b5898d40594322fef3c98e4a5f06622d6764d8e77191390cbd9543c6d",
+        "featureEquivalent": [],
+        "novelOnly": {
+          "examples": 12,
+          "invalidOutputRate": 0,
+          "exactAccuracy": 1,
+          "accepted": 8,
+          "acceptedAccuracy": 1,
+          "abstentionRate": 0.33333333333333337,
+          "correctAbstentions": 4,
+          "failures": []
+        },
+        "examples": 12,
+        "invalidOutputRate": 0,
+        "exactAccuracy": 1,
+        "accepted": 8,
+        "acceptedAccuracy": 1,
+        "abstentionRate": 0.33333333333333337,
+        "correctAbstentions": 4,
+        "failures": [],
+        "falseAccepts": 0
+      }
+    }
+  ]
+}

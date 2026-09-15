@@ -88,7 +88,6 @@ export async function runSequence(
       decoderModule: modulePath(resolve(root, sequence.decoder)),
     },
     project.validation.map((row) => row.input),
-    false,
     progress,
   );
   const validation = await evaluateSequence(parser(fit.model), project.validation);
@@ -98,8 +97,6 @@ export async function runSequence(
       `Sequence model failed validation/size requirements (${validation.exactAccuracy}, ${bytes} bytes). ${JSON.stringify(validation.failures.slice(0, 10))}`,
     );
   }
-  const shuffledControl =
-    recipe.readout === "last" ? await fitSequence(training, recipe, fit.model, [], true) : null;
   const challenges = config.challenges
     ? z
         .array(z.strictObject({ input: z.string(), output: z.null() }))
@@ -109,7 +106,7 @@ export async function runSequence(
   const report = {
     formatVersion: 2,
     architecture: fit.model.architecture,
-    backend: "Burn native CPU (experimental)",
+    backend: "Burn native CPU",
     seed: 42,
     artifactSha256: hash(JSON.stringify(fit.model)),
     bytes,
@@ -124,12 +121,6 @@ export async function runSequence(
       validation: project.validation.length,
       eval: project.evaluation.length,
     },
-    shuffledLabelsUngated: shuffledControl
-      ? await evaluateSequence(
-          parser({ ...shuffledControl.model, threshold: 0 }),
-          project.evaluation,
-        )
-      : null,
     supervisionSha256: hash(
       JSON.stringify(
         training.map((row) => ({
@@ -142,16 +133,11 @@ export async function runSequence(
     loss: fit.history,
     exportParity: fit.parity,
     validation,
-    untrainedUngated: await evaluateSequence(
-      parser({ ...fit.untrained, threshold: 0 }),
-      project.evaluation,
-    ),
-    untrained: await evaluateSequence(parser(fit.untrained), project.evaluation),
     evaluation: await evaluateSequence(parser(fit.model), project.evaluation),
     challenges: challenges ? await evaluateSequence(parser(fit.model), challenges) : null,
     trainingMs: performance.now() - started,
     notes:
-      "Experimental Burn engine. Float32 weights in a Burn binary record, base64-encoded in the artifact. Validation gates export. Eval labels do not influence selection. Scores are uncalibrated.",
+      "Float32 weights in a Burn binary record, base64-encoded in the artifact. Validation gates export. Eval labels do not influence selection. Scores are uncalibrated.",
   };
   await packageModel(project.output, fit.model, report);
   return { report, output: project.output };

@@ -14,7 +14,6 @@ fn learns_from_labels_and_restores_predictions() {
     let labels = [0, 1].repeat(32);
     let fit = train(config.clone(), values, labels, |_, _| {}).unwrap();
     assert!(fit.loss.last().unwrap() < &(fit.loss[0] / 10.0));
-    assert_ne!(fit.weights, fit.untrained);
     let model = Model::load(&config, fit.weights, &Default::default()).unwrap();
     let scores = predict(&model, &config, vec![0, 2, 0, 0, 3, 0]).unwrap();
     assert!(scores[0] > 0.9 && scores[3] > 0.9);

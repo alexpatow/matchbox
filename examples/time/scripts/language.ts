@@ -9,6 +9,9 @@ export function language(rows: Row[], spans: Record<string, string[]>) {
     }
     for (const prefix of [
       "please note ",
+      "start ",
+      "we will meet ",
+      "please start ",
       "your appointment is ",
       "our timer is set ",
       "the reminder is ",
@@ -39,6 +42,26 @@ export function language(rows: Row[], spans: Record<string, string[]>) {
         const input = `${prefix}${word} minutes and ${seconds} seconds`;
         spans[input] = [...labels, "AMOUNT", "MINUTE", "O", "AMOUNT", "SECOND"];
         rows.push({ input, output: { kind, seconds: amount * 60 + seconds } });
+      }
+    }
+  }
+  for (const [day, days] of [
+    ["one", 1],
+    ["three", 3],
+    ["five", 5],
+  ] as const) {
+    for (const [hour, hours] of [
+      ["two", 2],
+      ["six", 6],
+      ["nine", 9],
+    ] as const) {
+      for (const [prefix, label, kind] of [
+        ["in", "RELATIVE", "relative"],
+        ["for", "DURATION", "duration"],
+      ] as const) {
+        const input = prefix + " " + day + " days and " + hour + " hours";
+        spans[input] = [label, "AMOUNT", "DAY", "O", "AMOUNT", "HOUR"];
+        rows.push({ input, output: { kind, seconds: days * 86400 + hours * 3600 } });
       }
     }
   }

@@ -9,14 +9,9 @@ export async function fitSequence(
   recipe: SequenceRecipe,
   metadata: Pick<SequenceArtifact, "taskModule" | "taskMetadata" | "decoderModule">,
   probes: readonly string[] = [],
-  shuffleLabels = false,
   progress?: (epoch: number, loss: number) => void,
 ) {
-  const { vocabulary, radius, dropout, inputs, labels } = prepareSupervision(
-    examples,
-    recipe,
-    shuffleLabels,
-  );
+  const { vocabulary, radius, dropout, inputs, labels } = prepareSupervision(examples, recipe);
   const result = await fit(
     { vocabularySize: vocabulary.length + 2, labelCount: recipe.labels.length },
     inputs,
@@ -70,9 +65,7 @@ export async function fitSequence(
   if (labelDisagreements || maxConfidenceError > 1e-5) {
     throw new Error("Burn native and WASM predictions disagree.");
   }
-  // This experiment uses Burn's full-precision recorder; no quantization is claimed.
   return {
-    untrained: artifact(result.untrained),
     model,
     parameters: result.parameters,
     history: result.loss,

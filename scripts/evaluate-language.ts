@@ -26,9 +26,7 @@ for (const name of ["money", "time", "filters"]) {
   const recipe = (await import(pathToFileURL(model.config.sequence!.recipe).href)).default;
   const seen = new Set([...train, ...(recipe.rejections ?? [])].map((row) => signature(row.input)));
   const equivalent = rows.filter((row) => seen.has(signature(row.input))).map((row) => row.input);
-  const artifact = process.argv[3]
-    ? await Bun.file(`${process.argv[3]}/${name}.matchbox`).json()
-    : await Bun.file(model.output).json();
+  const artifact = await Bun.file(model.output).json();
   const parser = createParser(artifact, model.task, model.decode);
   try {
     const novelOnly = await evaluate(
