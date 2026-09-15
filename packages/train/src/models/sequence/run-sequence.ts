@@ -22,7 +22,9 @@ export async function runSequence(
   const { task, config } = project;
   const root = project.root;
   const sequence = config.sequence;
-  if (!sequence) throw new Error("A sequence pipeline needs both recipe and decoder modules.");
+  if (!sequence) {
+    throw new Error("A sequence pipeline needs both recipe and decoder modules.");
+  }
   const savedArtifact =
     command === "eval"
       ? readSequenceArtifact(JSON.parse(await readFile(project.output, "utf8")))
@@ -36,7 +38,9 @@ export async function runSequence(
     examples: readonly DatasetExample<unknown>[],
   ) =>
     evaluate(parser, examples, (value) => task.validateOutput(value).success).finally(() => {
-      if ("dispose" in parser && typeof parser.dispose === "function") parser.dispose();
+      if ("dispose" in parser && typeof parser.dispose === "function") {
+        parser.dispose();
+      }
     });
   const parser = (artifact: unknown) => createParser(artifact, task, decode);
   if (savedArtifact) {
@@ -56,20 +60,23 @@ export async function runSequence(
     [...project.validation, ...project.evaluation].map((row) => row.input.trim().toLowerCase()),
   );
   for (const example of training) {
-    if (!task.validateInput(example.input).success)
+    if (!task.validateInput(example.input).success) {
       throw new Error(`Invalid training input: ${example.input}`);
-    if (heldOut.has(example.input.trim().toLowerCase()))
+    }
+    if (heldOut.has(example.input.trim().toLowerCase())) {
       throw new Error(`Training input overlaps evaluation: ${example.input}`);
+    }
     const tokens = tokenize(example.input, recipe.tokenizer);
     const labels = recipe.annotate(example, tokens);
     const value = decode(
       tokens.map((token, index) => ({ ...token, label: labels[index] ?? "O", confidence: 1 })),
       example.input,
     );
-    if (!sameOutput(value, example.output))
+    if (!sameOutput(value, example.output)) {
       throw new Error(
         `Training annotations do not decode to the supplied output: ${example.input}`,
       );
+    }
   }
   const started = performance.now();
   const fit = await fitSequence(
@@ -86,10 +93,11 @@ export async function runSequence(
   );
   const validation = await evaluateSequence(parser(fit.quantized), project.validation);
   const bytes = Buffer.byteLength(JSON.stringify(fit.quantized));
-  if (validation.exactAccuracy < config.minAccuracy || bytes > config.maxBytes)
+  if (validation.exactAccuracy < config.minAccuracy || bytes > config.maxBytes) {
     throw new Error(
       `Sequence model failed validation/size requirements (${validation.exactAccuracy}, ${bytes} bytes). ${JSON.stringify(validation.failures.slice(0, 10))}`,
     );
+  }
   const shuffledControl =
     recipe.readout === "last" ? await fitSequence(training, recipe, fit.quantized, [], true) : null;
   const challenges = config.challenges

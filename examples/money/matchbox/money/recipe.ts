@@ -10,7 +10,9 @@ const recipe: SequenceRecipe = {
   labels: ["REJECT", "O", "AMOUNT", "EUR", "USD", "GBP", "SEK", "THOUSAND", "MILLION", "APPROX"],
   annotate(example) {
     const labels = spans[example.input];
-    if (!labels) throw new Error(`Missing training span supervision: ${example.input}`);
+    if (!labels) {
+      throw new Error(`Missing training span supervision: ${example.input}`);
+    }
     return labels;
   },
 };

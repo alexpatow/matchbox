@@ -15,14 +15,24 @@ export async function evaluateSequence(
   for (const row of examples) {
     const result = await parser.parse(row.input);
     const actual = result.status === "ok" ? result.value : null;
-    if (result.status === "ok" && !validate(result.value)) invalidOutputs++;
+    if (result.status === "ok" && !validate(result.value)) {
+      invalidOutputs++;
+    }
     const correct = sameOutput(actual, row.output);
-    if (correct) exact++;
+    if (correct) {
+      exact++;
+    }
     if (result.status === "ok") {
       accepted++;
-      if (correct) correctAccepted++;
-    } else if (row.output === null) correctAbstentions++;
-    if (!correct) failures.push({ input: row.input, expected: row.output, actual });
+      if (correct) {
+        correctAccepted++;
+      }
+    } else if (row.output === null) {
+      correctAbstentions++;
+    }
+    if (!correct) {
+      failures.push({ input: row.input, expected: row.output, actual });
+    }
   }
   return {
     examples: examples.length,

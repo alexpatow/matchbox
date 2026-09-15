@@ -40,15 +40,18 @@ export function readSequenceArtifact(value: unknown): SequenceArtifact {
       weight.values.length !== weight.shape.reduce((a, b) => a * b, 1) ||
       (model.precision === "int8" &&
         weight.values.some((v) => !Number.isInteger(v) || Math.abs(v) > 127))
-    )
+    ) {
       throw new Error("Invalid Matchbox sequence weights.");
+    }
   });
   if (
     new Set(model.vocabulary).size !== model.vocabulary.length ||
     new Set(model.labels).size !== model.labels.length
-  )
+  ) {
     throw new Error("Duplicate sequence vocabulary or labels.");
-  if (new Set(model.weights.map((weight) => weight.name)).size !== model.weights.length)
+  }
+  if (new Set(model.weights.map((weight) => weight.name)).size !== model.weights.length) {
     throw new Error("Duplicate TensorFlow weight names.");
+  }
   return model;
 }

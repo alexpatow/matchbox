@@ -18,18 +18,20 @@ export const pipelineSchema = z
       .optional(),
   })
   .superRefine((value, context) => {
-    if (value.prediction.kind === "field-classifier" && !value.input)
+    if (value.prediction.kind === "field-classifier" && !value.input) {
       context.addIssue({
         code: "custom",
         message: "fieldClassifier requires an explicit input encoder.",
         path: ["input"],
       });
-    if (value.prediction.kind === "token-classifier" && value.input)
+    }
+    if (value.prediction.kind === "token-classifier" && value.input) {
       context.addIssue({
         code: "custom",
         message: "The sequence recipe owns tokenization; omit the duplicate input encoder.",
         path: ["input"],
       });
+    }
   });
 export type Pipeline = z.infer<typeof pipelineSchema>;
 export function definePipeline(pipeline: Pipeline): Pipeline {

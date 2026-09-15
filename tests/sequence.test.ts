@@ -30,7 +30,9 @@ describe("trained sequence artifacts", () => {
   });
   test("the saved weights determine recognition", async () => {
     const blank = structuredClone(artifact);
-    for (const matrix of blank.weights) matrix.values.fill(0);
+    for (const matrix of blank.weights) {
+      matrix.values.fill(0);
+    }
     expect((await createParser(blank, task, decode).parse("EUR 19.75")).status).toBe("uncertain");
     expect((await money.parse("EUR 19.75")).status).toBe("ok");
   });
@@ -57,15 +59,17 @@ describe("trained sequence artifacts", () => {
     expect(normalizeNumber("1.234")).toBeNull();
   });
   test("abstains on ambiguous currencies, ranges, unsupported precision, and multiple amounts", async () => {
-    for (const input of ["EUR 10 USD", "under 50 euros", "1.234 EUR", "€5 €10"])
+    for (const input of ["EUR 10 USD", "under 50 euros", "1.234 EUR", "€5 €10"]) {
       expect((await money.parse(input)).status).toBe("uncertain");
+    }
   });
   test("the parity model handles unseen long strings and validates its input", async () => {
-    for (const input of ["123456789012345678901234567892", "987654321987654321987654321"])
+    for (const input of ["123456789012345678901234567892", "987654321987654321987654321"]) {
       expect(await parity.parse(input)).toMatchObject({
         status: "ok",
         value: { even: BigInt(input) % 2n === 0n },
       });
+    }
     expect((await parity.parse("2.0")).status).toBe("uncertain");
   });
 });

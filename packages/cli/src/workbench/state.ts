@@ -4,7 +4,9 @@ export async function modifiedAt(directory: string): Promise<number> {
   const times = await Promise.all(
     entries.map(async (entry) => {
       const path = `${directory}/${entry.name}`;
-      if (entry.isSymbolicLink()) return 0;
+      if (entry.isSymbolicLink()) {
+        return 0;
+      }
       return entry.isDirectory() ? modifiedAt(path) : (await stat(path)).mtimeMs;
     }),
   );

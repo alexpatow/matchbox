@@ -87,15 +87,18 @@ export async function fitSequence(
           const scores = nativeProbabilities[probeIndex]![index]!;
           const maximum = Math.max(...scores);
           maxConfidenceError = Math.max(maxConfidenceError, Math.abs(maximum - token.confidence));
-          if (recipe.labels[scores.indexOf(maximum)] !== token.label) labelDisagreements++;
+          if (recipe.labels[scores.indexOf(maximum)] !== token.label) {
+            labelDisagreements++;
+          }
         });
       });
     } finally {
       portable.dispose();
       await tf.setBackend("tensorflow");
     }
-    if (labelDisagreements || maxConfidenceError > 1e-5)
+    if (labelDisagreements || maxConfidenceError > 1e-5) {
       throw new Error("Exported runtime disagrees with TensorFlow.js.");
+    }
     return {
       untrained,
       float,

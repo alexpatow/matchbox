@@ -45,9 +45,14 @@ export async function execute(args: ReturnType<typeof argumentsFor>) {
       examples,
       (value) => model.task.validateOutput(value).success,
     );
-    if (args.json) print(result, true);
-    else metrics(result);
-    if (result.exactAccuracy < model.config.minAccuracy) process.exitCode = 1;
+    if (args.json) {
+      print(result, true);
+    } else {
+      metrics(result);
+    }
+    if (result.exactAccuracy < model.config.minAccuracy) {
+      process.exitCode = 1;
+    }
     return;
   }
   const input = args.rest[0]!;
@@ -58,5 +63,7 @@ export async function execute(args: ReturnType<typeof argumentsFor>) {
         ? await model.inspect(input)
         : {};
     print({ input, ...details, result }, args.json);
-  } else print(result, args.json);
+  } else {
+    print(result, args.json);
+  }
 }

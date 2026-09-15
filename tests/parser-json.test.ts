@@ -20,7 +20,9 @@ test("rejects non-JSON values before schema validation can strip or convert them
   ]) {
     const result = makeParser().validateOutput({ country: "SE", minimum: 0, owner: value });
     expect(result.success).toBe(false);
-    if (!result.success) expect(result.issues[0]?.code).toBe("invalid_json");
+    if (!result.success) {
+      expect(result.issues[0]?.code).toBe("invalid_json");
+    }
   }
 });
 
@@ -80,7 +82,9 @@ test("rejects class instances and custom prototypes in either realm", () => {
   ]) {
     const result = makeParser().validateOutput(value);
     expect(result.success).toBe(false);
-    if (!result.success) expect(result.issues[0]?.code).toBe("invalid_json");
+    if (!result.success) {
+      expect(result.issues[0]?.code).toBe("invalid_json");
+    }
   }
 });
 
@@ -100,6 +104,8 @@ test("rejects constructor-spoofed prototypes before reading inherited fields", (
     const result = makeParser().validateOutput(value);
     expect(invoked).toBe(false);
     expect(result.success).toBe(false);
-    if (!result.success) expect(result.issues[0]?.code).toBe("invalid_json");
+    if (!result.success) {
+      expect(result.issues[0]?.code).toBe("invalid_json");
+    }
   }
 });

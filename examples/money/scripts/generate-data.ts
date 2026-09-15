@@ -10,9 +10,12 @@ const spans: Record<string, string[]> = {};
 function add(parts: Part[], amount: number, currency: string, approximate = false) {
   const input = parts.map(([text]) => text).join("");
   const labels = parts.flatMap(([text, label]) => tokenize(text, "words").map(() => label));
-  if (labels.length !== tokenize(input, "words").length)
+  if (labels.length !== tokenize(input, "words").length) {
     throw new Error(`Boundary mismatch: ${input}`);
-  if (spans[input]) return;
+  }
+  if (spans[input]) {
+    return;
+  }
   rows.push({ input, output: { amount, currency, approximate } });
   spans[input] = labels;
 }
@@ -107,8 +110,8 @@ for (const [code, symbol, name] of currencies) {
   for (const [word, scale] of [
     ["k", 1000],
     ["m", 1_000_000],
-  ] as const)
-    for (const n of [5, 10, 15, 20, 30, 40, 50])
+  ] as const) {
+    for (const n of [5, 10, 15, 20, 30, 40, 50]) {
       add(
         [
           [String(n), "AMOUNT"],
@@ -118,6 +121,8 @@ for (const [code, symbol, name] of currencies) {
         n * scale,
         code,
       );
+    }
+  }
 }
 const rejections = augment(rows, spans);
 const root = new URL("../matchbox/money/data/", import.meta.url);

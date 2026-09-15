@@ -20,11 +20,13 @@ export async function saveExample(path: string, input: string, output: unknown) 
   ).flat();
   const checkedInput = task.validateInput(input);
   const checkedOutput = task.validateOutput(output);
-  if (!checkedInput.success || !checkedOutput.success)
+  if (!checkedInput.success || !checkedOutput.success) {
     throw new Error("The correction does not satisfy the task schema.");
+  }
   const key = input.trim().toLowerCase();
-  if (heldOut.some((row) => row.input.trim().toLowerCase() === key))
+  if (heldOut.some((row) => row.input.trim().toLowerCase() === key)) {
     throw new Error("This input belongs to a held-out split. Save a different training example.");
+  }
   const file = resolve(root, config.train);
   const current = await readFile(file, "utf8");
   const rows = current
@@ -33,14 +35,18 @@ export async function saveExample(path: string, input: string, output: unknown) 
     .filter((line) => line.trim())
     .map((line) => JSON.parse(line));
   const matching = rows.filter((row) => row.input.trim().toLowerCase() === key);
-  if (matching.length > 1)
+  if (matching.length > 1) {
     throw new Error(
       "Multiple training rows match this input. Edit the dataset to resolve duplicates first.",
     );
+  }
   const index = rows.findIndex((row) => row.input.trim().toLowerCase() === key);
   const example = { input: checkedInput.data, output: checkedOutput.data };
-  if (index < 0) rows.push(example);
-  else rows[index] = example;
+  if (index < 0) {
+    rows.push(example);
+  } else {
+    rows[index] = example;
+  }
   await writeFile(file, rows.map((row) => JSON.stringify(row)).join("\n") + "\n");
   return {
     saved: file,

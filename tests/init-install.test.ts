@@ -28,7 +28,7 @@ test("package manager detection respects declarations, lockfiles, and workspace 
   }
 });
 
-for (const scenario of ["npm", "pnpm", "yarn", "failure", "skip"])
+for (const scenario of ["npm", "pnpm", "yarn", "failure", "skip"]) {
   test(`init dependency installation: ${scenario}`, async () => {
     const root = await mkdtemp(resolve(tmpdir(), "matchbox-install-test-"));
     const manager = ["failure", "skip"].includes(scenario) ? "npm" : scenario;
@@ -102,3 +102,4 @@ for (const scenario of ["npm", "pnpm", "yarn", "failure", "skip"])
       await rm(root, { recursive: true, force: true });
     }
   });
+}

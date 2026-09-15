@@ -62,7 +62,9 @@ export const navigation = [
   ],
 ] as const;
 export function documentLink(href: string | undefined, slug: string) {
-  if (!href || /^(https?:|#|\/)/.test(href)) return href;
+  if (!href || /^(https?:|#|\/)/.test(href)) {
+    return href;
+  }
   const resolved = new URL(href, `https://matchbox.local/docs/${slug}.md`);
   return resolved.pathname.replace(/\.md$/, "") + resolved.hash;
 }

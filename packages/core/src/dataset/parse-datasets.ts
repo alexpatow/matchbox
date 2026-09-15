@@ -8,8 +8,9 @@ export function parseDatasets<Output extends z.ZodType>(
   task: ParserDefinition<Output>,
   config: DatasetConfig,
 ): DatasetResult<z.output<Output>> {
-  if (config.formatVersion !== 1)
+  if (config.formatVersion !== 1) {
     throw new RangeError("Unsupported dataset formatVersion. Expected 1.");
+  }
   const issues: DatasetIssue[] = [];
   const train = parseSource(task, config.train, "train", issues);
   const evaluation = parseSource(task, config.eval, "eval", issues);

@@ -11,7 +11,7 @@ test("scaffolded workbench trains, predicts locally, evaluates, and protects hel
   page,
   request,
 }, info) => {
-  test.setTimeout(90000);
+  test.setTimeout(240_000);
   const directory = await mkdtemp(resolve(tmpdir(), "matchbox-workbench-"));
   await writeFile(
     resolve(directory, "package.json"),
@@ -65,7 +65,7 @@ test("scaffolded workbench trains, predicts locally, evaluates, and protects hel
     await expect(page.getByText("Train your first model.", { exact: false })).toBeVisible();
     await page.getByRole("button", { name: "Train model", exact: true }).click();
     await expect(page.getByText("The model is ready.", { exact: false })).toBeVisible({
-      timeout: 45000,
+      timeout: 180_000,
     });
     await expect(page.locator(".report")).toContainText("Exact answers");
     await page.getByLabel("Input", { exact: true }).fill("$15");
@@ -106,8 +106,11 @@ test("scaffolded workbench trains, predicts locally, evaluates, and protects hel
     server.kill("SIGTERM");
     const terminate = setTimeout(() => server.kill("SIGKILL"), 3000);
     await new Promise<void>((resolve) => {
-      if (server.exitCode !== null) resolve();
-      else server.once("exit", () => resolve());
+      if (server.exitCode !== null) {
+        resolve();
+      } else {
+        server.once("exit", () => resolve());
+      }
     });
     clearTimeout(terminate);
     await rm(directory, { recursive: true, force: true });

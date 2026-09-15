@@ -60,14 +60,19 @@ export async function serveWorkbench(path: string, port: number) {
         name: "matchbox-workbench",
         handleHotUpdate({ file }) {
           // The workbench reloads model modules after a completed export, preserving UI state.
-          if (file.startsWith(`${taskRoot}/`) || file.startsWith(`${dirname(output)}/`)) return [];
+          if (file.startsWith(`${taskRoot}/`) || file.startsWith(`${dirname(output)}/`)) {
+            return [];
+          }
         },
         resolveId(id) {
-          if (id.startsWith("/__matchbox/model.ts")) return `\0${id}`;
+          if (id.startsWith("/__matchbox/model.ts")) {
+            return `\0${id}`;
+          }
         },
         load(id) {
-          if (id.startsWith("\0/__matchbox/model.ts"))
+          if (id.startsWith("\0/__matchbox/model.ts")) {
             return `export { default } from ${JSON.stringify(output.replace(/\.matchbox$/, ".ts") + `?v=${state.revision}`)};`;
+          }
         },
         configureServer(server) {
           server.middlewares.use(
@@ -93,7 +98,9 @@ export async function serveWorkbench(path: string, port: number) {
       });
       return;
     }
-    if (!file.startsWith(`${taskRoot}/`)) return;
+    if (!file.startsWith(`${taskRoot}/`)) {
+      return;
+    }
     state.stale = state.ready;
     clearTimeout(timer);
     timer = setTimeout(() => {

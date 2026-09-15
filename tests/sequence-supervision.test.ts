@@ -17,14 +17,16 @@ test("masking trains the unknown ID deterministically without changing labels or
   expect(masked.inputs.length).toBe(2 * plain.inputs.length);
   expect(masked.inputs.some((window) => window.includes(1))).toBe(true);
   expect(masked.inputs.every((window) => window[0] === 0 || window[2] === 0)).toBe(true);
-  for (const id of [0, 1])
+  for (const id of [0, 1]) {
     expect(masked.labels.filter((label) => label === id).length).toBe(
       2 * plain.labels.filter((label) => label === id).length,
     );
+  }
 });
 test("invalid probabilities and misaligned supervision fail before training", () => {
-  for (const tokenDropout of [-1, 0.51, NaN, Infinity])
+  for (const tokenDropout of [-1, 0.51, NaN, Infinity]) {
     expect(() => prepareSupervision(rows, { ...recipe, tokenDropout })).toThrow("tokenDropout");
+  }
   expect(() => prepareSupervision(rows, { ...recipe, annotate: () => [] })).toThrow(
     "length mismatch",
   );

@@ -18,14 +18,19 @@ export function FilterDemo() {
   const [error, setError] = useState<string | null>(null);
   useEffect(() => {
     let current = true;
-    if (query.trim())
+    if (query.trim()) {
       parse(query)
         .then((value) => {
-          if (current) setResult(value);
+          if (current) {
+            setResult(value);
+          }
         })
         .catch((cause) => {
-          if (current) setError(String(cause));
+          if (current) {
+            setError(String(cause));
+          }
         });
+    }
     return () => {
       current = false;
     };
@@ -34,6 +39,21 @@ export function FilterDemo() {
     setQuery(value);
     setResult(null);
     setError(null);
+  }
+  function statusText() {
+    if (status === "loading") {
+      return "Preparing the model on your device…";
+    }
+    if (!query.trim()) {
+      return "The model is ready. All customers are shown.";
+    }
+    if (!result) {
+      return "Parsing…";
+    }
+    if (result.status === "ok") {
+      return `Parsed locally. Recognition score: ${result.confidence.toFixed(2)}.`;
+    }
+    return "Uncertain. Try a supported example. All customers are shown.";
   }
   const rows =
     result?.status === "ok"
@@ -72,17 +92,7 @@ export function FilterDemo() {
           data-loading={status === "loading" || (!!query.trim() && !result && !error && !loadError)}
           aria-live="polite"
         >
-          {error ||
-            loadError ||
-            (status === "loading"
-              ? "Preparing the model on your device…"
-              : !query.trim()
-                ? "The model is ready. All customers are shown."
-                : !result
-                  ? "Parsing…"
-                  : result.status === "ok"
-                    ? `Parsed locally. Recognition score: ${result.confidence.toFixed(2)}.`
-                    : "Uncertain. Try a supported example. All customers are shown.")}
+          {error || loadError || statusText()}
         </output>
         {result?.status === "ok" && <FilterChips filter={result.value} />}
       </section>

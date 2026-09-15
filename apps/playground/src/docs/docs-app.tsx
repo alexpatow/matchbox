@@ -11,8 +11,11 @@ export function DocsApp() {
   const source = documents[slug];
   useEffect(() => {
     document.title = `${source?.match(/^# (.+)/m)?.[1] ?? "Documentation"} · Matchbox`;
-    if (hash) document.getElementById(decodeURIComponent(hash.slice(1)))?.scrollIntoView();
-    else window.scrollTo(0, 0);
+    if (hash) {
+      document.getElementById(decodeURIComponent(hash.slice(1)))?.scrollIntoView();
+    } else {
+      window.scrollTo(0, 0);
+    }
   }, [slug, hash, source]);
   return (
     <div className="workspace docs-workspace">

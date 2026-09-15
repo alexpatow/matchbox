@@ -12,7 +12,9 @@ export function augment<T>(rows: { input: string; output: T }[], spans: Record<s
         ["", "."],
       ]) {
         const input = prefix + row.input + suffix;
-        if (spans[input]) continue;
+        if (spans[input]) {
+          continue;
+        }
         spans[input] = [
           ...tokenize(prefix!, "words").map(() => "O"),
           ...labels,
@@ -24,7 +26,9 @@ export function augment<T>(rows: { input: string; output: T }[], spans: Record<s
     if (i % 7 === 0) {
       for (const cue of ["not", "never", "without", "under", "over"]) {
         const input = cue + " " + row.input;
-        if (spans[input]) continue;
+        if (spans[input]) {
+          continue;
+        }
         spans[input] = ["REJECT", ...labels];
         rejections.push({ input, output: null });
       }
@@ -32,7 +36,12 @@ export function augment<T>(rows: { input: string; output: T }[], spans: Record<s
   }
   for (const text of ["three hundred euros", "five hundred dollars", "seven hundred pounds"]) {
     const input = text;
-    const currency = text.endsWith("euros") ? "EUR" : text.endsWith("dollars") ? "USD" : "GBP";
+    let currency = "GBP";
+    if (text.endsWith("euros")) {
+      currency = "EUR";
+    } else if (text.endsWith("dollars")) {
+      currency = "USD";
+    }
     spans[input] = ["AMOUNT", "REJECT", currency];
     rejections.push({ input, output: null });
   }

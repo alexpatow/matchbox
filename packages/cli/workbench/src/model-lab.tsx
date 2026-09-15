@@ -19,18 +19,25 @@ export function ModelLab({
   const [timing, setTiming] = useState<number[] | null>(null);
   const [running, setRunning] = useState(false);
   useEffect(() => {
-    if (!ready) return;
+    if (!ready) {
+      return;
+    }
     let current = true;
     let model: (MatchboxParser<unknown> & { dispose?(): void }) | undefined;
     void import(/* @vite-ignore */ `/__matchbox/model.ts?v=${revision}`)
       .then(async (module) => {
         model = module.default;
         await model!.load?.();
-        if (current) setParser(model!);
-        else model?.dispose?.();
+        if (current) {
+          setParser(model!);
+        } else {
+          model?.dispose?.();
+        }
       })
       .catch((cause) => {
-        if (current) setError(String(cause));
+        if (current) {
+          setError(String(cause));
+        }
       });
     return () => {
       current = false;
@@ -38,7 +45,9 @@ export function ModelLab({
     };
   }, [revision, ready]);
   async function predict(measure = false) {
-    if (!parser) return;
+    if (!parser) {
+      return;
+    }
     setRunning(true);
     setError(null);
     try {
@@ -46,7 +55,9 @@ export function ModelLab({
       setResult(value);
       if (measure) {
         await new Promise((resolve) => setTimeout(resolve, 0));
-        for (let i = 0; i < 20; i++) await parser.parse(input);
+        for (let i = 0; i < 20; i++) {
+          await parser.parse(input);
+        }
         const times: number[] = [];
         for (let i = 0; i < 100; i++) {
           const start = performance.now();

@@ -33,6 +33,7 @@ test("CLI help, validation, and piped input are predictable", async () => {
   expect((await cli(["parse"])).stderr).toContain("Usage:");
   expect((await cli(["--version"])).stdout).toContain(manifest.version);
 });
+// Native training alone takes about 90 seconds on the Linux CI runner.
 test("a scaffold trains, discovers nested projects, saves corrections, and evaluates without training files", async () => {
   const temporary = await mkdtemp(resolve(tmpdir(), "matchbox-cli-"));
   const project = resolve(temporary, "parser-project");
@@ -169,4 +170,4 @@ test("a scaffold trains, discovers nested projects, saves corrections, and evalu
   } finally {
     await rm(temporary, { recursive: true, force: true });
   }
-}, 90000);
+}, 180_000);

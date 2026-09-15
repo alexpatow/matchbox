@@ -10,17 +10,19 @@ export async function fitRecord(
   progress?: (epoch: number, loss: number) => void,
 ) {
   const schema = metadata.taskMetadata.output;
-  if (schema.type !== "object" || !schema.properties || schema.additionalProperties !== false)
+  if (schema.type !== "object" || !schema.properties || schema.additionalProperties !== false) {
     throw new Error(
       "The default trainer currently supports strict flat objects with primitive field values. Use an explicit sequence pipeline for other shapes.",
     );
+  }
   const fields = Object.keys(schema.properties).map((name) => {
     const values = [
       ...new Map(
         examples.map((row) => {
           const value = (row.output as Record<string, unknown>)[name];
-          if (value !== null && !["number", "string", "boolean"].includes(typeof value))
+          if (value !== null && !["number", "string", "boolean"].includes(typeof value)) {
             throw new Error(`output.${name}: the default trainer requires primitive field values.`);
+          }
           return [JSON.stringify(value), value as string | number | boolean | null] as const;
         }),
       ).entries(),
@@ -35,10 +37,11 @@ export async function fitRecord(
     fields.length > 32 ||
     fields.some((field) => field.values.length > 256) ||
     vocabulary.length > 10000
-  )
+  ) {
     throw new Error(
       "Default trainer capacity exceeded. Use a custom pipeline for larger output domains.",
     );
+  }
   await tf.setBackend("tensorflow");
   await tf.ready();
   const model = tf.sequential({

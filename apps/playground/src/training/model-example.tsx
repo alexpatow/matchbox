@@ -23,10 +23,14 @@ export function ModelExample({ name, title, inputLabel, description, suggestions
     let current = true;
     load()
       .then((module) => {
-        if (current) setReport(module.report);
+        if (current) {
+          setReport(module.report);
+        }
       })
       .catch((cause) => {
-        if (current) setFailure(String(cause));
+        if (current) {
+          setFailure(String(cause));
+        }
       });
     return () => {
       current = false;
@@ -36,10 +40,14 @@ export function ModelExample({ name, title, inputLabel, description, suggestions
     let current = true;
     parse(query)
       .then((value) => {
-        if (current) setResult(value);
+        if (current) {
+          setResult(value);
+        }
       })
       .catch((cause) => {
-        if (current) setFailure(String(cause));
+        if (current) {
+          setFailure(String(cause));
+        }
       });
     return () => {
       current = false;
@@ -49,6 +57,18 @@ export function ModelExample({ name, title, inputLabel, description, suggestions
     setQuery(value);
     setResult(null);
     setFailure(null);
+  }
+  function statusText() {
+    if (status === "loading") {
+      return "Loading the trained model…";
+    }
+    if (result?.status === "ok") {
+      return "Parsed locally from trained weights.";
+    }
+    if (result?.status === "uncertain") {
+      return `Uncertain. ${result.reason}`;
+    }
+    return "Parsing…";
   }
   return (
     <section className="query-section training-example" aria-labelledby={`${name}-title`}>
@@ -78,15 +98,7 @@ export function ModelExample({ name, title, inputLabel, description, suggestions
         ))}
       </div>
       <output id={`${name}-status`} className="parse-status" aria-live="polite">
-        {failure ||
-          error ||
-          (status === "loading"
-            ? "Loading the trained model…"
-            : result?.status === "ok"
-              ? "Parsed locally from trained weights."
-              : result?.status === "uncertain"
-                ? `Uncertain. ${result.reason}`
-                : "Parsing…")}
+        {failure || error || statusText()}
       </output>
       <pre aria-label={`${name} output`}>
         <code>

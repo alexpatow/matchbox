@@ -15,7 +15,9 @@ async function benchmark() {
   const coldFirstParseMs = performance.now() - start;
   try {
     const results = await Promise.all(rows.map((row) => parser.parse(row.input)));
-    for (let i = 0; i < 20; i++) await parser.parse(rows[i % rows.length]!.input);
+    for (let i = 0; i < 20; i++) {
+      await parser.parse(rows[i % rows.length]!.input);
+    }
     const timings: number[] = [];
     for (let i = 0; i < 300; i++) {
       const tick = performance.now();
@@ -33,7 +35,9 @@ async function benchmark() {
       results,
     };
   } finally {
-    if ("dispose" in parser && typeof parser.dispose === "function") parser.dispose();
+    if ("dispose" in parser && typeof parser.dispose === "function") {
+      parser.dispose();
+    }
   }
 }
 

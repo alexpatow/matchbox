@@ -8,10 +8,15 @@ export function checkSchema(
   ancestors = new Set<z.core.$ZodType>(),
   optionalProperty = false,
 ): void {
-  if (!schema?._zod) throw new TypeError(`${path}: expected a Zod 4 schema.`);
-  if (ancestors.has(schema))
+  if (!schema?._zod) {
+    throw new TypeError(`${path}: expected a Zod 4 schema.`);
+  }
+  if (ancestors.has(schema)) {
     throw new TypeError(`${path}: recursive schemas are not supported yet.`);
-  if (ancestors.size >= 64) throw new TypeError(`${path}: schema nesting exceeds 64 levels.`);
+  }
+  if (ancestors.size >= 64) {
+    throw new TypeError(`${path}: schema nesting exceeds 64 levels.`);
+  }
   checkConstraints(schema, path);
   const def = (schema as z.core.$ZodTypes)._zod.def;
   const next = new Set(ancestors).add(schema);
@@ -51,8 +56,9 @@ export function checkSchema(
         );
       }
       for (const [key, child] of Object.entries(def.shape)) {
-        if (key === "__proto__")
+        if (key === "__proto__") {
           throw new TypeError(`${path}: __proto__ is a reserved property name.`);
+        }
         visit(child, key, true);
       }
       return;
@@ -66,13 +72,15 @@ export function checkSchema(
       visit(def.innerType, "nullable");
       return;
     case "default":
-      if (!optionalProperty || def.innerType._zod.def.type !== "boolean")
+      if (!optionalProperty || def.innerType._zod.def.type !== "boolean") {
         throw new TypeError(`${path}: defaults currently support boolean object properties.`);
+      }
       visit(def.innerType, "default");
       return;
     case "optional":
-      if (!optionalProperty)
+      if (!optionalProperty) {
         throw new TypeError(`${path}: optional is only supported directly on object properties.`);
+      }
       visit(def.innerType, "optional");
       return;
     default:
@@ -84,7 +92,9 @@ export function checkSchema(
 
 export function checkStructuredRoot(schema: z.core.$ZodType, path = "output"): void {
   const def = (schema as z.core.$ZodTypes)._zod.def;
-  if (def.type === "object" || def.type === "array") return;
+  if (def.type === "object" || def.type === "array") {
+    return;
+  }
   if (def.type === "union") {
     def.options.forEach((child, index) => checkStructuredRoot(child, `${path}.options[${index}]`));
     return;

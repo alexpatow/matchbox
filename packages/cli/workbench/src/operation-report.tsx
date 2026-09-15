@@ -1,22 +1,20 @@
 import type { Operation, Metrics } from "./index";
 export function OperationReport({ report }: { report: Operation }) {
-  const metrics =
-    report.command === "train"
-      ? report.result.quantized
-      : report.command === "eval"
-        ? (report.result as Metrics)
-        : null;
+  let metrics: Metrics | null | undefined = null;
+  if (report.command === "train") {
+    metrics = report.result.quantized;
+  } else if (report.command === "eval") {
+    metrics = report.result as Metrics;
+  }
+  let title = report.ok ? "Run complete." : "Evaluation threshold not met.";
+  if (report.command === "save") {
+    title = "Training example saved.";
+  } else if (report.command === "inspect") {
+    title = "Recognition details";
+  }
   return (
     <section className="report" aria-live="polite">
-      <h2>
-        {report.command === "save"
-          ? "Training example saved."
-          : report.command === "inspect"
-            ? "Recognition details"
-            : report.ok
-              ? "Run complete."
-              : "Evaluation threshold not met."}
-      </h2>
+      <h2>{title}</h2>
       {metrics ? (
         <>
           <dl>
@@ -47,11 +45,9 @@ export function OperationReport({ report }: { report: Operation }) {
             </div>
           ))}
         </>
-      ) : report.command === "save" ? (
-        <p>{report.result.next}</p>
-      ) : (
-        <pre>{JSON.stringify(report.result, null, 2)}</pre>
-      )}
+      ) : null}
+      {!metrics && report.command === "save" && <p>{report.result.next}</p>}
+      {!metrics && report.command !== "save" && <pre>{JSON.stringify(report.result, null, 2)}</pre>}
     </section>
   );
 }

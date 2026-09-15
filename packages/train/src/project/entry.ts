@@ -4,7 +4,9 @@ async function isFile(path: string): Promise<boolean> {
   try {
     return (await stat(path)).isFile();
   } catch (error) {
-    if (["ENOENT", "ENOTDIR"].includes((error as NodeJS.ErrnoException).code ?? "")) return false;
+    if (["ENOENT", "ENOTDIR"].includes((error as NodeJS.ErrnoException).code ?? "")) {
+      return false;
+    }
     throw error;
   }
 }
@@ -15,13 +17,16 @@ export async function findEntry(root: string, name: string): Promise<string | un
   const found = (await Promise.all(candidates.map(isFile)))
     .map((exists, index) => (exists ? candidates[index] : undefined))
     .filter((path): path is string => path !== undefined);
-  if (found.length > 1)
+  if (found.length > 1) {
     throw new Error(`Conflicting task entry points: ${found.join(" and ")}. Keep only one.`);
+  }
   return found[0];
 }
 /** Explicit filenames stay exact; extensionless references use the named entry convention. */
 export async function resolveModule(root: string, reference: string): Promise<string> {
-  if (extname(reference)) return resolve(root, reference);
+  if (extname(reference)) {
+    return resolve(root, reference);
+  }
   // Missing training modules are reported when imported, so artifact evaluation needs no recipe.
   return (await findEntry(root, reference)) ?? resolve(root, `${reference}.ts`);
 }

@@ -83,6 +83,8 @@ jobs:
       - run: bun run check
       - run: bunx playwright install --with-deps chromium
       - run: bun run test:browser
+        env:
+          MATCHBOX_PREBUILT: "1"
       - id: pack
         uses: changesets/action/pack@ae32849d5ba541f9ae29e40e22a623bc13562f51 # v2.1.2
         with:

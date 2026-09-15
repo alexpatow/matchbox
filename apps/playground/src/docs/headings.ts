@@ -18,7 +18,9 @@ export function plainText(children: ReactNode): string {
 export function headings(source: string) {
   let fenced = false;
   return source.split("\n").flatMap((line) => {
-    if (/^```/.test(line)) fenced = !fenced;
+    if (/^```/.test(line)) {
+      fenced = !fenced;
+    }
     const match = !fenced && /^## (.+)$/.exec(line);
     return match ? [{ title: match[1]!.replace(/`/g, ""), id: headingId(match[1]!) }] : [];
   });

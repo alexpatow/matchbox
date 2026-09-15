@@ -18,11 +18,17 @@ export function useWorkbench() {
     const refresh = async () => {
       try {
         const response = await fetch("/api/state");
-        if (!response.ok) throw new Error("Workbench disconnected. Check the terminal.");
+        if (!response.ok) {
+          throw new Error("Workbench disconnected. Check the terminal.");
+        }
         const next = await response.json();
-        if (active) setState(next);
+        if (active) {
+          setState(next);
+        }
       } catch (cause) {
-        if (active) setError(String(cause));
+        if (active) {
+          setError(String(cause));
+        }
       }
     };
     void refresh();
@@ -43,7 +49,9 @@ export function useWorkbench() {
         body: JSON.stringify(data),
       });
       const value = await response.json();
-      if (!response.ok) throw new Error(value.error);
+      if (!response.ok) {
+        throw new Error(value.error);
+      }
       setReport({ command, ...value });
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : String(cause));

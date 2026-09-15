@@ -7,9 +7,12 @@ const spans: Record<string, string[]> = {};
 function add(parts: Part[], output: unknown) {
   const input = parts.map(([text]) => text).join("");
   const labels = parts.flatMap(([text, label]) => tokenize(text, "words").map(() => label));
-  if (labels.length !== tokenize(input, "words").length)
+  if (labels.length !== tokenize(input, "words").length) {
     throw new Error(`Token alignment: ${input}`);
-  if (spans[input]) return;
+  }
+  if (spans[input]) {
+    return;
+  }
   spans[input] = labels;
   rows.push({ input, output });
 }
@@ -54,9 +57,11 @@ const units = [
   ["day", "DAY", 86400],
   ["days", "DAY", 86400],
 ] as const;
-for (const [text, value] of amounts)
+for (const [text, value] of amounts) {
   for (const [unit, label, scale] of units) {
-    if (value * scale > 604800) continue;
+    if (value * scale > 604800) {
+      continue;
+    }
     for (const [prefix, cue, kind] of [
       ["", "O", "duration"],
       ["for ", "DURATION", "duration"],
@@ -74,13 +79,16 @@ for (const [text, value] of amounts)
       add([...parts, [text, "AMOUNT"], [" " + unit, label]], { kind, seconds: value * scale });
     }
   }
-for (const [h, hour] of amounts.slice(0, 15))
+}
+for (const [h, hour] of amounts.slice(0, 15)) {
   for (const [m, minute] of amounts.slice(0, 10)) {
-    if (hour > 12 || minute > 60) continue;
+    if (hour > 12 || minute > 60) {
+      continue;
+    }
     for (const [prefix, cue, kind] of [
       ["for ", "DURATION", "duration"],
       ["in ", "RELATIVE", "relative"],
-    ] as const)
+    ] as const) {
       add(
         [
           [prefix, cue],
@@ -92,17 +100,21 @@ for (const [h, hour] of amounts.slice(0, 15))
         ],
         { kind, seconds: hour * 3600 + minute * 60 },
       );
+    }
   }
+}
 for (const [day, label, dayOffset] of [
   ["today", "TODAY", 0],
   ["tomorrow", "TOMORROW", 1],
 ] as const) {
-  for (const hour of [1, 2, 3, 4, 6, 8, 9, 10, 11, 12])
+  for (const hour of [1, 2, 3, 4, 6, 8, 9, 10, 11, 12]) {
     for (const period of ["am", "pm"]) {
       for (const minute of [null, "00", "15", "30", "45"]) {
         const clock: Part[] = [[String(hour), "CLOCK"]];
-        if (minute !== null) clock.push([":", "COLON"], [minute, "CLOCK"]);
-        for (const prefix of ["", "schedule ", "remind me "])
+        if (minute !== null) {
+          clock.push([":", "COLON"], [minute, "CLOCK"]);
+        }
+        for (const prefix of ["", "schedule ", "remind me "]) {
           add(
             [
               [prefix, "O"],
@@ -118,10 +130,12 @@ for (const [day, label, dayOffset] of [
               minute: Number(minute),
             },
           );
+        }
       }
     }
-  for (const hour of [0, 7, 13, 16, 18, 21, 23])
-    for (const minute of ["00", "15", "30"])
+  }
+  for (const hour of [0, 7, 13, 16, 18, 21, 23]) {
+    for (const minute of ["00", "15", "30"]) {
       add(
         [
           [day, label],
@@ -132,6 +146,8 @@ for (const [day, label, dayOffset] of [
         ],
         { kind: "datetime", dayOffset, hour, minute: Number(minute) },
       );
+    }
+  }
 }
 const rejections = augment(rows, spans);
 const root = new URL("../matchbox/time/data/", import.meta.url);

@@ -31,8 +31,9 @@ test("directory-backed tasks are discovered from the application and inside the 
   const root = await mkdtemp(resolve(tmpdir(), "matchbox-task-"));
   const task = resolve(root, "matchbox/money");
   try {
-    for (const name of ["parser", "pipeline", "recipe", "decode"])
+    for (const name of ["parser", "pipeline", "recipe", "decode"]) {
       await mkdir(resolve(task, name), { recursive: true });
+    }
     await writeFile(resolve(task, "parser/parser.ts"), "export default {};\n");
     await writeFile(
       resolve(task, "pipeline/pipeline.ts"),

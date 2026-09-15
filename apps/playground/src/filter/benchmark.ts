@@ -6,14 +6,18 @@ async function measure(parser: MatchboxParser<unknown>) {
     "Swedish customers and ARR over 50k",
     "German customers or Swedish customers",
   ];
-  for (let i = 0; i < 20; i++) await parser.parse(queries[i % queries.length]!);
+  for (let i = 0; i < 20; i++) {
+    await parser.parse(queries[i % queries.length]!);
+  }
   const timings: number[] = [];
   let accepted = 0;
   for (let i = 0; i < 300; i++) {
     const start = performance.now();
     const result = await parser.parse(queries[i % queries.length]!);
     timings.push(performance.now() - start);
-    if (result.status === "ok") accepted++;
+    if (result.status === "ok") {
+      accepted++;
+    }
   }
   timings.sort((a, b) => a - b);
   return {

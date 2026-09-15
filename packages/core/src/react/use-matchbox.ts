@@ -10,11 +10,14 @@ export function useMatchbox<Output>(loader: () => Promise<{ default: MatchboxPar
     loader()
       .then((module) => module.default.load?.())
       .then(() => {
-        if (current) setSettled({ loader, error: null });
+        if (current) {
+          setSettled({ loader, error: null });
+        }
       })
       .catch((cause) => {
-        if (current)
+        if (current) {
           setSettled({ loader, error: cause instanceof Error ? cause.message : String(cause) });
+        }
       });
     return () => {
       current = false;
@@ -25,6 +28,9 @@ export function useMatchbox<Output>(loader: () => Promise<{ default: MatchboxPar
     [loader],
   );
   const error = settled?.loader === loader ? settled.error : null;
-  const status = settled?.loader !== loader ? "loading" : error ? "error" : "ready";
+  let status: "loading" | "error" | "ready" = "loading";
+  if (settled?.loader === loader) {
+    status = error ? "error" : "ready";
+  }
   return { status, error, parse };
 }

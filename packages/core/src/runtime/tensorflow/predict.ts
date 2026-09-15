@@ -7,7 +7,9 @@ import { tokenize, windows } from "../../internal/sequence/index.js";
 import type { SequenceArtifact } from "../../internal/sequence/index.js";
 
 export async function prepareCpu() {
-  if (tf.getBackend() !== "cpu") await tf.setBackend("cpu");
+  if (tf.getBackend() !== "cpu") {
+    await tf.setBackend("cpu");
+  }
   await tf.ready();
 }
 export async function tensorPredictor(artifact: RecordArtifact | SequenceArtifact) {
@@ -27,8 +29,9 @@ export async function tensorPredictor(artifact: RecordArtifact | SequenceArtifac
     }),
   );
   const check = () => {
-    if (tf.getBackend() !== "cpu")
+    if (tf.getBackend() !== "cpu") {
       throw new Error("The TensorFlow backend changed. Prepare CPU inference before predicting.");
+    }
   };
   const record = (input: string) => {
     check();
@@ -60,7 +63,9 @@ export async function tensorPredictor(artifact: RecordArtifact | SequenceArtifac
     check();
     const sequenceArtifact = artifact as SequenceArtifact;
     const tokens = tokenize(input, sequenceArtifact.tokenizer);
-    if (!tokens.length) return [];
+    if (!tokens.length) {
+      return [];
+    }
     return tf.tidy(() => {
       const ids = tf.tensor2d(
         windows(tokens, artifact.vocabulary, sequenceArtifact.radius),

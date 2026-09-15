@@ -99,7 +99,9 @@ test("rejects values that JSON conversion or Zod would silently alter", () => {
 test("rejects custom conditional guards on otherwise supported checks", () => {
   const input = z.string().min(3);
   const check = input._zod.def.checks?.[0];
-  if (!check) throw new Error("Expected the length check.");
+  if (!check) {
+    throw new Error("Expected the length check.");
+  }
   check._zod.def.when = () => false;
   expect(() => defineParser({ input, output: z.strictObject({}) })).toThrow(/conditional/);
 });

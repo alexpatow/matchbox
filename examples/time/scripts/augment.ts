@@ -12,7 +12,9 @@ export function augment<T>(rows: { input: string; output: T }[], spans: Record<s
         ["", "."],
       ]) {
         const input = prefix + row.input + suffix;
-        if (spans[input]) continue;
+        if (spans[input]) {
+          continue;
+        }
         spans[input] = [
           ...tokenize(prefix!, "words").map(() => "O"),
           ...labels,
@@ -24,22 +26,34 @@ export function augment<T>(rows: { input: string; output: T }[], spans: Record<s
     if (i % 7 === 0) {
       for (const cue of ["not", "never", "without", "under", "over"]) {
         const input = cue + " " + row.input;
-        if (spans[input]) continue;
+        if (spans[input]) {
+          continue;
+        }
         spans[input] = ["REJECT", ...labels];
         rejections.push({ input, output: null });
       }
     }
   }
   for (const [i, row] of originals.entries()) {
-    if (i % 9 !== 0) continue;
+    if (i % 9 !== 0) {
+      continue;
+    }
     for (const suffix of [" ago", " or three hours", " or 7 minutes"]) {
       const input = row.input + suffix;
-      if (spans[input]) continue;
+      if (spans[input]) {
+        continue;
+      }
       spans[input] = [
         ...spans[row.input]!,
-        ...tokenize(suffix, "words").map((_, i) =>
-          i === 0 ? "REJECT" : i === 1 ? "AMOUNT" : suffix.includes("hours") ? "HOUR" : "MINUTE",
-        ),
+        ...tokenize(suffix, "words").map((_, i) => {
+          if (i === 0) {
+            return "REJECT";
+          }
+          if (i === 1) {
+            return "AMOUNT";
+          }
+          return suffix.includes("hours") ? "HOUR" : "MINUTE";
+        }),
       ];
       rejections.push({ input, output: null });
     }

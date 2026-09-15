@@ -37,7 +37,9 @@ test("reports syntax and schema errors from both splits without partial data", (
   );
   expect(result.success).toBe(false);
   expect(result).not.toHaveProperty("data");
-  if (result.success) throw new Error("Expected invalid examples.");
+  if (result.success) {
+    throw new Error("Expected invalid examples.");
+  }
   expect(
     result.issues.map(({ split, source, line, path }) => ({ split, source, line, path })),
   ).toEqual([
@@ -63,17 +65,20 @@ test.each(
 )("rejects malformed example envelopes (%#)", ({ row }) => {
   const result = parseDatasets(makeParser(), config(JSON.stringify(row)));
   expect(result.success).toBe(false);
-  if (!result.success) expect(result.issues[0]).toMatchObject({ code: "invalid_example", line: 1 });
+  if (!result.success) {
+    expect(result.issues[0]).toMatchObject({ code: "invalid_example", line: 1 });
+  }
 });
 
 test("requires a nonempty training split and a nonempty held-out split", () => {
   const result = parseDatasets(makeParser(), config("", " \n\r\n"));
   expect(result.success).toBe(false);
-  if (!result.success)
+  if (!result.success) {
     expect(result.issues.map((issue) => [issue.code, issue.split, issue.line])).toEqual([
       ["empty_dataset", "train", 1],
       ["empty_dataset", "eval", 1],
     ]);
+  }
 });
 
 test("rejects unsupported and missing format versions before reading rows", () => {
@@ -91,6 +96,7 @@ test("rejects nonfinite JSON numbers and schema-invalid outputs", () => {
     config('{"input":"customers","output":{"country":"SE","minimum":1e400}}'),
   );
   expect(result.success).toBe(false);
-  if (!result.success)
+  if (!result.success) {
     expect(result.issues[0]).toMatchObject({ code: "invalid_json", path: ["output", "minimum"] });
+  }
 });

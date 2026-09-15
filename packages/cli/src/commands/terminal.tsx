@@ -15,7 +15,9 @@ export async function choose(title: string, options: { label: string; value: str
       />,
     );
     void instance.waitUntilExit().then(() => {
-      if (!answered) reject(new Error("Selection cancelled."));
+      if (!answered) {
+        reject(new Error("Selection cancelled."));
+      }
     });
   });
 }

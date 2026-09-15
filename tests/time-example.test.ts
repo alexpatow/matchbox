@@ -22,8 +22,9 @@ test("time model passes template regression cases and abstains on unsupported ex
     const challenges = JSON.parse(
       await readFile(new URL("matchbox/time/evals/challenges.json", root), "utf8"),
     );
-    for (const row of challenges)
+    for (const row of challenges) {
       expect((await parser.parse(row.input)).status, row.input).toBe("uncertain");
+    }
   } finally {
     parser.dispose();
   }

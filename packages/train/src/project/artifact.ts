@@ -30,7 +30,9 @@ export async function loadArtifact(configPath: string) {
     inspect: async (input: string) => {
       const predictor = await tensorPredictor(artifact);
       try {
-        if (artifact.kind === "record-parser") return predictor.record(input);
+        if (artifact.kind === "record-parser") {
+          return predictor.record(input);
+        }
         const tokens = predictor.sequence(input);
         return { tokens, candidate: decode!(tokens, input) };
       } finally {

@@ -14,9 +14,13 @@ const metadataSchema = z.record(
 export function readFields(value: unknown): Readonly<Record<string, FieldMetadata>> {
   const input = value === undefined ? {} : value;
   const issue = jsonIssue(input);
-  if (issue) throw new TypeError(`fields.${issue.path.join(".")}: ${issue.message}`);
+  if (issue) {
+    throw new TypeError(`fields.${issue.path.join(".")}: ${issue.message}`);
+  }
   const fields = metadataSchema.safeParse(input, { jitless: true });
-  if (!fields.success) throw new TypeError(`fields: ${fields.error.message}`);
+  if (!fields.success) {
+    throw new TypeError(`fields: ${fields.error.message}`);
+  }
   return Object.fromEntries(
     Object.entries(fields.data).map(([name, field]) => [
       name,

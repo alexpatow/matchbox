@@ -10,8 +10,9 @@ export function createRecordParser<Output extends z.ZodType>(
   predictor: Awaited<ReturnType<typeof tensorPredictor>>["record"],
 ): MatchboxParser<z.output<Output>> {
   const model = readRecordArtifact(artifact);
-  if (JSON.stringify(model.taskMetadata) !== JSON.stringify(task.toJSON()))
+  if (JSON.stringify(model.taskMetadata) !== JSON.stringify(task.toJSON())) {
     throw new Error("The model and task schema differ. Retrain the model.");
+  }
   const predict = predictor;
   const vocabulary = new Set(model.vocabulary);
   return {
@@ -22,14 +23,17 @@ export function createRecordParser<Output extends z.ZodType>(
         confidence,
         reason,
       });
-      if (!task.validateInput(input).success || input.length > 512)
+      if (!task.validateInput(input).success || input.length > 512) {
         return uncertain("Input does not satisfy the supported input limits.");
+      }
       const tokens = recordTokens(input);
-      if (!tokens.length || tokens.some((token) => !vocabulary.has(token)))
+      if (!tokens.length || tokens.some((token) => !vocabulary.has(token))) {
         return uncertain("The model has insufficient training coverage to answer confidently.");
+      }
       const result = predict(input);
-      if (result.confidence < model.threshold)
+      if (result.confidence < model.threshold) {
         return uncertain("Recognition confidence is too low.", result.confidence);
+      }
       const checked = task.validateOutput(result.value);
       return checked.success
         ? { status: "ok", value: checked.data, confidence: result.confidence }
