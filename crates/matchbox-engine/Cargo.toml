@@ -12,3 +12,13 @@ training = ["burn/autodiff"]
 burn.workspace = true
 serde.workspace = true
 serde_json.workspace = true
+
+[[example]]
+name = "context-research"
+path = "examples/context-research/main.rs"
+required-features = ["training"]
+
+[[example]]
+name = "context-assess"
+path = "examples/context-research/assess.rs"
+required-features = ["training"]
