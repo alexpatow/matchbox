@@ -1,6 +1,6 @@
 {
   "name": "@matchbox-ai/core",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Compile examples into tiny models for the browser.",
   "license": "MIT",
   "repository": {
