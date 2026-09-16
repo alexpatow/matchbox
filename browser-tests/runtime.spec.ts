@@ -1,6 +1,11 @@
-import type { ParseResult } from "@matchbox-ai/core/runtime";
+import type { ParseResult, PartialParseResult } from "@matchbox-ai/core/runtime";
 declare global {
   interface Window {
+    benchmarkRecurrent(): Promise<{
+      ordinary: ParseResult<unknown>;
+      partial: PartialParseResult<unknown>;
+      accepted: ParseResult<unknown>;
+    }>;
     benchmarkRecord(): Promise<ParseResult<unknown>>;
     benchmarkRuntime(): Promise<{
       runtime: string;
@@ -52,4 +57,19 @@ test("Burn models run in the browser and remain available offline", async ({ pag
     info.outputPath("burn-runtime.json"),
     JSON.stringify({ project: info.project.name, ...result }, null, 2),
   );
+});
+
+test("recurrent generated wrapper supports opt-in partial results offline", async ({ page }) => {
+  await page.goto("http://127.0.0.1:4174");
+  await page.waitForFunction(() => typeof window.benchmarkRecurrent === "function");
+  const result = await page.evaluate(() => window.benchmarkRecurrent());
+  expect(result.ordinary.status).toBe("uncertain");
+  expect(result.partial.status).toBe("partial");
+  if (result.partial.status === "partial") {
+    expect(result.partial.uncertainRanges.length).toBeGreaterThan(0);
+    expect(result.partial.confidence).toBeLessThan(0.75);
+  }
+  expect(result.accepted.status).toBe("ok");
+  await page.route("**/*", (route) => route.abort());
+  expect(await page.evaluate(() => window.benchmarkRecurrent())).toEqual(result);
 });

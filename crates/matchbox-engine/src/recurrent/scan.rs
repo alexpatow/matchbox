@@ -35,8 +35,8 @@ pub fn scan<B: Backend>(mut decay: Tensor<B, 3>, mut update: Tensor<B, 3>) -> Te
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::model::Cpu;
     use burn::tensor::TensorData;
-    use matchbox_engine::model::Cpu;
 
     #[test]
     fn scan_matches_serial_recurrence_across_non_power_of_two_length() {

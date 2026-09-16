@@ -1,5 +1,20 @@
 import { useCallback, useEffect, useState } from "react";
-import type { MatchboxParser } from "../runtime/index.js";
+import type {
+  MatchboxParser,
+  PartialMatchboxParser,
+  PartialParseOptions,
+} from "../runtime/index.js";
+type State<Parser extends MatchboxParser<unknown>> = {
+  status: "loading" | "error" | "ready";
+  error: string | null;
+  parse: Parser["parse"];
+};
+export function useMatchbox<Output>(
+  loader: () => Promise<{ default: PartialMatchboxParser<Output> }>,
+): State<PartialMatchboxParser<Output>>;
+export function useMatchbox<Output>(
+  loader: () => Promise<{ default: MatchboxParser<Output> }>,
+): State<MatchboxParser<Output>>;
 /** Keep the loader outside the component so its identity remains stable. */
 export function useMatchbox<Output>(loader: () => Promise<{ default: MatchboxParser<Output> }>) {
   const [settled, setSettled] = useState<{ loader: typeof loader; error: string | null } | null>(
@@ -24,7 +39,16 @@ export function useMatchbox<Output>(loader: () => Promise<{ default: MatchboxPar
     };
   }, [loader]);
   const parse = useCallback(
-    async (input: string) => (await loader()).default.parse(input),
+    async (input: string, options?: PartialParseOptions) => {
+      const parser = (await loader()).default;
+      if (options?.allowPartial) {
+        if (!("supportsPartial" in parser) || parser.supportsPartial !== true) {
+          throw new Error("Partial parsing requires a recurrent model.");
+        }
+        return (parser as PartialMatchboxParser<Output>).parse(input, options);
+      }
+      return parser.parse(input);
+    },
     [loader],
   );
   const error = settled?.loader === loader ? settled.error : null;

@@ -13,6 +13,27 @@ async function main() {
   const record = await native.fitRecord(recordConfig, records, labels, () => {});
   assert(native.predictRecord(recordConfig, record.weights, Float32Array.from([1, 0]))[0] > 0.9);
   assert(native.predictRecord(recordConfig, record.weights, Float32Array.from([0, 1]))[1] > 0.9);
+  const recurrentConfig = JSON.stringify({ featureCount: 3, labelCount: 2, maxParts: 16 });
+  const features = new Int32Array(32);
+  features[0] = 1;
+  features[16] = 2;
+  const supervision = {
+    features,
+    targets: Float32Array.from([1, 0, 0, 1]),
+    offsets: Uint32Array.from([0, 2]),
+  };
+  const recurrent = await native.fitRecurrent(
+    recurrentConfig,
+    JSON.stringify({ epochs: 1, learningRate: 0.003, batchParts: 128 }),
+    supervision,
+    supervision,
+    () => {},
+  );
+  const predictor = new native.RecurrentPredictor(recurrentConfig, recurrent.weights);
+  const recurrentScores = predictor.predict(features);
+  assert.equal(recurrentScores.length, 4);
+  assert(recurrentScores.every(Number.isFinite));
+  assert.throws(() => predictor.predict(Int32Array.from([-1])));
   console.log(`Native training and prediction passed on ${process.platform}-${process.arch}.`);
 }
 main().catch((error) => {

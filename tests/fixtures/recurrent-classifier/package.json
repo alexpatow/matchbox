@@ -1,0 +1,13 @@
+{
+  "name": "@matchbox-ai/recurrent-fixture",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@matchbox-ai/core": "workspace:*",
+    "@matchbox-ai/train": "workspace:*",
+    "zod": "4.6.3"
+  }
+}

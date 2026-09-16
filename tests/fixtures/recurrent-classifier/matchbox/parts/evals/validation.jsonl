@@ -1,0 +1,4 @@
+{"input": "purple!", "output": [{"type": "word", "start": 0, "end": 6}, {"type": "separator", "start": 6, "end": 7}]}
+{"input": "purple?", "output": [{"type": "word", "start": 0, "end": 6}, {"type": "separator", "start": 6, "end": 7}]}
+{"input": "yellow!", "output": [{"type": "word", "start": 0, "end": 6}, {"type": "separator", "start": 6, "end": 7}]}
+{"input": "yellow?", "output": [{"type": "word", "start": 0, "end": 6}, {"type": "separator", "start": 6, "end": 7}]}

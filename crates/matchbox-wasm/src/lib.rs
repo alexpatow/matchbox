@@ -24,3 +24,4 @@ impl Predictor {
 }
 
 pub mod record;
+pub mod recurrent;

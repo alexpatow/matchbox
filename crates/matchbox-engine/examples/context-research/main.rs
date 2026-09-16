@@ -3,7 +3,6 @@ mod batching;
 mod data;
 mod evaluate;
 mod model;
-mod scan;
 
 use burn::{
     module::{AutodiffModule, Module},

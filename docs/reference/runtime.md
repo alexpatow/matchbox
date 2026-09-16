@@ -54,3 +54,22 @@ type FilterExpression =
 ```
 
 It splits explicit `and`/`or` clauses with AND precedence. Empty input, input over 500 characters, more than eight clauses, parentheses, semicolons, and newlines return `null` with confidence zero. Implicit conjunctions and general recursive ASTs are unsupported. It never generates SQL.
+
+## PartialMatchboxParser
+
+Generated recurrent models additionally expose `supportsPartial: true` and an overload `parse(input, { allowPartial: boolean }): Promise<PartialParseResult<T>>`. Calling `parse(input)` retains `ParseResult<T>` and whole-result acceptance.
+
+```ts
+type PartialParseResult<T> =
+  | ParseResult<T>
+  | {
+      status: "partial";
+      value: T;
+      confidence: number;
+      uncertainRanges: { start: number; end: number; confidence: number }[];
+    };
+```
+
+The partial value is a schema-validated candidate that still contains uncertain predictions. Ranges use UTF-16 offsets and describe source parts, not arbitrary output fields. At least one supervised part must clear the threshold; otherwise the result remains `uncertain`. Decoder rejection, schema failure and input-limit failures also remain `uncertain`.
+
+`createParser` returns this type when its artifact argument has the literal kind `"recurrent-parser"` and a decoder is supplied. Generated wrappers and declarations preserve it automatically. Existing model kinds do not accept partial options. The React hook preserves the corresponding overload. See [partial-result semantics and limits](../primitives/recurrent-token-classifier.md#consume-the-model).

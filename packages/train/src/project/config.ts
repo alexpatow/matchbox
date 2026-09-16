@@ -17,6 +17,15 @@ export const configSchema = z.strictObject({
       recipe: z.string(),
       decoder: z.string(),
       contextRadius: z.number().int().min(1).max(16).optional(),
+      recurrent: z
+        .strictObject({
+          epochs: z.number().int().min(1).max(100),
+          learningRate: z.number().positive().max(0.1),
+          batchParts: z.number().int().min(128).max(16384),
+          maxInputLength: z.number().int().min(1).max(1_000_000),
+          maxParts: z.number().int().min(1).max(65536),
+        })
+        .optional(),
     })
     .optional(),
   challenges: z.string().optional(),
@@ -39,6 +48,11 @@ export async function loadConfig(path: string) {
   if (pipelinePath) {
     const pipeline = pipelineSchema.parse((await import(pathToFileURL(pipelinePath).href)).default);
     defaults = { ...pipeline.acceptance };
+    if (pipeline.prediction.kind === "recurrent-token-classifier") {
+      const { recipe, decode, kind: _kind, ...recurrent } = pipeline.prediction;
+      defaults.sequence = { recipe, decoder: decode, recurrent };
+      defaults.maxBytes ??= 256_000;
+    }
     if (pipeline.prediction.kind === "token-classifier") {
       defaults.sequence = {
         recipe: pipeline.prediction.recipe,

@@ -1,8 +1,8 @@
 # Part features and recurrent context
 
-The recurrent part model reaches **82.50% diagnostic label agreement and 76.90% styled macro F1** on the frozen test corpus. The same-feature local control reaches 70.95% and 70.65%. This supports a separate recurrent classifier primitive, alongside explicit part and feature encoding. It does not establish a shipped browser parser.
+The recurrent part model reaches **82.50% diagnostic label agreement and 76.90% styled macro F1** on the frozen test corpus. The same-feature local control reaches 70.95% and 70.65%. This supports a separate recurrent classifier primitive, alongside explicit part and feature encoding. The separate [browser integration assessment](recurrent-runtime.md) verifies the public pipeline; the results on this page describe the original controlled research comparison.
 
-This experiment separates input representation from learned sequence context. It uses native Burn research models and the frozen lexer corpus. It does not change the published parser, acceptance policy, CLI, or browser runtime.
+This experiment separates input representation from learned sequence context. It uses native Burn research models and the frozen lexer corpus. The original experiment did not change the public parser contract. The additive recurrent API and its browser measurements are documented separately.
 
 ## Method
 

@@ -1,3 +1,4 @@
+import { benchmarkRecurrent } from "./recurrent";
 import { benchmarkRecord } from "./record";
 import { createParser } from "@matchbox-ai/core/runtime";
 import decode from "../../../examples/money/matchbox/money/decode/decode";
@@ -46,10 +47,12 @@ declare global {
   interface Window {
     benchmarkRuntime: typeof benchmark;
     benchmarkRecord: typeof benchmarkRecord;
+    benchmarkRecurrent: typeof benchmarkRecurrent;
   }
 }
 window.benchmarkRuntime = benchmark;
 window.benchmarkRecord = benchmarkRecord;
+window.benchmarkRecurrent = benchmarkRecurrent;
 document.querySelector("#run")!.addEventListener("click", async () => {
   const output = document.querySelector("#result")!;
   output.textContent = "Measuring…";

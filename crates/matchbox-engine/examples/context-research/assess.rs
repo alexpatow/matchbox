@@ -1,7 +1,6 @@
 //! Assess fixed per-part confidence without changing the published parser policy.
 mod data;
 mod model;
-mod scan;
 
 use burn::{
     module::Module,

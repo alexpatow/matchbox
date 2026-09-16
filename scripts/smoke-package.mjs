@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFile, mkdir, writeFile } from "node:fs/promises";
+import { readFile, mkdir, writeFile, cp } from "node:fs/promises";
 import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 const root = resolve(process.argv[2] ?? ".packed-smoke");
@@ -48,6 +48,20 @@ assert.equal(result.report.evaluation.exactAccuracy, 1);
 const { parser } = await loadArtifact(taskRoot);
 assert.deepEqual((await parser.parse("send large")).value, { size: "large" });
 parser.dispose();
+const recurrentRoot = resolve(root, "matchbox/recurrent");
+await cp(
+  new URL("../tests/fixtures/recurrent-classifier/matchbox/parts/", import.meta.url),
+  recurrentRoot,
+  { recursive: true },
+);
+const recurrentResult = await train(recurrentRoot);
+assert.equal(recurrentResult.report.exportParity.labelDisagreements, 0);
+const recurrent = await loadArtifact(recurrentRoot);
+assert.equal(recurrent.parser.supportsPartial, true);
+const partial = await recurrent.parser.parse("black?", { allowPartial: true });
+assert(["ok", "partial"].includes(partial.status));
+assert(recurrent.task.validateOutput(partial.value).success);
+recurrent.parser.dispose();
 console.log(
   `Packed package trained and inferred successfully on ${process.platform}-${process.arch}.`,
 );

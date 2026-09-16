@@ -16,11 +16,11 @@ The Inter variable font is supplied by `@fontsource-variable/inter`; its license
 
 The country names and English demonyms in `examples/filters/matchbox/filters/countries/countries.json` are derived from [mledoze/countries](https://github.com/mledoze/countries), retrieved 2026-09-13. The derived database is provided under ODbL 1.0; the license is included alongside the data. Shared demonyms prefer a unique independent country; unresolved ambiguous aliases and empty aliases are omitted.
 
-## gpu-lexer research reference
+## gpu-lexer
 
-The research-only affine prefix scan in `crates/matchbox-engine/examples/context-research/scan.rs` follows the algorithm in [gpu-lexer](https://github.com/vercel-labs/gpu-lexer), copyright Shu Ding, licensed under MIT. The TypeScript research adapter reads the original mechanical encoder from a separately supplied, pinned checkout; it does not bundle that encoder or any pretrained weights. The public Matchbox runtime is unchanged.
+The affine prefix scan in `crates/matchbox-engine/src/recurrent/scan.rs`, and the mechanical text encoder in `packages/core/src/internal/recurrent/encoding/`, are adapted from [gpu-lexer](https://github.com/vercel-labs/gpu-lexer), copyright Shu Ding, licensed under MIT. The encoder uses generic part, spelling, shape and boundary features. It omits the upstream hand-authored symbol-pair categories. No upstream pretrained weights are bundled.
 
-The upstream MIT license applies to the adapted scan:
+The upstream MIT license applies to these adaptations:
 
 > Copyright (c) 2026 Shu Ding
 >

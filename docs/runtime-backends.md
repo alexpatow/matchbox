@@ -8,7 +8,7 @@ The runtime loads lazily on the first parse. A parser retains its loaded model a
 
 Direct creation is available through @matchbox-ai/core/runtime. Imports are SSR-safe; browser loading uses a separate WASM asset. Node inference reads that asset from the installed package. Training dependencies stay out of browser entry points.
 
-Artifact format 3 contains a base64-encoded Burn record. Regenerate earlier artifacts with matchbox-ai train. The report evaluates the trained artifact once under `evaluation`. Quantization is not implemented.
+Artifacts contain base64-encoded Burn records. Record classifiers use format 3, fixed-window token classifiers use format 4, and recurrent token classifiers use format 5. The runtime retains support for format-3 sequence artifacts. Regenerate older artifacts with matchbox-ai train. The report evaluates the trained artifact once under `evaluation`. Quantization is not implemented.
 
 The training package bundles platform-specific native binaries. See [native package distribution](native-packages.md) for the verified support matrix. Repository contributors should follow [contributor setup](contributing.md).
 

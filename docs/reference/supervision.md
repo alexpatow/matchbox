@@ -92,3 +92,7 @@ This explicitly trains an unknown embedding. Its exported model attempts recogni
 Masking loses information and can introduce contradictory supervision. It can reduce accuracy or cause confident wrong answers. Evaluate familiar regressions, unfamiliar contexts, and negative inputs separately before enabling it. A model that tolerates an unknown name may also overlook an unknown negation. Scores remain uncalibrated token recognition scores, not probabilities that the final answer is correct.
 
 The generated report records rejection counts and hashes the actual token supervision as well as source datasets. These controls make training inspectable; they do not guarantee semantic correctness.
+
+## RecurrentRecipe
+
+Recurrent pipelines use `RecurrentRecipe`, `textParts()`, `textFeatures()` and `spanLabels({ whitespace: "context" | "supervise" })`. These are explicit descriptors exported from `@matchbox-ai/train`. They retain mixed-label part supervision and UTF-16 source ranges. See [recurrent token classification](../primitives/recurrent-token-classifier.md) for the full contract and a decoder example. `SequenceRecipe` remains unchanged.
