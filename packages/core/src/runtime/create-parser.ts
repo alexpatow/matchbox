@@ -1,6 +1,11 @@
 import type { z } from "zod";
 import type { ParseResult } from "./types.js";
-import type { PartialMatchboxParser, PartialParseOptions, PartialParseResult } from "./partial.js";
+import type {
+  PartialMatchboxParser,
+  PartialParseOptions,
+  PartialParseResult,
+  GpuParseOptions,
+} from "./partial.js";
 import { createRecurrentParser } from "../internal/recurrent/create-parser.js";
 import type { ParserDefinition } from "../parser/index.js";
 import { readArtifact } from "./artifact.js";
@@ -33,6 +38,8 @@ export function createParser<Output extends z.ZodType>(
   if (model.kind !== "record-parser" && !decode) {
     throw new Error("The sequence artifact requires its explicit decoder.");
   }
+  let gpuLoading: Promise<PartialMatchboxParser<z.output<Output>>> | undefined;
+  let gpuRelease: (() => void) | undefined;
   let disposed = false;
   let release: (() => void) | undefined;
   let loading: Promise<MatchboxParser<z.output<Output>>> | undefined;
@@ -68,16 +75,41 @@ export function createParser<Output extends z.ZodType>(
     }
     return parser;
   };
-  function parse(input: string): Promise<ParseResult<z.output<Output>>>;
+  const loadGpu = async () => {
+    if (disposed) {
+      throw new Error("The parser has been disposed.");
+    }
+    if (model.kind !== "recurrent-parser") {
+      throw new Error("GPU parsing currently requires a recurrent model.");
+    }
+    gpuLoading ??= (async () => {
+      const { gpuPredictor } = await import("./burn/gpu.js");
+      if (disposed) {
+        throw new Error("The parser has been disposed.");
+      }
+      const predictor = await gpuPredictor(model);
+      if (disposed) {
+        predictor.dispose();
+        throw new Error("The parser has been disposed.");
+      }
+      gpuRelease = predictor.dispose;
+      return createRecurrentParser(model, task, decode!, predictor.sequence);
+    })().catch((error: unknown) => {
+      gpuLoading = undefined;
+      throw error;
+    });
+    return gpuLoading;
+  };
   function parse(
     input: string,
     options: PartialParseOptions,
   ): Promise<PartialParseResult<z.output<Output>>>;
+  function parse(input: string, options?: GpuParseOptions): Promise<ParseResult<z.output<Output>>>;
   async function parse(
     input: string,
-    options?: PartialParseOptions,
+    options?: GpuParseOptions & { allowPartial?: boolean },
   ): Promise<PartialParseResult<z.output<Output>>> {
-    const parser = await load();
+    const parser = options?.gpu ? await loadGpu() : await load();
     if (disposed) {
       throw new Error("The parser has been disposed.");
     }
@@ -85,7 +117,10 @@ export function createParser<Output extends z.ZodType>(
       if (model.kind !== "recurrent-parser") {
         throw new Error("Partial parsing requires a recurrent model.");
       }
-      return (parser as PartialMatchboxParser<z.output<Output>>).parse(input, options);
+      return (parser as PartialMatchboxParser<z.output<Output>>).parse(input, {
+        ...options,
+        allowPartial: true,
+      });
     }
     return parser.parse(input);
   }
@@ -97,6 +132,8 @@ export function createParser<Output extends z.ZodType>(
     dispose() {
       disposed = true;
       release?.();
+      gpuRelease?.();
+      gpuRelease = undefined;
       release = undefined;
     },
   };

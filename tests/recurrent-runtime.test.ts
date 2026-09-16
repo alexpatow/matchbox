@@ -45,3 +45,12 @@ test("recurrent records validate metadata, feature encoding and declared weight 
   });
   limited.dispose();
 });
+test("explicit GPU execution reports unavailable browser support without falling back", async () => {
+  const raw = JSON.parse(await readFile(new URL(".matchbox/parts/model.matchbox", root), "utf8"));
+  const parser = createParser(readRecurrentArtifact(raw), task, decode);
+  await expect(parser.parse("cat!", { gpu: true })).rejects.toThrow("WebGPU is unavailable");
+  await expect(parser.parse("cat!", { gpu: true })).rejects.toThrow("WebGPU is unavailable");
+  expect((await parser.parse("cat!")).status).toMatch(/ok|uncertain/);
+  parser.dispose();
+  await expect(parser.parse("cat!", { gpu: true })).rejects.toThrow("disposed");
+});

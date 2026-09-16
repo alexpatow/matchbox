@@ -1,9 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import type {
-  MatchboxParser,
-  PartialMatchboxParser,
-  PartialParseOptions,
-} from "../runtime/index.js";
+import type { MatchboxParser, PartialMatchboxParser, GpuParseOptions } from "../runtime/index.js";
 type State<Parser extends MatchboxParser<unknown>> = {
   status: "loading" | "error" | "ready";
   error: string | null;
@@ -39,13 +35,17 @@ export function useMatchbox<Output>(loader: () => Promise<{ default: MatchboxPar
     };
   }, [loader]);
   const parse = useCallback(
-    async (input: string, options?: PartialParseOptions) => {
+    async (input: string, options?: GpuParseOptions & { allowPartial?: boolean }) => {
       const parser = (await loader()).default;
-      if (options?.allowPartial) {
+      if (options?.allowPartial || options?.gpu) {
         if (!("supportsPartial" in parser) || parser.supportsPartial !== true) {
-          throw new Error("Partial parsing requires a recurrent model.");
+          throw new Error("GPU and partial parsing require a recurrent model.");
         }
-        return (parser as PartialMatchboxParser<Output>).parse(input, options);
+        const recurrent = parser as PartialMatchboxParser<Output>;
+        if (options.allowPartial) {
+          return recurrent.parse(input, { ...options, allowPartial: true });
+        }
+        return recurrent.parse(input, options);
       }
       return parser.parse(input);
     },

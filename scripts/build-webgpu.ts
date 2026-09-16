@@ -1,5 +1,4 @@
 import { runRust as run } from "./rust";
-await run(["node", "scripts/build-native.ts"]);
 await run([
   "cargo",
   "build",
@@ -9,16 +8,15 @@ await run([
   "--target",
   "wasm32-unknown-unknown",
   "-p",
-  "matchbox-wasm",
+  "matchbox-webgpu",
 ]);
 await run([
   "wasm-bindgen",
-  "target/wasm32-unknown-unknown/wasm/matchbox_wasm.wasm",
+  "target/wasm32-unknown-unknown/wasm/matchbox_webgpu.wasm",
   "--target",
   "web",
   "--out-dir",
   "packages/core/wasm",
   "--out-name",
-  "matchbox_wasm",
+  "matchbox_webgpu",
 ]);
-await import("./build-webgpu");

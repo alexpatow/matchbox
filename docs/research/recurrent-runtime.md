@@ -87,3 +87,5 @@ bun apps/benchmarks/scripts/recurrent.ts \
 ```
 
 The browser runner refuses to overwrite its output. Keep models, full failure reports, corpus data and browser builds ignored. Corpus hashes, compact quality metrics and timing evidence are in the linked report.
+
+The subsequent [matched WebGPU evaluation](recurrent-webgpu.md) compares the same checkpoint with the pinned reference on identical validation documents, including runtime downloads, coverage and full-pipeline browser latency.

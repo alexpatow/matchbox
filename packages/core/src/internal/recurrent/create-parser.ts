@@ -14,7 +14,7 @@ export function createRecurrentParser<Output extends z.ZodType>(
   model: RecurrentArtifact,
   task: ParserDefinition<Output>,
   decode: SequenceDecoder,
-  predict: (input: string) => TaggedToken[],
+  predict: (input: string) => TaggedToken[] | Promise<TaggedToken[]>,
 ): PartialMatchboxParser<z.output<Output>> {
   type Value = z.output<Output>;
   const uncertain = (reason: string, confidence = 0): ParseResult<Value> => ({
@@ -36,7 +36,7 @@ export function createRecurrentParser<Output extends z.ZodType>(
     if (!parts.length || parts.length > model.maxParts) {
       return uncertain("Input exceeds the model's supported sequence limits or is empty.");
     }
-    const tokens = predict(input);
+    const tokens = await predict(input);
     const relevant = tokens.filter((token) => model.supervision === "all" || token.text.trim());
     if (!relevant.length) {
       return uncertain("There are no supervised positions to recognize.");

@@ -6,5 +6,6 @@ export type {
   PartialMatchboxParser,
   PartialParseResult,
   PartialParseOptions,
+  GpuParseOptions,
   UncertainRange,
 } from "./partial.js";

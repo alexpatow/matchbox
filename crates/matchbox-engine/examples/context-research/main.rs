@@ -16,11 +16,18 @@ use std::{fs, path::PathBuf, time::Instant};
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let args: Vec<_> = std::env::args().skip(1).collect();
-    if args.len() != 4 || !["local", "recurrent"].contains(&args[2].as_str()) {
+    if !(args.len() == 4 || args.len() == 5) || !["local", "recurrent"].contains(&args[2].as_str())
+    {
         return Err(
             "Usage: context-research <prepared-data> <new-output> <local|recurrent> <epochs>"
                 .into(),
         );
+    }
+    let mode = args.get(4).map(String::as_str);
+    let part_weighted = mode == Some("part-cosine-validation");
+    let validation_only = part_weighted || mode == Some("cosine-validation");
+    if args.len() == 5 && !validation_only {
+        return Err("Expected cosine-validation or part-cosine-validation".into());
     }
     let source = PathBuf::from(&args[0]);
     let output = PathBuf::from(&args[1]);
@@ -52,6 +59,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut optimizer_ms = 0.0;
     let mut selection_ms = 0.0;
     for epoch in 1..=epochs {
+        let learning_rate = if validation_only {
+            let progress = (epoch - 1) as f64 / (epochs - 1).max(1) as f64;
+            0.0001 + (0.003 - 0.0001) * (1.0 + (std::f64::consts::PI * progress).cos()) / 2.0
+        } else {
+            0.003
+        };
         let epoch_start = Instant::now();
         let mut order: Vec<_> = (0..groups.len()).collect();
         for i in (1..order.len()).rev() {
@@ -62,7 +75,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         let mut support = 0.0;
         for index in order {
             let rows: Vec<_> = groups[index].iter().map(|&i| &training[i]).collect();
-            let batch = data::batch(&rows, labels, &device);
+            let mut batch = data::batch(&rows, labels, &device);
+            if part_weighted {
+                let counts = batch.targets.clone().sum_dim(2);
+                batch.support = counts.clone().greater_elem(0.0).float().sum().into_scalar();
+                batch.targets = batch.targets / counts.clamp_min(1.0);
+            }
             if batch.support == 0.0 {
                 continue;
             }
@@ -78,7 +96,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             total_loss += value as f64 * batch.support as f64;
             support += batch.support as f64;
             let gradients = GradientsParams::from_grads(loss.backward(), &model);
-            model = optimizer.step(0.003, model, gradients);
+            model = optimizer.step(learning_rate, model, gradients);
         }
         let fit_ms = epoch_start.elapsed().as_secs_f64() * 1000.0;
         optimizer_ms += fit_ms;
@@ -98,7 +116,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 serde_json::to_vec_pretty(&metrics)?,
             )?;
         }
-        let summary = json!({ "epoch": epoch, "loss": total_loss / support,
+        let summary = json!({ "epoch": epoch, "learningRate": learning_rate, "loss": total_loss / support,
             "validationAccuracy": metrics.accuracy, "styledMacroF1": metrics.styled_macro_f1, "fitMs": fit_ms, "validationMs": eval_ms });
         println!("{summary}");
         history.push(summary);
@@ -106,6 +124,18 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             output.join("progress.json"),
             serde_json::to_vec_pretty(&history)?,
         )?;
+    }
+    if validation_only {
+        let report = json!({ "researchOnly": true, "selectionSplit": "validation", "seed": 42,
+            "epochs": epochs, "lossWeighting": if part_weighted { "parts" } else { "code-points" }, "learningRate": { "schedule": "cosine", "start": 0.003, "end": 0.0001 },
+            "parameters": parameters, "bestEpoch": best_epoch, "validationAccuracy": best,
+            "optimizerMs": optimizer_ms, "selectionMs": selection_ms,
+            "wallMs": start.elapsed().as_secs_f64() * 1000.0, "history": history, "manifest": manifest });
+        fs::write(
+            output.join("report.json"),
+            serde_json::to_vec_pretty(&report)?,
+        )?;
+        return Ok(());
     }
     // Test is loaded only after validation selects the checkpoint.
     let record = BinBytesRecorder::<FullPrecisionSettings>::default()

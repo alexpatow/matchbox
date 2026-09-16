@@ -28,7 +28,7 @@ Build the smallest credible examples-to-browser proof. The README describes the 
 
 Matchbox owns task contracts, explicit authoring primitives, dataset workflows, training orchestration, evaluation, packaging, deterministic validation, abstention, and the typed application API. Burn owns neural-network representation, serialization, loading, and execution.
 
-- Use native Burn for training and Burn WASM CPU for browser inference. Export Burn records and load and execute the models through Burn APIs.
+- Use native Burn for training and Burn WASM CPU for default browser inference. Recurrent classifiers may explicitly request Burn WebGPU with `parse(input, { gpu: true })`; keep its runtime lazy and separate from CPU downloads. Export Burn records and load and execute the models through Burn APIs.
 - Do not build or retain a handwritten JS inference engine, manually reconstruct a trained network with matrix operations, or add a runtime/backend selection framework. Sub-millisecond differences between equivalent runtimes do not justify owning that layer.
 - Schemas describe valid application output. A declaration such as z.number() must not silently choose digit heads, a numeric representation, or a domain normalizer.
 - Expose learning strategies, encoders, supervision, and output transformations as small, documented primitives. Compose consequential choices explicitly in pipeline.ts and application-owned helpers. Agent instructions should guide those choices rather than hide them in framework heuristics.

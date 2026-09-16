@@ -19,3 +19,15 @@ function useTypeAssertions() {
   void money.parse("15 USD", { allowPartial: true });
 }
 void [original, useTypeAssertions];
+const gpu = await parts.parse("cat!", { gpu: true });
+const gpuStatus: "ok" | "uncertain" = gpu.status;
+void gpuStatus;
+void parts.parse("cat!", { gpu: true, allowPartial: true });
+// @ts-expect-error GPU execution is currently limited to recurrent classifiers.
+void money.parse("15 USD", { gpu: true });
+const gpuOptions = { gpu: true, allowPartial: true };
+const gpuPartial = await parts.parse("cat!", gpuOptions);
+if (gpuPartial.status === "partial") {
+  const ranges = gpuPartial.uncertainRanges;
+  void ranges;
+}
