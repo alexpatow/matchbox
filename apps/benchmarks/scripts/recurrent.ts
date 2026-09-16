@@ -1,7 +1,8 @@
 import { build, preview } from "vite";
 import { chromium } from "@playwright/test";
 import { createHash } from "node:crypto";
-import { mkdir, mkdtemp, readFile, writeFile } from "node:fs/promises";
+import { execFileSync } from "node:child_process";
+import { mkdir, mkdtemp, readFile, readdir, stat, writeFile } from "node:fs/promises";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 const [wrapper, dataset, destination] = process.argv.slice(2);
@@ -10,6 +11,11 @@ if (!wrapper || !dataset || !destination) {
     "Usage: bun apps/benchmarks/scripts/recurrent.ts <model.ts> <test.jsonl> <new-report.json>",
   );
 }
+const sourceState = {
+  revision: execFileSync("git", ["rev-parse", "HEAD"], { encoding: "utf8" }).trim(),
+  dirty: Boolean(execFileSync("git", ["status", "--porcelain"], { encoding: "utf8" }).trim()),
+};
+const hash = (value: string | Uint8Array) => createHash("sha256").update(value).digest("hex");
 const corpus = await readFile(resolve(dataset), "utf8");
 const rows = corpus
   .trim()
@@ -33,6 +39,16 @@ await build({
     },
   },
 });
+const assets = [];
+const dist = resolve(root, "dist");
+for (const name of (await readdir(dist, { recursive: true })).sort()) {
+  const path = resolve(dist, name);
+  if (!(await stat(path)).isFile()) {
+    continue;
+  }
+  const bytes = await readFile(path);
+  assets.push({ name, bytes: bytes.length, sha256: hash(bytes) });
+}
 const server = await preview({ root, configFile: false, preview: { host: "127.0.0.1", port: 0 } });
 const browser = await chromium.launch();
 try {
@@ -54,6 +70,9 @@ try {
     JSON.stringify(
       {
         packageSource: "local workspace build",
+        sourceState,
+        bundleSha256: hash(JSON.stringify(assets)),
+        assets,
         browser: browser.version(),
         datasetSha256: createHash("sha256").update(corpus).digest("hex"),
         measurements: result,

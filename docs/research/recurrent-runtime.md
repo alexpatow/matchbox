@@ -89,3 +89,5 @@ bun apps/benchmarks/scripts/recurrent.ts \
 The browser runner refuses to overwrite its output. Keep models, full failure reports, corpus data and browser builds ignored. Corpus hashes, compact quality metrics and timing evidence are in the linked report.
 
 The subsequent [matched WebGPU evaluation](recurrent-webgpu.md) compares the same checkpoint with the pinned reference on identical validation documents, including runtime downloads, coverage and full-pipeline browser latency.
+
+The original browser report did not capture the measured production bundle's hash. Its artifact association is not independently verified by that report. New browser runs record every built asset's hash, a combined bundle hash, and the repository revision and dirty state. Historical measurements have not been retroactively assigned those identifiers.

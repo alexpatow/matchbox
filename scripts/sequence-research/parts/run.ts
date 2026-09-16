@@ -4,16 +4,33 @@ import { execFileSync, spawn } from "node:child_process";
 import { readFile, writeFile } from "node:fs/promises";
 import { cpus, totalmem } from "node:os";
 import { resolve } from "node:path";
+import { runRust } from "../../rust";
 
 const [prepared, output, architecture] = process.argv.slice(2);
 if (!prepared || !output || !["local", "recurrent"].includes(architecture ?? "")) {
   throw new Error("Usage: bun run.ts <prepared> <new-output> <local|recurrent>");
 }
+if (execFileSync("git", ["status", "--porcelain"], { encoding: "utf8" }).trim()) {
+  throw new Error("Commit research source changes before running this experiment.");
+}
+await runRust([
+  "cargo",
+  "build",
+  "-p",
+  "matchbox-engine",
+  "--locked",
+  "--release",
+  "--features",
+  "training",
+  "--example",
+  "context-research",
+]);
 const startedAt = new Date().toISOString();
 const hash = (value: string | Uint8Array) => createHash("sha256").update(value).digest("hex");
 const provenance = {
   startedAt,
   revision: execFileSync("git", ["rev-parse", "HEAD"], { encoding: "utf8" }).trim(),
+  sourceState: "clean-rebuilt",
   machine: {
     platform: process.platform,
     arch: process.arch,
@@ -37,11 +54,19 @@ child.stderr.on("data", (chunk) => {
 });
 const exitCode = await new Promise<number | null>((done, reject) => {
   child.on("error", reject);
-  child.on("exit", done);
+  child.on("close", done);
 });
 const wallMs = performance.now() - start;
 if (exitCode !== 0) {
   throw new Error(`Research trainer exited with ${exitCode}. Preserve the captured log.`);
+}
+if (
+  execFileSync("git", ["status", "--porcelain"], { encoding: "utf8" }).trim() ||
+  execFileSync("git", ["rev-parse", "HEAD"], { encoding: "utf8" }).trim() !== provenance.revision
+) {
+  throw new Error(
+    "Research source changed during training. Preserve the log and rerun from a clean commit.",
+  );
 }
 const peakRss = resources.match(/(\d+)\s+maximum resident set size/);
 const report = JSON.parse(await readFile(resolve(output, "report.json"), "utf8"));

@@ -26,8 +26,10 @@ for (const condition of conditions) {
   if (JSON.stringify(condition.test.confusion) !== JSON.stringify(condition.confidence.confusion)) {
     throw new Error("Saved-checkpoint confidence assessment must reproduce the test predictions.");
   }
-  const { revision, ...training } = condition.training;
-  condition.training = { ...training, baseRevision: revision };
+  if (condition.training.sourceState !== "clean-rebuilt") {
+    const { revision, ...training } = condition.training;
+    condition.training = { ...training, baseRevision: revision };
+  }
 }
 const [local, recurrent] = conditions;
 if (JSON.stringify(local!.training.manifest) !== JSON.stringify(recurrent!.training.manifest)) {

@@ -97,3 +97,5 @@ bun scripts/sequence-research/parts/summarize.ts .matchbox/research/local .match
 ```
 
 The measurement wrapper uses macOS `/usr/bin/time -l`. The Rust executable itself is portable. Reports contain data hashes, feature identity, per-epoch validation scores, selected checkpoint, confusion matrices, document-level counts, weight size, fit time, evaluation time, process wall time and peak resident memory. Preparation and compilation are excluded from trainer timing. These measurements ran concurrently with the other candidate and repository checks on a development machine; they are not isolated speed comparisons. Sampling intervals describe document uncertainty, not training-seed variation.
+
+The original report's `baseRevision` identifies the checkout before uncommitted research code was added. Its exact source diff was not captured, so that revision alone cannot reproduce the executable. New runs require a clean committed tree and rebuild the trainer before recording its revision and executable hash.
