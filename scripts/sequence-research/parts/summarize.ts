@@ -77,6 +77,7 @@ const evidence = {
     "Same fixed corpus as the character experiment, but representation, loss supervision, capacity, and training budget changed.",
     "The candidates omit gpu-lexer's tree hierarchy, auxiliary supervision, quantization-aware training, and pretrained checkpoint.",
     "Per-part confidence uses a fixed 0.75 threshold and remains uncalibrated.",
+    "This benchmark has been reported in prior iterations; final generalization claims need a fresh repository-disjoint holdout.",
   ],
 };
 await writeFile(destination, JSON.stringify(evidence, null, 2), { flag: "wx" });

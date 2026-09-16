@@ -1,5 +1,7 @@
 # Part features and recurrent context
 
+The recurrent part model reaches **82.50% diagnostic label agreement and 76.90% styled macro F1** on the frozen test corpus. The same-feature local control reaches 70.95% and 70.65%. This supports a separate recurrent classifier primitive, alongside explicit part and feature encoding. It does not establish a shipped browser parser.
+
 This experiment separates input representation from learned sequence context. It uses native Burn research models and the frozen lexer corpus. It does not change the published parser, acceptance policy, CLI, or browser runtime.
 
 ## Method
@@ -12,7 +14,59 @@ Labels remain the same nine Shiki-derived display classes. A part can contain ch
 
 Both candidates sum 32-dimensional sparse feature embeddings and use a five-part local neighborhood, a 32-channel projection, a 64-unit classifier and nine output classes. The recurrent candidate adds learned affine state updates in both directions, with a learned projection back into the local representation. Burn evaluates an associative prefix scan; document boundaries reset state, batching and padding do not. The local candidate uses identical features and supervision without recurrent state. Neither includes gpu-lexer's hierarchy, auxiliary lexical-state targets, quantization-aware training, or pretrained weights.
 
-Both models use seed 42, Adam at 0.003 and eight full epochs. Documents are grouped by length into batches targeting 4,096 padded parts, with a longer document processed alone. Batch order is shuffled deterministically each epoch. Each model selects its checkpoint using validation label agreement, then evaluates the frozen test set. Test scores do not select hyperparameters or checkpoints.
+Both models use seed 42, Adam at 0.003 and eight full epochs. Documents are grouped by length into batches targeting 4,096 padded parts, with a longer document processed alone. Batch order is shuffled deterministically each epoch. Each model selects its checkpoint using validation label agreement, then evaluates the frozen test set. Test scores do not select hyperparameters or checkpoints. This benchmark has been reported in earlier framework iterations; a fresh repository-disjoint holdout is still needed for a final generalization claim.
+
+## Results
+
+The [machine-readable evidence](sequence-parts.json) records both complete training runs, selected checkpoints, per-document counts, confusion matrices, confidence bins, data identities and timings. All models use the same 1,915-document test corpus with 1,446,363 scored code points.
+
+| Model                                        | Validation agreement | Test agreement | Test styled macro F1 |
+| -------------------------------------------- | -------------------: | -------------: | -------------------: |
+| Published 0.3.0 character model, radius four |               61.58% |         58.17% |               46.51% |
+| Local part model                             |               70.48% |         70.95% |               70.65% |
+| Recurrent part model                         |               77.57% |         82.50% |               76.90% |
+| gpu-lexer 0.0.2 reference                    |    Not measured here |         80.64% |               71.08% |
+
+The [pinned gpu-lexer browser measurement](https://github.com/alexpatow/matchbox-lexer/blob/d614278/benchmarks/results/05-context-four-headed-retry-browser.json) uses a different architecture and training history. Its numbers are not the latest upstream checkpoint's published scores. The Matchbox research numbers are native diagnostic predictions, with no acceptance gate; they do not demonstrate equivalent browser behavior, latency or output coverage.
+
+Adding recurrence to the same part features improves test agreement by **11.55 percentage points**. A paired document bootstrap with 2,000 resamples and seed 4231 gives a 95% interval of **+9.92 to +13.16 points**. The validation difference is +7.09 points, with an interval of +4.00 to +11.11 points. These intervals do not measure training-seed variation or correct for checkpoint selection on validation.
+
+The local model selects epoch seven; the recurrent model selects epoch three. Later training loss falls without consistently improving validation. The final epoch is not automatically the selected model.
+
+| Test label F1 | Local parts | Recurrent parts |
+| ------------- | ----------: | --------------: |
+| plain         |      70.42% |          79.49% |
+| comment       |      70.67% |          93.51% |
+| string        |      67.01% |          84.58% |
+| number        |      79.56% |          86.12% |
+| keyword       |      78.23% |          79.41% |
+| type          |      61.28% |          60.70% |
+| function      |      73.05% |          72.51% |
+| constant      |      57.78% |          58.38% |
+| operator      |      77.67% |          80.02% |
+
+## Confidence and coverage
+
+At the existing numerical threshold of 0.75, applied diagnostically to individual parts:
+
+| Measurement                                      | Local parts | Recurrent parts |
+| ------------------------------------------------ | ----------: | --------------: |
+| Scored characters above threshold                |      55.76% |          77.08% |
+| Agreement among those characters                 |      84.79% |          90.82% |
+| Documents with every scored part above threshold | 308 / 1,915 |     344 / 1,915 |
+
+No input-length limit is applied in this assessment. These are uncalibrated part scores, not results from `parser.parse`. About 9.2% of the recurrent model's above-threshold character predictions are wrong. Schema validation alone cannot make them correct. A span application could expose uncertain regions, but such an interface needs an explicit contract; the framework must not silently weaken whole-parser acceptance.
+
+## Training cost
+
+Both runs use the full corpus for eight epochs on an Apple M2 with 8 GiB RAM. Reported process time includes data loading, optimization, validation checkpoint selection, serialization and final test evaluation.
+
+| Model           | Parameters | Native float32 Burn record | Optimizer time | Process wall time | Peak resident memory |
+| --------------- | ---------: | -------------------------: | -------------: | ----------------: | -------------------: |
+| Local parts     |     32,041 |              128,445 bytes |      685.505 s |         714.647 s |    643,596,288 bytes |
+| Recurrent parts |     36,233 |              145,333 bytes |    1,021.384 s |       1,059.796 s |    881,049,600 bytes |
+
+These weight sizes exclude encoders, metadata, packaging and a shared runtime. The models and repository checks overlapped on a development machine, so the timings describe observed training cost rather than isolated comparative performance. A separate confidence assessment reloads each saved checkpoint through Burn and reproduces its complete test confusion matrix exactly.
 
 ## Contract under investigation
 

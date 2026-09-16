@@ -52,15 +52,18 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             .sum()
             .neg()
             .into_scalar() as f64;
+        let predictions = logits.clone().argmax(2).into_data().to_vec::<i32>()?;
         let scores = activation::softmax(logits, 2).into_data().to_vec::<f32>()?;
         let mut all_confident = true;
         let mut document_support = 0;
-        for (counts, scores) in row.targets.iter().zip(scores.chunks(labels)) {
-            let (predicted, &confidence) = scores
-                .iter()
-                .enumerate()
-                .max_by(|a, b| a.1.total_cmp(b.1))
-                .ok_or("Empty scores")?;
+        for ((counts, scores), predicted) in row
+            .targets
+            .iter()
+            .zip(scores.chunks(labels))
+            .zip(predictions)
+        {
+            let predicted = predicted as usize;
+            let confidence = scores[predicted];
             if !confidence.is_finite() {
                 return Err("Non-finite prediction".into());
             }
