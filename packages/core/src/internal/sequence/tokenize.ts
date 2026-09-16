@@ -1,9 +1,19 @@
 import type { Token } from "./types.js";
-export function tokenize(input: string, mode: "characters" | "words"): Token[] {
+export function tokenize(
+  input: string,
+  mode: "characters" | "words",
+  casing: "lowercase" | "preserve" = "lowercase",
+): Token[] {
   const pattern = mode === "characters" ? /[\s\S]/gu : /[+-]?\d+(?:[.,]\d+)*|[\p{L}]+|[^\s]/gu;
+  const key = (text: string) => {
+    if (mode === "words" && /^[+-]?\d/.test(text)) {
+      return "<number>";
+    }
+    return casing === "preserve" ? text : text.toLowerCase();
+  };
   return [...input.matchAll(pattern)].map((match) => ({
     text: match[0],
-    key: mode === "words" && /^[+-]?\d/.test(match[0]) ? "<number>" : match[0].toLowerCase(),
+    key: key(match[0]),
     start: match.index,
     end: match.index + match[0].length,
   }));

@@ -4,6 +4,7 @@ fn config() -> ModelConfig {
     ModelConfig {
         vocabulary_size: 4,
         label_count: 2,
+        context_radius: 1,
     }
 }
 
@@ -14,7 +15,7 @@ fn dataset_validation_accepts_more_than_a_prediction_batch() {
     let model = Model::new(&config(), &Default::default());
     assert_eq!(
         predict(&model, &config(), values).unwrap_err(),
-        "Prediction batch exceeds 1,000,000 three-token windows"
+        "Prediction batch exceeds 1,000,000 context windows"
     );
 }
 
@@ -39,4 +40,24 @@ fn large_training_datasets_reach_supervision_validation() {
         result.err().unwrap(),
         "Labels must align with windows and belong to the label set"
     );
+}
+
+#[test]
+fn legacy_config_defaults_and_context_boundaries_are_checked() {
+    let legacy: ModelConfig =
+        serde_json::from_str(r#"{"vocabularySize":4,"labelCount":2}"#).unwrap();
+    assert_eq!(legacy.window_size(), 3);
+    for radius in [0, 17, usize::MAX] {
+        let invalid = ModelConfig {
+            context_radius: radius,
+            ..config()
+        };
+        assert!(validate_inputs(&invalid, &[0, 0, 0]).is_err());
+    }
+    let wider = ModelConfig {
+        context_radius: 4,
+        ..config()
+    };
+    assert!(validate_inputs(&wider, &[0; 9]).is_ok());
+    assert!(validate_inputs(&wider, &[0; 3]).is_err());
 }

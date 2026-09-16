@@ -66,7 +66,7 @@ export async function runSequence(
     if (heldOut.has(example.input.trim().toLowerCase())) {
       throw new Error(`Training input overlaps evaluation: ${example.input}`);
     }
-    const tokens = tokenize(example.input, recipe.tokenizer);
+    const tokens = tokenize(example.input, recipe.tokenizer, recipe.casing);
     const labels = recipe.annotate(example, tokens);
     const value = decode(
       tokens.map((token, index) => ({ ...token, label: labels[index] ?? "O", confidence: 1 })),
@@ -89,6 +89,7 @@ export async function runSequence(
     },
     project.validation.map((row) => row.input),
     progress,
+    sequence.contextRadius,
   );
   const validation = await evaluateSequence(parser(fit.model), project.validation);
   const bytes = Buffer.byteLength(JSON.stringify(fit.model));
@@ -106,6 +107,8 @@ export async function runSequence(
   const report = {
     formatVersion: 2,
     architecture: fit.model.architecture,
+    encoding: { tokenizer: fit.model.tokenizer, casing: fit.model.casing },
+    contextRadius: fit.model.radius,
     backend: "Burn native CPU",
     seed: 42,
     artifactSha256: hash(JSON.stringify(fit.model)),
@@ -125,7 +128,7 @@ export async function runSequence(
       JSON.stringify(
         training.map((row) => ({
           ...row,
-          labels: recipe.annotate(row, tokenize(row.input, recipe.tokenizer)),
+          labels: recipe.annotate(row, tokenize(row.input, recipe.tokenizer, recipe.casing)),
         })),
       ),
     ),

@@ -15,8 +15,12 @@ test("masking trains the unknown ID deterministically without changing labels or
   expect(masked).toEqual(prepareSupervision(rows, maskedRecipe));
   expect(masked.vocabulary).toEqual(plain.vocabulary);
   expect(masked.inputs.length).toBe(2 * plain.inputs.length);
-  expect(masked.inputs.some((window) => window.includes(1))).toBe(true);
-  expect(masked.inputs.every((window) => window[0] === 0 || window[2] === 0)).toBe(true);
+  expect(masked.inputs.includes(1)).toBe(true);
+  expect(
+    masked.labels.every(
+      (_, index) => masked.inputs[index * 3] === 0 || masked.inputs[index * 3 + 2] === 0,
+    ),
+  ).toBe(true);
   for (const id of [0, 1]) {
     expect(masked.labels.filter((label) => label === id).length).toBe(
       2 * plain.labels.filter((label) => label === id).length,

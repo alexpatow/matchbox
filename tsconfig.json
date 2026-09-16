@@ -6,6 +6,7 @@
   },
   "include": [
     "tests/**/*.ts",
+    "scripts/sequence-research/**/*.ts",
     "playwright.config.ts",
     "browser-tests/**/*.ts",
     "examples/filters/scripts/**/*.ts"

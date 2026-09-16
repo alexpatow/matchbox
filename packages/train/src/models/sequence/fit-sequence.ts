@@ -11,16 +11,25 @@ export async function fitSequence(
   metadata: Pick<SequenceArtifact, "taskModule" | "taskMetadata" | "decoderModule">,
   probes: readonly string[] = [],
   progress?: (epoch: number, loss: number) => void,
+  contextRadius = 1,
 ) {
-  const { vocabulary, radius, dropout, inputs, labels } = prepareSupervision(examples, recipe);
+  const { vocabulary, radius, dropout, inputs, labels } = prepareSupervision(
+    examples,
+    recipe,
+    contextRadius,
+  );
   const result = await fit(
-    { vocabularySize: vocabulary.length + 2, labelCount: recipe.labels.length },
+    {
+      vocabularySize: vocabulary.length + 2,
+      labelCount: recipe.labels.length,
+      contextRadius: radius,
+    },
     inputs,
     labels,
     progress,
   );
   const artifact = (weights: Uint8Array): SequenceArtifact => ({
-    formatVersion: 3,
+    formatVersion: 4,
     engine: "burn-0.21",
     kind: "sequence-parser",
     architecture: "embedding-window-mlp",
@@ -29,7 +38,8 @@ export async function fitSequence(
     readout: recipe.readout,
     vocabulary,
     labels: [...recipe.labels],
-    radius: radius as 1,
+    radius,
+    casing: recipe.casing ?? "lowercase",
     unknownTokens: dropout > 0 ? "predict" : "abstain",
     threshold: 0.75,
     precision: "float32",
@@ -41,12 +51,16 @@ export async function fitSequence(
   const parity = sequenceParity(model.threshold);
   try {
     for (const input of checked) {
-      const tokens = tokenize(input, recipe.tokenizer);
+      const tokens = tokenize(input, recipe.tokenizer, recipe.casing);
       if (!tokens.length) {
         continue;
       }
       const scores = predict(
-        { vocabularySize: vocabulary.length + 2, labelCount: recipe.labels.length },
+        {
+          vocabularySize: vocabulary.length + 2,
+          labelCount: recipe.labels.length,
+          contextRadius: radius,
+        },
         result.weights,
         windows(tokens, vocabulary, radius),
       );
@@ -64,6 +78,6 @@ export async function fitSequence(
     parameters: result.parameters,
     history: result.loss,
     parity: { examples: checked.length, ...parity.report() },
-    supervisedTokens: inputs.length,
+    supervisedTokens: labels.length,
   };
 }
