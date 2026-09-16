@@ -8,11 +8,11 @@ import { definePipeline, fieldClassifier, tokenClassifier } from "@matchbox-ai/t
 
 `definePipeline(pipeline: Pipeline): Pipeline` validates a declaration and returns it. Invalid declarations throw a Zod validation error. It does not train or load Burn.
 
-| Property                 | Type                                   | Required | Behavior                                       |
-| ------------------------ | -------------------------------------- | -------- | ---------------------------------------------- |
-| `prediction`             | Field or token classifier declaration. | Yes.     | Chooses one of the two implemented strategies. |
-| `acceptance.minAccuracy` | Number from 0 to 1.                    | No.      | Minimum validation exact accuracy for export.  |
-| `acceptance.maxBytes`    | Positive number.                       | No.      | Maximum serialized model size in bytes.        |
+| Property                 | Type                                              | Required | Behavior                                      |
+| ------------------------ | ------------------------------------------------- | -------- | --------------------------------------------- |
+| `prediction`             | Field, token or recurrent classifier declaration. | Yes.     | Chooses an explicit learning strategy.        |
+| `acceptance.minAccuracy` | Number from 0 to 1.                               | No.      | Minimum validation exact accuracy for export. |
+| `acceptance.maxBytes`    | Positive number.                                  | No.      | Maximum serialized model size in bytes.       |
 
 Unknown properties are rejected. See [configuration](configuration.md) for resolved defaults and overrides.
 
@@ -69,3 +69,7 @@ export default {
 ```
 
 Retrain after either change. New sequence artifacts use format version 4 and require a compatible runtime. The runtime still reads version 3 artifacts with their original lowercase, radius-one behavior. These choices do not change the 512 UTF-16-unit parser limit, whole-result abstention, or confidence calibration.
+
+## recurrentTokenClassifier
+
+`recurrentTokenClassifier(options?)` adds whole-sequence learned context using versioned text-part features. Its `RecurrentRecipe` and span supervision are separate from `SequenceRecipe`; existing classifier declarations are unchanged. See the [complete authoring, training and runtime contract](../primitives/recurrent-token-classifier.md), including options, input limits and opt-in partial results.

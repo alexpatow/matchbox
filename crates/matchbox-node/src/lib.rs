@@ -79,3 +79,4 @@ pub fn predict(config: String, weights: Buffer, inputs: Int32Array) -> Result<Ve
 }
 
 pub mod record;
+pub mod recurrent;

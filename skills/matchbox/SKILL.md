@@ -24,3 +24,7 @@ Matchbox owns authoring, workflows, evals, packaging, validation, and typed resu
 ## Task layout
 
 Use `X.ts` or `X/X.ts` for parser, pipeline, recipe, and decode. Keep helper files with their owning module. Shared domain code belongs in a named task-level folder. No task or helper index barrel is required. `tokenClassifier()` discovers recipe and decode; explicit path overrides are relative to the task root. Never keep both entry forms. Retrain after relocating authored modules because artifacts reference concrete source paths.
+
+### Recurrent span tasks
+
+Use `recurrentTokenClassifier()` with a `RecurrentRecipe` when fixed-window context is insufficient. Author `textParts()`, `textFeatures()` and `spanLabels({ whitespace: "context" | "supervise" })` explicitly. Read `docs/primitives/recurrent-token-classifier.md` for contracts. Keep the output span schema and decoder application-owned. Do not replace existing classifiers or enable partial parsing automatically. `.parse(input)` remains all-or-nothing; `.parse(input, { allowPartial: true })` returns a candidate with uncertain source ranges for interfaces able to display them. Report diagnostic label agreement separately from parser exact accuracy and acceptance. Preserve the full held-out corpus and record training time.

@@ -15,7 +15,7 @@ export async function trainCommand(path: string, json = false, verbose = false) 
         }
         if (verbose) {
           console.error(`Epoch ${epoch} · loss ${loss.toFixed(6)}`);
-        } else if (epoch === 1 || epoch % 10 === 0) {
+        } else if (epoch === 1 || epoch % 10 === 0 || config.sequence?.recurrent) {
           view?.update([path, `Training · epoch ${epoch}`]);
         }
       },

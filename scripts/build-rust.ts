@@ -21,3 +21,4 @@ await run([
   "--out-name",
   "matchbox_wasm",
 ]);
+await import("./build-webgpu");

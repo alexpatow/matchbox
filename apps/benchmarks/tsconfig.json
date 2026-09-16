@@ -1,5 +1,9 @@
 {
   "extends": "../../tsconfig.base.json",
-  "compilerOptions": { "lib": ["ES2022", "DOM"], "types": ["vite/client"] },
-  "include": ["src/**/*.ts"]
+  "compilerOptions": {
+    "lib": ["ES2022", "DOM"],
+    "types": ["vite/client", "node"],
+    "allowArbitraryExtensions": true
+  },
+  "include": ["src/**/*.ts", "scripts/**/*.ts", "vite.config.ts"]
 }

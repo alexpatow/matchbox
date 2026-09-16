@@ -6,6 +6,7 @@ export default defineConfig([
       "runtime/index": "src/runtime/index.ts",
       "react/index": "src/react/index.ts",
       "internal/index": "src/internal/index.ts",
+      "load-webgpu": "src/runtime/burn/load-webgpu.ts",
       "load-browser": "src/runtime/burn/load-browser.ts",
       "load-node": "src/runtime/burn/load-node.ts",
     },

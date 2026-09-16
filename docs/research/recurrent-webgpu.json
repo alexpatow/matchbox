@@ -1,0 +1,2432 @@
+{
+  "reference": {
+    "package": "gpu-lexer",
+    "version": "0.0.2",
+    "bundleSha256": "4d75642aada90f8100032c453d3d34d95ef43828ecf55b69a67a7b1ef7eed1ae"
+  },
+  "datasetSha256": "659c1b8997bbaf7b3057d318aa916e9e41c7af1f8bb11d4d4f44e2b26362c1ae",
+  "artifactSha256": "e6ed51d79de987e9a695a126617fdc5ec3d33ea871341aae9bc585c8d65625de",
+  "split": "validation",
+  "browser": "153.0.8010.12",
+  "headless": false,
+  "results": [
+    {
+      "engine": "gpu-lexer",
+      "initializationMs": 190.70000004768372,
+      "repeatP50Ms": 1,
+      "repeatP95Ms": 2.8000000715255737,
+      "p50Ms": 1.100000023841858,
+      "p95Ms": 3.100000023841858,
+      "statuses": {
+        "candidate": 336
+      },
+      "quality": {
+        "documents": 336,
+        "characters": 750030,
+        "agreement": 0.7087916483340666,
+        "coverage": 1,
+        "exactSpans": 0,
+        "exactLabels": 0.002976190476190476,
+        "styledMacroF1": 0.5456475365088131,
+        "classes": [
+          {
+            "label": "plain",
+            "support": 255266,
+            "f1": 0.7008778263076252
+          },
+          {
+            "label": "comment",
+            "support": 29539,
+            "f1": 0.554464890147086
+          },
+          {
+            "label": "string",
+            "support": 327769,
+            "f1": 0.8522568081163426
+          },
+          {
+            "label": "number",
+            "support": 5599,
+            "f1": 0.671527590242146
+          },
+          {
+            "label": "keyword",
+            "support": 36803,
+            "f1": 0.3599134904361992
+          },
+          {
+            "label": "type",
+            "support": 17156,
+            "f1": 0.3289967624684688
+          },
+          {
+            "label": "function",
+            "support": 17060,
+            "f1": 0.7418021493524387
+          },
+          {
+            "label": "constant",
+            "support": 6408,
+            "f1": 0.6798317791186689
+          },
+          {
+            "label": "operator",
+            "support": 54430,
+            "f1": 0.17638682218915502
+          }
+        ],
+        "confusion": [
+          [196093, 12656, 24825, 795, 2838, 14733, 1545, 438, 1343, 0],
+          [6669, 18019, 2931, 66, 485, 910, 96, 74, 289, 0],
+          [33056, 1989, 271333, 536, 17635, 1434, 982, 29, 775, 0],
+          [917, 65, 700, 3730, 52, 5, 41, 60, 29, 0],
+          [12536, 555, 2867, 56, 12814, 7269, 597, 7, 102, 0],
+          [5603, 36, 2726, 1, 148, 8282, 198, 158, 4, 0],
+          [4163, 17, 352, 0, 180, 198, 12114, 30, 6, 0],
+          [1737, 75, 246, 250, 66, 299, 8, 3718, 9, 0],
+          [43524, 2045, 2991, 76, 185, 61, 20, 16, 5512, 0]
+        ]
+      },
+      "languages": [
+        {
+          "language": "html",
+          "documents": 22,
+          "characters": 134802,
+          "agreement": 0.6766591000133529,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.22291107068696817
+        },
+        {
+          "language": "markdown",
+          "documents": 6,
+          "characters": 32560,
+          "agreement": 0.7254299754299754,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.4092289360157823
+        },
+        {
+          "language": "css",
+          "documents": 34,
+          "characters": 58543,
+          "agreement": 0.6025485540542849,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.4747038834588112
+        },
+        {
+          "language": "go",
+          "documents": 6,
+          "characters": 16796,
+          "agreement": 0.7197547035008335,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.7032250037807412
+        },
+        {
+          "language": "javascript",
+          "documents": 36,
+          "characters": 284109,
+          "agreement": 0.8023505063197576,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.6484416963499741
+        },
+        {
+          "language": "python",
+          "documents": 5,
+          "characters": 10184,
+          "agreement": 0.8097014925373134,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.7270609649538673
+        },
+        {
+          "language": "dart",
+          "documents": 9,
+          "characters": 7444,
+          "agreement": 0.7608812466415905,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.5396345162199423
+        },
+        {
+          "language": "typescript",
+          "documents": 12,
+          "characters": 8017,
+          "agreement": 0.6660845702881377,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.6480397692979248
+        },
+        {
+          "language": "c",
+          "documents": 5,
+          "characters": 4830,
+          "agreement": 0.6774327122153209,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.6871961129364124
+        },
+        {
+          "language": "php",
+          "documents": 4,
+          "characters": 10567,
+          "agreement": 0.7642661114791331,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.6330447743927844
+        },
+        {
+          "language": "ruby",
+          "documents": 3,
+          "characters": 5176,
+          "agreement": 0.6705950540958269,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.37893374887294906
+        },
+        {
+          "language": "swift",
+          "documents": 4,
+          "characters": 6167,
+          "agreement": 0.6938543862493919,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.41749249913820413
+        },
+        {
+          "language": "diff",
+          "documents": 11,
+          "characters": 4771,
+          "agreement": 0.4973800041919933,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.010899182561307902
+        },
+        {
+          "language": "make",
+          "documents": 6,
+          "characters": 6042,
+          "agreement": 0.810824230387289,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.6015715353495097
+        },
+        {
+          "language": "cpp",
+          "documents": 9,
+          "characters": 6567,
+          "agreement": 0.5416476320998934,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.441706146062728
+        },
+        {
+          "language": "csharp",
+          "documents": 8,
+          "characters": 9005,
+          "agreement": 0.49472515269294837,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.47638794763617204
+        },
+        {
+          "language": "glsl",
+          "documents": 6,
+          "characters": 5917,
+          "agreement": 0.5316883555856008,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.4196880071442987
+        },
+        {
+          "language": "hcl",
+          "documents": 4,
+          "characters": 4253,
+          "agreement": 0.6698800846461321,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.2716196740572539
+        },
+        {
+          "language": "kotlin",
+          "documents": 6,
+          "characters": 4125,
+          "agreement": 0.7522424242424243,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.4970006146119116
+        },
+        {
+          "language": "nix",
+          "documents": 5,
+          "characters": 5946,
+          "agreement": 0.653548604103599,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.42783115491087037
+        },
+        {
+          "language": "docker",
+          "documents": 5,
+          "characters": 6459,
+          "agreement": 0.8944108995200496,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.8848580334510491
+        },
+        {
+          "language": "rust",
+          "documents": 5,
+          "characters": 7734,
+          "agreement": 0.8056633048875097,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.6322989803667561
+        },
+        {
+          "language": "cmake",
+          "documents": 10,
+          "characters": 14936,
+          "agreement": 0.8335565077664703,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.6737307418883821
+        },
+        {
+          "language": "r",
+          "documents": 6,
+          "characters": 12099,
+          "agreement": 0.5616166625340937,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0.16666666666666666,
+          "styledMacroF1": 0.2852994205680396
+        },
+        {
+          "language": "bat",
+          "documents": 4,
+          "characters": 2695,
+          "agreement": 0.8066790352504638,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.3792440617309459
+        },
+        {
+          "language": "gherkin",
+          "documents": 7,
+          "characters": 16044,
+          "agreement": 0.6363749688357018,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.21921789239246992
+        },
+        {
+          "language": "hlsl",
+          "documents": 5,
+          "characters": 7418,
+          "agreement": 0.5242653006201132,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.21542410788003372
+        },
+        {
+          "language": "java",
+          "documents": 9,
+          "characters": 5602,
+          "agreement": 0.591395930024991,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.6110751306494052
+        },
+        {
+          "language": "lua",
+          "documents": 7,
+          "characters": 4383,
+          "agreement": 0.6573123431439654,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.35372557056281917
+        },
+        {
+          "language": "matlab",
+          "documents": 8,
+          "characters": 5593,
+          "agreement": 0.5319148936170213,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.5036510537708099
+        },
+        {
+          "language": "asm",
+          "documents": 7,
+          "characters": 3214,
+          "agreement": 0.24206596141879277,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.0642570281124498
+        },
+        {
+          "language": "perl",
+          "documents": 5,
+          "characters": 4696,
+          "agreement": 0.5557921635434412,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.31279774385727005
+        },
+        {
+          "language": "sql",
+          "documents": 4,
+          "characters": 5913,
+          "agreement": 0.31473025536952476,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.42073537010570333
+        },
+        {
+          "language": "powershell",
+          "documents": 9,
+          "characters": 5350,
+          "agreement": 0.554018691588785,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.44432579885478235
+        },
+        {
+          "language": "liquid",
+          "documents": 2,
+          "characters": 4395,
+          "agreement": 0.17542662116040955,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": null
+        },
+        {
+          "language": "solidity",
+          "documents": 5,
+          "characters": 5912,
+          "agreement": 0.48900541271989173,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.22073771793930366
+        },
+        {
+          "language": "awk",
+          "documents": 11,
+          "characters": 3544,
+          "agreement": 0.6568848758465011,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.418093918849422
+        },
+        {
+          "language": "shellscript",
+          "documents": 15,
+          "characters": 4193,
+          "agreement": 0.43000238492725973,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.2158613846271277
+        },
+        {
+          "language": "fortran-free-form",
+          "documents": 11,
+          "characters": 4029,
+          "agreement": 0.5321419707123356,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.4110001748163961
+        }
+      ],
+      "assets": [
+        {
+          "name": "/assets/index-YyAPobaA.js",
+          "bytes": 4618,
+          "gzipBytes": 2249,
+          "sha256": "4fffdeafd2fc64de22221eb16e409b18493922cbe3f9030bcd8c3de348f0d295"
+        },
+        {
+          "name": "/assets/dist-DLAAMXAZ.js",
+          "bytes": 59226,
+          "gzipBytes": 33159,
+          "sha256": "40e2e7673211b122da81f5a6aedebbd0ba6c089dd4be842e9adbea3b034af7a2"
+        }
+      ],
+      "downloadBytes": 63844,
+      "downloadGzipBytes": 35408
+    },
+    {
+      "engine": "matchbox-candidate",
+      "initializationMs": 205,
+      "repeatP50Ms": 5.5,
+      "repeatP95Ms": 50.700000047683716,
+      "p50Ms": 5.799999952316284,
+      "p95Ms": 51.200000047683716,
+      "statuses": {
+        "candidate": 336
+      },
+      "quality": {
+        "documents": 336,
+        "characters": 750030,
+        "agreement": 0.7756996386811195,
+        "coverage": 1,
+        "exactSpans": 0.002976190476190476,
+        "exactLabels": 0.008928571428571428,
+        "styledMacroF1": 0.6555592470821192,
+        "classes": [
+          {
+            "label": "plain",
+            "support": 255266,
+            "f1": 0.7201620311533712
+          },
+          {
+            "label": "comment",
+            "support": 29539,
+            "f1": 0.649604357006137
+          },
+          {
+            "label": "string",
+            "support": 327769,
+            "f1": 0.8971671030821342
+          },
+          {
+            "label": "number",
+            "support": 5599,
+            "f1": 0.6821185888485526
+          },
+          {
+            "label": "keyword",
+            "support": 36803,
+            "f1": 0.5428948111874942
+          },
+          {
+            "label": "type",
+            "support": 17156,
+            "f1": 0.6128534992572662
+          },
+          {
+            "label": "function",
+            "support": 17060,
+            "f1": 0.5622192450153677
+          },
+          {
+            "label": "constant",
+            "support": 6408,
+            "f1": 0.6359848484848485
+          },
+          {
+            "label": "operator",
+            "support": 54430,
+            "f1": 0.6616315237751542
+          }
+        ],
+        "confusion": [
+          [179917, 3220, 29105, 686, 19263, 4808, 830, 480, 16957, 0],
+          [7119, 16460, 2720, 71, 1509, 559, 66, 36, 999, 0],
+          [19803, 780, 298771, 276, 2711, 515, 73, 97, 4743, 0],
+          [892, 104, 745, 3664, 39, 47, 0, 31, 77, 0],
+          [10762, 151, 1093, 115, 23060, 925, 67, 52, 578, 0],
+          [3593, 48, 1765, 4, 600, 10933, 126, 77, 10, 0],
+          [8363, 16, 356, 2, 581, 538, 7134, 14, 56, 0],
+          [2169, 105, 114, 306, 114, 191, 20, 3358, 31, 0],
+          [11773, 254, 3594, 20, 272, 7, 2, 7, 38501, 0]
+        ]
+      },
+      "languages": [
+        {
+          "language": "html",
+          "documents": 22,
+          "characters": 134802,
+          "agreement": 0.7308051809320336,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.4126302549005413
+        },
+        {
+          "language": "markdown",
+          "documents": 6,
+          "characters": 32560,
+          "agreement": 0.7954238329238329,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.5673290166093606
+        },
+        {
+          "language": "css",
+          "documents": 34,
+          "characters": 58543,
+          "agreement": 0.772440770032284,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.6487334751709734
+        },
+        {
+          "language": "go",
+          "documents": 6,
+          "characters": 16796,
+          "agreement": 0.7721481305072636,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.7816260342181989
+        },
+        {
+          "language": "javascript",
+          "documents": 36,
+          "characters": 284109,
+          "agreement": 0.8951599562139883,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.7331930509724295
+        },
+        {
+          "language": "python",
+          "documents": 5,
+          "characters": 10184,
+          "agreement": 0.8539866457187746,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.7560590663342843
+        },
+        {
+          "language": "dart",
+          "documents": 9,
+          "characters": 7444,
+          "agreement": 0.7208490059108007,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.488127789378875
+        },
+        {
+          "language": "typescript",
+          "documents": 12,
+          "characters": 8017,
+          "agreement": 0.7079955095422228,
+          "coverage": 1,
+          "exactSpans": 0.08333333333333333,
+          "exactLabels": 0.08333333333333333,
+          "styledMacroF1": 0.6771527859977997
+        },
+        {
+          "language": "c",
+          "documents": 5,
+          "characters": 4830,
+          "agreement": 0.7919254658385093,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.7595368763270006
+        },
+        {
+          "language": "php",
+          "documents": 4,
+          "characters": 10567,
+          "agreement": 0.817072016655626,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.6555986731465523
+        },
+        {
+          "language": "ruby",
+          "documents": 3,
+          "characters": 5176,
+          "agreement": 0.7984930448222566,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.4224479446425474
+        },
+        {
+          "language": "swift",
+          "documents": 4,
+          "characters": 6167,
+          "agreement": 0.6863953299821631,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.37771752838982203
+        },
+        {
+          "language": "diff",
+          "documents": 11,
+          "characters": 4771,
+          "agreement": 0.45755606791029135,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.15448275862068966
+        },
+        {
+          "language": "make",
+          "documents": 6,
+          "characters": 6042,
+          "agreement": 0.632406487917908,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.3806911101753051
+        },
+        {
+          "language": "cpp",
+          "documents": 9,
+          "characters": 6567,
+          "agreement": 0.6063651591289783,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0.1111111111111111,
+          "styledMacroF1": 0.5629512836864179
+        },
+        {
+          "language": "csharp",
+          "documents": 8,
+          "characters": 9005,
+          "agreement": 0.6148806218767352,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.6680441307491506
+        },
+        {
+          "language": "glsl",
+          "documents": 6,
+          "characters": 5917,
+          "agreement": 0.6312320432651681,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.4778420138837007
+        },
+        {
+          "language": "hcl",
+          "documents": 4,
+          "characters": 4253,
+          "agreement": 0.7857982600517281,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.48272052167343193
+        },
+        {
+          "language": "kotlin",
+          "documents": 6,
+          "characters": 4125,
+          "agreement": 0.7115151515151515,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.46929889989365
+        },
+        {
+          "language": "nix",
+          "documents": 5,
+          "characters": 5946,
+          "agreement": 0.7300706357214934,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.4892087767902031
+        },
+        {
+          "language": "docker",
+          "documents": 5,
+          "characters": 6459,
+          "agreement": 0.8379006038086391,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.8906586504264702
+        },
+        {
+          "language": "rust",
+          "documents": 5,
+          "characters": 7734,
+          "agreement": 0.8893198862167054,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.704035488898137
+        },
+        {
+          "language": "cmake",
+          "documents": 10,
+          "characters": 14936,
+          "agreement": 0.7257632565613283,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.6498098871238792
+        },
+        {
+          "language": "r",
+          "documents": 6,
+          "characters": 12099,
+          "agreement": 0.6764195388048599,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0.16666666666666666,
+          "styledMacroF1": 0.4051039089785936
+        },
+        {
+          "language": "bat",
+          "documents": 4,
+          "characters": 2695,
+          "agreement": 0.7710575139146568,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.45963068591420225
+        },
+        {
+          "language": "gherkin",
+          "documents": 7,
+          "characters": 16044,
+          "agreement": 0.6073298429319371,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.2685626529172348
+        },
+        {
+          "language": "hlsl",
+          "documents": 5,
+          "characters": 7418,
+          "agreement": 0.5342410353194931,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.44719926455015885
+        },
+        {
+          "language": "java",
+          "documents": 9,
+          "characters": 5602,
+          "agreement": 0.7752588361299536,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.6758068737156455
+        },
+        {
+          "language": "lua",
+          "documents": 7,
+          "characters": 4383,
+          "agreement": 0.5309148984713666,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.2919309018270353
+        },
+        {
+          "language": "matlab",
+          "documents": 8,
+          "characters": 5593,
+          "agreement": 0.44788128017164314,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.3854368590928824
+        },
+        {
+          "language": "asm",
+          "documents": 7,
+          "characters": 3214,
+          "agreement": 0.24673304293714998,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.028444444444444446
+        },
+        {
+          "language": "perl",
+          "documents": 5,
+          "characters": 4696,
+          "agreement": 0.5283219761499148,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.23605279544929267
+        },
+        {
+          "language": "sql",
+          "documents": 4,
+          "characters": 5913,
+          "agreement": 0.18755284965330626,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.16266028433064647
+        },
+        {
+          "language": "powershell",
+          "documents": 9,
+          "characters": 5350,
+          "agreement": 0.640373831775701,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.5177262741454011
+        },
+        {
+          "language": "liquid",
+          "documents": 2,
+          "characters": 4395,
+          "agreement": 0.12491467576791809,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": null
+        },
+        {
+          "language": "solidity",
+          "documents": 5,
+          "characters": 5912,
+          "agreement": 0.560893098782138,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.4892896457543559
+        },
+        {
+          "language": "awk",
+          "documents": 11,
+          "characters": 3544,
+          "agreement": 0.6944130925507901,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.3530000065061756
+        },
+        {
+          "language": "shellscript",
+          "documents": 15,
+          "characters": 4193,
+          "agreement": 0.49892678273312663,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.42065568486335075
+        },
+        {
+          "language": "fortran-free-form",
+          "documents": 11,
+          "characters": 4029,
+          "agreement": 0.4792752544055597,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.2881161673678885
+        }
+      ],
+      "assets": [
+        {
+          "name": "/assets/index-YyAPobaA.js",
+          "bytes": 4618,
+          "gzipBytes": 2249,
+          "sha256": "4fffdeafd2fc64de22221eb16e409b18493922cbe3f9030bcd8c3de348f0d295"
+        },
+        {
+          "name": "/assets/internal-BbRd5MlG.js",
+          "bytes": 566,
+          "gzipBytes": 324,
+          "sha256": "fba474e412397e0039c6452c29797245a6ccb58af3d11d5d76911224b5af265f"
+        },
+        {
+          "name": "/assets/tokenize-Caj5tvGj-B-bK930i.js",
+          "bytes": 458,
+          "gzipBytes": 334,
+          "sha256": "b8bfe7aa6cd0d482d00b907d1a915ca953f9dabec39b22439aeeda7b4041b08e"
+        },
+        {
+          "name": "/assets/features-CsZf7J0e-BS9Kf9h0.js",
+          "bytes": 971,
+          "gzipBytes": 589,
+          "sha256": "698a1f73879da1594d3eefe97c56ea49e05e269817b936edbd3fd6c63995d546"
+        },
+        {
+          "name": "/assets/decode-CqpFg_sN.js",
+          "bytes": 356,
+          "gzipBytes": 252,
+          "sha256": "5ca37673f19d738d5aab96aae659c95f57cf7f4aaa1ace49e5e195bd0801b6f7"
+        },
+        {
+          "name": "/assets/tensor-predictor-DNLNoKGv-DqEiXJAz.js",
+          "bytes": 1186,
+          "gzipBytes": 587,
+          "sha256": "7b318541f4175c0d82cde0c435c88ab22f239638bfc9402c3915bceaf6696f16"
+        },
+        {
+          "name": "/assets/artifact-DoCQXp6i-Dpvx-hyl.js",
+          "bytes": 97846,
+          "gzipBytes": 27648,
+          "sha256": "5f6011444bf36d41099fe577f8795016dc995da2a7b77e97010835ce811894bb"
+        },
+        {
+          "name": "/assets/artifact-D0_MBtvv.js",
+          "bytes": 194784,
+          "gzipBytes": 144637,
+          "sha256": "68662f4ba88d7a598e504b851c1c1d10a6660ed9727df0d26c942914fc5d4c98"
+        },
+        {
+          "name": "/assets/recurrent-DldG9s3H-D6mRjp9x.js",
+          "bytes": 929,
+          "gzipBytes": 548,
+          "sha256": "83d9f9971c513ed689a5ebea8fb903814281923cf7bad2ad855434403a5d59cd"
+        },
+        {
+          "name": "/assets/initialize-D6yKU6gH-C04ZEUEZ.js",
+          "bytes": 7170,
+          "gzipBytes": 2115,
+          "sha256": "e25fa9dc9227e08e702aa3d06aedeb9741e2c5c67236aa74f364790329d38cf3"
+        },
+        {
+          "name": "/assets/matchbox_wasm_bg-DY7CjDX4.wasm",
+          "bytes": 775719,
+          "gzipBytes": 201281,
+          "sha256": "2164745266541c3d675dc21e82365243e83d0160c6adc1996fc6b2f65c9cfd6e"
+        }
+      ],
+      "downloadBytes": 1084603,
+      "downloadGzipBytes": 380564
+    },
+    {
+      "engine": "matchbox-partial",
+      "initializationMs": 131.60000002384186,
+      "repeatP50Ms": 6,
+      "repeatP95Ms": 57.5,
+      "p50Ms": 5.799999952316284,
+      "p95Ms": 53.699999928474426,
+      "statuses": {
+        "partial": 333,
+        "uncertain": 2,
+        "ok": 1
+      },
+      "quality": {
+        "documents": 336,
+        "characters": 750030,
+        "agreement": 0.7756929722811088,
+        "coverage": 0.999960001599936,
+        "exactSpans": 0.002976190476190476,
+        "exactLabels": 0.008928571428571428,
+        "styledMacroF1": 0.6555615345209974,
+        "classes": [
+          {
+            "label": "plain",
+            "support": 255266,
+            "f1": 0.7201807687073196
+          },
+          {
+            "label": "comment",
+            "support": 29539,
+            "f1": 0.6496428148557446
+          },
+          {
+            "label": "string",
+            "support": 327769,
+            "f1": 0.8971724912466142
+          },
+          {
+            "label": "number",
+            "support": 5599,
+            "f1": 0.6821185888485526
+          },
+          {
+            "label": "keyword",
+            "support": 36803,
+            "f1": 0.542926766101216
+          },
+          {
+            "label": "type",
+            "support": 17156,
+            "f1": 0.6128534992572662
+          },
+          {
+            "label": "function",
+            "support": 17060,
+            "f1": 0.5622192450153677
+          },
+          {
+            "label": "constant",
+            "support": 6408,
+            "f1": 0.6359848484848485
+          },
+          {
+            "label": "operator",
+            "support": 54430,
+            "f1": 0.6615740223583698
+          }
+        ],
+        "confusion": [
+          [179917, 3217, 29101, 686, 19258, 4808, 830, 480, 16957, 12],
+          [7119, 16460, 2720, 71, 1509, 559, 66, 36, 999, 0],
+          [19803, 780, 298771, 276, 2711, 515, 73, 97, 4743, 0],
+          [892, 104, 745, 3664, 39, 47, 0, 31, 77, 0],
+          [10761, 151, 1093, 115, 23060, 925, 67, 52, 578, 1],
+          [3588, 48, 1765, 4, 600, 10933, 126, 77, 10, 5],
+          [8363, 16, 356, 2, 581, 538, 7134, 14, 56, 0],
+          [2162, 105, 114, 306, 114, 191, 20, 3358, 31, 7],
+          [11773, 254, 3594, 20, 272, 7, 2, 7, 38496, 5]
+        ]
+      },
+      "languages": [
+        {
+          "language": "html",
+          "documents": 22,
+          "characters": 134802,
+          "agreement": 0.7308051809320336,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.4126302549005413
+        },
+        {
+          "language": "markdown",
+          "documents": 6,
+          "characters": 32560,
+          "agreement": 0.7954238329238329,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.5673290166093606
+        },
+        {
+          "language": "css",
+          "documents": 34,
+          "characters": 58543,
+          "agreement": 0.7723724441863246,
+          "coverage": 0.9996242078472234,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.6487855383898813
+        },
+        {
+          "language": "go",
+          "documents": 6,
+          "characters": 16796,
+          "agreement": 0.7721481305072636,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.7816260342181989
+        },
+        {
+          "language": "javascript",
+          "documents": 36,
+          "characters": 284109,
+          "agreement": 0.8951599562139883,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.7331930509724295
+        },
+        {
+          "language": "python",
+          "documents": 5,
+          "characters": 10184,
+          "agreement": 0.8539866457187746,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.7560590663342843
+        },
+        {
+          "language": "dart",
+          "documents": 9,
+          "characters": 7444,
+          "agreement": 0.7208490059108007,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.488127789378875
+        },
+        {
+          "language": "typescript",
+          "documents": 12,
+          "characters": 8017,
+          "agreement": 0.7079955095422228,
+          "coverage": 1,
+          "exactSpans": 0.08333333333333333,
+          "exactLabels": 0.08333333333333333,
+          "styledMacroF1": 0.6771527859977997
+        },
+        {
+          "language": "c",
+          "documents": 5,
+          "characters": 4830,
+          "agreement": 0.7919254658385093,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.7595368763270006
+        },
+        {
+          "language": "php",
+          "documents": 4,
+          "characters": 10567,
+          "agreement": 0.817072016655626,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.6555986731465523
+        },
+        {
+          "language": "ruby",
+          "documents": 3,
+          "characters": 5176,
+          "agreement": 0.7984930448222566,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.4224479446425474
+        },
+        {
+          "language": "swift",
+          "documents": 4,
+          "characters": 6167,
+          "agreement": 0.6863953299821631,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.37771752838982203
+        },
+        {
+          "language": "diff",
+          "documents": 11,
+          "characters": 4771,
+          "agreement": 0.45755606791029135,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.15448275862068966
+        },
+        {
+          "language": "make",
+          "documents": 6,
+          "characters": 6042,
+          "agreement": 0.632406487917908,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.3806911101753051
+        },
+        {
+          "language": "cpp",
+          "documents": 9,
+          "characters": 6567,
+          "agreement": 0.6063651591289783,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0.1111111111111111,
+          "styledMacroF1": 0.5629512836864179
+        },
+        {
+          "language": "csharp",
+          "documents": 8,
+          "characters": 9005,
+          "agreement": 0.6148806218767352,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.6680441307491506
+        },
+        {
+          "language": "glsl",
+          "documents": 6,
+          "characters": 5917,
+          "agreement": 0.6312320432651681,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.4778420138837007
+        },
+        {
+          "language": "hcl",
+          "documents": 4,
+          "characters": 4253,
+          "agreement": 0.7857982600517281,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.48272052167343193
+        },
+        {
+          "language": "kotlin",
+          "documents": 6,
+          "characters": 4125,
+          "agreement": 0.7115151515151515,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.46929889989365
+        },
+        {
+          "language": "nix",
+          "documents": 5,
+          "characters": 5946,
+          "agreement": 0.7300706357214934,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.4892087767902031
+        },
+        {
+          "language": "docker",
+          "documents": 5,
+          "characters": 6459,
+          "agreement": 0.8379006038086391,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.8906586504264702
+        },
+        {
+          "language": "rust",
+          "documents": 5,
+          "characters": 7734,
+          "agreement": 0.8893198862167054,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.704035488898137
+        },
+        {
+          "language": "cmake",
+          "documents": 10,
+          "characters": 14936,
+          "agreement": 0.7257632565613283,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.6498098871238792
+        },
+        {
+          "language": "r",
+          "documents": 6,
+          "characters": 12099,
+          "agreement": 0.6764195388048599,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0.16666666666666666,
+          "styledMacroF1": 0.4051039089785936
+        },
+        {
+          "language": "bat",
+          "documents": 4,
+          "characters": 2695,
+          "agreement": 0.7710575139146568,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.45963068591420225
+        },
+        {
+          "language": "gherkin",
+          "documents": 7,
+          "characters": 16044,
+          "agreement": 0.6073298429319371,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.2685626529172348
+        },
+        {
+          "language": "hlsl",
+          "documents": 5,
+          "characters": 7418,
+          "agreement": 0.5342410353194931,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.44719926455015885
+        },
+        {
+          "language": "java",
+          "documents": 9,
+          "characters": 5602,
+          "agreement": 0.7752588361299536,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.6758068737156455
+        },
+        {
+          "language": "lua",
+          "documents": 7,
+          "characters": 4383,
+          "agreement": 0.5309148984713666,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.2919309018270353
+        },
+        {
+          "language": "matlab",
+          "documents": 8,
+          "characters": 5593,
+          "agreement": 0.44788128017164314,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.3854368590928824
+        },
+        {
+          "language": "asm",
+          "documents": 7,
+          "characters": 3214,
+          "agreement": 0.24673304293714998,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.028444444444444446
+        },
+        {
+          "language": "perl",
+          "documents": 5,
+          "characters": 4696,
+          "agreement": 0.5283219761499148,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.23605279544929267
+        },
+        {
+          "language": "sql",
+          "documents": 4,
+          "characters": 5913,
+          "agreement": 0.18755284965330626,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.16266028433064647
+        },
+        {
+          "language": "powershell",
+          "documents": 9,
+          "characters": 5350,
+          "agreement": 0.640373831775701,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.5177262741454011
+        },
+        {
+          "language": "liquid",
+          "documents": 2,
+          "characters": 4395,
+          "agreement": 0.12491467576791809,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": null
+        },
+        {
+          "language": "solidity",
+          "documents": 5,
+          "characters": 5912,
+          "agreement": 0.560893098782138,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.4892896457543559
+        },
+        {
+          "language": "awk",
+          "documents": 11,
+          "characters": 3544,
+          "agreement": 0.6944130925507901,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.3530000065061756
+        },
+        {
+          "language": "shellscript",
+          "documents": 15,
+          "characters": 4193,
+          "agreement": 0.49868829000715476,
+          "coverage": 0.9980920581922251,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.4198818627419924
+        },
+        {
+          "language": "fortran-free-form",
+          "documents": 11,
+          "characters": 4029,
+          "agreement": 0.4792752544055597,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.2881161673678885
+        }
+      ],
+      "assets": [
+        {
+          "name": "/assets/index-YyAPobaA.js",
+          "bytes": 4618,
+          "gzipBytes": 2249,
+          "sha256": "4fffdeafd2fc64de22221eb16e409b18493922cbe3f9030bcd8c3de348f0d295"
+        },
+        {
+          "name": "/assets/decode-CqpFg_sN.js",
+          "bytes": 356,
+          "gzipBytes": 252,
+          "sha256": "5ca37673f19d738d5aab96aae659c95f57cf7f4aaa1ace49e5e195bd0801b6f7"
+        },
+        {
+          "name": "/assets/artifact-DoCQXp6i-Dpvx-hyl.js",
+          "bytes": 97846,
+          "gzipBytes": 27648,
+          "sha256": "5f6011444bf36d41099fe577f8795016dc995da2a7b77e97010835ce811894bb"
+        },
+        {
+          "name": "/assets/model-BGu3RlS1.js",
+          "bytes": 206351,
+          "gzipBytes": 149195,
+          "sha256": "b2e97f7e28190c4ea6c0f2d2ae87406ce923d85627d20ca7553c084fee589f38"
+        },
+        {
+          "name": "/assets/tensor-predictor-DNLNoKGv-DqEiXJAz.js",
+          "bytes": 1186,
+          "gzipBytes": 587,
+          "sha256": "7b318541f4175c0d82cde0c435c88ab22f239638bfc9402c3915bceaf6696f16"
+        },
+        {
+          "name": "/assets/recurrent-DldG9s3H-D6mRjp9x.js",
+          "bytes": 929,
+          "gzipBytes": 548,
+          "sha256": "83d9f9971c513ed689a5ebea8fb903814281923cf7bad2ad855434403a5d59cd"
+        },
+        {
+          "name": "/assets/features-CsZf7J0e-BS9Kf9h0.js",
+          "bytes": 971,
+          "gzipBytes": 589,
+          "sha256": "698a1f73879da1594d3eefe97c56ea49e05e269817b936edbd3fd6c63995d546"
+        },
+        {
+          "name": "/assets/initialize-D6yKU6gH-C04ZEUEZ.js",
+          "bytes": 7170,
+          "gzipBytes": 2115,
+          "sha256": "e25fa9dc9227e08e702aa3d06aedeb9741e2c5c67236aa74f364790329d38cf3"
+        },
+        {
+          "name": "/assets/matchbox_wasm_bg-DY7CjDX4.wasm",
+          "bytes": 775719,
+          "gzipBytes": 201281,
+          "sha256": "2164745266541c3d675dc21e82365243e83d0160c6adc1996fc6b2f65c9cfd6e"
+        }
+      ],
+      "downloadBytes": 1095146,
+      "downloadGzipBytes": 384464
+    },
+    {
+      "engine": "matchbox-gpu",
+      "initializationMs": 347,
+      "repeatP50Ms": 4,
+      "repeatP95Ms": 14.699999928474426,
+      "p50Ms": 5.200000047683716,
+      "p95Ms": 17.299999952316284,
+      "statuses": {
+        "partial": 333,
+        "uncertain": 2,
+        "ok": 1
+      },
+      "quality": {
+        "documents": 336,
+        "characters": 750030,
+        "agreement": 0.7756929722811088,
+        "coverage": 0.999960001599936,
+        "exactSpans": 0.002976190476190476,
+        "exactLabels": 0.008928571428571428,
+        "styledMacroF1": 0.6555615345209974,
+        "classes": [
+          {
+            "label": "plain",
+            "support": 255266,
+            "f1": 0.7201807687073196
+          },
+          {
+            "label": "comment",
+            "support": 29539,
+            "f1": 0.6496428148557446
+          },
+          {
+            "label": "string",
+            "support": 327769,
+            "f1": 0.8971724912466142
+          },
+          {
+            "label": "number",
+            "support": 5599,
+            "f1": 0.6821185888485526
+          },
+          {
+            "label": "keyword",
+            "support": 36803,
+            "f1": 0.542926766101216
+          },
+          {
+            "label": "type",
+            "support": 17156,
+            "f1": 0.6128534992572662
+          },
+          {
+            "label": "function",
+            "support": 17060,
+            "f1": 0.5622192450153677
+          },
+          {
+            "label": "constant",
+            "support": 6408,
+            "f1": 0.6359848484848485
+          },
+          {
+            "label": "operator",
+            "support": 54430,
+            "f1": 0.6615740223583698
+          }
+        ],
+        "confusion": [
+          [179917, 3217, 29101, 686, 19258, 4808, 830, 480, 16957, 12],
+          [7119, 16460, 2720, 71, 1509, 559, 66, 36, 999, 0],
+          [19803, 780, 298771, 276, 2711, 515, 73, 97, 4743, 0],
+          [892, 104, 745, 3664, 39, 47, 0, 31, 77, 0],
+          [10761, 151, 1093, 115, 23060, 925, 67, 52, 578, 1],
+          [3588, 48, 1765, 4, 600, 10933, 126, 77, 10, 5],
+          [8363, 16, 356, 2, 581, 538, 7134, 14, 56, 0],
+          [2162, 105, 114, 306, 114, 191, 20, 3358, 31, 7],
+          [11773, 254, 3594, 20, 272, 7, 2, 7, 38496, 5]
+        ]
+      },
+      "languages": [
+        {
+          "language": "html",
+          "documents": 22,
+          "characters": 134802,
+          "agreement": 0.7308051809320336,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.4126302549005413
+        },
+        {
+          "language": "markdown",
+          "documents": 6,
+          "characters": 32560,
+          "agreement": 0.7954238329238329,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.5673290166093606
+        },
+        {
+          "language": "css",
+          "documents": 34,
+          "characters": 58543,
+          "agreement": 0.7723724441863246,
+          "coverage": 0.9996242078472234,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.6487855383898813
+        },
+        {
+          "language": "go",
+          "documents": 6,
+          "characters": 16796,
+          "agreement": 0.7721481305072636,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.7816260342181989
+        },
+        {
+          "language": "javascript",
+          "documents": 36,
+          "characters": 284109,
+          "agreement": 0.8951599562139883,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.7331930509724295
+        },
+        {
+          "language": "python",
+          "documents": 5,
+          "characters": 10184,
+          "agreement": 0.8539866457187746,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.7560590663342843
+        },
+        {
+          "language": "dart",
+          "documents": 9,
+          "characters": 7444,
+          "agreement": 0.7208490059108007,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.488127789378875
+        },
+        {
+          "language": "typescript",
+          "documents": 12,
+          "characters": 8017,
+          "agreement": 0.7079955095422228,
+          "coverage": 1,
+          "exactSpans": 0.08333333333333333,
+          "exactLabels": 0.08333333333333333,
+          "styledMacroF1": 0.6771527859977997
+        },
+        {
+          "language": "c",
+          "documents": 5,
+          "characters": 4830,
+          "agreement": 0.7919254658385093,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.7595368763270006
+        },
+        {
+          "language": "php",
+          "documents": 4,
+          "characters": 10567,
+          "agreement": 0.817072016655626,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.6555986731465523
+        },
+        {
+          "language": "ruby",
+          "documents": 3,
+          "characters": 5176,
+          "agreement": 0.7984930448222566,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.4224479446425474
+        },
+        {
+          "language": "swift",
+          "documents": 4,
+          "characters": 6167,
+          "agreement": 0.6863953299821631,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.37771752838982203
+        },
+        {
+          "language": "diff",
+          "documents": 11,
+          "characters": 4771,
+          "agreement": 0.45755606791029135,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.15448275862068966
+        },
+        {
+          "language": "make",
+          "documents": 6,
+          "characters": 6042,
+          "agreement": 0.632406487917908,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.3806911101753051
+        },
+        {
+          "language": "cpp",
+          "documents": 9,
+          "characters": 6567,
+          "agreement": 0.6063651591289783,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0.1111111111111111,
+          "styledMacroF1": 0.5629512836864179
+        },
+        {
+          "language": "csharp",
+          "documents": 8,
+          "characters": 9005,
+          "agreement": 0.6148806218767352,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.6680441307491506
+        },
+        {
+          "language": "glsl",
+          "documents": 6,
+          "characters": 5917,
+          "agreement": 0.6312320432651681,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.4778420138837007
+        },
+        {
+          "language": "hcl",
+          "documents": 4,
+          "characters": 4253,
+          "agreement": 0.7857982600517281,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.48272052167343193
+        },
+        {
+          "language": "kotlin",
+          "documents": 6,
+          "characters": 4125,
+          "agreement": 0.7115151515151515,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.46929889989365
+        },
+        {
+          "language": "nix",
+          "documents": 5,
+          "characters": 5946,
+          "agreement": 0.7300706357214934,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.4892087767902031
+        },
+        {
+          "language": "docker",
+          "documents": 5,
+          "characters": 6459,
+          "agreement": 0.8379006038086391,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.8906586504264702
+        },
+        {
+          "language": "rust",
+          "documents": 5,
+          "characters": 7734,
+          "agreement": 0.8893198862167054,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.704035488898137
+        },
+        {
+          "language": "cmake",
+          "documents": 10,
+          "characters": 14936,
+          "agreement": 0.7257632565613283,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.6498098871238792
+        },
+        {
+          "language": "r",
+          "documents": 6,
+          "characters": 12099,
+          "agreement": 0.6764195388048599,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0.16666666666666666,
+          "styledMacroF1": 0.4051039089785936
+        },
+        {
+          "language": "bat",
+          "documents": 4,
+          "characters": 2695,
+          "agreement": 0.7710575139146568,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.45963068591420225
+        },
+        {
+          "language": "gherkin",
+          "documents": 7,
+          "characters": 16044,
+          "agreement": 0.6073298429319371,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.2685626529172348
+        },
+        {
+          "language": "hlsl",
+          "documents": 5,
+          "characters": 7418,
+          "agreement": 0.5342410353194931,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.44719926455015885
+        },
+        {
+          "language": "java",
+          "documents": 9,
+          "characters": 5602,
+          "agreement": 0.7752588361299536,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.6758068737156455
+        },
+        {
+          "language": "lua",
+          "documents": 7,
+          "characters": 4383,
+          "agreement": 0.5309148984713666,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.2919309018270353
+        },
+        {
+          "language": "matlab",
+          "documents": 8,
+          "characters": 5593,
+          "agreement": 0.44788128017164314,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.3854368590928824
+        },
+        {
+          "language": "asm",
+          "documents": 7,
+          "characters": 3214,
+          "agreement": 0.24673304293714998,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.028444444444444446
+        },
+        {
+          "language": "perl",
+          "documents": 5,
+          "characters": 4696,
+          "agreement": 0.5283219761499148,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.23605279544929267
+        },
+        {
+          "language": "sql",
+          "documents": 4,
+          "characters": 5913,
+          "agreement": 0.18755284965330626,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.16266028433064647
+        },
+        {
+          "language": "powershell",
+          "documents": 9,
+          "characters": 5350,
+          "agreement": 0.640373831775701,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.5177262741454011
+        },
+        {
+          "language": "liquid",
+          "documents": 2,
+          "characters": 4395,
+          "agreement": 0.12491467576791809,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": null
+        },
+        {
+          "language": "solidity",
+          "documents": 5,
+          "characters": 5912,
+          "agreement": 0.560893098782138,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.4892896457543559
+        },
+        {
+          "language": "awk",
+          "documents": 11,
+          "characters": 3544,
+          "agreement": 0.6944130925507901,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.3530000065061756
+        },
+        {
+          "language": "shellscript",
+          "documents": 15,
+          "characters": 4193,
+          "agreement": 0.49868829000715476,
+          "coverage": 0.9980920581922251,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.4198818627419924
+        },
+        {
+          "language": "fortran-free-form",
+          "documents": 11,
+          "characters": 4029,
+          "agreement": 0.4792752544055597,
+          "coverage": 1,
+          "exactSpans": 0,
+          "exactLabels": 0,
+          "styledMacroF1": 0.2881161673678885
+        }
+      ],
+      "assets": [
+        {
+          "name": "/assets/index-YyAPobaA.js",
+          "bytes": 4618,
+          "gzipBytes": 2249,
+          "sha256": "4fffdeafd2fc64de22221eb16e409b18493922cbe3f9030bcd8c3de348f0d295"
+        },
+        {
+          "name": "/assets/decode-CqpFg_sN.js",
+          "bytes": 356,
+          "gzipBytes": 252,
+          "sha256": "5ca37673f19d738d5aab96aae659c95f57cf7f4aaa1ace49e5e195bd0801b6f7"
+        },
+        {
+          "name": "/assets/model-BGu3RlS1.js",
+          "bytes": 206351,
+          "gzipBytes": 149195,
+          "sha256": "b2e97f7e28190c4ea6c0f2d2ae87406ce923d85627d20ca7553c084fee589f38"
+        },
+        {
+          "name": "/assets/artifact-DoCQXp6i-Dpvx-hyl.js",
+          "bytes": 97846,
+          "gzipBytes": 27648,
+          "sha256": "5f6011444bf36d41099fe577f8795016dc995da2a7b77e97010835ce811894bb"
+        },
+        {
+          "name": "/assets/features-CsZf7J0e-BS9Kf9h0.js",
+          "bytes": 971,
+          "gzipBytes": 589,
+          "sha256": "698a1f73879da1594d3eefe97c56ea49e05e269817b936edbd3fd6c63995d546"
+        },
+        {
+          "name": "/assets/gpu-Dx10yfJZ-C1CLmKG0.js",
+          "bytes": 23602,
+          "gzipBytes": 7842,
+          "sha256": "cbe9f8e0c5af371d70d91823487c79d3dd9a497f790fbfca4fece6950d1aa448"
+        },
+        {
+          "name": "/assets/matchbox_webgpu_bg-DKj2D7Dw.wasm",
+          "bytes": 7096995,
+          "gzipBytes": 1303525,
+          "sha256": "3c9ecebeb2e36fb0f9668b2ad4beb91156a155a21c7c31c428fa55ba0ca2778b"
+        }
+      ],
+      "downloadBytes": 7430739,
+      "downloadGzipBytes": 1491300
+    }
+  ],
+  "hardware": "Apple M2, 8 GiB RAM",
+  "method": {
+    "split": "validation",
+    "warmupDocuments": 20,
+    "passes": 2,
+    "trainingOrCompilationConcurrent": false,
+    "download": "Fetched JavaScript and WASM, including benchmark harness. Gzip is the sum of individually gzip-compressed bodies, not measured network transfer.",
+    "initialization": "Dynamic import and first parse of const answer = 42;. Browser contexts are fresh; OS shader caches are not cleared."
+  },
+  "parity": {
+    "documents": 336,
+    "statusDisagreements": 0,
+    "maxConfidenceDifference": 0.000005364418029785156,
+    "outputOrUncertainRangeDisagreements": 2,
+    "decodedValueDisagreements": 0,
+    "uncertainRangeDifferences": [
+      {
+        "index": 78,
+        "identicalValues": true,
+        "cpuOnlyRanges": [
+          {
+            "start": 96442,
+            "end": 96447,
+            "confidence": 0.7499942779541016
+          }
+        ],
+        "gpuOnlyRanges": []
+      },
+      {
+        "index": 244,
+        "identicalValues": true,
+        "cpuOnlyRanges": [
+          {
+            "start": 35,
+            "end": 36,
+            "confidence": 0.7499997615814209
+          }
+        ],
+        "gpuOnlyRanges": []
+      }
+    ]
+  },
+  "training": [
+    {
+      "bestEpoch": 3,
+      "epochs": 8,
+      "history": [
+        {
+          "epoch": 1,
+          "fitMs": 107535.009125,
+          "learningRate": 0.003,
+          "loss": 0.7584050875206381,
+          "styledMacroF1": 0.5918273757286954,
+          "validationAccuracy": 0.7453408530325454,
+          "validationMs": 3568.4257079999998
+        },
+        {
+          "epoch": 2,
+          "fitMs": 108914.853417,
+          "learningRate": 0.0028564048584585077,
+          "loss": 0.474750534876568,
+          "styledMacroF1": 0.6250230255965281,
+          "validationAccuracy": 0.7549271362478834,
+          "validationMs": 3599.089708
+        },
+        {
+          "epoch": 3,
+          "fitMs": 119755.526667,
+          "learningRate": 0.0024540602126951637,
+          "loss": 0.377282744786553,
+          "styledMacroF1": 0.6513694533408263,
+          "validationAccuracy": 0.7733104009172966,
+          "validationMs": 4827.664917
+        },
+        {
+          "epoch": 4,
+          "fitMs": 116755.86074999999,
+          "learningRate": 0.001872655354236656,
+          "loss": 0.31801589668771163,
+          "styledMacroF1": 0.5983717890058192,
+          "validationAccuracy": 0.7546364812074183,
+          "validationMs": 3988.6618750000002
+        },
+        {
+          "epoch": 5,
+          "fitMs": 122900.668083,
+          "learningRate": 0.0012273446457633443,
+          "loss": 0.27515036081247757,
+          "styledMacroF1": 0.6548061213364667,
+          "validationAccuracy": 0.7599269362558831,
+          "validationMs": 4533.446125
+        },
+        {
+          "epoch": 6,
+          "fitMs": 121785.207584,
+          "learningRate": 0.0006459397873048366,
+          "loss": 0.24443533053468364,
+          "styledMacroF1": 0.6448169962170648,
+          "validationAccuracy": 0.75223124408357,
+          "validationMs": 3827.882625
+        },
+        {
+          "epoch": 7,
+          "fitMs": 179320.718583,
+          "learningRate": 0.00024359514154149244,
+          "loss": 0.2235341233349021,
+          "styledMacroF1": 0.6429619660648467,
+          "validationAccuracy": 0.7489540418383265,
+          "validationMs": 6601.274416
+        },
+        {
+          "epoch": 8,
+          "fitMs": 195686.31729099998,
+          "learningRate": 0.0001,
+          "loss": 0.21465776375172066,
+          "styledMacroF1": 0.6449502024234424,
+          "validationAccuracy": 0.750740637041185,
+          "validationMs": 6833.417334
+        }
+      ],
+      "learningRate": {
+        "end": 0.0001,
+        "schedule": "cosine",
+        "start": 0.003
+      },
+      "manifest": {
+        "encoding": "gpu-lexer-v3 mechanical parts, excluding pairCode feature rows",
+        "featureCount": 756,
+        "labels": [
+          "plain",
+          "comment",
+          "string",
+          "number",
+          "keyword",
+          "type",
+          "function",
+          "constant",
+          "operator"
+        ],
+        "splits": [
+          {
+            "characters": 9392116,
+            "maxParts": 23858,
+            "parts": 4554837,
+            "records": 4174,
+            "sha256": "748fa197f1bb2133a83159c1e7f8a2985438e2ba92854ce7321ac4063e55e6d3",
+            "split": "train"
+          },
+          {
+            "characters": 750030,
+            "maxParts": 54101,
+            "parts": 369569,
+            "records": 336,
+            "sha256": "659c1b8997bbaf7b3057d318aa916e9e41c7af1f8bb11d4d4f44e2b26362c1ae",
+            "split": "validation"
+          },
+          {
+            "characters": 1446363,
+            "maxParts": 10198,
+            "parts": 700533,
+            "records": 1915,
+            "sha256": "cf1be2b37a22d581552f43e114b1dd958311e820e233f982234365f0968b46cd",
+            "split": "test"
+          }
+        ],
+        "supervision": "non-whitespace Unicode code-point counts per label per part; whitespace is context-only",
+        "upstreamRevision": "1e514fd681e31d6b19296f985fb01d8fdc0ae74f"
+      },
+      "optimizerMs": 1072654.1615,
+      "parameters": 36233,
+      "researchOnly": true,
+      "seed": 42,
+      "selectionMs": 37779.862708,
+      "selectionSplit": "validation",
+      "validationAccuracy": 0.7733104009172966,
+      "wallMs": 1112700.454917,
+      "lossWeighting": "code-points",
+      "validation": {
+        "accuracy": 0.7733104009172966,
+        "styledMacroF1": 0.6513694533408263,
+        "confusion": [
+          [176349, 6187, 28457, 649, 19148, 4827, 782, 465, 18402],
+          [6183, 17155, 2703, 70, 1519, 587, 52, 47, 1223],
+          [19736, 1064, 298464, 240, 2698, 468, 48, 120, 4931],
+          [895, 114, 764, 3652, 31, 41, 0, 29, 73],
+          [10383, 155, 1126, 139, 23374, 895, 97, 46, 588],
+          [3599, 63, 1768, 4, 675, 10832, 132, 74, 9],
+          [8734, 16, 352, 2, 610, 508, 6766, 14, 58],
+          [2020, 129, 102, 302, 124, 169, 20, 3505, 37],
+          [8959, 2090, 3156, 22, 271, 7, 2, 14, 39909]
+        ]
+      }
+    },
+    {
+      "bestEpoch": 7,
+      "epochs": 8,
+      "history": [
+        {
+          "epoch": 1,
+          "fitMs": 121829.656542,
+          "learningRate": 0.003,
+          "loss": 0.7607765983699935,
+          "styledMacroF1": 0.577308443808486,
+          "validationAccuracy": 0.7526285615242057,
+          "validationMs": 4197.545292
+        },
+        {
+          "epoch": 2,
+          "fitMs": 129024.7785,
+          "learningRate": 0.0028564048584585077,
+          "loss": 0.4888661253505668,
+          "styledMacroF1": 0.5784219692725694,
+          "validationAccuracy": 0.7548164740077064,
+          "validationMs": 3686.8916249999997
+        },
+        {
+          "epoch": 3,
+          "fitMs": 128427.36437499999,
+          "learningRate": 0.0024540602126951637,
+          "loss": 0.39331918970985863,
+          "styledMacroF1": 0.6325009392162981,
+          "validationAccuracy": 0.7791141687665827,
+          "validationMs": 4609.149458
+        },
+        {
+          "epoch": 4,
+          "fitMs": 131096.948167,
+          "learningRate": 0.001872655354236656,
+          "loss": 0.33555440229914313,
+          "styledMacroF1": 0.6523511656299152,
+          "validationAccuracy": 0.7783088676452942,
+          "validationMs": 3794.6167499999997
+        },
+        {
+          "epoch": 5,
+          "fitMs": 189748.317667,
+          "learningRate": 0.0012273446457633443,
+          "loss": 0.28800667734727886,
+          "styledMacroF1": 0.6586399041539397,
+          "validationAccuracy": 0.775944962201512,
+          "validationMs": 5857.336958
+        },
+        {
+          "epoch": 6,
+          "fitMs": 203366.56891600002,
+          "learningRate": 0.0006459397873048366,
+          "loss": 0.2516420442500375,
+          "styledMacroF1": 0.6614475627003575,
+          "validationAccuracy": 0.7763276135621242,
+          "validationMs": 4008.9515
+        },
+        {
+          "epoch": 7,
+          "fitMs": 163980.20675,
+          "learningRate": 0.00024359514154149244,
+          "loss": 0.227418262054506,
+          "styledMacroF1": 0.658498181663321,
+          "validationAccuracy": 0.7808434329293495,
+          "validationMs": 3516.46225
+        },
+        {
+          "epoch": 8,
+          "fitMs": 113884.492209,
+          "learningRate": 0.0001,
+          "loss": 0.2178374173344878,
+          "styledMacroF1": 0.6568671916127332,
+          "validationAccuracy": 0.779507486367212,
+          "validationMs": 3464.347042
+        }
+      ],
+      "learningRate": {
+        "end": 0.0001,
+        "schedule": "cosine",
+        "start": 0.003
+      },
+      "lossWeighting": "parts",
+      "manifest": {
+        "encoding": "gpu-lexer-v3 mechanical parts, excluding pairCode feature rows",
+        "featureCount": 756,
+        "labels": [
+          "plain",
+          "comment",
+          "string",
+          "number",
+          "keyword",
+          "type",
+          "function",
+          "constant",
+          "operator"
+        ],
+        "splits": [
+          {
+            "characters": 9392116,
+            "maxParts": 23858,
+            "parts": 4554837,
+            "records": 4174,
+            "sha256": "748fa197f1bb2133a83159c1e7f8a2985438e2ba92854ce7321ac4063e55e6d3",
+            "split": "train"
+          },
+          {
+            "characters": 750030,
+            "maxParts": 54101,
+            "parts": 369569,
+            "records": 336,
+            "sha256": "659c1b8997bbaf7b3057d318aa916e9e41c7af1f8bb11d4d4f44e2b26362c1ae",
+            "split": "validation"
+          },
+          {
+            "characters": 1446363,
+            "maxParts": 10198,
+            "parts": 700533,
+            "records": 1915,
+            "sha256": "cf1be2b37a22d581552f43e114b1dd958311e820e233f982234365f0968b46cd",
+            "split": "test"
+          }
+        ],
+        "supervision": "non-whitespace Unicode code-point counts per label per part; whitespace is context-only",
+        "upstreamRevision": "1e514fd681e31d6b19296f985fb01d8fdc0ae74f"
+      },
+      "optimizerMs": 1181358.3331260001,
+      "parameters": 36233,
+      "researchOnly": true,
+      "seed": 42,
+      "selectionMs": 33135.300875,
+      "selectionSplit": "validation",
+      "validationAccuracy": 0.7808434329293495,
+      "wallMs": 1216527.572458,
+      "validation": {
+        "accuracy": 0.7808434329293495,
+        "styledMacroF1": 0.658498181663321,
+        "confusion": [
+          [183392, 10911, 22116, 583, 15577, 1372, 2353, 613, 18349],
+          [5606, 19212, 1750, 60, 1097, 493, 167, 94, 1060],
+          [20357, 1858, 298818, 100, 1666, 143, 349, 80, 4398],
+          [828, 122, 693, 3666, 30, 49, 29, 73, 109],
+          [13727, 213, 1562, 47, 18246, 396, 2000, 9, 603],
+          [7089, 71, 1721, 0, 566, 7341, 253, 96, 19],
+          [4200, 32, 235, 0, 257, 28, 12251, 0, 57],
+          [2415, 58, 87, 116, 89, 54, 41, 3495, 53],
+          [9355, 3101, 2552, 2, 144, 7, 11, 23, 39235]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "formatVersion": 1,
+  "packageSource": "local workspace build",
+  "machine": {
+    "cpu": "Apple M2",
+    "memoryBytes": 8589934592,
+    "platform": "darwin-arm64"
+  },
+  "dataset": [
+    {
+      "split": "train",
+      "sha256": "748fa197f1bb2133a83159c1e7f8a2985438e2ba92854ce7321ac4063e55e6d3"
+    },
+    {
+      "split": "validation",
+      "sha256": "659c1b8997bbaf7b3057d318aa916e9e41c7af1f8bb11d4d4f44e2b26362c1ae"
+    },
+    {
+      "split": "test",
+      "sha256": "cf1be2b37a22d581552f43e114b1dd958311e820e233f982234365f0968b46cd"
+    }
+  ],
+  "examples": {
+    "train": 4174,
+    "validation": 336,
+    "eval": 1915
+  },
+  "parts": {
+    "train": 4554837,
+    "validation": 369569
+  },
+  "encoderAndSupervisionParity": [
+    {
+      "split": "train",
+      "documents": 4174,
+      "parts": 4554837,
+      "features": "exact",
+      "targets": "exact"
+    },
+    {
+      "split": "validation",
+      "documents": 336,
+      "parts": 369569,
+      "features": "exact",
+      "targets": "exact"
+    },
+    {
+      "split": "test",
+      "documents": 1915,
+      "parts": 700533,
+      "features": "exact",
+      "targets": "exact"
+    }
+  ],
+  "training": {
+    "epochs": 8,
+    "seed": 42,
+    "batchParts": 4096,
+    "learningRate": 0.003,
+    "selectedEpoch": 3,
+    "parameters": 36233,
+    "optimizerAndValidationMs": 899466.316875,
+    "preparationTrainingAndParityMs": 911366.601333,
+    "validationLabelAccuracy": [
+      0.7453408530325454, 0.7547271442475635, 0.7756996386811195, 0.7519499220031198,
+      0.7574603682519366, 0.7725624308360999, 0.7541618335266589, 0.7573603722517765
+    ],
+    "loss": [
+      0.7584050893783569, 0.47822508215904236, 0.3856467306613922, 0.336350679397583,
+      0.30389633774757385, 0.28572431206703186, 0.26142653822898865, 0.2419741153717041
+    ],
+    "supervisionSha256": "f5aff8afb36beaf4df4ccf639993a5ff597f13cd83bd712d47243d7803639f63"
+  },
+  "artifact": {
+    "formatVersion": 5,
+    "bytes": 194850,
+    "sha256": "e6ed51d79de987e9a695a126617fdc5ec3d33ea871341aae9bc585c8d65625de",
+    "weightsBytes": 145333,
+    "weightsSha256": "5aabcecee7b489ff434eeccfc8d198bbef1e674f92a6fe758a4f1c1ef1f0a84a",
+    "sharedWasmBytes": 775719,
+    "sharedWasmGzipBytes": 201281
+  },
+  "exportParity": {
+    "examples": 352,
+    "tokens": 409442,
+    "maxConfidenceError": 8.940696716308594e-7,
+    "confidenceTolerance": 0.0001,
+    "labelDisagreements": 0,
+    "acceptanceDisagreements": 0
+  },
+  "researchReproduction": {
+    "validationScoresExactlyMatch": true,
+    "testConfusionExactlyMatches": true
+  },
+  "test": {
+    "diagnosticCodePointAccuracy": 0.8249851524133291,
+    "styledMacroF1": 0.7690482724099926,
+    "confidenceThreshold": 0.75,
+    "confidentCoverage": 0.7708341543582075,
+    "confidentCodePointAccuracy": 0.9082290345553795,
+    "defaultParse": {
+      "exactAccuracy": 0.10391644908616188,
+      "accepted": 344,
+      "acceptedAccuracy": 0.5784883720930233,
+      "abstentionRate": 0.8203655352480418,
+      "invalidOutputRate": 0
+    }
+  },
+  "browser": {
+    "packageSource": "local workspace build",
+    "browser": "153.0.8010.12",
+    "datasetSha256": "cf1be2b37a22d581552f43e114b1dd958311e820e233f982234365f0968b46cd",
+    "measurements": {
+      "runtime": "Burn WASM CPU",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "coldFirstParseMs": 478.6999999284744,
+      "samples": 1915,
+      "p50Ms": 0.8999999761581421,
+      "p95Ms": 21.100000023841858,
+      "statuses": {
+        "ok": 344,
+        "partial": 1387,
+        "uncertain": 184
+      },
+      "scoredCodePoints": 1446363,
+      "candidateCodePoints": 1445607,
+      "candidateAgreement": 0.8252007634163365,
+      "confidentCoverage": 0.7708341543582075,
+      "confidentAgreement": 0.9082290345553795
+    },
+    "offlineProbe": {
+      "runtime": "Burn WASM CPU",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "coldFirstParseMs": 2.8000000715255737,
+      "samples": 1,
+      "p50Ms": 2.5,
+      "p95Ms": 2.5,
+      "statuses": {
+        "ok": 0,
+        "partial": 1,
+        "uncertain": 0
+      },
+      "scoredCodePoints": 308,
+      "candidateCodePoints": 308,
+      "candidateAgreement": 0.9448051948051948,
+      "confidentCoverage": 0.9058441558441559,
+      "confidentAgreement": 1
+    },
+    "notes": "Production Vite build. One timed partial parse per full test document after 20 warmup documents. Cold parse includes model/runtime initialization. No tokenizer-only timing or accepted-output quality claim. Development-machine timings may overlap training/checks."
+  },
+  "notes": "Full frozen corpus, no test-based selection or truncation. Local-build measurements, not released-package consumer results. Confidence is uncalibrated. Timing overlaps repository checks; no isolated performance comparison. The research export explicitly sets minAccuracy to zero and is not a production quality gate."
+}

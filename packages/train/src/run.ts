@@ -5,6 +5,10 @@ export async function run(
   progress?: (epoch: number, loss: number) => void,
 ) {
   const project = await loadProject(path);
+  if (project.config.sequence?.recurrent) {
+    const { runRecurrent } = await import("./models/recurrent/run.js");
+    return runRecurrent(command, project, progress);
+  }
   if (project.config.sequence) {
     const { runSequence } = await import("./models/sequence/index.js");
     return runSequence(command, project, progress);

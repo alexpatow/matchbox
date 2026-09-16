@@ -62,3 +62,33 @@ test("directory-backed tasks are discovered from the application and inside the 
     await rm(root, { recursive: true, force: true });
   }
 });
+
+test("recurrent discovery resolves training defaults and preserves explicit size limits", async () => {
+  for (const maxBytes of [undefined, 42000]) {
+    const root = await mkdtemp(resolve(tmpdir(), "matchbox-recurrent-config-"));
+    try {
+      for (const name of ["parser", "recipe", "decode"]) {
+        await writeFile(resolve(root, `${name}.ts`), "export default {};\n");
+      }
+      const pipeline = {
+        prediction: { kind: "recurrent-token-classifier" },
+        acceptance: { maxBytes },
+      };
+      await writeFile(
+        resolve(root, "pipeline.ts"),
+        `export default ${JSON.stringify(pipeline)};\n`,
+      );
+      const { config } = await loadConfig(root);
+      expect(config.maxBytes).toBe(maxBytes ?? 256000);
+      expect(config.sequence?.recurrent).toEqual({
+        epochs: 8,
+        learningRate: 0.003,
+        batchParts: 4096,
+        maxInputLength: 262144,
+        maxParts: 65536,
+      });
+    } finally {
+      await rm(root, { recursive: true, force: true });
+    }
+  }
+});

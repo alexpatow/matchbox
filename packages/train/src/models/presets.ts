@@ -8,3 +8,22 @@ export function tokenClassifier(
 ) {
   return { kind: "token-classifier", recipe: "./recipe", decode: "./decode", ...options } as const;
 }
+/** Whole-sequence bidirectional state, explicit part features and span supervision. */
+export function recurrentTokenClassifier(
+  options: {
+    recipe?: string;
+    decode?: string;
+    epochs?: number;
+    learningRate?: number;
+    batchParts?: number;
+    maxInputLength?: number;
+    maxParts?: number;
+  } = {},
+) {
+  return {
+    kind: "recurrent-token-classifier",
+    recipe: "./recipe",
+    decode: "./decode",
+    ...options,
+  } as const;
+}

@@ -5,3 +5,12 @@ export { readSequenceArtifact, tokenize, windows } from "./sequence/index.js";
 export type { SequenceArtifact, WeightMatrix } from "./sequence/index.js";
 
 export { tensorPredictor } from "./tensor-predictor.js";
+export {
+  readRecurrentArtifact,
+  textPartsSchema,
+  textFeaturesSchema,
+  splitParts,
+  encodeParts,
+  featureCount,
+} from "./recurrent/index.js";
+export type { RecurrentArtifact } from "./recurrent/index.js";

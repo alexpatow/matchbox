@@ -77,3 +77,5 @@ For a paired document-level bootstrap interval, run `bun scripts/sequence-resear
 Training reports record preparation and native fit wall time separately, data hashes, model size, loss, and machine details. Use an operating-system resource monitor to record peak resident memory and total process time. Single-seed runs and single-machine timings establish an initial comparison, not a production quality or speed guarantee. Preserve immutable measurements and keep run commentary outside the repository.
 
 See the [character encoding and context measurements](research/sequence-context.md) for a full-corpus example of this evaluation protocol.
+
+See the [part-feature and recurrent-context experiment](research/sequence-parts.md) for a native research executable that preserves complete documents and compares explicit input features with learned bidirectional state. Its checkpoints are research records, not public browser artifacts.
