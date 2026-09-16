@@ -12,7 +12,13 @@ export const configSchema = z.strictObject({
   output: z.string().endsWith(".matchbox"),
   minAccuracy: z.number().min(0).max(1).default(0.95),
   maxBytes: z.number().positive().default(64000),
-  sequence: z.strictObject({ recipe: z.string(), decoder: z.string() }).optional(),
+  sequence: z
+    .strictObject({
+      recipe: z.string(),
+      decoder: z.string(),
+      contextRadius: z.number().int().min(1).max(16).optional(),
+    })
+    .optional(),
   challenges: z.string().optional(),
 });
 export async function loadConfig(path: string) {
@@ -37,6 +43,7 @@ export async function loadConfig(path: string) {
       defaults.sequence = {
         recipe: pipeline.prediction.recipe,
         decoder: pipeline.prediction.decode,
+        contextRadius: pipeline.prediction.contextRadius,
       };
     }
   } else if (!authored.sequence) {

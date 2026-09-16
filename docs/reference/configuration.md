@@ -13,17 +13,17 @@ export default {
 
 Paths resolve relative to the config's directory, normally `matchbox/<task>/`. Task config overrides pipeline acceptance values, which override defaults.
 
-| Field         | Type                                   | Default                                                                                      |
-| ------------- | -------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `task`        | String path.                           | `parser.ts` or `parser/parser.ts`.                                                           |
-| `train`       | String path.                           | `./data/train.jsonl`.                                                                        |
-| `validation`  | String path.                           | `./evals/validation.jsonl`.                                                                  |
-| `eval`        | String path.                           | `./evals/test.jsonl`.                                                                        |
-| `output`      | Path ending in `.matchbox`.            | Project-level `.matchbox/<task>/model.matchbox`.                                             |
-| `minAccuracy` | Number from 0 to 1.                    | `0.95`, unless set in the pipeline.                                                          |
-| `maxBytes`    | Positive number.                       | `64000`, unless set in the pipeline.                                                         |
-| `challenges`  | Optional JSON path.                    | `./evals/challenges.json` if present.                                                        |
-| `sequence`    | `{ recipe: string, decoder: string }`. | Derived from the token pipeline. This is a legacy configuration route; prefer `pipeline.ts`. |
+| Field         | Type                                                           | Default                                                                                      |
+| ------------- | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `task`        | String path.                                                   | `parser.ts` or `parser/parser.ts`.                                                           |
+| `train`       | String path.                                                   | `./data/train.jsonl`.                                                                        |
+| `validation`  | String path.                                                   | `./evals/validation.jsonl`.                                                                  |
+| `eval`        | String path.                                                   | `./evals/test.jsonl`.                                                                        |
+| `output`      | Path ending in `.matchbox`.                                    | Project-level `.matchbox/<task>/model.matchbox`.                                             |
+| `minAccuracy` | Number from 0 to 1.                                            | `0.95`, unless set in the pipeline.                                                          |
+| `maxBytes`    | Positive number.                                               | `64000`, unless set in the pipeline.                                                         |
+| `challenges`  | Optional JSON path.                                            | `./evals/challenges.json` if present.                                                        |
+| `sequence`    | `{ recipe: string, decoder: string, contextRadius?: number }`. | Derived from the token pipeline. This is a legacy configuration route; prefer `pipeline.ts`. |
 
 Unknown properties are rejected. JSON configuration files are not supported. Challenge JSON is an array of `{ input: string, output: null }` used by sequence reports.
 

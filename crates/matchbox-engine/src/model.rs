@@ -13,12 +13,24 @@ pub type Cpu = burn::backend::Flex;
 pub struct ModelConfig {
     pub vocabulary_size: usize,
     pub label_count: usize,
+    #[serde(default = "default_context_radius")]
+    pub context_radius: usize,
+}
+
+fn default_context_radius() -> usize {
+    1
 }
 
 impl ModelConfig {
+    pub fn window_size(&self) -> usize {
+        self.context_radius * 2 + 1
+    }
     pub fn validate(&self) -> Result<(), String> {
         if !(3..=10002).contains(&self.vocabulary_size) || !(2..=64).contains(&self.label_count) {
             return Err("Unsupported vocabulary or label count".into());
+        }
+        if !(1..=16).contains(&self.context_radius) {
+            return Err("Context radius must be between 1 and 16".into());
         }
         Ok(())
     }
@@ -40,7 +52,7 @@ impl<B: Backend> Model<B> {
                     max: 0.1,
                 })
                 .init(device),
-            hidden: LinearConfig::new(24, 16)
+            hidden: LinearConfig::new(config.window_size() * 8, 16)
                 .with_initializer(Initializer::XavierUniform { gain: 1.0 })
                 .init(device),
             output: LinearConfig::new(16, config.label_count)
@@ -72,7 +84,7 @@ impl<B: Backend> Model<B> {
             .map_err(|error| error.to_string())?;
         let model = Self::new(config, device).load_record(record);
         if model.embedding.weight.val().dims() != [config.vocabulary_size, 8]
-            || model.hidden.weight.val().dims() != [24, 16]
+            || model.hidden.weight.val().dims() != [config.window_size() * 8, 16]
             || model.output.weight.val().dims() != [16, config.label_count]
             || model.hidden.bias.as_ref().map(|bias| bias.val().dims()) != Some([16])
             || model.output.bias.as_ref().map(|bias| bias.val().dims())
@@ -84,14 +96,20 @@ impl<B: Backend> Model<B> {
     }
 }
 
-pub fn inputs<B: Backend>(values: Vec<i32>, device: &B::Device) -> Tensor<B, 2, Int> {
-    let rows = values.len() / 3;
-    Tensor::from_data(TensorData::new(values, [rows, 3]), device)
+pub fn inputs<B: Backend>(
+    config: &ModelConfig,
+    values: Vec<i32>,
+    device: &B::Device,
+) -> Tensor<B, 2, Int> {
+    let width = config.window_size();
+    let rows = values.len() / width;
+    Tensor::from_data(TensorData::new(values, [rows, width]), device)
 }
 
 pub fn validate_inputs(config: &ModelConfig, values: &[i32]) -> Result<(), String> {
-    if values.is_empty() || !values.len().is_multiple_of(3) {
-        return Err("Expected a nonempty batch of three-token windows".into());
+    config.validate()?;
+    if values.is_empty() || !values.len().is_multiple_of(config.window_size()) {
+        return Err("Expected a nonempty batch matching the configured context window".into());
     }
     if values
         .iter()
@@ -107,14 +125,18 @@ pub fn predict(
     config: &ModelConfig,
     values: Vec<i32>,
 ) -> Result<Vec<f32>, String> {
-    if values.len() > 3_000_000 {
-        return Err("Prediction batch exceeds 1,000,000 three-token windows".into());
+    config.validate()?;
+    if values.len() / config.window_size() > 1_000_000 {
+        return Err("Prediction batch exceeds 1,000,000 context windows".into());
     }
     validate_inputs(config, &values)?;
-    let scores = activation::softmax(model.forward(inputs(values, &Default::default())), 1)
-        .into_data()
-        .to_vec::<f32>()
-        .map_err(|error| error.to_string())?;
+    let scores = activation::softmax(
+        model.forward(inputs(config, values, &Default::default())),
+        1,
+    )
+    .into_data()
+    .to_vec::<f32>()
+    .map_err(|error| error.to_string())?;
     if scores.iter().any(|score| !score.is_finite()) {
         return Err("Model produced non-finite scores".into());
     }

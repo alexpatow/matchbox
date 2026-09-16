@@ -20,7 +20,7 @@ pub fn train(
 ) -> Result<TrainingResult, String> {
     config.validate()?;
     validate_inputs(&config, &values)?;
-    if labels.len() * 3 != values.len()
+    if labels.len() * config.window_size() != values.len()
         || labels
             .iter()
             .any(|&id| id < 0 || id as usize >= config.label_count)
@@ -36,8 +36,11 @@ pub fn train(
     let mut history = Vec::new();
     for epoch in 0..55 {
         let mut total = 0.0;
-        for (batch, targets) in values.chunks(128 * 3).zip(labels.chunks(128)) {
-            let output = model.forward(inputs(batch.to_vec(), &device));
+        for (batch, targets) in values
+            .chunks(128 * config.window_size())
+            .zip(labels.chunks(128))
+        {
+            let output = model.forward(inputs(&config, batch.to_vec(), &device));
             let target =
                 Tensor::from_data(TensorData::new(targets.to_vec(), [targets.len()]), &device);
             let loss = objective.forward(output, target);

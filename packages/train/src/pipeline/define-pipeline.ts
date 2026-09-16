@@ -5,6 +5,7 @@ export const pipelineSchema = z.strictObject({
     z.strictObject({
       kind: z.literal("token-classifier"),
       recipe: z.string().min(1).default("./recipe"),
+      contextRadius: z.number().int().min(1).max(16).optional(),
       decode: z.string().min(1).default("./decode"),
     }),
   ]),

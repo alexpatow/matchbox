@@ -6,9 +6,9 @@ interface NativeResult {
 }
 const require = createRequire(import.meta.url);
 export function predict(
-  config: { vocabularySize: number; labelCount: number },
+  config: { vocabularySize: number; labelCount: number; contextRadius?: number },
   weights: Uint8Array,
-  inputs: number[][],
+  inputs: number[][] | Int32Array,
 ): number[] {
   const native = require("#native") as {
     predict(config: string, weights: Buffer, inputs: Int32Array): number[];
@@ -16,13 +16,13 @@ export function predict(
   return native.predict(
     JSON.stringify(config),
     Buffer.from(weights),
-    Int32Array.from(inputs.flat()),
+    inputs instanceof Int32Array ? inputs : Int32Array.from(inputs.flat()),
   );
 }
 export function fit(
-  config: { vocabularySize: number; labelCount: number },
-  inputs: number[][],
-  labels: number[],
+  config: { vocabularySize: number; labelCount: number; contextRadius?: number },
+  inputs: number[][] | Int32Array,
+  labels: number[] | Int32Array,
   progress?: (epoch: number, loss: number) => void,
 ): Promise<NativeResult> {
   const native = require("#native") as {
@@ -35,8 +35,8 @@ export function fit(
   };
   return native.fit(
     JSON.stringify(config),
-    Int32Array.from(inputs.flat()),
-    Int32Array.from(labels),
+    inputs instanceof Int32Array ? inputs : Int32Array.from(inputs.flat()),
+    labels instanceof Int32Array ? labels : Int32Array.from(labels),
     (error, value) => {
       if (!error) {
         progress?.(value[0]!, value[1]!);

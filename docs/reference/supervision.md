@@ -17,6 +17,7 @@ import type { SequenceRecipe } from "@matchbox-ai/train";
 | Property    | Type                                               | Meaning                                             |
 | ----------- | -------------------------------------------------- | --------------------------------------------------- |
 | `tokenizer` | `"words"` or `"characters"`                        | Chooses token boundaries.                           |
+| `casing`    | `"lowercase"` or `"preserve"`                      | Controls token keys; defaults to `"lowercase"`.     |
 | `readout`   | `"all"` or `"last"`                                | Predicts at every position or the final position.   |
 | `labels`    | `readonly string[]`                                | The label vocabulary.                               |
 | `annotate`  | `(example, tokens) => readonly (string or null)[]` | Returns one label or unsupervised `null` per token. |
@@ -46,7 +47,13 @@ import { tokenize } from "@matchbox-ai/train";
 const tokens = tokenize("for 90 minutes", "words");
 ```
 
-`tokenize(input: string, mode: "words" | "characters"): Token[]` is shared with annotation generators. Word mode separates numbers, letter runs, and punctuation; numeric token keys become `<number>`. Character mode iterates Unicode code points. Original text and offsets are preserved.
+`tokenize(input: string, mode: "words" | "characters", casing?: "lowercase" | "preserve"): Token[]` is shared with annotation generators. Word mode separates numbers, letter runs, and punctuation; numeric token keys become `<number>`. Character mode iterates Unicode code points. Original text and offsets are preserved. Keys are lowercased by default. Set `casing: "preserve"` in a recipe when distinctions such as `User` versus `user` carry meaning. Pass the same third argument to `tokenize` in an annotation generator:
+
+```ts
+const tokens = tokenize("User user", "characters", "preserve");
+```
+
+The vocabulary is still learned only from training data. Case preservation creates distinct vocabulary entries and can increase unknown-token abstention. It does not add a language dictionary or Unicode normalization. In word mode, numeric keys remain `<number>` regardless of casing. Retrain after changing the encoding; the artifact stores the choice for inference.
 
 ```ts
 interface Token {

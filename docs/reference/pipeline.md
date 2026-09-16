@@ -41,3 +41,31 @@ export default definePipeline({
 ```
 
 The recipe owns tokenization and training supervision. The decoder ships to the browser. See [their contracts](supervision.md). Schemas do not select encodings, dictionaries, or normalization rules.
+
+## Token context
+
+`tokenClassifier({ contextRadius: 4 })` gives each prediction four tokens on either side of the current token, nine tokens total. Radius is an integer from 1 through 16 and defaults to 1. Tokens are Unicode code points in character mode and tokenizer units in word mode. Positions outside the current input are padded; context never crosses an example boundary.
+
+```ts
+export default definePipeline({
+  prediction: tokenClassifier({ contextRadius: 4 }),
+});
+```
+
+This remains a fixed-window classifier. Burn embeds the window and learns a small feedforward network; there is no recurrent state, attention, or awareness beyond that window. Wider context increases training memory, model size, and compute, and may not improve held-out accuracy. Choose it using independent validation examples, then report results on an untouched test set.
+
+Casing belongs in the [recipe](supervision.md), independently of context size:
+
+```ts
+import type { SequenceRecipe } from "@matchbox-ai/train";
+
+export default {
+  tokenizer: "characters",
+  casing: "preserve",
+  readout: "all",
+  labels,
+  annotate,
+} satisfies SequenceRecipe;
+```
+
+Retrain after either change. New sequence artifacts use format version 4 and require a compatible runtime. The runtime still reads version 3 artifacts with their original lowercase, radius-one behavior. These choices do not change the 512 UTF-16-unit parser limit, whole-result abstention, or confidence calibration.

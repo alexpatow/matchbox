@@ -37,7 +37,7 @@ test("directory-backed tasks are discovered from the application and inside the 
     await writeFile(resolve(task, "parser/parser.ts"), "export default {};\n");
     await writeFile(
       resolve(task, "pipeline/pipeline.ts"),
-      'export default { prediction: { kind: "token-classifier" } };\n',
+      'export default { prediction: { kind: "token-classifier", contextRadius: 4 } };\n',
     );
     await writeFile(
       resolve(task, "recipe/recipe.ts"),
@@ -56,6 +56,7 @@ test("directory-backed tasks are discovered from the application and inside the 
     expect(config.sequence).toEqual({
       recipe: resolve(task, "recipe/recipe.ts"),
       decoder: resolve(task, "decode/decode.ts"),
+      contextRadius: 4,
     });
   } finally {
     await rm(root, { recursive: true, force: true });

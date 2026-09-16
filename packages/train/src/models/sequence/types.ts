@@ -7,6 +7,8 @@ export interface SequenceRecipe {
   /** Train the unknown-token embedding by masking this fraction of training token IDs. */
   tokenDropout?: number;
   tokenizer: "characters" | "words";
+  /** Preserve token casing or lowercase keys. Defaults to lowercase for existing recipes. */
+  casing?: "lowercase" | "preserve";
   readout: "all" | "last";
   labels: readonly string[];
   annotate(example: DatasetExample<unknown>, tokens: readonly Token[]): readonly (string | null)[];

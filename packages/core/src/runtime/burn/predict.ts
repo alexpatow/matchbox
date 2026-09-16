@@ -4,7 +4,11 @@ import { tokenize, windows } from "../../internal/sequence/index.js";
 import type { SequenceArtifact } from "../../internal/sequence/index.js";
 export async function burnPredictor(model: SequenceArtifact) {
   await initialize();
-  const config = { vocabularySize: model.vocabulary.length + 2, labelCount: model.labels.length };
+  const config = {
+    vocabularySize: model.vocabulary.length + 2,
+    labelCount: model.labels.length,
+    contextRadius: model.radius,
+  };
   const bytes = Uint8Array.from(atob(model.weights), (character) => character.charCodeAt(0));
   const predictor = new Predictor(JSON.stringify(config), bytes);
   let disposed = false;
@@ -13,7 +17,7 @@ export async function burnPredictor(model: SequenceArtifact) {
       if (disposed) {
         throw new Error("The parser has been disposed.");
       }
-      const tokens = tokenize(input, model.tokenizer);
+      const tokens = tokenize(input, model.tokenizer, model.casing);
       if (!tokens.length) {
         return [];
       }

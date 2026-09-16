@@ -65,21 +65,18 @@ const { vocabulary, inputs, labels, radius, dropout } = prepareSupervision(train
 const config: Config = { vocabularySize: vocabulary.length + 2, labelCount: recipe.labels.length };
 await mkdir(output, { recursive: true });
 const start = performance.now();
-const fit = await native.fit(
-  JSON.stringify(config),
-  Int32Array.from(inputs.flat()),
-  Int32Array.from(labels),
-  (error, values) => {
-    if (error) {
-      console.error(error);
-      return;
-    }
-    console.log(JSON.stringify({ epoch: values[0], loss: values[1] }));
-  },
-);
+const fit = await native.fit(JSON.stringify(config), inputs, labels, (error, values) => {
+  if (error) {
+    console.error(error);
+    return;
+  }
+  console.log(JSON.stringify({ epoch: values[0], loss: values[1] }));
+});
 const fitMs = performance.now() - start;
 const model: SequenceArtifact = {
-  formatVersion: 3,
+  ...(recipe.casing === "preserve"
+    ? { formatVersion: 4 as const, casing: "preserve" as const }
+    : { formatVersion: 3 as const }),
   engine: "burn-0.21",
   kind: "sequence-parser",
   architecture: "embedding-window-mlp",
@@ -105,7 +102,7 @@ await writeFile(
     fitMs,
     parameters: fit.parameters,
     loss: fit.loss,
-    supervisedTokens: inputs.length,
+    supervisedTokens: labels.length,
   }),
 );
 const portable = await core.tensorPredictor(model);
@@ -115,7 +112,7 @@ let maxConfidenceError = 0,
 const mismatches: unknown[] = [];
 try {
   for (const [probe, example] of [...train.slice(0, 16), ...validation].entries()) {
-    const tokens = core.tokenize(example.input, recipe.tokenizer);
+    const tokens = core.tokenize(example.input, recipe.tokenizer, recipe.casing);
     if (!tokens.length) {
       continue;
     }
@@ -151,7 +148,7 @@ try {
 const report = {
   diagnosticOnly: true,
   trainingRecords: train.length,
-  supervisedTokens: inputs.length,
+  supervisedTokens: labels.length,
   vocabulary: vocabulary.length,
   packages: Object.fromEntries(versions),
   fitMs,
