@@ -96,3 +96,27 @@ The generated report records rejection counts and hashes the actual token superv
 ## RecurrentRecipe
 
 Recurrent pipelines use `RecurrentRecipe`, `textParts()`, `textFeatures()` and `spanLabels({ whitespace: "context" | "supervise" })`. These are explicit descriptors exported from `@matchbox-ai/train`. They retain mixed-label part supervision and UTF-16 source ranges. See [recurrent token classification](../primitives/recurrent-token-classifier.md) for the full contract and a decoder example. `SequenceRecipe` remains unchanged.
+
+### Descriptor functions and types
+
+```ts
+import {
+  textParts,
+  textFeatures,
+  spanLabels,
+  type TextParts,
+  type TextFeatures,
+  type SpanLabels,
+  type RecurrentRecipe,
+} from "@matchbox-ai/train";
+```
+
+| Function              | Arguments                                                            | Returns                                                  |
+| --------------------- | -------------------------------------------------------------------- | -------------------------------------------------------- |
+| `textParts()`         | None.                                                                | `TextParts`: `{ kind: "text-parts", version: 1 }`.       |
+| `textFeatures()`      | None.                                                                | `TextFeatures`: `{ kind: "text-features", version: 1 }`. |
+| `spanLabels(options)` | Required `whitespace` property, either `"context"` or `"supervise"`. | `SpanLabels`: `{ kind: "span-labels", whitespace }`.     |
+
+These functions declare behavior; they do not tokenize input, compute features or train a model when called. `RecurrentRecipe` requires `tokenizer: TextParts`, `features: TextFeatures`, `labels: readonly string[]` and `annotate: SpanLabels`. Matchbox validates these descriptors when training.
+
+`whitespace: "context"` excludes whitespace from supervision and acceptance while retaining it as model context. `"supervise"` includes it. The choice is required and is stored with the model. Recipe labels must be unique, and each label needs training supervision. Unlike `SequenceRecipe`, this contract does not accept an annotation callback.

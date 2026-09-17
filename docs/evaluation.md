@@ -37,6 +37,14 @@ Withhold meaningful input compositions and complete output values where the chos
 
 Read accuracy and abstention together. A model that answers only easy inputs can have high accepted accuracy and poor coverage. Schema validity guarantees an output's shape, not that its meaning is correct.
 
+## Recurrent and partial results
+
+Recurrent training reports diagnostic code-point agreement, confidence coverage, agreement within that coverage, per-epoch validation scores and the selected epoch. Diagnostics bypass whole-result acceptance; they are not complete-parser accuracy. The export gate still uses exact validation output accuracy.
+
+CLI evaluation uses the strict `parse(input)` contract. It does not enable partial output or GPU execution. To evaluate a preview, call `parse(input, { allowPartial: true })` in an application-owned evaluation loop and record `ok`, `partial` and `uncertain` separately. Measure candidate agreement and returned-label coverage while explicitly counting uncertain predictions. A schema-valid candidate is not an accepted complete answer.
+
+For browser timing, measure the same inputs with explicit CPU and GPU calls. Separate initialization from warm inference, include output validation, record abstentions and partial results, and measure downloaded runtime assets as well as model bytes. The [lexer example](examples/lexer.md) demonstrates these measurements on a frozen corpus.
+
 ## Test uncertainty
 
 Confidence is an uncalibrated model score. Zero confidence means the current model declined to answer; it does not establish that the input is invalid or that training coverage is the only problem.

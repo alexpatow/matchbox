@@ -14,7 +14,7 @@ A conventional task needs:
 | `evals/validation.jsonl` | Checks whether the fitted model meets export requirements. |
 | `evals/test.jsonl`       | Measures the selected model independently.                 |
 
-[Choose a pipeline](pipelines.md) based on the task. A field classifier learns finite output values. A token classifier also needs a [recipe and decoder](reference/supervision.md) with aligned token annotations.
+[Choose a pipeline](pipelines.md) based on the task. A field classifier learns finite output values. A token classifier also needs a [recipe and decoder](reference/supervision.md) with aligned token annotations. A [recurrent classifier](primitives/recurrent-token-classifier.md) instead uses explicit text-part features and span supervision in a `RecurrentRecipe`.
 
 Write validation and test examples independently of training data. Keep them out of data generators. The loader rejects inputs shared across splits after trimming whitespace and folding case.
 
@@ -31,9 +31,9 @@ You can also open `bunx matchbox-ai dev money` and choose **Train model**. Both 
 ## What happens during a run
 
 1. Matchbox validates task configuration, datasets, and any token annotations.
-2. The selected strategy fits vocabulary, output domains, and weights from training data.
+2. The selected strategy prepares input features and supervision. Vocabulary and output domains, where applicable, use training data only.
 3. Burn trains the network locally. Matchbox checks the exported model against the native model.
-4. Validation accuracy and model size gate packaging.
+4. Recurrent training selects its checkpoint using validation code-point agreement. Complete-output validation accuracy and model size gate packaging for every strategy.
 5. The independent test split is scored and included in the report.
 
 A schema describes valid output. It does not generate training data or choose a numeric representation. Token decoders own explicit conversion and arithmetic.

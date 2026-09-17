@@ -1,7 +1,12 @@
 # Pipeline API
 
 ```ts
-import { definePipeline, fieldClassifier, tokenClassifier } from "@matchbox-ai/train";
+import {
+  definePipeline,
+  fieldClassifier,
+  tokenClassifier,
+  recurrentTokenClassifier,
+} from "@matchbox-ai/train";
 ```
 
 ## definePipeline
