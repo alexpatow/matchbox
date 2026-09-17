@@ -56,3 +56,31 @@ The hook calls optional `load` on mount. It does not store prediction results, d
 ## Continuous input
 
 For parsing while typing, keep the latest input in state and start a parse in an effect. Ignore results from an effect that has already cleaned up so an older prediction cannot overwrite a newer one. The hook's `status` describes model initialization, not an individual prediction.
+
+## Recurrent models and partial results
+
+The hook preserves the generated recurrent parser's overloads. Keep the loader's inferred type; annotating it as a generic `MatchboxParser` hides the additional options from TypeScript.
+
+```tsx
+import { useMatchbox } from "@matchbox-ai/core/react";
+
+const loadLexer = () => import("./.matchbox/lexer/model");
+
+// Inside your component:
+const lexer = useMatchbox(loadLexer);
+async function highlight(source: string) {
+  const result = await lexer.parse(source, { allowPartial: true, gpu: true });
+
+  if (result.status === "partial") {
+    // Render result.value as a candidate and mark result.uncertainRanges.
+  } else if (result.status === "ok") {
+    // Every supervised part passed the threshold and the schema validated.
+  } else {
+    // result.value is null; retain the original text or show result.reason.
+  }
+}
+```
+
+Omit `gpu` for CPU inference. Omit `allowPartial` for whole-result acceptance. Partial candidates include uncertain predictions; above-threshold predictions can also be wrong. Ranges describe UTF-16 source offsets, not arbitrary output fields. The full [runtime contract](reference/runtime.md#partialmatchboxparser) describes the result union.
+
+The hook's mount-time `load()` initializes CPU even when later calls request GPU. GPU initializes on its first requested parse. For an exclusively GPU application that must avoid downloading CPU, import the generated parser directly and call `parse(source, { gpu: true })` without `load()`. Handle loading, cancellation and errors in the component. A GPU failure rejects the call; it is not a model uncertainty result.

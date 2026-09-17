@@ -25,6 +25,7 @@ export const navigation = [
       ["dataset-format", "Prepare datasets"],
       ["reference/pipeline", "Pipeline API"],
       ["reference/supervision", "Tokens & decoders"],
+      ["primitives/recurrent-token-classifier", "Recurrent classifiers"],
       ["reference/training", "train API"],
     ],
   ],
@@ -40,6 +41,7 @@ export const navigation = [
     "Use in your app",
     [
       ["reference/runtime", "Parser runtime"],
+      ["runtime-backends", "CPU & WebGPU"],
       ["react", "React integration"],
       ["reference/vite", "Vite plugin"],
     ],
@@ -49,6 +51,7 @@ export const navigation = [
     [
       ["examples/money", "Money"],
       ["examples/time", "Date, time & duration"],
+      ["examples/lexer", "Syntax highlighting"],
     ],
   ],
   [

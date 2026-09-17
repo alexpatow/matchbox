@@ -2,6 +2,14 @@
 
 The parser defines valid input and output. The pipeline defines how the model learns. Matchbox requires `pipeline.ts` or `pipeline/pipeline.ts` for conventional tasks; the scaffold writes it visibly.
 
+| Strategy                     | Use when                                                  | Main limitation                                                     |
+| ---------------------------- | --------------------------------------------------------- | ------------------------------------------------------------------- |
+| `fieldClassifier()`          | Outputs are small, finite sets of observed values.        | Cannot produce unseen values; discards word order.                  |
+| `tokenClassifier()`          | Local token context and explicit decoding are sufficient. | Uses a fixed context window and whole-result acceptance.            |
+| `recurrentTokenClassifier()` | Labels depend on context across a document.               | Predicts one label per text part; requires span-output supervision. |
+
+For the recurrent strategy, follow [the complete authoring guide](primitives/recurrent-token-classifier.md) or [the lexer example](examples/lexer.md). Partial results and GPU parsing are opt-in capabilities of that strategy, not replacements for the existing APIs.
+
 ```ts
 import { definePipeline, fieldClassifier } from "@matchbox-ai/train";
 export default definePipeline({
