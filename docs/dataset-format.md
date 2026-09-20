@@ -11,6 +11,15 @@ Use `data/train.jsonl`, `evals/validation.jsonl` and `evals/test.jsonl`. Each no
 
 The conventional training workflow uses `data/train.jsonl`, `evals/validation.jsonl`, and `evals/test.jsonl`. The two-source validation API below is a lower-level utility, not the complete training configuration.
 
+Structured tasks use the same envelope:
+
+```jsonl
+{"input":{"points":[{"x":0,"y":0},{"x":100,"y":50}]},"output":{"kind":"line"}}
+{"input":{"points":[{"x":10,"y":5},{"x":10,"y":90}]},"output":{"kind":"line"}}
+```
+
+`DatasetExample<Output, Input = string>` describes a row. `parseDatasets` infers both validated types from the task, including supported schema defaults.
+
 ## Authoring rules
 
 Write UTF-8 text without a byte-order mark, with LF or CRLF line endings. Empty and whitespace-only lines are ignored. Diagnostics still count those physical lines. Each split must contain at least one example. A final newline is optional.
@@ -51,7 +60,7 @@ The function accepts text and performs no filesystem access, network requests, o
 
 ## Train and eval separation
 
-Both splits are explicit and required. Matchbox does not shuffle, merge, deduplicate, or automatically split them. Keep held-out examples separate from training and synthetic expansion. Authors are responsible for preventing overlap and paraphrase leakage; validation establishes structural correctness, not evaluation independence. The training workflow additionally rejects inputs shared across splits after trimming and case folding. The lower-level `parseDatasets` API performs structural validation only.
+Both splits are explicit and required. Matchbox does not shuffle, merge, deduplicate, or automatically split them. Keep held-out examples separate from training and synthetic expansion. Authors are responsible for preventing overlap and paraphrase leakage; validation establishes structural correctness, not evaluation independence. The training workflow additionally rejects shared inputs after schema validation. Root strings are trimmed and case-folded for comparison. Structured inputs use canonical JSON: object key order is ignored, while array order and nested string contents are preserved. Supported defaults are applied before comparison. The lower-level `parseDatasets` API performs structural validation only.
 
 ## Versioning
 

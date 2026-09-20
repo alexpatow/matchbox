@@ -13,4 +13,4 @@ Train small models from examples, then import them into your browser app. Inputs
 | Run it in your app.               | [Runtime](reference/runtime.md) and [React](react.md).                       |
 | Look up a command or type.        | [CLI](cli.md) and [API reference](reference/README.md).                      |
 
-The [money](examples/money.md), [time](examples/time.md) [lexer](examples/lexer.md), and [sketch](examples/sketch.md) examples show different learning and decoding choices. Try them on the [examples page](/examples).
+The [money](examples/money.md), [time](examples/time.md), [lexer](examples/lexer.md), and [sketch](examples/sketch.md) examples show different learning and decoding choices. Try them on the [examples page](/examples).

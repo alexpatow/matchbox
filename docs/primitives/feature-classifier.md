@@ -36,7 +36,7 @@ export default definePipeline({
 
 ## Encoder contract
 
-The encoder module exports an object satisfying this public type from `@matchbox-ai/core`:
+The encoder module default-exports an object satisfying this public type from `@matchbox-ai/core`:
 
 ```ts
 interface NumericEncoder<Input> {
@@ -45,11 +45,11 @@ interface NumericEncoder<Input> {
 }
 ```
 
-`size` must be an integer from 1 through 10,000. Every call must return exactly that many finite float32-representable numbers. Invalid dimensions or non-finite features throw a programming error, rather than reporting model uncertainty. The encoder receives the schema-validated input, including supported defaults.
+`size` must be an integer from 1 through 10,000. Every call must return exactly that many finite float32-representable numbers. Invalid dimensions or non-finite features throw a programming error, rather than reporting model uncertainty. The encoder receives the schema-validated input, including supported defaults. Type an authored encoder as `NumericEncoder<z.output<typeof task.input>>`; `InferInput<typeof task>` instead describes what the caller supplies before defaults are applied.
 
 The same module executes during training and browser inference. Keep it synchronous, deterministic, browser-safe and free of training dependencies. Retrain after changing it. The artifact records its module path and feature count, not its source or a source hash. Changing an encoder without retraining can change predictions even if dimensions stay the same.
 
-The [sketch example](../examples#sketch-title.md) centers and uniformly scales points, resamples by path distance, and produces a soft occupancy grid. These operations belong to the example, not the framework. If another application needs fitted preprocessing, fit it on training data only and explicitly persist the fitted constants in its encoder module.
+The [sketch example](../examples/sketch.md) centers and uniformly scales points, resamples by path distance, and produces a soft occupancy grid. See its [complete encoder](https://github.com/alexpatow/matchbox/blob/main/examples/sketch/matchbox/shapes/encode.ts). These operations belong to the example, not the framework. If another application needs fitted preprocessing, fit it on training data only and explicitly persist the fitted constants in its encoder module.
 
 ## Train and consume
 
@@ -65,7 +65,12 @@ CLI input arguments use JSON for non-string schemas. The workbench labels its in
 
 ```ts
 import shapes from "./.matchbox/shapes/model";
-const result = await shapes.parse({ points });
+const result = await shapes.parse({
+  points: [
+    { x: 0, y: 0 },
+    { x: 100, y: 50 },
+  ],
+});
 ```
 
 The generated wrapper and `.matchbox` import infer both input and output types. `useMatchbox` preserves that input type. For manual loading, pass the encoder as the third argument to `createParser(artifact, task, encode)`.

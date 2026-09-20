@@ -8,7 +8,7 @@ After [adding a task](getting-started.md), supply three independent datasets:
 | `evals/validation.jsonl` | Select and validate the model before export. |
 | `evals/test.jsonl`       | Measure the selected model.                  |
 
-The loader rejects inputs shared across splits after trimming whitespace and folding case. Keep evals out of training-data generators. See [dataset format](dataset-format.md) for row validation.
+The loader rejects shared inputs after validation. It compares root strings after trimming and case folding, and structured inputs by canonical JSON with sorted object keys. Keep evals out of training-data generators. See [dataset format](dataset-format.md) for row validation.
 
 ## Run training
 
@@ -37,7 +37,7 @@ export default definePipeline({
 });
 ```
 
-`minAccuracy` is the fraction of complete validation outputs that must match. `maxBytes` limits serialized model bytes, excluding the runtime and decoder. Failure exits nonzero without replacing the previous artifact.
+`minAccuracy` is the fraction of complete validation outputs that must match. `maxBytes` limits serialized model bytes, excluding the runtime, encoder and decoder. Failure exits nonzero without replacing the previous artifact.
 
 A low test score is reported but does not block packaging. Run [`eval`](evaluation.md) as a separate test gate before shipping.
 
@@ -51,6 +51,6 @@ A low test score is reported but does not block packaging. Run [`eval`](evaluati
   report.json
 ```
 
-Import `model.ts` in your app. Its references to the authored parser and decoder must remain valid. Train before your app build or restore these files together.
+Import `model.ts` in your app. Its references to the authored parser and any encoder or decoder must remain valid. Train before your app build or restore these files together.
 
 The report includes accuracy, model size, loss, training duration and dataset hashes. It does not measure browser latency. See [evaluation](evaluation.md) for quality and timing, or the [training API](reference/training.md) for programmatic use and report fields.

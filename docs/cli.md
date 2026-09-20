@@ -42,7 +42,7 @@ Adds `matchbox/<name>/`, ignores `.matchbox/`, and adds missing `matchbox:dev`, 
 
 Installs core as an application dependency and train/CLI as development dependencies. Package-manager selection uses the app declaration or lockfile (including workspace ancestors), then the invoking package manager, then Bun. Failed installation preserves the scaffold and prints a retry command.
 
-The blank template requires examples and evals before training. The money template includes token supervision and an application-owned decoder. Time and lexer templates are not included; their guides show the authored task modules.
+The blank template requires examples and evals before training. The money template includes token supervision and an application-owned decoder. Time, lexer and sketch templates are not included; their guides show the authored task modules.
 
 ## dev
 
@@ -80,13 +80,19 @@ bunx matchbox-ai parse money 'twenty dollars' --json
 
 Returns a [ParseResult](reference/runtime.md). Uncertainty is a prediction result and does not itself cause a nonzero exit. The CLI uses local inference, not a browser timing measurement.
 
+For non-string input schemas, pass a JSON value as the input argument to `parse`, `inspect` and `save`. The workbench accepts JSON in its input editor. JSONL training and evaluation files retain their existing row format, with the structured value inside `input`. See [numeric feature classifiers](primitives/feature-classifier.md).
+
+```sh
+bunx matchbox-ai parse shapes '{"points":[{"x":0,"y":0},{"x":100,"y":50}]}' --json
+```
+
 ## inspect
 
 ```sh
 bunx matchbox-ai inspect money 'eleven grand' --json
 ```
 
-Returns `{ input, ...diagnostics, result }`. Token models include labeled tokens and the decoded candidate; field models expose their strategy-specific diagnostics. `result` is the validated prediction. Diagnostics are omitted when the input fails validation or exceeds 512 UTF-16 units, including for recurrent models whose parser accepts longer documents. Use `parse` for the final result; diagnostic fields are not a stable application contract.
+Returns `{ input, ...diagnostics, result }`. Token models include labeled tokens and the decoded candidate; field models expose their strategy-specific diagnostics. Numeric feature models include `value`, `confidence` and flattened per-field `probabilities`. `result` is the validated prediction. Diagnostics are omitted when the input fails validation or a string input exceeds 512 UTF-16 units, including for recurrent models whose parser accepts longer documents. Use `parse` for the final result; diagnostic fields are not a stable application contract.
 
 ## info
 
@@ -94,7 +100,7 @@ Returns `{ input, ...diagnostics, result }`. Token models include labeled tokens
 bunx matchbox-ai info [task] --json
 ```
 
-Returns resolved `config`, `authoring`, `pipeline`, `task`, `train`, `validation`, `eval`, and `output` paths. It does not require a trained artifact.
+Returns resolved `config`, `authoring`, `pipeline`, `task`, `train`, `validation`, `eval`, and `output` paths, plus `inputFormat` (`"text"` or `"json"`). Numeric feature tasks report `authoring: "numeric features"`. It does not require a trained artifact.
 
 ## save
 
@@ -102,12 +108,10 @@ Returns resolved `config`, `authoring`, `pipeline`, `task`, `train`, `validation
 bunx matchbox-ai save money 'twenty euros please' '{"amount":20,"currency":"EUR","approximate":false}' --json
 ```
 
-Validates both values, then adds or replaces a matching input in training data. Matching ignores surrounding whitespace and case. Rejects held-out inputs and ambiguous duplicate training rows. Returns `{ saved, action, example, next }` where `action` is `added` or `updated`.
+Validates both values, then adds or replaces a matching input in training data. Matching uses validated inputs: root strings ignore surrounding whitespace and case; structured values ignore object key order while preserving array order and nested strings. Supported defaults are applied before comparison. Rejects held-out inputs and ambiguous duplicate training rows. Returns `{ saved, action, example, next }` where `action` is `added` or `updated`.
 
 It does not retrain. Token pipelines also require updated recipe supervision before training. Corrections never modify validation or test data.
 
 ## Exit status
 
 Successful commands exit `0`, including uncertain predictions. Invalid arguments, missing tasks/artifacts, malformed data, training failures, and failed eval thresholds exit nonzero. `--help` and `--version` exit `0`.
-
-For non-string input schemas, pass a JSON value as the input argument to `parse`, `inspect` and `save`. The workbench accepts JSON in its input editor. JSONL training and evaluation files retain their existing row format, with the structured value inside `input`. See [numeric feature classifiers](primitives/feature-classifier.md).

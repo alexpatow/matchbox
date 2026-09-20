@@ -43,15 +43,34 @@ The path above assumes a component at the app root. Adjust it for your file's lo
 
 ## useMatchbox contract
 
-`useMatchbox<Output>(loader: () => Promise<{ default: MatchboxParser<Output> }>)` is exported from `@matchbox-ai/core/react`.
+`useMatchbox<Output, Input = string>(loader: () => Promise<{ default: MatchboxParser<Output, Input> }>)` is exported from `@matchbox-ai/core/react`.
 
-| Return field | Type                                               | Behavior                                        |
-| ------------ | -------------------------------------------------- | ----------------------------------------------- |
-| `status`     | `"loading"`, `"ready"`, or `"error"`.              | Reflects the current loader and initialization. |
-| `error`      | `string` or `null`.                                | Loading error message.                          |
-| `parse`      | `(input: string) => Promise<ParseResult<Output>>`. | Runs inference; call failures reject.           |
+| Return field | Type                                              | Behavior                                        |
+| ------------ | ------------------------------------------------- | ----------------------------------------------- |
+| `status`     | `"loading"`, `"ready"`, or `"error"`.             | Reflects the current loader and initialization. |
+| `error`      | `string` or `null`.                               | Loading error message.                          |
+| `parse`      | `(input: Input) => Promise<ParseResult<Output>>`. | Runs inference; call failures reject.           |
 
 The hook calls optional `load` on mount. It does not store prediction results, debounce requests, catch parse errors, or dispose shared module instances. Applications own those behaviors. React 19 is the current peer requirement.
+
+## Object inputs
+
+The generated module carries the input type through the hook. Pass the object directly; no JSON serialization or manual generic arguments are needed.
+
+```tsx
+const loadShapes = () => import("./.matchbox/shapes/model");
+
+// Inside your component:
+const shapes = useMatchbox(loadShapes);
+const result = await shapes.parse({
+  points: [
+    { x: 0, y: 0 },
+    { x: 100, y: 50 },
+  ],
+});
+```
+
+This model returns a shape class. The [sketch example](examples/sketch.md) separately fits geometry from the original points.
 
 ## Continuous input
 

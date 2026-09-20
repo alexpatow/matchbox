@@ -4,6 +4,7 @@
 import {
   definePipeline,
   fieldClassifier,
+  featureClassifier,
   tokenClassifier,
   recurrentTokenClassifier,
 } from "@matchbox-ai/train";

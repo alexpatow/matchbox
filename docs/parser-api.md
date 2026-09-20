@@ -47,6 +47,27 @@ Validation returns a discriminated `ValidationResult<T>`. Invalid task definitio
 
 The result exposes `kind: "parser"`, `input`, `output`, `validateInput(unknown)`, `validateOutput(unknown)`, and `toJSON()`. Validation returns `{ success: true, data }` or `{ success: false, issues }`, where every `ValidationIssue` has `code`, `path`, and `message`. `InferOutput<typeof task>` derives the validated output type. `InferInput<typeof task>` derives the application input type. `ParserMetadata` is the detached JSON representation shown below.
 
+## Input inference
+
+Both types follow the task schemas:
+
+```ts
+import { defineParser, type InferInput, type InferOutput } from "@matchbox-ai/core";
+import { z } from "zod";
+
+const task = defineParser({
+  input: z.strictObject({
+    points: z.array(z.strictObject({ x: z.number(), y: z.number() })).min(2),
+  }),
+  output: z.strictObject({ kind: z.enum(["line", "unknown"]) }),
+});
+
+type Input = InferInput<typeof task>; // { points: { x: number; y: number }[] }
+type Output = InferOutput<typeof task>; // { kind: "line" | "unknown" }
+```
+
+`InferInput` uses `z.input`, the caller's input before validation. Encoders receive `z.output<typeof task.input>`, after supported defaults. The input generic on `ParserConfig` and `ParserDefinition` defaults to `z.ZodString`, preserving existing text-task annotations. Schema support does not imply every learning strategy can consume that schema; use [featureClassifier](primitives/feature-classifier.md) for structured inputs.
+
 ## Supported schemas
 
 Input supports the same JSON-compatible schema subset as output, including strict objects and arrays. Text classifiers require string input; structured inputs require an explicit numeric encoder. The output root must be a strict object, array, or union of objects/arrays.

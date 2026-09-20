@@ -17,12 +17,14 @@ const result = await train("money", {
 
 It validates the datasets and supervision, trains with native Burn, checks validation accuracy and artifact size, then packages. Configuration, annotation, schema, validation-gate, or size failures reject the promise. A low independent test score is reported after selection and does not undo a model that passed validation. Run CLI `eval` as a separate test gate.
 
-Report format 2 contains `architecture`, `backend`, `seed`, `bytes`, `parameters`, `artifactSha256`, `datasetSha256`, split counts in `examples`, `loss`, `exportParity`, `trainingMs`, and evaluation results for `validation` and `evaluation`. Fixed-window sequence reports additionally include `supervisedTokens`, `supervisionSha256` and `challenges`. Recurrent reports include `supervisionSha256`, `challenges`, `parts`, `selectedEpoch`, `validationLabelAccuracy`, `optimizerMs` and separate code-point `diagnostics`. `trainingMs` is strategy-specific: field and fixed-window runs include fitting and evaluation, while recurrent runs include preparation, fitting and export checks but exclude final parser evaluation. `optimizerMs` measures the recurrent native fit call. Neither is browser latency.
+Report format 2 contains `architecture`, `backend`, `seed`, `bytes`, `parameters`, `artifactSha256`, `datasetSha256`, split counts in `examples`, `loss`, `exportParity`, `trainingMs`, and evaluation results for `validation` and `evaluation`. Fixed-window sequence reports additionally include `supervisedTokens`, `supervisionSha256` and `challenges`. Recurrent reports include `supervisionSha256`, `challenges`, `parts`, `selectedEpoch`, `validationLabelAccuracy`, `optimizerMs` and separate code-point `diagnostics`. `trainingMs` is strategy-specific: field, feature and fixed-window runs include fitting and evaluation, while recurrent runs include preparation, fitting and export checks but exclude final parser evaluation. `optimizerMs` measures the recurrent native fit call. Neither is browser latency.
 
 ## TrainingConfig
 
 `TrainingConfig` is the optional task configuration type. See [every field and default](configuration.md).
 
 Use [evaluate](evaluation.md) to score an existing parser without training it.
+
+For numeric feature models, `exportParity` records the checked example count, maximum probability difference, label disagreements and acceptance disagreements. Export fails on any disagreement or a probability difference above `0.0001`.
 
 For sequence models, `exportParity` records the checked token count, maximum absolute confidence difference, a `0.0001` numerical tolerance, label disagreements and acceptance disagreements. Export fails on any label disagreement, any crossing of the model acceptance threshold, or confidence drift above that tolerance. This tolerance does not lower model confidence requirements.

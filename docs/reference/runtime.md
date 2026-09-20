@@ -27,17 +27,17 @@ const result = await parser.parse("for 90 minutes");
 parser.dispose();
 ```
 
-| Argument   | Type                         | Behavior                                                 |
-| ---------- | ---------------------------- | -------------------------------------------------------- |
-| `artifact` | `unknown`                    | Parsed Matchbox model artifact, validated by the loader. |
-| `task`     | `ParserDefinition<Output>`   | Must match the artifact's serialized task metadata.      |
-| `decode`   | `SequenceDecoder`, optional. | Required for token models; omit for field models.        |
+| Argument       | Type                                                    | Behavior                                                                                     |
+| -------------- | ------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `artifact`     | `unknown`                                               | Parsed Matchbox model artifact, validated by the loader.                                     |
+| `task`         | `ParserDefinition<Output, Input>`                       | Must match the artifact's serialized task metadata.                                          |
+| Third argument | `SequenceDecoder` or `NumericEncoder<z.output<Input>>`. | Supply a decoder for token models, an encoder for feature models, and omit for field models. |
 
-Returns `PartialMatchboxParser<z.output<Output>>` when the artifact has the literal kind `"recurrent-parser"` and a decoder is supplied; otherwise returns `MatchboxParser<z.output<Output>>`. Both include required `load(): Promise<void>` and `dispose(): void`. Most applications should import the generated module instead of calling this factory.
+Returns `PartialMatchboxParser<z.output<Output>>` when the artifact has the literal kind `"recurrent-parser"` and a decoder is supplied; numeric feature models with an encoder return `MatchboxParser<z.output<Output>, z.input<Input>>`; other text models return `MatchboxParser<z.output<Output>>`. All include required `load(): Promise<void>` and `dispose(): void`. Most applications should import the generated module instead of calling this factory.
 
 `load` caches initialization and uses Burn WASM CPU. Failed initialization can be retried. `dispose` releases weights; calls after disposal reject. The React hook does not dispose shared module instances on unmount.
 
-Malformed artifacts, schema mismatches, and a missing token decoder throw during parser creation. No runtime network API or API key is required. Your bundler may fetch the model's static chunks during loading.
+Malformed artifacts, schema mismatches, and a missing required encoder or decoder throw during parser creation. No runtime network API or API key is required. Your bundler may fetch the model's static chunks during loading.
 
 ## compileClauses
 

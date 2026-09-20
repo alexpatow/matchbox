@@ -17,4 +17,4 @@ import model from "./.matchbox/money/model.matchbox";
 const result = await model.parse("twenty dollars");
 ```
 
-Train before starting Vite or building the app. The generated declaration accompanies the artifact; set `allowArbitraryExtensions: true` in your TypeScript configuration for these imports. Keep the schema and decoder at their expected relative paths.
+Train before starting Vite or building the app. The generated declaration accompanies the artifact; set `allowArbitraryExtensions: true` in your TypeScript configuration for these imports. Keep the schema and any encoder or decoder at their expected relative paths. Both the wrapper and direct artifact import preserve object input types for numeric feature models.
