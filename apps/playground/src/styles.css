@@ -153,7 +153,7 @@ footer p {
   font-weight: 600;
   margin-bottom: 12px;
 }
-.query-section input {
+.query-section textarea {
   width: 100%;
   box-sizing: border-box;
   border: 1px solid #a5ab9e;
@@ -164,7 +164,7 @@ footer p {
   font-size: 16px;
   padding: 18px;
 }
-.query-section input:focus-visible {
+.query-section textarea:focus-visible {
   outline: 2px solid var(--focus-ring);
   outline-offset: 3px;
 }

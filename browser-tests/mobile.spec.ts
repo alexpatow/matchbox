@@ -40,3 +40,45 @@ test("phone layouts keep file selection and documentation navigation usable", as
     await page.screenshot({ path: testInfo.outputPath(`examples-${width}.png`), fullPage: true });
   }
 });
+
+test("phone filter demo shows a complete query and customer without sideways scrolling", async ({
+  page,
+  isMobile,
+}, testInfo) => {
+  test.skip(!isMobile, "Phone-specific layout checks.");
+  for (const width of [320, 390]) {
+    await page.setViewportSize({ width, height: 844 });
+    await page.goto("/");
+    const query = page.getByRole("textbox", { name: "Filter customers", exact: true });
+    await expect(query).toHaveValue("active Swedish customers over 50k ARR");
+    await expect(page.locator("tbody tr")).toHaveCount(1);
+    await expect(page.getByLabel("Parsed filters")).toContainText("country = Sweden");
+    await expect(page.locator(".customer-summary")).toBeVisible();
+    await expect(page.locator(".customer-summary")).toContainText("SE");
+    await expect(page.locator(".customer-summary")).toContainText("active");
+    await expect(page.locator("tbody")).toContainText("125,000");
+    expect(
+      await page
+        .locator(".table-scroll")
+        .evaluate((element) => element.scrollWidth <= element.clientWidth),
+    ).toBe(true);
+    await page
+      .getByRole("button", {
+        name: "German or Swedish customers under 50k except churned ones",
+        exact: true,
+      })
+      .click();
+    await expect(page.getByLabel("Parsed filters")).toContainText("OR");
+    expect(
+      await query.evaluate(
+        (element: HTMLTextAreaElement) => element.scrollHeight <= element.clientHeight,
+      ),
+    ).toBe(true);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
+      true,
+    );
+    await page
+      .locator(".filter-demo-panel")
+      .screenshot({ path: testInfo.outputPath(`filters-${width}.png`) });
+  }
+});

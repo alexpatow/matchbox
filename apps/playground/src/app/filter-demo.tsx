@@ -7,13 +7,16 @@ import { customers, matchesFilter, loadFilters, type Filter } from "@/filter";
 import { FilterResults } from "./filter-results";
 import { FilterChips } from "./filter-chips";
 const suggestions = [
-  "active Swedish customers over 50k ARR",
-  "German or Swedish customers under 50k except churned ones",
-  "ARR at least 75k and not churned",
+  { label: "Sweden · 50k+", query: "active Swedish customers over 50k ARR" },
+  {
+    label: "Sweden or Germany",
+    query: "German or Swedish customers under 50k except churned ones",
+  },
+  { label: "ARR · 75k+", query: "ARR at least 75k and not churned" },
 ];
 export function FilterDemo() {
   const { parse, status, error: loadError } = useMatchbox(loadFilters);
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(suggestions[0]!.query);
   const [result, setResult] = useState<ParseResult<Filter> | null>(null);
   const [error, setError] = useState<string | null>(null);
   useEffect(() => {
@@ -36,6 +39,9 @@ export function FilterDemo() {
     };
   }, [query, parse]);
   function updateQuery(value: string) {
+    if (value === query) {
+      return;
+    }
     setQuery(value);
     setResult(null);
     setError(null);
@@ -71,7 +77,8 @@ export function FilterDemo() {
           <label id="query-label" htmlFor="query">
             Filter customers
           </label>
-          <input
+          <textarea
+            rows={2}
             id="query"
             value={query}
             onChange={(event) => updateQuery(event.target.value)}
@@ -79,13 +86,17 @@ export function FilterDemo() {
             aria-describedby="query-help"
             autoComplete="off"
           />
-          <p id="query-help">
-            Combine status, country alternatives and ARR comparisons. Dates are not supported.
-          </p>
+          <p id="query-help">Status, country and ARR. Try an example or write your own.</p>
           <div className="suggestions">
             {suggestions.map((suggestion) => (
-              <Button variant="secondary" key={suggestion} onClick={() => updateQuery(suggestion)}>
-                {suggestion}
+              <Button
+                variant="secondary"
+                key={suggestion.query}
+                aria-label={suggestion.query}
+                aria-pressed={query === suggestion.query}
+                onClick={() => updateQuery(suggestion.query)}
+              >
+                {suggestion.label}
               </Button>
             ))}
           </div>

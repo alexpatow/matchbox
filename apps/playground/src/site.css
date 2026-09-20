@@ -2,6 +2,7 @@
 @import "./site/hero.css";
 @import "./site/workbench.css";
 @import "./app/filter-performance.css";
+@import "./app/filter-demo.css";
 @import "./docs/docs.css";
 :root {
   color-scheme: dark;
@@ -106,13 +107,13 @@ pre {
   border: 1px solid #222;
   border-radius: 6px;
 }
-.query-section input {
+.query-section textarea {
   background: #101010;
   border: 1px solid #3c3c3c;
   color: #eee;
   border-radius: 6px;
 }
-.query-section input::placeholder {
+.query-section textarea::placeholder {
   color: #686868;
 }
 .suggestions button {
