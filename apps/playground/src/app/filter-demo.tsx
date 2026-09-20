@@ -66,7 +66,7 @@ export function FilterDemo() {
   return (
     <section id="demo" className="demo" aria-labelledby="demo-title">
       <div className="section-heading">
-        <h2 id="demo-title">Turn a sentence into a filter.</h2>
+        <h2 id="demo-title">Example: Turn a sentence into a filter.</h2>
         <p>This small model translates customer queries into typed filters in your browser.</p>
       </div>
       <div className="filter-demo-panel">
