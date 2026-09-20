@@ -24,21 +24,31 @@
   }
   .demo .suggestions {
     gap: 6px;
-    margin: 16px 0;
+    margin: 16px -4px;
+    padding: 4px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
   }
   .demo .suggestions button {
-    padding-inline: 10px;
+    padding-inline: 12px;
+    flex: 0 0 auto;
+    white-space: nowrap;
   }
+  .demo .filter-chips,
   .demo .filter-group {
     align-items: flex-start;
     flex-direction: column;
   }
   .demo .filter-part {
-    flex-wrap: nowrap;
+    display: grid;
+    grid-template-columns: 24px auto;
+  }
+  .demo .filter-chip {
+    grid-column: 2;
   }
   .demo .filter-part .join {
-    width: 24px;
-    flex-shrink: 0;
+    grid-column: 1;
   }
   .customer-table {
     white-space: normal;

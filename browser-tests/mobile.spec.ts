@@ -53,6 +53,24 @@ test("phone filter demo shows a complete query and customer without sideways scr
     await expect(query).toHaveValue("active Swedish customers over 50k ARR");
     await expect(page.locator("tbody tr")).toHaveCount(1);
     await expect(page.getByLabel("Parsed filters")).toContainText("country = Sweden");
+    expect(
+      await page
+        .locator(".suggestions")
+        .evaluate((element) => element.scrollWidth > element.clientWidth),
+    ).toBe(true);
+    const suggestionRows = await page
+      .locator(".suggestions button")
+      .evaluateAll((elements) => elements.map((element) => element.getBoundingClientRect().top));
+    expect(new Set(suggestionRows).size).toBe(1);
+    const chips = await page.locator(".filter-chip").evaluateAll((elements) =>
+      elements.map((element) => {
+        const { left, top, bottom } = element.getBoundingClientRect();
+        return { left, top, bottom };
+      }),
+    );
+    expect(new Set(chips.map((chip) => chip.left)).size).toBe(1);
+    expect(chips[1]!.top).toBeGreaterThan(chips[0]!.bottom);
+    expect(chips[2]!.top).toBeGreaterThan(chips[1]!.bottom);
     await expect(page.locator(".customer-summary")).toBeVisible();
     await expect(page.locator(".customer-summary")).toContainText("SE");
     await expect(page.locator(".customer-summary")).toContainText("active");

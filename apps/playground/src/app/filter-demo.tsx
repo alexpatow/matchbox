@@ -7,16 +7,13 @@ import { customers, matchesFilter, loadFilters, type Filter } from "@/filter";
 import { FilterResults } from "./filter-results";
 import { FilterChips } from "./filter-chips";
 const suggestions = [
-  { label: "Sweden · 50k+", query: "active Swedish customers over 50k ARR" },
-  {
-    label: "Sweden or Germany",
-    query: "German or Swedish customers under 50k except churned ones",
-  },
-  { label: "ARR · 75k+", query: "ARR at least 75k and not churned" },
+  "active Swedish customers over 50k ARR",
+  "German or Swedish customers under 50k except churned ones",
+  "ARR at least 75k and not churned",
 ];
 export function FilterDemo() {
   const { parse, status, error: loadError } = useMatchbox(loadFilters);
-  const [query, setQuery] = useState(suggestions[0]!.query);
+  const [query, setQuery] = useState(suggestions[0]!);
   const [result, setResult] = useState<ParseResult<Filter> | null>(null);
   const [error, setError] = useState<string | null>(null);
   useEffect(() => {
@@ -91,12 +88,11 @@ export function FilterDemo() {
             {suggestions.map((suggestion) => (
               <Button
                 variant="secondary"
-                key={suggestion.query}
-                aria-label={suggestion.query}
-                aria-pressed={query === suggestion.query}
-                onClick={() => updateQuery(suggestion.query)}
+                key={suggestion}
+                aria-pressed={query === suggestion}
+                onClick={() => updateQuery(suggestion)}
               >
-                {suggestion.label}
+                {suggestion}
               </Button>
             ))}
           </div>
