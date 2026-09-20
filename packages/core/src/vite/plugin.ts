@@ -17,7 +17,15 @@ export function matchbox() {
         model.decoderModule === null
           ? ""
           : `import decode from ${JSON.stringify(resolve(dirname(id), model.decoderModule).replaceAll("\\", "/"))};\n`;
-      return `import task from ${JSON.stringify(task)};\n${decoderImport}import { createParser } from "@matchbox-ai/core/runtime";\nconst parser = createParser(${JSON.stringify(model)}, task${model.decoderModule === null ? "" : ", decode"});\nif (import.meta.hot) import.meta.hot.dispose(() => parser.dispose?.());\nexport default parser;`;
+      const encoderImport =
+        model.kind === "feature-parser"
+          ? `import encode from ${JSON.stringify(resolve(dirname(id), model.encoderModule).replaceAll("\\", "/"))};\n`
+          : "";
+      let adapter = model.decoderModule === null ? "" : ", decode";
+      if (model.kind === "feature-parser") {
+        adapter = ", encode";
+      }
+      return `import task from ${JSON.stringify(task)};\n${decoderImport}${encoderImport}import { createParser } from "@matchbox-ai/core/runtime";\nconst parser = createParser(${JSON.stringify(model)}, task${adapter});\nif (import.meta.hot) import.meta.hot.dispose(() => parser.dispose?.());\nexport default parser;`;
     },
   };
 }

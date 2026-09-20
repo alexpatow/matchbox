@@ -28,11 +28,31 @@ my-app/
 
 `.matchbox/` holds generated artifacts and is ignored by Git. Put data generators in project-level `scripts/` and preserve evals independently.
 
+## Numeric feature tasks
+
+The sketch task replaces token supervision and decoding with an explicit encoder:
+
+```text
+matchbox/shapes/
+  parser.ts
+  pipeline.ts
+  encode.ts
+  recognize.ts
+  geometry/
+    normalize.ts
+    fit.ts
+  data/train.jsonl
+  evals/validation.jsonl
+  evals/test.jsonl
+```
+
+`encode.ts` exports a [NumericEncoder](primitives/feature-classifier.md) used during training and inference. `recognize.ts` and `geometry/` are application-owned helpers for converting a predicted class into fitted geometry; the framework does not discover them.
+
 ## Named entry points
 
-Use `X.ts` for a small module or `X/X.ts` with helpers alongside it. For example, `decode.ts` can become `decode/decode.ts` without changing the pipeline. Both forms existing at once is an error; `index.ts` is not discovered.
+Use `X.ts` for a small module or `X/X.ts` with helpers alongside it. For example, `decode.ts` can become `decode/decode.ts`, and `encode.ts` can become `encode/encode.ts` without changing the pipeline. Both forms existing at once is an error; `index.ts` is not discovered.
 
-Import authored modules directly. Keep shared domain helpers in a named task folder such as `countries/`. Applications import the generated `.matchbox/<task>/model.ts`, which references the parser and decoder without importing the training recipe.
+Import authored modules directly. Keep shared domain helpers in a named task folder such as `countries/`. Applications import the generated `.matchbox/<task>/model.ts`, which references the parser and any encoder or decoder without importing the pipeline or training recipe.
 
 ## Path overrides
 

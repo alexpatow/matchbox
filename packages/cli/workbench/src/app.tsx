@@ -46,7 +46,15 @@ export function App() {
           {error || state?.error}
         </pre>
       )}
-      {state && <ModelLab revision={state.revision} ready={state.ready} busy={pending} run={run} />}
+      {state && (
+        <ModelLab
+          inputFormat={state.inputFormat}
+          revision={state.revision}
+          ready={state.ready}
+          busy={pending}
+          run={run}
+        />
+      )}
       {report && <OperationReport report={report} />}
       <footer>
         Your app keeps its own development server. Model artifacts are written to .matchbox/

@@ -1,3 +1,4 @@
+import { inputKey } from "@matchbox-ai/core/internal";
 import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
@@ -7,7 +8,7 @@ import { readEvaluation } from "./read-evaluation.js";
 import { loadConfig } from "@matchbox-ai/train/project";
 export async function saveExample(path: string, input: string, output: unknown) {
   const { config, root } = await loadConfig(path);
-  const task: ParserDefinition<z.ZodType> = (
+  const task: ParserDefinition<z.ZodType, z.ZodType> = (
     await import(pathToFileURL(resolve(root, config.task)).href)
   ).default;
   const heldOut = (
@@ -18,13 +19,14 @@ export async function saveExample(path: string, input: string, output: unknown) 
       }),
     )
   ).flat();
-  const checkedInput = task.validateInput(input);
+  const value = task.toJSON().input.type === "string" ? input : JSON.parse(input);
+  const checkedInput = task.validateInput(value);
   const checkedOutput = task.validateOutput(output);
   if (!checkedInput.success || !checkedOutput.success) {
     throw new Error("The correction does not satisfy the task schema.");
   }
-  const key = input.trim().toLowerCase();
-  if (heldOut.some((row) => row.input.trim().toLowerCase() === key)) {
+  const key = inputKey(checkedInput.data);
+  if (heldOut.some((row) => inputKey(row.input) === key)) {
     throw new Error("This input belongs to a held-out split. Save a different training example.");
   }
   const file = resolve(root, config.train);
@@ -34,13 +36,20 @@ export async function saveExample(path: string, input: string, output: unknown) 
     .split("\n")
     .filter((line) => line.trim())
     .map((line) => JSON.parse(line));
-  const matching = rows.filter((row) => row.input.trim().toLowerCase() === key);
+  const rowKey = (row: { input: unknown }) => {
+    const checked = task.validateInput(row.input);
+    if (!checked.success) {
+      throw new Error("Existing training input does not satisfy the task schema.");
+    }
+    return inputKey(checked.data);
+  };
+  const matching = rows.filter((row) => rowKey(row) === key);
   if (matching.length > 1) {
     throw new Error(
       "Multiple training rows match this input. Edit the dataset to resolve duplicates first.",
     );
   }
-  const index = rows.findIndex((row) => row.input.trim().toLowerCase() === key);
+  const index = rows.findIndex((row) => rowKey(row) === key);
   const example = { input: checkedInput.data, output: checkedOutput.data };
   if (index < 0) {
     rows.push(example);

@@ -28,6 +28,7 @@ export const navigation = [
       ["reference/pipeline", "Pipeline API"],
       ["reference/supervision", "Tokens & decoders"],
       ["primitives/recurrent-token-classifier", "Recurrent classifiers"],
+      ["primitives/feature-classifier", "Numeric features"],
       ["reference/training", "train API"],
     ],
   ],
@@ -54,6 +55,7 @@ export const navigation = [
       ["examples/money", "Money"],
       ["examples/time", "Date, time & duration"],
       ["examples/lexer", "Syntax highlighting"],
+      ["examples/sketch", "Sketch to shape"],
     ],
   ],
   [

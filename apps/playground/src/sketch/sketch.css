@@ -1,0 +1,74 @@
+.sketch-page .sketch-demo {
+  margin-top: 48px;
+}
+.sketch-demo h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+.sketch-panel {
+  border-top: 1px solid var(--border);
+  overflow: hidden;
+}
+.sketch-panel canvas {
+  display: block;
+  width: 100%;
+  aspect-ratio: 5 / 3;
+  height: auto;
+  touch-action: none;
+  background-color: #fafaf7;
+  background-image: radial-gradient(#dadad3 1px, transparent 1px);
+  background-size: 24px 24px;
+  cursor: crosshair;
+}
+.sketch-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+}
+.sketch-toolbar button {
+  min-height: 38px;
+}
+.sketch-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+.sketch-status {
+  justify-content: space-between;
+  border-top: 1px solid var(--border, #deded8);
+}
+.sketch-status label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+}
+.sketch-output {
+  margin: 0;
+  padding: 0.8rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+}
+.sketch-output pre {
+  overflow: auto;
+  padding: 1rem;
+  font-size: 0.8rem;
+  background: var(--accent);
+  color: var(--foreground);
+}
+@media (max-width: 600px) {
+  .sketch-toolbar > span {
+    width: 100%;
+  }
+  .sketch-actions {
+    margin-left: 0;
+  }
+  .sketch-toolbar {
+    gap: 0.4rem;
+  }
+}

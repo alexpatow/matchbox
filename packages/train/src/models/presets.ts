@@ -27,3 +27,7 @@ export function recurrentTokenClassifier(
     ...options,
   } as const;
 }
+/** Fixed-length numeric features authored by the application, with finite field-value outputs. */
+export function featureClassifier(options: { encode?: string; threshold?: number } = {}) {
+  return { kind: "feature-classifier", encode: "./encode", threshold: 0.75, ...options } as const;
+}

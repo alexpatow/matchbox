@@ -10,7 +10,7 @@ export type FilterExpression =
 export type ParseResult<Output> =
   | { status: "ok"; value: Output; confidence: number }
   | { status: "uncertain"; value: null; confidence: number; reason: string };
-export interface MatchboxParser<Output> {
+export interface MatchboxParser<Output, Input = string> {
   load?(): Promise<void>;
-  parse(input: string): Promise<ParseResult<Output>>;
+  parse(input: Input): Promise<ParseResult<Output>>;
 }

@@ -28,6 +28,7 @@ export const configSchema = z.strictObject({
         .optional(),
     })
     .optional(),
+  features: z.strictObject({ encoder: z.string(), threshold: z.number().min(0).max(1) }).optional(),
   challenges: z.string().optional(),
 });
 export async function loadConfig(path: string) {
@@ -48,6 +49,12 @@ export async function loadConfig(path: string) {
   if (pipelinePath) {
     const pipeline = pipelineSchema.parse((await import(pathToFileURL(pipelinePath).href)).default);
     defaults = { ...pipeline.acceptance };
+    if (pipeline.prediction.kind === "feature-classifier") {
+      defaults.features = {
+        encoder: pipeline.prediction.encode,
+        threshold: pipeline.prediction.threshold,
+      };
+    }
     if (pipeline.prediction.kind === "recurrent-token-classifier") {
       const { recipe, decode, kind: _kind, ...recurrent } = pipeline.prediction;
       defaults.sequence = { recipe, decoder: decode, recurrent };
@@ -77,6 +84,12 @@ export async function loadConfig(path: string) {
   if (config.sequence) {
     config.sequence.recipe = await resolveModule(root, config.sequence.recipe);
     config.sequence.decoder = await resolveModule(root, config.sequence.decoder);
+  }
+  if (config.features) {
+    config.features.encoder = await resolveModule(root, config.features.encoder);
+    if (config.sequence) {
+      throw new Error("Choose either numeric features or a sequence pipeline.");
+    }
   }
   return { config, root, pipelinePath };
 }

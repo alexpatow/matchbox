@@ -10,3 +10,5 @@ Each example has an explicit task and pipeline under matchbox/, separate trainin
 | is-even | A minimal learned classification sanity check.                    | Use modulo in actual applications.                                            |
 
 The finite-value classifier remains covered by tests/fixtures/field-classifier. The money example is also the CLI template; the package build copies its authored files so the two stay aligned.
+
+The [sketch example](sketch/README.md) classifies structured point inputs and fits editable geometry. Its synthetic evaluation does not establish human drawing accuracy.

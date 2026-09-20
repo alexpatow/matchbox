@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import type { MatchboxParser, ParseResult } from "@matchbox-ai/core/runtime";
 import { Correction } from "./index";
 export function ModelLab({
+  inputFormat,
   revision,
   ready,
   busy,
   run,
 }: {
+  inputFormat: "text" | "json";
   revision: number;
   ready: boolean;
   busy: boolean;
@@ -14,7 +16,7 @@ export function ModelLab({
 }) {
   const [loaded, setLoaded] = useState<{
     revision: number;
-    parser: MatchboxParser<unknown>;
+    parser: MatchboxParser<unknown, unknown>;
   } | null>(null);
   const parser = ready && loaded?.revision === revision ? loaded.parser : null;
   const [input, setInput] = useState("");
@@ -27,7 +29,7 @@ export function ModelLab({
       return;
     }
     let current = true;
-    let model: (MatchboxParser<unknown> & { dispose?(): void }) | undefined;
+    let model: (MatchboxParser<unknown, unknown> & { dispose?(): void }) | undefined;
     void import(/* @vite-ignore */ `/__matchbox/model.ts?v=${revision}`)
       .then(async (module) => {
         model = module.default;
@@ -55,17 +57,18 @@ export function ModelLab({
     setRunning(true);
     setError(null);
     try {
-      const value = await parser.parse(input);
+      const parsedInput = inputFormat === "json" ? JSON.parse(input) : input;
+      const value = await parser.parse(parsedInput);
       setResult(value);
       if (measure) {
         await new Promise((resolve) => setTimeout(resolve, 0));
         for (let i = 0; i < 20; i++) {
-          await parser.parse(input);
+          await parser.parse(parsedInput);
         }
         const times: number[] = [];
         for (let i = 0; i < 100; i++) {
           const start = performance.now();
-          await parser.parse(input);
+          await parser.parse(parsedInput);
           times.push(performance.now() - start);
         }
         times.sort((a, b) => a - b);
@@ -81,7 +84,7 @@ export function ModelLab({
     <section className="lab">
       <div className="input-pane">
         <h2>Try an input.</h2>
-        <label htmlFor="input">Input</label>
+        <label htmlFor="input">{inputFormat === "json" ? "Input (JSON)" : "Input"}</label>
         <textarea
           id="input"
           value={input}

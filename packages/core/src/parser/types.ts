@@ -6,8 +6,8 @@ export interface FieldMetadata {
   readonly description?: string;
 }
 
-export interface ParserConfig<Output extends z.ZodType> {
-  readonly input: z.ZodString;
+export interface ParserConfig<Output extends z.ZodType, Input extends z.ZodType = z.ZodString> {
+  readonly input: Input;
   readonly output: Output;
   readonly fields?: Readonly<Record<string, FieldMetadata>>;
 }
@@ -30,13 +30,19 @@ export interface ParserMetadata {
   readonly fields: Readonly<Record<string, FieldMetadata>>;
 }
 
-export interface ParserDefinition<Output extends z.ZodType> {
+export interface ParserDefinition<Output extends z.ZodType, Input extends z.ZodType = z.ZodString> {
   readonly kind: "parser";
-  readonly input: z.ZodString;
+  readonly input: Input;
   readonly output: Output;
-  validateInput(value: unknown): ValidationResult<string>;
+  validateInput(value: unknown): ValidationResult<z.output<Input>>;
   validateOutput(value: unknown): ValidationResult<z.output<Output>>;
   toJSON(): ParserMetadata;
 }
 
-export type InferOutput<Task extends ParserDefinition<z.ZodType>> = z.output<Task["output"]>;
+export type InferOutput<Task extends ParserDefinition<z.ZodType, z.ZodType>> = z.output<
+  Task["output"]
+>;
+
+export type InferInput<Task extends ParserDefinition<z.ZodType, z.ZodType>> = z.input<
+  Task["input"]
+>;

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import type { Operation } from "./index";
 interface State {
   task: string;
+  inputFormat: "text" | "json";
   ready: boolean;
   stale: boolean;
   revision: number;

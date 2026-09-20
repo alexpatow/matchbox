@@ -13,6 +13,7 @@ export async function serveWorkbench(path: string, port: number) {
   let output: string = info.output;
   const state: WorkbenchState = {
     task: basename(taskRoot),
+    inputFormat: info.inputFormat,
     ready: false,
     stale: false,
     revision: Date.now(),

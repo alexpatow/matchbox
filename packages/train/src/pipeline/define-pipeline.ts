@@ -1,6 +1,11 @@
 import { z } from "zod";
 export const pipelineSchema = z.strictObject({
   prediction: z.discriminatedUnion("kind", [
+    z.strictObject({
+      kind: z.literal("feature-classifier"),
+      encode: z.string().min(1).default("./encode"),
+      threshold: z.number().min(0).max(1).default(0.75),
+    }),
     z.strictObject({ kind: z.literal("field-classifier") }),
     z.strictObject({
       kind: z.literal("token-classifier"),

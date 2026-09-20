@@ -4,6 +4,7 @@
 import {
   definePipeline,
   fieldClassifier,
+  featureClassifier,
   tokenClassifier,
   recurrentTokenClassifier,
 } from "@matchbox-ai/train";
@@ -13,11 +14,11 @@ import {
 
 `definePipeline` validates a declaration, fills defaults and returns a `Pipeline`. Its input permits omitted defaulted options. Invalid declarations throw a Zod validation error. It does not train or load Burn.
 
-| Property                 | Type                                              | Required | Behavior                                      |
-| ------------------------ | ------------------------------------------------- | -------- | --------------------------------------------- |
-| `prediction`             | Field, token or recurrent classifier declaration. | Yes.     | Chooses an explicit learning strategy.        |
-| `acceptance.minAccuracy` | Number from 0 to 1.                               | No.      | Minimum validation exact accuracy for export. |
-| `acceptance.maxBytes`    | Positive number.                                  | No.      | Maximum serialized model size in bytes.       |
+| Property                 | Type                                                       | Required | Behavior                                      |
+| ------------------------ | ---------------------------------------------------------- | -------- | --------------------------------------------- |
+| `prediction`             | Field, feature, token or recurrent classifier declaration. | Yes.     | Chooses an explicit learning strategy.        |
+| `acceptance.minAccuracy` | Number from 0 to 1.                                        | No.      | Minimum validation exact accuracy for export. |
+| `acceptance.maxBytes`    | Positive number.                                           | No.      | Maximum serialized model size in bytes.       |
 
 Unknown properties are rejected. See [configuration](configuration.md) for resolved defaults and overrides.
 
@@ -78,3 +79,7 @@ Retrain after either change. New sequence artifacts use format version 4 and req
 ## recurrentTokenClassifier
 
 `recurrentTokenClassifier(options?)` adds whole-sequence learned context using versioned text-part features. Its `RecurrentRecipe` and span supervision are separate from `SequenceRecipe`; existing classifier declarations are unchanged. See the [complete authoring, training and runtime contract](../primitives/recurrent-token-classifier.md), including options, input limits and opt-in partial results.
+
+## featureClassifier
+
+`featureClassifier({ encode: "./encode", threshold: 0.75 })` learns finite field values from application-authored numeric features. It supports structured input schemas and shares the encoder between training and inference. See the [encoder, output and runtime contracts](../primitives/feature-classifier.md).

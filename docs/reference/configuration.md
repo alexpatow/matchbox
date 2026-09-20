@@ -23,6 +23,7 @@ Paths resolve relative to the config's directory, normally `matchbox/<task>/`. T
 | `minAccuracy` | Number from 0 to 1.                                            | `0.95`, unless set in the pipeline.                                                          |
 | `maxBytes`    | Positive number.                                               | `256000` for recurrent models, otherwise `64000`, unless overridden.                         |
 | `challenges`  | Optional JSON path.                                            | `./evals/challenges.json` if present.                                                        |
+| `features`    | `{ encoder: string, threshold: number }`.                      | Derived from `featureClassifier`; prefer `pipeline.ts`.                                      |
 | `sequence`    | `{ recipe: string, decoder: string, contextRadius?: number }`. | Derived from the token pipeline. This is a legacy configuration route; prefer `pipeline.ts`. |
 
 Unknown properties are rejected. JSON configuration files are not supported. Challenge JSON is an array of `{ input: string, output: null }` used by sequence reports.
@@ -40,6 +41,8 @@ These APIs support CLI and build integrations. Import from `@matchbox-ai/train/p
 
 `loadArtifact().inspect(input)` returns model diagnostics and the candidate, without representing a final validated answer. These details differ by strategy. Use `parser.parse(input)` for application behavior. Discovery, missing files, invalid config, and incompatible artifacts reject their promises.
 
-`loadConfig` resolves task, recipe, and decoder module paths to absolute filenames. An extensionless override such as `task: "./schema"` resolves `schema.ts` or `schema/schema.ts`. An explicit filename bypasses conventional lookup for that module. Both conventional forms existing produces an error.
+`loadConfig` resolves task, recipe, encoder and decoder module paths to absolute filenames. An extensionless override such as `task: "./schema"` resolves `schema.ts` or `schema/schema.ts`. An explicit filename bypasses conventional lookup for that module. Both conventional forms existing produces an error.
 
 Recurrent pipelines resolve `sequence.recurrent` with `epochs`, `learningRate`, `batchParts`, `maxInputLength` and `maxParts`. Prefer authoring these through `recurrentTokenClassifier` in `pipeline.ts`; see the [option contracts](../primitives/recurrent-token-classifier.md#train-and-evaluate).
+
+Numeric pipelines resolve `features: { encoder: string, threshold: number }` from `featureClassifier`. The encoder path follows the same module resolution rules. Numeric and sequence strategies cannot be combined.

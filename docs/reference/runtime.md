@@ -9,9 +9,9 @@ type ParseResult<T> =
   | { status: "ok"; value: T; confidence: number }
   | { status: "uncertain"; value: null; confidence: number; reason: string };
 
-interface MatchboxParser<T> {
+interface MatchboxParser<T, Input = string> {
   load?(): Promise<void>;
-  parse(input: string): Promise<ParseResult<T>>;
+  parse(input: Input): Promise<ParseResult<T>>;
 }
 ```
 
@@ -27,17 +27,17 @@ const result = await parser.parse("for 90 minutes");
 parser.dispose();
 ```
 
-| Argument   | Type                         | Behavior                                                 |
-| ---------- | ---------------------------- | -------------------------------------------------------- |
-| `artifact` | `unknown`                    | Parsed Matchbox model artifact, validated by the loader. |
-| `task`     | `ParserDefinition<Output>`   | Must match the artifact's serialized task metadata.      |
-| `decode`   | `SequenceDecoder`, optional. | Required for token models; omit for field models.        |
+| Argument       | Type                                                    | Behavior                                                                                     |
+| -------------- | ------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `artifact`     | `unknown`                                               | Parsed Matchbox model artifact, validated by the loader.                                     |
+| `task`         | `ParserDefinition<Output, Input>`                       | Must match the artifact's serialized task metadata.                                          |
+| Third argument | `SequenceDecoder` or `NumericEncoder<z.output<Input>>`. | Supply a decoder for token models, an encoder for feature models, and omit for field models. |
 
-Returns `PartialMatchboxParser<z.output<Output>>` when the artifact has the literal kind `"recurrent-parser"` and a decoder is supplied; otherwise returns `MatchboxParser<z.output<Output>>`. Both include required `load(): Promise<void>` and `dispose(): void`. Most applications should import the generated module instead of calling this factory.
+Returns `PartialMatchboxParser<z.output<Output>>` when the artifact has the literal kind `"recurrent-parser"` and a decoder is supplied; numeric feature models with an encoder return `MatchboxParser<z.output<Output>, z.input<Input>>`; other text models return `MatchboxParser<z.output<Output>>`. All include required `load(): Promise<void>` and `dispose(): void`. Most applications should import the generated module instead of calling this factory.
 
 `load` caches initialization and uses Burn WASM CPU. Failed initialization can be retried. `dispose` releases weights; calls after disposal reject. The React hook does not dispose shared module instances on unmount.
 
-Malformed artifacts, schema mismatches, and a missing token decoder throw during parser creation. No runtime network API or API key is required. Your bundler may fetch the model's static chunks during loading.
+Malformed artifacts, schema mismatches, and a missing required encoder or decoder throw during parser creation. No runtime network API or API key is required. Your bundler may fetch the model's static chunks during loading.
 
 ## compileClauses
 
@@ -115,3 +115,7 @@ const partialGpu = await lexer.parse(source, { gpu: true, allowPartial: true });
 CPU and GPU predictors initialize independently and are cached per parser. `load()` warms CPU only. A direct first call with `gpu: true` loads the GPU runtime without loading CPU. Explicit GPU requests reject on unavailable WebGPU or initialization failure, with no silent fallback. An application may catch that error and explicitly retry on CPU.
 
 `dispose()` releases both predictors. GPU calls on one parser are serialized; disposal rejects queued work and releases the GPU predictor after active work finishes. Floating-point differences can affect labels or threshold decisions. See [runtime execution](../runtime-backends.md) for download and timing considerations.
+
+## Structured input
+
+Generated numeric-feature models expose `MatchboxParser<Output, Input>`, with both types inferred from the task schemas. `createParser(artifact, task, encode)` requires the authored `NumericEncoder<z.output<Input>>` as its third argument. Its return type is `MatchboxParser<z.output<Output>, z.input<Input>>` with `load` and `dispose`. See [feature classification](../primitives/feature-classifier.md) for limits and error behavior.

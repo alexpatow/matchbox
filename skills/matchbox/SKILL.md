@@ -31,6 +31,7 @@ Inspect existing parser, pipeline, recipe, decoder and evals before changing beh
 
 The schema defines valid output; it does not choose a numeric representation or learning strategy. Make the consequential choice explicit:
 
+- `featureClassifier({ encode: "./encode" })` accepts schema-validated structured inputs through an explicit fixed-length `NumericEncoder<Input>`. Keep normalization, resampling and geometry in application modules. Its outputs are finite field classes, not regression. See `docs/primitives/feature-classifier.md`.
 - `fieldClassifier()` learns finite observed output values and discards word order. It cannot produce unseen numeric values.
 - `tokenClassifier()` learns within a fixed window, using `SequenceRecipe` annotations and an application-owned decoder.
 - `recurrentTokenClassifier()` learns document context using `RecurrentRecipe`, `textParts()`, `textFeatures()` and `spanLabels()`. Its output supervision is labeled spans. It predicts one label per part and does not accept a fixed-window annotation callback.

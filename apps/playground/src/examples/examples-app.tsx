@@ -1,3 +1,4 @@
+import { SketchDemo } from "@/sketch";
 import { LexerDemo } from "@/lexer";
 import { SiteHeader, SiteFooter } from "@/site";
 import "./examples.css";
@@ -9,10 +10,9 @@ export function ExamplesApp() {
       <SiteHeader />
       <section className="introduction">
         <h1>Examples.</h1>
-        <p className="description">
-          Small models running on your device. Edit an input to see the output.
-        </p>
+        <p className="description">Small models running on your device.</p>
       </section>
+      <SketchDemo />
       <ModelExample
         name="time"
         title="Date, time & duration"

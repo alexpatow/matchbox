@@ -14,3 +14,7 @@ export {
   featureCount,
 } from "./recurrent/index.js";
 export type { RecurrentArtifact } from "./recurrent/index.js";
+export { inputKey } from "./input-key.js";
+export { readFeatureArtifact, encodeFeatures, createFeatureParser } from "./features/index.js";
+export type { FeatureArtifact } from "./features/index.js";
+export { featurePredictor } from "../runtime/burn/features.js";

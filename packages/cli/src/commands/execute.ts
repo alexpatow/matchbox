@@ -1,3 +1,4 @@
+import { pathToFileURL } from "node:url";
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
@@ -10,10 +11,16 @@ export async function execute(args: ReturnType<typeof argumentsFor>) {
   const path = await discover(args.config ?? args.target);
   if (command === "info") {
     const { config, root, pipelinePath } = await loadConfig(path);
+    let authoring = config.sequence ? "custom sequence" : "learned structured values";
+    if (config.features) {
+      authoring = "numeric features";
+    }
+    const task = (await import(pathToFileURL(resolve(root, config.task)).href)).default;
     print(
       {
+        inputFormat: task.toJSON().input.type === "string" ? "text" : "json",
         config: path,
-        authoring: config.sequence ? "custom sequence" : "learned structured values",
+        authoring,
         pipeline: pipelinePath ?? null,
         task: resolve(root, config.task),
         train: resolve(root, config.train),
@@ -55,11 +62,12 @@ export async function execute(args: ReturnType<typeof argumentsFor>) {
     }
     return;
   }
-  const input = args.rest[0]!;
+  const input =
+    model.task.toJSON().input.type === "string" ? args.rest[0]! : JSON.parse(args.rest[0]!);
   const result = await model.parser.parse(input);
   if (command === "inspect") {
     const details =
-      model.task.validateInput(input).success && input.length <= 512
+      model.task.validateInput(input).success && (typeof input !== "string" || input.length <= 512)
         ? await model.inspect(input)
         : {};
     print({ input, ...details, result }, args.json);

@@ -14,6 +14,7 @@ export async function modifiedAt(directory: string): Promise<number> {
 }
 export interface WorkbenchState {
   task: string;
+  inputFormat: "text" | "json";
   ready: boolean;
   stale: boolean;
   revision: number;

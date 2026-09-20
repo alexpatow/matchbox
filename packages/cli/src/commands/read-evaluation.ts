@@ -1,14 +1,18 @@
 import type { ParserDefinition } from "@matchbox-ai/core";
 import { z } from "zod";
-export function readEvaluation(text: string, source: string, task: ParserDefinition<z.ZodType>) {
-  const rows: { input: string; output: unknown }[] = [];
+export function readEvaluation(
+  text: string,
+  source: string,
+  task: ParserDefinition<z.ZodType, z.ZodType>,
+) {
+  const rows: { input: unknown; output: unknown }[] = [];
   text.split(/\r?\n/).forEach((line, index) => {
     if (!line.trim()) {
       return;
     }
     try {
       const row = z
-        .strictObject({ input: z.string(), output: z.unknown() })
+        .strictObject({ input: z.unknown(), output: z.unknown() })
         .parse(JSON.parse(line));
       if (!Object.hasOwn(row, "output")) {
         throw new Error("output: required");
