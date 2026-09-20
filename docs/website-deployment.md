@@ -6,7 +6,7 @@ The project root is the repository root. `vercel.json` installs dependencies wit
 
 Installation and builds pin Bun 1.4.2 because Vercel's bundled Bun may not support the repository's lockfile version. Keep this pin aligned with `packageManager` in the root `package.json`. The Vercel project uses Node.js 24.
 
-The SPA rewrite supports direct links to documentation routes. The small example models are retrained at build time. The lexer demo restores a previously evaluated model from the public `lexer-demo-0.4.0` GitHub release. Its URL, byte count and SHA-256 are pinned in `apps/playground/src/lexer/model-manifest.json`; the build verifies the checksum before caching or serving it. Missing assets and checksum mismatches fail the build. Generated weights stay out of Git. No application secrets are required.
+The SPA rewrite supports direct links to documentation routes. The small example models are retrained at build time. The lexer demo restores a previously evaluated model from the public `lexer-demo-snippets-v1` GitHub release. Its URL, byte count and SHA-256 are pinned in `apps/playground/src/lexer/model-manifest.json`; the build verifies the checksum before caching or serving it. Missing assets and checksum mismatches fail the build. Generated weights stay out of Git. No application secrets are required.
 
 To link a local checkout, run `vercel link --project matchbox --scope boolean-industries`. The generated `.vercel/` directory is ignored. Use `vercel deploy --target preview --scope boolean-industries` for a manual preview.
 

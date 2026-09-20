@@ -1,6 +1,6 @@
 {
-  "url": "https://github.com/alexpatow/matchbox/releases/download/lexer-demo-0.4.0/lexer.matchbox",
-  "sha256": "eb98becfc0e7094b92b3e3858544034dffe7c92e493aea38255ccf12bda7791f",
+  "url": "https://github.com/alexpatow/matchbox/releases/download/lexer-demo-snippets-v1/lexer.matchbox",
+  "sha256": "998c87a3e5e187cb8651e19c7adf81f613267c8fbef5540dc668872950a7f81c",
   "bytes": 194886,
   "parameters": 36233,
   "matchbox": "0.4.0"
