@@ -124,7 +124,7 @@
     },
     "packages/cli": {
       "name": "matchbox-ai",
-      "version": "0.4.2",
+      "version": "0.5.0",
       "bin": {
         "matchbox-ai": "./dist/cli.js",
       },
@@ -152,7 +152,7 @@
     },
     "packages/core": {
       "name": "@matchbox-ai/core",
-      "version": "0.4.2",
+      "version": "0.5.0",
       "dependencies": {
         "zod": "4.6.3",
       },
@@ -171,7 +171,7 @@
     },
     "packages/train": {
       "name": "@matchbox-ai/train",
-      "version": "0.4.2",
+      "version": "0.5.0",
       "dependencies": {
         "node-gyp-build": "4.8.4",
         "zod": "4.6.3",

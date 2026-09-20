@@ -1,5 +1,16 @@
 # @matchbox-ai/train
 
+## 0.5.0
+
+### Minor Changes
+
+- 2865a35: Support typed JSON inputs and explicit numeric feature classification. Add `NumericEncoder`, `InferInput`, and `featureClassifier`, preserve input types through generated wrappers and React, and accept JSON input in the CLI and workbench. Existing text classifiers and their APIs remain supported.
+
+### Patch Changes
+
+- Updated dependencies [2865a35]
+  - @matchbox-ai/core@0.5.0
+
 ## 0.4.2
 
 ### Patch Changes
