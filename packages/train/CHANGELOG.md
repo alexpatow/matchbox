@@ -1,5 +1,15 @@
 # @matchbox-ai/train
 
+## 0.4.2
+
+### Patch Changes
+
+- fca0090: Ship the Matchbox authoring skill in a discoverable skills directory alongside version-matched documentation. Clarify the documentation entry points, pipeline decisions and coding-agent workflow.
+- 1e2589d: Shorten the bundled guides and correct dataset setup, diagnostic limits, training reports and evaluation instructions against the current implementation.
+- Updated dependencies [fca0090]
+- Updated dependencies [1e2589d]
+  - @matchbox-ai/core@0.4.2
+
 ## 0.4.1
 
 ### Patch Changes
