@@ -3,3 +3,4 @@ export { FrameworkStory } from "./framework-story";
 export { SiteHeader } from "./site-header";
 export { SiteFooter } from "./site-footer";
 export { RouteEffects } from "./route-effects";
+export { SiteAnalytics } from "./site-analytics";

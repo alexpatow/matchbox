@@ -6,7 +6,7 @@ import "@fontsource-variable/geist-mono";
 import { ExamplesApp } from "./examples";
 import { DocsApp } from "./docs";
 import { App } from "./app";
-import { RouteEffects } from "./site";
+import { RouteEffects, SiteAnalytics } from "./site";
 import "./styles.css";
 import "./site.css";
 const root = document.getElementById("root");
@@ -17,6 +17,7 @@ createRoot(root).render(
   <StrictMode>
     <BrowserRouter>
       <RouteEffects />
+      {import.meta.env.PROD && <SiteAnalytics />}
       <Routes>
         <Route path="/docs/*" element={<DocsApp />} />
         <Route path="/examples" element={<ExamplesApp />} />
