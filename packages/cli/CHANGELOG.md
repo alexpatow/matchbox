@@ -1,5 +1,14 @@
 # matchbox-ai
 
+## 0.4.1
+
+### Patch Changes
+
+- aa43917: Document recurrent authoring primitives, partial-result types, GPU parse options and React loading behavior. Add a syntax-highlighting guide and link the APIs from the documentation navigation.
+- Updated dependencies [aa43917]
+  - @matchbox-ai/core@0.4.1
+  - @matchbox-ai/train@0.4.1
+
 ## 0.4.0
 
 ### Minor Changes
