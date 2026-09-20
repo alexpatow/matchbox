@@ -4,7 +4,7 @@ The Matchbox Lexer example trains on labeled source code and highlights text loc
 
 Use this pattern when a label depends on context earlier or later in a document. The application owns the label vocabulary, output schema and span decoder. Matchbox learns the predictions.
 
-On the documentation website, try the live editor at the end of this page. It uses a frozen, checksum-verified model; source text stays on your device. The same demo is available on the [examples page](/training#lexer-title).
+On the documentation website, try the live editor at the end of this page. It uses a frozen, checksum-verified model; source text stays on your device. The same demo is available on the [examples page](/examples#lexer-title).
 
 ## Author the task
 

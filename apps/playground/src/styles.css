@@ -270,23 +270,3 @@ td:last-child {
   font-size: 14px;
   color: var(--muted-foreground);
 }
-
-.training-example h2 {
-  font-size: 24px;
-  letter-spacing: -0.025em;
-}
-.training-example .description {
-  margin: 12px 0 20px;
-  line-height: 1.65;
-  max-width: 680px;
-}
-.training-metrics {
-  font-size: 12px;
-  color: var(--muted-foreground);
-  line-height: 1.8;
-  margin: 0 0 28px;
-  font-variant-numeric: tabular-nums;
-}
-.training-example + .training-example {
-  margin-top: 48px;
-}

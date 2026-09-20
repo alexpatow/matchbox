@@ -1,23 +1,23 @@
 import { LexerDemo } from "@/lexer";
 import { SiteHeader, SiteFooter } from "@/site";
+import "./examples.css";
 import { ModelExample } from "./model-example.js";
-import { loadMoney, loadParity, loadTime } from "./load-examples.js";
-export function TrainingApp() {
+import { loadMoney, loadTime } from "./load-examples.js";
+export function ExamplesApp() {
   return (
-    <main className="workspace">
+    <main className="workspace examples-page">
       <SiteHeader />
       <section className="introduction">
-        <h1>Try the models.</h1>
+        <h1>Examples.</h1>
         <p className="description">
-          Edit an input to run inference in your browser.{" "}
-          <a href="/docs/example-evaluation">See evaluation results and known failures.</a>
+          Small models running on your device. Edit an input to see the output.
         </p>
       </section>
       <ModelExample
         name="time"
         title="Date, time & duration"
         inputLabel="Parse a time expression"
-        description="Durations become seconds. Today and tomorrow become a relative day and clock time; your app supplies the timezone and reference date."
+        description="Turn time expressions into durations and relative dates."
         suggestions={[
           "for 90 minutes",
           "in two hours",
@@ -30,7 +30,7 @@ export function TrainingApp() {
         name="money"
         title="Money"
         inputLabel="Parse a money expression"
-        description="Extract an amount while ignoring invoice IDs and years. The model recognizes spans; application code normalizes numbers and four currencies. $ means USD."
+        description="Extract amounts and currencies from text, ignoring invoice IDs and years."
         suggestions={[
           "invoice 31415 totals € 28.65",
           "around twenty six grand in euros",
@@ -40,14 +40,6 @@ export function TrainingApp() {
         load={loadMoney}
       />
       <LexerDemo />
-      <ModelExample
-        name="is-even"
-        title="Training sanity check"
-        inputLabel="Classify a digit string"
-        description="A training sanity check. Use the modulo operator in an actual app."
-        suggestions={["12345678901234567890", "10001", "42"]}
-        load={loadParity}
-      />
       <SiteFooter />
     </main>
   );

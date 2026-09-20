@@ -1,5 +1,4 @@
 @import "./site/icons.css";
-@import "./benchmark/benchmark.css";
 @import "./site/hero.css";
 @import "./site/workbench.css";
 @import "./app/filter-performance.css";
@@ -153,9 +152,6 @@ pre {
   to {
     opacity: 0.3;
   }
-}
-.training-example pre {
-  min-height: 120px;
 }
 .site-footer {
   border-top: 1px solid var(--border);

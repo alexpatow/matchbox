@@ -1,3 +1,4 @@
+import { ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { LexerOutput } from "./lexer-output";
@@ -23,9 +24,14 @@ export function LexerDemo() {
   }
   return (
     <section className="lexer-demo" aria-labelledby="lexer-title">
-      <div className="section-heading">
-        <h2 id="lexer-title">Syntax highlighting</h2>
-        <p>A learned label for each part of the source. No language selector or syntax rules.</p>
+      <div className="example-heading">
+        <div>
+          <h2 id="lexer-title">Syntax highlighting</h2>
+          <p>Highlight source code without a language hint.</p>
+        </div>
+        <Link to="/docs/examples/lexer">
+          Docs <ArrowUpRight className="site-icon" aria-hidden="true" />
+        </Link>
       </div>
       <div className="lexer-controls">
         <label htmlFor="lexer-runtime">Run on</label>
@@ -37,37 +43,36 @@ export function LexerDemo() {
           <option value="cpu">CPU</option>
           <option value="gpu">WebGPU</option>
         </select>
-        <span>
-          {(manifest.bytes / 1000).toFixed(0)} KB model · {manifest.parameters.toLocaleString()}{" "}
-          parameters
+      </div>
+      <div className="lexer-columns">
+        <div>
+          <label htmlFor="lexer-source">Edit source code</label>
+          <textarea
+            id="lexer-source"
+            spellCheck={false}
+            value={input}
+            maxLength={16000}
+            onChange={(event) => setInput(event.target.value)}
+          />
+        </div>
+        <div>
+          <span className="lexer-output-label">Highlighting</span>
+          <LexerOutput input={input} result={prediction?.result ?? null} />
+        </div>
+      </div>
+      <p className="lexer-caption">Dotted underlines mark uncertain predictions.</p>
+      <footer className="lexer-metrics">
+        <span title="Model artifact only; runtime is additional.">
+          {(manifest.bytes / 1000).toFixed(0)} KB model
         </span>
-      </div>
-      <label htmlFor="lexer-source">Edit source code</label>
-      <textarea
-        id="lexer-source"
-        spellCheck={false}
-        value={input}
-        maxLength={16000}
-        onChange={(event) => setInput(event.target.value)}
-      />
-      <output className="lexer-status">{status}</output>
-      <LexerOutput input={input} result={prediction?.result ?? null} />
-      <p className="lexer-caption">
-        Dotted underlines mark uncertain predictions. When the model abstains, the source stays
-        unstyled. Timing includes lazy runtime initialization, but excludes downloading the model.
-        Shared runtime downloads are additional to the model size.
-      </p>
-      <p className="lexer-caption">
-        This editor accepts up to 16,000 UTF-16 units. Inference stays on your device. GPU is opt-in
-        and reports an error if unavailable.
-      </p>
-      <div className="lexer-links">
-        <Link to="/docs/examples/lexer">How this model is built</Link>
-        <a href="https://github.com/alexpatow/matchbox/releases/tag/lexer-demo-0.4.0">
-          Model and evaluation provenance
-        </a>
-        <a href="https://gpu-lexer.vercel.app/">Inspired by gpu-lexer by Shu Ding</a>
-      </div>
+        <output
+          className="lexer-status"
+          title="Includes runtime initialization, excludes model download."
+        >
+          {status}
+        </output>
+        <a href="https://github.com/alexpatow/matchbox-lexer">Source</a>
+      </footer>
     </section>
   );
 }

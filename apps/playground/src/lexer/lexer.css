@@ -2,8 +2,7 @@
   margin-block: 3rem;
   min-width: 0;
 }
-.lexer-controls,
-.lexer-links {
+.lexer-controls {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -41,10 +40,6 @@
 .lexer-caption {
   color: var(--muted-foreground, #656565);
 }
-.lexer-links a {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
 .lexer-comment {
   color: var(--muted-foreground);
   font-style: italic;
@@ -73,4 +68,70 @@
 
 .lexer-status {
   display: block;
+}
+
+.lexer-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.lexer-columns > div {
+  min-width: 0;
+}
+.lexer-output-label {
+  display: block;
+  font-size: 0.8rem;
+}
+.lexer-columns .lexer-output {
+  margin-block: 0.5rem 0;
+}
+.lexer-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px 24px;
+  font-size: 12px;
+  color: var(--muted-foreground);
+}
+.lexer-metrics a {
+  margin-left: auto;
+}
+.lexer-metrics .lexer-status {
+  margin: 0;
+}
+.examples-page .lexer-demo {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #0c0c0c;
+  overflow: hidden;
+}
+.examples-page .lexer-controls {
+  padding-inline: 24px;
+  margin-top: 0;
+}
+.examples-page .lexer-columns {
+  padding-inline: 24px;
+}
+.examples-page .lexer-caption {
+  padding-inline: 24px;
+}
+.examples-page .lexer-metrics {
+  padding: 16px 24px;
+  border-top: 1px solid var(--border);
+}
+@media (max-width: 700px) {
+  .lexer-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+.lexer-demo .example-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+}
+.lexer-demo .example-heading > a {
+  white-space: nowrap;
+  font-size: 12px;
 }
