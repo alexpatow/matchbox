@@ -1,5 +1,14 @@
 import { expect, test } from "@playwright/test";
 
+test("robots.txt serves a plain-text crawl policy", async ({ request }) => {
+  const response = await request.get("/robots.txt", {
+    headers: { "User-Agent": "Twitterbot/1.0" },
+  });
+  expect(response.status()).toBe(200);
+  expect(response.headers()["content-type"]).toContain("text/plain");
+  expect(await response.text()).toBe("User-agent: *\nAllow: /\n");
+});
+
 test("social crawlers receive metadata and a full-size PNG without JavaScript", async ({
   request,
 }) => {
