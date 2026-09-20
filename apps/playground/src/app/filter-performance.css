@@ -1,5 +1,11 @@
 .filter-performance {
-  margin-top: 20px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 16px 20px;
+  border-top: 1px solid var(--border);
   color: var(--muted-foreground);
   font-size: 12px;
 }
@@ -14,10 +20,14 @@
   font-size: 12px;
 }
 .filter-performance details {
-  margin-top: 12px;
+  margin-top: 0;
   max-width: 640px;
   line-height: 1.7;
 }
 .filter-performance summary {
   cursor: pointer;
+}
+
+.filter-performance details[open] {
+  flex-basis: 100%;
 }

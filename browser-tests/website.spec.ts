@@ -40,15 +40,23 @@ test("the file explorer supports keyboard navigation", async ({ page }) => {
   await expect(page.locator(".model-code span").first()).toBeVisible();
   await expect(page.getByText("Syntax highlighting by", { exact: false })).toBeVisible();
   const source = await page.locator(".model-code").textContent();
-  expect(source).toContain("money.parse");
+  expect(source).toContain("filters.parse");
   await page.getByRole("tab", { name: "parser.ts", exact: true }).focus();
   await page.keyboard.press("ArrowDown");
   await expect(page.getByRole("tab", { name: "pipeline.ts", exact: true })).toBeFocused();
-  await expect(page.getByRole("tabpanel")).toContainText("tokenClassifier");
+  await expect(
+    page.getByRole("tabpanel").filter({ has: page.locator(".model-code") }),
+  ).toContainText("tokenClassifier");
   await page.getByRole("tab", { name: "recipe.ts", exact: true }).click();
-  await expect(page.getByRole("tabpanel")).toContainText("annotate(example)");
+  await expect(
+    page.getByRole("tabpanel").filter({ has: page.locator(".model-code") }),
+  ).toContainText("annotate(_example, tokens)");
   await page.getByRole("tab", { name: "decode/decode.ts", exact: true }).click();
-  await expect(page.getByRole("tabpanel")).toContainText("normalizeNumber");
+  await expect(
+    page.getByRole("tabpanel").filter({ has: page.locator(".model-code") }),
+  ).toContainText("compileClauses");
   await page.getByRole("tab", { name: "app.ts", exact: true }).click();
-  await expect(page.getByRole("tabpanel")).toContainText("money.parse");
+  await expect(
+    page.getByRole("tabpanel").filter({ has: page.locator(".model-code") }),
+  ).toContainText("filters.parse");
 });

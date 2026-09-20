@@ -26,7 +26,9 @@ test("the generated model parses locally, filters customers, and handles uncerta
     })
     .click();
   await expect(page.getByLabel("Parsed filters")).toContainText("ARR < 50,000");
+  await page.getByRole("tab", { name: "Model output", exact: true }).click();
   await expect(page.getByLabel("Parser output")).toContainText('"or"');
+  await page.getByRole("tab", { name: "Customers", exact: true }).click();
   await page.screenshot({ path: testInfo.outputPath("demo.png"), fullPage: true });
   await page
     .getByRole("textbox", { name: "Filter customers", exact: true })

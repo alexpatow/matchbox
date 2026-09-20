@@ -1,13 +1,13 @@
-import parser from "../../../../../examples/money/matchbox/money/parser.ts?raw";
-import pipeline from "../../../../../examples/money/matchbox/money/pipeline.ts?raw";
-import recipe from "../../../../../examples/money/matchbox/money/recipe.ts?raw";
-import decode from "../../../../../examples/money/matchbox/money/decode/decode.ts?raw";
+import parser from "../../../../../examples/filters/matchbox/filters/parser.ts?raw";
+import pipeline from "../../../../../examples/filters/matchbox/filters/pipeline.ts?raw";
+import recipe from "../../../../../examples/filters/matchbox/filters/recipe.ts?raw";
+import decode from "../../../../../examples/filters/matchbox/filters/decode/decode.ts?raw";
 export const files = [
   {
     name: "app.ts",
     description:
       "Imports the generated TypeScript module and handles a validated result or uncertainty.",
-    code: 'import money from "./.matchbox/money/model";\n\nconst result = await money.parse("twenty dollars");\n\nif (result.status === "ok") {\n  console.log(result.value);\n} else {\n  console.log(result.reason);\n}',
+    code: 'import filters from "./.matchbox/filters/model";\n\nconst result = await filters.parse("active Swedish customers over 50k ARR");\n\nif (result.status === "ok") {\n  console.log(result.value);\n} else {\n  console.log(result.reason);\n}',
   },
   { name: "parser.ts", description: "Defines valid input and output.", code: parser },
   {
@@ -24,13 +24,13 @@ export const files = [
   },
   {
     name: "data/train.jsonl",
-    description: "One training row from the money dataset. Evaluation examples live separately.",
-    code: '{"input":"twenty dollars","output":{"amount":20,"currency":"USD","approximate":false}}',
+    description: "One training row from the filter dataset. Evaluation examples live separately.",
+    code: '{"input":"active","output":{"field":"status","operator":"eq","value":"active"}}',
   },
   {
     name: "decode/decode.ts",
     description:
-      "Runs in the browser. Assembles the model’s predicted labels into an amount and currency, or returns null.",
+      "Runs in the browser. Assembles predicted labels into filter clauses, or returns null.",
     code: decode,
   },
 ];

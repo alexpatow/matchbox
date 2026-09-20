@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { benchmark } from "@/filter";
 import { milliseconds, type TimingResult } from "@/benchmark";
-import { bytes } from "../../../../examples/filters/.matchbox/filters/report.json";
 
 export function FilterPerformance({ ready }: { ready: boolean }) {
   const [result, setResult] = useState<TimingResult | null>(null);
@@ -25,7 +24,6 @@ export function FilterPerformance({ ready }: { ready: boolean }) {
   return (
     <div className="filter-performance">
       <div className="filter-measurements">
-        <span className="filter-model-size">{(bytes / 1024).toFixed(1)} KiB model</span>
         <Button variant="secondary" disabled={!ready || running} onClick={measure}>
           {running ? "Measuring…" : "Measure latency"}
         </Button>

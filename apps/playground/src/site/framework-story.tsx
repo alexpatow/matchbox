@@ -3,8 +3,7 @@ export function FrameworkStory() {
   return (
     <section className="framework-story" aria-labelledby="workflow-title">
       <div className="section-heading">
-        <h2 id="workflow-title">Train it. Import it.</h2>
-        <p>The money example, from schema to a typed prediction.</p>
+        <h2 id="workflow-title">The model behind the demo.</h2>
       </div>
       <PipelineExplorer />
       <p className="highlight-credit">

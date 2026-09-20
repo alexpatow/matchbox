@@ -9,7 +9,7 @@ export function PipelineExplorer() {
     <div className="pipeline-explorer">
       <div className="file-tree">
         <span className="folder-name">
-          <Folder className="site-icon" aria-hidden="true" /> matchbox/money
+          <Folder className="site-icon" aria-hidden="true" /> matchbox/filters
         </span>
         <div role="tablist" aria-label="Example files" aria-orientation="vertical">
           {files.map((entry, index) => (
@@ -47,7 +47,7 @@ export function PipelineExplorer() {
         </div>
         <a
           className="example-source"
-          href="https://github.com/alexpatow/matchbox/tree/main/examples/money"
+          href="https://github.com/alexpatow/matchbox/tree/main/examples/filters"
         >
           Full example
         </a>
