@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import type { MatchboxParser, PartialMatchboxParser, GpuParseOptions } from "../runtime/index.js";
-type State<Parser extends MatchboxParser<unknown>> = {
+type State<Parser extends { parse: unknown }> = {
   status: "loading" | "error" | "ready";
   error: string | null;
   parse: Parser["parse"];
@@ -8,11 +8,13 @@ type State<Parser extends MatchboxParser<unknown>> = {
 export function useMatchbox<Output>(
   loader: () => Promise<{ default: PartialMatchboxParser<Output> }>,
 ): State<PartialMatchboxParser<Output>>;
-export function useMatchbox<Output>(
-  loader: () => Promise<{ default: MatchboxParser<Output> }>,
-): State<MatchboxParser<Output>>;
+export function useMatchbox<Output, Input = string>(
+  loader: () => Promise<{ default: MatchboxParser<Output, Input> }>,
+): State<MatchboxParser<Output, Input>>;
 /** Keep the loader outside the component so its identity remains stable. */
-export function useMatchbox<Output>(loader: () => Promise<{ default: MatchboxParser<Output> }>) {
+export function useMatchbox<Output, Input = string>(
+  loader: () => Promise<{ default: MatchboxParser<Output, Input> }>,
+) {
   const [settled, setSettled] = useState<{ loader: typeof loader; error: string | null } | null>(
     null,
   );
@@ -35,13 +37,17 @@ export function useMatchbox<Output>(loader: () => Promise<{ default: MatchboxPar
     };
   }, [loader]);
   const parse = useCallback(
-    async (input: string, options?: GpuParseOptions & { allowPartial?: boolean }) => {
+    async (input: Input, options?: GpuParseOptions & { allowPartial?: boolean }) => {
       const parser = (await loader()).default;
       if (options?.allowPartial || options?.gpu) {
-        if (!("supportsPartial" in parser) || parser.supportsPartial !== true) {
+        if (
+          typeof input !== "string" ||
+          !("supportsPartial" in parser) ||
+          parser.supportsPartial !== true
+        ) {
           throw new Error("GPU and partial parsing require a recurrent model.");
         }
-        const recurrent = parser as PartialMatchboxParser<Output>;
+        const recurrent = parser as unknown as PartialMatchboxParser<Output>;
         if (options.allowPartial) {
           return recurrent.parse(input, { ...options, allowPartial: true });
         }

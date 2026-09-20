@@ -37,7 +37,9 @@ export function OperationReport({ report }: { report: Operation }) {
           </p>
           {metrics.failures.map((failure, index) => (
             <div className="failure" key={index}>
-              <strong>{failure.input}</strong>
+              <strong>
+                {typeof failure.input === "string" ? failure.input : JSON.stringify(failure.input)}
+              </strong>
               <pre>
                 Expected: {JSON.stringify(failure.expected)}
                 {"\n"}Actual: {JSON.stringify(failure.actual)}

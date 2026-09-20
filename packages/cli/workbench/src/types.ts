@@ -3,7 +3,7 @@ export interface Metrics {
   exactAccuracy: number;
   abstentionRate: number;
   invalidOutputRate: number;
-  failures: { input: string; expected: unknown; actual: unknown }[];
+  failures: { input: unknown; expected: unknown; actual: unknown }[];
 }
 export interface Operation {
   command: string;

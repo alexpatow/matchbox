@@ -2,12 +2,12 @@ import { createHash } from "node:crypto";
 import { dirname, relative } from "node:path";
 import { createParser } from "@matchbox-ai/core/runtime";
 import type { RecordArtifact } from "@matchbox-ai/core/internal";
-import type { loadProject } from "../../load-project.js";
+import type { textProject } from "../../text-project.js";
 import { packageModel } from "../../packaging/package-model.js";
 import { evaluateSequence } from "../../evaluation/evaluate-sequence.js";
 import { fitRecord } from "./fit.js";
 export async function runRecord(
-  project: Awaited<ReturnType<typeof loadProject>>,
+  project: ReturnType<typeof textProject>,
   progress?: (epoch: number, loss: number) => void,
 ) {
   const start = performance.now();

@@ -29,5 +29,15 @@ if (result.success) {
 }
 void [wrongCountry, missing, wrongNumber];
 
-// @ts-expect-error Parser inputs must be strings.
-defineParser({ input: z.number(), output: z.strictObject({}) });
+const objectTask = defineParser({
+  input: z.strictObject({ points: z.array(z.strictObject({ x: z.number(), y: z.number() })) }),
+  output: z.strictObject({ kind: z.enum(["ellipse", "rectangle"]) }),
+});
+const points: import("@matchbox-ai/core").InferInput<typeof objectTask> = {
+  points: [{ x: 1, y: 2 }],
+};
+const wrongPoint: import("@matchbox-ai/core").InferInput<typeof objectTask> = {
+  // @ts-expect-error Coordinates remain numbers.
+  points: [{ x: "1", y: 2 }],
+};
+void [points, wrongPoint];

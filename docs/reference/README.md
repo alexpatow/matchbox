@@ -12,7 +12,7 @@ The examples use these public exports. Each page lists imports, arguments, retur
 | `@matchbox-ai/core/runtime`  | `compileClauses`, `Predicate`, `FilterExpression`                                                                                   | [Filter compilation](runtime.md#compileclauses)                         |
 | `@matchbox-ai/core/react`    | `useMatchbox`                                                                                                                       | [React](../react.md)                                                    |
 | `@matchbox-ai/core/vite`     | `matchbox`                                                                                                                          | [Vite](vite.md)                                                         |
-| `@matchbox-ai/train`         | `definePipeline`, `Pipeline`, `fieldClassifier`, `tokenClassifier`                                                                  | [Pipeline API](pipeline.md)                                             |
+| `@matchbox-ai/train`         | `definePipeline`, `Pipeline`, `fieldClassifier`, `featureClassifier`, `tokenClassifier`                                             | [Pipeline API](pipeline.md)                                             |
 | `@matchbox-ai/train`         | `recurrentTokenClassifier`, `RecurrentRecipe`, `textParts`, `textFeatures`, `spanLabels`, `TextParts`, `TextFeatures`, `SpanLabels` | [Recurrent classification](../primitives/recurrent-token-classifier.md) |
 | `@matchbox-ai/train`         | `SequenceRecipe`, `OutputDecoder`, `tokenize`                                                                                       | [Token supervision](supervision.md)                                     |
 | `@matchbox-ai/train`         | `train`, `TrainingConfig`                                                                                                           | [Training API](training.md)                                             |
@@ -24,4 +24,4 @@ The examples use these public exports. Each page lists imports, arguments, retur
 
 `version` is exported from `@matchbox-ai/core` and contains the installed core package version.
 
-Inputs are currently strings. Support for structured features requires a separate input and encoder contract.
+Text classifiers use strings. Structured inputs use an explicit [numeric feature encoder](../primitives/feature-classifier.md).

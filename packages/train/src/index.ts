@@ -15,3 +15,4 @@ export type {
   TextFeatures,
   SpanLabels,
 } from "./models/recurrent/index.js";
+export { featureClassifier } from "./models/presets.js";

@@ -8,7 +8,7 @@ import { readRecurrentArtifact } from "@matchbox-ai/core/internal";
 import type { RecurrentArtifact } from "@matchbox-ai/core/internal";
 import type { SequenceDecoder } from "@matchbox-ai/core/runtime";
 import type { DatasetExample } from "@matchbox-ai/core";
-import type { loadProject } from "../../load-project.js";
+import type { textProject } from "../../text-project.js";
 import { evaluateSequence } from "../../evaluation/evaluate-sequence.js";
 import { packageModel } from "../../packaging/package-model.js";
 import { readRecipe } from "./prepare.js";
@@ -17,7 +17,7 @@ import { diagnostics } from "./diagnostics.js";
 const hash = (value: string) => createHash("sha256").update(value).digest("hex");
 export async function runRecurrent(
   command: "train" | "eval",
-  project: Awaited<ReturnType<typeof loadProject>>,
+  project: ReturnType<typeof textProject>,
   progress?: (epoch: number, loss: number) => void,
 ) {
   const { task, config, root } = project;

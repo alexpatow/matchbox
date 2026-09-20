@@ -6,16 +6,14 @@ import type { ParserConfig, ParserDefinition, ParserMetadata } from "./types.js"
 import { validate } from "./validation.js";
 
 /** Describe a parser task. This defines validation and training metadata, not inference. */
-export function defineParser<Output extends z.ZodType>(
-  config: ParserConfig<Output>,
-): ParserDefinition<Output> {
-  const { input } = config;
+export function defineParser<Output extends z.ZodType, Input extends z.ZodType = z.ZodString>(
+  config: ParserConfig<Output, Input>,
+): ParserDefinition<Output, Input> {
+  checkSchema(config.input, "input");
+  const input = snapshotDefaults(config.input);
   checkSchema(config.output, "output");
   const output = snapshotDefaults(config.output);
-  checkSchema(input, "input");
-  if (input._zod.def.type !== "string") {
-    throw new TypeError("input: expected z.string().");
-  }
+
   checkStructuredRoot(output);
   const metadata: ParserMetadata = {
     formatVersion: 1,

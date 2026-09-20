@@ -1,7 +1,7 @@
 import type { ValidationIssue } from "../parser/index.js";
 
-export interface DatasetExample<Output> {
-  readonly input: string;
+export interface DatasetExample<Output, Input = string> {
+  readonly input: Input;
   readonly output: Output;
 }
 
@@ -24,12 +24,12 @@ export interface DatasetIssue extends ValidationIssue {
   readonly line: number;
 }
 
-export type DatasetResult<Output> =
+export type DatasetResult<Output, Input = string> =
   | {
       readonly success: true;
       readonly data: {
-        readonly train: readonly DatasetExample<Output>[];
-        readonly eval: readonly DatasetExample<Output>[];
+        readonly train: readonly DatasetExample<Output, Input>[];
+        readonly eval: readonly DatasetExample<Output, Input>[];
       };
     }
   | { readonly success: false; readonly issues: readonly DatasetIssue[] };

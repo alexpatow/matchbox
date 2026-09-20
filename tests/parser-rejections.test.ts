@@ -68,7 +68,6 @@ test("rejects custom refinements on containers, even if their children are suppo
 });
 
 test("rejects invalid inputs, recursive definitions, and malformed field metadata", () => {
-  // @ts-expect-error Exercise the runtime guard for untyped callers too.
   expect(() => defineParser({ input: z.coerce.string(), output: z.strictObject({}) })).toThrow(
     /coercion/,
   );

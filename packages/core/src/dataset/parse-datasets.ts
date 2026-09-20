@@ -4,10 +4,10 @@ import { parseSource } from "./parse-source.js";
 import type { DatasetConfig, DatasetIssue, DatasetResult } from "./types.js";
 
 /** Validate both splits without shuffling, splitting, or returning partial data. */
-export function parseDatasets<Output extends z.ZodType>(
-  task: ParserDefinition<Output>,
+export function parseDatasets<Output extends z.ZodType, Input extends z.ZodType = z.ZodString>(
+  task: ParserDefinition<Output, Input>,
   config: DatasetConfig,
-): DatasetResult<z.output<Output>> {
+): DatasetResult<z.output<Output>, z.output<Input>> {
   if (config.formatVersion !== 1) {
     throw new RangeError("Unsupported dataset formatVersion. Expected 1.");
   }

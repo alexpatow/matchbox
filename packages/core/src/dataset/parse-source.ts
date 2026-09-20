@@ -2,13 +2,13 @@ import type { z } from "zod";
 import type { ParserDefinition, ValidationIssue } from "../parser/index.js";
 import type { DatasetExample, DatasetIssue, DatasetSource } from "./types.js";
 
-export function parseSource<Output extends z.ZodType>(
-  task: ParserDefinition<Output>,
+export function parseSource<Output extends z.ZodType, Input extends z.ZodType = z.ZodString>(
+  task: ParserDefinition<Output, Input>,
   source: DatasetSource,
   split: "train" | "eval",
   issues: DatasetIssue[],
-): DatasetExample<z.output<Output>>[] {
-  const examples: DatasetExample<z.output<Output>>[] = [];
+): DatasetExample<z.output<Output>, z.output<Input>>[] {
+  const examples: DatasetExample<z.output<Output>, z.output<Input>>[] = [];
   let rows = 0;
   for (const [index, text] of source.text.split(/\r?\n/).entries()) {
     if (text.trim() === "") {

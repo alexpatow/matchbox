@@ -7,7 +7,7 @@ Use `data/train.jsonl`, `evals/validation.jsonl` and `evals/test.jsonl`. Each no
 {"input":"German customers","output":{"country":"DE"}}
 ```
 
-`input` must satisfy the task's string schema. `output` must satisfy its structured output schema. There are no row headers, split labels, IDs, or metadata properties in version 1. Application-specific fields belong inside `output` and must be declared by the task.
+`input` must satisfy the task's input schema. `output` must satisfy its structured output schema. There are no row headers, split labels, IDs, or metadata properties in version 1. Application-specific fields belong inside `input` or `output` and must be declared by the task.
 
 The conventional training workflow uses `data/train.jsonl`, `evals/validation.jsonl`, and `evals/test.jsonl`. The two-source validation API below is a lower-level utility, not the complete training configuration.
 

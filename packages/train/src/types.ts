@@ -1,5 +1,6 @@
 export interface TrainingConfig {
   challenges?: string;
+  features?: { encoder: string; threshold: number };
   sequence?: {
     recipe: string;
     decoder: string;

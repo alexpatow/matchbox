@@ -43,3 +43,5 @@ These APIs support CLI and build integrations. Import from `@matchbox-ai/train/p
 `loadConfig` resolves task, recipe, and decoder module paths to absolute filenames. An extensionless override such as `task: "./schema"` resolves `schema.ts` or `schema/schema.ts`. An explicit filename bypasses conventional lookup for that module. Both conventional forms existing produces an error.
 
 Recurrent pipelines resolve `sequence.recurrent` with `epochs`, `learningRate`, `batchParts`, `maxInputLength` and `maxParts`. Prefer authoring these through `recurrentTokenClassifier` in `pipeline.ts`; see the [option contracts](../primitives/recurrent-token-classifier.md#train-and-evaluate).
+
+Numeric pipelines resolve `features: { encoder: string, threshold: number }` from `featureClassifier`. The encoder path follows the same module resolution rules. Numeric and sequence strategies cannot be combined.

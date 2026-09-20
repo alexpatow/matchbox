@@ -8,7 +8,7 @@ import { createParser } from "@matchbox-ai/core/runtime";
 import { readSequenceArtifact, tokenize } from "@matchbox-ai/core/internal";
 import type { DatasetExample } from "@matchbox-ai/core";
 import type { MatchboxParser, SequenceDecoder } from "@matchbox-ai/core/runtime";
-import type { loadProject } from "../../load-project.js";
+import type { textProject } from "../../text-project.js";
 import { packageModel } from "../../packaging/package-model.js";
 import { fitSequence } from "./fit-sequence.js";
 import { evaluateSequence as evaluate } from "../../evaluation/evaluate-sequence.js";
@@ -16,7 +16,7 @@ import type { SequenceRecipe } from "./types.js";
 const hash = (value: string) => createHash("sha256").update(value).digest("hex");
 export async function runSequence(
   command: "train" | "eval",
-  project: Awaited<ReturnType<typeof loadProject>>,
+  project: ReturnType<typeof textProject>,
   progress?: (epoch: number, loss: number) => void,
 ) {
   const { task, config } = project;

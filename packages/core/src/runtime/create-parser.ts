@@ -1,144 +1,47 @@
 import type { z } from "zod";
-import type { ParseResult } from "./types.js";
-import type {
-  PartialMatchboxParser,
-  PartialParseOptions,
-  PartialParseResult,
-  GpuParseOptions,
-} from "./partial.js";
-import { createRecurrentParser } from "../internal/recurrent/create-parser.js";
-import type { ParserDefinition } from "../parser/index.js";
-import { readArtifact } from "./artifact.js";
-import type { MatchboxParser } from "./types.js";
-import { createRecordParser } from "../internal/record/index.js";
-import { createSequenceParser } from "../internal/sequence/index.js";
+import type { ParserDefinition } from "../parser/types.js";
+import type { NumericEncoder } from "../parser/numeric-encoder.js";
 import type { SequenceDecoder } from "../internal/sequence/index.js";
-
-/** The model runtime loads on first parse or explicit load. Call dispose when the parser is no longer needed. */
+import type { MatchboxParser } from "./types.js";
+import type { PartialMatchboxParser } from "./partial.js";
+import { readArtifact } from "./artifact.js";
+import { createFeatureParser } from "../internal/features/index.js";
+import { createTextParser } from "./create-text-parser.js";
 type Lifecycle = { load(): Promise<void>; dispose(): void };
 export function createParser<Output extends z.ZodType>(
   value: { readonly kind: "recurrent-parser" },
   task: ParserDefinition<Output>,
   decode: SequenceDecoder,
 ): PartialMatchboxParser<z.output<Output>> & Lifecycle;
+export function createParser<Output extends z.ZodType, Input extends z.ZodType>(
+  value: unknown,
+  task: ParserDefinition<Output, Input>,
+  encode: NumericEncoder<z.output<Input>>,
+): MatchboxParser<z.output<Output>, z.input<Input>> & Lifecycle;
 export function createParser<Output extends z.ZodType>(
   value: unknown,
   task: ParserDefinition<Output>,
   decode?: SequenceDecoder,
 ): MatchboxParser<z.output<Output>> & Lifecycle;
-export function createParser<Output extends z.ZodType>(
+export function createParser<Output extends z.ZodType, Input extends z.ZodType>(
   value: unknown,
-  task: ParserDefinition<Output>,
-  decode?: SequenceDecoder,
+  task: ParserDefinition<Output, Input>,
+  adapter?: SequenceDecoder | NumericEncoder<z.output<Input>>,
 ) {
   const model = readArtifact(value);
   if (JSON.stringify(model.taskMetadata) !== JSON.stringify(task.toJSON())) {
     throw new Error("The model and task schema differ. Retrain the model.");
   }
-  if (model.kind !== "record-parser" && !decode) {
-    throw new Error("The sequence artifact requires its explicit decoder.");
+  if (model.kind === "feature-parser") {
+    if (!adapter || typeof adapter === "function") {
+      throw new Error("The feature artifact requires its explicit numeric encoder.");
+    }
+    return createFeatureParser(model, task, adapter);
   }
-  let gpuLoading: Promise<PartialMatchboxParser<z.output<Output>>> | undefined;
-  let gpuRelease: (() => void) | undefined;
-  let disposed = false;
-  let release: (() => void) | undefined;
-  let loading: Promise<MatchboxParser<z.output<Output>>> | undefined;
-  const initialize = async () => {
-    const { tensorPredictor } = await import("../internal/tensor-predictor.js");
-    if (disposed) {
-      throw new Error("The parser has been disposed.");
-    }
-    const predictor = await tensorPredictor(model);
-    if (disposed) {
-      predictor.dispose();
-      throw new Error("The parser has been disposed.");
-    }
-    release = predictor.dispose;
-    if (model.kind === "recurrent-parser") {
-      return createRecurrentParser(model, task, decode!, predictor.sequence);
-    }
-    return model.kind === "record-parser"
-      ? createRecordParser(model, task, predictor.record)
-      : createSequenceParser(model, task, decode!, predictor.sequence);
-  };
-  const load = async () => {
-    if (disposed) {
-      throw new Error("The parser has been disposed.");
-    }
-    loading ??= initialize().catch((error: unknown) => {
-      loading = undefined;
-      throw error;
-    });
-    const parser = await loading;
-    if (disposed) {
-      throw new Error("The parser has been disposed.");
-    }
-    return parser;
-  };
-  const loadGpu = async () => {
-    if (disposed) {
-      throw new Error("The parser has been disposed.");
-    }
-    if (model.kind !== "recurrent-parser") {
-      throw new Error("GPU parsing currently requires a recurrent model.");
-    }
-    gpuLoading ??= (async () => {
-      const { gpuPredictor } = await import("./burn/gpu.js");
-      if (disposed) {
-        throw new Error("The parser has been disposed.");
-      }
-      const predictor = await gpuPredictor(model);
-      if (disposed) {
-        predictor.dispose();
-        throw new Error("The parser has been disposed.");
-      }
-      gpuRelease = predictor.dispose;
-      return createRecurrentParser(model, task, decode!, predictor.sequence);
-    })().catch((error: unknown) => {
-      gpuLoading = undefined;
-      throw error;
-    });
-    return gpuLoading;
-  };
-  function parse(
-    input: string,
-    options: PartialParseOptions,
-  ): Promise<PartialParseResult<z.output<Output>>>;
-  function parse(input: string, options?: GpuParseOptions): Promise<ParseResult<z.output<Output>>>;
-  async function parse(
-    input: string,
-    options?: GpuParseOptions & { allowPartial?: boolean },
-  ): Promise<PartialParseResult<z.output<Output>>> {
-    const parser = options?.gpu ? await loadGpu() : await load();
-    if (disposed) {
-      throw new Error("The parser has been disposed.");
-    }
-    if (options?.allowPartial) {
-      if (model.kind !== "recurrent-parser") {
-        throw new Error("Partial parsing requires a recurrent model.");
-      }
-      return (parser as PartialMatchboxParser<z.output<Output>>).parse(input, {
-        ...options,
-        allowPartial: true,
-      });
-    }
-    return parser.parse(input);
+  if (task.toJSON().input.type !== "string" || (adapter && typeof adapter !== "function")) {
+    throw new Error(
+      "Text classifiers require string input. Use featureClassifier with an explicit encoder for structured input.",
+    );
   }
-  const runtime = {
-    async load() {
-      await load();
-    },
-    parse,
-    dispose() {
-      disposed = true;
-      release?.();
-      gpuRelease?.();
-      gpuRelease = undefined;
-      release = undefined;
-    },
-  };
-  if (model.kind === "recurrent-parser") {
-    return { ...runtime, supportsPartial: true as const };
-  }
-  return runtime;
+  return createTextParser(model, task as unknown as ParserDefinition<Output>, adapter);
 }

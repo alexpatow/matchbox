@@ -1,0 +1,21 @@
+{
+  "name": "@matchbox-ai/sketch-example",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "bun scripts/generate-data.ts",
+    "train": "matchbox-ai train shapes",
+    "eval": "matchbox-ai eval shapes",
+    "eval:shapes": "bun scripts/evaluate-shapes.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@matchbox-ai/core": "workspace:*",
+    "zod": "4.6.3"
+  },
+  "devDependencies": {
+    "@matchbox-ai/train": "workspace:*",
+    "@types/bun": "1.4.2",
+    "typescript": "7.0.2"
+  }
+}

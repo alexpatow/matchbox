@@ -10,7 +10,7 @@ export function metrics(value: {
   exactAccuracy: number;
   abstentionRate: number;
   invalidOutputRate: number;
-  failures: { input: string; expected: unknown; actual: unknown }[];
+  failures: { input: unknown; expected: unknown; actual: unknown }[];
 }) {
   console.log(
     `  Exact match   ${(value.exactAccuracy * 100).toFixed(1)}% across ${value.examples} examples`,
@@ -19,7 +19,7 @@ export function metrics(value: {
   console.log(`  Invalid       ${(value.invalidOutputRate * 100).toFixed(1)}%`);
   for (const failure of value.failures.slice(0, 10)) {
     console.log(
-      `\n  ${failure.input}\n    Expected: ${JSON.stringify(failure.expected)}\n    Actual:   ${JSON.stringify(failure.actual)}`,
+      `\n  ${typeof failure.input === "string" ? failure.input : JSON.stringify(failure.input)}\n    Expected: ${JSON.stringify(failure.expected)}\n    Actual:   ${JSON.stringify(failure.actual)}`,
     );
   }
   if (value.failures.length > 10) {

@@ -9,9 +9,9 @@ type ParseResult<T> =
   | { status: "ok"; value: T; confidence: number }
   | { status: "uncertain"; value: null; confidence: number; reason: string };
 
-interface MatchboxParser<T> {
+interface MatchboxParser<T, Input = string> {
   load?(): Promise<void>;
-  parse(input: string): Promise<ParseResult<T>>;
+  parse(input: Input): Promise<ParseResult<T>>;
 }
 ```
 
@@ -115,3 +115,7 @@ const partialGpu = await lexer.parse(source, { gpu: true, allowPartial: true });
 CPU and GPU predictors initialize independently and are cached per parser. `load()` warms CPU only. A direct first call with `gpu: true` loads the GPU runtime without loading CPU. Explicit GPU requests reject on unavailable WebGPU or initialization failure, with no silent fallback. An application may catch that error and explicitly retry on CPU.
 
 `dispose()` releases both predictors. GPU calls on one parser are serialized; disposal rejects queued work and releases the GPU predictor after active work finishes. Floating-point differences can affect labels or threshold decisions. See [runtime execution](../runtime-backends.md) for download and timing considerations.
+
+## Structured input
+
+Generated numeric-feature models expose `MatchboxParser<Output, Input>`, with both types inferred from the task schemas. `createParser(artifact, task, encode)` requires the authored `NumericEncoder<z.output<Input>>` as its third argument. Its return type is `MatchboxParser<z.output<Output>, z.input<Input>>` with `load` and `dispose`. See [feature classification](../primitives/feature-classifier.md) for limits and error behavior.

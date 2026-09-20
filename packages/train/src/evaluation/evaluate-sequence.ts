@@ -1,9 +1,9 @@
 import { sameOutput } from "./same-output.js";
 import type { DatasetExample } from "@matchbox-ai/core";
 import type { MatchboxParser } from "@matchbox-ai/core/runtime";
-export async function evaluateSequence(
-  parser: MatchboxParser<unknown>,
-  examples: readonly DatasetExample<unknown>[],
+export async function evaluateSequence<Input>(
+  parser: MatchboxParser<unknown, Input>,
+  examples: readonly DatasetExample<unknown, Input>[],
   validate: (value: unknown) => boolean,
 ) {
   let exact = 0,
@@ -11,7 +11,7 @@ export async function evaluateSequence(
     correctAccepted = 0,
     correctAbstentions = 0;
   let invalidOutputs = 0;
-  const failures: { input: string; expected: unknown; actual: unknown }[] = [];
+  const failures: { input: Input; expected: unknown; actual: unknown }[] = [];
   for (const row of examples) {
     const result = await parser.parse(row.input);
     const actual = result.status === "ok" ? result.value : null;

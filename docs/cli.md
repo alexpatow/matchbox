@@ -109,3 +109,5 @@ It does not retrain. Token pipelines also require updated recipe supervision bef
 ## Exit status
 
 Successful commands exit `0`, including uncertain predictions. Invalid arguments, missing tasks/artifacts, malformed data, training failures, and failed eval thresholds exit nonzero. `--help` and `--version` exit `0`.
+
+For non-string input schemas, pass a JSON value as the input argument to `parse`, `inspect` and `save`. The workbench accepts JSON in its input editor. JSONL training and evaluation files retain their existing row format, with the structured value inside `input`. See [numeric feature classifiers](primitives/feature-classifier.md).
