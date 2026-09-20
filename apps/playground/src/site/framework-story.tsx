@@ -10,7 +10,8 @@ export function FrameworkStory() {
       </div>
       <PipelineExplorer />
       <p className="highlight-credit">
-        Syntax highlighting by <Link to="/docs/examples/lexer">a Matchbox model</Link>.
+        Syntax highlighting by{" "}
+        <a href="https://github.com/alexpatow/matchbox-lexer">a Matchbox model</a>.
       </p>
       <div className="story-note">
         <Link to="/docs/getting-started">
