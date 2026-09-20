@@ -19,6 +19,10 @@ test("the framework story leads into working documentation", async ({ page }, te
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Getting started");
   expect(await page.evaluate(() => performance.timeOrigin)).toBe(origin);
   await expect(page.getByRole("main")).not.toContainText("private, and unpublished");
+  const docsToggle = page.getByRole("button", { name: "Documentation", exact: true });
+  if (await docsToggle.isVisible()) {
+    await docsToggle.click();
+  }
   const links = await page
     .getByRole("navigation", { name: "Documentation" })
     .getByRole("link")
@@ -41,21 +45,33 @@ test("the file explorer supports keyboard navigation", async ({ page }) => {
   await expect(page.getByText("Syntax highlighting by", { exact: false })).toBeVisible();
   const source = await page.locator(".model-code").textContent();
   expect(source).toContain("filters.parse");
-  await page.getByRole("tab", { name: "parser.ts", exact: true }).focus();
-  await page.keyboard.press("ArrowDown");
-  await expect(page.getByRole("tab", { name: "pipeline.ts", exact: true })).toBeFocused();
+  const picker = page.getByRole("combobox", { name: "Example file" });
+  async function selectFile(name: string) {
+    if (await picker.isVisible()) {
+      await picker.selectOption({ label: name });
+    } else {
+      await page.getByRole("tab", { name, exact: true }).click();
+    }
+  }
+  if (await picker.isVisible()) {
+    await selectFile("pipeline.ts");
+  } else {
+    await page.getByRole("tab", { name: "parser.ts", exact: true }).focus();
+    await page.keyboard.press("ArrowDown");
+    await expect(page.getByRole("tab", { name: "pipeline.ts", exact: true })).toBeFocused();
+  }
   await expect(
     page.getByRole("tabpanel").filter({ has: page.locator(".model-code") }),
   ).toContainText("tokenClassifier");
-  await page.getByRole("tab", { name: "recipe.ts", exact: true }).click();
+  await selectFile("recipe.ts");
   await expect(
     page.getByRole("tabpanel").filter({ has: page.locator(".model-code") }),
   ).toContainText("annotate(_example, tokens)");
-  await page.getByRole("tab", { name: "decode/decode.ts", exact: true }).click();
+  await selectFile("decode/decode.ts");
   await expect(
     page.getByRole("tabpanel").filter({ has: page.locator(".model-code") }),
   ).toContainText("compileClauses");
-  await page.getByRole("tab", { name: "app.ts", exact: true }).click();
+  await selectFile("app.ts");
   await expect(
     page.getByRole("tabpanel").filter({ has: page.locator(".model-code") }),
   ).toContainText("filters.parse");

@@ -24,7 +24,7 @@ export function DocsApp() {
       <SiteHeader />
       <div className="docs-layout">
         <aside>
-          <DocsNavigation slug={slug} />
+          <DocsNavigation key={slug} slug={slug} />
         </aside>
         <main className="doc-content">
           {source ? (

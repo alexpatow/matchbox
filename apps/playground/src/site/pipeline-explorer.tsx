@@ -1,4 +1,4 @@
-import { FileCode, FileJson, Folder } from "lucide-react";
+import { ChevronDown, FileCode, FileJson, Folder } from "lucide-react";
 import { useState } from "react";
 import { ModelCode } from "@/lexer";
 import { files } from "./pipeline-example";
@@ -8,6 +8,24 @@ export function PipelineExplorer() {
   return (
     <div className="pipeline-explorer">
       <div className="file-tree">
+        <div className="mobile-file-picker">
+          <label htmlFor="example-file">Example file</label>
+          <div className="file-select">
+            <select
+              id="example-file"
+              value={selected}
+              aria-controls="file-panel"
+              onChange={(event) => setSelected(Number(event.target.value))}
+            >
+              {files.map((entry, index) => (
+                <option key={entry.name} value={index}>
+                  {entry.name}
+                </option>
+              ))}
+            </select>
+            <ChevronDown className="site-icon" aria-hidden="true" />
+          </div>
+        </div>
         <span className="folder-name">
           <Folder className="site-icon" aria-hidden="true" /> matchbox/filters
         </span>
@@ -52,7 +70,7 @@ export function PipelineExplorer() {
           Full example
         </a>
       </div>
-      <div role="tabpanel" id="file-panel" aria-labelledby={`file-${selected}`} tabIndex={0}>
+      <div role="tabpanel" id="file-panel" aria-label={file.name} tabIndex={0}>
         <div className="file-caption">
           <span>{file.name}</span>
         </div>

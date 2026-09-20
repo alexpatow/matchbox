@@ -1,3 +1,33 @@
+.mobile-file-picker {
+  display: none;
+}
+.mobile-file-picker label {
+  display: block;
+  margin-bottom: 8px;
+  color: #999;
+  font-size: 12px;
+}
+.file-select {
+  position: relative;
+}
+.file-select select {
+  appearance: none;
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 40px 10px 12px;
+  border: 1px solid #3c3c3c;
+  border-radius: 5px;
+  background: #161616;
+  color: #eee;
+  font: inherit;
+  font-size: 16px;
+}
+.file-select .site-icon {
+  position: absolute;
+  right: 12px;
+  top: 16px;
+  pointer-events: none;
+}
 .demo {
   padding: 78px 0 0;
   scroll-margin-top: 28px;
@@ -138,25 +168,24 @@
   .folder-name {
     padding: 0 6px 14px;
   }
-  .file-tree [role="tablist"] {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-  }
-  .file-tree button {
-    width: auto;
-    font-size: 11px;
-    padding: 9px;
-  }
-  .file-tree p {
+  .file-tree [role="tablist"],
+  .file-tree .folder-name,
+  .file-caption {
     display: none;
   }
-  .file-caption span:last-child {
-    display: none;
+  .file-tree .example-source {
+    margin: 8px 0 0;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .mobile-file-picker {
+    display: block;
   }
   .pipeline-explorer pre {
     padding: 20px;
-    font-size: 11px;
+    font-size: 12px;
+    height: 340px;
   }
   .framework-story {
     padding-top: 64px;

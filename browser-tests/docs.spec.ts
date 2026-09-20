@@ -5,6 +5,10 @@ test("documentation leads from setup to searchable contracts and CLI anchors", a
   await page.goto("/docs/getting-started");
   await expect(page.getByRole("heading", { name: "Getting started", exact: true })).toBeVisible();
   await expect(page.locator("main")).toContainText("bunx matchbox-ai init money --template money");
+  const toggle = page.getByRole("button", { name: "Documentation", exact: true });
+  if (await toggle.isVisible()) {
+    await toggle.click();
+  }
   await page.getByLabel("Find a page").fill("SequenceRecipe");
   await page
     .getByRole("navigation", { name: "Documentation", exact: true })
@@ -24,6 +28,10 @@ test("training and evaluating have separate guides and readable prose spacing", 
   page,
 }) => {
   await page.goto("/docs/training");
+  const toggle = page.getByRole("button", { name: "Documentation", exact: true });
+  if (await toggle.isVisible()) {
+    await toggle.click();
+  }
   const navigation = page.getByRole("navigation", { name: "Documentation", exact: true });
   await expect(navigation.getByText("Training", { exact: true })).toBeVisible();
   await expect(navigation.getByText("Evaluating", { exact: true })).toBeAttached();

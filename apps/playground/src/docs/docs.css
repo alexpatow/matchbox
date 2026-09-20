@@ -34,23 +34,6 @@
     gap: 32px;
   }
 }
-@media (max-width: 600px) {
-  .docs-layout {
-    display: block;
-    padding-top: 28px;
-  }
-  .docs-layout aside nav {
-    position: static;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-bottom: 24px;
-    border-bottom: 1px solid var(--border);
-  }
-  .docs-layout aside nav > div {
-    flex: 1 1 120px;
-  }
-}
 .docs-search-label {
   display: block;
   font-size: 12px;
@@ -85,17 +68,6 @@
   max-height: calc(100vh - 64px);
   overflow-y: auto;
 }
-@media (max-width: 600px) {
-  .docs-layout aside nav {
-    max-height: 220px;
-    display: block;
-    overflow-y: auto;
-    padding-bottom: 12px;
-  }
-  .docs-layout aside nav > div {
-    margin-bottom: 16px;
-  }
-}
 
 .doc-actions {
   display: flex;
@@ -122,4 +94,67 @@
 }
 .doc-actions output:empty {
   display: none;
+}
+
+.docs-menu-toggle {
+  display: none;
+}
+@media (max-width: 600px) {
+  .docs-layout {
+    display: block;
+    padding-top: 20px;
+  }
+  .docs-layout aside {
+    margin-bottom: 24px;
+  }
+  .docs-menu-toggle {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    min-height: 48px;
+    border-bottom: 1px solid var(--border);
+    color: inherit;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .docs-menu-toggle[aria-expanded="true"] .site-icon {
+    transform: rotate(180deg);
+  }
+  .docs-layout aside nav {
+    position: static;
+    max-height: none;
+    overflow: visible;
+    padding-top: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .docs-layout aside nav[data-open="false"] {
+    display: none;
+  }
+  .docs-layout aside nav a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  #docs-search {
+    min-height: 44px;
+    font-size: 16px;
+  }
+  .doc-actions button,
+  .doc-outline summary,
+  .doc-outline a {
+    min-height: 44px;
+  }
+  .doc-outline summary {
+    padding-block: 12px;
+  }
+  .doc-outline a {
+    display: inline-flex;
+    align-items: center;
+  }
+  .doc-content h1 {
+    font-size: 34px;
+    overflow-wrap: anywhere;
+  }
 }
