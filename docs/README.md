@@ -2,6 +2,8 @@
 
 Start with [Getting started](getting-started.md) to add a task, train a model, and import it into an existing app.
 
+- [Recurrent classification](primitives/recurrent-token-classifier.md) covers text-part features, span supervision, partial results and optional WebGPU.
+- [Syntax highlighting](examples/lexer.md) shows these APIs in a published-package consumer.
 - [CLI reference](cli.md) covers every command and option.
 - [API reference](reference/README.md) indexes the public contracts by package.
 - [Training](training.md) walks through fitting and exporting a model.
