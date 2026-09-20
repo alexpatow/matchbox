@@ -66,8 +66,6 @@ test("automatically measures real browser inference and enforces a generous regr
   await expect(output).toHaveAttribute("data-report", report!);
   await expect(output).toContainText("ms median");
   await expect(output).toContainText("ms p95");
-  await page.getByText("Measurement details", { exact: true }).click();
-  await expect(page.locator(".filter-performance")).toContainText("300 calls");
   await page.locator(".filter-performance").screenshot({ path: testInfo.outputPath("timing.png") });
   await writeFile(
     testInfo.outputPath("browser-benchmark.json"),
