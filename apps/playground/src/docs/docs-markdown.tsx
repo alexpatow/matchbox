@@ -12,7 +12,7 @@ export function DocsMarkdown({ source, slug }: { source: string; slug: string })
         h3: ({ children }) => <h3 id={headingId(plainText(children))}>{children}</h3>,
         a: ({ href, children }) => {
           const target = documentLink(href, slug);
-          return target?.startsWith("/docs/") ? (
+          return target?.startsWith("/docs/") && !/\.md(?:[?#]|$)/.test(target) ? (
             <Link to={target}>{children}</Link>
           ) : (
             <a href={target}>{children}</a>

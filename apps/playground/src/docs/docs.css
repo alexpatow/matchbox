@@ -96,3 +96,30 @@
     margin-bottom: 16px;
   }
 }
+
+.doc-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.75rem;
+}
+.doc-actions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.doc-actions button {
+  cursor: pointer;
+}
+.doc-actions button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+.doc-actions output {
+  flex-basis: 100%;
+}
+.doc-actions output:empty {
+  display: none;
+}

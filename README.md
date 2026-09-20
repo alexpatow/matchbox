@@ -53,7 +53,7 @@ Import the generated .matchbox/money/model.ts wrapper and call await parser.pars
 
 packages/core contains the browser-facing framework and packages/train contains training primitives and orchestration. packages/cli contains the matchbox-ai command and browser workbench. Self-contained examples live under examples/. apps/playground hosts the React demo; apps/benchmarks measures browser inference.
 
-Read the [docs index](docs/README.md), [project conventions](docs/project-structure.md), [primitives](docs/primitives/README.md), and [example comparison](examples/README.md). Public docs ship with all three packages for coding agents. The [Matchbox skill](skills/matchbox/SKILL.md) describes the development workflow. [Third-party notices](THIRD-PARTY-NOTICES.md) preserve source attribution.
+Read the [docs index](docs/README.md), [project conventions](docs/project-structure.md), [primitives](docs/primitives/README.md), and [example comparison](examples/README.md). Public docs ship with all three packages for coding agents. [Install the Matchbox skill](docs/agents.md) with `npx skills add alexpatow/matchbox --skill matchbox`. It uses the installed package docs to guide authoring, training, evaluation and browser integration. [Third-party notices](THIRD-PARTY-NOTICES.md) preserve source attribution.
 
 Run bun run check and bun run test:browser before proposing a PR. Generated artifacts remain ignored. Tiny models should earn their place through independent evaluations, honest performance measurements, and the ability to expand language coverage through examples.
 

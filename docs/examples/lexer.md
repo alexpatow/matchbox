@@ -1,8 +1,10 @@
 # Syntax highlighting
 
-The [Matchbox Lexer example](https://github.com/alexpatow/matchbox-lexer) trains on labeled source code and highlights text locally using published Matchbox packages. It is inspired by [gpu-lexer](https://github.com/vercel-labs/gpu-lexer) by [Shu Ding](https://github.com/shuding). Shiki supplies offline training labels and an explicitly loaded reference; it is never an inference fallback.
+The Matchbox Lexer example trains on labeled source code and highlights text locally using published Matchbox packages. It is inspired by [gpu-lexer](https://github.com/vercel-labs/gpu-lexer) by [Shu Ding](https://github.com/shuding). Shiki supplies offline training labels and an explicitly loaded reference; it is never an inference fallback.
 
 Use this pattern when a label depends on context earlier or later in a document. The application owns the label vocabulary, output schema and span decoder. Matchbox learns the predictions.
+
+On the documentation website, try the live editor at the end of this page. It uses a frozen, checksum-verified model; source text stays on your device. The same demo is available on the [examples page](/training#lexer-title).
 
 ## Author the task
 
@@ -60,7 +62,7 @@ bunx matchbox-ai eval lexer
 
 Training selects a checkpoint using the separate validation split, checks native/WASM prediction parity and packages the generated wrapper. Keep test data independent. Recurrent input limits reject oversized training documents and produce uncertainty at inference; neither path silently truncates.
 
-The linked consumer records full-corpus training time, package versions, dataset hashes and held-out results. Its research export gate deliberately permits low exact accuracy so the model can be measured. Copying that gate does not establish production readiness.
+The evaluated model release records full-corpus training time, package versions, dataset hashes and held-out results. Its research export gate deliberately permits low exact accuracy so the model can be measured. Copying that gate does not establish production readiness.
 
 ## Render a preview
 
@@ -94,4 +96,4 @@ GPU is optional and loads a separate runtime. An unavailable GPU rejects the pro
 
 ## Read the evidence
 
-The consumer's [versioned results](https://github.com/alexpatow/matchbox-lexer/tree/main/benchmarks/results) separate strict acceptance, partial candidates and raw diagnostic predictions. They also measure complete-document CPU/GPU latency and fetched runtime size against pinned gpu-lexer 0.0.2. The models have different training histories, so this is a consumer comparison, not a controlled architecture comparison.
+The [evaluated demo release](https://github.com/alexpatow/matchbox/releases/tag/lexer-demo-0.4.0) distinguishes strict acceptance from partial candidate scores. The release records corpus identity, training time and quality. Full-document comparisons against gpu-lexer 0.0.2 remain separate from the live editor's single-call timing. The models have different training histories, so this is a consumer comparison, not a controlled architecture comparison.

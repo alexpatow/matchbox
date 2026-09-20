@@ -42,7 +42,7 @@ Adds `matchbox/<name>/`, ignores `.matchbox/`, and adds missing `matchbox:dev`, 
 
 Installs core as an application dependency and train/CLI as development dependencies. Package-manager selection uses the app declaration or lockfile (including workspace ancestors), then the invoking package manager, then Bun. Failed installation preserves the scaffold and prints a retry command.
 
-The blank template requires examples and evals before training. The money template includes token supervision and an application-owned decoder. No time template ships in 0.1.0; the time example is available in the repository.
+The blank template requires examples and evals before training. The money template includes token supervision and an application-owned decoder. Time and lexer templates are not included; their guides show the authored task modules.
 
 ## dev
 

@@ -2,6 +2,8 @@
 
 Train the included money parser, try it locally, and call it from your app. You need an existing JavaScript project with a `package.json`, Bun 1.4.2+, and Node.js 24+ for native Burn training. No API key is required.
 
+Working with an agent? [Install the Matchbox skill](agents.md) and give it your input/output contract. For document span labeling instead of money parsing, start with [the lexer guide](examples/lexer.md).
+
 ## 1. Add a task
 
 Run from your application's root:
@@ -16,8 +18,8 @@ You can also launch the CLI with `npx matchbox-ai` or `pnpm dlx matchbox-ai`. Bu
 matchbox/money/
   parser.ts                # Valid input and output.
   pipeline.ts              # Explicit learning strategy.
-  recipe.ts            # Training token labels.
-  decode/decode.ts            # Convert recognized spans to output.
+  recipe.ts                # Training token labels.
+  decode/decode.ts          # Convert recognized spans to output.
   data/train.jsonl
   data/train-spans.json
   evals/validation.jsonl    # Gate model export.

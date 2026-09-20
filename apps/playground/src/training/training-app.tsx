@@ -1,3 +1,4 @@
+import { LexerDemo } from "@/lexer";
 import { SiteHeader, SiteFooter } from "@/site";
 import { ModelExample } from "./model-example.js";
 import { loadMoney, loadParity, loadTime } from "./load-examples.js";
@@ -38,6 +39,7 @@ export function TrainingApp() {
         ]}
         load={loadMoney}
       />
+      <LexerDemo />
       <ModelExample
         name="is-even"
         title="Training sanity check"

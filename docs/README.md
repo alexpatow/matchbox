@@ -1,16 +1,31 @@
-# Matchbox documentation
+# Build a model that runs in your app
 
-Start with [Getting started](getting-started.md) to add a task, train a model, and import it into an existing app.
+Matchbox trains small task-specific models from examples and runs them locally in the browser. You define the output contract, choose an explicit learning strategy, provide examples and evals, then import the generated TypeScript module.
 
-- [Recurrent classification](primitives/recurrent-token-classifier.md) covers text-part features, span supervision, partial results and optional WebGPU.
-- [Syntax highlighting](examples/lexer.md) shows these APIs in a published-package consumer.
-- [CLI reference](cli.md) covers every command and option.
-- [API reference](reference/README.md) indexes the public contracts by package.
-- [Training](training.md) walks through fitting and exporting a model.
-- [Training pipelines](pipelines.md) explains the learning strategies and their limits.
-- [Project structure](project-structure.md) maps authored files and generated artifacts.
-- [Evaluation](evaluation.md) explains validation gates, test data, and uncertainty.
-- [Example results](example-evaluation.md) reports harder cases, coverage, and remaining failures.
-- [Money](examples/money.md) and [time](examples/time.md) show token recognition with explicit application-owned decoding.
+## Start with a working example
 
-Matchbox currently accepts string inputs. Core owns validation and browser integration; train owns build-time orchestration; Burn owns training and execution.
+[Getting started](getting-started.md) adds a money parser to an existing React, Next.js or other JavaScript app. It walks through installation, training, evaluation and the first call to `parse`.
+
+If you work with a coding agent, [install the Matchbox skill](agents.md). It directs the agent to version-matched documentation and existing APIs.
+
+## Choose the next step
+
+| You want to…                             | Read                                                    |
+| ---------------------------------------- | ------------------------------------------------------- |
+| Decide whether a model fits the problem. | [Choose a pipeline](pipelines.md).                      |
+| Understand which files you author.       | [Project structure](project-structure.md).              |
+| Supply examples and held-out answers.    | [Datasets](dataset-format.md).                          |
+| Fit and package a model.                 | [Training](training.md).                                |
+| Find out whether it is good enough.      | [Evaluation](evaluation.md).                            |
+| Load it in a web application.            | [Runtime](reference/runtime.md) and [React](react.md).  |
+| Look up a command or type.               | [CLI](cli.md) and [API reference](reference/README.md). |
+
+## Learn from the examples
+
+- [Money](examples/money.md) separates learned span recognition from explicit number conversion.
+- [Date, time and duration](examples/time.md) returns structures that the application resolves against its clock and timezone.
+- [Syntax highlighting](examples/lexer.md) uses document context and partial results with uncertain ranges.
+
+Models can abstain. A valid output schema guarantees shape, not correctness. Keep independent evals, inspect failures, and measure inference on the devices you support.
+
+Inputs currently must be strings. Matchbox provides task contracts, training workflows, packaging and validation; Burn trains and executes the models. General text generation, automatic architecture search and hosted inference are outside the current API.
