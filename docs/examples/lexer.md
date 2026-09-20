@@ -49,4 +49,4 @@ Add `gpu: true` to request browser WebGPU. The default is CPU; an unavailable GP
 
 ## Read the evidence
 
-The [evaluated demo release](https://github.com/alexpatow/matchbox/releases/tag/lexer-demo-0.4.0) distinguishes strict acceptance from partial candidate scores. The release records corpus identity, training time and quality. Full-document comparisons against gpu-lexer 0.0.2 remain separate from the live editor's single-call timing. The models have different training histories, so this is a consumer comparison, not a controlled architecture comparison.
+The [evaluated demo release](https://github.com/alexpatow/matchbox/releases/tag/lexer-demo-snippets-v1) distinguishes strict acceptance from partial candidate scores. The release records corpus identity, training time and quality. Full-document comparisons against gpu-lexer 0.0.2 remain separate from the live editor's single-call timing. The models have different training histories, so this is a consumer comparison, not a controlled architecture comparison.
