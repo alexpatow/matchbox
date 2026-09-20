@@ -228,3 +228,11 @@
   color: #888;
   font-size: 12px;
 }
+
+.highlight-credit a {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

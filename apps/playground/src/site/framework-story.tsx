@@ -1,3 +1,4 @@
+import { ArrowUpRight } from "lucide-react";
 import { PipelineExplorer } from "./pipeline-explorer";
 export function FrameworkStory() {
   return (
@@ -8,7 +9,9 @@ export function FrameworkStory() {
       <PipelineExplorer />
       <p className="highlight-credit">
         Syntax highlighting by{" "}
-        <a href="https://github.com/alexpatow/matchbox-lexer">a Matchbox model</a>.
+        <a href="https://github.com/alexpatow/matchbox-lexer">
+          a Matchbox model <ArrowUpRight className="site-icon" aria-hidden="true" />
+        </a>
       </p>
     </section>
   );
