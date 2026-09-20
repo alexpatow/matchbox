@@ -56,12 +56,13 @@ Within outputs, v0 supports:
 - Strict objects with declared properties, including nested objects.
 - Arrays and ordinary or discriminated unions.
 - Strings, finite numbers, booleans, null, JSON literals, and enums.
+- Defaults directly on boolean object properties, applied when the property is omitted.
 - Nullable values and optional object properties. Put `.optional()` outermost and omit absent properties; explicit `undefined` is rejected.
 - Finite numeric bounds, safe integers, string/array lengths, and regular expressions without flags.
 
 Use `z.strictObject()` or `.strict()`. Ordinary `z.object()` strips unknown keys, while the serialized output contract disallows them. Requiring strict objects keeps validation behavior explicit.
 
-Unsupported schemas fail at definition time. This includes transforms, overwrites such as `.trim()`, coercion, non-boolean defaults, catches, custom/async refinements, conditional checks, arbitrary unknown/any values, dates, bigint, records, maps, sets, tuples, intersections, lazy/recursive schemas, readonly wrappers, and string formats other than flagless regexes. Add support only when both runtime and metadata behavior are tested.
+Unsupported schemas fail at definition time. This includes transforms, overwrites such as `.trim()`, coercion, non-boolean defaults, catches, custom/async refinements, conditional checks, arbitrary unknown/any values, dates, bigint, records, maps, sets, tuples, intersections, lazy/recursive schemas, readonly wrappers, and string formats other than flagless regexes.
 
 Both schema and data traversal are limited to 64 nested containers. Validation accepts plain JSON data, not class instances, accessors, sparse arrays, symbol properties, or circular references. `__proto__` is reserved because Zod omits it while constructing parsed objects.
 
@@ -75,7 +76,7 @@ The serialized definition contains:
   kind: "parser",
   input: { /* JSON Schema draft 2020-12 */ },
   output: { /* JSON Schema draft 2020-12 */ },
-  fields: { minimum: { type: "money", aliases: ["ARR"] } },
+  fields: {},
 }
 ```
 

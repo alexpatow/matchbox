@@ -3,7 +3,7 @@
 ## MatchboxParser and ParseResult
 
 ```ts
-import type { MatchboxParser, ParseResult } from "@matchbox-ai/core/runtime";
+// Public types from @matchbox-ai/core/runtime.
 
 type ParseResult<T> =
   | { status: "ok"; value: T; confidence: number }
@@ -15,7 +15,7 @@ interface MatchboxParser<T> {
 }
 ```
 
-The generated module exports a parser. `parse` initializes it when necessary and returns schema-validated output or uncertainty. Confidence is an uncalibrated score, not a probability of correctness. Unknown vocabulary, low scores, or an undecodable prediction can cause uncertainty. A string that fails the task's input constraints also returns uncertainty; load failures reject the promise.
+The generated module exports a parser. `parse` initializes it when necessary and returns schema-validated output or uncertainty. Confidence is an uncalibrated score, not a probability of correctness. Unknown vocabulary, low scores, or an undecodable prediction can cause uncertainty. Input-constraint failures also return uncertainty; load failures reject the promise. Field and fixed-window token models additionally limit inputs to 512 UTF-16 units. Recurrent limits come from the pipeline.
 
 ## createParser
 

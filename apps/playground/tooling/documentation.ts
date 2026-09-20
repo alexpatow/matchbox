@@ -10,7 +10,7 @@ async function documentationAssets() {
   const directory = fileURLToPath(new URL("docs/", root));
   const entries = await readdir(directory, { recursive: true });
   for (const entry of entries.sort()) {
-    if (entry.endsWith(".md")) {
+    if (entry.endsWith(".md") || entry.endsWith(".json")) {
       files.set(`/docs/${entry}`, await readFile(`${directory}/${entry}`, "utf8"));
     }
   }
@@ -33,7 +33,7 @@ async function documentationAssets() {
     "",
     "## Documentation",
     ...[...files]
-      .filter(([path]) => path.startsWith("/docs/"))
+      .filter(([path]) => path.startsWith("/docs/") && path.endsWith(".md"))
       .map(([path, source]) => {
         const title = source.match(/^# (.+)/m)?.[1] ?? path;
         return `- [${title}](${origin}${path})`;
@@ -55,7 +55,7 @@ export function documentation(): Plugin {
     configureServer(server) {
       server.middlewares.use(async (request, response, next) => {
         const path = new URL(request.url ?? "/", "http://localhost").pathname;
-        if (path !== "/llms.txt" && !path.endsWith(".md")) {
+        if (path !== "/llms.txt" && !path.endsWith(".md") && !path.endsWith(".json")) {
           next();
           return;
         }
@@ -65,7 +65,12 @@ export function documentation(): Plugin {
             next();
             return;
           }
-          response.setHeader("Content-Type", "text/plain; charset=utf-8");
+          response.setHeader(
+            "Content-Type",
+            path.endsWith(".json")
+              ? "application/json; charset=utf-8"
+              : "text/plain; charset=utf-8",
+          );
           response.end(source);
         } catch (error) {
           next(error);

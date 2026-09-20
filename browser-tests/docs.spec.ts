@@ -61,3 +61,41 @@ test("training and evaluating have separate guides and readable prose spacing", 
     );
   expect(paragraphGap).toBeGreaterThanOrEqual(20);
 });
+
+test("documentation uses model highlighting without changing code or adding underlines", async ({
+  page,
+}) => {
+  let modelRequests = 0;
+  page.on("request", (request) => {
+    if (request.url().endsWith("/models/lexer.matchbox")) {
+      modelRequests++;
+    }
+  });
+  await page.goto("/docs/getting-started");
+  const blocks = page.locator(".doc-content .model-code code");
+  const source = await blocks.allTextContents();
+  expect(source.some((code) => code.includes('await money.parse("twenty dollars")'))).toBe(true);
+  await expect(blocks.locator(".lexer-keyword").first()).toBeVisible();
+  expect(await blocks.allTextContents()).toEqual(source);
+  expect(
+    await blocks
+      .locator("span")
+      .evaluateAll((spans) =>
+        spans.every((span) => getComputedStyle(span).textDecorationLine === "none"),
+      ),
+  ).toBe(true);
+  expect(modelRequests).toBe(1);
+  await page.goto("/docs/project-structure");
+  const tree = page.locator("pre").filter({ hasText: "my-app/" });
+  await expect(tree).toBeVisible();
+  await expect(tree.locator("span")).toHaveCount(0);
+});
+
+test("documentation keeps code readable when the lexer cannot load", async ({ page }) => {
+  await page.route("**/models/lexer.matchbox", (route) => route.abort());
+  await page.goto("/docs/getting-started");
+  await expect(
+    page.locator(".doc-content .model-code").filter({ hasText: "import money" }),
+  ).toContainText('await money.parse("twenty dollars")');
+  await expect(page.getByRole("heading", { name: "Build your app", exact: true })).toBeVisible();
+});

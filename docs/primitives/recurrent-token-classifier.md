@@ -1,6 +1,6 @@
 # Recurrent token classification
 
-Use `recurrentTokenClassifier` when a label depends on context beyond a fixed token window, such as the start of a comment or quoted region earlier in a document. It is a separate strategy alongside `fieldClassifier` and `tokenClassifier`. Existing pipelines and artifacts keep their behavior.
+Use `recurrentTokenClassifier` when a label depends on context beyond a fixed token window, such as the start of a comment or quoted region earlier in a document.
 
 ## Define the task
 
@@ -123,28 +123,6 @@ if (result.status === "partial") {
 
 All-low-confidence inputs, invalid decoded output and unsupported input sizes still return `uncertain`. A decoder may combine or transform parts, so source ranges do not identify which arbitrary output fields are trustworthy. Partial output is suitable for a preview, not automatic execution of a query or command. Above-threshold predictions can also be wrong.
 
-The React hook preserves the overload:
+For React loading state, see [React integration](../react.md#recurrent-models-and-partial-results). For explicit GPU execution, pass `gpu: true`; see [CPU and WebGPU](../runtime-backends.md) for loading, failure and download behavior.
 
-```ts
-const loadLexer = () => import("./.matchbox/lexer/model");
-// Inside a component:
-const lexer = useMatchbox(loadLexer);
-const result = await lexer.parse(source, { allowPartial: true });
-```
-
-This capability is additive. Existing field and fixed-window token models retain their original result types. See [measured lexer research](../research/sequence-parts.md) for quality evidence and limitations.
-
-## Optional WebGPU execution
-
-Recurrent classifiers accept an explicit browser GPU flag:
-
-```ts
-const result = await lexer.parse(source, { gpu: true });
-const preview = await lexer.parse(source, { gpu: true, allowPartial: true });
-```
-
-CPU execution remains the default. The first GPU call loads a separate Burn WebGPU WASM asset and uploads the same trained weights. Subsequent calls reuse that predictor. The GPU flag does not change the output schema, confidence threshold, or partial-result policy. Floating-point differences can affect predictions close to the confidence threshold.
-
-This path is experimental. WebGPU is not necessarily faster for small inputs, and its runtime download is substantially larger than the CPU runtime. Measure cold initialization and representative inputs before choosing it. An explicit GPU request rejects if WebGPU is unavailable; it does not silently fall back to CPU. GPU execution currently supports recurrent classifiers only.
-
-Concurrent GPU calls on one parser are serialized. Disposing the parser rejects queued work and frees its GPU predictor after any active operation finishes. The React hook forwards the same parse options; its initial `load()` still warms the default CPU path.
+The [lexer example](../examples/lexer.md) links the evaluated model and its quality measurements.

@@ -1,22 +1,22 @@
 # Project structure
 
-A task is a directory under matchbox/. Each task has its own schema, explicit learning pipeline, training data, and independent evaluation data.
+Each task lives under `matchbox/`. The CLI discovers this layout:
 
 ```text
 my-app/
   src/
-  scripts/generate-data.ts     # Optional project tooling.
-  matchbox/
-    money/
-      parser.ts
-      pipeline.ts
-      data/train.jsonl
-      evals/validation.jsonl
-      evals/test.jsonl
-      recipe.ts               # Token-classifier supervision.
-      decode/
-        decode.ts             # Browser-side output construction.
-        number-words.ts       # Decoder helper.
+  scripts/generate-data.ts
+  matchbox/money/
+    parser.ts
+    pipeline.ts
+    recipe.ts
+    decode/
+      decode.ts
+      number-words.ts
+    data/train.jsonl
+    data/train-spans.json
+    evals/validation.jsonl
+    evals/test.jsonl
   .matchbox/money/
     model.matchbox
     model.ts
@@ -24,32 +24,30 @@ my-app/
     report.json
 ```
 
-The CLI discovers these paths. Multiple tasks require an explicit name; it never silently chooses the first one. Commands can also target a project directory, task directory, or explicit matchbox.config.ts. A task-local config may override paths; field-classifier tasks need parser and pipeline modules; token classifiers also need recipe and decode modules.
+`parser.ts` defines the schema; `pipeline.ts` chooses the strategy. Token classifiers also need a training recipe and browser-safe decoder. Field classifiers need neither. Annotation files such as `train-spans.json` are recipe-owned, not discovered by the framework.
 
-Generated artifacts are ignored. Validation gates packaging; test data does not select the model. Data generators live in the project-level scripts/ directory and write only matchbox/<task>/data/, preserving evals/ independently.
+`.matchbox/` holds generated artifacts and is ignored by Git. Put data generators in project-level `scripts/` and preserve evals independently.
 
-## Optional task configuration
+## Named entry points
 
-Use `matchbox/<task>/matchbox.config.ts` when your files live outside the conventional layout. Paths resolve relative to that task directory:
+Use `X.ts` for a small module or `X/X.ts` with helpers alongside it. For example, `decode.ts` can become `decode/decode.ts` without changing the pipeline. Both forms existing at once is an error; `index.ts` is not discovered.
+
+Import authored modules directly. Keep shared domain helpers in a named task folder such as `countries/`. Applications import the generated `.matchbox/<task>/model.ts`, which references the parser and decoder without importing the training recipe.
+
+## Path overrides
+
+Add `matchbox/<task>/matchbox.config.ts` only when needed:
 
 ```ts
+import type { TrainingConfig } from "@matchbox-ai/train";
+
 export default {
   train: "../../datasets/money-training.jsonl",
   validation: "../../datasets/money-validation.jsonl",
   eval: "../../datasets/money-test.jsonl",
-};
+} satisfies TrainingConfig;
 ```
 
-The config overrides paths and acceptance settings. Keep the encoder, supervision, prediction strategy, and decoder explicit in `pipeline.ts`. The current loader supports TypeScript configuration; there is no separate JSON config format.
+Paths resolve relative to the config directory. Config acceptance values override the pipeline. JSON config is not supported. See [configuration](reference/configuration.md) for all fields.
 
-## Named entry points
-
-Parser, pipeline, recipe, and decode modules each use the same convention: `X.ts` for a small module, or `X/X.ts` alongside supporting files. For example, `decode.ts` can become `decode/decode.ts` without changing `tokenClassifier()` in the pipeline. Matchbox rejects both forms existing at once. No `index.ts` is required or discovered.
-
-`tokenClassifier()` discovers the recipe and decoder by name. The recipe still explicitly defines tokenization, labels, readout, and supervision. The decoder still owns application-specific output construction. File discovery makes no learning or normalization choices.
-
-Keep helpers with the module that owns them. Shared domain code can have its own named folder: the filter example's `countries/` is used by the schema, training recipe, browser decoder. It is ordinary application code, not another framework-discovered entry point.
-
-Import named authored modules directly, such as `./decode/decode`. Task directories do not need a barrel exporting training and runtime internals together. Applications consume the generated `.matchbox/<task>/model.ts` wrapper.
-
-Generated wrappers import the concrete parser and decoder entry files. Recipe and training dependencies remain outside those browser imports.
+With multiple tasks, pass a task name, directory or config path to the CLI. Only interactive `dev` offers a task picker.

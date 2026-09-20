@@ -17,7 +17,7 @@ const result = await train("money", {
 
 It validates the datasets and supervision, trains with native Burn, checks validation accuracy and artifact size, then packages. Configuration, annotation, schema, validation-gate, or size failures reject the promise. A low independent test score is reported after selection and does not undo a model that passed validation. Run CLI `eval` as a separate test gate.
 
-Report format 2 contains `architecture`, `backend`, `seed`, `bytes`, `parameters`, `artifactSha256`, `datasetSha256`, split counts in `examples`, `loss`, `exportParity`, `trainingMs`, and evaluation results for `validation` and `evaluation`. Fixed-window sequence reports additionally include `supervisedTokens` and `challenges`. Recurrent reports include `parts`, `selectedEpoch`, `validationLabelAccuracy`, `optimizerMs` and separate code-point `diagnostics`. These are measured build results, not browser latency.
+Report format 2 contains `architecture`, `backend`, `seed`, `bytes`, `parameters`, `artifactSha256`, `datasetSha256`, split counts in `examples`, `loss`, `exportParity`, `trainingMs`, and evaluation results for `validation` and `evaluation`. Fixed-window sequence reports additionally include `supervisedTokens`, `supervisionSha256` and `challenges`. Recurrent reports include `supervisionSha256`, `challenges`, `parts`, `selectedEpoch`, `validationLabelAccuracy`, `optimizerMs` and separate code-point `diagnostics`. `trainingMs` is strategy-specific: field and fixed-window runs include fitting and evaluation, while recurrent runs include preparation, fitting and export checks but exclude final parser evaluation. `optimizerMs` measures the recurrent native fit call. Neither is browser latency.
 
 ## TrainingConfig
 

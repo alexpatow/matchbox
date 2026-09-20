@@ -1,6 +1,6 @@
 # Dataset format
 
-Matchbox dataset format version 1 uses separate local `train.jsonl` and `evals.jsonl` files. Each nonblank line is one JSON object with exactly two properties: `input` and `output`.
+Use `data/train.jsonl`, `evals/validation.jsonl` and `evals/test.jsonl`. Each nonblank line is one JSON object with exactly two properties: `input` and `output`.
 
 ```jsonl
 {"input":"Swedish customers","output":{"country":"SE"}}
@@ -55,6 +55,6 @@ Both splits are explicit and required. Matchbox does not shuffle, merge, dedupli
 
 ## Versioning
 
-The required `formatVersion: 1` in the dataset configuration describes both sources. Keep that configuration under version control alongside the JSONL files and task definition. Raw JSONL files are not self-describing; preserve their configuration when sharing them. No implicit version is assumed. Missing or unsupported versions throw a `RangeError` before rows are read. Invalid rows return validation issues instead.
+`formatVersion: 1` is required by the low-level `parseDatasets` API; conventional CLI tasks do not need a separate dataset-version config. Missing or unsupported API versions throw a `RangeError`. Invalid rows return validation issues.
 
-Breaking changes to row structure or interpretation require a new format version and explicit migration. Do not silently reinterpret existing files. Dataset format versions are independent of package versions and the task metadata's format version. Business-schema changes require revalidation of both datasets against the updated task. Build reports include artifact and dataset hashes.
+Version the JSONL files with their task schema. Revalidate them when the output contract changes. Dataset, artifact and package versions are separate; build reports record source and artifact hashes.

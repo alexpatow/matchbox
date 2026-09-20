@@ -20,7 +20,7 @@ bun run matchbox eval examples/time
 bun run matchbox dev examples/time
 ```
 
-The website's [examples page](/examples) runs the exported model. This is a repository example, not a CLI template in 0.1.0.
+The website's [examples page](/examples) runs the exported model. This is a repository example, not a CLI template.
 
 ## What learns, what is code
 

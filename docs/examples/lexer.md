@@ -2,56 +2,15 @@
 
 The Matchbox Lexer example trains on labeled source code and highlights text locally using published Matchbox packages. It is inspired by [gpu-lexer](https://github.com/vercel-labs/gpu-lexer) by [Shu Ding](https://github.com/shuding). Shiki supplies offline training labels and an explicitly loaded reference; it is never an inference fallback.
 
-Use this pattern when a label depends on context earlier or later in a document. The application owns the label vocabulary, output schema and span decoder. Matchbox learns the predictions.
-
 On the documentation website, try the live editor at the end of this page. It uses a frozen, checksum-verified model; source text stays on your device. The same demo is available on the [examples page](/examples#lexer-title).
 
 ## Author the task
 
-```text
-matchbox/lexer/
-  parser.ts
-  pipeline.ts
-  recipe.ts
-  decode.ts
-  labels.ts
-  data/train.jsonl
-  evals/validation.jsonl
-  evals/test.jsonl
-scripts/
-  prepare-data.ts
-```
+Use a [recurrent token classifier](../primitives/recurrent-token-classifier.md). That guide includes the parser, pipeline, recipe and decoder definitions. The output is an array of `{ type, start, end }` spans with UTF-16 offsets and an exclusive end.
 
-`parser.ts` declares an array of `{ type, start, end }` spans. Each type belongs to an application-defined label vocabulary. Offsets are UTF-16 indices with an exclusive end. Training rows pair source text with these spans, including labels for neutral text.
+The recipe uses `textParts()`, `textFeatures()` and `spanLabels({ whitespace: "context" })`. It learns labels from annotated source text. Whitespace remains context without contributing to loss or acceptance. The browser decoder merges predicted parts into spans.
 
-```ts
-// matchbox/lexer/pipeline.ts
-import { definePipeline, recurrentTokenClassifier } from "@matchbox-ai/train";
-
-export default definePipeline({
-  prediction: recurrentTokenClassifier(),
-  acceptance: { minAccuracy: 0.95, maxBytes: 250_000 },
-});
-```
-
-These acceptance values are example requirements, not the measured accuracy of the linked model. Set them from your application's requirements. `minAccuracy` gates exact complete outputs, not character agreement.
-
-```ts
-// matchbox/lexer/recipe.ts
-import { textParts, textFeatures, spanLabels, type RecurrentRecipe } from "@matchbox-ai/train";
-import { labels } from "./labels";
-
-export default {
-  tokenizer: textParts(),
-  features: textFeatures(),
-  labels,
-  annotate: spanLabels({ whitespace: "context" }),
-} satisfies RecurrentRecipe;
-```
-
-`textParts` preserves source boundaries. `textFeatures` encodes mechanical text features without a keyword dictionary. `spanLabels` supplies supervision from the labeled outputs; whitespace provides context without contributing to loss or confidence acceptance. A part can contain mixed training labels, but inference predicts one label per part.
-
-`decode.ts` receives tagged parts and merges adjacent labels into spans. It must remain browser-safe. It does not call Shiki, parse syntax with rules, or invent missing labels. See [the complete parser and decoder definitions](../primitives/recurrent-token-classifier.md) before authoring a task.
+Keep data preparation in project-level `scripts/`, alongside `matchbox/lexer/`. The [example repository](https://github.com/alexpatow/matchbox-lexer) contains the full pipeline and dataset preparation.
 
 ## Train and evaluate
 
@@ -86,13 +45,7 @@ switch (result.status) {
 
 `uncertainRanges` uses the original source offsets, including when the decoder merges spans. The candidate includes uncertain labels. Coverage of returned labels is therefore different from confident coverage. Scores are uncalibrated.
 
-For explicit browser GPU execution, pass both options:
-
-```ts
-const result = await lexer.parse(source, { gpu: true, allowPartial: true });
-```
-
-GPU is optional and loads a separate runtime. An unavailable GPU rejects the promise. The default `parse(source)` remains strict CPU parsing. See [runtime options](../reference/runtime.md#parse-options) and [React integration](../react.md#recurrent-models-and-partial-results).
+Add `gpu: true` to request browser WebGPU. The default is CPU; an unavailable GPU rejects the promise. See [runtime options](../reference/runtime.md#parse-options).
 
 ## Read the evidence
 

@@ -57,3 +57,17 @@ test("the lexer demo loads evaluated weights and highlights source offline", asy
   expect(await demo.locator(".lexer-output").textContent()).toBe(changed);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });
+
+test("documentation evidence links serve JSON reports", async ({ page, request }) => {
+  await page.goto("/docs/example-evaluation");
+  await page.getByRole("link", { name: "Current results", exact: true }).click();
+  await expect(page).toHaveURL(/\/docs\/example-results\.json$/);
+  const report = await request.get("/docs/example-results.json");
+  expect(report.ok()).toBe(true);
+  expect(report.headers()["content-type"]).toContain("application/json");
+  expect((await report.json()).examples).toHaveLength(4);
+  const research = await request.get("/docs/research/recurrent-webgpu.json");
+  expect(research.ok()).toBe(true);
+  expect(research.headers()["content-type"]).toContain("application/json");
+  expect(await research.json()).toBeTruthy();
+});
