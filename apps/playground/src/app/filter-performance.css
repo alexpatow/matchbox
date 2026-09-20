@@ -16,9 +16,6 @@
   gap: 12px 20px;
   font-variant-numeric: tabular-nums;
 }
-.filter-measurements button {
-  font-size: 12px;
-}
 .filter-performance details {
   margin-top: 0;
   max-width: 640px;

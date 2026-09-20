@@ -7,7 +7,7 @@ test("the generated model parses locally, filters customers, and handles uncerta
   const errors: string[] = [];
   page.on("pageerror", (error) => errors.push(error.message));
   await page.goto("/");
-  await expect(page.getByRole("button", { name: "Measure latency" })).toBeEnabled();
+  await expect(page.getByTestId("benchmark")).toBeVisible();
   // After initial static assets load, inference must work with the network blocked.
   await page.route("**/*", (route) => route.abort());
   await page
@@ -33,7 +33,7 @@ test("the generated model parses locally, filters customers, and handles uncerta
   await page
     .getByRole("textbox", { name: "Filter customers", exact: true })
     .fill("send email to everyone");
-  await expect(page.getByRole("status")).toContainText("Uncertain");
+  await expect(page.locator(".parse-status")).toContainText("Uncertain");
   await expect(page.locator("tbody tr")).toHaveCount(8);
   await page.getByRole("textbox", { name: "Filter customers", exact: true }).fill("");
   await expect(page.locator("tbody tr")).toHaveCount(8);
@@ -50,15 +50,20 @@ test("the generated model parses locally, filters customers, and handles uncerta
   );
 });
 
-test("measures real browser inference and enforces a generous regression budget", async ({
+test("automatically measures real browser inference and enforces a generous regression budget", async ({
   page,
 }, testInfo) => {
   await page.goto("/");
-  await expect(page.getByRole("button", { name: "Measure latency" })).toBeEnabled();
-  await page.getByRole("button", { name: "Measure latency" }).click();
+  await expect(page.getByTestId("benchmark")).toBeVisible();
   const output = page.getByTestId("benchmark");
   await expect(output).toBeVisible();
-  const metrics = JSON.parse((await output.getAttribute("data-report"))!);
+  const report = await output.getAttribute("data-report");
+  const metrics = JSON.parse(report!);
+  await page
+    .getByRole("textbox", { name: "Filter customers", exact: true })
+    .fill("active customers");
+  await expect(page.getByLabel("Parsed filters")).toBeVisible();
+  await expect(output).toHaveAttribute("data-report", report!);
   await expect(output).toContainText("ms median");
   await expect(output).toContainText("ms p95");
   await page.getByText("Measurement details", { exact: true }).click();

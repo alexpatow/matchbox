@@ -1,32 +1,40 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
 import { benchmark } from "@/filter";
 import { milliseconds, type TimingResult } from "@/benchmark";
 
 export function FilterPerformance({ ready }: { ready: boolean }) {
   const [result, setResult] = useState<TimingResult | null>(null);
-  const [running, setRunning] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  async function measure() {
-    setRunning(true);
-    setError(null);
-    try {
-      await new Promise<void>((resolve) => requestAnimationFrame(() => setTimeout(resolve, 0)));
-      setResult(await benchmark());
-    } catch (cause) {
-      setError(cause instanceof Error ? cause.message : String(cause));
-    } finally {
-      setRunning(false);
+  useEffect(() => {
+    if (!ready) {
+      return;
     }
-  }
+    let current = true;
+    const timer = setTimeout(() => {
+      benchmark().then(
+        (timing) => {
+          if (current) {
+            setResult(timing);
+          }
+        },
+        (cause) => {
+          if (current) {
+            setError(cause instanceof Error ? cause.message : String(cause));
+          }
+        },
+      );
+    }, 0);
+    return () => {
+      current = false;
+      clearTimeout(timer);
+    };
+  }, [ready]);
 
   return (
     <div className="filter-performance">
       <div className="filter-measurements">
-        <Button variant="secondary" disabled={!ready || running} onClick={measure}>
-          {running ? "Measuring…" : "Measure latency"}
-        </Button>
+        {!result && !error && <span>Measuring latency…</span>}
         {result && (
           <output aria-live="polite" data-testid="benchmark" data-report={JSON.stringify(result)}>
             {milliseconds(result.p50Ms)} ms median · {milliseconds(result.p95Ms)} ms p95
