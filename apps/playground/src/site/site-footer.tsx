@@ -6,7 +6,6 @@ export function SiteFooter() {
         <Link className="wordmark" to="/">
           Matchbox.
         </Link>
-        <p>Build small models that run in the browser.</p>
       </div>
       <div>
         <p>

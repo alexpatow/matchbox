@@ -2,7 +2,7 @@
 @import "./benchmark/benchmark.css";
 @import "./site/hero.css";
 @import "./site/workbench.css";
-@import "./site/model-footprint.css";
+@import "./app/filter-performance.css";
 @import "./docs/docs.css";
 :root {
   color-scheme: dark;

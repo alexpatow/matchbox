@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useMatchbox } from "@matchbox-ai/core/react";
 import type { ParseResult } from "@matchbox-ai/core/runtime";
-import { BenchmarkPanel } from "@/benchmark";
+import { FilterPerformance } from "./filter-performance";
 import { Button } from "@/components/ui/button";
-import { customers, matchesFilter, loadFilters, benchmark, type Filter } from "@/filter";
+import { customers, matchesFilter, loadFilters, type Filter } from "@/filter";
 import { CustomerTable } from "./customer-table";
 import { FilterChips } from "./filter-chips";
 const suggestions = [
@@ -45,16 +45,17 @@ export function FilterDemo() {
       return "Preparing the model on your device…";
     }
     if (!query.trim()) {
-      return "The model is ready. All customers are shown.";
+      return "";
     }
     if (!result) {
       return "Parsing…";
     }
     if (result.status === "ok") {
-      return `Parsed locally. Recognition score: ${result.confidence.toFixed(2)}.`;
+      return "";
     }
     return "Uncertain. Try a supported example. All customers are shown.";
   }
+  const message = error || loadError || statusText();
   const rows =
     result?.status === "ok"
       ? customers.filter((row) => matchesFilter(row, result.value))
@@ -87,13 +88,17 @@ export function FilterDemo() {
             </Button>
           ))}
         </div>
-        <output
-          className="parse-status"
-          data-loading={status === "loading" || (!!query.trim() && !result && !error && !loadError)}
-          aria-live="polite"
-        >
-          {error || loadError || statusText()}
-        </output>
+        {message && (
+          <output
+            className="parse-status"
+            data-loading={
+              status === "loading" || (!!query.trim() && !result && !error && !loadError)
+            }
+            aria-live="polite"
+          >
+            {message}
+          </output>
+        )}
         {result?.status === "ok" && <FilterChips filter={result.value} />}
       </section>
       <CustomerTable rows={rows} />
@@ -115,13 +120,7 @@ export function FilterDemo() {
           Recognition scores are uncalibrated. A high score does not guarantee the intended query.
         </p>
       </details>
-      <BenchmarkPanel
-        run={benchmark}
-        ready={status === "ready"}
-        buttonLabel="Measure this browser"
-        testId="benchmark"
-        featured
-      />
+      <FilterPerformance ready={status === "ready"} />
     </section>
   );
 }

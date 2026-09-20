@@ -35,3 +35,11 @@ Matchbox discovers `recipe.ts` or `recipe/recipe.ts`, and `decode.ts` or `decode
 These presets remain supported. The separate [recurrent token classifier](primitives/recurrent-token-classifier.md) adds explicit text-part features and context across a document. Decimal codecs, arbitrary graphs, automatic architecture search, and hidden domain normalizers are not implemented. New primitives should demonstrate their limitations and held-out behavior before becoming defaults.
 
 Programmatic training uses await train("money", { onProgress }) from @matchbox-ai/train and follows the same validation and packaging path as the CLI. Importing the authoring helpers does not initialize native Burn; training loads it when invoked.
+
+## When to use a browser LLM
+
+A general-purpose browser LLM suits tasks such as summarization, writing and interpreting unfamiliar requests. You can change the task through a prompt without training a new model. Chrome's [Prompt API](https://developer.chrome.com/docs/ai/prompt-api) supports local inference and schema-constrained responses, subject to its model download and device requirements.
+
+Matchbox suits a bounded task with examples and a defined output contract. You train the model and ship it with your app. Its coverage depends on the training data; schema validation guarantees structure, not correctness. Choose it when independent evals meet your accuracy and coverage requirements within your download and latency budgets.
+
+The example model sizes exclude the shared Burn runtime and application decoders. We have not benchmarked these examples against a browser LLM.

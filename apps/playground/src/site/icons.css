@@ -6,9 +6,7 @@
   vertical-align: -3px;
   stroke-width: 1.75;
 }
-.hero-actions a,
-.hero-bottom a,
-.story-note a {
+.hero-actions a {
   display: inline-flex;
   align-items: center;
   gap: 8px;

@@ -4,8 +4,7 @@ export function CustomerTable({ rows }: { rows: Customer[] }) {
     <div className="table-scroll">
       <table>
         <caption>
-          {rows.length} matching {rows.length === 1 ? "customer is" : "customers are"} shown from a
-          fictional dataset.
+          {rows.length} {rows.length === 1 ? "customer" : "customers"}
         </caption>
         <thead>
           <tr>

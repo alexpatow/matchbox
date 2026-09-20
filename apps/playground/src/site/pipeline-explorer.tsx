@@ -45,6 +45,12 @@ export function PipelineExplorer() {
             </button>
           ))}
         </div>
+        <a
+          className="example-source"
+          href="https://github.com/alexpatow/matchbox/tree/main/examples/money"
+        >
+          Full example
+        </a>
       </div>
       <div role="tabpanel" id="file-panel" aria-labelledby={`file-${selected}`} tabIndex={0}>
         <div className="file-caption">

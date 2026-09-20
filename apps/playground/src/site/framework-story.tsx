@@ -1,5 +1,3 @@
-import { ArrowUpRight } from "lucide-react";
-import { Link } from "react-router-dom";
 import { PipelineExplorer } from "./pipeline-explorer";
 export function FrameworkStory() {
   return (
@@ -13,11 +11,6 @@ export function FrameworkStory() {
         Syntax highlighting by{" "}
         <a href="https://github.com/alexpatow/matchbox-lexer">a Matchbox model</a>.
       </p>
-      <div className="story-note">
-        <Link to="/docs/getting-started">
-          Build your first model <ArrowUpRight className="site-icon" aria-hidden="true" />
-        </Link>
-      </div>
     </section>
   );
 }

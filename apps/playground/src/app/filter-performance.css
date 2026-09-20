@@ -1,0 +1,23 @@
+.filter-performance {
+  margin-top: 20px;
+  color: var(--muted-foreground);
+  font-size: 12px;
+}
+.filter-measurements {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  font-variant-numeric: tabular-nums;
+}
+.filter-measurements button {
+  font-size: 12px;
+}
+.filter-performance details {
+  margin-top: 12px;
+  max-width: 640px;
+  line-height: 1.7;
+}
+.filter-performance summary {
+  cursor: pointer;
+}
