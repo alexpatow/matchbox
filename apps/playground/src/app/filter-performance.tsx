@@ -11,8 +11,9 @@ export function FilterPerformance({ ready }: { ready: boolean }) {
       return;
     }
     let current = true;
+    const controller = new AbortController();
     const timer = setTimeout(() => {
-      benchmark().then(
+      benchmark(controller.signal).then(
         (timing) => {
           if (current) {
             setResult(timing);
@@ -27,6 +28,7 @@ export function FilterPerformance({ ready }: { ready: boolean }) {
     }, 0);
     return () => {
       current = false;
+      controller.abort();
       clearTimeout(timer);
     };
   }, [ready]);

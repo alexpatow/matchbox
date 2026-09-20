@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { milliseconds, type TimingResult } from "@/benchmark";
-import { measure } from "./measure";
+import { measure, milliseconds, type TimingResult } from "@/benchmark";
 import type { ExampleLoader } from "./types";
 export function ExampleMetrics({
   load,
@@ -16,6 +15,7 @@ export function ExampleMetrics({
   const [failed, setFailed] = useState(false);
   useEffect(() => {
     let current = true;
+    const controller = new AbortController();
     let timer: ReturnType<typeof setTimeout>;
     load()
       .then(({ default: parser, report }) => {
@@ -24,7 +24,7 @@ export function ExampleMetrics({
         }
         setBytes(report.bytes);
         timer = setTimeout(() => {
-          measure(parser, sample).then(
+          measure(parser, [sample], controller.signal).then(
             (result) => {
               if (current) {
                 setTiming(result);
@@ -45,6 +45,7 @@ export function ExampleMetrics({
       });
     return () => {
       current = false;
+      controller.abort();
       clearTimeout(timer);
     };
   }, [load, sample]);
