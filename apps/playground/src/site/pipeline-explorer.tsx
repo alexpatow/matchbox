@@ -1,6 +1,6 @@
 import { FileCode, FileJson, Folder } from "lucide-react";
 import { useState } from "react";
-import { highlight } from "sugar-high";
+import { ModelCode } from "@/lexer";
 import { files } from "./pipeline-example";
 export function PipelineExplorer() {
   const [selected, setSelected] = useState(0);
@@ -50,9 +50,7 @@ export function PipelineExplorer() {
         <div className="file-caption">
           <span>{file.name}</span>
         </div>
-        <pre>
-          <code dangerouslySetInnerHTML={{ __html: highlight(file.code) }} />
-        </pre>
+        <ModelCode code={file.code} />
         <p className="file-description">{file.description}</p>
       </div>
     </div>

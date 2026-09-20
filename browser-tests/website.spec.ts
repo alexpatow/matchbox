@@ -48,6 +48,10 @@ test("the framework story leads into working documentation", async ({ page }, te
 
 test("the file explorer supports keyboard navigation", async ({ page }) => {
   await page.goto("/");
+  await expect(page.locator(".model-code span").first()).toBeVisible();
+  await expect(page.getByText("Syntax highlighting by", { exact: false })).toBeVisible();
+  const source = await page.locator(".model-code").textContent();
+  expect(source).toContain("defineParser");
   await page.getByRole("tab", { name: "parser.ts", exact: true }).focus();
   await page.keyboard.press("ArrowDown");
   await expect(page.getByRole("tab", { name: "pipeline.ts", exact: true })).toBeFocused();

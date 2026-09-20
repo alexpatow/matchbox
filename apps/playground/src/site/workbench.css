@@ -182,3 +182,9 @@
     gap: 8px;
   }
 }
+
+.highlight-credit {
+  margin-top: 12px;
+  color: var(--muted-foreground);
+  font-size: 12px;
+}

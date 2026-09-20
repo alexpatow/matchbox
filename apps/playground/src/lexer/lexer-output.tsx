@@ -5,7 +5,9 @@ import { highlightSegments } from "./highlight-segments";
 export function LexerOutput({
   input,
   result,
+  className = "lexer-output",
 }: {
+  className?: string;
   input: string;
   result: PartialParseResult<Span[]> | null;
 }) {
@@ -22,7 +24,7 @@ export function LexerOutput({
     ));
   }
   return (
-    <pre className="lexer-output" aria-label="Predicted highlighting">
+    <pre className={className} aria-label="Predicted highlighting">
       <code>{content}</code>
     </pre>
   );
