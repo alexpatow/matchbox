@@ -1,8 +1,10 @@
+import { LexerDemo } from "@/lexer";
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { SiteHeader, SiteFooter } from "@/site";
 import { documents } from "./documents";
 import { DocsNavigation } from "./docs-navigation";
+import { DocActions } from "./doc-actions";
 import { DocsMarkdown } from "./docs-markdown";
 import { headings } from "./headings";
 export function DocsApp() {
@@ -22,11 +24,12 @@ export function DocsApp() {
       <SiteHeader />
       <div className="docs-layout">
         <aside>
-          <DocsNavigation slug={slug} />
+          <DocsNavigation key={slug} slug={slug} />
         </aside>
         <main className="doc-content">
           {source ? (
             <>
+              <DocActions key={slug} source={source} />
               {headings(source).length > 1 && (
                 <details className="doc-outline">
                   <summary>On this page</summary>
@@ -40,6 +43,7 @@ export function DocsApp() {
                 </details>
               )}
               <DocsMarkdown source={source} slug={slug} />
+              {slug === "examples/lexer" && <LexerDemo />}
             </>
           ) : (
             <>

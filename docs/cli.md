@@ -42,7 +42,7 @@ Adds `matchbox/<name>/`, ignores `.matchbox/`, and adds missing `matchbox:dev`, 
 
 Installs core as an application dependency and train/CLI as development dependencies. Package-manager selection uses the app declaration or lockfile (including workspace ancestors), then the invoking package manager, then Bun. Failed installation preserves the scaffold and prints a retry command.
 
-The blank template requires examples and evals before training. The money template includes token supervision and an application-owned decoder. No time template ships in 0.1.0; the time example is available in the repository.
+The blank template requires examples and evals before training. The money template includes token supervision and an application-owned decoder. Time and lexer templates are not included; their guides show the authored task modules.
 
 ## dev
 
@@ -62,7 +62,7 @@ bunx matchbox-ai train [task] --verbose --json
 
 `--verbose` shows epoch loss outside JSON mode. Training validates datasets and token annotations, fits a model, gates on validation accuracy and size, and writes the artifact, TypeScript wrapper, declarations, and report.
 
-Validation-gate failure stops export and exits nonzero. An independent test score below the threshold is reported after packaging; use `eval` to enforce the test threshold in CI.
+Validation-gate failure stops export and exits nonzero. An independent test score below the threshold is reported but does not block packaging; use `eval` to enforce the test threshold in CI.
 
 ## eval
 
@@ -86,7 +86,7 @@ Returns a [ParseResult](reference/runtime.md). Uncertainty is a prediction resul
 bunx matchbox-ai inspect money 'eleven grand' --json
 ```
 
-Returns `{ input, ...diagnostics, result }`. Token models include labeled tokens and the decoded candidate; field models expose their strategy-specific diagnostics. `result` is the validated prediction. Diagnostics are for debugging and should not be treated as a stable application contract.
+Returns `{ input, ...diagnostics, result }`. Token models include labeled tokens and the decoded candidate; field models expose their strategy-specific diagnostics. `result` is the validated prediction. Diagnostics are omitted when the input fails validation or exceeds 512 UTF-16 units, including for recurrent models whose parser accepts longer documents. Use `parse` for the final result; diagnostic fields are not a stable application contract.
 
 ## info
 

@@ -1,30 +1,56 @@
 ---
 name: matchbox
-description: Author, train, evaluate, and integrate tiny browser-local Matchbox parsers using explicit TypeScript primitives.
+description: Build, train, evaluate and integrate tiny browser-local models with Matchbox. Use for Matchbox tasks, pipelines, recipes, decoders, CLI workflows and uncertain predictions in TypeScript applications.
 ---
 
 # Matchbox
 
-Read the installed package docs/README.md first, then project-structure.md, pipelines.md, evaluation.md, and primitives/README.md. In the framework repository, use root docs/. Match examples to the installed version.
+Use the existing Matchbox APIs to complete the requested application task. Read contracts for the installed version before writing code; do not assume this skill and the installed packages have the same version.
 
-1. Inspect parser, pipeline, recipe, and decode entry points (`X.ts` or `X/X.ts`), data/train.jsonl, and independent evals before changing behavior.
-2. Keep the output schema focused on valid application values. Make representation and supervision choices explicit in pipeline.ts or imported helpers.
-3. Use fieldClassifier for finite output domains and tokenClassifier for explicitly supervised token recognition. Explain their limits; do not promise unseen numeric outputs from a finite classifier.
-4. Keep domain dictionaries and normalizers application-owned and visible. Never insert one silently to make an evaluation pass.
-5. Fit preprocessing only on training data. Put data generators in project-level scripts/ and preserve validation/test fixtures. Add meaningful held-out compositions and negative cases independently of model fitting.
-6. Use the CLI from matchbox-ai or programmatic train from @matchbox-ai/train to apply validation gates, measure results, and package weights. Report failures honestly. Never fabricate benchmark figures.
-7. Distinguish uncertain interpretation from invalid user input. Confidence is currently uncalibrated; inspect diagnostics before attributing uncertainty to one cause.
-8. Import generated artifacts in the app and use @matchbox-ai/core/react when needed. Keep @matchbox-ai/train and native Burn outside browser code.
-9. Let Burn serialize, load, and execute models. Do not implement custom inference kernels or a backend-selection framework. Verify native-to-browser export parity and benchmark the shipped Burn runtime. Label emulated mobile measurements accurately.
+## Find the right documentation
 
-Scope changes to existing, documented primitives. Propose a new primitive separately with its contract, limitations, and evaluation evidence. Preserve authored code and tests when reorganizing folders.
+Inspect the application's package manager, framework and installed `@matchbox-ai/core`, `@matchbox-ai/train` and `matchbox-ai` versions. Prefer their bundled `docs/` directories under `node_modules`. If working in the framework repository, use root `docs/`. If packages are not installed, consult https://matchbox.alexpatow.com/llms.txt and explain which version you plan to use. Website docs follow main.
 
-Matchbox owns authoring, workflows, evals, packaging, validation, and typed results. Burn owns model execution. A schema must never silently select numeric encodings or domain normalizers.
+Read only the references needed for the request, relative to that documentation directory:
 
-## Task layout
+| Work                                        | Read                                                                  |
+| ------------------------------------------- | --------------------------------------------------------------------- |
+| First task or project setup.                | `getting-started.md`, `project-structure.md`, `cli.md`.               |
+| Choose a learning strategy.                 | `pipelines.md`, then the chosen strategy's contract.                  |
+| Local token recognition and decoding.       | `reference/supervision.md`, `examples/money.md`.                      |
+| Document-context span labeling.             | `primitives/recurrent-token-classifier.md`, `examples/lexer.md`.      |
+| Training or export failure.                 | `training.md`, `reference/configuration.md`, `reference/training.md`. |
+| Quality, coverage or uncertain predictions. | `evaluation.md`, `reference/evaluation.md`, `cli.md#inspect`.         |
+| Browser and React integration.              | `reference/runtime.md`, `react.md`, `runtime-backends.md`.            |
 
-Use `X.ts` or `X/X.ts` for parser, pipeline, recipe, and decode. Keep helper files with their owning module. Shared domain code belongs in a named task-level folder. No task or helper index barrel is required. `tokenClassifier()` discovers recipe and decode; explicit path overrides are relative to the task root. Never keep both entry forms. Retrain after relocating authored modules because artifacts reference concrete source paths.
+Confirm names and overloads against installed exported declarations when needed. Do not import `@matchbox-ai/core/internal` in an application. If a capability is absent from the installed release, identify the limitation instead of inventing an API.
 
-### Recurrent span tasks
+## Author the application task
 
-Use `recurrentTokenClassifier()` with a `RecurrentRecipe` when fixed-window context is insufficient. Author `textParts()`, `textFeatures()` and `spanLabels({ whitespace: "context" | "supervise" })` explicitly. Read `docs/primitives/recurrent-token-classifier.md` for contracts. Keep the output span schema and decoder application-owned. Do not replace existing classifiers or enable partial parsing automatically. `.parse(input)` remains all-or-nothing; `.parse(input, { allowPartial: true })` returns a candidate with uncertain source ranges for interfaces able to display them. Report diagnostic label agreement separately from parser exact accuracy and acceptance. Preserve the full held-out corpus and record training time.
+Inspect existing parser, pipeline, recipe, decoder and evals before changing behavior. Preserve the application's framework configuration and scripts. Conventional entry points use `X.ts` or `X/X.ts`, never both. Helpers stay beside their owning module; shared domain code belongs in a named task folder. Generators belong in project-level `scripts/`.
+
+The schema defines valid output; it does not choose a numeric representation or learning strategy. Make the consequential choice explicit:
+
+- `fieldClassifier()` learns finite observed output values and discards word order. It cannot produce unseen numeric values.
+- `tokenClassifier()` learns within a fixed window, using `SequenceRecipe` annotations and an application-owned decoder.
+- `recurrentTokenClassifier()` learns document context using `RecurrentRecipe`, `textParts()`, `textFeatures()` and `spanLabels()`. Its output supervision is labeled spans. It predicts one label per part and does not accept a fixed-window annotation callback.
+
+Choose among existing primitives based on the requested output and context. Propose any API addition separately. Keep conversions and semantic dictionaries explicit and application-owned; never insert one silently to make an eval pass. Burn owns neural-network loading and execution.
+
+## Train and evaluate
+
+Keep training, validation and test data independent. Fit learned preprocessing on training data only. Preserve held-out fixtures when regenerating data or fixing failures. Add independently authored negative cases and meaningful compositions.
+
+Use `info` to inspect paths, `train` to fit and export, `eval` to score the saved artifact, and `inspect` to separate recognition from decoding. Consult `cli.md` for exact syntax. `init` only offers money and blank templates; a lexer requires authored modules and data. Avoid repeatedly training when the failure is a schema, path or annotation error.
+
+Do not lower export gates merely to force success. Research exports with permissive gates must be explicitly requested and labeled. Record dataset identity, training time, model bytes, exact accuracy, abstention and relevant task metrics. Recurrent diagnostic agreement and partial candidate coverage do not mean complete-parser acceptance. Never tune settings on the test split or fabricate measurements.
+
+## Integrate the evaluated artifact
+
+Import the generated `.matchbox/<task>/model` module. Keep training/native dependencies out of browser code; Next.js inference belongs in a client component. Generated artifacts remain outside Git, so arrange training or restoration of the evaluated artifact before the app build.
+
+`parse(input)` returns schema-validated output or uncertainty. Unfamiliar text is a model limitation, not inherently invalid user input. Confidence is uncalibrated; inspect failures before attributing them to a single cause.
+
+Recurrent models can explicitly opt into `allowPartial: true` for interfaces that display uncertain source ranges. The candidate includes uncertain labels. `gpu: true` is a separate opt-in request, rejects when unavailable and does not silently fall back. `useMatchbox` preserves these options but warms CPU on mount. Read lifecycle details before promising GPU-only downloads.
+
+Use the application's existing checks and verify real browser loading and inference. Report remaining limitations and what was measured. Publishing and deployment require the user's authorization; installing this skill provides none.

@@ -30,3 +30,5 @@ packages/core/wasm/
 packages/train/prebuilds/
 .native-smoke/
 .packed-smoke/
+
+packages/*/skills/

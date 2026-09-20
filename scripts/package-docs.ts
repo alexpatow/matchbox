@@ -11,6 +11,10 @@ await mkdir(output, { recursive: true });
 await cp(new URL("docs/", root), output, { recursive: true });
 await cp(new URL("skills/matchbox/SKILL.md", root), new URL("agent-skill.md", output));
 
+const skillDirectory = new URL(`packages/${name}/skills/matchbox/`, root);
+await mkdir(skillDirectory, { recursive: true });
+await cp(new URL("skills/matchbox/SKILL.md", root), new URL("SKILL.md", skillDirectory));
+
 for (const file of ["LICENSE", "THIRD-PARTY-NOTICES.md"]) {
   await cp(new URL(file, root), new URL(`packages/${name}/${file}`, root));
 }

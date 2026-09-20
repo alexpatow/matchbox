@@ -1,8 +1,8 @@
 @import "./site/icons.css";
-@import "./benchmark/benchmark.css";
 @import "./site/hero.css";
 @import "./site/workbench.css";
-@import "./site/model-footprint.css";
+@import "./app/filter-performance.css";
+@import "./app/filter-demo.css";
 @import "./docs/docs.css";
 :root {
   color-scheme: dark;
@@ -107,13 +107,13 @@ pre {
   border: 1px solid #222;
   border-radius: 6px;
 }
-.query-section input {
+.query-section textarea {
   background: #101010;
   border: 1px solid #3c3c3c;
   color: #eee;
   border-radius: 6px;
 }
-.query-section input::placeholder {
+.query-section textarea::placeholder {
   color: #686868;
 }
 .suggestions button {
@@ -153,9 +153,6 @@ pre {
   to {
     opacity: 0.3;
   }
-}
-.training-example pre {
-  min-height: 120px;
 }
 .site-footer {
   border-top: 1px solid var(--border);
@@ -204,5 +201,48 @@ pre {
   *::after {
     animation: none !important;
     transition: none !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .masthead a,
+  .suggestions button,
+  .filter-results-toolbar button,
+  .example-heading > a,
+  .example-metrics a,
+  .lexer-metrics a {
+    min-height: 44px;
+  }
+  .masthead a,
+  .example-heading > a,
+  .example-metrics a,
+  .lexer-metrics a {
+    display: inline-flex;
+    align-items: center;
+  }
+  .lexer-demo textarea,
+  .lexer-controls select {
+    font-size: 16px;
+  }
+  .lexer-controls select {
+    min-height: 44px;
+    padding-inline: 12px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+  }
+  .filter-results-toolbar {
+    gap: 8px;
+    padding-inline: 12px;
+  }
+}
+@media (max-width: 360px) {
+  .masthead {
+    gap: 8px;
+  }
+  .masthead nav {
+    gap: 12px;
+  }
+  .hero h1 {
+    font-size: 36px;
   }
 }

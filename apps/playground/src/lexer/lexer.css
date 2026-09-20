@@ -1,0 +1,137 @@
+.lexer-demo {
+  margin-block: 3rem;
+  min-width: 0;
+}
+.lexer-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-block: 1rem;
+  font-size: 0.8rem;
+}
+.lexer-demo label {
+  font-size: 0.8rem;
+}
+.lexer-demo textarea,
+.lexer-output {
+  display: block;
+  width: 100%;
+  min-height: 12rem;
+  padding: 1rem;
+  border: 1px solid var(--border, #d5d5d5);
+  border-radius: 6px;
+  font-family: "Geist Mono Variable", monospace;
+  font-size: 0.8rem;
+  line-height: 1.7;
+  background: transparent;
+  overflow: auto;
+}
+.lexer-demo textarea {
+  resize: vertical;
+  margin-top: 0.5rem;
+}
+.lexer-status,
+.lexer-caption {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  margin-block: 0.8rem;
+}
+.lexer-caption {
+  color: var(--muted-foreground, #656565);
+}
+.lexer-comment {
+  color: var(--muted-foreground);
+  font-style: italic;
+}
+.lexer-string {
+  color: var(--sh-string);
+}
+.lexer-number,
+.lexer-constant {
+  color: var(--sh-entity);
+}
+.lexer-keyword,
+.lexer-operator {
+  color: var(--sh-keyword);
+}
+.lexer-function {
+  color: var(--sh-property);
+}
+.lexer-type {
+  color: var(--sh-class);
+}
+.lexer-output .lexer-uncertain {
+  text-decoration: underline dotted;
+  text-underline-offset: 4px;
+}
+
+.lexer-status {
+  display: block;
+}
+
+.lexer-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.lexer-columns > div {
+  min-width: 0;
+}
+.lexer-output-label {
+  display: block;
+  font-size: 0.8rem;
+}
+.lexer-columns .lexer-output {
+  margin-block: 0.5rem 0;
+}
+.lexer-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px 24px;
+  font-size: 12px;
+  color: var(--muted-foreground);
+}
+.lexer-metrics a {
+  margin-left: auto;
+}
+.lexer-metrics .lexer-status {
+  margin: 0;
+}
+.examples-page .lexer-demo {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #0c0c0c;
+  overflow: hidden;
+}
+.examples-page .lexer-controls {
+  padding-inline: 24px;
+  margin-top: 0;
+}
+.examples-page .lexer-columns {
+  padding-inline: 24px;
+}
+.examples-page .lexer-caption {
+  padding-inline: 24px;
+}
+.examples-page .lexer-metrics {
+  padding: 16px 24px;
+  border-top: 1px solid var(--border);
+}
+@media (max-width: 700px) {
+  .lexer-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+.lexer-demo .example-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+}
+.lexer-demo .example-heading > a {
+  white-space: nowrap;
+  font-size: 12px;
+}

@@ -1,19 +1,18 @@
 import { ArrowUpRight } from "lucide-react";
-import { Link } from "react-router-dom";
 import { PipelineExplorer } from "./pipeline-explorer";
 export function FrameworkStory() {
   return (
     <section className="framework-story" aria-labelledby="workflow-title">
       <div className="section-heading">
-        <h2 id="workflow-title">Train it. Import it.</h2>
-        <p>The money example, from schema to a typed prediction.</p>
+        <h2 id="workflow-title">The model behind the demo.</h2>
       </div>
       <PipelineExplorer />
-      <div className="story-note">
-        <Link to="/docs/getting-started">
-          Build your first model <ArrowUpRight className="site-icon" aria-hidden="true" />
-        </Link>
-      </div>
+      <p className="highlight-credit">
+        Syntax highlighting by{" "}
+        <a href="https://github.com/alexpatow/matchbox-lexer">
+          a Matchbox model <ArrowUpRight className="site-icon" aria-hidden="true" />
+        </a>
+      </p>
     </section>
   );
 }

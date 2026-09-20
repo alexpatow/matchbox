@@ -1,37 +1,43 @@
-# Explicit pipelines
+# Choose a pipeline
 
-The parser defines valid input and output. The pipeline defines how the model learns. Matchbox requires `pipeline.ts` or `pipeline/pipeline.ts` for conventional tasks; the scaffold writes it visibly.
+The parser defines valid input and output. `pipeline.ts` defines how the model learns.
 
-| Strategy                     | Use when                                                  | Main limitation                                                     |
-| ---------------------------- | --------------------------------------------------------- | ------------------------------------------------------------------- |
-| `fieldClassifier()`          | Outputs are small, finite sets of observed values.        | Cannot produce unseen values; discards word order.                  |
-| `tokenClassifier()`          | Local token context and explicit decoding are sufficient. | Uses a fixed context window and whole-result acceptance.            |
-| `recurrentTokenClassifier()` | Labels depend on context across a document.               | Predicts one label per text part; requires span-output supervision. |
+| Strategy                     | Use when                                                | Limitation                                                           |
+| ---------------------------- | ------------------------------------------------------- | -------------------------------------------------------------------- |
+| `fieldClassifier()`          | Output fields have small, finite sets of values.        | Can only predict values observed in training; ignores word order.    |
+| `tokenClassifier()`          | Nearby tokens identify spans your decoder can assemble. | Uses a fixed context window and accepts or rejects the whole result. |
+| `recurrentTokenClassifier()` | Labels depend on context across a document.             | Predicts one label per text part; needs span-output supervision.     |
 
-For the recurrent strategy, follow [the complete authoring guide](primitives/recurrent-token-classifier.md) or [the lexer example](examples/lexer.md). Partial results and GPU parsing are opt-in capabilities of that strategy, not replacements for the existing APIs.
+## Finite values
 
 ```ts
 import { definePipeline, fieldClassifier } from "@matchbox-ai/train";
+
 export default definePipeline({
   prediction: fieldClassifier(),
-  acceptance: { minAccuracy: 0.95, maxBytes: 64000 },
+  acceptance: { minAccuracy: 0.95 },
 });
 ```
 
-This preset trains the existing bag-of-words MLP. Each output field classifies values observed in training. It cannot emit an unseen numeric value, ignores word order, and may be confidently wrong on new combinations of familiar words. Unknown vocabulary causes abstention. The CLI reports this limitation.
+This bag-of-words classifier learns each field's values from training data. A numeric field is still a finite class; it cannot produce an unseen number. Unknown vocabulary causes uncertainty, while familiar words in a new order can produce a confident wrong answer.
 
-An explicit token pipeline uses application-owned supervision and decoding:
+## Spans and decoding
 
 ```ts
 import { definePipeline, tokenClassifier } from "@matchbox-ai/train";
+
 export default definePipeline({
   prediction: tokenClassifier(),
-  acceptance: { minAccuracy: 0.85, maxBytes: 24000 },
+  acceptance: { minAccuracy: 0.9 },
 });
 ```
 
-Matchbox discovers `recipe.ts` or `recipe/recipe.ts`, and `decode.ts` or `decode/decode.ts`. Explicit path overrides resolve relative to the task directory. The recipe supplies tokenizer, labels, readout, and annotation alignment. The decoder receives labeled spans and returns a candidate output or null. Matchbox verifies training annotations decode to the supplied training outputs. Recipe code runs during training; decoder code ships with the browser artifact and must remain browser-safe.
+Author a [recipe and decoder](reference/supervision.md). The recipe supplies token labels for training. The decoder assembles predicted spans into the output, including any explicit number conversion or arithmetic. Matchbox checks that training annotations decode to the expected outputs.
 
-These presets remain supported. The separate [recurrent token classifier](primitives/recurrent-token-classifier.md) adds explicit text-part features and context across a document. Decimal codecs, arbitrary graphs, automatic architecture search, and hidden domain normalizers are not implemented. New primitives should demonstrate their limitations and held-out behavior before becoming defaults.
+For document-wide context, use the [recurrent classifier](primitives/recurrent-token-classifier.md). It adds text-part features, span supervision and optional partial results. The [lexer example](examples/lexer.md) shows it in use.
 
-Programmatic training uses await train("money", { onProgress }) from @matchbox-ai/train and follows the same validation and packaging path as the CLI. Importing the authoring helpers does not initialize native Burn; training loads it when invoked.
+## Choose by evaluation
+
+A schema does not choose an encoding or a normalizer. Select a strategy using validation examples, then measure accuracy, coverage, download size and latency on independent data. See the [pipeline API](reference/pipeline.md) for options.
+
+A browser LLM is another option for open-ended generation or tasks that change through prompts. Matchbox requires task-specific training. Model sizes shown in the examples exclude the shared runtime and decoder; these examples have not been benchmarked against a browser LLM.

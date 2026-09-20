@@ -1,22 +1,14 @@
 # Train a model
 
-Training learns from your examples and writes a model you can import into your application. Run these commands from a project where you have already [added a task](getting-started.md).
+After [adding a task](getting-started.md), supply three independent datasets:
 
-## Prepare the task
+| File                     | Purpose                                      |
+| ------------------------ | -------------------------------------------- |
+| `data/train.jsonl`       | Fit the model.                               |
+| `evals/validation.jsonl` | Select and validate the model before export. |
+| `evals/test.jsonl`       | Measure the selected model.                  |
 
-A conventional task needs:
-
-| File                     | Purpose                                                    |
-| ------------------------ | ---------------------------------------------------------- |
-| `parser.ts`              | Defines valid input and output.                            |
-| `pipeline.ts`            | Chooses a learning strategy and export requirements.       |
-| `data/train.jsonl`       | Supplies the examples used to fit the model.               |
-| `evals/validation.jsonl` | Checks whether the fitted model meets export requirements. |
-| `evals/test.jsonl`       | Measures the selected model independently.                 |
-
-[Choose a pipeline](pipelines.md) based on the task. A field classifier learns finite output values. A token classifier also needs a [recipe and decoder](reference/supervision.md) with aligned token annotations. A [recurrent classifier](primitives/recurrent-token-classifier.md) instead uses explicit text-part features and span supervision in a `RecurrentRecipe`.
-
-Write validation and test examples independently of training data. Keep them out of data generators. The loader rejects inputs shared across splits after trimming whitespace and folding case.
+The loader rejects inputs shared across splits after trimming whitespace and folding case. Keep evals out of training-data generators. See [dataset format](dataset-format.md) for row validation.
 
 ## Run training
 
@@ -24,35 +16,32 @@ Write validation and test examples independently of training data. Keep them out
 bunx matchbox-ai train money
 ```
 
-For epoch loss, add `--verbose`. For a machine-readable build report, add `--json`.
+Add `--verbose` for epoch loss or `--json` for the build report. The workbench's **Train model** action runs the same workflow.
 
-You can also open `bunx matchbox-ai dev money` and choose **Train model**. Both use the same local training workflow. Your app keeps its own dev server.
-
-## What happens during a run
-
-1. Matchbox validates task configuration, datasets, and any token annotations.
-2. The selected strategy prepares input features and supervision. Vocabulary and output domains, where applicable, use training data only.
-3. Burn trains the network locally. Matchbox checks the exported model against the native model.
-4. Recurrent training selects its checkpoint using validation code-point agreement. Complete-output validation accuracy and model size gate packaging for every strategy.
-5. The independent test split is scored and included in the report.
-
-A schema describes valid output. It does not generate training data or choose a numeric representation. Token decoders own explicit conversion and arithmetic.
+1. Matchbox validates the task, datasets and supervision.
+2. The [pipeline](pipelines.md) prepares features and trains with native Burn.
+3. Export checks compare native and WASM predictions. Recurrent models select a checkpoint using validation code-point agreement.
+4. Validation exact accuracy and artifact size gate export.
+5. The test split is scored, then the artifact and report are written.
 
 ## Set export requirements
 
-Set acceptance values in `pipeline.ts`:
+In `pipeline.ts`:
 
 ```ts
-acceptance: { minAccuracy: 0.9, maxBytes: 30000 }
+import { definePipeline, tokenClassifier } from "@matchbox-ai/train";
+
+export default definePipeline({
+  prediction: tokenClassifier(),
+  acceptance: { minAccuracy: 0.9, maxBytes: 30000 },
+});
 ```
 
-`minAccuracy` is the required fraction of exact validation matches. `maxBytes` limits serialized model bytes, excluding the runtime and authored decoder. If either gate fails, training exits nonzero without exporting a replacement.
+`minAccuracy` is the fraction of complete validation outputs that must match. `maxBytes` limits serialized model bytes, excluding the runtime and decoder. Failure exits nonzero without replacing the previous artifact.
 
-A model may pass validation and perform poorly on the independent test split. That test score is reported after packaging; run [`eval`](evaluation.md) as the separate test gate before shipping.
+A low test score is reported but does not block packaging. Run [`eval`](evaluation.md) as a separate test gate before shipping.
 
 ## Use the artifacts
-
-A successful run writes:
 
 ```text
 .matchbox/money/
@@ -62,12 +51,6 @@ A successful run writes:
   report.json
 ```
 
-Import `model.ts` in your app. The wrapper references the matching task and decoder, so keep them together when deploying. Generated artifacts are ignored by Git; train before your app build or restore an evaluated artifact and its matching authored modules.
+Import `model.ts` in your app. Its references to the authored parser and decoder must remain valid. Train before your app build or restore these files together.
 
-The report records accuracy, size, loss, export parity, and dataset hashes. It does not measure browser latency. Continue with [Evaluate a model](evaluation.md) to assess the result, uncertainty, and speed.
-
-## Retrain after changes
-
-Edit training examples and, for token models, their annotations. Run training again, then evaluate. Preserve test inputs even when the model gets them wrong.
-
-For programmatic training, see [`train`](reference/training.md). For path overrides, see [configuration](reference/configuration.md).
+The report includes accuracy, model size, loss, training duration and dataset hashes. It does not measure browser latency. See [evaluation](evaluation.md) for quality and timing, or the [training API](reference/training.md) for programmatic use and report fields.

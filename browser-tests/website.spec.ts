@@ -8,21 +8,10 @@ test("the framework story leads into working documentation", async ({ page }, te
     "href",
     "https://x.com/shuding",
   );
-  const footprint = page.getByRole("region", { name: "A model measured in kilobytes." });
-  for (const [task, label] of [
-    ["filters", "Customer filters"],
-    ["money", "Money"],
-    ["time", "Date, time & duration"],
-    ["is-even", "Parity (training sanity check)"],
-  ] as const) {
-    const artifact = await stat(`examples/${task}/.matchbox/${task}/model.matchbox`);
-    const row = footprint.locator(".model-sizes > div").filter({ hasText: label });
-    await expect(row.locator(".model-size")).toHaveText(`${(artifact.size / 1024).toFixed(1)} KiB`);
-  }
-  await expect(footprint).toContainText("Burn WebAssembly");
-  await expect(
-    page.getByRole("heading", { name: "Why not run a small LLM in Chrome?" }),
-  ).toBeVisible();
+  const artifact = await stat("examples/filters/.matchbox/filters/model.matchbox");
+  await expect(page.locator(".filter-model-size")).toHaveText(
+    `${(artifact.size / 1024).toFixed(1)} KiB model`,
+  );
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.screenshot({ path: testInfo.outputPath("homepage.png"), fullPage: true });
   const origin = await page.evaluate(() => performance.timeOrigin);
@@ -30,6 +19,10 @@ test("the framework story leads into working documentation", async ({ page }, te
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Getting started");
   expect(await page.evaluate(() => performance.timeOrigin)).toBe(origin);
   await expect(page.getByRole("main")).not.toContainText("private, and unpublished");
+  const docsToggle = page.getByRole("button", { name: "Documentation", exact: true });
+  if (await docsToggle.isVisible()) {
+    await docsToggle.click();
+  }
   const links = await page
     .getByRole("navigation", { name: "Documentation" })
     .getByRole("link")
@@ -48,20 +41,38 @@ test("the framework story leads into working documentation", async ({ page }, te
 
 test("the file explorer supports keyboard navigation", async ({ page }) => {
   await page.goto("/");
-  await page.getByRole("tab", { name: "parser.ts", exact: true }).focus();
-  await page.keyboard.press("ArrowDown");
-  await expect(page.getByRole("tab", { name: "pipeline.ts", exact: true })).toBeFocused();
-  await expect(page.getByRole("tabpanel")).toContainText("tokenClassifier");
-  await page.getByRole("tab", { name: "recipe.ts", exact: true }).click();
-  await expect(page.getByRole("tabpanel")).toContainText("annotate(example)");
-  await page.getByRole("tab", { name: "data/train-spans.json", exact: true }).click();
-  await expect(page.getByRole("tabpanel")).toContainText('"AMOUNT", "USD"');
-  await page.getByRole("tab", { name: "data/train-rejections.json", exact: true }).click();
-  await expect(page.getByRole("tabpanel")).toContainText('"output": null');
-  await page.getByRole("tab", { name: "decode/decode.ts", exact: true }).click();
-  await expect(page.getByRole("tabpanel")).toContainText("normalizeNumber");
-  await page.getByRole("tab", { name: "decode/number-words.ts", exact: true }).click();
-  await expect(page.getByRole("tabpanel")).toContainText("not learned weights");
-  await page.getByRole("tab", { name: "app.ts", exact: true }).click();
-  await expect(page.getByRole("tabpanel")).toContainText("money.parse");
+  await expect(page.locator(".model-code span").first()).toBeVisible();
+  await expect(page.getByText("Syntax highlighting by", { exact: false })).toBeVisible();
+  const source = await page.locator(".model-code").textContent();
+  expect(source).toContain("filters.parse");
+  const picker = page.getByRole("combobox", { name: "Example file" });
+  async function selectFile(name: string) {
+    if (await picker.isVisible()) {
+      await picker.selectOption({ label: name });
+    } else {
+      await page.getByRole("tab", { name, exact: true }).click();
+    }
+  }
+  if (await picker.isVisible()) {
+    await selectFile("pipeline.ts");
+  } else {
+    await page.getByRole("tab", { name: "parser.ts", exact: true }).focus();
+    await page.keyboard.press("ArrowDown");
+    await expect(page.getByRole("tab", { name: "pipeline.ts", exact: true })).toBeFocused();
+  }
+  await expect(
+    page.getByRole("tabpanel").filter({ has: page.locator(".model-code") }),
+  ).toContainText("tokenClassifier");
+  await selectFile("recipe.ts");
+  await expect(
+    page.getByRole("tabpanel").filter({ has: page.locator(".model-code") }),
+  ).toContainText("annotate(_example, tokens)");
+  await selectFile("decode/decode.ts");
+  await expect(
+    page.getByRole("tabpanel").filter({ has: page.locator(".model-code") }),
+  ).toContainText("compileClauses");
+  await selectFile("app.ts");
+  await expect(
+    page.getByRole("tabpanel").filter({ has: page.locator(".model-code") }),
+  ).toContainText("filters.parse");
 });

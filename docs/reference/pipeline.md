@@ -11,7 +11,7 @@ import {
 
 ## definePipeline
 
-`definePipeline(pipeline: Pipeline): Pipeline` validates a declaration and returns it. Invalid declarations throw a Zod validation error. It does not train or load Burn.
+`definePipeline` validates a declaration, fills defaults and returns a `Pipeline`. Its input permits omitted defaulted options. Invalid declarations throw a Zod validation error. It does not train or load Burn.
 
 | Property                 | Type                                              | Required | Behavior                                      |
 | ------------------------ | ------------------------------------------------- | -------- | --------------------------------------------- |

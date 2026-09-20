@@ -1,16 +1,16 @@
 # Matchbox documentation
 
-Start with [Getting started](getting-started.md) to add a task, train a model, and import it into an existing app.
+Train small models from examples, then import them into your browser app. Inputs are strings; outputs follow your Zod schema.
 
-- [Recurrent classification](primitives/recurrent-token-classifier.md) covers text-part features, span supervision, partial results and optional WebGPU.
-- [Syntax highlighting](examples/lexer.md) shows these APIs in a published-package consumer.
-- [CLI reference](cli.md) covers every command and option.
-- [API reference](reference/README.md) indexes the public contracts by package.
-- [Training](training.md) walks through fitting and exporting a model.
-- [Training pipelines](pipelines.md) explains the learning strategies and their limits.
-- [Project structure](project-structure.md) maps authored files and generated artifacts.
-- [Evaluation](evaluation.md) explains validation gates, test data, and uncertainty.
-- [Example results](example-evaluation.md) reports harder cases, coverage, and remaining failures.
-- [Money](examples/money.md) and [time](examples/time.md) show token recognition with explicit application-owned decoding.
+[Get started](getting-started.md) with the money parser, or [install the coding-agent skill](agents.md).
 
-Matchbox currently accepts string inputs. Core owns validation and browser integration; train owns build-time orchestration; Burn owns training and execution.
+| Task                              | Guide                                                                        |
+| --------------------------------- | ---------------------------------------------------------------------------- |
+| Choose how the model learns.      | [Pipelines](pipelines.md).                                                   |
+| Organize a task and its examples. | [Project structure](project-structure.md) and [datasets](dataset-format.md). |
+| Train and package a model.        | [Training](training.md).                                                     |
+| Check quality and uncertainty.    | [Evaluation](evaluation.md).                                                 |
+| Run it in your app.               | [Runtime](reference/runtime.md) and [React](react.md).                       |
+| Look up a command or type.        | [CLI](cli.md) and [API reference](reference/README.md).                      |
+
+The [money](examples/money.md), [time](examples/time.md) and [lexer](examples/lexer.md) examples show different learning and decoding choices. Try them on the [examples page](/examples).

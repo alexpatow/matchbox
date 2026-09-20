@@ -1,78 +1,52 @@
 # Evaluate a model
 
-Evaluation checks an existing model against inputs with known answers. It does not update weights or train on your test data.
-
-## Run the test split
-
-After [training](training.md), run:
+Evaluate the saved artifact without updating its weights:
 
 ```sh
 bunx matchbox-ai eval money
 bunx matchbox-ai eval money --json
 ```
 
-This loads the saved artifact and scores `evals/test.jsonl`. It does not require the training dataset. The command exits `1` when exact accuracy is below the configured `minAccuracy`, making it suitable for a CI gate.
-
-The workbench's **Evaluate** action runs the same test evaluation. The programmatic [`evaluate`](reference/evaluation.md) API returns metrics without applying an acceptance gate.
-
-## Keep the splits separate
-
-| Split                    | Used for                                                               |
-| ------------------------ | ---------------------------------------------------------------------- |
-| `data/train.jsonl`       | Learning vocabulary, output domains, and weights.                      |
-| `evals/validation.jsonl` | Checking accuracy and size requirements before exporting a candidate.  |
-| `evals/test.jsonl`       | Measuring the selected model without influencing fitting or selection. |
-
-Withhold meaningful input compositions and complete output values where the chosen strategy supports unseen values. Avoid near-duplicate paraphrases across splits. A low test score should lead to better training coverage or a different explicit pipeline, not edited test answers.
+This scores `evals/test.jsonl` and exits `1` when exact accuracy is below `minAccuracy`. It needs the artifact and task modules, but not the training dataset. The workbench's **Evaluate** action uses the same test gate.
 
 ## Read the results
 
-| Metric              | Meaning                                                                             |
-| ------------------- | ----------------------------------------------------------------------------------- |
-| Exact accuracy      | The fraction of complete outputs matching the expected value.                       |
-| Accepted accuracy   | Accuracy among answers the parser returned; `null` when it returned none.           |
-| Abstention rate     | The fraction of inputs on which the parser declined to answer.                      |
-| Invalid-output rate | The fraction of returned answers that fail output validation.                       |
-| Failures            | Inputs with their expected output and actual result. Uncertainty appears as `null`. |
+| Metric              | Meaning                                                                      |
+| ------------------- | ---------------------------------------------------------------------------- |
+| Exact accuracy      | Fraction of complete outputs matching the expected value.                    |
+| Accepted accuracy   | Accuracy among returned answers; `null` when none were returned.             |
+| Abstention rate     | Fraction of inputs for which the parser declined to answer.                  |
+| Invalid-output rate | Fraction of evaluated inputs yielding an accepted but schema-invalid answer. |
+| Failures            | Expected and actual values for mismatches. Uncertainty appears as `null`.    |
 
-Read accuracy and abstention together. A model that answers only easy inputs can have high accepted accuracy and poor coverage. Schema validity guarantees an output's shape, not that its meaning is correct.
+Read accuracy and abstention together. High accepted accuracy can hide poor coverage. Schema validity checks shape, not meaning; confidence is uncalibrated.
 
-## Recurrent and partial results
-
-Recurrent training reports diagnostic code-point agreement, confidence coverage, agreement within that coverage, per-epoch validation scores and the selected epoch. Diagnostics bypass whole-result acceptance; they are not complete-parser accuracy. The export gate still uses exact validation output accuracy.
-
-CLI evaluation uses the strict `parse(input)` contract. It does not enable partial output or GPU execution. To evaluate a preview, call `parse(input, { allowPartial: true })` in an application-owned evaluation loop and record `ok`, `partial` and `uncertain` separately. Measure candidate agreement and returned-label coverage while explicitly counting uncertain predictions. A schema-valid candidate is not an accepted complete answer.
-
-For browser timing, measure the same inputs with explicit CPU and GPU calls. Separate initialization from warm inference, include output validation, record abstentions and partial results, and measure downloaded runtime assets as well as model bytes. The [lexer example](examples/lexer.md) demonstrates these measurements on a frozen corpus.
+Keep validation and test inputs separate from training. Test new compositions, not only paraphrases or different numbers with the same token representation. The [evaluation API](reference/evaluation.md) returns these metrics without enforcing an acceptance gate.
 
 ## Test uncertainty
 
-Confidence is an uncalibrated model score. Zero confidence means the current model declined to answer; it does not establish that the input is invalid or that training coverage is the only problem.
-
-For sequence models, add negative cases in `evals/challenges.json`:
+For token models, add negative cases in `evals/challenges.json`:
 
 ```json
 [{ "input": "sometime soon", "output": null }]
 ```
 
-Training includes these in the report's separate `challenges` section. They do not become training examples or select the model. The CLI `eval` command scores the configured test split; it does not automatically rerun the challenge file.
+Training scores these separately under `challenges`; they do not select the model. CLI `eval` does not rerun this file and requires test outputs to satisfy the task schema. Use the programmatic evaluator to score expected `null` as abstention regardless of the successful output schema.
 
-The programmatic evaluator also accepts expected `null` for abstention cases. This is an evaluation convention, not a change to the task's successful output schema.
+## Evaluate partial results
+
+Recurrent reports include code-point agreement, confidence coverage and agreement within that coverage. These diagnostics bypass whole-result acceptance and are separate from exact parser accuracy.
+
+CLI evaluation uses strict CPU parsing. For previews, evaluate `parse(input, { allowPartial: true })` in your own loop. Record `ok`, `partial` and `uncertain` separately, along with candidate agreement and uncertain-range coverage. See the [partial-result contract](reference/runtime.md#partialmatchboxparser).
 
 ## Measure browser speed
 
-Use **Measure browser speed** in the workbench or the benchmark controls on the examples page. They run inference through Burn WASM CPU on the current device, including output validation.
+The workbench's **Measure browser speed** action uses the current input, 20 warmups and 100 timed CPU predictions. The website measures the filter, money and time examples automatically with 20 warmups and 300 timed predictions. These measurements include output validation and exclude loading and rendering.
 
-These measurements exclude model loading and UI rendering. Record the input, sample count, browser, and device with the result. The workbench uses 100 timed runs after 20 warmups; the website demo uses 300 timed runs after 20 warmups. Repeated-input latency is separate from held-out accuracy.
+Record the input, browser and device. Measure cold initialization and downloaded assets separately. For recurrent models, compare explicit CPU and GPU calls on representative inputs; see [runtime execution](runtime-backends.md).
 
-See the [evaluation API](reference/evaluation.md) for exact metric fields and return types.
+## Audit repository examples
 
-## Repository example audit
+After `bun run train`, run `bun run eval:examples`. It writes `.matchbox/example-evaluation.json` with mismatches, slice metrics, false accepts, hashes and token overlap against training. Each example owns a frozen `evals/generalization.json`.
 
-After `bun run train`, run `bun run eval:examples`. It writes `.matchbox/example-evaluation.json` with all predictions that disagree with expected outputs, slice metrics, false accepts, source hashes, and token-sequence overlap with training. Each example owns a frozen `evals/generalization.json` file. Treat those files as audit data; create new development fixtures when fixing failures and obtain a fresh independent evaluation before claiming improvement.
-
-A held-out string can still be identical to training at the model's input representation. Word tokenization maps all numbers to `<number>`. Changing 15 to 90 tests deterministic copying and arithmetic, not learned numerical generalization. Report accuracy on feature-novel inputs separately.
-
-The audit evaluates model outputs against the task’s expected results. Positive coverage, accuracy among accepted answers, and false acceptance of negative examples matter alongside exact match. A high abstention rate can hide an ineffective parser. Threshold curves are diagnostics, not permission to pick a threshold on test data.
-
-See [the measured example audit](example-evaluation.md) for current results and limitations.
+Word tokenization maps numbers to `<number>`, so changing 15 to 90 tests copying and arithmetic, not learned numerical generalization. Report feature-novel inputs separately. Keep the frozen audit cases independent of model development. See [example results](example-evaluation.md).

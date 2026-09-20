@@ -2,11 +2,9 @@
 
 Use a token pipeline when the model should identify parts of the input and application code should assemble the result.
 
-## Why separate modules?
+## Recipe and decoder
 
-The token pipeline discovers default-exported recipe and decoder modules by convention. Use recipe.ts or recipe/recipe.ts, and decode.ts or decode/decode.ts. The training process loads the recipe; the generated browser wrapper imports the decoder directly. This keeps training annotations and training dependencies out of the application bundle.
-
-The recipe file is an authoring convention of the current API, not a requirement of machine learning. The decoder is an application-owned runtime dependency. Keep its imports browser-safe, including any number-conversion helpers. The [money example](../examples/money.md) exposes these files separately so you can inspect both learned recognition and authored arithmetic.
+The training process loads `recipe.ts` (or `recipe/recipe.ts`). The browser wrapper imports `decode.ts` (or `decode/decode.ts`). Keep the decoder and its helpers browser-safe. See [project structure](../project-structure.md) for discovery and [the money example](../examples/money.md) for authored recognition and arithmetic.
 
 ## SequenceRecipe
 
@@ -31,7 +29,9 @@ const recipe: SequenceRecipe = {
   labels: ["O", "AMOUNT", "MINUTE"],
   annotate(example) {
     const labels = annotations[example.input];
-    if (!labels) throw new Error(`Missing annotation: ${example.input}`);
+    if (!labels) {
+      throw new Error(`Missing annotation: ${example.input}`);
+    }
     return labels;
   },
 };
@@ -91,7 +91,7 @@ This explicitly trains an unknown embedding. Its exported model attempts recogni
 
 Masking loses information and can introduce contradictory supervision. It can reduce accuracy or cause confident wrong answers. Evaluate familiar regressions, unfamiliar contexts, and negative inputs separately before enabling it. A model that tolerates an unknown name may also overlook an unknown negation. Scores remain uncalibrated token recognition scores, not probabilities that the final answer is correct.
 
-The generated report records rejection counts and hashes the actual token supervision as well as source datasets. These controls make training inspectable; they do not guarantee semantic correctness.
+The report records rejection counts and hashes of token supervision and source datasets.
 
 ## RecurrentRecipe
 

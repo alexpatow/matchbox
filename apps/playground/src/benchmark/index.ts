@@ -1,1 +1,2 @@
-export { BenchmarkPanel } from "./benchmark-panel";
+export { milliseconds, type TimingResult } from "./types";
+export { measure } from "./measure";

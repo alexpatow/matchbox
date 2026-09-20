@@ -1,6 +1,6 @@
-import { FileCode, FileJson, Folder } from "lucide-react";
+import { ChevronDown, FileCode, FileJson, Folder } from "lucide-react";
 import { useState } from "react";
-import { highlight } from "sugar-high";
+import { ModelCode } from "@/lexer";
 import { files } from "./pipeline-example";
 export function PipelineExplorer() {
   const [selected, setSelected] = useState(0);
@@ -8,8 +8,26 @@ export function PipelineExplorer() {
   return (
     <div className="pipeline-explorer">
       <div className="file-tree">
+        <div className="mobile-file-picker">
+          <label htmlFor="example-file">Example file</label>
+          <div className="file-select">
+            <select
+              id="example-file"
+              value={selected}
+              aria-controls="file-panel"
+              onChange={(event) => setSelected(Number(event.target.value))}
+            >
+              {files.map((entry, index) => (
+                <option key={entry.name} value={index}>
+                  {entry.name}
+                </option>
+              ))}
+            </select>
+            <ChevronDown className="site-icon" aria-hidden="true" />
+          </div>
+        </div>
         <span className="folder-name">
-          <Folder className="site-icon" aria-hidden="true" /> matchbox/money
+          <Folder className="site-icon" aria-hidden="true" /> matchbox/filters
         </span>
         <div role="tablist" aria-label="Example files" aria-orientation="vertical">
           {files.map((entry, index) => (
@@ -45,14 +63,18 @@ export function PipelineExplorer() {
             </button>
           ))}
         </div>
+        <a
+          className="example-source"
+          href="https://github.com/alexpatow/matchbox/tree/main/examples/filters"
+        >
+          Full example
+        </a>
       </div>
-      <div role="tabpanel" id="file-panel" aria-labelledby={`file-${selected}`} tabIndex={0}>
+      <div role="tabpanel" id="file-panel" aria-label={file.name} tabIndex={0}>
         <div className="file-caption">
           <span>{file.name}</span>
         </div>
-        <pre>
-          <code dangerouslySetInnerHTML={{ __html: highlight(file.code) }} />
-        </pre>
+        <ModelCode code={file.code} />
         <p className="file-description">{file.description}</p>
       </div>
     </div>

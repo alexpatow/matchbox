@@ -153,7 +153,7 @@ footer p {
   font-weight: 600;
   margin-bottom: 12px;
 }
-.query-section input {
+.query-section textarea {
   width: 100%;
   box-sizing: border-box;
   border: 1px solid #a5ab9e;
@@ -164,7 +164,7 @@ footer p {
   font-size: 16px;
   padding: 18px;
 }
-.query-section input:focus-visible {
+.query-section textarea:focus-visible {
   outline: 2px solid var(--focus-ring);
   outline-offset: 3px;
 }
@@ -269,24 +269,4 @@ td:last-child {
 .empty {
   font-size: 14px;
   color: var(--muted-foreground);
-}
-
-.training-example h2 {
-  font-size: 24px;
-  letter-spacing: -0.025em;
-}
-.training-example .description {
-  margin: 12px 0 20px;
-  line-height: 1.65;
-  max-width: 680px;
-}
-.training-metrics {
-  font-size: 12px;
-  color: var(--muted-foreground);
-  line-height: 1.8;
-  margin: 0 0 28px;
-  font-variant-numeric: tabular-nums;
-}
-.training-example + .training-example {
-  margin-top: 48px;
 }

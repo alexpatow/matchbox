@@ -112,7 +112,7 @@ export function MatchboxArt() {
               fontSize="11"
               fill="#737373"
             >
-              .model
+              .matchbox
             </text>
           </g>
         </g>

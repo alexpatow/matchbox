@@ -13,7 +13,9 @@ export const navigation = [
   [
     "Start here",
     [
+      ["README", "Overview"],
       ["getting-started", "Getting started"],
+      ["agents", "For coding agents"],
       ["project-structure", "Project structure"],
     ],
   ],

@@ -1,0 +1,104 @@
+.examples-page .introduction {
+  padding-block: 64px 48px;
+}
+.model-example {
+  margin-bottom: 48px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #0c0c0c;
+}
+.example-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+  padding: 24px;
+}
+.example-heading h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+.example-heading p {
+  margin: 10px 0 0;
+  color: var(--muted-foreground);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.example-heading a {
+  white-space: nowrap;
+  font-size: 12px;
+}
+.example-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--border);
+}
+.example-input,
+.example-output {
+  padding: 24px;
+  min-width: 0;
+}
+.example-output {
+  border-left: 1px solid var(--border);
+}
+.example-input label,
+.example-output-label {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 12px;
+  color: var(--muted-foreground);
+}
+.example-output pre {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  min-height: 190px;
+  font-size: 12px;
+}
+.example-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 24px;
+  border-top: 1px solid var(--border);
+  padding: 16px 24px;
+  font-size: 12px;
+  color: var(--muted-foreground);
+  font-variant-numeric: tabular-nums;
+}
+.example-metrics a {
+  margin-left: auto;
+}
+@media (max-width: 700px) {
+  .example-columns {
+    grid-template-columns: 1fr;
+  }
+  .example-output {
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
+  .example-heading,
+  .example-input,
+  .example-output {
+    padding: 20px;
+  }
+}
+
+.example-input input {
+  width: 100%;
+  border: 1px solid #3c3c3c;
+  border-radius: 6px;
+  background: #101010;
+  color: var(--foreground);
+  font: inherit;
+  font-size: 16px;
+  padding: 16px;
+}
+.example-input input:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}

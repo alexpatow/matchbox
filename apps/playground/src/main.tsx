@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "@fontsource-variable/geist";
 import "@fontsource-variable/geist-mono";
-import { TrainingApp } from "./training";
+import { ExamplesApp } from "./examples";
 import { DocsApp } from "./docs";
 import { App } from "./app";
 import { RouteEffects } from "./site";
@@ -19,7 +19,7 @@ createRoot(root).render(
       <RouteEffects />
       <Routes>
         <Route path="/docs/*" element={<DocsApp />} />
-        <Route path="/training" element={<TrainingApp />} />
+        <Route path="/examples" element={<ExamplesApp />} />
         <Route path="*" element={<App />} />
       </Routes>
     </BrowserRouter>
